@@ -1,0 +1,222 @@
+@charset "UTF-8";
+// Flag Style
+.c-flag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 4px;
+  border: 1px solid $color-def;
+  color: $color-def;
+  font-size: 12px;
+  &.c-flag-type-gray {
+    border-color: $color-d;
+    color: $color-6;
+  }
+  &.round-pill {
+    background-color: $color-def;
+    color: $color-white;
+  }
+  &.round-line {
+    background-color: $color-white;
+  }
+  &.info-line {
+    width: 42px;
+    height: 26px;
+    padding: 4px 10px;
+  }
+  &.today-pill {
+    width: 44px;
+    height: 18px;
+    padding: 0;
+    border-radius: 9px;
+    background: $color-def;
+    color: $color-white;
+    font-size: 10px;
+    font-family: $noto-m;
+    line-height: 1;
+  }
+}
+
+// AS-IS 에서 사용된 Flag Style
+.flag_wrap .flag.sold {
+  background-color: #ccc;
+} /* 일시품절 */
+.flag_wrap .flag.end {
+  background-color: #999;
+} /* 판매종료 */
+.flag_wrap .flag.product {
+  background-color: #666;
+} /* 가입상품 */
+.flag_wrap .flag.direct {
+  background-color: #666;
+} /* 다이렉트배송 */
+.flag_wrap .flag.shipping {
+  background-color: #63677c;
+} /* 무료배송 */
+.flag_wrap .flag.mostview {
+  background-color: #63677c;
+} /* 최다조회 */
+.flag_wrap .flag.reserv {
+  background-color: #63677c;
+  color: #fff;
+} /* 예약가입 */
+.flag_wrap .flag.etc {
+  background-color: #63677c;
+} /* 기타 */
+.flag_wrap .flag.change {
+  background-color: #f6f6f6;
+  color: #666;
+} /* 기기변경 */
+.flag_wrap .flag.per7 {
+  background-color: #ff5e9c;
+} /* 7%추가할인 */
+.flag_wrap .flag.disclosure {
+  background-color: #f03b79;
+} /* 공시금확대 */
+.flag_wrap .flag.disup {
+  background-color: #776df3;
+} /* 공시지원금UP */
+.flag_wrap .flag.uplus {
+  background-color: #8b62d3;
+} /* U+ 단독 */
+.flag_wrap .flag.popular {
+  background-color: #ff7200;
+} /* 인기 */
+.flag_wrap .flag.new {
+  background-color: #9850e2;
+} /* 최신 */
+.flag_wrap .flag.update {
+  border: 1px solid #37a8d2;
+  color: #37a8d2;
+} /* 업데이트 */
+.flag_wrap .flag.recomm {
+  background-color: #3680c9;
+} /* 추천 */
+.flag_wrap .flag.best {
+  background-color: #4994cb;
+} /* 베스트 */
+.flag_wrap .flag.per80 {
+  background-color: #d41414;
+} /* 80% */
+.flag_wrap .flag.dip {
+  background-color: #64abc1;
+} /* 출고기인하 */
+.flag_wrap .flag.pcut {
+  background-color: #df4d20;
+} /* 가격인하 */
+.flag_wrap .flag.rsale {
+  background-color: #398e3b;
+} /* 예약판매 */
+.flag_wrap .flag.rjoin {
+  background-color: #4aaf4f;
+} /* 예약가입 */
+.flag_wrap .flag.psale {
+  background-color: #5360b2;
+} /* 사전판매 */
+.flag_wrap .flag.home {
+  background-color: #64abc1;
+} /* 인터넷/TV */
+.flag_wrap .flag.iot {
+  background-color: #b17d00;
+} /* IoT서비스 */
+.flag_wrap .flag.hp {
+  background-color: #d5551a;
+} /* 휴대폰 */
+.flag_wrap .flag.acc {
+  background-color: #93495f;
+} /* 액세서리 */
+.flag_wrap .flag.plan {
+  background-color: #b35ac0;
+} /* 기획전 */
+.flag_wrap .flag.event {
+  background-color: #617d8b;
+} /* 이벤트 */
+.flag_wrap .flag.common {
+  background-color: #666;
+}
+.flag_wrap .flag.rep {
+  background-color: #657efc;
+} /* 중고자급제폰 */
+.flag_wrap .flag.tablet {
+  background-color: #ee704b;
+} /* 태블릿 */
+.flag_wrap .flag.watch {
+  background-color: #eeb240;
+} /* 워치 */
+.flag_wrap .flag.wifi {
+  background-color: #85d560;
+} /* 휴대용Wi-fi */
+.flag_wrap .flag.deliall {
+  background-color: #fe8320;
+} /* 묶음배송 */
+.flag_wrap .flag.delione {
+  background-color: #4a90e2;
+} /* 단독배송 */
+.flag_wrap .flag.join1g {
+  background-color: #2eabd2;
+} /* 1G가입조건 */
+.flag_wrap .flag.unused {
+  background-color: #6d85ba;
+} /* 미사용할인폰 */
+.flag_wrap .flag.using {
+  background-color: #ed008c;
+} /* 미사용할인폰 */
+
+// ====================================
+
+// Icon Style
+$iconSystemType: (
+  '-type1': '/ico-system-type1.svg',
+  '-type2': '/ico-system-type2.svg',
+  '-type3': '/ico-system-type3.svg',
+  '-type4': '/ico-system-type4.svg',
+  '-type5': '/ico-system-type5.svg',
+  '-type6': '/ico-system-type6.svg',
+  '-type7': '/ico-system-type7.svg',
+  '-type8': '/ico-system-type8.svg',
+);
+$iconSizeType: 40px, 50px, 80px;
+@each $iconSize in $iconSizeType {
+  .ico-#{$iconSize} {
+    width: $iconSize;
+    height: $iconSize;
+  }
+}
+.icon-ststem-wrap {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+*[class^='icon-system'] {
+  display: inline-flex;
+  justify-content: center;
+  flex: auto;
+  flex-flow: wrap;
+  position: relative;
+  color: $color-black;
+  font: {
+    size: 16px;
+    family: $noto-r;
+    weight: 400;
+  }
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: calc(95px / 2);
+    margin-bottom: calc(25.2px / 2);
+    background: {
+      repeat: no-repeat;
+      position: 50% 50%;
+      size: auto 100%;
+    }
+  }
+  @each $iconTypeName, $iconTypeSvg in $iconSystemType {
+    &[class$='#{$iconTypeName}'] {
+      &:before {
+        background-image: url($image-icon + '#{$iconTypeSvg}');
+      }
+    }
+  }
+}

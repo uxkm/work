@@ -1,0 +1,198 @@
+@charset "UTF-8";
+$color-d9: #d9d9d9;
+$size-w65: 65px;
+$size-w140: 140px;
+.accordion,
+.c-accordion,
+.c-accordion.accordion,
+.accordion.c-accordion {
+  .c-accordion-group {
+    border: 0;
+    &:first-child {
+      .card-header,
+      .c-accordion-hader,
+      .card-header.c-accordion-hader {
+        border-top: 1px solid $color-d9;
+      }
+    }
+  }
+  .card-header,
+  .c-accordion-hader,
+  .card-header.c-accordion-hader {
+    margin-bottom: 0;
+    padding: 0;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-d9;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 0;
+    background-color: transparent;
+    color: $color-black;
+    font-weight: normal;
+    font-family: $noto-r;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    transition: none;
+    box-shadow: none !important;
+    &:focus,
+    &:active {
+      box-shadow: none;
+      border: 1px dotted $color-black;
+    }
+    &.btn-info {
+      color: $color-black;
+      background-color: $color-white;
+      border-color: transparent;
+      &:focus,
+      &:active {
+        border: 1px dotted $color-black;
+      }
+    }
+    /* &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 28px;
+      right: 32px;
+      width: 24px;
+      height: 24px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-image: url($image-icon + '/ico-arrow-bottom-type2.svg');
+      background-size: 18px 8px;
+    } */
+    i {
+      overflow: hidden;
+      display: block;
+      position: absolute;
+      top: 28px;
+      right: 32px;
+      width: 24px;
+      height: 24px;
+      color: transparent;
+      white-space: nowrap;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        background-color: $color-white;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-image: url($image-icon + '/ico-arrow-bottom-type2.svg');
+        background-size: 18px 8px;
+      }
+    }
+    &.not-collapsed {
+      /* &:after {
+        transform: rotate(-180deg);
+      } */
+      i {
+        &:after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+    &.collapsed .when-open,
+    &.not-collapsed .when-closed {
+      display: none;
+    }
+  }
+  .c-accordion-q {
+    padding: 28px 32px;
+    strong {
+      display: inline-flex;
+      min-width: $size-w140;
+      flex: 0 auto;
+      font-family: $noto-m;
+    }
+    em {
+      display: inline-flex;
+      min-width: $size-w65;
+      flex: 0 auto;
+      color: $color-def;
+      font-family: $noto-m;
+    }
+    span {
+      flex: 1 auto;
+      display: inline-flex;
+      margin-right: 32px;
+    }
+  }
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: $color-white;
+    background-clip: border-box;
+    border: 0;
+    border-radius: 0;
+  }
+  .card-body {
+    padding: 32px;
+    border-bottom: 1px solid $color-d9;
+    background: $color-f3;
+    color: $color-6;
+    font-family: $noto-r;
+    .breadcrumb {
+      margin: 8px 0 0;
+      padding: 0;
+      background: none;
+      li {
+        display: inline-flex;
+        margin: 0;
+        padding: 0;
+        color: $color-a;
+        font-family: $noto-r;
+        font-weight: 400;
+        a {
+          display: inline-flex;
+          color: $color-a;
+        }
+        span {
+          display: inline-flex;
+          color: $color-a;
+          vertical-align: middle;
+        }
+      }
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+      display: inline-flex;
+      float: none;
+      margin: 0 2px;
+      padding-right: 0;
+      color: inherit;
+      content: '>';
+    }
+  }
+}
+.c-accordion-type1 {
+  .card-body {
+    > p {
+      margin-left: $size-w140;
+    }
+    .breadcrumb {
+      margin-left: $size-w140 !important;
+    }
+  }
+}
+.c-accordion-type2 {
+  .card-body {
+    > p {
+      margin-left: $size-w65;
+    }
+    .breadcrumb {
+      margin-left: $size-w65 !important;
+    }
+  }
+}

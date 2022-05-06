@@ -1,0 +1,83 @@
+/*
+* - 계발 완료시 _common.scss와 합칠 예정
+* - 변수, mixin, function 은 variable에 넣어으세요
+*/
+@charset "utf-8";
+@import './variable';
+
+// ============= 작업자 : eosj.works =============
+// 추후 공통 이관 포함
+
+// 상단 타이틀영역 : 추가 컨텐츠 포함되어 있을 경우
+.sub-top-box {
+  position: relative;
+  // 우측 버튼
+  [class*='c-btn'] {
+    position: absolute;
+    right: 12px;
+    &.c-sm {
+      top: 10px;
+    }
+  }
+  // 하단 요약 정보
+  .brief-info-type-1 {
+    margin-top: 16px;
+  }
+}
+// 상단 타이틀 영역 하단 간략정보
+// 타입 추가될 경우 : & [class*='brief-info-type'] 로 분류
+.brief-info-type-1 {
+  .brief-info-item {
+    // font-size: $font-m;
+    .item-title {
+      margin-right: 32px;
+      color: $color-black;
+      font-size: $font-m;
+      font-family: $noto-m;
+    }
+    .item-info {
+      color: $color-black;
+      font-size: $font-m;
+      & + .item-info:before {
+        content: '';
+        display: inline-flex;
+        width: 1px;
+        height: 12px;
+        margin: 0 16px;
+        background: $color-d;
+      }
+    }
+  }
+}
+
+// 섹션 제목 하단 테이블 여백
+.c-page-section h2.h3 + .row.c-table,
+.c-page-section .h3 + .row.c-table {
+  margin-top: 16px;
+}
+
+// 설치신청 변경
+[class*='icon-join-info'] {
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 64px;
+    background: {
+      color: transparent;
+      position: 50%;
+      repeat: no-repeat;
+    }
+  }
+  &[class$='-type1']:before {
+    background-image: url($image-icon + '/ico-join-info-type1.svg');
+  }
+  &[class$='-type2']:before {
+    background-image: url($image-icon + '/ico-join-info-type2.svg');
+  }
+  &[class$='-type3']:before {
+    background-image: url($image-icon + '/ico-join-info-type3.svg');
+  }
+}
+
+// ============= 작업자 : 이후 작업자 =============

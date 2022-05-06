@@ -1,0 +1,519 @@
+@charset "UTF-8";
+// Basic Tooltip
+*[class^='c-tooltip'] {
+  position: absolute;
+  padding: 6px 14px 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+  &[class*='#{-white}'] {
+    background-color: $color-white;
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 18.624px;
+    height: 16px;
+    background: url($image-icon + '/ico-polygon.svg') no-repeat 0 0;
+  }
+  &.arrow-bl:after,
+  &.arrow-br:after,
+  &.arrow-bc:after {
+    bottom: -10px;
+  }
+  &.arrow-tl:after,
+  &.arrow-tr:after {
+    top: -10px;
+    transform: rotate(-180deg);
+  }
+  &.arrow-bl:after,
+  &.arrow-tl:after {
+    left: 25px;
+  }
+  &.arrow-br:after,
+  &.arrow-tr:after {
+    right: 25px;
+  }
+  &.arrow-tc:after,
+  &.arrow-bc:after {
+    left: 50%;
+  }
+  &.arrow-bc:after {
+    transform: translateX(-50%);
+  }
+  &.arrow-tc:after {
+    top: -10px;
+    transform: translateX(-50%) rotate(-180deg);
+  }
+  .tooltip-in {
+    // display: flex;
+    flex: 1;
+    // flex-flow: column wrap;
+    flex-direction: column;
+    // display: -ms-flex;
+    display: block;
+    .tooltip-cnt {
+      /* display: flex;
+      display: -ms-flexbox; */
+      display: block;
+      flex: 1;
+      overflow: hidden;
+    }
+    .info-picture {
+      /* display: inline-flex;
+      display: -ms-inline-flexbox; */
+      flex: none;
+      display: inline-block;
+      float: left;
+      overflow: hidden;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      margin-right: 11px;
+      border-radius: 50%;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: auto;
+      }
+    }
+    .info-mng {
+      /* display: flex;
+      display: -ms-flexbox; */
+      flex: 1;
+      flex-flow: column wrap;
+      display: inline-block;
+    }
+    .text-mng {
+      /* display: flex;
+      display: -ms-flexbox; */
+      display: block;
+      margin-bottom: 8px;
+      color: $color-black;
+      font-size: 12px;
+      font-family: $noto-m;
+    }
+    .text-name,
+    .text-office {
+      display: flex;
+      align-self: flex-start;
+      display: -ms-flexbox;
+      margin-right: 6px;
+      flex: 1;
+      font-size: 12px;
+    }
+  }
+  .text-info {
+    color: $color-white !important;
+    font-size: 14px;
+  }
+  &[class*='#{-black}'] {
+    padding: 0;
+    background-color: transparent;
+    opacity: 0.8;
+    &:after {
+      display: none;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      width: 14px;
+      height: 14px;
+      border: 0;
+      background-color: $color-black;
+      background-image: none;
+      transform: rotate(45deg);
+    }
+    &.arrow-bl:before,
+    &.arrow-br:before,
+    &.arrow-bc:before {
+      bottom: -7px;
+    }
+    &.arrow-tl:before,
+    &.arrow-tr:before {
+      top: -7px;
+    }
+    &.arrow-bl:before,
+    &.arrow-tl:before {
+      left: 25px;
+    }
+    &.arrow-br:before,
+    &.arrow-tr:before {
+      right: 25px;
+    }
+    &.arrow-tc:before,
+    &.arrow-bc:before {
+      left: 50%;
+    }
+    &.arrow-bc:before,
+    &.arrow-tc:before {
+      transform: translateX(-50%);
+    }
+    .tooltip-in {
+      position: relative;
+      z-index: 1;
+      padding: 16px;
+      padding-right: 24px;
+      border-radius: 8px;
+      border: 0;
+      background-color: $color-black;
+    }
+  }
+}
+// Toasts Tooltip
+*[class^='c-toasts'] {
+  position: absolute;
+  padding: 18px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+  border: 1px solid $color-e;
+  border-radius: 4px;
+  &[class*='#{-white}'] {
+    background: $color-white;
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    border: 1px solid transparent;
+    background-color: $color-white;
+    transform: rotate(45deg);
+  }
+  &.arrow-tr:after,
+  &.arrow-tl:after,
+  &.arrow-tc:after {
+    top: -5.5px;
+    border-top-color: $color-e;
+    border-left-color: $color-e;
+  }
+  &.arrow-br:after,
+  &.arrow-bl:after,
+  &.arrow-bc:after {
+    bottom: -5.5px;
+    border-bottom-color: $color-e;
+    border-right-color: $color-e;
+  }
+  &.arrow-tr:after,
+  &.arrow-br:after {
+    right: 18px;
+  }
+  &.arrow-tl:after,
+  &.arrow-bl:after {
+    left: 18px;
+  }
+  &.arrow-tc:after,
+  &.arrow-bc:after {
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .tooltip-in {
+    padding-right: 32px;
+  }
+  .text-info {
+    color: $color-black !important;
+    font-size: 14px;
+  }
+  .c-ibtn-close {
+    position: absolute;
+    top: 18px;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 0;
+    background: transparent url($image-icon + '/ico-close-x-gray.svg') no-repeat 50% 50%;
+    background-size: 12px;
+  }
+}
+// BV Tooltip
+*[class*='bv-ibtn'] {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 16px;
+  line-height: 1;
+  &:hover,
+  &:focus {
+    background: transparent;
+  }
+  &[class*='-noti'] {
+    width: 22px;
+    height: 24px;
+    &.sm {
+      width: 18px;
+      height: 18px;
+    }
+    .icon {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background: url($image-icon + '/ico-noti-line-black.svg') no-repeat 0 0;
+      background-size: 100%;
+    }
+    &.line {
+      .icon {
+        background-image: url($image-icon + '/ico-noti-line-black.svg');
+      }
+    }
+    &.pill {
+      .icon {
+        background-image: url($image-icon + '/ico-noti-pill-black.svg');
+      }
+    }
+    &.gray.sm {
+      .icon {
+        background-image: url($image-icon + '/ico-noti-line-gray-sm.svg');
+      }
+    }
+    &.pill.sm {
+      .icon {
+        background-image: url($image-icon + '/ico-noti-pill-black-sm.svg');
+      }
+    }
+    &:hover,
+    &:focus {
+      .icon {
+        background-image: url($image-icon + '/ico-noti-pill-black.svg');
+      }
+    }
+    &.sm:hover,
+    &.sm:focus {
+      .icon {
+        background-image: url($image-icon + '/ico-noti-pill-black-sm.svg');
+      }
+    }
+  }
+  &.btn-secondary:not(:disabled):not(.disabled):active,
+  &.btn-secondary:not(:disabled):not(.disabled).active {
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+  }
+}
+.tooltip.b-tooltip {
+  &.b-tooltip-c-black {
+    z-index: 10;
+    font-family: $noto-r;
+    font-weight: 400;
+    font-size: 16px;
+    .arrow {
+      margin: 0 2rem;
+    }
+    &.bs-tooltip-bottom {
+      left: -5px !important;
+      margin-top: 14px;
+    }
+    &.bs-tooltip-bottom .arrow {
+      margin: 0 24px;
+    }
+    &.bs-tooltip-bottom .arrow::before {
+      bottom: -2px;
+      border-width: 0 0.75rem 1rem;
+    }
+    &.bs-tooltip-top {
+      top: -10px !important;
+      left: -4px !important;
+      margin-top: 14px;
+    }
+    &.bs-tooltip-top .arrow::before {
+      top: -2px;
+      border-width: 1rem 0.75rem 0;
+    }
+
+    &.bs-tooltip-right .arrow,
+    &.bs-tooltip-left .arrow {
+      margin: 0.25rem 0px;
+    }
+    .tooltip-inner {
+      max-width: none;
+      padding: 16px 16px 24px;
+      color: #fff;
+      text-align: left;
+      background-color: $color-black;
+      border-radius: 8px;
+      .pd-price {
+        display: block;
+        margin: 0 0 8px;
+        padding: 0;
+        font-size: 24px;
+        color: $color-white;
+        font-family: $noto-B;
+        em {
+          display: inline-block;
+        }
+      }
+      .pd-text-info {
+        margin-bottom: 4px;
+        color: $color-d;
+        font-size: 18px;
+      }
+      .pd-text-sub {
+        color: $color-d;
+        font-size: 14px;
+      }
+    }
+  }
+  &.b-tooltip-c-black-sm {
+    z-index: 10;
+    font-family: $noto-r;
+    font-weight: 400;
+    font-size: 16px;
+    .arrow {
+      margin: 0 2rem;
+    }
+    &.bs-tooltip-bottom {
+      top: 10px !important;
+    }
+    &.bs-tooltip-bottom .arrow {
+    }
+    &.bs-tooltip-bottom .arrow::before {
+    }
+    &.bs-tooltip-top {
+      top: -10px !important;
+    }
+    &.bs-tooltip-top .arrow::before {
+    }
+    .tooltip-inner {
+      max-width: none;
+      padding: 6px 10px;
+      color: #fff;
+      text-align: left;
+      background-color: $color-black;
+      border-radius: 8px;
+    }
+    .text-info {
+      color: $color-white !important;
+      font-size: 14px;
+    }
+    &.tooltip.b-tooltip.bs-tooltip-right .arrow,
+    &.tooltip.b-tooltip.bs-tooltip-auto[x-placement^='right'] .arrow,
+    &.tooltip.b-tooltip.bs-tooltip-left .arrow,
+    &.tooltip.b-tooltip.bs-tooltip-auto[x-placement^='left'] .arrow {
+      margin: 0.25rem 0;
+    }
+    &.bs-tooltip-left .arrow::before,
+    &.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-primary.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-secondary.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-success.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-info.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-warning.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-danger.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-light.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-dark.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-is-yes.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-is-no.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-is-primary-a.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+    &.tooltip.b-tooltip-is-secondary-a.bs-tooltip-auto[x-placement^='left'] .arrow::before {
+      left: -1px;
+    }
+  }
+}
+
+// 좋아요 버튼
+.c-ibtn-like {
+  display: inline-block;
+  position: relative;
+  width: 28px;
+  height: 24.18px;
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url($image-icon + '/ico-heart-off.svg') no-repeat 0 0;
+    background-size: 100%;
+  }
+  &.is-active {
+    &:before {
+      background-image: url($image-icon + '/ico-heart-on.svg');
+    }
+  }
+}
+.c-ibtn-filp {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url($image-icon + '/ico-card-filp-black.svg') no-repeat 0 0;
+    background-size: 100%;
+  }
+}
+$iconLineType: (
+  '-type1': '/ico-line-type1.svg',
+  '-type2': '/ico-line-type2.svg',
+  '-type3': '/ico-line-type3.svg',
+  '-type4': '/ico-line-type4.svg',
+  '-type5': '/ico-line-type5.svg',
+);
+$iconLineTypeOn: (
+  '-type1': '/ico-line-type1-on.svg',
+  '-type2': '/ico-line-type2-on.svg',
+  '-type3': '/ico-line-type3-on.svg',
+  '-type4': '/ico-line-type4-on.svg',
+  '-type5': '/ico-line-type5-on.svg',
+);
+*[class^='c-ibtn-line'] {
+  display: inline-flex;
+  span {
+    display: inline-flex;
+    align-items: center;
+    color: $color-black;
+    font-size: 24px;
+    font-family: $noto-B;
+  }
+  &:before {
+    content: '';
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    background: {
+      repeat: no-repeat;
+      position: 50% 50%;
+      size: 28px auto;
+    }
+  }
+  &:hover,
+  &:focus {
+    span {
+      color: $color-def;
+    }
+  }
+  @each $iconLineTypeName, $iconLineTypeSvg in $iconLineType {
+    &[class$='#{$iconLineTypeName}'] {
+      &:before {
+        background-image: url($image-icon + '#{$iconLineTypeSvg}');
+      }
+    }
+  }
+  @each $iconLineTypeOnName, $iconLineTypeOnSvg in $iconLineTypeOn {
+    &[class$='#{$iconLineTypeOnName}'] {
+      &:hover,
+      &:focus {
+        &:before {
+          background-image: url($image-icon + '#{$iconLineTypeOnSvg}');
+        }
+      }
+    }
+  }
+}

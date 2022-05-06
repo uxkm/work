@@ -1,0 +1,772 @@
+@charset "UTF-8";
+$cinp-h: 48px;
+$cLabel-w10: 10px;
+$cLabel-w20: 20px;
+$cLabel-w30: 30px;
+$cLabel-w40: 40px;
+$cLabel-w50: 50px;
+$cLabel-w60: 60px;
+$cLabel-w70: 70px;
+$cLabel-w75: 75px;
+$cLabel-w80: 80px;
+$cLabel-w90: 90px;
+$cLabel-w100: 100px;
+$cLabel-w114: 114px;
+$cLabel-w178: 178px;
+$cSel-w160: 160px;
+$px10: 10px;
+$px20: 20px;
+$px46: 46px;
+$px160: 160px;
+$px206: 206px;
+$px210: 210px;
+$px300: 300px;
+$px450: 450px;
+$px622: 622px;
+$px625: 625px;
+$pecent-100: 100%;
+$pecent-90: 90%;
+$pecent-80: 80%;
+$pecent-70: 70%;
+$pecent-60: 60%;
+$pecent-50: 50%;
+$color-bf: #bfbfbf;
+$color-26: #262626;
+.w300px {
+  width: 300px;
+}
+.w450px {
+  width: 450px;
+}
+.w622px {
+  width: 622px;
+}
+.w625px {
+  width: 625px;
+}
+$px450: 450px;
+$px622: 622px;
+$px625: 625px;
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='number'],
+input[type='tel'],
+input[type='submit'],
+textarea,
+select {
+  @include iosAppearance;
+}
+select::-ms-expand {
+  display: none;
+}
+input[type='text']::-ms-clear,
+input[type='password']::-ms-clear,
+input[type='email']::-ms-clear,
+input[type='tel']::-ms-clear,
+input[type='number']::-ms-clear {
+  display: none;
+} //ie에서 x버튼 삭제
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  @include iosAppearance;
+}
+.inp-reset {
+  @include iosAppearance;
+}
+textarea {
+  width: 100%;
+  min-height: 100px;
+  height: 100px;
+  padding: 8px 16px;
+  border: 1px solid $color-b;
+  background-color: $color-white;
+  &:focus {
+    outline: 1px solid $color-black;
+  }
+  &::placeholder {
+    color: $color-a;
+  }
+}
+select {
+  overflow: hidden;
+  width: 100%;
+  height: $cinp-h;
+  padding: 15px 20px 9px 0;
+  border: 1px solid transparent;
+  border-bottom-color: $color-b;
+  background: url($image-icon + '/ico-arrow-bottom-type1.svg') no-repeat 100% 24px;
+  color: $color-black;
+  font-size: $font-m;
+  font-family: $noto-r;
+  font-weight: 400;
+  &:focus {
+    outline: 1px dotted $color-black;
+  }
+  &:disabled {
+    border-bottom-color: $color-d;
+    background-image: url($image-icon + '/ico-arrow-bottom-type1-dis.svg');
+    color: $color-6;
+    opacity: 1;
+  }
+  option {
+    color: $color-black;
+  }
+  &::placeholder {
+    color: $color-a;
+  }
+}
+.c-label {
+  display: inline-flex;
+  flex: none;
+  position: relative;
+  color: $color-black;
+  text-align: left;
+}
+.c-inp {
+  width: 100%;
+  height: $cinp-h;
+  padding: 15px 20px 9px 0;
+  border: 1px solid transparent;
+  border-bottom-color: $color-b;
+  background-color: $color-white;
+  font-size: $font-m;
+  font-family: $noto-r;
+  font-weight: 400;
+  &:focus {
+    border-bottom-color: $color-black;
+    outline: 1px dotted $color-black;
+  }
+  &[readonly] {
+    border-bottom: 0;
+  }
+  &::placeholder {
+    color: $color-a;
+  }
+}
+.dir-column {
+  flex-direction: column;
+}
+// selectbox
+.c-selform {
+  display: flex;
+  flex-flow: wrap;
+  .c-select {
+    width: 100%;
+  }
+  &.is-sus {
+    .c-select {
+      border-bottom-color: $color-suc;
+    }
+  }
+  &.is-err {
+    .c-select {
+      border-bottom-color: $color-err;
+    }
+  }
+  &.type2 {
+    .c-inp {
+      border-width: 2px;
+      border-bottom-color: $color-26;
+    }
+    select {
+      border-width: 2px;
+      border-bottom-color: $color-26;
+    }
+  }
+}
+
+// textarea
+.c-textfield {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  .c-label {
+    width: $cLabel-w178;
+    flex: none;
+  }
+  .c-textareaform {
+    // width: calc(100% - #{$cLabel-w178});
+  }
+  &.blind-label {
+    .c-textareaform {
+      width: $pecent-100;
+    }
+  }
+  .text-msg {
+    margin-top: 8px;
+  }
+}
+// input 그룹
+.c-inpform {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: column;
+  // width: 100%;
+  text-align: left;
+  &.is-err {
+    .c-inp {
+      border-bottom-color: $color-err;
+    }
+    .text-msg {
+      color: $color-err;
+      &:focus {
+        outline: 1px dotted $color-black;
+      }
+    }
+  }
+  &.is-sus {
+    .c-inp {
+      border-bottom-color: $color-suc;
+    }
+    .text-msg {
+      color: $color-suc;
+      &:focus {
+        outline: 1px dotted $color-black;
+      }
+    }
+  }
+  &.is-clear {
+    .c-btn-clear {
+      display: inline-block;
+      &:focus {
+        outline: 1px dotted $color-black;
+      }
+    }
+  }
+  &.is-time {
+    .text-sms {
+      display: block;
+      &:focus {
+        outline: 1px dotted $color-black;
+      }
+    }
+  }
+  &.type2 {
+    .c-inp {
+      border-width: 2px;
+      border-bottom-color: $color-26;
+    }
+    select {
+      border-width: 2px;
+      border-bottom-color: $color-26;
+    }
+  }
+}
+.c-textareaform {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  // width: 100%;
+  text-align: left;
+  line-height: 0;
+  .c-textarea {
+    display: inline-block;
+    line-height: 1.5;
+    & + .text-msg {
+      padding-top: 8px;
+    }
+  }
+  &.is-err {
+    .c-textarea {
+      border-color: $color-err;
+    }
+  }
+}
+
+.c-inpfield {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  .c-label {
+    flex: none;
+    width: $cLabel-w75;
+    height: $cinp-h;
+    padding: 15px 0 9px 0;
+  }
+  .c-inpform-group {
+    // width: calc(100% - #{$cLabel-w75});
+  }
+  .c-inpform {
+    // width: calc(100% - #{$cLabel-w75});
+  }
+}
+
+// input field 그룹화
+.c-inpform-group {
+  display: flex;
+  flex-flow: wrap;
+  flex: 1;
+  width: 100%;
+  text-align: left;
+  .c-inpform {
+    width: auto;
+  }
+  .c-selform {
+    width: auto;
+  }
+  &.column-date {
+    display: inline-flex;
+  }
+  &.spc-between {
+    justify-content: space-between;
+    .c-selform {
+      flex: 1;
+      ~ .c-selform {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+.column-email {
+  .c-inpform {
+    width: calc((100% - 100px) / 3);
+    & + .c-selform {
+      margin-left: 30px;
+    }
+  }
+  .c-selform {
+    width: calc((100% - 100px) / 3);
+    &:last-child {
+      margin-left: 30px;
+    }
+  }
+  .text-dot + .c-selform {
+    margin-right: 30px;
+  }
+}
+.column-date {
+  .c-label {
+    width: $cLabel-w114;
+  }
+  .c-inpform {
+    margin-left: 30px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  /* .c-inpform-group {
+    display: inline-flex;
+    justify-content: space-between;
+    width: calc(100% - #{$cLabel-w114});
+    .c-inpform {
+      width: calc((100% - 32px) / 3);
+    }
+  } */
+  .text-date {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    color: $color-black;
+  }
+}
+.column-telnumber {
+  .c-selform {
+    position: relative;
+    width: $px206;
+    padding-right: $px46;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: 5px;
+      margin-right: 16px;
+      width: 14px;
+      height: 2px;
+      background: $color-bf;
+    }
+  }
+  .c-inpform {
+    width: calc((100% - #{$px210}));
+  }
+}
+.column-address {
+  // width: $pecent-100;
+  .c-btn-clear {
+    right: calc(#{$px20} + #{$px10});
+  }
+  .c-ibtn-find {
+    position: absolute;
+    top: 17px;
+    right: 0;
+    &:focus {
+      outline: 1px dotted $color-black !important;
+    }
+  }
+  &#{-type2} {
+    .c-abs-r {
+      position: absolute;
+      top: 15px;
+      right: 0;
+    }
+    .c-selform:first-child,
+    .c-inpform:first-child {
+      flex: none;
+      width: 220px;
+    }
+    .c-selform:first-child ~ .c-inpform,
+    .c-inpform:first-child ~ .c-inpform {
+      margin-left: 16px;
+    }
+  }
+}
+.column-sms {
+  .c-inp {
+    padding-right: 120px;
+  }
+  .c-btn-clear {
+    top: 14px;
+    right: 90px;
+  }
+  .c-btn-cert {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    color: $color-6;
+    &:focus {
+      outline: 1px dotted $color-black;
+    }
+  }
+  .text-msg {
+    font-size: 14px;
+  }
+}
+.column-search {
+  flex-flow: row wrap;
+  > .h3 {
+    flex: none;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .c-btn-clear {
+    right: calc(#{$px20} + #{$px10});
+  }
+  .c-ibtn-find {
+    position: absolute;
+    top: 17px;
+    right: 0;
+    &:focus {
+      outline: 1px dotted $color-black;
+    }
+  }
+  .c-inpform-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: wrap;
+  }
+  .c-selform {
+    width: 135px;
+    margin-right: 16px;
+    & ~ .search-keyword {
+      padding-left: 151px;
+    }
+  }
+  .c-inpform {
+    flex-grow: 1;
+    border: 1px solid transparent;
+  }
+  &.search-type2 {
+    .h3 {
+      flex: none;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    .c-inp {
+      border-width: 2px;
+      border-bottom-color: $color-26;
+    }
+    select {
+      border-width: 2px;
+      border-bottom-color: $color-26;
+    }
+  }
+  &.flex-end {
+    justify-content: flex-end;
+    .c-inpform {
+      flex: none;
+      width: 300px;
+    }
+  }
+  & + .row.c-table {
+    margin-top: 16px;
+  }
+}
+.search-keyword {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-top: 8px;
+  text-align: left;
+  strong {
+    display: inline-flex;
+    max-width: 98px;
+    margin-right: 20px;
+    color: $color-black;
+    font-size: 14px;
+    font-family: $noto-m;
+  }
+  .keyword-link {
+    display: inline-flex;
+    flex-grow: 1;
+    flex-flow: row wrap;
+    flex: 1;
+    color: $color-6;
+    font-size: 14px;
+    font-family: $noto-r;
+    font-weight: 400;
+    a {
+      display: inline-block;
+      margin-right: 12px;
+      text-decoration: underline;
+      color: $color-6;
+      font-family: $noto-r;
+      font-weight: 400;
+    }
+  }
+  // 키워드 타입2
+  &.keyword-type2 {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 4px;
+    right: 338px;
+    width: auto;
+    margin-top: 12px;
+    > strong {
+      position: relative;
+      max-width: none;
+      padding: 4px 9px 5px 13px;
+      border-radius: 4px;
+      background-color: #ffeff8;
+      color: $color-def;
+      font-size: 14px;
+      font-family: $noto-m;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        transform: translateY(-50%);
+        border-color: transparent;
+        border-style: solid;
+        border-width: 8px 0 8px 10px;
+        border-left-color: #ffeff8;
+      }
+    }
+    .keyword-link {
+      flex: none;
+    }
+  }
+  // 키워드 타입3
+  &.keyword-type3 {
+    display: block;
+    position: absolute;
+    top: 59px;
+    right: 0;
+    z-index: 2;
+    width: 300px;
+    min-height: 260px;
+    padding: 17px 14px 28px 24px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.16);
+    background-color: $color-white;
+    > strong {
+      display: block;
+      max-width: 100%;
+      font-size: 18px;
+    }
+    .keyword-link {
+      flex-direction: column;
+      margin-top: 8px;
+      > a {
+        margin-top: 16px;
+      }
+    }
+    .c-ibtn-close {
+      position: absolute;
+      top: 16px;
+      right: 14px;
+      width: 30px;
+      height: 30px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: url($image-icon + '/ico-close-x.svg') no-repeat 0 0;
+      background-size: 100%;
+    }
+  }
+}
+.column-search-select {
+  // width: $pecent-100;
+  .c-btn-clear {
+    right: calc(#{$px20} + #{$px10});
+  }
+  .c-ibtn-find {
+    position: absolute;
+    top: 17px;
+    right: 0;
+    &:focus {
+      outline: 1px dotted $color-black;
+    }
+  }
+}
+.blind-label {
+  .c-inpform-group,
+  .c-inpform {
+    // width: 100%;
+  }
+}
+// input type file
+.column-file {
+  position: relative;
+  &[tabindex] {
+    &:focus {
+      outline: 1px dotted $color-6;
+      .inp-file-text {
+        border-bottom-color: $color-black;
+      }
+    }
+  }
+  .inp-file-text {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 48px;
+    padding: 16px 0 8px;
+    border-bottom: 1px solid $color-b;
+    color: $color-b;
+    font-family: $noto-r;
+    font-weight: 400;
+    span {
+      overflow: hidden;
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 250px);
+      color: $color-b;
+      font-family: $noto-r;
+      font-weight: 400;
+    }
+  }
+  .c-btngroup {
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 86px;
+    z-index: 1;
+    .c-btn-gray-round-1.c-btn-add,
+    .c-btn-gray-round-1.c-btn-del {
+      color: $color-6;
+    }
+  }
+  .c-label {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 82px;
+    height: 32px;
+    input[type='file'] {
+      position: absolute;
+      width: 80px;
+      height: 30px;
+    }
+    .c-file-find {
+      position: absolute;
+      z-index: 1;
+    }
+  }
+  &.is-sus {
+    .inp-file-text {
+      border-bottom-color: $color-suc;
+    }
+  }
+  &.is-err {
+    .inp-file-text {
+      border-bottom-color: $color-err;
+    }
+  }
+}
+
+// text message
+.text-msg {
+  width: 100%;
+  margin-top: 8px;
+  text-align: left;
+  &:focus {
+    outline: 1px dotted $color-black;
+  }
+}
+.text-dot {
+  display: inline-block;
+  width: 62px;
+  height: 48px;
+  margin: 0 -4px;
+  padding: 15px 0 9px;
+  text-align: center;
+}
+.text-hypen {
+  display: inline-block;
+  width: 46px;
+  height: 48px;
+  margin: 0 -4px;
+  padding: 15px 0 9px;
+  text-align: center;
+}
+.text-sub {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: $font-s;
+  font-family: $noto-r;
+  font-weight: 400;
+}
+.text-sms {
+  display: none;
+  /* position: absolute;
+  right: 0; */
+  margin-top: 8px;
+  font-size: 14px;
+  font-family: $noto-r;
+  font-weight: 400;
+  text-align: right;
+  em {
+    color: #e34140;
+    margin-right: 16px;
+  }
+  .c-btn-time {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: $color-white;
+    font-family: $noto-r;
+    font-weight: 400;
+    color: $color-6;
+    &:focus {
+      outline: 1px dotted $color-black;
+    }
+  }
+}
+
+// icon button
+.c-ibtn-find {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  background: url($image-url + '/icon/ico-find-black.svg') no-repeat 50% 50%;
+  background-size: 100%;
+  &:focus:not(:focus-visible) {
+    outline: 1px dotted transparent;
+  }
+  &:focus {
+    outline-color: $color-black;
+  }
+}

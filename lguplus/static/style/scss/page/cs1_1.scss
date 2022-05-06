@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@import '../base/variable';
+// 자주하는 질문
+.p-sub-cs1-2-1 {
+  .c-tabmenu-list {
+    margin-bottom: -16px;
+  }
+  .c-accordion {
+    margin-top: 40px;
+  }
+  .c-table {
+    margin-top: 50px;
+  }
+  .icon-nodata {
+    margin-top: 40px;
+  }
+  .cs-info {
+    margin-top: 120px;
+  }
+  .offering-area {
+    margin-top: 150px;
+  }
+}
+// 설치가능 지역조회
+$iconGigaType: (
+  '-1': '/ico-giga-type1.svg',
+  '-2': '/ico-giga-type2.svg',
+  '-3': '/ico-giga-type3.svg',
+  '-4': '/ico-giga-type4.svg',
+  '-5': '/ico-giga-type5.svg',
+);
+.p-sub-cs1-2-4 {
+  .search-type2 {
+    max-width: 622px;
+    margin: 0 auto 64px;
+  }
+  .c-notice-wrap {
+    margin-top: 0;
+    .c-noticebox-h3 {
+      border: 0;
+      background-color: $color-f8 !important;
+    }
+  }
+  .installable-result-area {
+    .result-text {
+      margin: 112px auto;
+      text-align: center;
+      > p {
+        color: $color-black;
+        font-size: 20px;
+        font-family: $noto-m;
+        > em {
+          color: $color-def;
+        }
+      }
+      > .result-noti {
+        margin-top: 18px;
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          margin-top: 8px;
+          color: $color-6;
+          font-size: 14px;
+          &:first-child {
+            margin-top: 0;
+          }
+          &:before {
+            content: '';
+            display: inline-flex;
+            width: 3px;
+            height: 3px;
+            margin-right: 7px;
+            border-radius: 50%;
+            background-color: $color-6;
+            vertical-align: baseline;
+          }
+          > span {
+            display: inline-flex;
+            position: relative;
+            color: inherit;
+            font-size: inherit;
+            vertical-align: baseline;
+          }
+        }
+      }
+    }
+    .c-card-wrap {
+      margin-top: 0;
+      .c-card-list-icon > li > .c-card-box .c-flag {
+        top: 9px;
+        left: 9px;
+        height: 28px;
+      }
+      .c-card-list-icon > li > .c-card-box .info-title {
+        height: auto;
+        margin-bottom: 16px;
+      }
+      .c-card-list-icon > li > .c-card-box .info-body {
+        &:before {
+          width: 96px;
+          height: 96px;
+          background-color: $color-white;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+        }
+        @each $iconGigaTypeName, $iconGigaTypeSvg in $iconGigaType {
+          &.icon-giga#{$iconGigaTypeName}:before {
+            background-image: url($image-icon + '#{$iconGigaTypeSvg}');
+          }
+        }
+      }
+      .c-btn-group {
+        margin-top: 22px;
+      }
+      .c-btn-txt-detail-1 {
+        font-family: $noto-m;
+        &:after {
+          margin-left: 8px;
+        }
+      }
+    }
+    .c-btn-group {
+      margin-top: 80px;
+    }
+  }
+  .icon-nodata {
+    margin-bottom: 80px;
+  }
+  .bd-tb-wrap {
+    margin-top: 64px;
+    margin-bottom: 80px;
+  }
+  .c-table .b-table-sticky-header {
+    width: 100%;
+    max-height: 206px;
+    .table.b-table > thead > tr > th {
+      font-size: 16px;
+      &.c-hcell-subject {
+        text-align: left;
+      }
+    }
+    .table.b-table > tbody > tr > td {
+      padding: 15px 16px;
+      &.c-cell-type {
+        text-align: center;
+      }
+      .c-radio {
+        padding-left: 22px;
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+@charset "UTF-8";
+// url
+$base-url: '';
+$css-url: $base-url + '/style/scss/style'; //Default SCSS 경로
+$guide-url: $base-url + '/style/scss/guide'; //Guide SCSS 경로
+// $font-url: $base-url + '/fonts';
+$image-url: $base-url + '/images';
+$image-co: $image-url + '/common'; //공통 이미지 경로
+$image-icon: $image-url + '/icon'; //공통 아이콘 경로
+$image-main: $image-url + '/main'; //메인에 사용되는 Contents 이미지 경로
+// $image-sub: $image-sub + '/main'; //Contents 이미지 경로
+$image-guide: $image-url + '/guide'; //Guide 이미지 경로
+$image-board: $image-url + '/board'; //게사핀 이미지 경로
+
+// color
+$color-def: #e6007e !default;
+$color-black: #000 !default;
+$color-white: #fff !default;
+$color-active: #051335 !default;
+// 텍스트, 라인, 배경 등에 사용되는 색상.
+$color-err: #e34140 !default;
+// $color-suc: #06c !default;
+$color-suc: #00aa2f !default; //긍정 Color값 변경 PC_WebStyleGuide_v0.4_20210309
+$color-21: #212121 !default;
+$color-40: #404040 !default;
+$color-6: #666 !default;
+$color-a: #aaa !default;
+$color-b: #bbb !default;
+$color-c: #ccc !default;
+$color-d: #ddd !default;
+$color-e: #eee !default;
+$color-3: #333 !default;
+$color-f3: #f3f3f3 !default;
+$color-f5: #f5f5f5 !default;
+$color-f6: #f6f6f6 !default;
+$color-f8: #f8f8f8 !default;
+$color-fa: #fafafa !default;
+$base-cl-gray1: #666 !default;
+$base-cl-gray2: #aaa !default;
+$base-cl-gray3: #bbb !default;
+$base-cl-gray4: #ddd !default;
+$base-cl-gray5: #eee !default;
+$base-cl-gray6: #f3f3f3 !default;
+$base-cl-gray7: #f5f5f5 !default;
+$base-cl-gray8: #f8f8f8 !default;
+$base-cl-gray9: #fafafa !default;
+
+// font
+$font-family: 'Noto Sans R', -apple-system, 'droid sans fallback', 'Apple SD Gothic Neo', 'AppleGothic', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', sans-serif;
+$noto-r: 'Noto Sans R', -apple-system, 'droid sans fallback', 'Apple SD Gothic Neo', 'AppleGothic', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', sans-serif;
+$noto-m: 'Noto Sans M', -apple-system, 'droid sans fallback', 'Apple SD Gothic Neo', 'AppleGothic', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', sans-serif;
+$noto-B: 'Noto Sans B', -apple-system, 'droid sans fallback', 'Apple SD Gothic Neo', 'AppleGothic', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', sans-serif;
+$font-m: 16px;
+$font-s: 14px;
+$font-xs: 12px;
+$font-normal: normal;
+
+// size
+$mw-s: 320px;
+$mw-m: 1440px;
+$mw-l: 1920px;
+$w-m: 1440px;
+$header-h: 112px;
+$footer-h: 360px;
+
+// mixin
+// @include vendorPrefix(transition, 0.5s);
+@mixin vendorPrefix($property, $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}#{$property}: $value;
+  }
+}
+// @include position(absolute, $top: 10px, $left: 50%);
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin fontSmoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin boxModelmp {
+  margin: 0;
+  padding: 0;
+}
+@mixin tableReset {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@mixin touchAction {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+@mixin iosAppearance {
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+@mixin resetModel {
+  @include boxModelmp;
+  border: 0;
+  text-align: left;
+  vertical-align: top;
+}
+@mixin marginAuto {
+  width: $w-m;
+  margin: 0 auto;
+}
+//a에 호버되었을 때 상속 안되는 경우
+@mixin hoverColor {
+  &:hover,
+  &:focus {
+    color: $color-def;
+    border-color: $color-def;
+  }
+}
+
+//a에 호버되었을 때 상속 안되어야 하는 경우
+@mixin noHoverColor {
+  &:hover,
+  &:focus {
+    color: inherit;
+  }
+}
+
+/*****S: common에서 사용되는 variable 및 mixin******/
+$color-fb: #fbfbfb;
+
+@mixin selec-link-base($direction: bottom, $width: 6px, $pos: 0) {
+  content: '';
+  display: inline-block;
+  border: 1px solid #000;
+  border-top: none;
+  border-left: none;
+  width: $width;
+  height: $width;
+  @if ($direction==bottom) {
+    transform: rotate(45deg);
+  } @else if($direction==top) {
+    transform: rotate(-135deg);
+  }
+}
+
+@mixin lineClamp($fontSize: 16, $lineNum: 2, $lineHeight: 1.5) {
+  height: ($fontSize * 1.5 * $lineNum) + px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+@mixin hoverCard {
+  box-shadow: none;
+  border: 1px solid $color-e;
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+  }
+}
+@mixin txtMid {
+  font-family: $noto-m;
+  color: $color-black;
+}
+/*****E: common에서 사용되는 variable 및 mixin******/

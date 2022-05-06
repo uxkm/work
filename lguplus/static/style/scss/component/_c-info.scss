@@ -1,0 +1,699 @@
+@charset "UTF-8";
+*[class^='c-info'] {
+  display: flex;
+  flex-flow: wrap;
+  width: 1440px;
+  min-height: 72px;
+  padding: 23px 32px 22px 37px;
+  border-radius: 14px;
+  border: 1px solid $color-d;
+  background-color: $color-white;
+  &[class$='#{-box-shadow}'] {
+    border: 0;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+    *[class^='text-info'] {
+      &:before {
+        margin: 0 32px;
+      }
+      &[class$='#{-b}'] {
+        font-family: $noto-m;
+      }
+    }
+  }
+  &[class$='#{-with}'] {
+    position: relative;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    .c-btn-txt-detail-1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  &[class$='#{-agree}'] {
+    .with-inbox {
+      color: $color-black;
+      font-family: $noto-r;
+      font-weight: 400;
+      .with-in {
+        color: inherit;
+        font-family: inherit;
+      }
+    }
+    .with-inbox + .c-checkbox {
+      padding-left: 30px;
+    }
+    .with-inbox + .c-checkbox .text-chkbox {
+      margin-right: 0;
+      padding-left: 0;
+      font-size: 16px;
+      font-family: $noto-r;
+      font-weight: 400;
+    }
+  }
+  .text-label {
+    display: flex;
+    flex: none;
+    margin-right: 80px;
+    color: $color-black;
+    font-size: 18px;
+    font-family: $noto-m;
+  }
+  .text-label,
+  .c-checkbox,
+  .c-radio {
+    align-self: baseline;
+    .text-chkbox,
+    .text-radio {
+      margin-right: 76px;
+      padding-left: 54px;
+      font-size: 18px;
+      font-family: $noto-m;
+    }
+    + .with-inbox {
+      *[class^='text-info']:first-child {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+  .with-inbox {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  .with-in {
+    display: flex;
+    width: 100%;
+    ~ .with-in {
+      margin-top: 8px;
+    }
+  }
+  *[class^='text-info'] {
+    color: $color-6 !important;
+    font-size: 18px;
+    &:before {
+      content: '';
+      display: inline-flex;
+      width: 1px;
+      height: 12px;
+      margin: 0 16px;
+      background: $color-d;
+    }
+    &[class$='#{-b}'] {
+      color: $color-black !important;
+      font-family: $noto-r;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+  .text-name {
+    display: inline-flex;
+    color: $color-black;
+    font-family: $noto-m;
+    &.icon-person-r {
+      position: relative;
+      &:before {
+        content: '';
+        display: inline-flex;
+        flex: none;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        background: url($image-icon + '/ico-person-darkgray-r.svg') no-repeat 0 0;
+        background-size: contain;
+      }
+    }
+  }
+  .with-title {
+    display: inline-flex;
+    align-self: baseline;
+    flex: none;
+    margin-right: 70px;
+  }
+  .with-inbox-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    .with-inbox {
+      position: relative;
+      margin-left: 64px;
+      padding-left: 65px;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background: $color-d;
+      }
+      .text-title {
+        width: 120px;
+        color: $color-black;
+        font-family: $noto-m;
+      }
+      .text-info {
+        font-size: 16px;
+      }
+    }
+    *[class^='text-info'] {
+      &:before {
+        display: none;
+      }
+    }
+  }
+  .c-btn-group {
+    display: inline-flex;
+    flex: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .c-btn-txt-detail-1 {
+    display: inline-flex;
+    flex: none;
+    width: auto;
+    font-family: $noto-m;
+    &:after {
+      margin-left: 8px;
+    }
+  }
+  .c-btn-gray-round-1 {
+    display: inline-flex;
+    flex: none;
+  }
+}
+.c-timline-wrap {
+  &.with-mng {
+    display: flex;
+    width: 1440px;
+    margin: 0 auto;
+    padding: 36px 80px;
+    padding-right: 40px;
+    border-radius: 14px;
+    background: $color-fa;
+    .info-box {
+      display: flex;
+      flex: none;
+      flex-flow: wrap;
+      align-items: center;
+      width: 338px;
+      // margin-right: 143px; ie에서는 계산을 못해서 width로 대체
+      .info-picture {
+        overflow: hidden;
+        display: inline-flex;
+        position: relative;
+        width: 88px;
+        height: 88px;
+        margin-right: 32px;
+        border-radius: 50%;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    .info-mng {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      .text-mng {
+        display: flex;
+        margin-bottom: 7px;
+        color: $color-black;
+        font-family: $noto-m;
+      }
+      .text-name {
+        display: flex;
+        color: $color-black;
+        font-size: 18px;
+        font-family: $noto-B;
+      }
+      .text-office {
+        display: flex;
+        font-size: 12px;
+      }
+    }
+    .info-process-wrap {
+      display: flex;
+      flex: 1;
+      position: relative;
+      padding: 32px 0;
+      padding-left: 81px;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background: $color-d;
+      }
+      .info-process {
+        display: inline-flex;
+        flex-flow: wrap;
+        flex: 1;
+        align-self: flex-start;
+        margin-left: 20px;
+      }
+      .process-filed {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        margin-top: 22px;
+        &:first-child {
+          margin-top: 0;
+        }
+        .c-flag {
+          position: absolute;
+          top: 3px;
+          left: -52px;
+        }
+        &.is-current {
+          .process-time,
+          .process-state,
+          .process-confirm {
+            color: $color-def;
+          }
+          .process-time:before {
+            background-image: url($image-icon + '/ico-time-circle-magenta.svg');
+          }
+        }
+      }
+      .process-time {
+        display: inline-flex;
+        justify-content: flex-end;
+        position: relative;
+        width: 150px;
+        text-align: right;
+        font-size: 14px;
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 20px;
+          height: 20px;
+          background: url($image-icon + '/ico-time-circle-gray.svg') no-repeat 0 0;
+          background-size: contain;
+        }
+      }
+      .process-state {
+        display: inline-flex;
+        margin-left: 29px;
+        color: $color-black;
+        font-size: 16px;
+      }
+      .process-confirm {
+        display: inline-flex;
+        font-size: 12px;
+        &:before {
+          content: '';
+          display: inline-flex;
+          width: 1px;
+          height: 16px;
+          margin: 0 10px 0 12px;
+          background: $color-d;
+        }
+      }
+    }
+  }
+  &.with-mng-detail {
+    width: 100%;
+    border-radius: 0;
+    background: $color-fa;
+    .with-detail-box {
+      width: 1440px;
+      margin: 0 auto;
+      padding: 37px 0 39px;
+    }
+    .info-process-wrap {
+      width: 936px;
+      margin-top: 86px;
+    }
+    .info-process {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+      .process-filed {
+        display: inline-flex;
+        flex-flow: column wrap;
+        position: relative;
+        width: 100%;
+        min-width: 224px;
+        padding-top: 8px;
+        border-top: 1px solid $color-d;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: -4.5px;
+          left: 0;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: $color-d;
+        }
+        &.is-complate {
+          border-top: 0;
+          .process-state {
+            // color: $color-6;
+            color: $color-d;
+          }
+        }
+        &.is-current {
+          border-top: 1px dashed $color-d;
+          ~ .process-filed {
+            border-top: 1px dashed $color-d;
+            .process-state {
+              color: $color-d;
+            }
+          }
+          ~ .process-filed.is-complate {
+            border-top: 0;
+          }
+          &:before {
+            background: $color-def;
+          }
+          .process-time,
+          .process-state {
+            color: $color-def;
+          }
+        }
+      }
+      .process-time {
+        font-size: 12px;
+      }
+      .process-state {
+        margin-top: 6px;
+        font-size: 20px;
+        font-family: $noto-m;
+      }
+      .process-confirm {
+        font-size: 16px;
+      }
+      .bg-tooltip {
+        bottom: 80px;
+        left: -48px;
+      }
+      *[class^='c-tooltip'] {
+        bottom: 108px;
+        left: -30px;
+      }
+    }
+  }
+  &.with-mng-latest {
+    width: 1440px;
+    .info-process-wrap {
+      display: flex;
+      flex: 1;
+    }
+    .info-process {
+      display: flex;
+      justify-content: space-between;
+      &.reverse {
+        flex-direction: row-reverse;
+      }
+    }
+    .process-filed {
+      display: inline-flex;
+      flex-flow: column wrap;
+      margin-right: 80px;
+      padding-left: 28px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.is-current {
+        .process-time {
+          color: $color-def;
+          &:before {
+            background-image: url($image-icon + '/ico-time-circle-magenta.svg');
+          }
+        }
+      }
+    }
+    .process-time {
+      display: inline-flex;
+      position: relative;
+      margin-bottom: 8px;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: -28px;
+        width: 20px;
+        height: 20px;
+        background: url($image-icon + '/ico-time-circle-gray.svg') no-repeat 0 0;
+        background-size: contain;
+      }
+      i {
+        display: inline-flex;
+        align-items: center;
+        &:before {
+          content: '';
+          display: inline-flex;
+          width: 1px;
+          height: 16px;
+          margin: 0 8px;
+          background: $color-d;
+        }
+      }
+    }
+    .process-state {
+      display: inline-flex;
+      color: $color-black;
+    }
+    .process-confirm {
+      display: inline-flex;
+      margin-top: 4px;
+      font-size: 14px;
+    }
+  }
+}
+.c-info-box > .c-btn-gray-round-1 {
+  color: $color-6;
+}
+.info-pdwrap {
+  display: inline-flex;
+  flex-flow: wrap;
+  *[class*='bv-ibtn'] {
+    align-self: center;
+    margin-left: 8px;
+  }
+}
+.pd-name {
+  display: flex;
+  flex: none;
+  width: 100%;
+  margin-bottom: 4px;
+  color: $color-black;
+  font-size: 20px;
+  font-family: $noto-m;
+}
+.pd-price {
+  display: inline-flex;
+  color: $color-black;
+  font-size: 30px;
+  font-family: $noto-B;
+  em {
+    display: inline-flex;
+    margin-left: 2px;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+  }
+}
+$iconRuleType: (
+  '-type1': '/ico-basic-rule-type1.svg',
+  '-type2': '/ico-basic-rule-type2.svg',
+  '-type3': '/ico-basic-rule-type3.svg',
+  '-type4': '/ico-basic-rule-type4.svg',
+  '-type5': '/ico-basic-rule-type5.svg',
+  '-type6': '/ico-basic-rule-type6.svg',
+);
+.basic-rule-wrap {
+  display: flex;
+  flex-direction: column;
+  .basic-rule {
+    display: flex;
+    flex-flow: wrap;
+    margin-top: 34px;
+  }
+  .rule-item {
+    display: flex;
+    align-items: center;
+    width: calc(100% / 3);
+    margin-top: 64px;
+  }
+  *[class^='icon-rule'] {
+    display: inline-flex;
+    flex: none;
+    width: 64px;
+    height: 64px;
+    margin: 0 34px;
+    background: {
+      color: $color-white;
+      repeat: no-repeat;
+      position: 50% 50%;
+    }
+    @each $iconRuleTypeName, $iconRuleTypeSvg in $iconRuleType {
+      &[class$='#{$iconRuleTypeName}'] {
+        background-image: url($image-icon + '#{$iconRuleTypeSvg}');
+      }
+    }
+  }
+  .rule-box {
+    display: flex;
+    flex: 1;
+    flex-flow: column wrap;
+  }
+  .rule-title {
+    display: flex;
+    margin-bottom: 8px;
+    color: $color-black;
+    font-family: $noto-m;
+  }
+  .rule-text {
+    display: flex;
+    font-size: 14px;
+  }
+}
+
+// Survey
+.c-survey-wrap {
+  width: 1440px;
+  margin: 0 auto;
+}
+.c-survey {
+  width: 1440px;
+  margin: 16px auto 0;
+  padding: 80px 0;
+  border-radius: 14px;
+  border: 1px solid $color-e;
+  .survey-list {
+    width: 1002px;
+    margin: 0 auto;
+  }
+  .survey-item {
+    margin-top: 80px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .survey-q {
+    display: flex;
+    .number,
+    .text {
+      display: inline-flex;
+      font: {
+        size: 20px;
+        family: $noto-m;
+      }
+    }
+    .number {
+      margin-right: 8px;
+      color: $color-a;
+    }
+    .text {
+      color: $color-black;
+    }
+  }
+  .survey-a {
+    margin-top: 16px;
+    .c-inpfield {
+    }
+    .c-radio {
+    }
+    .c-textfield {
+    }
+    .c-textareaform {
+    }
+    .c-textarea {
+    }
+  }
+}
+// 자주하는 질문 CS영역
+.cs-info {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  text-align: center;
+  > .h2 {
+    display: flex;
+    justify-content: center;
+    flex: none;
+    width: 100%;
+    color: $color-21;
+  }
+  > .h2 ~ *[class^='cs-'] {
+    margin-top: 50px;
+  }
+  > *[class^='cs-'] {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    width: 448px;
+    margin: 0 80px;
+    text-align: left;
+    &:before {
+      content: '';
+      display: inline-flex;
+      flex: none;
+      width: 112px;
+      height: 112px;
+      margin-right: 32.5px;
+      border-radius: 50%;
+      background-color: $color-f3;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    &[class$='contact']:before {
+      background-image: url($image-icon + '/ico-contact.svg');
+    }
+    &[class$='ars']:before {
+      background-image: url($image-icon + '/ico-ars.svg');
+    }
+  }
+  .cs-infoarea {
+    display: inline-flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  .cs-text {
+    flex: none;
+    margin-bottom: 16px;
+    color: $color-black;
+    font-size: 18px;
+    font-family: $noto-m;
+  }
+  .c-btn-txt-detail-1 {
+    font-size: 16px;
+    font-family: $noto-m;
+    &:after {
+      margin-left: 8px;
+    }
+  }
+}
+// 미확정 영역
+.offering-area {
+  &.null {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 256px;
+    border-radius: 20px;
+    background: #aaaaaa;
+    color: $color-white;
+    font-size: 24px;
+  }
+}

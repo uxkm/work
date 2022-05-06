@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* Accessbility Text Hide */
+caption {
+  overflow: hidden;
+  // position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 1;
+}
+.is-blind {
+  overflow: hidden;
+  border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}
+/* Skip Navigation */
+.skip-nav {
+  position: absolute;
+  top: -1px;
+  width: 100%;
+  text-align: center;
+  a {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 1;
+    &:focus {
+      display: block;
+      z-index: 700;
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      background: $color-black;
+      color: $color-white;
+      text-align: center;
+    }
+  }
+}
+.is-show {
+  display: block !important;
+}
+.is-hide {
+  display: none !important;
+}
+// 성공
+.is-sus {
+  .text-msg {
+    color: $color-suc;
+  }
+}
+// 실패
+.is-err {
+  .text-msg {
+    color: $color-err;
+  }
+}
+// 필수항목
+.is-need {
+  display: inline-block;
+  // position: absolute;
+  // @include position(absolute, $top: 0, $right: 0);
+  width: 8px;
+  height: 8px;
+  margin: 5px 0 0 4px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url($image-icon + '/ico-need.png');
+  background-size: 100%;
+}

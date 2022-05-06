@@ -1,0 +1,88 @@
+@charset "UTF-8";
+$cinp-h: 48px;
+$cLabel-w10: 10px;
+$cLabel-w20: 20px;
+$cLabel-w30: 30px;
+$cLabel-w40: 40px;
+$cLabel-w50: 50px;
+$cLabel-w60: 60px;
+$cLabel-w70: 70px;
+$cLabel-w75: 75px;
+$cLabel-w80: 80px;
+$cLabel-w90: 90px;
+$cLabel-w100: 100px;
+$cLabel-w114: 114px;
+$cLabel-w178: 178px;
+$cSel-w160: 160px;
+$px10: 10px;
+$px20: 20px;
+$px46: 46px;
+$px94: 94px;
+$px160: 160px;
+$px206: 206px;
+$px210: 210px;
+$pecent-100: 100%;
+$pecent-90: 90%;
+$pecent-80: 80%;
+$pecent-70: 70%;
+$pecent-60: 60%;
+$pecent-50: 50%;
+$color-bf: #bfbfbf;
+.c-selform.c-dropbox {
+  display: flex;
+  flex-flow: wrap;
+}
+.c-inpfield.c-dropbox {
+  .c-label {
+    width: $px94;
+  }
+  .c-selform {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: wrap;
+    flex: 1;
+    position: relative;
+    & ~ .c-inpform-group {
+      padding-left: $px94;
+    }
+  }
+  .c-inpform-group {
+    flex: none;
+    .c-selform {
+      position: relative;
+      &:first-child {
+        flex: none;
+        width: $px206;
+        padding-right: $px46;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: 5px;
+        margin-right: 16px;
+        width: 14px;
+        height: 2px;
+        background: $color-bf;
+      }
+    }
+  }
+  .c-inpform {
+    .c-inp {
+      padding-right: 120px;
+    }
+    .c-btn-clear {
+      top: 14px;
+      right: 90px;
+    }
+    .c-btn-cert {
+      position: absolute;
+      top: 8px;
+      right: 0;
+    }
+    &.is-clear .c-btn-clear {
+      display: inline-block;
+    }
+  }
+}

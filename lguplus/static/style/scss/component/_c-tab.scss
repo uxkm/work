@@ -1,0 +1,290 @@
+@charset "UTF-8";
+$color-f9: #f9f9f9;
+.c-tabmenu-wrap {
+  &.search-type2 {
+    width: 1440px;
+  }
+  .column-search,
+  .column-search.flex-end {
+    justify-content: flex-end;
+    width: 1440px;
+    margin-bottom: 16px;
+  }
+  .c-inpform {
+    flex: none;
+    width: 300px;
+  }
+}
+.c-tab-default {
+  > ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    > li {
+      // display: flex;
+      display: inline-block;
+      justify-content: flex-start;
+      align-items: center;
+      flex: 1;
+      > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        position: relative;
+        height: 72px;
+        padding: 5px;
+        color: $color-6;
+        font-size: 24px;
+        text-align: center;
+        outline-color: $color-d;
+        word-break: break-all;
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $color-d;
+        }
+        &:focus {
+          color: $color-def;
+          font-family: $noto-B;
+          &:after {
+            height: 3px;
+            background-color: $color-def;
+          }
+        }
+      }
+      &.is-active {
+        > a {
+          color: $color-def;
+          font-family: $noto-B;
+          &:after {
+            height: 3px;
+            background-color: $color-def;
+          }
+        }
+      }
+    }
+  }
+}
+.c-tab-slide {
+  display: flex;
+  flex: 1;
+  position: relative;
+  width: 1440px;
+  height: 56px;
+  border-bottom: 1px solid $color-e;
+  background-color: $color-f8;
+  .c-tab-slidemenu {
+    overflow: hidden;
+    display: flex;
+    flex: none;
+    align-items: center;
+    overflow: hidden;
+    width: 1330px;
+    height: 100%;
+    white-space: nowrap;
+    > ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      height: 100%;
+      // padding: 0 28px;
+      white-space: nowrap;
+      > li {
+        // display: inline-flex;
+        display: inline-block;
+        height: 100%;
+        margin: 0 28px;
+        > a {
+          display: inline-flex;
+          align-items: center;
+          position: relative;
+          height: 100%;
+          padding: 0 1px;
+          color: $color-6;
+          font-family: $noto-r;
+          font-weight: 400;
+          text-align: center;
+          &:after {
+            content: '';
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: -1px;
+            width: calc(100% + 2px);
+            height: 2px;
+            background-color: $color-def;
+          }
+          &:focus {
+            color: $color-def;
+            &:after {
+              display: block;
+            }
+          }
+        }
+        &.is-active {
+          > a {
+            color: $color-def;
+            &:after {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  .c-tab-btn-group {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    width: 109px;
+    margin: 0;
+    padding: 0;
+    button {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      width: 54.96px;
+      height: 56px;
+      margin: 0;
+      padding: 0;
+      border: 1px solid $color-d;
+      background-color: $color-f9;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 8px 16px;
+      &.is-disabled,
+      &:disabled {
+        border-color: $color-e;
+      }
+      &.c-tab-btn-prev {
+        background-image: url($image-icon + '/ico-arrow-left-type1.svg');
+        &.is-disabled,
+        &:disabled {
+          background-image: url($image-icon + '/ico-arrow-left-type1-dis.svg');
+        }
+      }
+      &.c-tab-btn-next {
+        background-image: url($image-icon + '/ico-arrow-right-type1.svg');
+        &.is-disabled,
+        &:disabled {
+          background-image: url($image-icon + '/ico-arrow-right-type1-dis.svg');
+        }
+      }
+    }
+  }
+}
+.c-tabmenu-list {
+  margin-top: 20px;
+  padding: 0 27px;
+  > ul {
+    display: flex;
+    > li {
+      display: inline-flex;
+      margin: 0 4px;
+      > a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        padding: 0 20px;
+        border: 1px solid $color-d;
+        border-radius: 20px;
+        color: $color-6;
+        font-size: 14px;
+        font-family: $noto-r;
+        font-weight: 400;
+        text-align: center;
+        &:focus {
+          border-color: $color-def;
+          color: $color-def;
+        }
+      }
+      &.is-active {
+        > a {
+          border-color: $color-def;
+          color: $color-def;
+        }
+      }
+    }
+  }
+}
+.c-tab-link {
+  display: flex;
+  > ul {
+    display: flex;
+    flex: 1;
+    > li {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      &:after {
+        content: '';
+        width: 1px;
+        height: 16px;
+        background-color: $color-d;
+      }
+      &:first-child {
+        > a {
+          padding-left: 0;
+        }
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+      > a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 48px;
+        padding: 0 30px;
+        color: $color-black;
+        font-family: $noto-r;
+        font-weight: 400;
+        &:focus {
+          color: $color-def;
+          font-family: $noto-m;
+          font-weight: 500;
+        }
+      }
+      &.is-active {
+        > a {
+          color: $color-def;
+          font-family: $noto-m;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+.c-tabcontent-box {
+  margin-top: 40px;
+}
+.c-process-tit-area {
+  height: 88px;
+  &.has-step {
+    display: flex;
+    justify-content: space-between;
+    .c-step-wrap {
+      position: relative;
+      left: 22px;
+      margin-top: 0;
+    }
+  }
+}
+.c-service-process-detail {
+  height: 280px;
+  background-color: $color-fa;
+}

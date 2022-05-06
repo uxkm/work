@@ -1,0 +1,86 @@
+@charset "UTF-8";
+@import '../../../lib/vue2-datepicker/scss/index.scss';
+.m-vue2-datepicker {
+  .mx-input {
+    min-height: 48px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+  }
+}
+.mx-datepicker {
+  &.c-size-normal {
+    width: 252px;
+  }
+}
+.mx-datepicker-popup {
+  box-shadow: none;
+  font-size: 14px;
+}
+.mx-datepicker-main {
+  border: 1px solid $base-cl-gray4;
+  font: inherit;
+  color: #212121;
+}
+.mx-btn {
+  color: #212121 !important;
+}
+.mx-btn-icon-double-right,
+.mx-btn-icon-double-left {
+  display: none;
+}
+.mx-icon-right:before,
+.mx-icon-left:before {
+  width: 24px;
+  height: 24px;
+  transform: rotate(0);
+  border: none;
+  background: url($image-icon + '/ico-datepicker-header-arrow-right.svg') no-repeat 0 0/24px auto;
+}
+.mx-icon-left:before {
+  transform: rotateY(180deg);
+}
+.mx-calendar {
+  width: 360px;
+  padding: 40px 32px;
+}
+.mx-table-date td,
+.mx-table-date th {
+  font-size: 14px;
+  text-align: center;
+  height: 42px;
+  padding: 0;
+}
+.mx-table-date th {
+  color: #888888;
+}
+.mx-calendar-content {
+  height: auto;
+}
+.mx-table-date .today {
+  color: #fff !important;
+}
+.mx-table-date .today > div,
+.mx-calendar-content .cell.active {
+  background-color: #051335;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 50%;
+  text-align: center;
+}
+.mx-calendar-content .cell.active {
+  background-color: #e6007e;
+}
+.mx-input-wrapper .mx-icon-clear {
+  display: none !important;
+}
+.mx-icon-calendar {
+  display: block !important;
+  width: 22px;
+  height: 22px;
+  background: url($image-icon + '/Ico-inp-datepiker.svg') no-repeat 50% 50%/100% auto;
+  svg {
+    display: none !important;
+  }
+}

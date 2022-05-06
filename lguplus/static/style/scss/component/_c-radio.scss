@@ -1,0 +1,88 @@
+@charset "UTF-8";
+// Radio
+$radio-pad: 30px;
+$radio-wh-sm: 22px;
+$radio-circle: 12px;
+.c-radio {
+  display: inline-block;
+  position: relative;
+  margin-right: 32px;
+  padding-left: $radio-pad;
+  color: $color-black;
+  text-align: left;
+  cursor: pointer;
+  &:last-child {
+    margin-right: 0;
+  }
+  input[type='radio'] {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: -1;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    &:checked ~ .text-radio > .icon {
+      border-color: $color-def;
+      &:after {
+        background-color: $color-def;
+      }
+    }
+    &:checked ~ .text-radio > b {
+      &.is-blind {
+        outline: 0;
+      }
+    }
+    &:disabled ~ .text-radio > .icon {
+      border-color: $color-c;
+      background-color: $color-e;
+      &:after {
+        background-color: transparent;
+      }
+    }
+    &:disabled ~ .text-radio {
+      color: $color-6;
+    }
+    &:focus ~ .text-radio > .icon,
+    &:focus ~ .text-radio > b {
+      outline: 1px dotted $color-black;
+    }
+  }
+  .text-radio {
+    display: inline-block;
+    vertical-align: baseline;
+    > b {
+      color: inherit;
+      font-weight: inherit;
+      vertical-align: baseline;
+    }
+  }
+  .icon {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: $radio-wh-sm;
+    height: $radio-wh-sm;
+    border: 2px solid $color-b;
+    border-radius: 50%;
+    background-color: #fff;
+    &:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: $radio-circle;
+      height: $radio-circle;
+      background-color: $color-white;
+      border-radius: 50%;
+      background-color: $color-white;
+      -ms-high-contrast-adjust: none;
+    }
+  }
+}

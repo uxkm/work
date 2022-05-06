@@ -1,0 +1,175 @@
+@charset "UTF-8";
+@import '../base/variable';
+// Nuxt 안의 콘텐츠 전체 레이아웃
+.l-sub-main {
+  background-color: $color-white;
+}
+// Header 전체 감싸는 부분
+.header-layout-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  background-color: $color-white;
+}
+// Header 가운데 영역
+.header-lgu {
+  position: relative;
+  @include marginAuto;
+  height: $header-h;
+  background: url($image-url + '/common/sample-img-header.jpg') no-repeat 50% 50%;
+}
+
+// 페이지 콘텐츠 감싸는 부분
+.submain-section {
+  // min-height: 1500px; //임시 높이지정
+  padding-bottom: 200px;
+}
+// 콘텐츠 상단 정보
+.toparea-contents {
+  position: relative;
+  z-index: 10;
+  .toparea-contents-bg {
+    width: 100%;
+    background-color: $color-f8;
+    .sub-page-position-wrap {
+      position: relative;
+      z-index: 1;
+      .sub-page-position {
+        @include marginAuto;
+        .sub-position-list {
+          display: flex;
+          justify-content: flex-end;
+          width: 100%;
+          padding-top: 14px;
+          > li {
+            font-size: 0;
+            line-height: 1;
+            position: relative;
+            > a {
+              display: inline-block;
+              font-size: 12px;
+              color: $color-a;
+              position: relative;
+              &.arrow-expand {
+                padding-right: 15px;
+                &:after {
+                  content: '';
+                  position: absolute;
+                  top: 1px;
+                  right: 0;
+                  width: 8px;
+                  height: 8px;
+                  border: 3px solid $color-a;
+                  border-left: none;
+                  border-top: none;
+                  transform: rotate(45deg);
+                }
+                + ul {
+                  display: none;
+                }
+              }
+            }
+            &:nth-last-of-type(1) {
+              > a {
+                color: #666;
+                font-weight: bold;
+              }
+            }
+            &:nth-of-type(1) ~ li {
+              &:before {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: 8px;
+                height: 8px;
+                border: 1px solid $color-a;
+                border-left: 1px solid transparent;
+                border-top: 1px solid transparent;
+                transform: rotate(-45deg);
+                margin: 0 12px;
+              }
+            }
+            ul {
+              position: absolute;
+              top: 20px;
+              right: -5px;
+              white-space: nowrap;
+              background-color: #fff;
+              font-size: 12px;
+              font-weight: normal;
+              border-radius: 8px;
+              border: 1px solid $color-d;
+              padding: 16px 19px;
+              > li {
+                > a {
+                  display: block;
+                  padding: 7px 0;
+                  &.active {
+                    color: $color-def;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .sub-top {
+      position: relative;
+      @include marginAuto;
+      // height: 223px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px 0;
+      a {
+        &.underline {
+          font-family: $noto-r;
+        }
+      }
+      .h1 {
+        + .h5,
+        + p {
+          padding-top: 10px;
+          + p {
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+// 콘텐츠 내용 전체 감싸는 부분
+.middlearea-contents {
+  background-color: $color-white;
+}
+// 콘텐츠 가운데 영역
+.middlearea-contents {
+  //height: 1046px;
+  margin-top: 64px; //임시 여백 지정
+  // background-color: $color-e;
+}
+.middlearea {
+  @include marginAuto;
+}
+.chead {
+  .h3 {
+  }
+}
+.cbody {
+}
+.cfoot {
+}
+
+// 하단 전체 감싸는 부분
+.footer-layout-wrap {
+  background-color: $color-f6;
+}
+// Header 가운데 영역
+.footer-lgu {
+  @include marginAuto;
+  height: $footer-h;
+  background: url($image-url + '/common/sample-img-footer2.jpg') no-repeat 50% top;
+}

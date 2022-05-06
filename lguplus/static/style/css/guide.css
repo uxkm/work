@@ -1,0 +1,409 @@
+.ukguide a[class*='-active'] {
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #e6007e;
+}
+
+.ukguide .uktoggle {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -340px;
+  z-index: -1;
+  border: 0;
+  background-color: #fff;
+}
+
+.ukguide .uktoggle:checked ~ .uktoggle-label {
+  left: 0;
+}
+
+.ukguide .uktoggle:checked ~ .ukmain .uksnb {
+  left: -270px;
+}
+
+.ukguide .uktoggle:checked ~ .ukmain .uksnb:after {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+.ukguide .uktoggle:checked ~ .ukmain {
+  padding-left: 70px;
+}
+
+.ukguide .uktoggle-label {
+  display: none;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 80px;
+  left: 280px;
+  z-index: 2;
+  width: 60px;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ukguide .ukheader {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  min-height: 80px;
+  padding: 15px;
+  background-color: #212121;
+}
+
+.ukguide .ukheader .guide-logo {
+  color: #fff;
+  font-size: 30px;
+}
+
+.ukguide .ukheader .guide-logo a {
+  color: inherit;
+  font-size: inherit;
+}
+
+.ukguide .uknav {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+
+.ukguide .uknav a {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 16px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.ukguide .uknav a[class*='-active'] {
+  color: #666;
+}
+
+.ukguide .ukmain {
+  padding: 80px 0 80px 340px;
+}
+
+.ukguide .uksnb {
+  overflow: auto;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 1;
+  width: 340px;
+  height: calc(100% - 80px);
+  padding: 30px 15px;
+  background-color: #f8f8f8;
+}
+
+.ukguide .uksnb input {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  z-index: -1;
+}
+
+.ukguide .uksnb input:checked ~ ul {
+  display: block;
+}
+
+.ukguide .uksnb label {
+  display: block;
+  padding: 5px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.ukguide .uksnb > ul > li {
+  position: relative;
+  margin: 10px 0 0;
+}
+
+.ukguide .uksnb ul ul {
+  display: none;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.ukguide .uksnb ul ul a {
+  display: block;
+  height: 40px;
+  padding: 5px 0;
+}
+
+.ukguide .uksnb ul ul a:focus, .ukguide .uksnb ul ul a:hover {
+  font-weight: 700;
+}
+
+.ukguide .uksnb ul ul a[class*='-active'], .ukguide .uksnb ul ul a[class*='-active']:focus, .ukguide .uksnb ul ul a[class*='-active']:hover {
+  border-radius: 20px;
+  padding: 5px 0;
+  color: #e6007e;
+  font-weight: 700;
+}
+
+.ukguide section {
+  margin: 0;
+  padding: 15px;
+}
+
+.ukguide section > h1 {
+  margin-bottom: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #707070;
+  font-size: 24px;
+  font-family: 'Noto Sans R';
+}
+
+.ukguide .uktable {
+  margin: 20px 0;
+}
+
+.ukguide .uktable.ukfixed table {
+  table-layout: fixed;
+}
+
+.ukguide .uktable figcaption {
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+  font-family: 'Noto Sans R';
+  font-size: 20px;
+  text-align: center;
+}
+
+.ukguide .uktable thead th {
+  border-top: 1px solid #eee;
+  padding: 10px 16px;
+}
+
+.ukguide .uktable th {
+  height: 40px;
+  border: 1px solid #eee;
+  background-color: #f8f8f8;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.ukguide .uktable th.tleft {
+  padding: 0 16px;
+  text-align: left;
+}
+
+.ukguide .uktable td {
+  padding: 16px;
+  border: 1px solid #eee;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.ukguide .uktable td.tleft {
+  text-align: left;
+}
+
+.ukguide .uktable td.vtop {
+  vertical-align: top;
+}
+
+.ukguide .uksection {
+  margin-top: 40px;
+}
+
+.ukguide .uksection:first-child {
+  margin-top: 0;
+}
+
+.ukguide .uksection h2 {
+  margin-bottom: 15px;
+}
+
+.ukguide .ukdltbl {
+  margin-top: 10px;
+}
+
+.ukguide .ukdltbl:first-child {
+  margin-top: 0;
+}
+
+.ukguide .ukdltbl dl {
+  display: table;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.ukguide .ukdltbl dl:first-child {
+  margin-top: 0;
+}
+
+.ukguide .ukdltbl dl dt {
+  display: table-cell;
+  width: 180px;
+}
+
+.ukguide .ukdltbl dl dd {
+  display: table-cell;
+}
+
+.ukguide .ukdltbl.col4 dl dt {
+  width: 15%;
+}
+
+.ukguide .ukdltbl.col4 dl dd {
+  width: 35%;
+}
+
+.ukguide .ukdltbl .plist strong {
+  display: inline-block;
+  width: 100px;
+}
+
+.ukguide .uktblbox dl {
+  position: relative;
+  display: table;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.ukguide .uktblbox dl:first-child {
+  margin-top: 0;
+}
+
+.ukguide .uktblbox dt {
+  display: table-cell;
+  width: 450px;
+  font-size: 18px;
+  vertical-align: top;
+}
+
+.ukguide .uktblbox dt span {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.ukguide .uktblbox dd {
+  display: table-cell;
+  width: calc(100% - 380px);
+}
+
+.ukguide .uktblbox dd .bgbox {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.ukguide .uktblbox dd .cltext {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.ukguide .uktblbox dd .clbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.ukguide .uktblbox dd .clbox:first-child {
+  margin-top: 0;
+}
+
+.ukguide .uktblbox dd .clbox .cl-item {
+  display: inline-block;
+  border: 1px solid #ddd;
+}
+
+.ukguide .typobox .tyop-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ukguide .typobox .tyop-item strong {
+  display: block;
+  font-size: 28px;
+  font-family: 'Noto Sans B';
+}
+
+.ukguide .typobox .tyop-item .typo-center {
+  display: block;
+}
+
+.ukguide .typobox .tyop-item span {
+  display: block;
+  font-size: 20px;
+  font-family: 'Noto Sans R';
+}
+
+.ukguide .code-editor textarea {
+  width: 100%;
+  height: 130px;
+  border: 1px solid #ddd;
+  background-color: #f5f5f5;
+  font-size: 14px;
+}
+
+.ukguide .code-editor.cl-codbox {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 440px;
+}
+
+.ukguide .code-editor.cl-codbox textarea {
+  height: 222px;
+}
+
+.ukguide .uk-linkgroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.ukguide .uk-linkgroup a {
+  display: inline-block;
+  width: calc((100% - 10px) / 2);
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #e6007e;
+  color: #fff;
+  text-align: center;
+}
+
+.ukguide .uk-linkgroup a:nth-child(1), .ukguide .uk-linkgroup a:nth-child(2) {
+  margin-top: 0;
+}
+/*# sourceMappingURL=guide.css.map */
