@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>팝업 및 레이어 유형</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<!-- <script src="//imagedev.hmall.com/p/js/co/common.js"></script> -->
+<!-- UI에 사용하는 기본 js  -->
+
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/main.css">
+<style>
+    .container{width:1080px;margin:0 auto;}
+    .container h2{margin-bottom:20px;padding:20px 0;border-bottom:1px solid #ddd;}
+    .desktop .flexwrap .btn span{letter-spacing:-1.6px;}
+    /* 접근성 관련 확인용 focus 처리 */
+    *:focus{outline:1px dotted #000!important}
+</style>
+<script>
+    $(function(){
+        $(document).on("click",".lyopen",function(){
+            var target = $(this).attr("data-target");
+            var el = $(this);
+            $("."+target).fadeTo(500, 1,"swing").attr("data-target",target);
+            $("."+target).find(".pop-wrap").attr("tabindex","0").focus();
+            $(this).addClass(target);
+            $("body").addClass('nflow');
+            el.attr("data-focus","focus");
+            // uxKeyDown();
+            return false;
+        });
+        $(document).on("click",".lyclose",function(){
+            var layerWrap = $(this).parents(".layer-popup");
+            var target = layerWrap.attr("data-target");
+            layerWrap.fadeOut(200).find(".pop-wrap").removeAttr("tabindex");
+            $('body').removeClass("nflow");
+            $("[data-focus~=focus]").focus();
+            window.setTimeout(function(){
+                $(".lyopen."+target).trigger("focus").removeClass(target);
+                $("[data-focus~=focus]").removeAttr("data-focus");
+            },500); 
+            return false;
+        });
+        function uxKeyDown() {
+            /* $('.pop-wrap').keydown(function(e) {
+                if (e.keyCode == 9 && e.shiftKey) {
+                    return false;
+                }
+            });
+            $('.pop-wrap').find('.btn:last').keydown(function(e) {
+                if (e.keyCode == 9 && !e.shiftKey) {
+                    return false;
+                }
+            }); */
+            $('.pop-wrap').find('.btn:last').keydown(function(e) {
+                if(e.which  == 9 && e.shiftKey) {
+                    return false;
+                }
+            });
+            $('.pop-wrap').keydown(function(e) {
+                if (e.which == 9 && !e.shiftKey) {
+                    return false;
+                }
+            });
+        }
+        $('.pop-wrap').keydown(function(event) {
+            var vKeyCode = event.keyCode || event.which; 
+            if(vKeyCode == 9){ 
+                if(event.shiftKey){ 
+                    // Shift + Tab 이벤트 
+                    return false;
+                }else{ 
+                    // Tab 이벤트 
+                    // return true;
+                } 
+            } 
+        });
+        $('.tabbreak').keydown(function(event) {
+            var n = $(".btn").length; 
+            var vKeyCode = event.keyCode || event.which; 
+            if(vKeyCode == 9){ 
+                if(event.shiftKey){ 
+                    // Shift + Tab 이벤트 
+                    // return true;
+                }else{ 
+                    // Tab 이벤트  
+                    var nextIndex = $('.btn').index(this) + 1; 
+                    if(nextIndex < n){ 
+                        $('.btn')[nextIndex].focus(); 
+                    } 
+                    // event.preventDefault(); 
+                    return false;
+                } 
+            } 
+        });
+    })
+</script>
+</head>
+<body>
+<!-- 
+Contents 각페이지마다 해당되는 wrap에 class 추가 예: <div class="wrap layerpoup">
+-->
+<div class="wrap layerpoup"> 
+
+    <main class="cmain main" role="main" id="mainContents"><!-- 메인페이지 'main' 클래스 추가 -->
+        <div class="container">
+            <h2 class="large-title">[PC]팝업 및 레이어 유형</h2>
+            <dl>
+                <dt class="minor-headings" style="padding-bottom:5px;border-bottom:1px solid #eee;">브랜드 검색/최근본쇼핑/쿠키사용안내 레이어</dt>
+                <dd style="padding:15px 0;">
+                    <div class="btngroup flexwrap">
+                        <button class="btn btn-linegray sm lyopen" data-target="brand"><span>브랜드검색(PBB006)</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="recently"><span>최근본쇼핑(PBB008)</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="cookie-bottom"><span>쿠키사용안내(PBB005)</span></button>
+                    </div>
+                </dd>
+
+                <dt class="minor-headings" style="padding-bottom:5px;border-bottom:1px solid #eee;">레이어 팝업 기본 유형 (타이틀/닫기버튼)</dt>
+                <dd style="padding:15px 0;">
+                    <div class="btngroup flexwrap">
+                        <!-- 회원가입 / 로그인 -->
+                        <button class="btn btn-linegray sm lyopen" data-target="join-info-personal"><span>회원가입정보입력(PIA006) : 개인정보 수집 및 이용</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="join-naver-personal"><span>네이버로 회원가입(PIA023) : 개인정보 수집 및 이용</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="adult-certi"><span>성인인증(PIA013) : 휴대폰 본인인증</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="first-order-certi"><span>첫 주문 인증(PIA027) : 휴대폰 본인인증</span></button>
+                        <!-- // 회원가입 / 로그인 -->
+                    </div>
+                </dd>
+
+                <dt class="minor-headings" style="padding-bottom:5px;border-bottom:1px solid #eee;">알럿 유형</dt>
+                <dd style="padding:15px 0;">
+                    <div class="btngroup flexwrap">
+                        <!-- 회원가입/로그인 -->
+                        <button class="btn btn-linegray sm lyopen" data-target="login-err-report"><span>로그인오류신고(PIA023) : 이용자 동의사항 미 동의 시</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="join-pw-set"><span>네이버로 회원가입(PIA023) : 비밀번호 설정 필요</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="join-already"><span>SNS 연동 회원가입 : 가입된 계정일 경우</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="join-byte-exceed"><span>SNS 연동 회원가입 : 이메일 자리수가 30byte를 초과하는 경우</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="join-resting-customer"><span>휴면고객안내(PIA010) : 휴면해제 취소 시</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="join-certi-number"><span>첫 주문 인증 &gt; 휴대폰 번호 인증(PIA027) : 인증번호 발송</span></button>
+                        <button class="btn btn-linegray sm lyopen" data-target="join-certi-email"><span>첫 주문 인증 &gt; 이메일 인증(PIA028)</span></button>
+                        <!-- // 회원가입/로그인 -->
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <!-- //.container -->
+    </main>
+    <!-- //.cmain -->
+
+    <!-- 
+        dimlayer
+        alert
+
+        tooltip
+        push
+        toast
+     -->
+
+    <!-- ****************** Other Popup  *******************-->
+    <!-- 최근 본 쇼핑 -->
+    <div class="layer-popup recently" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <strong class="pop-title">최근본쇼핑<button class="btn btn-linelgray sm"><span>편집</span></button> </strong>
+                <!-- <strong class="pop-title">최근본쇼핑<button class="btn btn-linelgray sm"><span>편집취소</span></button> </strong> -->
+                <div class="pop-content">
+                    <!-- 팝업 컨텐츠 -->
+
+                    <!-- 최근 본 쇼핑이 없는 경우  -->
+                    <div class="top-area">
+                        <p class="recently-none"><span>최근본쇼핑이 없습니다.</span></p>
+                        <p class="best-title">지금 BEST 상품을 만나보세요.</p>
+                    </div>
+                    <!-- // 최근 본 쇼핑이 없는 경우  -->
+
+                    <!-- 탭 리스트 -->
+                    <div class="sort-group tab-recent">
+                        <ul class="sort-menu" role="tablist">
+                            <li class="selected" role="presentation"><button role="tab" aria-selected="true" class="sort-total"><span>전체</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-product"><span>상품</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-search"><span>검색어</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-brand"><span>브랜드</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-categody"><span>카테고리</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-exhibition"><span>기획전</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-event"><span>이벤트</span></button></li>
+                        </ul>
+        
+                        <!-- 편집 시 분류 비활성화 - 각 button에 disabled 추가 -->
+                        <ul class="sort-menu" role="tablist" style="display:none">
+                            <li class="selected" role="presentation"><button role="tab" aria-selected="true" class="sort-total" disabled=""><span>전체</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-product" disabled=""><span>상품</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-search" disabled=""><span>검색어</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-brand" disabled=""><span>브랜드</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-categody" disabled=""><span>카테고리</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-exhibition" disabled=""><span>기획전</span></button></li>
+                            <li role="presentation"><button role="tab" aria-selected="false" class="sort-event" disabled=""><span>이벤트</span></button></li>
+                        </ul>
+                        <!-- //.sort-menu -->
+                    </div>
+                    <!-- 탭 리스트  -->
+
+                    <div class="sort-content" role="tabpanel" aria-label="전체" aria-selected="true">
+                        <!-- 최근 본 쇼핑 -->
+                        <div class="recently-list-wrap">
+                            <ul>
+                                <!-- 최근 본 쇼핑 리스트 없는 경우 베스트 상품 -->
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="img"><img src="//imagedev.hmall.com/p/img/co/sample/img-recently01.jpg"
+                                                alt="2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상"></span>
+                                        <span class="prd-info">
+                                            <span class="name">2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</span>
+                                            <span class="price-wrap">
+                                                <span class="prd-price"><strong>27,000</strong>원</span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="img"><img src="//imagedev.hmall.com/p/img/co/sample/img-recently01.jpg"
+                                                alt="2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상"></span>
+                                        <span class="prd-info">
+                                            <span class="name">2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈
+                                                최신상</span>
+                                            <span class="price-wrap">
+                                                <span class="prd-price"><strong>27,000</strong>원</span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <!-- // 최근 본 쇼핑 리스트 없는 경우 베스트 상품 -->
+
+                                <!-- 최근 본 상품 있는 경우 -->
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="img"><img src="//imagedev.hmall.com/p/img/co/sample/img-recently01.jpg"
+                                                alt="2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상"></span>
+                                        <span class="prd-info">
+                                            <span class="name">2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈
+                                                최신상</span>
+                                            <span class="price-wrap">
+                                                <span class="prd-price"><strong>27,000</strong>원</span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <em class="shop-type product">상품</em>
+                                        <span class="recently-text">나이키</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <em class="shop-type search">검색어</em>
+                                        <span class="recently-text">남자양말</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <em class="shop-type brand">브랜드</em>
+                                        <span class="recently-text">나이키</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <em class="shop-type category">카테고리</em>
+                                        <span class="recently-text">카카오페이 5천원 즉석 할인</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <em class="shop-type exhibition">기획전</em>
+                                        <span class="recently-text">골든듀 x Hmall 최대 40% 할인골든듀 x Hmall 최대 40% 할인골든듀 x Hmall 최대 40% 할인골든듀 x Hmall 최대 40% 할인</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <em class="shop-type event">이벤트</em>
+                                        <span class="recently-text">카카오페이 5천원 즉석 할인</span>
+                                    </a>
+                                </li>
+                                <!-- // 최근 본 상품 있는 경우 -->
+
+                                <!-- 최근 본 상품 편집 시 : 체크박스 추가  -->
+                                <li>
+                                    <!-- 체크박스 -->
+                                    <span class="checkbox">
+                                        <label class="chklabel">
+                                            <input type="checkbox" name="" checked>
+                                            <i class="icon"></i>
+                                            <span>2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</span>
+                                        </label>
+                                    </span>
+                                    <!-- // 체크박스 -->
+                                
+                                    <a href="javascript:;">
+                                        <span class="img"><img src="//imagedev.hmall.com/p/img/co/sample/img-recently01.jpg"
+                                                alt="2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상"></span>
+                                        <span class="prd-info">
+                                            <span class="name">2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</span>
+                                            <span class="price-wrap">
+                                                <span class="prd-price"><strong>27,000</strong>원</span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- 체크박스 -->
+                                    <span class="checkbox">
+                                        <label class="chklabel">
+                                            <input type="checkbox" name="">
+                                            <i class="icon"></i>
+                                            <span>2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</span>
+                                        </label>
+                                    </span>
+                                    <!-- // 체크박스 -->
+                                
+                                    <a href="javascript:;">
+                                        <em class="shop-type brand">브랜드</em>
+                                        <span class="recently-text">나이키</span>
+                                    </a>
+                                </li>
+                                <!-- // 최근 본 상품 편집 시 : 체크박스 추가 -->
+                            </ul>
+                        </div>
+                        <!-- // 최근 본 쇼핑 -->
+                    </div>
+
+                    <!-- 버튼 영역 -->
+                    <div class="bottom-fixed">
+                        <div class="btngroup txt-center">
+                            <!-- 버튼 활성화 시 -->
+                            <button class="btn btn-default xl"><span>선택삭제</span></button>
+                            <!-- // 법튼 활성화 시 -->
+
+                            <!-- 버튼 비활성화 시 : 디자인 적용 전 -->
+                            <!-- <button class="btn btn-default xl" disabled><span>선택삭제</span></button> -->
+                            <!-- // 버튼 비활성화 시 : 디자인 적용 전 -->
+
+                            <button class="btn btn-default xl"><span>전체삭제</span></button>
+                        </div>
+                    </div>
+                    <!-- // 버튼 영역 -->
+
+                    <!-- //팝업 컨텐츠 -->
+                </div>
+            </div>
+            <!-- // .pop-content-wrap -->
+            <button class="btn-close lyclose tabbreak"><span>팝업 닫기</span></button>
+        </div>
+    </div>
+    <!-- // 최근 본 쇼핑 -->
+
+    <!-- 브랜드 검색 : 추천 브랜드  -->
+    <div class="layer-popup brand" style="display:none;">
+        <!-- style 임시 적용 : 확인용 -->
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <strong class="pop-title">브랜드 검색</strong>
+                <!-- 검색 영역 -->
+                <div class="search" role="search">
+                    <div class="field">
+                        <div class="inputbox">
+                            <label class="inplabel"><input type="text" name="" placeholder="브랜드를 입력해 주세요" title="브랜드 검색"></label>
+                            <button class="btn ico-clearabled" style="display:block">
+                                <i class="icon"></i>
+                                <span class="hiding">지우기</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="btn btn-search"><span>검색</span></button>
+                </div>
+                <!-- // 검색 영역 -->
+                <div class="pop-content">
+                    <!-- 팝업 컨텐츠 -->
+                    
+
+                    <div class="middle-content">
+                        <div class="recommend-brand">
+                            <p class="title"><strong>추천 브랜드</strong></p>
+                            <ul>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="img-brand"><img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike-50x50.png" alt="나이키"></span>
+                                        <em class="name-brand">나이키</em>
+                                    </a>
+                                    <button class="btn btn-like"><i class="icon"></i><span class="hiding">찜하기</span></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="img-brand"><img src="//imagedev.hmall.com/p/img/co/sample/img-brand-westelm-50x50.png" alt="웨스트엘름"></span>
+                                        <em class="name-brand">웨스트엘름</em>
+                                    </a>
+                                    <button class="btn btn-like active"><i class="icon"></i><span class="hiding">찜하기</span></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="img-brand"><img src="//imagedev.hmall.com/p/img/co/sample/img-brand-jaju-50x50.png" alt="자주"></span>
+                                        <em class="name-brand">자주</em>
+                                    </a>
+                                    <button class="btn btn-like active"><i class="icon"></i><span class="hiding">찜하기</span></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="img-brand"><img src="//imagedev.hmall.com/p/img/co/sample/img-brand-tomford-50x50.png" alt="톰포드"></span>
+                                        <em class="name-brand">톰포드</em>
+                                    </a>
+                                    <button class="btn btn-like"><i class="icon"></i><span class="hiding">찜하기</span></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //팝업 컨텐츠 -->
+                </div>
+            </div>
+            <!-- // .pop-content-wrap -->
+            <button class="btn-close lyclose tabbreak"><span>팝업 닫기</span></button>
+        </div>
+    </div>
+
+    <!-- 브랜드 검색 : 브랜드 검색 결과  -->
+    <div class="layer-popup brand" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <strong class="pop-title">브랜드 검색</strong>
+                <!-- 검색 영역 -->
+                <div class="search" role="search">
+                    <div class="field">
+                        <div class="inputbox">
+                            <label class="inplabel">
+                                <input type="text" name="" placeholder="브랜드를 입력해 주세요" title="브랜드 검색" value="가구">
+                            </label>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-search"><span>검색</span></button>
+                </div>
+                <!-- // 검색 영역 -->
+                <div class="pop-content">
+                    <!-- 팝업 컨텐츠 -->
+                    
+    
+                    <div class="middle-content">
+                        <div class="result-brand">
+                            <p class="title"><strong>'가구' 검색결과</strong><span>총 <em>20</em>건</span></p>
+                            <ul>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="search-text"><strong class="keyword">가구</strong>조아</span>
+                                    </a>
+                                    <button class="btn btn-like active"><i class="icon"></i><span class="hiding">찜하기</span></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="search-text"><strong class="keyword">가구</strong>조아</span>
+                                    </a>
+                                    <button class="btn btn-like"><i class="icon"></i><span class="hiding">찜하기</span></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="search-text"><strong class="keyword">가구</strong>조아</span>
+                                    </a>
+                                    <button class="btn btn-like"><i class="icon"></i><span class="hiding">찜하기</span></button>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="search-text"><strong class="keyword">가구</strong>조아</span>
+                                    </a>
+                                    <button class="btn btn-like"><i class="icon"></i><span class="hiding">찜하기</span></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //팝업 컨텐츠 -->
+                </div>
+            </div>
+            <!-- // .pop-content-wrap -->
+            <button class="btn-close lyclose tabbreak"><span>팝업 닫기</span></button>
+        </div>
+    </div>
+
+    <!-- 브랜드 검색 : 브랜드 검색 결과 없는 경우  -->
+    <div class="layer-popup brand" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <strong class="pop-title">브랜드 검색</strong>
+                <!-- 검색 영역 -->
+                <div class="search" role="search">
+                    <div class="field">
+                        <div class="inputbox">
+                            <label class="inplabel"><input type="text" name="" placeholder="브랜드를 입력해 주세요" title="브랜드 검색" value="가구"></label>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-search"><span>검색</span></button>
+                </div>
+                <!-- // 검색 영역 -->
+                <div class="pop-content">
+                    <p class="brand-result-none">브랜드 검색결과가 없습니다.</p>
+                </div>
+            </div>
+            <!-- // .pop-content-wrap -->
+            <button class="btn-close lyclose tabbreak"><span>팝업 닫기</span></button>
+        </div>
+    </div>
+    
+    <!-- 브랜드 검색 : 브랜드 검색 결과 없는 경우  -->
+    <div class="layer-popup dimlayer agree-info" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <strong class="pop-title">브랜드 검색</strong>
+                <!-- 검색 영역 -->
+                <div class="search" role="search">
+                    <div class="field">
+                        <div class="inputbox">
+                            <label class="inplabel"><input type="text" name="" placeholder="브랜드를 입력해 주세요" title="브랜드 검색" value="가구"></label>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-search"><span>검색</span></button>
+                </div>
+                <!-- // 검색 영역 -->
+                <div class="pop-content">
+                    <p class="brand-result-none">브랜드 검색결과가 없습니다.</p>
+                </div>
+            </div>
+            <!-- // .pop-content-wrap -->
+            <button class="btn-close lyclose tabbreak"><span>팝업 닫기</span></button>
+        </div>
+    </div>
+
+    <!-- 쿠키 사용 안내 -->
+    <div class="layer-popup cookie-bottom" style="display:none">
+        <div class="layer-pop-inner">
+            <p class="title"><strong>쿠키 사용 안내</strong></p>
+            <div class="bottom-text">
+                <p>Hmall은 최상의 사용자 경험을 제공하기 위해 최근본쇼핑 정보 매체연동을 위한 쿠키를 수정합니다.</p>
+                <p>동의를 클릭하시면 이러한 쿠키의 사용에 동의하게 됩니다. 언제든지 설정에서 변경/취소 할 수 있습니다.</p>
+            </div>
+
+            <div class="btngroup txt-center">
+                <button class="btn btn-linelgray xl lyclose"><span>미동의</span></button>
+                <button class="btn btn-default xl tabbreak"><span>동의</span></button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ****************** Default Layer Popup  *******************-->
+    <!-- PIA006 회원가입/로그인 > 회원가입 : 회원가입정보입력 -->
+    <div class="layer-popup dimlayer join-info-personal" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <strong class="pop-title">개인정보 수집 및 이용</strong>
+                <div class="pop-content">
+                    <div class="tblwrap">
+                        <table>
+                            <caption>개인정보 수집 및 이용</caption>
+                            <colgroup>
+                                <col style="width:33.333%">
+                                <col style="width:33.333%">
+                                <col style="width:33.333%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">목적</th>
+                                    <th scope="col">항목</th>
+                                    <th scope="col">보유기간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>회원가입 및 방송회원 유무확인</td>
+                                    <td>이름, 아이디, 비밀번호, 휴대폰 번호</td>
+                                    <td>회원탈퇴 시 또는 법정 의무 보유 기간</td>
+                                </tr>
+                                <tr>
+                                    <td>고객 맞춤형 신규 서비스/상품안내 등</td>
+                                    <td>이메일, 생년월일<br>(선택)</td>
+                                    <td>회원탈퇴 시 또는 법정 의무 보유 기간</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="tbl-ref">
+                            <ul class="dotlist">
+                                <li><p class="ctypo6">개인정보 수집 및 이용에 동의하지 않을 수 있으나, 필수 항목은 서비스 이용에 필요한 최소 정보로 동의 거부 시 서비스 이용이 제한됩니다.</p></li>
+                                <li><p class="ctypo6">선택 항목은 입력하지 않더라도 회원가입에 제한이 없습니다.</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- // tblwrap -->
+                </div>
+            </div>
+            <!-- // .pop-content-wrap -->
+            <button class="btn-close lyclose tabbreak"><span>팝업 닫기</span></button>
+        </div>
+    </div>
+    <!-- // PIA006 회원가입/로그인 > 회원가입 : 회원가입정보입력 -->
+
+    <!-- PIA023 회원가입/로그인 > 회원가입 > 네이버로 회원가입 -->
+    <div class="layer-popup dimlayer join-naver-personal" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <strong class="pop-title">개인정보 수집 및 이용</strong>
+                <div class="pop-content">
+                    <div class="tblwrap">
+                        <table>
+                            <caption>개인정보 수집 및 이용</caption>
+                            <colgroup>
+                                <col style="width:33.333%">
+                                <col style="width:33.333%">
+                                <col style="width:33.333%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">목적</th>
+                                    <th scope="col">항목</th>
+                                    <th scope="col">보유기간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>회원가입 및 방송회원 유무확인</td>
+                                    <td>이름, 아이디, 비밀번호, 휴대폰 번호</td>
+                                    <td>회원탈퇴 시 또는 법정 의무 보유 기간</td>
+                                </tr>
+                                <tr>
+                                    <td>고객 맞춤형 신규 서비스/상품안내 등</td>
+                                    <td>이메일, 생년월일<br>(선택)</td>
+                                    <td>회원탈퇴 시 또는 법정 의무 보유 기간</td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                        <div class="tbl-ref">
+                            <ul class="dotlist">
+                                <li>
+                                    <p class="ctypo6">개인정보 수집 및 이용에 동의하지 않을 수 있으나, 필수 항목은 서비스 이용에 필요한 최소 정보로 동의 거부 시 서비스 이용이 제한됩니다.</p>
+                                </li>
+                                <li>
+                                    <p class="ctypo6">선택 항목은 입력하지 않더라도 회원가입에 제한이 없습니다.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- // tblwrap -->
+                </div>
+            </div>
+            <!-- // .pop-content-wrap -->
+            <button class="btn-close lyclose tabbreak"><span>팝업 닫기</span></button>
+        </div>
+    </div>
+    <!-- // PIA023 회원가입/로그인 > 회원가입 > 네이버로 회원가입 -->
+
+    <!-- PIA013 회원가입/로그인 > 성인인증(팝업) : 휴대폰 본인인증 -->
+    <div class="layer-popup dimlayer adult-certi" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <strong class="pop-title">휴대폰 본인인증</strong>
+                <div class="pop-content">
+                    <div class="tblwrap">
+                        <table>
+                            <caption>휴대폰 본인인증</caption>
+                            <colgroup>
+                                <col style="width:33.333%">
+                                <col style="width:33.333%">
+                                <col style="width:33.333%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">목적</th>
+                                    <th scope="col">수집항목</th>
+                                    <th scope="col">보유기간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">본인인증</td>
+                                    <td>CI</td>
+                                    <td>회원탈퇴 시 또는 법정 보유 기간</td>
+                                </tr>
+                                <tr>
+                                    <td>이름, 셩별, 생년월일</td>
+                                    <td>저장하지 않음</td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                        <div class="tbl-ref">
+                            <p class="ctypo6">※ 수집목적 : 성인 인증</p>
+                        </div>
+                    </div>
+                    <!-- // tblwrap -->
+                </div>
+            </div>
+            <!-- // .pop-content-wrap -->
+            <button class="btn-close lyclose tabbreak"><span>팝업 닫기</span></button>
+        </div>
+    </div>
+    <!-- // PIA013 회원가입/로그인 > 성인인증(팝업) : 휴대폰 본인인증 -->
+
+    <!-- PIA027 회원가입/로그인 > 첫 주문 인증 > 휴대폰 번호로 인증 : 휴대폰 본인인증 -->
+    <div class="layer-popup dimlayer first-order-certi" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <strong class="pop-title">휴대폰번호로 인증</strong>
+                <div class="pop-content">
+                    <div class="tblwrap">
+                        <table>
+                            <caption>휴대폰번호 인증</caption>
+                            <colgroup>
+                                <col style="width:33.333%">
+                                <col style="width:33.333%">
+                                <col style="width:33.333%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">구분</th>
+                                    <th scope="col">수집항목</th>
+                                    <th scope="col">보유기간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>휴대폰</td>
+                                    <td>휴대폰 번호</td>
+                                    <td>회원탈퇴 시 또는 법정 보유기간</td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                        <div class="tbl-ref">
+                            <p class="ctypo6">※ 수집목적 : 주문을 위한 인증</p>
+                        </div>
+                    </div>
+                    <!-- // tblwrap -->
+                </div>
+            </div>
+            <!-- // .pop-content-wrap -->
+            <button class="btn-close lyclose tabbreak"><span>팝업 닫기</span></button>
+        </div>
+    </div>
+    <!-- // PIA027 회원가입/로그인 > 첫 주문 인증 > 휴대폰 번호로 인증 : 휴대폰 본인인증 -->
+    
+
+
+    <!-- ****************** Alert *******************-->
+    <!-- PIA023 회원가입/로그인 > 로그인오류신고 -->
+    <div class="layer-popup alert login-err-report" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <div class="pop-content">
+                    <!-- 개인정보 수집에 따른 이용자 동의사항 미 동의 시 -->
+                    <p class="ctypo5">이용자 동의사항 확인이 되지 않았습니다.</p>
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="btngroup">
+                    <button class="btn btn-default lyclose"><span>확인</span></button>
+                </div>
+                <!-- // 버튼 영역 -->
+            </div>
+            <!-- // .pop-content-wrap -->
+        </div>
+    </div>
+    <!-- // PIA023 회원가입/로그인 > 로그인오류신고 -->
+
+    <!-- PIA023 회원가입/로그인 > 회원가입 > 네이버로 회원가입 : 비밀번호 설정 필요-->
+    <div class="layer-popup alert join-pw-set" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <div class="pop-content">
+                    <p class="ctypo5">마이페이지 메뉴에서 비밀번호 설정이 필요합니다.</p>
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="btngroup">
+                    <button class="btn btn-default lyclose"><span>확인</span></button>
+                </div>
+                <!-- // 버튼 영역 -->
+            </div>
+            <!-- // .pop-content-wrap -->
+        </div>
+    </div>
+    <!-- // PIA023 회원가입/로그인 > 회원가입 > 네이버로 회원가입 : 비밀번호 설정 필요 -->
+
+    <!-- SNS 연동 회원가입 : 가입된 계정일 경우 -->
+    <div class="layer-popup alert join-already" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <div class="pop-content">
+                    <p class="ctypo5">이미 Hmall 회원으로 가입된 계정입니다.</p>
+                    <p class="ctypo5">가입된 계정으로 로그인합니다.</p>
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="btngroup">
+                    <button class="btn btn-default lyclose"><span>확인</span></button>
+                </div>
+                <!-- // 버튼 영역 -->
+            </div>
+            <!-- // .pop-content-wrap -->
+        </div>
+    </div>
+    <!-- SNS 연동 회원가입 : 가입된 계정일 경우 -->
+
+    <!-- SNS 연동 회원가입 : 이메일 자리수가 30byte를 초과하는 경우 -->
+    <div class="layer-popup alert join-byte-exceed" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <div class="pop-content">
+                    <p class="ctypo5">아이디는 최대 30byte까지 입력 가능합니다.(이메일 도메인 포함)</p>
+                    <p class="ctypo5">다른 ***계정으로 이용해 주세요.</p>
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="btngroup">
+                    <button class="btn btn-default lyclose"><span>확인</span></button>
+                </div>
+                <!-- // 버튼 영역 -->
+            </div>
+            <!-- // .pop-content-wrap -->
+        </div>
+    </div>
+    <!-- SNS 연동 회원가입 : 이메일 자리수가 30byte를 초과하는 경우 -->
+
+    <!-- PIA010 회원가입/로그인 > 휴면고객안내 : 휴면해제 취소 시 -->
+    <div class="layer-popup alert join-resting-customer" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <div class="pop-content">
+                    <p class="ctypo5">로그아웃 하시겠습니까?</p>
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="btngroup">
+                    <button class="btn btn-linelgray lyclose"><span>아니요</span></button>
+                    <button class="btn btn-default"><span>예</span></button>
+                </div>
+                <!-- // 버튼 영역 -->
+            </div>
+            <!-- // .pop-content-wrap -->
+        </div>
+    </div>
+    <!-- // PIA010 회원가입/로그인 > 휴면고객안내 : 휴면해제 취소 시 -->
+
+    <!-- PIA027 회원가입/로그인 > 첫 주문 인증 > 휴대폰 번호로 인증 : 인증번호 발송 -->
+    <div class="layer-popup alert join-certi-number" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <div class="pop-content">
+                    <!-- 인증번호 발송 -->
+                    <p class="ctypo5">인증번호를 발송했습니다.</p>
+                    <p class="ctypo5">받으신 인증번호를 올바르게 입력해 주세요.</p>
+
+                    <!-- 문자 정상 발송 -->
+                    <p class="ctypo5">인증번호를 재발송했습니다.</p>
+                    <p class="ctypo5">받으신 인증번호를 올바르게 입력해 주세요.</p>
+
+                    <!-- 클릭 후 5초 내 다시 클릭 -->
+                    <p class="ctypo5">인증번호를 연속해서 보낼 수 없습니다.</p>
+                    <p class="ctypo5">잠시 후 다시 시도해 주세요.</p>
+
+                    <!-- 인증문자 발송 5회 이상 -->
+                    <p class="ctypo5">인증번호를 재발송 할 수 없습니다.</p>
+                    <p class="ctypo5">문자메시지가 오지 않는다면 본인인증을 이용해 주세요.</p>
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="btngroup">
+                    <button class="btn btn-default lyclose"><span>확인</span></button>
+                </div>
+                <!-- // 버튼 영역 -->
+            </div>
+            <!-- // .pop-content-wrap -->
+        </div>
+    </div>
+    <!-- // PIA027 회원가입/로그인 > 첫 주문 인증 > 휴대폰 번호로 인증 : 인증번호 발송 -->
+
+    <!-- PIA028 회원가입/로그인 > 첫 주문 인증 > 이메일 인증 -->
+    <div class="layer-popup alert join-certi-number" style="display:none;">
+        <div class="pop-wrap">
+            <div class="pop-content-wrap">
+                <div class="pop-content">
+                    <!-- 인증번호 발송 -->
+                    <p class="ctypo5">인증번호를 발송했습니다.</p>
+                    <p class="ctypo5">받으신 인증번호를 올바르게 입력해 주세요.</p>
+    
+                    <!-- 문자 정상 발송 -->
+                    <p class="ctypo5">인증번호를 재발송했습니다.</p>
+                    <p class="ctypo5">받으신 인증번호를 올바르게 입력해 주세요.</p>
+    
+                    <!-- 클릭 후 5초 내 다시 클릭 -->
+                    <p class="ctypo5">인증번호를 연속해서 보낼 수 없습니다.</p>
+                    <p class="ctypo5">잠시 후 다시 시도해 주세요.</p>
+    
+                    <!-- 인증문자 발송 5회 이상 -->
+                    <p class="ctypo5">인증번호를 재발송 할 수 없습니다.</p>
+                    <p class="ctypo5">문자메시지가 오지 않는다면 본인인증을 이용해 주세요.</p>
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="btngroup">
+                    <button class="btn btn-default lyclose"><span>확인</span></button>
+                </div>
+                <!-- // 버튼 영역 -->
+            </div>
+            <!-- // .pop-content-wrap -->
+        </div>
+    </div>
+    <!-- // PIA028 회원가입/로그인 > 첫 주문 인증 > 이메일 인증 -->
+
+    
+
+</div>
+<!-- //.wrap -->
+</body>
+</html>

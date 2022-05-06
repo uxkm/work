@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- OpenGraph -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="//imagedev.hmall.com/m/img/co/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:url" content="https://hmall.com">
+<meta property="og:type" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. 볼거리 가득! 쓸 곳 많은 H.Point 혜택">
+<meta property="og:image" content="//imagedev.hmall.com/m/img/co/meta/hmall_meta.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="750">
+<!-- favicon -->
+<meta itemprop="image" content="//imagedev.hmall.com/m/img/co/favicon/favicon_128.png">
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/m/img/co/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="//imagedev.hmall.com/m/img/co/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//imagedev.hmall.com/m/img/co/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//imagedev.hmall.com/m/img/co/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//imagedev.hmall.com/m/img/co/favicon/favicon-16x16.png">
+<link rel="manifest" href="//imagedev.hmall.com/m/img/co/favicon/manifest.json">
+<title>Component Test Page</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/popup.css"><!-- 공통 popup/layer css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/jquery-ui.css"><!-- 공통 jQuery UI css -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-3.4.1.min.js"></script><!-- 공통 jQuery Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.easing.min.js"></script><!-- 공통 jQuery UI Effect -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-ui.1.12.1.min.js"></script><!-- 공통 jQuery UI js -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.touchFlow.js"></script><!-- 공통 UI에 사용하는 Touch Swipe -->
+<script src="//imagedev.hmall.com/m/js/co/ukDetect.min.js"></script><!-- 공통 UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/m/js/co/slick.min.js"></script><!-- 공통 Slick Slider Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/common.js"></script><!-- 공통 UI에 사용하는 js -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/main.css">
+<!-- //Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<!-- 오직 메인에서만 사용하여 호출되는 css/js -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/swiper.min.css">
+<script src="//imagedev.hmall.com/m/js/co/swiper.min.js"></script>
+<script src="//imagedev.hmall.com/m/js/co/main.js"></script>
+<!-- //오직 메인에서만 사용하여 호출되는 Swiper Plugin 및 main.js -->
+<style>
+    /* Roboto Font 400,500,700 */
+    body{color:#666;letter-spacing:-0.4px;}
+
+    ins{text-decoration:none;}
+
+
+    [role="button"]{display:inline-block;padding:5px 10px;border:2px solid #555;border-radius:5px;background:#ddd;color:#000;cursor:pointer;}
+    [role="button"]:hover,
+    [role="button"]:focus{background-color:#eee;}
+    [role="button"]:active{background-color:#bbb;}
+    [role="button"][aria-pressed="true"]{color:#fff;background:#333;}
+
+    /* .tag{border:1px solid #666;background-color:#fff;color:#666;font-size:11px;line-height:1;border-radius:0;} */
+    /* .hashtag{display:inline-block;padding:6px 10px;border:1px solid #e6e6e6;background-color:#fff;color:#011;font-size:15px;line-height:1;font-weight:700;border-radius:16px;} */
+    .keyword{display:inline-block;padding:6px 10px;border:1px solid #e6e6e6;background-color:#fff;color:#011;font-size:15px;line-height:1;font-weight:700;border-radius:16px;}
+
+    /* Product Gallery Basic */
+    /* .pdwrap{overflow:hidden;position:relative;}
+    .pdwrap::after{content:"";display:block;clear:both;}
+    .pdwrap .pdlist-wrap{display:flex;flex-direction:column;overflow:hidden;position:relative;width:100%;}
+    .pdwrap figure{display:inline-block;overflow:hidden;position:relative;width:100%;margin-bottom:15px;}
+    .pdwrap figure::after{content:"";display:block;clear:both;}
+    .pdwrap figure > a{display:inline-block;width:100%;}
+    .pdwrap .thumb{position:relative;width:100%;margin-bottom:8px;border:1px solid #eee;text-align:center;}
+    .pdwrap .thumb img{width:100%;}
+    .pdwrap .thumb .btn{position:absolute;bottom:0;right:0;background-color:#fefefe;width:26px;height:26px;border:1px solid #f1f1f1;}
+    .pdwrap figcaption{padding:0 15px;}
+    .pdwrap .pdname{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-bottom:7px;color:#777;font-size:14px;line-height:17px;word-wrap:break-word;word-break:break-all;-ms-word-break:break-all;white-space:pre-line;}
+    .pdwrap .pdprice{position:relative;line-height:1.5;}
+    .pdwrap .pdprice em{font-weight:700;vertical-align:middle;}
+    .pdwrap .pdprice b{vertical-align:middle;}
+    .pdwrap .pdprice strong{vertical-align:middle;}
+    .pdwrap .pdprice span{vertical-align:middle;}
+    .pdwrap .pdprice del{}
+    .pdwrap .pdprice del em{}
+    .pdwrap .pdprice ins{}
+    .pdwrap .pdprice ins em{}
+    .pdwrap .pdprice .rateprice{}
+    .pdwrap .pdprice .normal{}
+    .pdwrap .pdprice .rate{}
+    .pdwrap .pdprice .discount{}
+    .pdwrap .pdprice .benefits{}
+    .pdwrap .pdprice .sale{}
+    .pdwrap .pdprice .special{}
+    .pdwrap .pdprice .option{} */
+
+    /* Product Small List */
+    /* .pdwrap.smlist{padding:15px;}
+    .pdwrap.smlist .pdlist-wrap{display:block;overflow-x:auto;padding-bottom:15px;white-space:nowrap;}
+    .pdwrap.smlist figure{width:104px;margin-bottom:0;}
+    .pdwrap.smlist figure:not(:last-child){margin-right:8px;}
+    .pdwrap.smlist figcaption{padding:0;}
+    .pdwrap.smlist .pdname{height:34px;}
+    .pdwrap.smlist .pdprice em{font-size:14px;} */
+    /* Product Grid Type Gallery */
+    /* .pdwrap.pdgrid .pdlist-wrap{flex-wrap:wrap;flex-direction:row;justify-content:space-between;}
+    .pdwrap.pdgrid figure{width:50%;margin-bottom:0;padding:15px;}
+    .pdwrap.pdgrid figcaption{padding:0;}
+    .pdwrap.pdgrid .pdreview{display:none;}
+    .pdwrap.pdgrid .pdinfo{display:none;}
+    .pdwrap.pdgrid .rateprice{display:block;}
+    .pdwrap.pdgrid .normal{display:block;}
+    .pdwrap.pdgrid .rate{display:none;}
+    .pdwrap.pdgrid .discount{display:block;} */
+    /* Product List Type Gallery */
+    /* .pdwrap.pdlist .pdlist-wrap{flex-direction:column;justify-content:space-between;}
+    .pdwrap.pdlist figure{width:100%;padding:15px;}
+    .pdwrap.pdlist figure:not(:last-child){margin-top:10px;}
+    .pdwrap.pdlist .thumb{float:left;width:136px;height:136px;margin-bottom:0;}
+    .pdwrap.pdlist figcaption{display:inline-block;width:calc(100% - 136px);padding-left:10px;}
+    .pdwrap.pdlist .pdreview{display:block;}
+    .pdwrap.pdlist .rateprice{display:block;}
+    .pdwrap.pdlist .normal{display:block;}
+    .pdwrap.pdlist .rate{display:inline-block;position:absolute;right:0;}
+    .pdwrap.pdlist .discount{display:block;}
+    .pdwrap.pdlist .pdinfo{display:block;position:relative;clear:both;height:34px;line-height:30px;}
+    .pdwrap.pdlist .pdinfo .delivery{display:inline-block;color:#999;font-size:12px;}
+    .pdwrap.pdlist .pdinfo .btn-like{position:absolute;top:50%;right:0;transform:translateY(-50%);} */
+
+
+    /* hashTag List */
+    /* .hashtag-wrap{overflow-x:hidden;padding:0 15px;}
+    .hashtag-list{overflow-x:auto;padding-bottom:15px;white-space:nowrap;}
+    .hashtag-list > .hashtag:not(:last-child){margin-right:6px;} */
+
+    /* Product Details Infomation */
+    /* .details-info{overflow:hidden;}
+    .details-info dl{display:flex;font-size:14px;}
+    .details-info dl:not(:first-child){margin-top:10px;}
+    .details-info dt{display:inline-block;width:90px;font-size:inherit;}
+    .details-info dd{display:inline-block;position:relative;width:calc(100% - 90px);font-size:inherit;}
+    .details-info p{font-size:inherit;}
+    .details-info span{font-size:inherit;vertical-align:top;}
+    .details-info em{font-size:inherit;vertical-align:top;}
+    .details-info strong{font-size:inherit;vertical-align:top;}
+    .details-info .btn-more{position:absolute;top:0;right:5px;width:20px;height:20px;border:1px solid}
+    .details-info .icon{background-image:none;} */
+
+
+</style>
+<script>
+    /* Event Bubbling */
+    function onClick(element, e) {
+        e = window.event || e;
+        console.log(element.nodeName);
+        e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+    }
+
+    function aLink(){
+        location.href = "GNB-Main.html"
+    } 
+</script>
+</head>
+<body>
+<section class="section">
+    <div class="pdwrap">
+        <div class="details-wrap">
+            <figure class="pdthumb">
+
+                <div class="thumb">
+                    <img src="https://imagessl.hyundaihmall.com/static/1/4/63/00/2100634154_0_300.jpg" alt="">
+                </div>
+
+                <figcaption>
+                    <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                    <div class="pdprice">
+                        <span class="sale" aria-label="판매가"><em>95,050</em><b>원</b></span>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+        <!-- //.details-wrap -->
+    </div>
+    <!-- //.pdwrap -->
+</section>
+
+<hr>
+
+<section class="section" aria-label="상품상세 정보">
+    <h2 class="hiding">상품상세 정보</h2>
+    <article class="details-info">
+        <dl>
+            <dt>즉시할인가</dt>
+            <dd>
+                <p><em>89,348</em>원 현대카드5% (<span aria-label="6만원 이상 구매시">6만원 ↑</span>)</p>
+                <a href="javascript:;" class="btn btn-more"><i class="icon"></i><span class="hiding">즉시할인가 내용 더보기</span></a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>무이자 할부</dt>
+            <dd>
+                <p>3 개월 (33,000 원)</p>
+                <p>카드 무이자 특별행사 안내</p>
+                <a href="javascript:;" class="btn btn-more"><i class="icon"></i><span class="hiding">무이자 할부 내용 더보기</span></a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>결제수단 혜택</dt>
+            <dd>
+                <p>카카오페이 5천원 즉시할인</p>
+                <a href="javascript:;" class="btn btn-more"><i class="icon"></i><span class="hiding">결제수단 혜택 내용 더보기</span></a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>적립혜택</dt>
+            <dd>
+                <p>H.Point 140P</p>
+                <a href="javascript:;" class="btn btn-more"><i class="icon"></i><span class="hiding">적립혜택 내용 더보기</span></a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>배송비</dt>
+            <dd>
+                <p><strong>무료</strong></p>
+            </dd>
+        </dl>
+    </article>
+
+</section>
+
+<hr>
+
+<section class="section" aria-label="추천 검색어">
+    <h2 class="hn-tit2">추천 검색어</h2>
+    <div class="hashtag-wrap">
+        <div class="hashtag-list">
+            <a href="javascript" class="hashtag">#아이소이</a>
+            <a href="javascript" class="hashtag">#아이소이잡티세럼</a>
+            <a href="javascript" class="hashtag">#kf94마스크</a>
+            <a href="javascript" class="hashtag">#웰킵스</a>
+            <a href="javascript" class="hashtag">#아이소이</a>
+            <a href="javascript" class="hashtag">#아이소이잡티세럼</a>
+            <a href="javascript" class="hashtag">#kf94마스크</a>
+            <a href="javascript" class="hashtag">#웰킵스</a>
+        </div>
+    </div>
+    <!-- //.hashtag-list -->
+</section>
+
+
+<hr>
+
+<section class="section" aria-label="기본 유형 상품">
+    <h2 class="hn-tit2">기본 유형 상품</h2>
+    <div class="pdwrap">
+        <div class="pdlist-wrap">
+            <figure class="pdthumb">
+                <a href="javascript:;">
+                    <div class="thumb">
+                        <img src="https://imagessl.hyundaihmall.com/static/1/4/63/00/2100634154_0_300.jpg" alt="">
+                    </div>
+                    <figcaption>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdprice">
+                            <span class="sale" aria-label="판매가"><em>95,050</em><b>원</b></span>
+                        </div>
+                    </figcaption>
+                </a>
+            </figure>
+            <figure class="pdthumb">
+                <a href="javascript:;">
+                    <div class="thumb">
+                        <img src="https://imagessl.hyundaihmall.com/static/1/4/63/00/2100634154_0_300.jpg" alt="">
+                    </div>
+                    <figcaption>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdprice">
+                            <span class="sale" aria-label="판매가"><em>95,050</em><b>원</b></span>
+                        </div>
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+        <!-- //.pdlist-wrap -->
+    </div>
+    <!-- //.pdwrap -->
+</section>
+<!-- //.section -->
+
+<hr>
+
+<section class="section" aria-label="연관 추천 상품">
+    <h2 class="hn-tit2">연관 추천 상품</h2>
+    <div class="pdwrap smlist">
+        <div class="pdlist-wrap">
+            <!-- 
+            <figure class="pdthumb">
+                <a href="javascript:;">
+                    <div class="thumb">
+                        <img src="https://imagessl.hyundaihmall.com/static/1/4/63/00/2100634154_0_300.jpg" alt="">
+                    </div>
+                    <figcaption>
+                        <span class="tag">엄지펀딩</span>
+                        <span class="tag">TV쇼핑</span>
+                        <span class="tag">현대아울렛동대문</span>
+                        <span class="tag">현대아울렛가산</span>
+                        <span class="tag">TV+쇼핑</span>
+                        <span class="tag">현대백화점Ⅱ</span>
+                        <span class="tag">굿럭템</span>
+                        <span class="tag">모바일전용</span>
+                        <span class="tag">앱전용상품</span>
+                        <strong class="pdstatus" aria-label="배송상태">주문접수</strong>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdprice">
+                            <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                <del class="normal" aria-label="정상가"><em>95,050</em><b>원</b></del>
+                                <em class="rate" aria-label="할인율">50%</em>
+                                <ins class="discount" aria-label="할인가"><em>95,050</em><b>원</b></ins>
+                            </span>
+                            <span class="benefits" aria-label="혜택가"><em>95,050</em><b>원</b></span>
+                            <span class="sale" aria-label="판매가"><em>95,050</em><b>원</b></span>
+                            <span class="special" aria-label="우수고객특별가"><em>95,050</em><b>원</b></span>
+                            <span class="option" aria-label="옵션가"><em>95,050</em><b>원</b></span>
+                        </div>
+                    </figcaption>
+                </a>
+            </figure>
+            -->
+            <figure class="pdthumb">
+                <a href="javascript:;">
+                    <div class="thumb">
+                        <img src="https://imagessl.hyundaihmall.com/static/1/4/63/00/2100634154_0_300.jpg" alt="">
+                    </div>
+                    <figcaption>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdprice">
+                            <span class="sale" aria-label="판매가"><em>95,050</em><b>원</b></span>
+                        </div>
+                    </figcaption>
+                </a>
+            </figure>
+            <figure class="pdthumb">
+                <a href="javascript:;">
+                    <div class="thumb">
+                        <img src="https://imagessl.hyundaihmall.com/static/1/4/63/00/2100634154_0_300.jpg" alt="">
+                    </div>
+                    <figcaption>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdprice">
+                            <span class="sale" aria-label="판매가"><em>95,050</em><b>원</b></span>
+                        </div>
+                    </figcaption>
+                </a>
+            </figure>
+            <figure class="pdthumb">
+                <a href="javascript:;">
+                    <div class="thumb">
+                        <img src="https://imagessl.hyundaihmall.com/static/1/4/63/00/2100634154_0_300.jpg" alt="">
+                    </div>
+                    <figcaption>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdprice">
+                            <span class="sale" aria-label="판매가"><em>95,050</em><b>원</b></span>
+                        </div>
+                    </figcaption>
+                </a>
+            </figure>
+            <figure class="pdthumb">
+                <a href="javascript:;">
+                    <div class="thumb">
+                        <img src="https://imagessl.hyundaihmall.com/static/1/4/63/00/2100634154_0_300.jpg" alt="">
+                    </div>
+                    <figcaption>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdprice">
+                            <span class="sale" aria-label="판매가"><em>95,050</em><b>원</b></span>
+                        </div>
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+        <!-- //.pdlist-wrap -->
+    </div>
+    <!-- //.pdwrap -->
+</section>
+<!-- //.section -->
+
+
+<hr>
+
+<section class="section" aria-label="★NB kids★ 상하의 세트 모음">
+    <h2 class="hn-tit2">★NB kids★ 상하의 세트 모음</h2>
+    <div class="pdwrap pdgrid">
+        <div class="pdlist-wrap">
+            <figure class="pdthumb">
+                <a href="javascript:;" onclick="aLink()">
+                    <div class="thumb">
+                        <img src="http://image.hyundaihmall.com/static/3/5/26/03/2103265385_0_300.jpg" alt="">
+                        <span class="btn btn-viewlayer" role="button" onclick="onClick(this);"><i class="icon"></i><span class="hiding">관련상품 더보기</span></span>
+                    </div>
+                    <figcaption>
+                        <span class="tag">굿럭템</span>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdreact">
+                            <span class="pdreview">상품평(1)</span>
+                            <span class="pdonsale">37개 판매중</span>
+                        </div>
+                        <div class="pdprice">
+                            <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                <del class="normal" aria-label="정상가"><em>95,050</em><b>원</b></del>
+                                <!-- <em class="rate" aria-label="할인율">50%</em> -->
+                                <ins class="discount" aria-label="할인가"><em>95,050</em><b>원</b></ins>
+                            </span>
+                        </div>
+                    </figcaption>
+                </a>
+                <!-- <div class="pdinfo">
+                    <div class="pdrefer">
+                        <span class="delivery">현대5%ㆍ무료배송</span>
+                        <span class="airtime">방송예정 05.08 22:00</span>
+                        <span class="related">연관상품 10+</span>
+                    </div>
+                    <div class="pdfunc">
+                        <a href="javascript:;" class="btn btn-like"><i class="icon"></i><span>찜</span></a>
+                        <a href="javascript:;" class="link-cart"><i class="icon"></i><span>장바구니</span></a>
+                    </div>
+                </div> -->
+            </figure>
+            <figure class="pdthumb">
+                <a href="javascript:;" onclick="aLink()">
+                    <div class="thumb">
+                        <img src="http://image.hyundaihmall.com/static/3/5/26/03/2103265385_0_300.jpg" alt="">
+                        <span class="btn btn-viewlayer" role="button" onclick="onClick(this);"><i class="icon"></i><span class="hiding">관련상품 더보기</span></span>
+                    </div>
+                    <figcaption>
+                        <span class="tag">굿럭템</span>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdreact">
+                            <span class="pdreview">상품평(1)</span>
+                            <span class="pdonsale">37개 판매중</span>
+                        </div>
+                        <div class="pdprice">
+                            <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                <del class="normal" aria-label="정상가"><em>95,050</em><b>원</b></del>
+                                <!-- <em class="rate" aria-label="할인율">50%</em> -->
+                                <ins class="discount" aria-label="할인가"><em>95,050</em><b>원</b></ins>
+                            </span>
+                        </div>
+                    </figcaption>
+                </a>
+                <!-- <div class="pdinfo">
+                    <div class="pdrefer">
+                        <span class="delivery">현대5%ㆍ무료배송</span>
+                        <span class="airtime">방송예정 05.08 22:00</span>
+                        <span class="related">연관상품 10+</span>
+                    </div>
+                    <div class="pdfunc">
+                        <a href="javascript:;" class="btn btn-like"><i class="icon"></i><span>찜</span></a>
+                        <a href="javascript:;" class="link-cart"><i class="icon"></i><span>장바구니</span></a>
+                    </div>
+                </div> -->
+            </figure>
+            <figure class="pdthumb">
+                <a href="javascript:;" onclick="aLink()">
+                    <div class="thumb">
+                        <img src="http://image.hyundaihmall.com/static/3/5/26/03/2103265385_0_300.jpg" alt="">
+                        <span class="btn btn-viewlayer" role="button" onclick="onClick(this);"><i class="icon"></i><span class="hiding">관련상품 더보기</span></span>
+                    </div>
+                    <figcaption>
+                        <span class="tag">굿럭템</span>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdreact">
+                            <span class="pdreview">상품평(1)</span>
+                            <span class="pdonsale">37개 판매중</span>
+                        </div>
+                        <div class="pdprice">
+                            <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                <del class="normal" aria-label="정상가"><em>95,050</em><b>원</b></del>
+                                <!-- <em class="rate" aria-label="할인율">50%</em> -->
+                                <ins class="discount" aria-label="할인가"><em>95,050</em><b>원</b></ins>
+                            </span>
+                        </div>
+                    </figcaption>
+                </a>
+                <!-- <div class="pdinfo">
+                    <div class="pdrefer">
+                        <span class="delivery">현대5%ㆍ무료배송</span>
+                        <span class="airtime">방송예정 05.08 22:00</span>
+                        <span class="related">연관상품 10+</span>
+                    </div>
+                    <div class="pdfunc">
+                        <a href="javascript:;" class="btn btn-like"><i class="icon"></i><span>찜</span></a>
+                        <a href="javascript:;" class="link-cart"><i class="icon"></i><span>장바구니</span></a>
+                    </div>
+                </div> -->
+            </figure>
+            <figure class="pdthumb">
+                <a href="javascript:;" onclick="aLink()">
+                    <div class="thumb">
+                        <img src="http://image.hyundaihmall.com/static/3/5/26/03/2103265385_0_300.jpg" alt="">
+                        <span class="btn btn-viewlayer" role="button" onclick="onClick(this);"><i class="icon"></i><span class="hiding">관련상품 더보기</span></span>
+                    </div>
+                    <figcaption>
+                        <span class="tag">굿럭템</span>
+                        <div class="pdname" aria-label="제품명">아이소이 불가리안 로즈 수분 패키지 (세럼3*크림2)</div>
+                        <div class="pdreact">
+                            <span class="pdreview">상품평(1)</span>
+                            <span class="pdonsale">37개 판매중</span>
+                        </div>
+                        <div class="pdprice">
+                            <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                <del class="normal" aria-label="정상가"><em>95,050</em><b>원</b></del>
+                                <!-- <em class="rate" aria-label="할인율">50%</em> -->
+                                <ins class="discount" aria-label="할인가"><em>95,050</em><b>원</b></ins>
+                            </span>
+                        </div>
+                    </figcaption>
+                </a>
+                <!-- <div class="pdinfo">
+                    <div class="pdrefer">
+                        <span class="delivery">현대5%ㆍ무료배송</span>
+                        <span class="airtime">방송예정 05.08 22:00</span>
+                        <span class="related">연관상품 10+</span>
+                    </div>
+                    <div class="pdfunc">
+                        <a href="javascript:;" class="btn btn-like"><i class="icon"></i><span>찜</span></a>
+                        <a href="javascript:;" class="link-cart"><i class="icon"></i><span>장바구니</span></a>
+                    </div>
+                </div> -->
+            </figure>
+        </div>
+        <!-- //.pdlist-wrap -->
+    </div>
+    <!-- //.pdwrap -->
+</section>
+<!-- //.section -->
+
+
+<hr>
+
+<section class="section" aria-label="★NB kids★ 상하의 세트 모음">
+    <h2 class="hn-tit2">★NB kids★ 상하의 세트 모음</h2>
+    <div class="pdwrap pdlist">
+        <div class="pdlist-wrap">
+            <figure class="pdthumb">
+                <a href="javascript:;" onclick="aLink()">
+                    <div class="thumb">
+                        <img src="http://image.hyundaihmall.com/static/7/7/96/05/2105967705_0_170.jpg" alt="[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종"/>
+                        <span class="btn btn-viewlayer" role="button" onclick="onClick(this);"><i class="icon"></i><span class="hiding">관련상품 더보기</span></span>
+                    </div>
+                    <figcaption>
+                        <span class="tag">TV+쇼핑</span>
+                        <div class="pdname" aria-label="제품명">[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종</div>
+                        <div class="pdreact">
+                            <span class="pdreview">상품평(1)</span>
+                            <span class="pdonsale">37개 판매중</span>
+                        </div>
+                        <div class="pdprice">
+                            <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                <del class="normal" aria-label="정상가"><em>95,050</em><b>원</b></del>
+                                <em class="rate" aria-label="할인율">50%</em>
+                                <ins class="discount" aria-label="할인가"><em>95,050</em><b>원</b></ins>
+                            </span>
+                        </div>
+                    </figcaption>
+                </a>
+                <div class="pdinfo">
+                    <div class="pdrefer">
+                        <span class="delivery">현대5%ㆍ무료배송</span>
+                        <span class="airtime">방송예정 05.08 22:00</span>
+                        <span class="related">연관상품 10+</span>
+                    </div>
+                    <div class="pdfunc">
+                        <a href="javascript:;" class="btn btn-like"><i class="icon"></i><span>찜</span></a>
+                        <a href="javascript:;" class="link-cart"><i class="icon"></i><span>장바구니</span></a>
+                    </div>
+                </div>
+                <div class="btngroup column2">
+                    <button class="btn btn-airalarm"><i class="icon"></i><span>방송알리미</span></button>
+                    <button class="btn btn-withitem"><i class="icon"></i><span>함께 방송한 상품</span></button>
+                </div>
+            </figure>
+            <figure class="pdthumb">
+                <a href="javascript:;" onclick="aLink()">
+                    <div class="thumb">
+                        <img src="http://image.hyundaihmall.com/static/7/7/96/05/2105967705_0_170.jpg" alt="[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종"/>
+                        <span class="btn btn-viewlayer" role="button" onclick="onClick(this);"><i class="icon"></i><span class="hiding">관련상품 더보기</span></span>
+                    </div>
+                    <figcaption>
+                        <span class="tag">TV+쇼핑</span>
+                        <div class="pdname" aria-label="제품명">[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종</div>
+                        <div class="pdreact">
+                            <span class="pdreview">상품평(1)</span>
+                            <span class="pdonsale">37개 판매중</span>
+                        </div>
+                        <div class="pdprice">
+                            <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                <del class="normal" aria-label="정상가"><em>95,050</em><b>원</b></del>
+                                <em class="rate" aria-label="할인율">50%</em>
+                                <ins class="discount" aria-label="할인가"><em>95,050</em><b>원</b></ins>
+                            </span>
+                        </div>
+                    </figcaption>
+                </a>
+                <div class="pdinfo">
+                    <div class="pdrefer">
+                        <span class="delivery">현대5%ㆍ무료배송</span>
+                        <span class="airtime">방송예정 05.08 22:00</span>
+                        <span class="related">연관상품 10+</span>
+                    </div>
+                    <div class="pdfunc">
+                        <a href="javascript:;" class="btn btn-like"><i class="icon"></i><span>찜</span></a>
+                        <a href="javascript:;" class="link-cart"><i class="icon"></i><span>장바구니</span></a>
+                    </div>
+                </div>
+                <div class="btngroup column2">
+                    <button class="btn btn-airalarm"><i class="icon"></i><span>방송알리미</span></button>
+                    <button class="btn btn-withitem"><i class="icon"></i><span>함께 방송한 상품</span></button>
+                </div>
+            </figure>
+        </div>
+        <!-- //.pdlist-wrap -->
+    </div>
+    <!-- //.pdwrap -->
+</section>
+<!-- //.section -->
+
+
+</body>
+</html>

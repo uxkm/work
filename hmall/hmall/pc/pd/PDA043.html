@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>예약구매 안내</title>  <!--20200921 월요일 수정완료-->
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/pd/product.css">
+
+</head>
+<body>
+<div class="wrap product-detail"><!-- wing banner 미노출 시 : wing-none 클래스 추가 -->
+    <main class="cmain" role="main" id="mainContents">
+        <div class="container">
+            
+        </div>
+        <!-- //.container -->
+     
+    </main>
+    <!-- //.cmain -->
+</div>
+<!-- //.wrap -->
+
+<div class="ui-modal" id="modalReserPurchase" tabindex="-1" role="dialog" aria-label="예약구매">
+    <div class="ui-modal-dialog reserpurchase" role="document">
+        <div class="content">
+            <p class="ui-title">예약구매 안내</p>
+            <!-- //.content-head -->
+            <div class="content-body">
+                <p class="ctypo15">구매하시는 상품 중 예약 구매 상품이 포함되어 있습니다. <br/> 아래 예약 구매 상품을 확인 하시기 바랍니다.</p>
+                <!-- [12/09]_수정(구조 수정) -->
+                <div class="reserv-itemlist">
+                    <!-- [01/09]_수정(
+                        -안내 레이어에서 상품평 전체 노출
+                        -상품옵션 전체 노출 (길 경우 하단으로 떨어지도록)
+                    ) -->
+                    <!--item영역-->
+                    <div class="reserv-item">
+                        <div class="bgbox">
+                            <div class="pditem">
+                                <div class="product-info">
+                                    <div class="thumb">
+                                        <img src="//imagedev.hmall.com/p/img/pd/sample/img-gift-sample.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론">
+                                    </div>
+                                    <div class="figcaption">
+                                        <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론 [15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론 [15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론 [15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론</div>
+                                        <div class="pdoption" aria-label="옵션/수량">
+                                            <span class="option">사이즈 : <em>L</em></span>
+                                            <span class="count">색상 : <em>그레이</em></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="dotlist">
+                            <li>판매기간 : <em>2020.06.07 ~ 2020.06.30</em></li>
+                            <li>배송기간 : <em>2020.07.07 ~ 2020.08.30</em></li>
+                            <li>고객안내 : <em>예약 판매 상품이며 7월 7일에 출고됩니다.</em></li>
+                        </ul>
+                    </div>
+                    <!--//item영역-->
+                    <!--item영역-->
+                    <div class="reserv-item">
+                        <div class="bgbox">
+                            <div class="pditem">
+                                <div class="product-info">
+                                    <div class="thumb">
+                                        <img src="//imagedev.hmall.com/p/img/pd/sample/img-gift-sample.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론">
+                                    </div>
+                                    <div class="figcaption">
+                                        <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론</div>
+                                        <div class="pdoption" aria-label="옵션/수량">
+                                            <span class="option">사이즈 : <em>L</em></span>
+                                            <span class="count">색상 : <em>그레이</em></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="dotlist">
+                            <li>판매기간 : <em>2020.06.07 ~ 2020.06.30</em></li>
+                            <li>배송기간 : <em>2020.07.07 ~ 2020.08.30</em></li>
+                            <li>고객안내 : <em>예약 판매 상품이며 7월 7일에 출고됩니다.</em></li>
+                        </ul>
+                    </div>
+                    <!--//item영역-->
+                    <!--item영역-->
+                    <div class="reserv-item">
+                        <div class="bgbox">
+                            <div class="pditem">
+                                <div class="product-info">
+                                    <div class="thumb">
+                                        <img src="//imagedev.hmall.com/p/img/pd/sample/img-gift-sample.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론">
+                                    </div>
+                                    <div class="figcaption">
+                                        <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론[15%특별할인][서울 웨스틴조선호텔] 라운지 멜론</div>
+                                        <div class="pdoption" aria-label="옵션/수량">
+                                            <span class="option">사이즈 : <em>L</em></span>
+                                            <span class="count">색상 : <em>그레이</em></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="dotlist">
+                            <li>판매기간 : <em>2020.06.07 ~ 2020.06.30</em></li>
+                            <li>배송기간 : <em>2020.07.07 ~ 2020.08.30</em></li>
+                            <li>고객안내 : <em>예약 판매 상품이며 7월 7일에 출고됩니다.</em></li>
+                        </ul>
+                    </div>
+                    <!--//item영역-->
+                </div>
+                
+                <div class="btngroup">
+                    <!-- [12/09]_수정() -->
+                    <button class="btn btn-linelgray" data-dismiss="modal"><span>취소</span></button>
+                    <button class="btn btn-default"><span>확인</span></button>
+                    <!-- 데이터 전송 후 클릭시 $(element).modal().hide() -->
+                </div>
+            </div>
+            <!-- //.content-body -->
+            
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.content -->
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+<!-- //.ui-modal -->
+<script>
+    $('#modalReserPurchase').modal().show();
+</script>
+</body>
+</html>

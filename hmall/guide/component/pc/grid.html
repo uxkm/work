@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>GRID</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<style>
+    .wrap{min-width:100%;}
+    .csection{width:100%;height:100%;margin:0;padding:0;}
+    .location{display:inline-flex;align-items:center;width:100%;height:120px;margin:0 0 40px;padding:40px;background:#333;color:#fff;font-size:28px;font-weight:700;}
+    .location *{color:inherit;font-size:inherit;font-weight:inherit;}
+    .location span{position:relative;margin-right:50px;}
+    .location strong{}
+    /* .location span::after{content:">";color:#fff;font-size:14px;} */
+    .group{display:flex;justify-content:space-around;flex-flow:row wrap;width:calc(100% - 80px);margin:0 auto 120px;}
+    .group h1{width:100%;margin-bottom:15px;color:#333;font-size:32px;letter-spacing:-1.68px;}
+    .group .dotlist{width:100%;}
+    .section{display:flex;flex-flow:row wrap;width:calc((100% - 20px)/2);margin-top:30px;padding:40px;padding-bottom:0;background:#fff;}
+    .section.full{width:100%;}
+    .dltbl{display:flex;justify-content:space-between;width:100%;margin-bottom:40px;}
+    .dltbl dt{display:inline-flex;width:163px;padding:0;color:#333;font-size:18px;font-weight:700;line-height:26px;letter-spacing:-0.72px;}
+    .dltbl dd{display:inline-flex;flex-flow:column;width:calc(100% - 163px);min-width:1081px;padding:0;}
+    .dltbl dd p{display:inline-flex;align-items:center;width:100%;max-width:340px;height:45px;padding:0 22px;font-size:14px;}
+    .dltbl dd > strong{display:inline-flex;width:100%;margin-bottom:10px;color:#333;font-size:16px;line-height:26px;font-weight:700;letter-spacing:-0.64px;}
+    .dltbl dd > strong:not(:first-child){margin-top:30px;}
+
+    .cbody{width:100%;background:#fff;}
+    .side-content{display:inline-flex;justify-content:center;align-items:center;height:200px;margin:0;background:#bfbfbf;}
+    .contents{display:inline-flex;justify-content:center;align-items:center;height:200px;margin:0;background:#ff5340;}
+    .pg-grid .contents{background:#bfbfbf;}
+
+    .grid-section{justify-content: center;align-items: center;height:200px;background:#1fa3d4;}
+</style>
+</head>
+<body>
+<section class="csection" role="contentinfo" aria-label="Grid 가이드">
+    <div class="location"><span>PC_WEBSTYLE GUID</span><strong>Grid</strong></div>
+    <div class="group">
+        <h1>GIRD</h1>
+        <ul class="dotlist">
+            <li>기본 레이아웃 구조입니다.</li>
+        </ul>
+        <div class="section full">
+            <dl class="dltbl">
+                <dt>기본 레이아웃 구조</dt>
+                <dd>
+                    <div class="cbody gird-full">
+                        <div class="contents">CONTENTS 1081px</div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="dltbl">
+                <dt>LNB가 있는 경우<br>레이아웃 구조1</dt>
+                <dd>
+                    <div class="cbody gird-l2x">
+                        <div class="side-content">LNB 250px</div>
+                        <div class="contents">CONTENTS 800px</div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="dltbl">
+                <dt>LNB가 있는 경우<br>레이아웃 구조2</dt>
+                <dd>
+                    <div class="cbody gird-r2x">
+                        <div class="contents">CONTENTS 800px</div>
+                        <div class="side-content">LNB 250px</div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <!-- //.section -->
+
+        <div class="section full pg-grid">
+            <dl class="dltbl">
+                <dt>페이지 그리드<br>2X</dt>
+                <dd>
+                    <div class="cbody gird-full">
+                        <div class="contents">
+                            <div class="grid-2x">
+                                <div class="grid-section">526px</div>
+                                <div class="grid-section">526px</div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="dltbl">
+                <dt>페이지 그리드<br>3X</dt>
+                <dd>
+                    <div class="cbody gird-full">
+                        <div class="contents">
+                            <div class="grid-3x">
+                                <div class="grid-section">340px</div>
+                                <div class="grid-section">340px</div>
+                                <div class="grid-section">340px</div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="dltbl">
+                <dt>페이지 그리드<br>4X</dt>
+                <dd>
+                    <div class="cbody gird-full">
+                        <div class="contents">
+                            <div class="grid-4x">
+                                <div class="grid-section">248px</div>
+                                <div class="grid-section">248px</div>
+                                <div class="grid-section">248px</div>
+                                <div class="grid-section">248px</div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="dltbl">
+                <dt>페이지 그리드<br>5X</dt>
+                <dd>
+                    <div class="cbody gird-full">
+                        <div class="contents">
+                            <div class="grid-5x">
+                                <div class="grid-section">193px</div>
+                                <div class="grid-section">193px</div>
+                                <div class="grid-section">193px</div>
+                                <div class="grid-section">193px</div>
+                                <div class="grid-section">193px</div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl class="dltbl">
+                <dt>페이지 그리드<br>LNB 3X</dt>
+                <dd>
+                    <div class="cbody gird-l2x">
+                        <div class="side-content">LNB 250px</div>
+                        <div class="contents">
+                            <div class="grid-3x">
+                                <div class="grid-section">248px</div>
+                                <div class="grid-section">248px</div>
+                                <div class="grid-section">248px</div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="dltbl">
+                <dt>페이지 그리드<br>LNB 4X</dt>
+                <dd>
+                    <div class="cbody gird-l2x">
+                        <div class="side-content">LNB 250px</div>
+                        <div class="contents">
+                            <div class="grid-4x">
+                                <div class="grid-section">180px</div>
+                                <div class="grid-section">180px</div>
+                                <div class="grid-section">180px</div>
+                                <div class="grid-section">180px</div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <!-- //.section -->
+
+    </div>
+    <!-- //.group -->
+</section>
+</body>
+</html>

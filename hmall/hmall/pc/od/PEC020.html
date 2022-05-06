@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>안심택배함 찾기</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/od/order.css">
+
+</head>
+<body>
+<div class="ui-modal pickup-spot-find" id="pec020" tabindex="-1" role="dialog" aria-label="안심택배함 찾기">
+    <div class="ui-modal-dialog" role="document">
+        <div class="content">
+            <p class="ui-title">안심택배함 찾기</p>
+            <!-- //.content-head -->
+            <div class="content-body">
+                <div class="pickup-area">
+                    <!-- 지도영역 -->
+                    <div class="map-area">
+                        <img src="//imagedev.hmall.com/p/img/od/sample/sample-map-1.png" alt="지도 샘플">
+                        <button class="spot active" style="top:305px;left:190px;"><!-- 클래스 'acitve' 추가시 이름 노출 -->
+                            <i class="icon"></i>
+                            <span class="name">강동구민회관</span>
+                        </button>
+                        <button class="spot" style="top:45px;left:140px;">
+                            <i class="icon"></i>
+                            <span class="name">강동구 청소년회관</span>
+                        </button>
+                        <button class="spot" style="top:215px;right:15px;">
+                            <i class="icon"></i>
+                            <span class="name">강동도서관</span>
+                        </button>
+                        <button class="spot" style="top:395px;left:80px;">
+                            <i class="icon"></i>
+                            <span class="name">명일하수처리장</span>
+                        </button>
+                    </div>
+                    <!-- // 지도영역 -->
+                    <div class="list-area">
+                        <div class="filter-box">
+                            <div class="form-flex">
+                                <div class="custom-selectbox" data-modules-selectbox>
+                                    <select>
+                                        <option>서울특별시</option>
+                                        <option>부산광역시</option>
+                                        <option>대구광역시</option>
+                                        <option>인천광역시</option>
+                                        <option>광주광역시</option>
+                                        <option>대전광역시</option>
+                                        <option>울산광역시</option>
+                                        <option>세종특별자치시</option>
+                                        <option>경기도</option>
+                                        <option>강원도</option>
+                                        <option>충청북도</option>
+                                        <option>충청남도</option>
+                                        <option>전라북도</option>
+                                        <option>전라남도</option>
+                                        <option>경상북도</option>
+                                        <option>경상남도</option>
+                                        <option>제주특별자치시</option>
+                                    </select>
+                                </div>
+                                <div class="custom-selectbox" data-modules-selectbox>
+                                    <select>
+                                        <option>시/군/구</option>
+                                        <option>내용1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="caption13">찾으시는 지역을 선택해주세요.</p>
+                            <div class="form-flex">
+                                <div class="inputbox">
+                                    <label class="inplabel icon-find"><input type="text" name="" value="" placeholder="입력하세요"></label>
+                                    <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                                    <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                </div>
+                            </div>
+                            <!-- [12/09]_수정(tms건 텍스트변경 : '편의점명이나 위치를 입력하세요. (GS25, CU)' -> '안심택배함 명칭 또는 위치를 입력하세요.') -->
+                            <p class="caption13">안심택배함 명칭 또는 위치를 입력하세요.</p>
+                        </div>
+                        <div class="spot-list">
+                            <ul>
+                                <li class="active"><!-- 버튼선택시 'active' 클래스 추가 --> 
+                                    <!-- [12/16]_수정(링크 영역 추가) -->
+                                    <a href="javascript:;" class="spot-link">
+                                        <p class="tit">강동구 청소년회관</p>
+                                        <!-- [12/14]_수정(주소요약  / 높이값 축소) -->
+                                        <p class="txt">서울 강동구 XX동 125-103 금호아파트 106동</p>
+                                    </a>    
+                                    <!--// [12/16] -->
+                                    <button class="btn btn-linelgray"><span>선택</span></button>
+                                </li>
+                                <li>
+                                    <!-- [12/16]_수정(링크 영역 추가) -->
+                                    <a href="javascript:;" class="spot-link">
+                                        <p class="tit">강동구 청소년회관</p>
+                                        <!-- [12/14]_수정(주소요약  / 높이값 축소) -->
+                                        <p class="txt">서울 강동구 XX동 125-103 금호아파트 106동</p>
+                                    </a>    
+                                    <!--// [12/16] -->
+                                    <button class="btn btn-linelgray"><span>선택</span></button>
+                                </li>
+                                <li>
+                                    <!-- [12/16]_수정(링크 영역 추가) -->
+                                    <a href="javascript:;" class="spot-link">
+                                        <p class="tit">강동구 청소년회관</p>
+                                        <!-- [12/14]_수정(주소요약  / 높이값 축소) -->
+                                        <p class="txt">서울 강동구 XX동 125-103 금호아파트 106동</p>
+                                    </a>    
+                                    <!--// [12/16] -->
+                                    <button class="btn btn-linelgray"><span>선택</span></button>
+                                </li>
+                                <li>
+                                    <!-- [12/16]_수정(링크 영역 추가) -->
+                                    <a href="javascript:;" class="spot-link">
+                                        <p class="tit">강동구 청소년회관</p>
+                                        <!-- [12/14]_수정(주소요약  / 높이값 축소) -->
+                                        <p class="txt">서울 강동구 XX동 125-103 금호아파트 106동</p>
+                                    </a>    
+                                    <!--// [12/16] -->
+                                    <button class="btn btn-linelgray"><span>선택</span></button>
+                                </li>
+                                <li>
+                                    <!-- [12/16]_수정(링크 영역 추가) -->
+                                    <a href="javascript:;" class="spot-link">
+                                        <p class="tit">강동구 청소년회관</p>
+                                        <!-- [12/14]_수정(주소요약  / 높이값 축소) -->
+                                        <p class="txt">서울 강동구 XX동 125-103 금호아파트 106동</p>
+                                    </a>    
+                                    <!--// [12/16] -->
+                                    <button class="btn btn-linelgray"><span>선택</span></button>
+                                </li>
+                                <li>
+                                    <!-- [12/16]_수정(링크 영역 추가) -->
+                                    <a href="javascript:;" class="spot-link">
+                                        <p class="tit">강동구 청소년회관</p>
+                                        <!-- [12/14]_수정(주소요약  / 높이값 축소) -->
+                                        <p class="txt">서울 강동구 XX동 125-103 금호아파트 106동</p>
+                                    </a>    
+                                    <!--// [12/16] -->
+                                    <button class="btn btn-linelgray"><span>선택</span></button>
+                                </li>
+                                <li>
+                                    <!-- [12/16]_수정(링크 영역 추가) -->
+                                    <a href="javascript:;" class="spot-link">
+                                        <p class="tit">강동구 청소년회관</p>
+                                        <!-- [12/14]_수정(주소요약  / 높이값 축소) -->
+                                        <p class="txt">서울 강동구 XX동 125-103 금호아파트 106동</p>
+                                    </a>    
+                                    <!--// [12/16] -->
+                                    <button class="btn btn-linelgray"><span>선택</span></button>
+                                </li>
+                                <li>
+                                    <!-- [12/16]_수정(링크 영역 추가) -->
+                                    <a href="javascript:;" class="spot-link">
+                                        <p class="tit">강동구 청소년회관</p>
+                                        <!-- [12/14]_수정(주소요약  / 높이값 축소) -->
+                                        <p class="txt">서울 강동구 XX동 125-103 금호아파트 106동</p>
+                                    </a>    
+                                    <!--// [12/16] -->
+                                    <button class="btn btn-linelgray"><span>선택</span></button>
+                                </li>
+                            </ul>
+                            <!-- 결과 없을 경우 -->
+                            <div class="nodata-box">
+                                <p class="tit">검색 결과가 없습니다.</p>
+                                <p class="txt">찾으시려는 주소에 잘못된 철자가 없는지, <br>정확한 주소인지 다시 한번 확인해 주세요.</p>
+                            </div>
+                            <!-- // 결과 없을 경우 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //.content-body -->
+            
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.content -->
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+<!-- //.ui-modal -->
+<script>
+    $('#pec020').modal().show();
+</script>
+</body>
+</html>

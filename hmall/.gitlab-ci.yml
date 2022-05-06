@@ -1,0 +1,28 @@
+image: registry.wylie.co.kr/wylie/wylie-build-env
+
+variables:
+  DOCKER_DRIVER: overlay
+  DOCKER_HOST: tcp://repo.wylie.co.kr:18082
+
+cache:
+  untracked: true
+  key: "$CI_PROJECT_NAME"
+
+services:
+  - docker:dind
+
+stages:
+  - deploy
+
+deploy-pub:
+  stage: deploy
+  script:
+    - docker login -u $DOCKER_REPOSITORY_USERNAME -p $DOCKER_REPOSITORY_PASSWORD $DOCKER_REPOSITORY_URL
+    - docker build -t registry.wylie.co.kr/hmall/uiux .
+    - docker push registry.wylie.co.kr/hmall/uiux
+    - docker stack deploy --with-registry-auth --compose-file=docker-compose.yml hmall
+  environment:
+    name: development
+  when: manual
+  only:
+    - develop

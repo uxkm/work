@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>FORM STYLE</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<style>
+    .wrap{min-width:100%;}
+    .csection{width:100%;height:100%;margin:0;padding:0;}
+    .location{display:inline-flex;align-items:center;width:100%;height:120px;margin:0 0 40px;padding:40px;background:#333;color:#fff;font-size:28px;font-weight:700;}
+    .location *{color:inherit;font-size:inherit;font-weight:inherit;}
+    .location span{position:relative;margin-right:50px;}
+    .location strong{}
+    /* .location span::after{content:">";color:#fff;font-size:14px;} */
+    .group{display:flex;justify-content:space-around;flex-flow:row wrap;width:calc(100% - 80px);margin:0 auto 120px;}
+    .group h1{width:100%;margin-bottom:15px;color:#333;font-size:32px;letter-spacing:-1.68px;}
+    .group .dotlist{width:100%;}
+    .section{display:inline-flex;flex-flow:column;width:100%;padding:20px 40px;padding-bottom:0;background:#fff;}
+    .section.full{width:100%;}
+    .group pre{width:calc(100% - 80px);margin:5px auto;padding:5px;border:1px solid #ddd;}
+    .group .ctypo18{margin-bottom:5px;line-height:26px;}
+    .group .ctypo15{margin-top:15px;margin-bottom:0px;}
+    .group .grid-1x,
+    .group .grid-2x,
+    .group .grid-3x,
+    .group .grid-4x{margin-bottom:20px;}
+    .group .grid-1x .grid-section,
+    .group .grid-2x .grid-section,
+    .group .grid-3x .grid-section,
+    .group .grid-4x .grid-section{flex-direction: column;}
+    .group .grid-1x .grid-section .inputbox:not(:first-child),
+    .group .grid-2x .grid-section .inputbox:not(:first-child),
+    .group .grid-3x .grid-section .inputbox:not(:first-child),
+    .group .grid-4x .grid-section .inputbox:not(:first-child),
+    .group .grid-1x .grid-section .filebox:not(:first-child),
+    .group .grid-2x .grid-section .filebox:not(:first-child),
+    .group .grid-3x .grid-section .filebox:not(:first-child),
+    .group .grid-4x .grid-section .filebox:not(:first-child){margin-top:15px;}
+    .group .grid-section .selectwrap{margin-top:15px;}
+    /* .group .grid-section .custom-selectbox{margin-top:15px;} */
+    hr{display:block;width:100%;border:1px solid #000}
+    .grid-section pre{margin:10px 0;font-size:11px;}
+</style>
+
+<script>
+    $(function(){  
+        $('input[type="file"]').change(function(){
+            var label = $(this).parent().find('.file-text'); 
+            if(typeof(this.files) !='undefined'){ // fucking IE      
+            if(this.files.length == 0){
+                label.removeClass('with-file').text(label.data('default'));
+            }
+            else{
+                var file = this.files[0]; 
+                var name = file.name;
+                // var size = (file.size / 1048576).toFixed(3); //size in mb 
+                // label.addClass('withFile').text(name + ' (' + size + 'mb)');
+                label.addClass('with-file').text(name);
+            }
+            }
+            else{
+            var name = this.value.split("\\");
+                label.addClass('with-file').text(name[name.length-1]);
+            }
+            return false;
+        });  
+    });
+</script>
+</head>
+<body>
+<section class="csection" role="contentinfo" aria-label="FORM 가이드">
+    <div class="location"><span>PC_WEBSTYLE GUID</span><strong>FORM STYLE</strong></div>
+    <div class="group">
+        <h1>FORM STYLE</h1>
+        <ul class="dotlist">
+            <li>내용을 입력하세요</li>
+        </ul>
+<pre>
+class inputbox class 유형
+input focus/선택 시  inputbox class= selected 추가 예) div class="inputbox selected"
+input disabled 시  inputbox class= disabled 추가 예) div class="inputbox disabled"
+input readonly 시  inputbox class= readonly 추가 예) div class="inputbox readonly"
+input 입력 실패 시  inputbox class= failed 추가 예) div class="inputbox failed"
+input 입력 성공 시  inputbox class= success 추가 예) div class="inputbox success"
+&lt;div class="inputbox"&gt;
+    &lt;label class="inplabel"&gt;&lt;input type="text" name="" value="" placeholder="이름"&gt;&lt;/label&gt;
+    &lt;button class="btn ico-clearabled"&gt;&lt;i class="icon"&gt;&lt;/i&gt;&lt;span class="hiding"&gt;지우기&lt;/span&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;!-- 입력 실패 메세지 --&gt;
+&lt;p class="failed-msg"&gt;
+    &lt;i class="icon error"&gt;&lt;/i&gt;
+    &lt;span&gt;이름을 입력해 주세요.&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;!-- 비밀번호 유형 case 
+기본 class inputbox
+보통 class inputbox usually
+불일치 class inputbox discord
+취약 class inputbox weak
+안전 class inputbox success
+--&gt;
+&lt;div class="inputbox"&gt;
+    &lt;label class="inplabel"&gt;&lt;input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"&gt;&lt;/label&gt;
+    &lt;button class="btn ico-clearabled"&gt;&lt;i class="icon"&gt;&lt;/i&gt;&lt;span class="hiding"&gt;지우기&lt;/span&gt;&lt;/button&gt;
+    &lt;i class="icon lock"&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class="inputbox usually"&gt;
+    &lt;label class="inplabel"&gt;&lt;input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"&gt;&lt;/label&gt;
+    &lt;button class="btn ico-clearabled"&gt;&lt;i class="icon"&gt;&lt;/i&gt;&lt;span class="hiding"&gt;지우기&lt;/span&gt;&lt;/button&gt;
+    &lt;i class="icon lock-usually"&gt;&lt;em&gt;보통&lt;/em&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class="inputbox discord"&gt;
+    &lt;label class="inplabel"&gt;&lt;input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"&gt;&lt;/label&gt;
+    &lt;button class="btn ico-clearabled"&gt;&lt;i class="icon"&gt;&lt;/i&gt;&lt;span class="hiding"&gt;지우기&lt;/span&gt;&lt;/button&gt;
+    &lt;i class="icon lock-discord"&gt;&lt;em&gt;불일치&lt;/em&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class="inputbox weak"&gt;
+    &lt;label class="inplabel"&gt;&lt;input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"&gt;&lt;/label&gt;
+    &lt;button class="btn ico-clearabled"&gt;&lt;i class="icon"&gt;&lt;/i&gt;&lt;span class="hiding"&gt;지우기&lt;/span&gt;&lt;/button&gt;
+    &lt;i class="icon lock-weak"&gt;&lt;em&gt;취약&lt;/em&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class="inputbox success"&gt;
+    &lt;label class="inplabel"&gt;&lt;input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"&gt;&lt;/label&gt;
+    &lt;button class="btn ico-clearabled"&gt;&lt;i class="icon"&gt;&lt;/i&gt;&lt;span class="hiding"&gt;지우기&lt;/span&gt;&lt;/button&gt;
+    &lt;i class="icon lock-success"&gt;&lt;em&gt;안전&lt;/em&gt;&lt;/i&gt;
+&lt;/div&gt;
+</pre>
+        <div class="section full">
+            <p class="ctypo18 bold">기본형 (*46)</p>
+            <div class="grid-3x">
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Default(color:#aaa;)</p>
+
+                    <div class="inputbox">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="이름"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+        
+                    <div class="inputbox">
+                        <label class="inplabel icon-person"><input type="text" name="" value="" placeholder="아이디 또는 이메일 (영문,숫자 4~30자리)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+        
+                    <div class="inputbox">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    
+                    <div class="inputbox">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="휴대폰 번호 (예 : 01012345678)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    
+                    <div class="inputbox">
+                        <label class="inplabel icon-find"><input type="text" name="" value="" placeholder="입력하세요"></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">focus/selected(color:#333)</p>
+
+                    <div class="inputbox selected">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="000000000000" placeholder="비밀번호 (6자리 이상)" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox selected">
+                        <label class="inplabel"><input type="password" name="" value="000000000000000000" placeholder="비밀번호 (6자리 이상)" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox selected">
+                        <label class="inplabel icon-person"><input type="text" name="" value="홍길동" placeholder="이름" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox selected">
+                        <label class="inplabel"><input type="text" name="" value="홍길동" placeholder="이름" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox selected">
+                        <label class="inplabel icon-find"><input type="text" name="" value="나이키" placeholder="입력하세요" selected></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">disabled(background-color:#f8f8f8;color:#aaa;)</p>
+
+                    <div class="inputbox disabled">
+                        <label class="inplabel"><input type="text" name="" value="ㅇㅇㅇ" placeholder="이름" disabled></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    
+                    <div class="inputbox disabled">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="입력하세요" disabled></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">readonly(color:#666;)</p>
+
+                    <div class="inputbox readonly">
+                        <label class="inplabel"><input type="text" name="" value="홍길동" placeholder="이름" readonly></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">failed</p>
+
+                    <div class="inputbox failed">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="이름"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <!-- 입력 실패 메세지 -->
+                    <p class="failed-msg">
+                        <i class="icon error"></i>
+                        <span>이름을 입력해 주세요.</span>
+                    </p>
+                </div>
+                <!-- 가이드에 명시가 안되어 일단 주석처리함
+                    <div class="grid-section">
+                    <p class="ctypo15 bold">success</p>
+
+                    <div class="inputbox success">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="이름"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div> -->
+                <div class="grid-section">
+                    <p class="ctypo15 bold">비밀번호 유형(기본/보통/불일치/취약/안전)</p>
+
+                    <div class="inputbox">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox usually">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-usually">보통</em>
+                    </div>
+                    <div class="inputbox discord">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-discord">불일치</em>
+                    </div>
+                    <div class="inputbox weak">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-weak">취약</em>
+                    </div>
+                    <div class="inputbox success">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-success">안전</em>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">input위에 확인버튼</p>
+
+                    <div class="inputbox">
+                        <label class="inplabel btnlabel"><input type="text" name="" value="" placeholder="아이디를 입력해주세요"></label>
+                        <button class="btn btn-lineblack btn-confirm"><span>중복 확인</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">첨부파일</p>
+                    <div class="filebox">
+                        <label class='file-input'>
+                            <span data-default='파일첨부' class="file-text"></span>
+                            <span class="btn btn-file sm">첨부파일</span>
+                            <input type="file" class="hiding">
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">selectbox</p>
+                    <!-- 
+                        select가 disabled이면 custom-selectbox class disabled 추가 
+                        select가 readonly이면 custom-selectbox class readonly 추가 
+                    -->
+                    <div class="custom-selectbox" data-modules-selectbox>
+                        <select>
+                            <option>내용1</option>
+                            <option>내용2</option>
+                            <option>내용3</option>
+                            <option>내용4</option>
+                            <option>내용5</option>
+                            <option>내용6</option>
+                            <option>내용7</option>
+                            <option>내용8</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- //.grid-3x -->
+
+            <div class="grid-2x">
+                <div class="grid-section">
+                    <p class="ctypo15 bold">textarea default</p>
+
+                    <div class="textareabox">
+                        <label class="txtlabel">
+                            <textarea cols="48" rows="7" placeholder="문의하실 내용을 구체적으로 적어주시면정확하고 빠른 답변에 도움이 됩니다." aria-placeholder="문의하실 내용을 구체적으로 적어주시면
+                            정확하고 빠른 답변에 도움이 됩니다."></textarea>
+                        </label>
+                        <span class="txtcount"><em>0</em><b>500</b></span>
+                    </div>
+
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">textarea disabled</p>
+
+                    <div class="textareabox disabled">
+                        <label class="txtlabel">
+                            <textarea cols="48" rows="7" disabled placeholder="문의하실 내용을 구체적으로 적어주시면정확하고 빠른 답변에 도움이 됩니다." aria-placeholder="문의하실 내용을 구체적으로 적어주시면
+                            정확하고 빠른 답변에 도움이 됩니다."></textarea>
+                        </label>
+                        <span class="txtcount"><em>0</em><b>500</b></span>
+                    </div>
+
+                </div>
+
+                <div class="grid-section">
+                    <p class="ctypo15 bold">textarea default button이 있을경우</p>
+
+                    <div class="textareabox">
+                        <label class="txtlabel">
+                            <textarea cols="48" rows="7" placeholder="문의하실 내용을 구체적으로 적어주시면정확하고 빠른 답변에 도움이 됩니다." aria-placeholder="문의하실 내용을 구체적으로 적어주시면
+                            정확하고 빠른 답변에 도움이 됩니다."></textarea>
+                        </label>
+                        <div class="countgp">
+                            <span class="txtcount"><em>0</em><b>500</b></span>
+                            <button class="btn btn-lineblack small"><span>등록</span></button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">textarea disabled button이 있을경우</p>
+
+                    <div class="textareabox disabled">
+                        <label class="txtlabel">
+                            <textarea cols="48" rows="7" disabled placeholder="문의하실 내용을 구체적으로 적어주시면정확하고 빠른 답변에 도움이 됩니다." aria-placeholder="문의하실 내용을 구체적으로 적어주시면
+                            정확하고 빠른 답변에 도움이 됩니다."></textarea>
+                        </label>
+                        <div class="countgp">
+                            <span class="txtcount"><em>0</em><b>500</b></span>
+                            <button class="btn btn-lineblack small" disabled><span>등록</span></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- //.grid-2x -->
+
+            
+
+            <!-- <div class="inner-box article-border">
+                <ul class="chk-list">
+                    <li>
+                        <div class="checkbox-wrap">
+                            <div class="checkbox">
+                                <label class="chklabel"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span>[선택] H.Point 가입하기</span></label>
+                            </div>
+                        </div>
+                        <ul class="dotlist">
+                            <li>가입 시, 3종 할인쿠폰(최대 1만원) 혜택이 지급됩니다.</li>
+                            <li>Hmall 가입완료 후 H.Point 가입이 순차 진행됩니다.</li>
+                            <li>H.Point는 현대백화점 그룹의 통합 멤버십입니다.</li>
+                        </ul>   
+                    </li>
+                    <li>
+                        <div class="checkbox-wrap">
+                            <div class="checkbox">
+                                <label class="chklabel"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span><em class="color-ff5340">[필수]</em> 이용약관 및 개인정보 수집/이용에 동의합니다.</span></label>
+                            </div>
+                        </div>
+
+                        <div class="lr-align">
+                            <span class="left-align">현대Hmall 이용약관</span>
+                            <a href="javascript:;" class="btn atext right-align"><span>내용보기</span><i class="arrow right"></i></a>
+                        </div>
+                        <div class="lr-align">
+                            <span class="left-align">개인정보 수집 및 이용</span>
+                            <a href="javascript:;" class="btn atext right-align"><span>내용보기</span><i class="arrow right"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox-wrap">
+                            <div class="checkbox">
+                                <label class="chklabel"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span>[선택] 맞춤형 마케팅 동의</span></label>
+                            </div>
+                        </div>
+                        <div class="checkbox-wrap choice-agree">
+                            <div class="checkbox">
+                                <label class="chklabel sm"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span>이메일</span></label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="chklabel sm"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span>문자</span></label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="chklabel sm"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span>전화 (보험상담 등)</span></label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="inner-box">
+                <p class="infotxt">이용약관과 개인정보 수집 및 이용을 확인하였으며,<br>만 14세 이상임을 동의하십니까?</p>
+                <div class="btngroup">
+                    <button class="btn btn-default medium"><span>가입하기</span></button>
+                </div>
+            </div> -->
+        </div>
+        <!-- //.section -->
+
+        <hr>
+
+        <div class="section full">
+            <p class="ctypo18 bold">중간형 (*40)</p>
+            <div class="grid-3x">
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Default(color:#aaa;)</p>
+
+                    <div class="inputbox md">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="이름"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+        
+                    <div class="inputbox md">
+                        <label class="inplabel icon-person"><input type="text" name="" value="" placeholder="아이디 또는 이메일 (영문,숫자 4~30자리)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+        
+                    <div class="inputbox md">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    
+                    <div class="inputbox md">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="휴대폰 번호 (예 : 01012345678)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    
+                    <div class="inputbox md">
+                        <label class="inplabel icon-find"><input type="text" name="" value="" placeholder="입력하세요"></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">focus/selected(color:#333)</p>
+
+                    <div class="inputbox md selected">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="000000000000" placeholder="비밀번호 (6자리 이상)" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox md selected">
+                        <label class="inplabel"><input type="password" name="" value="000000000000000000" placeholder="비밀번호 (6자리 이상)" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox md selected">
+                        <label class="inplabel icon-person"><input type="text" name="" value="홍길동" placeholder="이름" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox md selected">
+                        <label class="inplabel"><input type="text" name="" value="홍길동" placeholder="이름" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox md selected">
+                        <label class="inplabel icon-find"><input type="text" name="" value="나이키" placeholder="입력하세요" selected></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">disabled(background-color:#f8f8f8;color:#aaa;)</p>
+
+                    <div class="inputbox md disabled">
+                        <label class="inplabel"><input type="text" name="" value="ㅇㅇㅇ" placeholder="이름" disabled></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    
+                    <div class="inputbox md disabled">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="입력하세요" disabled></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">readonly(color:#666;)</p>
+
+                    <div class="inputbox md readonly">
+                        <label class="inplabel"><input type="text" name="" value="홍길동" placeholder="이름" readonly></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">failed</p>
+
+                    <div class="inputbox md failed">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="이름"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <!-- 입력 실패 메세지 -->
+                    <p class="failed-msg">
+                        <i class="icon error"></i>
+                        <span>이름을 입력해 주세요.</span>
+                    </p>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">비밀번호 유형(기본/보통/불일치/취약/안전)</p>
+
+                    <div class="inputbox md">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox md usually">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-usually">보통</em>
+                    </div>
+                    <div class="inputbox md discord">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-discord">불일치</em>
+                    </div>
+                    <div class="inputbox md weak">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-weak">취약</em>
+                    </div>
+                    <div class="inputbox md success">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-success">안전</em>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">input위에 확인버튼</p>
+
+                    <div class="inputbox md">
+                        <label class="inplabel btnlabel"><input type="text" name="" value="" placeholder="아이디를 입력해주세요"></label>
+                        <button class="btn btn-lineblack btn-confirm"><span>중복 확인</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">첨부파일</p>
+                    <div class="filebox md">
+                        <label class='file-input'>
+                            <span data-default='파일첨부' class="file-text"></span>
+                            <span class="btn btn-file sm">첨부파일</span>
+                            <input type="file" class="hiding">
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">selectbox</p>
+                    <!-- 
+                        select가 disabled이면 custom-selectbox class disabled 추가 
+                        select가 readonly이면 custom-selectbox class readonly 추가 
+                    -->
+                    <div class="custom-selectbox md" data-modules-selectbox>
+                        <select>
+                            <option>내용1</option>
+                            <option>내용2</option>
+                            <option>내용3</option>
+                            <option>내용4</option>
+                            <option>내용5</option>
+                            <option>내용6</option>
+                            <option>내용7</option>
+                            <option>내용8</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- //.grid-3x -->
+        </div>
+        <!-- //.section -->
+
+        <hr>
+
+        <div class="section full">
+            <p class="ctypo18 bold">최소형 (*34)</p>
+            <div class="grid-3x">
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Default(color:#aaa;)</p>
+
+                    <div class="inputbox sm">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="이름"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+        
+                    <div class="inputbox sm">
+                        <label class="inplabel icon-person"><input type="text" name="" value="" placeholder="아이디 또는 이메일 (영문,숫자 4~30자리)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+        
+                    <div class="inputbox sm">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    
+                    <div class="inputbox sm">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="휴대폰 번호 (예 : 01012345678)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    
+                    <div class="inputbox sm">
+                        <label class="inplabel icon-find"><input type="text" name="" value="" placeholder="입력하세요"></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">focus/selected(color:#333)</p>
+
+                    <div class="inputbox sm selected">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="000000000000" placeholder="비밀번호 (6자리 이상)" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox sm selected">
+                        <label class="inplabel"><input type="password" name="" value="000000000000000000" placeholder="비밀번호 (6자리 이상)" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox sm selected">
+                        <label class="inplabel icon-person"><input type="text" name="" value="홍길동" placeholder="이름" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox sm selected">
+                        <label class="inplabel"><input type="text" name="" value="홍길동" placeholder="이름" selected></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox sm selected">
+                        <label class="inplabel icon-find"><input type="text" name="" value="나이키" placeholder="입력하세요" selected></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">disabled(background-color:#f8f8f8;color:#aaa;)</p>
+
+                    <div class="inputbox sm disabled">
+                        <label class="inplabel"><input type="text" name="" value="ㅇㅇㅇ" placeholder="이름" disabled></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    
+                    <div class="inputbox sm disabled">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="입력하세요" disabled></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">readonly(color:#666;)</p>
+
+                    <div class="inputbox sm readonly">
+                        <label class="inplabel"><input type="text" name="" value="홍길동" placeholder="이름" readonly></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">failed</p>
+
+                    <div class="inputbox sm failed">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="이름"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <!-- 입력 실패 메세지 -->
+                    <p class="failed-msg">
+                        <i class="icon error"></i>
+                        <span>이름을 입력해 주세요.</span>
+                    </p>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">비밀번호 유형(기본/보통/불일치/취약/안전)</p>
+
+                    <div class="inputbox sm">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <div class="inputbox sm usually">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-usually">보통</em>
+                    </div>
+                    <div class="inputbox sm discord">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-discord">불일치</em>
+                    </div>
+                    <div class="inputbox sm weak">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-weak">취약</em>
+                    </div>
+                    <div class="inputbox sm success">
+                        <label class="inplabel icon-lock"><input type="password" name="" value="00000000000" placeholder="비밀번호 (6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <em class="lock-success">안전</em>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">input위에 확인버튼</p>
+
+                    <div class="inputbox sm">
+                        <label class="inplabel btnlabel"><input type="text" name="" value="" placeholder="아이디를 입력해주세요"></label>
+                        <button class="btn btn-lineblack btn-confirm"><span>중복 확인</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">첨부파일</p>
+                    <div class="filebox sm">
+                        <label class='file-input'>
+                            <span data-default='파일첨부' class="file-text"></span>
+                            <span class="btn btn-file sm">첨부파일</span>
+                            <input type="file" class="hiding">
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">selectbox</p>
+                    <!-- 
+                        select가 disabled이면 custom-selectbox class disabled 추가 
+                        select가 readonly이면 custom-selectbox class readonly 추가 
+                    -->
+                    <div class="custom-selectbox sm" data-modules-selectbox>
+                        <select>
+                            <option>내용1</option>
+                            <option>내용2</option>
+                            <option>내용3</option>
+                            <option>내용4</option>
+                            <option>내용5</option>
+                            <option>내용6</option>
+                            <option>내용7</option>
+                            <option>내용8</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- //.grid-3x -->
+        </div>
+        <!-- //.section -->
+
+        <hr>
+
+        <div class="section full">
+            <p class="ctypo18 bold">checkbox(css 방식 size 22*22)</p>
+            <div class="grid-4x">
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Default</p>
+                    <!-- 22*22 -->
+                    <div class="checkbox">
+                        <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel"&gt;
+  &lt;input type="checkbox" name=""&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Checked</p>
+                    <div class="checkbox">
+                        <label class="chklabel"><input type="checkbox" name="" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel"&gt;
+  &lt;input type="checkbox" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Checked Black</p>
+                    <div class="checkbox">
+                        <label class="chklabel black"><input type="checkbox" name="" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel black"&gt;
+  &lt;input type="checkbox" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Disabled</p>
+                    <div class="checkbox">
+                        <label class="chklabel"><input type="checkbox" name="" disabled><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel"&gt;
+  &lt;input type="checkbox" name="" disabled&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Default square type</p>
+                    <!-- 22*22 -->
+                    <div class="checkbox">
+                        <label class="chklabel square"><input type="checkbox" name=""><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel square"&gt;
+  &lt;input type="checkbox" name=""&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Checked square type</p>
+                    <div class="checkbox">
+                        <label class="chklabel square"><input type="checkbox" name="" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel square"&gt;
+  &lt;input type="checkbox" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Checked Black square type</p>
+                    <div class="checkbox">
+                        <label class="chklabel black square"><input type="checkbox" name="" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel black square"&gt;
+  &lt;input type="checkbox" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Disabled square type</p>
+                    <div class="checkbox">
+                        <label class="chklabel square"><input type="checkbox" name="" disabled><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel square"&gt;
+  &lt;input type="checkbox" name="" disabled&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+            </div>
+            <!-- //.grid-4x -->
+        </div>
+        <!-- //.section -->
+
+        <hr>
+
+        <div class="section full">
+            <p class="ctypo18 bold">checkbox small(css 방식 size 18*18)</p>
+            <div class="grid-4x">
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Default small</p>
+                    <div class="checkbox">
+                        <label class="chklabel sm"><input type="checkbox" name=""><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel sm"&gt;
+  &lt;input type="checkbox" name=""&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Checked</p>
+                    <div class="checkbox">
+                        <label class="chklabel sm"><input type="checkbox" name="" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel sm"&gt;
+  &lt;input type="checkbox" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Checked Black</p>
+                    <div class="checkbox">
+                        <label class="chklabel sm black"><input type="checkbox" name="" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel sm black"&gt;
+  &lt;input type="checkbox" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Disabled</p>
+                    <div class="checkbox">
+                        <label class="chklabel sm"><input type="checkbox" name="" disabled><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel sm"&gt;
+  &lt;input type="checkbox" name="" disabled&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Default small square type</p>
+                    <div class="checkbox">
+                        <label class="chklabel sm square"><input type="checkbox" name=""><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel sm square"&gt;
+  &lt;input type="checkbox" name=""&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Checked square type</p>
+                    <div class="checkbox">
+                        <label class="chklabel sm square"><input type="checkbox" name="" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel sm square"&gt;
+  &lt;input type="checkbox" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Checked Black square type</p>
+                    <div class="checkbox">
+                        <label class="chklabel sm black square"><input type="checkbox" name="" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel sm black square"&gt;
+  &lt;input type="checkbox" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Disabled square type</p>
+                    <div class="checkbox">
+                        <label class="chklabel sm square"><input type="checkbox" name="" disabled><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="chklabel sm square"&gt;
+  &lt;input type="checkbox" name="" disabled&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+            </div>
+            <!-- //.grid-4x -->
+        </div>
+        <!-- //.section -->
+
+        <hr>
+
+        <div class="section full">
+            <p class="ctypo18 bold">radiobox(css 방식 size 22*22)</p>
+            <div class="grid-4x">
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Default</p>
+                    <div class="radiobox">
+                        <label class="radlabel"><input type="radio" name="rad"><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="radlabel"&gt;
+  &lt;input type="radio" name=""&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">checked</p>
+                    <div class="radiobox">
+                        <label class="radlabel"><input type="radio" name="radCheck" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="radlabel"&gt;
+  &lt;input type="radio" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">checked black</p>
+                    <div class="radiobox">
+                        <label class="radlabel black"><input type="radio" name="radBlack" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="radlabel black"&gt;
+  &lt;input type="radio" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">disabled</p>
+                    <div class="radiobox">
+                        <label class="radlabel"><input type="radio" name="rad" disabled><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="radlabel"&gt;
+  &lt;input type="radio" name="" disabled&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+            </div>
+            <!-- //.grid-4x -->
+        </div>
+        <!-- //.section -->
+
+        <hr>
+
+        <div class="section full">
+            <p class="ctypo18 bold">radiobox small(css 방식 size 18*18)</p>
+            <div class="grid-4x">
+                <div class="grid-section">
+                    <p class="ctypo15 bold">Default</p>
+                    <div class="radiobox">
+                        <label class="radlabel sm"><input type="radio" name="smrad"><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="radlabel sm"&gt;
+  &lt;input type="radio" name=""&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">checked</p>
+                    <div class="radiobox">
+                        <label class="radlabel sm"><input type="radio" name="smradCheck" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="radlabel sm"&gt;
+  &lt;input type="radio" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">checked black</p>
+                    <div class="radiobox">
+                        <label class="radlabel sm black"><input type="radio" name="smradBlack" checked><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="radlabel sm black"&gt;
+  &lt;input type="radio" name="" checked&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+                <div class="grid-section">
+                    <p class="ctypo15 bold">disabled</p>
+                    <div class="radiobox">
+                        <label class="radlabel sm"><input type="radio" name="smrad" disabled><i class="icon"></i><span>i class icon</span></label>
+                    </div>
+<pre>
+&lt;label class="radlabel sm"&gt;
+  &lt;input type="radio" name="" disabled&gt;
+  &lt;i class="icon"&gt;&lt;/i&gt;
+  &lt;span&gt;text&lt;/span&gt;
+&lt;/label&gt;
+</pre>
+                </div>
+            </div>
+            <!-- //.grid-4x -->
+        </div>
+        <!-- //.section -->
+
+        <hr/>
+        <!--section-->
+        <div class="section full">
+            <p class="ctypo18 bold">radiobox roundcheck small(css 방식 size 18*18)</p>
+            <div class="grid-4x">
+                <!--radio-box-->
+                <div class="radio-box">
+                    <span>
+                        <input type="radio" name="box-rad1" checked="" aria-checked="true" id="rad1-1">
+                        <label for="rad1-1" class="sm50" style="width:120px;"><span class="text">예치금</span></label>
+                    </span>
+                    <span>
+                        <input type="radio" name="box-rad1" aria-checked="false" id="rad1-2">
+                        <label for="rad1-2" class="sm50" style="width:120px;"><span class="text">신용카드</span></label>
+                    </span>
+                </div>
+                <!--radio-box-->
+            </div>
+        </div>
+        <!--//section-->
+
+    </div>
+    <!-- //.group -->
+</section>
+</body>
+</html>

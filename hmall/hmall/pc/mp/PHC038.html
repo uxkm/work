@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>적립금 유효기간 조회</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/mp/mypage.css">
+
+</head>
+<body id="popWin">         
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:800px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win wd880 pop-phc038">
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">적립금 유효기간 조회</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <div class="content">
+                        <div class="content-head">
+                            <div class="msginfo">
+                                <p>적립금은 소멸예정 순으로 사용되며 해당 기간 내 사용하지 않은 경우 적립금은 소멸됩니다.</p>
+                            </div>
+                        </div>
+                        <!-- //.content-head -->
+                        <div class="content-body">
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>적립금 유효기간 조회</caption>
+                                    <colgroup>
+                                        <col style="width:20%;">
+                                        <col style="width:40%;">
+                                        <col style="width:20%;">
+                                        <col style="width:20%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">등록일</th>
+                                            <th scope="col">적립금 내용</th>
+                                            <th scope="col">금액</th>
+                                            <th scope="col">사용기간</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- 적립금 유효기간 조회 내역없음 -->
+                                        <tr>
+                                            <td colspan="4" class="txt-center">사용가능한 적립금 내역이 없습니다.</td>
+                                        </tr>
+                                        <!-- 적립금 유효기간 조회 내역없음 -->
+                                        <tr>
+                                            <td class="txt-center">2020.09.11</td>
+                                            <td class="txt-left">9월 비.밀.적립금 (09/11 ~ 25)</td>
+                                            <td class="txt-center">3,000원</td>
+                                            <td class="txt-center">2020.09.25</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">2020.09.11</td>
+                                            <td class="txt-left">기타</td>
+                                            <td class="txt-center">110,000원</td>
+                                            <td class="txt-center">2020.09.25</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">2020.09.11</td>
+                                            <td class="txt-left">기타</td>
+                                            <td class="txt-center">110,000원</td>
+                                            <td class="txt-center">2020.09.25</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+            
+                            <div class="btngroup">
+                                <button class="btn btn-default"><span>확인</span></button>
+                                <!-- 데이터 전송 후 닫힘 $(element).modal().hide() -->
+                            </div>        
+                        </div>
+                        <!-- //.content-body -->
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+</body>
+</html>

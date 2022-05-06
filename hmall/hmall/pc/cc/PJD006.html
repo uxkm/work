@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>고객센터 고객의견상세 주문내역</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/cc/customer.css">
+</head>
+<body id="popWin">         
+    <!--윈도우팝업(새창으로열기) PJD005 유형선택에서 주문관련 버튼 클릭 시 윈도우 팝업 // 20200825 script 요청드림-->  
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:800px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win wd880 cus-opinion cus-product-list">  <!--20200828 금요일 pc레이아웃 공통작업 wd880 클래스 추가-->
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">주문내역</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <div class="content"> 
+                        
+                        <!--search-form-->
+                        <div class="search-form">
+                            <!--search-area-->
+                            <div class="search-area">
+                                <p class="txt">상담하실 상품을 선택해주세요.</p>
+                                <!--search-term--> <!--20200828 금요일 추후 라디오박스 형태로 변경 예정-->
+                                <div class="search-term">
+                                    <a href="javascript:;" class="termmonth active">1개월</a>
+                                    <a href="javascript:;" class="term">3개월</a>
+                                    <a href="javascript:;" class="all">전체</a>
+                                </div>
+                                <!--//search-term-->
+                            </div>
+                            <!--//search-area-->
+                        </div>
+                        <!--//search-form-->
+
+                        <!--board-->
+                        <div class="board">
+                            <!--table-->
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>주문선택테이블</caption>  
+                                    <!-- [11/18]_수정(디자인파일 11/18 총금액 삭제로 인한 colgroup width값 수정) -->                                  
+                                    <colgroup>
+                                        <col style="width:182px">
+                                        <col style="width:auto">
+                                        <!-- [11/18]_수정(tms pjd006-u0020 : 총금액 영역 삭제) -->
+                                        <!-- <col style="width:98px"> -->
+                                        <col style="width:120px">
+                                        <col style="width:112px"> 
+                                    </colgroup>
+                                    <!--// [11/18] -->
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">주문일자/주문번호</th>
+                                            <th scope="col">상품명/상품정보/수량</th>
+                                            <!-- [11/18]_수정(tms pjd006-u0020 : 총금액 영역 삭제) -->
+                                            <!-- <th scope="col">총결제금액</th> -->
+                                            <th scope="col">주문상태</th>
+                                            <th scope="col">선택</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">
+                                                <p class="date">2022.07.07</p>
+                                                <p class="product-num">2020624417075</p>
+                                                <button class="btn btn-round xs"><span>상세보기</span></button>
+                                            </td>
+                                            <td class="txt-left">
+                                                <div class="pdwrap pdlist pdconsult">
+                                                    <div class="pdlist-wrap">
+                                                        <figure class="pdthumb">
+                                                            <div class="thumb">
+                                                                <img src="//imagedev.hmall.com/p/img/cc/product-list-sample.jpg" alt="[동원] 고추참지 200g X 3개">
+                                                            </div>
+                                                            <figcaption>
+                                                                <!-- [11/18]_수정(11/18디자인기준 width값수정) -->
+                                                                <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                                <!-- [11/18]_수정(11/18디자인기준 높이값수정) -->
+                                                                <div class="pdoption" aria-label="옵션/수량">
+                                                                    <span class="color">블랙</span>
+                                                                    <span class="option-num">66</span>
+                                                                    <span class="count"><em class="count-num">1</em>개</span>
+                                                                </div>
+                                                                <!-- [11/18]_수정(11/18디자인기준 높이값수정) -->
+                                                                <div class="pdprice">
+                                                                    <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                                </div>
+                                                                <!-- [11/18]_수정(11/18디자인기준 높이값수정) -->
+                                                                <!--20201005 월요일 디자인 추가 : 설치상품일 경우 배송예정일 추가-->
+                                                                <p class="pddate" aria-label="배송예정일">배송예정일 : 2020.06.30</p>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <!-- [11/18]_수정(tms pjd006-u0020 : 총금액 영역 삭제) -->
+                                            <!-- <td class="txt-center">
+                                                <span><em class="cost">0</em>원</span>
+                                            </td> -->
+                                            <td class="txt-center">
+                                                <span class="deliver-stat">상품 제작 중</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-linelgray small30 select" data-modules-winpopup="href:PJD007.html;name:PJD007;width:929;height:800;"><span>선택</span></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <!--20201005 월요일 케이스 추가 : 합배송일 경우-->
+                                    <tbody>
+                                         <tr>
+                                            <td class="txt-center" rowspan="2">
+                                                <p class="date">2022.07.07</p>
+                                                <p class="product-num">2020624417075</p>
+                                                <button class="btn btn-round xs"><span>상세보기</span></button>
+                                            </td>
+                                            <td class="txt-left">
+                                                <div class="pdwrap pdlist pdconsult">
+                                                    <div class="pdlist-wrap">
+                                                        <figure class="pdthumb">
+                                                            <div class="thumb">
+                                                                <img src="//imagedev.hmall.com/p/img/cc/product-list-sample.jpg" alt="[동원] 고추참지 200g X 3개">
+                                                            </div>
+                                                            <figcaption>
+                                                                <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                                <div class="pdoption" aria-label="옵션/수량">
+                                                                    <span class="color">블랙</span>
+                                                                    <span class="option-num">66</span>
+                                                                    <span class="count"><em class="count-num">1</em>개</span>
+                                                                </div>
+                                                                <div class="pdprice">
+                                                                    <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                                </div>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <!-- [11/18]_수정(tms pjd006-u0020 : 총금액 영역 삭제) -->
+                                            <!-- <td class="txt-center">
+                                                <span><em class="cost">9,300</em>원</span>
+                                            </td> -->
+                                            <td class="txt-center">
+                                                <span class="deliver-stat">배송중</span>
+                                            </td>
+                                            <td class="txt-center">
+                                                <button class="btn btn-linelgray small30 select" data-modules-winpopup="href:PJD007.html;name:PJD007;width:929;height:800;"><span>선택</span></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-left">
+                                                <div class="pdwrap pdlist pdconsult">
+                                                    <div class="pdlist-wrap">
+                                                        <figure class="pdthumb">
+                                                            <div class="thumb">
+                                                                <img src="//imagedev.hmall.com/p/img/cc/product-list-sample.jpg" alt="[동원] 고추참지 200g X 3개">
+                                                            </div>
+                                                            <figcaption>
+                                                                <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                                <div class="pdoption" aria-label="옵션/수량">
+                                                                    <span class="color">블랙</span>
+                                                                    <span class="option-num">66</span>
+                                                                    <span class="count"><em class="count-num">1</em>개</span>
+                                                                </div>
+                                                                <div class="pdprice">
+                                                                    <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                                </div>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <!-- [11/18]_수정(tms pjd006-u0020 : 총금액 영역 삭제) -->
+                                            <!-- <td class="txt-center">
+                                                <span><em class="cost">9,300</em>원</span>
+                                            </td> -->
+                                            <td class="txt-center">
+                                                <span class="deliver-stat">배송중</span>
+                                            </td>
+                                            <td class="txt-center">
+                                                <button class="btn btn-linelgray small30 select" data-modules-winpopup="href:PJD007.html;name:PJD007;width:929;height:800;"><span>선택</span></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <!--//20201005 월요일 케이스 추가 : 합배송일 경우-->
+                                    <!--20201005 월요일 케이스 추가 : 추가사은품의 경우-->
+                                    <tbody class="free-box">
+                                        <tr>
+                                            <td class="txt-center" rowspan="2">
+                                                <p class="date">2022.07.07</p>
+                                                <p class="product-num">2020624417075</p>
+                                                <button class="btn btn-round xs"><span>상세보기</span></button>
+                                            </td>
+                                            <td class="txt-left">
+                                                <div class="pdwrap pdlist pdconsult">
+                                                    <div class="pdlist-wrap">
+                                                        <figure class="pdthumb">
+                                                            <div class="thumb">
+                                                                <img src="//imagedev.hmall.com/p/img/cc/product-list-sample.jpg" alt="[동원] 고추참지 200g X 3개">
+                                                            </div>
+                                                            <figcaption>
+                                                                <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                                <div class="pdoption" aria-label="옵션/수량">
+                                                                    <span class="color">블랙</span>
+                                                                    <span class="option-num">66</span>
+                                                                    <span class="count"><em class="count-num">1</em>개</span>
+                                                                </div>
+                                                                <div class="pdprice">
+                                                                    <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                                </div>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <!-- [11/18]_수정(tms pjd006-u0020 : 총금액 영역 삭제) -->
+                                            <!-- <td class="txt-center">
+                                                <span><em class="cost">0</em>원</span>
+                                            </td> -->
+                                            <td class="txt-center">
+                                                <span class="deliver-stat">결제완료</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-linelgray small30 select" data-modules-winpopup="href:PJD007.html;name:PJD007;width:929;height:800;"><span>선택</span></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-left" colspan="3">
+                                                <div class="add-freebox">
+                                                    <dl class="basic-freebox">
+                                                        <dt>기본 구성품</dt>
+                                                        <dd>
+                                                            <span>XOXO (1개 / 10,000원)</span>
+                                                            <div class="btngroup">
+                                                                <button class="btn btn-linelgray small25"><span>변경</span></button>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>추가 구성품</dt>
+                                                        <dd class="sumwrap">
+                                                            <span>총 <em class="num">2</em>개</span>
+                                                            <span>합계: <em class="sum-price">266,000</em>원</span>
+                                                        </dd>
+                                                        <dd>
+                                                            <p>각인서비스 / 각인진행 (1개 / 5,000원)</p>
+                                                            <p>그라폰 파버카스텔 수성심 / 흑색 (1개 / 6,400원)</p>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>필수 사은품</dt>
+                                                        <dd>
+                                                            <span>[사은품] 북케이스 + 매직차트</span>
+                                                            <span>[증정기간] 2020.04.17 ~ 2020.12.31</span>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>선택 사은품</dt>
+                                                        <dd>
+                                                            <span>[사은품] 북케이스 + 매직차트</span>
+                                                            <span>[증정기간] 2020.04.17 ~ 2020.12.31</span>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <!--//20201005 월요일 케이스 추가 : 추가사은품의 경우-->
+                                </table>
+                            </div>
+                            <!--//table-->
+                            <!--paging : 게시글이 11개 이상일 경우 노출
+                            <div class="paging">
+                                <a href="javascript:;" class="page-first" aria-label="처음페이지 이동"><i class="icon"></i><span class="hiding">처음페이지 이동</span></a>
+                                <a href="javascript:;" class="page-prev" aria-label="이전페이지 이동"><i class="icon"></i><span class="hiding">이전페이지 이동</span></a>
+                                <a href="javascript:;"><span>1</span></a>
+                                <a href="javascript:;"><span>2</span></a>
+                                <strong aria-label="현재 선택페이지"><span>3</span></strong>
+                                <a href="javascript:;"><span>4</span></a>
+                                <a href="javascript:;"><span>6</span></a>
+                                <a href="javascript:;"><span>7</span></a>
+                                <a href="javascript:;"><span>8</span></a>
+                                <a href="javascript:;"><span>9</span></a>
+                                <a href="javascript:;"><span>10</span></a>
+                                <a href="javascript:;" class="page-next" aria-label="다음페이지 이동"><i class="icon"></i><span class="hiding">다음페이지 이동</span></a>
+                                <a href="javascript:;" class="page-last" aria-label="마지막페이지 이동"><i class="icon"></i><span class="hiding">마지막페이지 이동</span></a>
+                            </div>
+                            //paging-->
+                        </div>
+                        <!--//board-->
+
+                        <!-- 20200916 페이징 추가 (시안 08/27 기준) -->
+                        <div class="paging">
+                            <a href="javascript:;" class="page-first" aria-label="처음페이지 이동"><i class="icon"></i><span class="hiding">처음페이지 이동</span></a>
+                            <a href="javascript:;" class="page-prev" aria-label="이전페이지 이동"><i class="icon"></i><span class="hiding">이전페이지 이동</span></a>
+                            <a href="javascript:;"><span>1</span></a>
+                            <a href="javascript:;"><span>2</span></a>
+                            <strong aria-label="현재 선택페이지"><span>3</span></strong>
+                            <a href="javascript:;"><span>4</span></a>
+                            <a href="javascript:;"><span>6</span></a>
+                            <a href="javascript:;"><span>7</span></a>
+                            <a href="javascript:;"><span>8</span></a>
+                            <a href="javascript:;"><span>9</span></a>
+                            <a href="javascript:;"><span>10</span></a>
+                            <a href="javascript:;" class="page-next" aria-label="다음페이지 이동"><i class="icon"></i><span class="hiding">다음페이지 이동</span></a>
+                            <a href="javascript:;" class="page-last" aria-label="마지막페이지 이동"><i class="icon"></i><span class="hiding">마지막페이지 이동</span></a>
+                        </div>
+                        <!-- // 20200916 페이징 추가 (시안 08/27 기준) -->
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+    <!--//윈도우팝업-->
+</body>
+</html>

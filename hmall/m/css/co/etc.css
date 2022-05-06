@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* 이메일수신거부 */
+.blockemail-cnt{padding:20px 0 0;}
+.blockemail-cnt .large-title{margin-bottom:37px;text-align:center;}
+.blockemail-cnt .btngroup.btnlen2 .btn{width:calc((100% - 5px)/2);border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;}
+.blockemail-cnt .btngroup.btnlen2 .btn.xl + .btn.xl{border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;}
+.blockemail-cnt .dotlist{margin-top:20px;}
+.blockemail-cnt .dotlist li::before{top:0;transform:none;-webkit-transform:none;-moz-transform:none;-ms-transform:none;-o-transform:none;}
+.blockemail-cnt .dotlist li span{display:inline-block;}
+.blockemail-cnt .dotlist li em{color:#333;}
+
+/* 처리, 에러 메세지 공통 
+    - 처리 메세지 wrap 클래스 : transaction
+    - 에러 메세지 wrap 클래스 : transact-error
+*/
+.wrap.transact-error,
+.wrap.transact-error .cmain,
+.wrap.transact-error .container{height:100%;min-height:376px;margin:0;}
+.wrap.transact-error .container{display:flex;justify-content:center;align-items:center;flex-direction:column;height:calc(100% - 54px);}
+.msg-area{display:flex;justify-content:center;align-items:center;flex-direction:column;width:100%;}
+.msg-area .bgcircle{display:flex;margin:0 auto 20px;}
+.msg-area p{text-align:center;}
+.msg-area .middle-title{line-height:22px;}
+.msg-area .middle-title + .ctypo2{margin-top:10px;}
+.msg-area .btngroup{justify-content:center;width:100%;margin-top:20px;}
+.msg-area .btngroup + .btngroup{margin-top:6px;}
+.msg-area .btngroup .btn{min-width:170px;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;}
+.msg-area .btngroup.btnlen1 .btn.ml{height:44px;}
+.msg-area .btngroup.btnlen2{justify-content:space-between;}
+.msg-area .btngroup.btnlen2 .btn{width:calc((100% - 5px)/2);min-width:auto;}
+/* .msg-area .btngroup.btnlen2 .btn.ml,
+.msg-area .btngroup.btnlen2 .btn.ml + .btn.ml{border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;} */
+
+/* 처리, 에러 메세지 - Hmall 앱 다운로드 / 앱 이동중 / 404에러 / 505에러 / 네트워크 장애 / 우수전용Shop접근제한 / 청소년 접근제한 / 판매 중단 상품 / 매장 준비중 / APP최초 실행시 연결 지연 / APP 이용중 네트워크 연결상태확인 */
+.msg-area.transact-msg{margin:-20px 0 -25px;padding:40px 0;}
+.msg-area.transact-msg .bgcircle .icon{width:100%;height:100%;background-image:url(//imagedev.hmall.com/m/img/co/icon/sprite-icon-status.png);background-repeat:no-repeat;background-size:280px auto;}
+.msg-area .icon.appdown{background-position:0 0;} /* Hmall 앱 다운로드 */
+.msg-area .icon.appmove{background-position:-140px 0;} /* 앱 이동중 */
+.msg-area .icon.error404{background-position:0 -140px;} /* 404에러 */
+.msg-area .icon.error505{background-position:-140px -140px;} /* 505에러 */
+.msg-area .icon.errornet{background-position:0 -280px;} /* 네트워크 장애 */
+/* .msg-area .icon.denyacc{background-position:-140px -280px;} */ /* 우수전용Shop접근제한 */
+/* .msg-area .icon.underage{background-position:0 -420px;} */ /* 청소년 접근제한 - 기획서에 화면 삭제 MKI007 */
+/* .msg-area .icon.stopsale{background-position:-140px -420px;} */ /* 판매 중단 상품 - 기획서상 화면 없음 MKI008 */
+.msg-area .icon.ready{background-position:0 -420px;} /* 매장 준비중 */
+.msg-area .icon.delay{background-position:-140px -280px;} /* APP 최초 실행시 연결 지연 */
+.msg-area .icon.disconnect{background-position:0 -280px;} /* APP 이용중 네트워크 연결상태확인 */
+
+.msg-area.transact-msg .icon.stop-sale{width:68px;height:66px;background:url('//imagedev.hmall.com/m/img/co/icon/icon-error-stopsale.png') no-repeat center center;} /* 현재 판매가 중단된 상품 */
+.msg-area.transact-msg .icon.adult{width:70px;height:58px;background:url('//imagedev.hmall.com/m/img/co/icon/icon-error-adult.png') no-repeat center center;} /* 현재 판매가 중단된 상품 */
+
+/* APP최초 실행시 연결 지연 */
+.call-info{position:relative;display:flex;justify-content:space-around;align-items:center;width:100%;min-height:80px;margin-top:20px;padding:15px 0;background:#f8f8f8;}
+.call-info li{width:100%;text-align:center;}
+.call-info li:not(:first-child):before{ content:""; position:absolute; top:50%; left:50%; display:block; width:1px; height:25px; background:#707070; opacity:1; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%); }
+.call-info li .icon{width:22px;height:22px;margin-right:5px;background-repeat:no-repeat;background-size:contain;}
+.call-info li .icon.call{background-image:url(//imagedev.hmall.com/m/img/co/icon/icon-call-2x.png);}
+.call-info li .icon.operator{background-image:url(//imagedev.hmall.com/m/img/co/icon/ico-operator-2x.png);}
+.call-info li strong{display:inline-block;min-width:120px;}
+.call-info li strong em{vertical-align:middle;}
+.call-info li a{display:inline-block;min-width:120px;margin-top:5px;}
+.call-info li a span{display:block;color:#333;font-weight:700;font-size:18px;letter-spacing:-0.72px;}
+
+/* 이용약관 리스트 */
+.terms-list{margin:-20px -15px -25px;}
+.terms-list ul{padding-bottom:9px;background-color:#f8f8f8;}
+.terms-list li{border-bottom:1px solid #eee;}
+.terms-list .alink{align-items:center;min-height:59px;font-weight:400;}
+
+/* 이용약관 내용 - As-Is editor source 기준 */
+.detail_info .editor-view h3{margin-bottom:10px;color:#333;font-size:14px;line-height:20px;font-weight:700;letter-spacing:-0.56px;}
+.detail_info .editor-view ol li{margin-bottom:10px;color:#333;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+.detail_info .editor-view ol li:last-child{margin-bottom:20px;}
+.detail_info .editor-view ol li ul{margin-top:10px;}
+.detail_info .editor-view table{margin-top:10px;}
+.detail_info .editor-view table th,
+.detail_info .editor-view table td{padding:10px 14px;border:1px solid #eee;font-size:12px;letter-spacing:-0.56px;}
+.detail_info .editor-view table th{background:#f8f8f8;color:#333;line-height:17px;}
+.detail_info .editor-view table td{color:#666;line-height:20px;}
+
+/* 이용약관 - to-be markup 적용 */
+.detail_info .minor-headings{margin-top:20px;margin-bottom:10px;}
+.detail_info .minor-headings:first-of-type{margin-top:0;}
+.detail_info .ctypo2{color:#333;}
+.detail_info .ctypo2 + .ctypo2{margin-top:10px;}
+.detail_info .ctypo2 li{margin-top:20px;} /*10px -> 20px 로 수정*/
+.detail_info .ctypo2 li:first-child{margin-top:0;}
+.detail_info .ctypo2 li ul,
+.detail_info .ctypo2 li .tblwrap{margin-top:20px;}
+
+/* 개인정보 처리방침 테이블 가독성 */
+.terms-cont .detail_info .editor-view table th, .detail_info .editor-view table td{padding:5px;font-size:11px;line-height:14px;letter-spacing:-2px;}
+.terms-cont .detail_info .editor-view table th{font-size:12px;}
+
+

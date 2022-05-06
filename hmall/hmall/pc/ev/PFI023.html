@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>휴대폰 SMS 수신확인</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/ev/event.css">
+</head>
+<body id="popWin">         
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:800px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win sms-chk">
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">휴대폰 SMS 수신확인</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <!-- 이벤트 최초참여(OTP 미인증) 고객의 경우 -->
+                    <div class="bg-area">
+                        <p class="ctypo14">이벤트 최초 응모 시 휴대폰 본인 확인이 필요합니다.<br>휴대폰 번호는 이벤트 참여를 위해 수집되며, <span class="bold">회원탈퇴 또는 법정 의무 보유기간 이후 파기됩니다.</span><br>동의를 거부하실 수 있으나 거부 시 이벤트 응모가 제한됩니다.<br>이벤트 당첨 시 당첨자 게시판에 별표(*) 처리된 성명과 아이디가 일부 공개됩니다. 이에 동의하십니까?</p>
+                        <div class="checkbox">
+                            <label class="chklabel"><input type="checkbox" name="" aria-checked="true"><i class="icon"></i><span>위 내용에 동의합니다.</span></label>
+                        </div>
+                    </div>
+                    <!-- //.certify-area -->
+                    <!-- //이벤트 최초참여(OTP 미인증) 고객의 경우 -->
+
+                    <div class="sms-area">
+                        <p class="txt">휴대폰 번호 입력 후, 인증 SMS 발송 버튼을 눌러주세요.</p>
+                        <ul class="dotlist color-ff5340">
+                            <li>SMS 발송은 최대 2분이 소요됩니다.</li>
+                        </ul>
+                        <div class="inputbox failed"> <!-- input 실패시 class="failed" 추가 -->
+                            <label class="inplabel btnlabel"><input type="text" name="" value="" placeholder="휴대폰 번호 (예 : 01012345678)"></label>
+                             <!-- [12/11]_수정(
+                                최초 선택시 얼럿 노출 후 인증 sms 발송 : data-modules-modal="target:#sms-agree;"
+                                입력된 번호로 인증 SMS 발송 후 2분 이내 재선택 시 얼럿 노출 : data-modules-modal="target:#sms-reagree;"
+                            ) -->
+                            <button class="btn btn-lineblack btn-confirm" data-modules-modal="target:#sms-reagree;"><span>인증 SMS 발송</span></button>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        </div>
+                        <!-- 오류메세지 -->
+                        <p class="failed-msg">
+                            <i class="icon error"></i>
+                            <span>휴대폰 번호를 입력해주세요.</span>
+                        </p>
+                        <!-- 오류메세지 -->
+
+                        <div class="inputbox failed"> <!-- input 실패시 class="failed" 추가 -->
+                            <label class="inplabel btnlabel"><input type="text" name="" value="" placeholder="인증번호"></label>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                            <span class="auth-timer">3:00</span> <!-- 인증번호 발송시 출력--> 
+                        </div>
+                        
+                        <!-- [12/11]_수정(오류메세지 추가) -->
+                        <!-- 오류메세지 -->
+                        <p class="failed-msg">
+                            <i class="icon error"></i>
+                            <span>정확한 인증번호를 입력해주세요.</span>
+                        </p>
+                        <!-- 오류메세지 -->
+                        <!--// [12/11] -->
+
+                        <div class="btngroup">
+                            <button class="btn btn-linelgray medium"><span>취소</span></button>
+                            <!-- [12/11]_수정(
+                                개인정보처리 동의영역 미체크 후 확인 버튼 선택할 경우 알럿 노출 : data-modules-modal="target:#;"
+                            ) -->
+                            <button class="btn btn-default medium" data-modules-modal="target:#personalinfo-agree;"><span>확인</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+    <!-- [12/11]_수정(개인정보처리동의영역 : 미체크후 확인 버튼 선택할 경우 알럿 노출) -->
+    <div class="ui-modal alert" id="personalinfo-agree" tabindex="-1" role="dialog" aria-label="개인정보처리동의">
+        <div class="ui-modal-dialog" role="document">
+            <div class="content">
+                <span class="bgcircle ex-redmark-sm"><i class="icon ex-red-mark"></i></span>
+                <p class="ctypo17 bold">개인정보 처리에 동의해주세요.</p>
+            </div>
+            <!-- //.content -->
+            <!-- alert은 버튼 위치 변경 -->
+            <div class="btngroup">
+                <button class="btn btn-default"><span>확인</span></button>
+                <!-- 데이터 전송 후 닫힘 $(element).modal().hide() -->
+            </div>
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.ui-modal-dialog -->
+    </div>
+    <!--// [12/11] -->
+    <!-- [12/11]_수정(인증 sms발송 2분 초과) -->
+    <div class="ui-modal alert" id="sms-agree" tabindex="-1" role="dialog" aria-label="휴대폰SMS수신확인인증 알럿">
+        <div class="ui-modal-dialog" role="document">
+            <div class="content">
+                <span class="bgcircle check-on-sm"><i class="icon check-on"></i></span>
+                <p class="ctypo17 bold">인증 SMS가 발송되었습니다. <br/> 휴대폰으로 수신하신 인증번호를 <br/> 하단에 입력해주세요.</p>
+            </div>
+            <!-- //.content -->
+            <!-- alert은 버튼 위치 변경 -->
+            <div class="btngroup">
+                <button class="btn btn-default"><span>확인</span></button>
+                <!-- 데이터 전송 후 닫힘 $(element).modal().hide() -->
+            </div>
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.ui-modal-dialog -->
+    </div>
+    <!--// [12/11] -->
+    <!-- [12/11]_수정(인증 sms발송 2분 이내 재 선택시) -->
+    <div class="ui-modal alert" id="sms-reagree" tabindex="-1" role="dialog" aria-label="휴대폰SMS수신확인인증 알럿">
+        <div class="ui-modal-dialog" role="document">
+            <div class="content">
+                <span class="bgcircle ex-redmark-sm"><i class="icon ex-red-mark"></i></span>
+                <p class="ctypo17 bold">인증 SMS가 발송 진행 중입니다. <br/> 잠시만 기다려주세요.</p>
+                <p class="time-set">(최대 2분 소요)</p>
+            </div>
+            <!-- //.content -->
+            <!-- alert은 버튼 위치 변경 -->
+            <div class="btngroup">
+                <button class="btn btn-default"><span>확인</span></button>
+                <!-- 데이터 전송 후 닫힘 $(element).modal().hide() -->
+            </div>
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.ui-modal-dialog -->
+    </div>
+    <!--// [12/11] -->
+</body>
+</html>

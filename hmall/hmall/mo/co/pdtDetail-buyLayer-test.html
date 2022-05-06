@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="format-detection" content="telephone=no, email=no, address=no">
+	<meta name="apple-mobile-web-app-capable" content=" yes">
+	<meta name="robots" content="index,follow">
+	<meta name="title" content="https://hmall.com">
+	<meta name="author" content="@Hmall">
+	<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+	<meta name="keywords" content="">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- OpenGraph -->
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="//10.122.201.20/m/img/co/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<meta property="og:title" content="현대Hmall-백화점,홈쇼핑">
+	<meta property="og:url" content="https://hmall.com">
+	<meta property="og:type" content="현대Hmall-백화점,홈쇼핑">
+	<meta property="og:description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. 볼거리 가득! 쓸 곳 많은 H.Point 혜택">
+	<meta property="og:image" content="//10.122.201.20/m/img/co/meta/hmall_meta.jpg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="750">
+	<!-- favicon -->
+	<meta itemprop="image" content="//10.122.201.20/m/img/co/favicon/favicon_128.png">
+	<link rel="shortcut icon" type="image/x-icon" href="//10.122.201.20/m/img/co/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="57x57" href="//10.122.201.20/m/img/co/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="//10.122.201.20/m/img/co/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="//10.122.201.20/m/img/co/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="//10.122.201.20/m/img/co/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="//10.122.201.20/m/img/co/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="//10.122.201.20/m/img/co/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="//10.122.201.20/m/img/co/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="//10.122.201.20/m/img/co/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="//10.122.201.20/m/img/co/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="//10.122.201.20/m/img/co/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="//10.122.201.20/m/img/co/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="//10.122.201.20/m/img/co/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="//10.122.201.20/m/img/co/favicon/favicon-16x16.png">
+	<link rel="manifest" href="//10.122.201.20/m/img/co/favicon/manifest.json">
+	<title>구매하기 샘플</title>
+	<!-- UI/UX Style -->
+	<link rel="stylesheet" type="text/css" href="//10.122.201.20/m/css/co/common.css"><!-- 공통 css -->
+	<link rel="stylesheet" type="text/css" href="//10.122.201.20/m/css/co/layout.css"><!-- 공통 Layout css -->
+	<link rel="stylesheet" type="text/css" href="//10.122.201.20/m/css/co/popup.css"><!-- 공통 popup/layer css -->
+	<link rel="stylesheet" type="text/css" href="//10.122.201.20/m/css/co/jquery-ui.css"><!-- 공통 jQuery UI css -->
+	<script src="//10.122.201.20/m/js/co/jquery-3.4.1.min.js"></script><!-- 공통 jQuery Plugin -->
+	<script src="//10.122.201.20/m/js/co/jquery.easing.min.js"></script><!-- 공통 jQuery UI Effect -->
+	<script src="//10.122.201.20/m/js/co/jquery-ui.1.12.1.min.js"></script><!-- 공통 jQuery UI js -->
+	<script src="//10.122.201.20/m/js/co/jquery.touchFlow.js"></script><!-- 공통 UI에 사용하는 Touch Swipe -->
+	<script src="//10.122.201.20/m/js/co/ukDetect.min.js"></script><!-- 공통 UI에 사용하는 Detect -->
+	<script src="//10.122.201.20/m/js/co/slick.min.js"></script><!-- 공통 Slick Slider Plugin -->
+	<script src="//10.122.201.20/m/js/co/common.js"></script><!-- 공통 UI에 사용하는 js -->
+
+	<!-- Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨  -->
+	<!-- <link rel="stylesheet" type="text/css" href="//10.122.201.20/m/css/dp/display.css"> -->
+</head>
+
+<body>
+<div class="wrap">
+    <div class="nav-skip"><a href="#cTitle">본문 콘텐츠로 건너뛰기</a></div>
+
+    <!-- GNB 상단 -->
+    <header class="header gnb-history" role="banner">
+        <button class="btn btn-back"><i class="icon"></i><span class="hiding">뒤로가기</span></button>
+        <h1 class="hiding">현대Hmall</h1>
+        <h2 class="htitle"><span>구매하기 샘플</span></h2>
+        <button class="btn btn-search"><i class="icon"></i><span class="hiding">검색</span></button>
+        <a href="javascript:;" class="link-cart"><i class="icon"></i><span class="hiding">장바구니</span><em class="badge black sm">99+</em></a>
+    </header>
+    <!-- //.header -->
+    <main class="main">
+        <div class="container">
+            <button class="btn btn-linered sm purchase" onclick="pdPurchase();"><span>구매하기</span></button>
+        </div>
+    </main>
+</div>
+
+
+<!-- 상품상세 구매박스 -->
+<div class="pdtDetail_buyLayer">
+    <!-- 리얼타임 메세지 -->
+    <div class="purchase-box"> <!-- ui-active 클래스 제어 : 구매박스 열기 -->
+        <div class="purchase-inner">
+            <div class="scroll-area">
+                <!-- 2020-08-12 재고보기 버튼 영역 마크업 수정 -->
+                <div class="area-info-view" style="display:none">
+                    <div class="area-txt">
+                        <!-- 상품선택 영역 썸네일 유형시 area-name 노출 -->
+                        <!-- 선택 전 -->
+                        <!-- <p class="area-name">상품을 선택하세요</p> -->
+                        <!-- 선택 후 -->
+                        <p class="area-name">[15%특별할인][서울 웨스틴조선호텔] 라운지 &amp; 바 멜론 빙수(2인) 이용권</p>
+                    </div>
+                    <div class="area-view">
+                        <button class="btn btn-link lyopen" data-target="attribute-preference"><span>속성별 선호도</span><i class="icon arrow-right"></i></button>
+                        <button class="btn btn-link lyopen" data-target="inventory-status"><span>재고보기</span><i class="icon arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- 상품선택 영역 - 썸네일 --> <!-- 2020-08-12 썸네일 유형 추가 -->
+                <!-- 20200902 area-choice 삭제 및 클래스 plr15 추가 -->
+                <div class="pdwrap mdlist choiceitem plr15" style="display:none">
+                    <!-- 20200908 li 구조로 변경 -->
+                    <ul class="pdlist-wrap">
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <span class="tag-option">선택01</span>
+                                    <img src="//10.122.201.20/m/img/pd/sample/img-thum01-sm-2x.jpg" alt="">
+                                </div>
+                                <figcaption>
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택1]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지 &amp; 바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span aria-label="판매가"><em>27,000</em><b>원</b></span>
+                                    </div>
+                                </figcaption>
+                            </a>
+                        </li>
+                        <li class="pdthumb selected"> <!-- 클래스 selected 제어 : 선택된 경우 추가 -->
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <span class="tag-option">선택02</span>
+                                    <img src="//10.122.201.20/m/img/pd/sample/img-thum02-sm-2x.jpg" alt="">
+                                </div>
+                                <figcaption>
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[20%특별할인][서울 웨스틴조선호텔] 라운지 &amp; 바 멜론 빙수(3인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span aria-label="판매가"><em>27,000</em><b>원</b></span>
+                                    </div>
+                                </figcaption>
+                            </a>
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <span class="tag-option">선택03</span>
+                                    <img src="//10.122.201.20/m/img/pd/sample/img-thum03-sm-2x.jpg" alt="">
+                                </div>
+                                <figcaption>
+                                    <div class="pdname" aria-label="제품명">[25%특별할인][서울 웨스틴조선호텔] 라운지 &amp; 바 멜론 빙수(4인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span aria-label="판매가"><em>27,000</em><b>원</b></span>
+                                    </div>
+                                </figcaption>
+                            </a>
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <span class="tag-option">선택04</span>
+                                    <img src="//10.122.201.20/m/img/pd/sample/img-thum04-sm-2x.jpg" alt="">
+                                </div>
+                                <figcaption>
+                                    <div class="pdname" aria-label="제품명">[30%특별할인][서울 웨스틴조선호텔] 라운지 &amp; 바 멜론 빙수(5인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span aria-label="판매가"><em>999,999,999</em><b>원</b></span>
+                                    </div>
+                                </figcaption>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- // 20200908 li 구조로 변경 -->
+                    <!-- //.pdlist-wrap -->
+                </div>
+                <!-- //.pdwrap -->
+
+                <div class="selectbox choiceitem plr15" style="display:none">
+                    <label class="sellabel">
+                        <select name="">
+                            <option selected="">사이즈</option>
+                            <option>S</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </label>
+                </div>
+                <!-- //20200902 area-choice 삭제 및 클래스 plr15 추가 -->
+                <!-- // 상품선택 영역 - 썸네일 -->
+    
+                <!-- 상품선택 영역 - 일반 -->
+                <!-- 20200902 area-choice 삭제 및 클래스 plr15 추가 -->
+                <p class="purchase-name plr15" style="display:none">로렌힐스 3중 구조 1회용 마스크 (100매)</p> <!-- 속성 1개인 경우 상품명 --> <!-- 2020-08-12 마크업 위치 이동 -->
+                <!-- 2020-08-07 유형 마크업 변경 -->
+            
+                <!-- 20200904 selectbox 변경 (09/04 기획요청) -->
+                <div class="opt-dropdown choiceitem mlr15"> <!-- ui-active 클래스 제어 -->
+                    <div id="drop-choiceitem" class="dropdown-btn" data-modules-dropdown="" aria-expanded="false">
+                        <!-- <a href="javascript:;">상품을 선택하세요</a> -->
+
+                        <!-- 선택 후 상품명만 출력되는 경우 -->
+                        <a href="javascript:;">
+                            <div class="figcaption">
+                                <div class="pdname" aria-label="제품명"><span class="choice-num">[선택1]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div> <!-- 2020-08-12 선택옵션 번호 영역(choice-num) 추가 -->
+                            </div>
+                        </a>
+
+                        <!-- 선택 후 상품명과 썸네일이 출력되는 경우 -->
+                        <!-- <a href="javascript:;">
+                            <div class="thumb">
+                                <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                            </div>
+                            <div class="figcaption">
+                                <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                            </div>
+                        </a> -->
+                    </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop-choiceitem">
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택1]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div> <!-- 2020-08-12 선택옵션 번호 영역(choice-num) 추가 -->
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택1]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div> <!-- 2020-08-12 선택옵션 번호 영역(choice-num) 추가 -->
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명"><span class="choice-num">[선택2]</span>[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdprice">
+                                        <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!--  -->
+                        <!-- <li>
+                            <a href="javascript:;">
+                                <strong class="opt-name">261</strong>
+                                <span class="store-count">남은 수량 92</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <strong class="opt-name">260</strong>
+                                <span class="store-count">남은 수량 92</span>
+                            </a>
+                        </li>
+                        <li class="soldout">
+                            <a href="javascript:;">
+                                <strong class="opt-name">261</strong>
+                                <span class="store-count">재고없음</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+
+                <div class="opt-dropdown choiceitem mlr15" style="display:none"> <!-- ui-active 클래스 제어 -->
+                    <!-- 20200908 클래스 readonly 추가  -->
+                    <!-- 단일 상품일 경우 클래스 readonly 추가 -->
+                    <div id="drop-choiceitem" class="dropdown-btn readonly" data-modules-dropdown="" aria-expanded="false">
+                    <!-- // 20200908 클래스 readonly 추가  -->
+                        <!-- <a href="javascript:;">색상</a> -->
+
+                        <!-- 선택 후 선택항목만 출력되는 경우 -->
+                        <a href="javascript:;">
+                            <div class="figcaption">
+                                <div class="pdname" aria-label="제품명"><span class="choice-num"></span>선택한 컬러값 노출</div> <!-- 2020-08-12 선택옵션 번호 영역(choice-num) 추가 -->
+                            </div>
+                        </a>
+
+                        <!-- 선택 후 상품명과 썸네일이 출력되는 경우 -->
+                        <!-- <a href="javascript:;">
+                            <div class="thumb">
+                                <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                            </div>
+                            <div class="figcaption">
+                                <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                            </div>
+                        </a> -->
+                    </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop-choiceitem">
+                        <li>
+                            <a href="javascript:;">
+                                <strong class="opt-name">카키</strong>
+                                <span class="store-count">남은 수량 92</span>
+                                <span class="select-count">1개</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <strong class="opt-name">레드</strong>
+                                <span class="store-count">남은 수량 92</span>
+                            </a>
+                        </li>
+                        <li class="soldout">
+                            <a href="javascript:;">
+                                <strong class="opt-name">블랙</strong>
+                                <span class="store-count">재고없음</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="opt-dropdown choiceitem mlr15" style="display:none"> <!-- ui-active 클래스 제어 -->
+                    <div id="drop-choiceitem" class="dropdown-btn" data-modules-dropdown="" aria-expanded="false">
+                        <!-- <a href="javascript:;">사이즈</a> -->
+
+                        <!-- 선택 후 선택항목만 출력되는 경우 -->
+                        <a href="javascript:;">
+                            <div class="figcaption">
+                                <div class="pdname" aria-label="제품명"><span class="choice-num"></span>선택한 사이즈 노출</div> <!-- 2020-08-12 선택옵션 번호 영역(choice-num) 추가 -->
+                            </div>
+                        </a>
+
+                        <!-- 선택 후 상품명과 썸네일이 출력되는 경우 -->
+                        <!-- <a href="javascript:;">
+                            <div class="thumb">
+                                <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                            </div>
+                            <div class="figcaption">
+                                <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                            </div>
+                        </a> -->
+                    </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop-choiceitem">
+                        <li>
+                            <a href="javascript:;">
+                                <strong class="opt-name">44</strong>
+                                <span class="store-count">남은 수량 92</span>
+                                <span class="select-count">1개</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <strong class="opt-name">55</strong>
+                                <span class="store-count">남은 수량 92</span>
+                            </a>
+                        </li>
+                        <li class="soldout">
+                            <a href="javascript:;">
+                                <strong class="opt-name">블랙</strong>
+                                <span class="store-count">재고없음</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 20200902 재입고알림 삭제 (시안 09/02 기준) -->
+                <!-- //20200902 재입고알림 삭제 (시안 09/02 기준) -->
+                <!-- 20200904 //selectbox 변경 (09/04 기획요청) -->
+
+                <p class="purchase-txt plr15" style="display:none">본 상품과 함께 추가로 구매할 수 있습니다. (선택)</p>
+                <!-- 2020-08-07 유형 마크업 변경 -->
+                <div class="opt-dropdown choiceitem mlr15" style="display:none"> <!-- ui-active 클래스 제어 -->
+                    <div id="drop-choiceadd" class="dropdown-btn" data-modules-dropdown="" aria-expanded="false">
+                        <a href="javascript:;">추가구성품을 선택하세요</a>
+
+                        <!-- 선택 후 상품명만 출력되는 경우 -->
+                        <!-- <a href="javascript:;">
+                            <div class="figcaption">
+                                <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                            </div>
+                        </a> -->
+
+                        <!-- 선택 후 상품명과 썸네일이 출력되는 경우 -->
+                        <!-- <a href="javascript:;">
+                            <div class="thumb">
+                                <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                            </div>
+                            <div class="figcaption">
+                                <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                            </div>
+                        </a> -->
+                    </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop-choiceadd">
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //20200902 area-choice 삭제 및 클래스 plr15 추가 -->
+                <!-- // 상품선택 영역 - 일반 -->
+                
+                <!-- 20200929 컬러칩 케이스 추가 -->
+                <div class="colorchip-txt" style="display:none">
+                    <span class="info-txt">색상을 선택해 주세요.</span>
+                    <span class="store-count">남은 수량 92</span>
+                </div>
+                <div class="slider-thumbnaii color-chip" style="display:none">
+                    <ul class="color-list">
+                        <li> <!-- class="selected"로 제어 -->
+                            <a href="javascript:;">
+                                <i class="icon"></i>
+                                <span style="background:#800080;">블랙</span>
+                            </a>
+                        </li>
+                        <li class="selected"> <!-- class="selected"로 제어 -->
+                            <a href="javascript:;">
+                                <i class="icon"></i>
+                                <span style="background:#000;">블랙</span>
+                            </a>
+                        </li>
+                        <li> <!-- class="selected"로 제어 -->
+                            <a href="javascript:;">
+                                <i class="icon"></i>
+                                <span style="background:#fff;border:2px solid #eee;">블랙</span>
+                            </a>
+                        </li>
+                        <li> <!-- class="selected"로 제어 -->
+                            <a href="javascript:;">
+                                <i class="icon"></i>
+                                <span style="background:#808000;">블랙</span>
+                            </a>
+                        </li>
+                        <li> <!-- class="selected"로 제어 -->
+                            <a href="javascript:;">
+                                <i class="icon"></i>
+                                <span style="background:#ff0000;">블랙</span>
+                            </a>
+                        </li>
+                        <li> <!-- class="selected"로 제어 -->
+                            <a href="javascript:;">
+                                <i class="icon"></i>
+                                <span style="background:#c0c0c0;">블랙</span>
+                            </a>
+                        </li>
+                        <li> <!-- class="selected"로 제어 -->
+                            <a href="javascript:;">
+                                <i class="icon"></i>
+                                <span style="background:#000080;">블랙</span>
+                            </a>
+                        </li>
+                        <li> <!-- class="selected"로 제어 -->
+                            <a href="javascript:;">
+                                <i class="icon"></i>
+                                <span style="background:#f5f5dc;">블랙</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- // 20200929 컬러칩 케이스 추가 -->
+                
+    
+                <div class="area-selected" style="display:none">
+                    <h2 class="hiding">선택한 상품</h2>
+                    
+                    <div class="pdwrap pdlist selected-list">
+                        <div class="pdlist-wrap">
+                            <!-- 20200929 컬러칩 케이스 추가 -->                    
+                            <figure class="pdthumb">
+                                <a href="javascript:;" data-target="save-benefit">
+                                    <div class="thumb">
+                                        <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                    </div>
+                                </a>
+                                <figcaption>
+                                    <div class="select-color">
+                                        <span class="color" style="background:#000;"></span>
+                                        <span class="color-name" aria-label="컬러명">블랙</span>
+                                    </div>
+                                    <div class="price-control">
+                                        <div class="spinner type-circle">
+                                            <button class="btn btn-minus"><i class="icon "></i><span class="hiding">1 감소</span></button>
+                                            <input type="number" class="input-number" value="99">
+                                            <button class="btn btn-plus"><i class="icon"></i><span class="hiding">1 증가</span></button>
+                                        </div>
+                                        <div class="pdprice">
+                                            <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                                <button class="btn btn-close"><i class="icon"></i><span class="hiding">닫기</span></button>
+                            </figure>
+                            <!-- // 20200929 컬러칩 케이스 추가 -->
+                            
+                            <figure class="pdthumb">
+                                <a href="javascript:;" data-target="save-benefit">
+                                    <div class="thumb">
+                                        <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                    </div>
+                                </a>
+                                <figcaption>
+                                    <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdoption" aria-label="옵션/수량">
+                                        <span class="option"><b>옵션:</b> <em>화이트, S</em></span>
+                                        <span class="count"><b>수량:</b> <em>1개</em></span>
+                                    </div>
+                                    <div class="price-control">
+                                        <div class="spinner type-circle">
+                                            <button class="btn btn-minus"><i class="icon "></i><span class="hiding">1 감소</span></button>
+                                            <input type="number" class="input-number" value="99">
+                                            <button class="btn btn-plus"><i class="icon"></i><span class="hiding">1 증가</span></button>
+                                        </div>
+                                        <div class="pdprice">
+                                            <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                                <button class="btn btn-close"><i class="icon"></i><span class="hiding">닫기</span></button>
+                            </figure>
+
+                            <figure class="pdthumb">
+                                <a href="javascript:;">
+                                    <div class="thumb">
+                                        <img src="//10.122.201.20/m/img/cc/sample/sample-item-2x.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권">
+                                    </div>
+                                </a>
+                                <figcaption>
+                                    <div class="pdname" aria-label="제품명">[15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                    <div class="pdoption" aria-label="옵션/수량">
+                                        <span class="option"><b>옵션:</b> <em>화이트, S</em></span>
+                                        <span class="count"><b>수량:</b> <em>1개</em></span>
+                                    </div>
+                                    <div class="price-control">
+                                        <div class="spinner type-circle">
+                                            <button class="btn btn-minus"><i class="icon "></i><span class="hiding">1 감소</span></button>
+                                            <input type="number" class="input-number" value="99">
+                                            <button class="btn btn-plus"><i class="icon"></i><span class="hiding">1 증가</span></button>
+                                        </div>
+                                        <div class="pdprice">
+                                            <span class="normal" aria-label="가격"><em>90,500</em><b>원</b></span>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                                <button class="btn btn-close"><i class="icon"></i><span class="hiding">닫기</span></button>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="area-total" style="display:none">
+                    <strong>총 상품 금액<button type="button" class="btn-tooltip lyopen" data-target="total-price-info"><i class="icon"></i><span class="hiding">총 상품 금액 안내 보기</span></button></strong>
+    
+                    <span class="price"><em>27,000</em><b>원</b></span>
+                </div>
+    
+                <div class="area-receive radiobox" style="display:none">
+                    <label class="radlabel"><input type="radio" name="rad1" checked="" aria-checked="true"><i class="icon"></i><span>택배로 받기</span></label>
+                    <label class="radlabel"><input type="radio" name="rad1"><i class="icon"></i><span>스토어픽으로 받기</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="btngroup bottom">
+            <button class="btn btn-linegray" onclick="pdCartCompleted()"><span>장바구니</span></button>
+            <button class="btn btn-linegray"><span>선물하기</span></button>
+            <button class="btn btn-default"><span>바로구매</span></button>
+        </div>
+        <div class="btngroup boxcontrol">
+            <button class="btn btn-close"><i class="icon"></i><span class="hiding">닫기</span></button>
+        </div>
+    </div>
+</div>
+<!-- // 상품상세 구매박스 -->
+
+<!-- 총 상품 금액 안내 -->
+<div class="popup-layerwrap dimlayer total-price-info" role="dialog" aria-label="총 상품 금액 안내 레이어 팝업">
+    <div class="layer">
+        <h2 class="middle-title">총 상품 금액 안내</h2>
+        <div class="layer-body">
+            <p class="ctypo2">선택하실 수 있는 할인혜택이 모두 적용된 금액입니다. 배송비가 포함이 되어 있지 않은 금액으로, 결제시 배송비가 추가될 수 있습니다.</p>
+        </div>
+        <!-- //.layer-body -->
+        <button class="btn btn-close lyclose"><i class="icon"></i><span class="hiding">닫기</span></button>
+    </div>
+    <!-- //.layer -->
+</div>
+<!-- // 총 상품 금액 안내 -->
+
+<!-- 담기 완료 레이어 -->
+<div class="cart-in-complete" style="display:none">
+    <i class="icon cart-in"></i>
+    <p class="text">담기 완료!</p>
+    <div class="btngroup">
+        <button class="btn btn-default small30"><span>바로가기</span></button>
+    </div>
+</div>
+<!-- //.담기 완료 레이어 -->
+
+
+<!-- 레이어 팝업 - 속성별 선호도 -->
+<div class="popup-layerwrap dimlayer attribute-preference" role="dialog" aria-label="고객님들의 속성별 선호도 레이어 팝업">
+    <div class="layer">
+        <h2 class="middle-title">고객님들의 속성별 선호도</h2>
+        <div class="layer-body">
+            <ul class="gauge-list">
+                <li>
+                    <p class="data">
+                        <span class="name">오렌지</span>
+                        <span class="num">12</span>
+                        <span class="total">85</span>
+                    </p>
+                    <div class="gauge-box">
+                        <p class="gauge-bar">
+                            <span class="gauge" style="width:10%;"></span>
+                        </p>
+                        <p class="rate">10%</p>
+                    </div>
+                </li>
+                <li class="top"><!-- 선호도가 가장 높을경우 class="top" 추가 -->
+                    <p class="data">
+                        <span class="name">오렌지</span>
+                        <span class="num">12</span>
+                        <span class="total">90</span>
+                    </p>
+                    <div class="gauge-box">
+                        <p class="gauge-bar">
+                            <span class="gauge" style="width:45%;"></span>
+                        </p>
+                        <p class="rate">45%</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="data">
+                        <span class="name">오렌지</span>
+                        <span class="num">12</span>
+                        <span class="total">95</span>
+                    </p>
+                    <div class="gauge-box">
+                        <p class="gauge-bar">
+                            <span class="gauge" style="width:30%;"></span>
+                        </p>
+                        <p class="rate">30%</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="data">
+                        <span class="name">오렌지</span>
+                        <span class="num">12</span>
+                        <span class="total">85</span>
+                    </p>
+                    <div class="gauge-box">
+                        <p class="gauge-bar">
+                            <span class="gauge" style="width:10%;"></span>
+                        </p>
+                        <p class="rate">10%</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="data">
+                        <span class="name">오렌지</span>
+                        <span class="num">12</span>
+                        <span class="total">85</span>
+                    </p>
+                    <div class="gauge-box">
+                        <p class="gauge-bar">
+                            <span class="gauge" style="width:10%;"></span>
+                        </p>
+                        <p class="rate">10%</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- //.layer-body -->
+        <button class="btn btn-close lyclose"><i class="icon"></i><span class="hiding">닫기</span></button>
+    </div>
+    <!-- //.layer -->
+</div>
+<!-- //.popup-layerwrap -->
+
+<!-- 레이어 팝업 - 백화점관별 재고현황 -->
+<div class="popup-layerwrap fulllayer inventory-status" role="dialog" aria-label="백화점관별 재고현황">
+    <div class="layer">
+        <h2 class="large-title">백화점관별 재고현황</h2>
+        <div class="layer-body">
+            <div class="layer-section">
+                <ul class="dotlist">
+                    <li>판매가 진행중이므로 재고현황에 다소 차이가 날 수 있습니다.</li>
+                    <li>재고수량을 터치하시면 상품상세 설명으로 이동합니다.</li>
+                </ul>
+            </div>
+            <div class="layer-section">
+                <div class="selectbox">
+                    <label class="sellabel">
+                        <select>
+                            <option selected="">백화점관 선택</option>
+                            <option selected="">백화점1</option>
+                            <option selected="">백화점2</option>
+                            <option selected="">백화점3</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="tblwrap">
+                    <table>
+                        <colgroup>
+                            <col style="width:30%;">
+                            <col style="width:70%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">색상/사이즈</th>
+                                <th scope="col">재고수량</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>화이트/220</td>
+                                <td>5개</td>
+                            </tr>
+                            <tr>
+                                <td>화이트/230</td>
+                                <td>5개</td>
+                            </tr>
+                            <tr>
+                                <td>화이트/240</td>
+                                <td>5개</td>
+                            </tr>
+                            <tr>
+                                <td>화이트/250</td>
+                                <td>5개</td>
+                            </tr><tr>
+                                <td>화이트/260</td>
+                                <td>5개</td>
+                            </tr><tr>
+                                <td>화이트/270</td>
+                                <td>5개</td>
+                            </tr><tr>
+                                <td>화이트/280</td>
+                                <td>5개</td>
+                            </tr><tr>
+                                <td>화이트/290</td>
+                                <td>5개</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btngroup btnlen1">
+                    <button class="btn btn-default lyclose"><span>닫기</span></button>
+                </div>
+            </div>
+        </div>
+        <!-- //.layer-body -->
+        <button class="btn btn-close lyclose"><i class="icon"></i><span class="hiding">닫기</span></button>
+    </div>
+    <!-- //.layer -->
+</div>
+<!-- //.popup-layerwrap -->
+
+<script>
+    function pdPurchase(){
+        $(document).find('.pdtDetail_buyLayer').addClass('ui-active');
+        $('body').addClass('hidden');
+        $('body').append('<div class="dim"></div>');
+
+        $(document).on('click', '.boxcontrol, .dim', function(){
+            $(document).find('.pdtDetail_buyLayer').removeClass('ui-active')
+            $(document).find('.opt-dropdown').removeClass('ui-active')
+            $('body').removeClass('hidden');
+            $('body').find('.dim').remove();
+        })
+    }
+    // 장바구니 클릭시 담기완료 보이고 3초뒤에 사라짐
+    function pdCartCompleted(){
+        $(".cart-in-complete").fadeIn();
+        setTimeout(function() {
+            $(".cart-in-complete").fadeOut();
+        }, 3000);
+    }
+</script>
+</body>
+</html>

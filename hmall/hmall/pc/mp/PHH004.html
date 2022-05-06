@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>이메일 수정</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/mp/mypage.css">
+
+</head>
+<body>
+<div class="wrap member-info-manage"><!-- wing banner 미노출 시 : wing-none 클래스 추가 -->
+    <main class="cmain mypage" role="main" id="mainContents"><!-- 마이페이지 'mypage' 클래스 추가 -->
+        <div class="container">
+            
+        </div>
+        <!-- //.container -->
+     
+    </main>
+    <!-- //.cmain -->
+</div>
+<!-- //.wrap -->
+
+<div class="ui-modal email-change" id="PHH004" tabindex="-1" role="dialog" aria-label="이메일 수정">
+    <div class="ui-modal-dialog" role="document">
+        <div class="content">
+            <p class="ui-title">이메일 수정</p>
+            <!-- //.content-head -->
+            <div class="content-body">
+                <div class="bg-gray-top">
+                    <strong>수정할 메일 주소를 입력해주세요.</strong>
+                </div>
+
+                <div class="form-wrap">
+                    <!-- 
+                        input disabled이면 inputbox에 class disabled 추가, readonly 동일, focus시 selected 추가
+                        입력 오류 시 inputbox class failed 추가 class="inputbox failed"
+                    -->
+                    <div class="inputbox failed">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="이메일" title="이메일을 입력해주세요"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <p class="failed-msg">
+                        <i class="icon error"></i>
+                        <span>이메일을 입력해주세요.</span>
+                    </p>
+
+                    <!-- 
+                        autocomplete 자동 완성 기능일 경우 inputbox에 class autolist 추가
+                     -->
+                    <!-- <div class="inputbox selected autolist">
+                        <label class="inplabel"><input type="text" name="" placeholder="이메일" title="이메일을 입력해주세요"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <div class="list">
+                            <p><a href="javascript:;">honggildong<em>@naver.com</em></a></p>
+                            <p><a href="javascript:;">honggildong<em>@hanmail.com</em></a></p>
+                            <p><a href="javascript:;">honggildong<em>@gmail.com</em></a></p>
+                            <p><a href="javascript:;">honggildong<em>@daum.com</em></a></p>
+                            <p><a href="javascript:;">honggildong<em>@hotmail.com</em></a></p>
+                            <p><a href="javascript:;">honggildong<em>@nate.com</em></a></p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <label class="chklabel">
+                    <input type="checkbox" name="">
+                    <i class="icon"></i>
+                    <span>개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+                <div class="tblwrap">
+                    <table>
+                        <caption>개인정보 수집 항목</caption>
+                        <colgroup>
+                            <col style="width:auto;">
+                            <col style="width:165px;">
+                            <col style="width:165px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="major-headings">구분</th>
+                                <th scope="col" class="major-headings">수집항목</th>
+                                <th scope="col">보유기간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="txt-center">이메일</td>
+                                <td class="txt-center">이메일</td>
+                                <td class="txt-center"><strong>회원 탈퇴 시 또는 <br>법정 보유기간</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="dotlist">
+                    <li>수집목적: 개인정보 변경을 위한 인증</li>
+                </ul>
+
+                <div class="btngroup">
+                    <button class="btn btn-linered medium"><span>인증메일 발송</span></button>
+                </div>
+            </div>
+            <!-- //.content-body -->
+            
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.content -->
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+<!-- //.ui-modal -->
+<script>
+    $('#PHH004').modal().show();
+</script>
+</body>
+</html>

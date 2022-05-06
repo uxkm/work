@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="apple-mobile-web-app-capable" content=" yes">
+    <meta name="robots" content="index,follow">
+    <meta name="title" content="https://hmall.com">
+    <meta name="author" content="@Hmall">
+    <meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+    <meta name="keywords" content="">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+    <title>로레알 메인</title>
+    <!-- UI/UX Style -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+    <script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+    <script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+    <script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+    <script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+    <script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+    <script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+    <!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/dp/loreal.css">
+
+    <!-- 로레알메인 JS -->
+    <script type="text/javascript" src="//imagedev.hmall.com/p/js/dp/sp_slide.js"></script>
+
+</head>
+
+<body>
+    
+    <div class="wrap product-detail wing-none">
+        <!-- wing banner 미노출 시 : wing-none 클래스 추가 -->
+        <div class="nav-skip"><a href="#mainContents">본문 콘텐츠로 건너뛰기</a></div>
+
+        <header class="header">
+            <!-- 헤더 배너 영역 -->
+            <div class="top-banner" style="display:none">
+                <div class="top-banner-content">
+                    헤더 배너 영역
+                </div>
+                <!-- // .top-banner-content -->
+            </div>
+            <!-- // 헤더 배너 영역 -->
+        
+            <div class="header-top">
+                <h1 class="logo"><a href="javascript:;">Hmall</a></h1>
+    
+                <!-- 검색 영역 -->
+                <!-- 
+                    input focus 시 search에 selected class 추가
+                 -->
+                <script>
+                     $(function(){
+                        //  UI 확인용 임시 스크립트 처리
+                         $(document).on("click",".btn-search, .searchclose", function(){
+                            $(".search").removeClass("selected");
+                         })
+                         $(".search").find("input").on("focusin", function(){
+                             $(".search").addClass("selected");
+                         })
+                         $(document).on("click",".searchclose", function(){
+                            $(".search").find(".btn-search").focus();//검색레이어 닫기 시 포커스 영역은 검색버튼으로 이동 개발에서 처리시 참조
+                         })
+                     })
+                </script>
+                <div class="search" role="search">
+                    <div class="field">
+                        <div class="inputbox">
+                            <label class="inplabel"><input type="text" name="" placeholder="더 이상 없을 최고의 찬스 10% 세일" title="더 이상 없을 최고의 찬스 10% 세일"></label>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        </div>
+                        <button class="btn btn-search"><span>검색</span></button>
+                        <!-- S : 검색 레이어 -->
+                        <div class="search-autowrap">
+                            
+                            <!-- 검색어 입력시 자동완성 -->
+                            <div class="keyword-area" aria-label="검색어 자동완성" style="display:none">
+                                <div class="shopbox">
+                                    <p class="spacialshop">
+                                        <a href="javascript:;">
+                                            <!-- 로고는 공통 카테고리 스페셜샵과 동일 -->
+                                            <span class="img"><img src="//imagedev.hmall.com/p/img/co/sample/sample-shop-nike.png" alt="나이키"></span>
+                                            <strong>나이키</strong>
+                                            <span>스페셜샵</span>
+                                        </a>
+                                        <a href="javascript:;" class="btn btn-round xs"><span>바로가기</span></a>
+                                    </p>
+                                    <p class="brandshop">
+                                        <a href="javascript:;">
+                                            <strong>나이키</strong>
+                                            <span>브랜드샵</span>
+                                        </a>
+                                        <a href="javascript:;" class="btn btn-round xs"><span>바로가기</span></a>
+                                    </p>
+                                </div>
+                                <ul>
+                                    <li><a href="javascript:;"><span><em>나이</em>키</span></a></li>
+                                    <li><a href="javascript:;"><span><em>나이</em>스 클랍</span></a></li>
+                                    <li><a href="javascript:;"><span><em>나이</em>키 운동화</span></a></li>
+                                    <li><a href="javascript:;"><span><em>나이</em>키 반바지</span></a></li>
+                                    <li><a href="javascript:;"><span><em>나</em>스</span></a></li>
+                                </ul>
+                    
+                                <div class="category-area">
+                                    <p class="stitle">카테고리</p>
+                                    <ul>
+                                        <li><a href="javascript:;"><span>스포츠/레져&gt;스포츠용품</span><i class="arrow right"></i></a></li>
+                                        <li><a href="javascript:;"><span>스포츠/레져&gt;골프용품</span><i class="arrow right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- //.keyword-area -->
+    
+                            <!-- 검색창에 포커스 일 때 -->
+                            <div class="autowrap">
+                                <!-- 추천할 수 없는 검색어 인 경우 -->
+                                <!-- <p class="nodata">입력하신 단어로 검색어를 추천할 수 없습니다.</p> -->
+    
+                                <!-- input focus시 기본 나오는 UI -->
+                                <div class="autoarticle leftarea">
+                                    <div class="recent-area" aria-label="최근검색어">
+                                        <p class="stitle">최근 검색어</p>
+                                        <ul class="recent-list">
+                                            <li><a href="javascript:;"><span>폴로 랄프 로렌</span></a><button class="btn btn-delete"><i class="icon xico"></i><span class="hiding">삭제</span></button></li>
+                                            <li><a href="javascript:;"><span>다이슨</span></a><button class="btn btn-delete"><i class="icon xico"></i><span class="hiding">삭제</span></button></li>
+                                            <li><a href="javascript:;"><span>까사미아</span></a><button class="btn btn-delete"><i class="icon xico"></i><span class="hiding">삭제</span></button></li>
+                                        </ul>
+                                        <!-- 최신검색어가 없을 경우 -->
+                                        <!-- <p class="nodata">최근검색어가 없습니다.</p> -->
+                                        <button class="btn btn-delall"><span>전체삭제</span></button>
+                                    </div>
+                                    <!-- //.recent-area -->
+                                </div>
+                                <!-- //.autoarticle -->
+                                <div class="autoarticle rightarea">
+                                    <div class="popular-area" aria-label="인기검색어" style="display:block">
+                                        <p class="stitle">인기 검색어</p>
+                                        <ol class="num-list">
+                                            <li aria-label="1위"><a href="#"><span>나이키</span><em><i class="icon keep"></i><span class="hiding">유지</span></em></a></li>
+                                            <li aria-label="2위"><a href="#"><span>비말차단마스크</span><em><i class="icon up"></i><span class="hiding">상승</span></em></a></li>
+                                            <li aria-label="3위"><a href="#"><span>루이비통가방</span><em><i class="icon down"></i><span class="hiding">하락</span></em></a></li>
+                                            <li aria-label="4위"><a href="#"><span>구찌가방</span><em><i class="icon keep"></i><span class="hiding">유지</span></em></a></li>
+                                            <li aria-label="5위"><a href="#"><span>퀵실버록시</span><em><i class="icon up"></i><span class="hiding">상승</span></em></a></li>
+                                            <li aria-label="6위"><a href="#"><span>나이키맥스</span><em><i class="icon down"></i><span class="hiding">하락</span></em></a></li>
+                                            <li aria-label="7위"><a href="#"><span>마이클코어스</span><em><i class="icon new"></i><span class="hiding">유지</span></em></a></li>
+                                            <li aria-label="8위"><a href="#"><span>빈폴</span><em><i class="icon up"></i><span class="hiding">상승</span></em></a></li>
+                                            <li aria-label="9위"><a href="#"><span>랄프로렌</span><em><i class="icon down"></i><span class="hiding">하락</span></em></a></li>
+                                            <li aria-label="10위"><a href="#"><span>캉골</span><em><i class="icon down"></i><span class="hiding">하락</span></em></a></li>
+                                        </ol>
+                                    </div>
+                                    <!-- //.popular-area -->
+                                    
+                                    <div class="focusclick-area" aria-label="포커스클릭" style="display:none">
+                                        <p class="stitle">포커스 클릭</p>
+                                        <span class="flag-da">AD</span>
+                                        <!-- 한 개 이상일 경우 class="horizon" 추가 -->
+                                        <!-- 상품종료 및 품절일 경우 li thumb class end 추가 예)li class="thumb end" -->
+                                        
+                                        <!-- 동영상 1개 기획전 타입 -->
+                                        <div class="pdlist-wrap" style="display:block">
+                                            <ul>
+                                                <li class="pdthumb">
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                                            <div class="ready">
+                                                                <!-- 실시간 인 경우 -->
+                                                                <!-- <span class="playing"><i class="icon"></i><em>00:15:23</em></span> -->
+                                                                <!-- <span class="pdonair">6/21(월) 23:45 방송</span> --><!-- 설계에는 없지만 공통에는 있음 필요에 따라 호출하면 됨 -->
+                                                                <span class="playtime"><i class="icon"></i><em>35:20</em></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdtit">Hmall 단독구성!</div>
+                                                            <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스</div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- //.pdlist-wrap -->
+    
+                                        <!-- 기획전 1개 타입 -->
+                                        <div class="pdlist-wrap" style="display:none">
+                                            <ul>
+                                                <li class="pdthumb">
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <!-- <span class="pdend">종료</span> -->
+                                                            <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdtit">Hmall 단독구성!</div>
+                                                            <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스</div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- //.pdlist-wrap -->
+    
+                                        <!-- 상품 1개 타입 -->
+                                        <div class="pdlist-wrap" style="display:none">
+                                            <ul>
+                                                <li class="pdthumb">
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                                        </div>
+                                                        <!-- 상품 정렬이 좌측 정렬일 경우 txt-left class 추가 -->
+                                                        <div class="figcaption txt-left">
+                                                            <!-- <div class="pdtit">Hmall 단독구성!</div> -->
+                                                            <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스</div>
+                                                            <div class="pdprice">
+                                                                <span class="normal" aria-label="정상가"><em>8,500</em>원</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- //.pdlist-wrap -->
+    
+                                        <!-- 기획전 2개 + 상품 1개 타입 -->
+                                        <div class="pdlist-wrap horizon" style="display:none">
+                                            <ul>
+                                                <li class="pdthumb">
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdtit">Hmall 단독구성!</div>
+                                                            <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스</div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="pdthumb">
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdtit">Hmall 단독구성!</div>
+                                                            <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스</div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="pdthumb"> 
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스</div>
+                                                            <div class="pdprice">
+                                                                <span class="normal" aria-label="정상가"><em>8,500</em>원</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- //.pdlist-wrap -->
+    
+                                         <!-- 기획전 1개 + 상품 1개 타입 -->
+                                        <div class="pdlist-wrap horizon" style="display:none">
+                                            <ul>
+                                                <li class="pdthumb">
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdtit">Hmall 단독구성!</div>
+                                                            <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스</div>
+                                                            <!-- <div class="pdprice">
+                                                                <span class="normal" aria-label="정상가"><em>8,500</em>원</span>
+                                                            </div> -->
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="pdthumb"> 
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스</div>
+                                                            <div class="pdprice">
+                                                                <span class="normal" aria-label="정상가"><em>8,500</em>원</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- //.pdlist-wrap -->
+                                    </div>
+                                    <!-- //.focusclick-area -->
+                                </div>
+                                <!-- //.autoarticle -->
+    
+                                <button class="btn searchclose"><i class="hiding">검색 레이어</i><span>닫기</span></button>
+                            </div>
+                            <!-- //.autowrap -->
+    
+                        </div>
+                        <!-- //.search-autowrap -->
+                        <!-- //E : 검색레이어 -->
+                    </div>
+                    <!-- //.field -->
+                </div>
+                <!-- // 검색 영역 -->
+        
+                <!-- 개인화 메뉴 -->
+                <div class="personal-menu">
+                    <ul>
+                        <li><a href="javascript:;" class="cart"><span>장바구니</span><em class="badge">3</em></a></li>
+                        <li><a href="javascript:;" class="mypage"><span>마이페이지</span></a></li>
+                        <li>
+                            <a href="javascript:;" class="recently">
+                                <span>최근본쇼핑</span>
+                                <!-- 최근 본 상품 썸네일 이미지 -->
+                                <em class="thumb-recent"><img src="//imagedev.hmall.com/p/img/co/sample/img-thumb01.jpg"
+                                        alt="상품명"></em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- // 개인화 메뉴 -->
+            </div>
+        
+            <div class="header-menu-wrap">
+                <div class="header-menu-in">
+                    <!-- 카테고리 메뉴 -->
+                    <div class="category-area">
+                        <a href="javascript:;" class="btn-category">카테고리</a>
+                        <!-- 카테고리 메뉴 시작 -->
+                        <div class="category-menu-wrap">
+                            <!-- 카테고리 메뉴 depth1-->
+                            <div class="category-list">
+                                <ul>
+                                    <li><a href="javascript:;">패션의류/속옷</a></li>
+                                    <li><a href="javascript:;">잡화/제화</a></li>
+                                    <li><a href="javascript:;">뷰티</a></li>
+                                    <li><a href="javascript:;">명품/보석/시계</a></li>
+                                    <li><a href="javascript:;">스포츠/레저</a></li>
+                                    <li><a href="javascript:;">출산/유아동</a></li>
+                                    <li><a href="javascript:;">식품</a></li>
+                                    <li><a href="javascript:;">가구/침구/시공</a></li>
+                                    <li><a href="javascript:;">가전/디지털</a></li>
+                                    <li><a href="javascript:;">취미/반려동물</a></li>
+                                    <li><a href="javascript:;">여행/보험/렌탈</a></li>
+                                    <li class="on"><a href="javascript:;">현대백화점</a></li>
+                                    <li><a href="javascript:;">해외직구관</a></li>
+                                    <li><a href="javascript:;">TV쇼핑</a></li>
+                                </ul>
+        
+                                <!-- 검색 영역 -->
+                                <!-- <div class="search brand" role="search">
+                                            <div class="field">
+                                                <div class="inputbox">
+                                                    <label class="inplabel"><input type="text" name="" placeholder="브랜드검색" title="브랜드검색"></label>
+                                                    <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-search"><span>검색</span></button>
+                                        </div> -->
+        
+                                <div class="search-brand"><a href="javascript:;" class="lyopen" data-target="brand">브랜드검색</a></div>
+                                <!-- // 검색 영역 -->
+                            </div>
+        
+                            <!-- 패션의류/속옷 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">패션의류/속옷</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li class="on"><a href="javascript:;">여성 브랜드의류</a></li>
+                                                <li><a href="javascript:;">여성 트렌드(소호)</a></li>
+                                                <li><a href="javascript:;">홈쇼핑 여성의류</a></li>
+                                                <li><a href="javascript:;">남성 브랜드</a></li>
+                                                <li><a href="javascript:;">남성 트렌드/캐주얼</a></li>
+                                                <li><a href="javascript:;">진/유니섹스캐주얼</a></li>
+                                                <li><a href="javascript:;">언더웨어</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- 브랜드 카테고리 -->
+                                        <!-- 확정 전 -->
+                                        <!-- <div class="brand-category">
+                                                    <ul>
+                                                        <li><a href="javascript:;">트렌드에비뉴</a></li>
+                                                        <li><a href="javascript:;">BEANPOLE(빈폴)</a></li>
+                                                        <li><a href="javascript:;">라코스테</a></li>
+                                                        <li><a href="javascript:;">삼성물산 남성 外</a></li>
+                                                        <li><a href="javascript:;">코오롱 패션 (KOLON)</a></li>
+                                                        <li><a href="javascript:;">비비안 스페셜샵</a></li>
+                                                        <li><a href="javascript:;">신영와코루</a></li>
+                                                        <li><a href="javascript:;">S.I 빌리지</a></li>
+                                                        <li><a href="javascript:;">COS</a></li>
+                                                        <li><a href="javascript:;">&amp;Other Stories</a></li>
+                                                    </ul>
+                                                </div> -->
+        
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 잡화/제화 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">잡화/제화</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">패션잡화</a></li>
+                                                <li><a href="javascript:;">스타일잡화</a></li>
+                                                <li><a href="javascript:;">패션슈즈/스니커즈</a></li>
+                                                <li><a href="javascript:;">디자이너슈즈</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- 브랜드 카테고리 -->
+                                        <!-- 확정 전 -->
+                                        <!-- <div class="brand-category">
+                                                <ul>
+                                                    <li><a href="javascript:;">루즈앤라운지</a></li>
+                                                    <li><a href="javascript:;">덱케</a></li>
+                                                    <li><a href="javascript:;">LF패션잡화 (닥스/헤지스)</a></li>
+                                                    <li><a href="javascript:;">마이클코어스</a></li>
+                                                    <li><a href="javascript:;">S.I 빌리지</a></li>
+                                                    <li><a href="javascript:;">SODA</a></li>
+                                                    <li><a href="javascript:;">만다리나덕</a></li>
+                                                    <li><a href="javascript:;">엘칸토</a></li>
+                                                    <li><a href="javascript:;">슈마커</a></li>
+                                                </ul>
+                                            </div> -->
+        
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 뷰티 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">뷰티</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">화장품/미용</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 명품/보석/시계 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">명품/보석/시계</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">수입명품</a></li>
+                                                <li><a href="javascript:;">주얼리/순금</a></li>
+                                                <li><a href="javascript:;">시계</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 스포츠/레저 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">스포츠/레저</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">골프/자동차/자전거용품</a></li>
+                                                <li><a href="javascript:;">캠핑/등산/낚시/구기</a></li>
+                                                <li><a href="javascript:;">수영/스키/헬스/요가</a></li>
+                                                <li><a href="javascript:;">스포츠의류/신발/가방</a></li>
+                                                <li><a href="javascript:;">등산/아웃도어</a></li>
+                                                <li><a href="javascript:;">골프웨어</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- 브랜드 카테고리 -->
+                                        <!-- 확정 전 -->
+                                        <!-- <div class="brand-category">
+                                                    <ul>
+                                                        <li><a href="javascript:;">데상트코리아관</a></li>
+                                                        <li><a href="javascript:;">ABC마트 스페셜샵</a></li>
+                                                        <li><a href="javascript:;">레스모아</a></li>
+                                                        <li><a href="javascript:;">LF 스포츠관</a></li>
+                                                        <li><a href="javascript:;">BEANPOLE(빈폴)</a></li>
+                                                    </ul>
+                                                </div>-->
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 출산/유아동 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">출산/유아동</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">출산/유아용품/생필품</a></li>
+                                                <li><a href="javascript:;">유모차/카시트/가구/매트</a></li>
+                                                <li><a href="javascript:;">유아동 의류/잡화</a></li>
+                                                <li><a href="javascript:;">완구/교육완구/도서</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- 브랜드 카테고리 -->
+                                        <!-- 확정 전 -->
+                                        <!-- <div class="brand-category">
+                                                    <ul>
+                                                        <li><a href="javascript:;">[뉴발란스키즈] 20S/S 신상 OPEN</a></li>
+                                                        <li><a href="javascript:;">[빈폴키즈] 20SS NEW IN</a></li>
+                                                        <li><a href="javascript:;">[데상트 영애슬릿] 베스트 티셔츠 모음전</a></li>
+                                                    </ul>
+                                                </div> -->
+        
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 주방/생활/건강 -->
+                            <!-- <div class="category-list-contents">
+                                        <div class="center-area">
+                                            <strong class="depth1-title">주방/생활/건강</strong>
+                                            <div class="sub-category-area">
+            
+                                                <div class="sub-category">
+                                                    <ul>
+                                                        <li><a href="javascript:;">주방용품</a></li>
+                                                        <li><a href="javascript:;">생활/욕실/수납</a></li>
+                                                        <li><a href="javascript:;">건강/안마/실버</a></li>
+                                                    </ul>
+                                                </div>
+            
+                                                <div class="brand-category">
+                                                    <ul>
+                                                        <li><a href="javascript:;">장기무이자 할부</a></li>
+                                                        <li><a href="javascript:;">수입주방용품</a></li>
+                                                        <li><a href="javascript:;">윌리엄스소노마</a></li>
+                                                        <li><a href="javascript:;">H렌탈샵</a></li>
+                                                    </ul>
+                                                </div>
+                
+                                            </div>
+                                        </div>
+                                    </div> -->
+        
+                            <!-- 식품 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">식품</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">농산/반찬/견과/간식</a></li>
+                                                <li><a href="javascript:;">축산/육가공/김치/수산</a></li>
+                                                <li><a href="javascript:;">면/캔/소스/즉석식품</a></li>
+                                                <li><a href="javascript:;">커피/음료/간식/분유</a></li>
+                                                <li><a href="javascript:;">홍삼/건강식품</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- 브랜드 카테고리 -->
+                                        <!-- 확정 전 -->
+                                        <!-- <div class="brand-category">
+                                                    <ul>
+                                                        <li><a href="javascript:;">리빙 TV 플러스</a></li>
+                                                        <li><a href="javascript:;">마트데이</a></li>
+                                                    </ul>
+                                                </div> -->
+        
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 가구/침구/시공 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">가구/침구/시공</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">거실가구</a></li>
+                                                <li><a href="javascript:;">침실가구</a></li>
+                                                <li><a href="javascript:;">학생/주방/아동가구</a></li>
+                                                <li><a href="javascript:;">리모델링/시공가구</a></li>
+                                                <li><a href="javascript:;">침구</a></li>
+                                                <li><a href="javascript:;">커튼/카페트</a></li>
+                                                <li><a href="javascript:;">홈데코/인테리어</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- 브랜드 카테고리 -->
+                                        <!-- 확정 전 -->
+                                        <!-- <div class="brand-category">
+                                                    <ul>
+                                                        <li><a href="javascript:;">한샘가구 브랜드관</a></li>
+                                                        <li><a href="javascript:;">한샘시공 브랜드관</a></li>
+                                                        <li><a href="javascript:;">리바트(LIVART)</a></li>
+                                                        <li><a href="javascript:;">포터리반</a></li>
+                                                        <li><a href="javascript:;">포터리반 키즈</a></li>
+                                                        <li><a href="javascript:;">웨스트엘름</a></li>
+                                                    </ul>
+                                                </div> -->
+        
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 가전/디지털 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">가전/디지털</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">TV/냉장고/세탁기</a></li>
+                                                <li><a href="javascript:;">생활/이미용가전</a></li>
+                                                <li><a href="javascript:;">계절/건강/공기청정</a></li>
+                                                <li><a href="javascript:;">하이마트</a></li>
+                                                <li><a href="javascript:;">컴퓨터/게임</a></li>
+                                                <li><a href="javascript:;">카메라/캠코더</a></li>
+                                                <li><a href="javascript:;">디지털기기/휴대폰</a></li>
+                                                <li><a href="javascript:;">음향가전/AV기기</a></li>
+                                                <li><a href="javascript:;">주방가전</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- 브랜드 카테고리 -->
+                                        <!-- 확정 전 -->
+                                        <!-- <div class="brand-category">
+                                            <ul>
+                                                <li><a href="javascript:;">TV+ Digital Shop</a></li>
+                                                <li><a href="javascript:;">장기무이자 할부</a></li>
+                                                <li><a href="javascript:;">APPLE(애플)</a></li>
+                                                <li><a href="javascript:;">캐논 브랜드관</a></li>
+                                                <li><a href="javascript:;">삼성전자 브랜드샵</a></li>
+                                            </ul>
+                                        </div> -->
+        
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 취미/반려동물 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">취미/반려동물</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">상품권/이용권/서비스</a></li>
+                                                <li><a href="javascript:;">문구/취미/악기</a></li>
+                                                <li><a href="javascript:;">반려동물(H PET SHOP)</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- 브랜드 카테고리 -->
+                                        <!-- 확정 전 -->
+                                        <!-- <div class="brand-category">
+                                            <ul>
+                                                <li><a href="javascript:;">바보사랑</a></li>
+                                                <li><a href="javascript:;">POOM by 아트박스</a></li>
+                                                <li><a href="javascript:;">1300K</a></li>
+                                                <li><a href="javascript:;">텐바이텐</a></li>
+                                                <li><a href="javascript:;">후추통</a></li>
+                                                <li><a href="javascript:;">KT 기프티쇼</a></li>
+                                            </ul>
+                                        </div> -->
+        
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 여행/보험/렌탈 -->
+                            <div class="category-list-contents">
+                                <div class="center-area">
+                                    <strong class="depth1-title">여행/보험/렌탈</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">여행/숙박/항공</a></li>
+                                                <li><a href="javascript:;">Hmall 보험/상조</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- 브랜드 카테고리 -->
+                                        <!-- 확정 전 -->
+                                        <!-- <div class="brand-category">
+                                            <ul>
+                                                <li><a href="javascript:;">모두투어</a></li>
+                                                <li><a href="javascript:;">하나투어</a></li>
+                                                <li><a href="javascript:;">한진관광</a></li>
+                                                <li><a href="javascript:;">롯데제이티비</a></li>
+                                                <li><a href="javascript:;">H렌탈샵</a></li>
+                                            </ul>
+                                        </div> -->
+        
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                            <!-- 현대백화점 -->
+                            <div class="category-list-contents" style="display:block">
+                                <!-- 화면 확인용 개발시 style 삭제 -->
+                                <div class="center-area">
+                                    <strong class="depth1-title">현대백화점</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li class="on"><a href="javascript:;">영캐주얼</a></li>
+                                                <li><a href="javascript:;">여성커리어/언더웨어</a></li>
+                                                <li><a href="javascript:;">진/유니섹스</a></li>
+                                                <li><a href="javascript:;">남성정장/셔츠</a></li>
+                                                <li><a href="javascript:;">남성캐주얼</a></li>
+                                                <li><a href="javascript:;">수입/국내화장품</a></li>
+                                                <li><a href="javascript:;">핸드백/지갑</a></li>
+                                                <li><a href="javascript:;">구두/잡화</a></li>
+                                                <li><a href="javascript:;">아동/유아</a></li>
+                                                <li><a href="javascript:;">스포츠/아웃도어</a></li>
+                                                <li><a href="javascript:;">생활/가구</a></li>
+                                                <li><a href="javascript:;">식품</a></li>
+                                                <li><a href="javascript:;">현대아울렛</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <!-- 스페셜 샵 -->
+                                        <div class="extend-category">
+                                            <div>
+                                                <ul>
+                                                    <li style="">
+                                                        <div class="brand-extend">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-allevo.png" alt="알레보">
+                                                                        <span class="brand-name">알레보</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike.png" alt="나이키">
+                                                                        <span class="brand-name">나이키</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-tomford.png" alt="톰포드">
+                                                                        <span class="brand-name">톰포트</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike.png" alt="나이키">
+                                                                        <span class="brand-name">나이키</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-allevo.png" alt="알레보">
+                                                                        <span class="brand-name">알레보</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike.png" alt="나이키">
+                                                                        <span class="brand-name">나이키</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-tomford.png" alt="톰포드">
+                                                                        <span class="brand-name">톰포트</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike.png" alt="나이키">
+                                                                        <span class="brand-name">나이키</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike.png" alt="나이키">
+                                                                        <span class="brand-name">나이키</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li style="display: none;">
+                                                        <div class="brand-extend">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-allevo.png" alt="알레보">
+                                                                        <span class="brand-name">알레보</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike.png" alt="나이키">
+                                                                        <span class="brand-name">나이키</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-tomford.png" alt="톰포드">
+                                                                        <span class="brand-name">톰포트</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike.png" alt="나이키">
+                                                                        <span class="brand-name">나이키</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-allevo.png" alt="알레보">
+                                                                        <span class="brand-name">알레보</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike.png" alt="나이키">
+                                                                        <span class="brand-name">나이키</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-tomford.png" alt="톰포드">
+                                                                        <span class="brand-name">톰포트</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike.png" alt="나이키">
+                                                                        <span class="brand-name">나이키</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:;">
+                                                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-brand-nike.png" alt="나이키">
+                                                                        <span class="brand-name">나이키</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- // 스페셜 샵 -->
+                                            <!-- 페이징 -->
+                                            <div class="pagination">
+                                                <button class="btn btn-prev"><span>이전</span></button>
+                                                <span class="numbering"><strong class="current">1</strong> / <em class="total">2</em></span>
+                                                <button class="btn btn-next"><span>다음</span></button>
+                                            </div>
+                                            <!-- // 페이징-->
+                                        </div>
+        
+                                        <!-- 브랜드 카테고리 -->
+                                        <!-- 확정 전 -->
+                                        <!-- <div class="brand-category">
+                                            <ul>
+                                                <li><a href="javascript:;">RALPH LAUREN</a></li>
+                                                <li><a href="javascript:;">House Of Samsonite</a></li>
+                                                <li><a href="javascript:;">스와로브스키</a></li>
+                                                <li><a href="javascript:;">한국조폐공사</a></li>
+                                                <li><a href="javascript:;">CHANEL</a></li>
+                                                <li><a href="javascript:;">MAC</a></li>
+                                                <li><a href="javascript:;">URBAN DECAY</a></li>
+                                                <li><a href="javascript:;">TOM FORD BEAUTY</a></li>
+                                                <li><a href="javascript:;">Jo Malone London</a></li>
+                                                <li><a href="javascript:;">휠라스포츠</a></li>
+                                                <li><a href="javascript:;">아디다스 상설행사관</a></li>
+                                                <li><a href="javascript:;">나이키 Event 관</a></li>
+                                                <li><a href="javascript:;">명인명촌</a></li>
+                                                <li><a href="javascript:;">정관장</a></li>
+                                            </ul>
+                                        </div> -->
+        
+                                    </div>
+                                    <!-- // .sub-category-area -->
+        
+                                </div>
+        
+                                <!-- 광고 영역 -->
+                                <div class="exhibition-banner">
+                                    <a href="javascript:;">
+                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-bnn01.jpg" alt="기획전 Banner">
+                                        <span class="banner-text">
+                                            <strong>S/S 빈폴맨 빈폴레이디스<br>가격인하!</strong>
+                                            <em>반팔티/셔츠/자켓/원피스 등</em>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!-- // 광고 영역 -->
+                            </div>
+        
+                            <!-- 해외직구 -->
+                            <div class="category-list-contents">
+                                <!-- <div class="center-area">
+                                                                    <strong class="depth1-title">해외직구</strong>
+                                                                </div> -->
+                            </div>
+        
+                            <!-- TV쇼핑 -->
+                            <div class="category-list-contents">
+                                <div class="center-area wide">
+                                    <strong class="depth1-title">TV쇼핑</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">여성/남성의류</a></li>
+                                                <li><a href="javascript:;">언더웨어</a></li>
+                                                <li><a href="javascript:;">뷰티</a></li>
+                                                <li><a href="javascript:;">명품/잡화/제화</a></li>
+                                                <li><a href="javascript:;">유아동 용품/도서</a></li>
+                                                <li><a href="javascript:;">레포츠의류/용품</a></li>
+                                                <li><a href="javascript:;">농수축/신선/건강식품</a></li>
+                                                <li><a href="javascript:;">인테리어/침구/가구</a></li>
+                                                <li><a href="javascript:;">생활/건강/욕실</a></li>
+                                                <li><a href="javascript:;">주방용품</a></li>
+                                                <li><a href="javascript:;">대형/생활 가전</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                    <span class="tv-info">
+                                        <a href="javascript:;">생방송</a>
+                                        <a href="javascript:;">편성표</a>
+                                    </span>
+                                </div>
+                                <div class="center-area wide">
+                                    <strong class="depth1-title">TV+샵</strong>
+                                    <div class="sub-category-area">
+                                        <!-- 일반 카테고리 -->
+                                        <div class="sub-category">
+                                            <ul>
+                                                <li><a href="javascript:;">여성/남성의류</a></li>
+                                                <li><a href="javascript:;">뷰티</a></li>
+                                                <li><a href="javascript:;">명품/잡화/제화</a></li>
+                                                <li><a href="javascript:;">유아동 용품/도서</a></li>
+                                                <li><a href="javascript:;">인테리어/침구/가구</a></li>
+                                                <li><a href="javascript:;">생활/건강/욕실</a></li>
+                                                <li><a href="javascript:;">주방용품</a></li>
+                                                <li><a href="javascript:;">언더웨어</a></li>
+                                                <li><a href="javascript:;">레포츠의류/용품</a></li>
+                                                <li><a href="javascript:;">농수축/신선/건강식품</a></li>
+                                                <li><a href="javascript:;">TV+ 대형/생활가전</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- // .sub-category-area -->
+                                </div>
+                            </div>
+        
+                        </div>
+                        <!-- // 카테고리 메뉴 끝 -->
+                    </div>
+                    <!-- // 카테고리 메뉴 -->
+        
+                    <!-- 퀵메뉴 -->
+                    <div class="quick-menu-wrap">
+                        <div class="quick-menu-list">
+                            <ul>
+                                <li><a href="javascript:;">쇼핑라이브</a></li>
+                                <li><a href="javascript:;">편성표</a></li>
+                                <li><a href="javascript:;" class="on">홈쇼핑</a></li>
+                                <li><a href="javascript:;">백화점</a></li>
+                                <li><a href="javascript:;">쏙담마켓</a></li>
+                                <li><a href="javascript:;">마트데이</a></li>
+                                <li><a href="javascript:;">이벤트</a></li>
+                                <li><a href="javascript:;">주간베스트</a></li>
+                            </ul>
+                        </div>
+                        <!-- // .quick-menu-list -->
+                        <div class="quick-menu-more">
+                            <a href="javascript:;" class="btn-quick-more">퀵메뉴 더보기</a>
+                            <div class="quick-menu-add">
+                                <a href="javascript:;">엄지펀딩</a>
+                                <a href="javascript:;">가격끝판왕</a>
+                                <a href="javascript:;">추천TODAY</a>
+                                <a href="javascript:;">엄지펀딩</a>
+                                <a href="javascript:;">가격끝판왕</a>
+                                <a href="javascript:;">추천TODAY</a>
+                            </div>
+                            <!-- // .event-wrap -->
+                        </div>
+                    </div>
+                    <!-- // 퀵메류 -->
+        
+                    <!-- 유틸메뉴 -->
+                    <div class="header-util">
+                        <h2 class="hiding">유틸메뉴</h2>
+                        <!-- 로그인 전 -->
+                        <ul>
+                            <li><a href="javascript:;">로그인</a></li>
+                            <li><a href="javascript:;">회원가입</a></li>
+                            <li><a href="javascript:;">고객센터</a></li>
+                        </ul>
+                        <!-- // 로그인 전 -->
+                        <!-- 로그인 후 -->
+                        <!-- <ul>
+                                <li><a href="javascript:;">로그아웃</a></li>
+                                <li><a href="javascript:;">멤버쉽존</a></li>
+                                <li><a href="javascript:;">고객센터</a></li>
+                            </ul> -->
+                        <!-- // 로그인 후 -->
+                    </div>
+                    <!-- // 유틸메뉴 -->
+        
+                </div>
+                <!-- // .header-menu-in -->
+        
+                <!-- 바로 접속 : 헤더 고정  -->
+                <!-- ON -->
+                <div class="visit-indicator">바로접속<span class="visit-staus off">OFF</span></div>
+        
+                <!-- OFF -->
+                <!-- <div class="visit-indicator">바로접속<span class="visit-staus off">OFF</span></div> -->
+                <!-- // 바로 접속 : 헤더 고정  -->
+            </div>
+            <!-- // .header-menu-wrap -->
+        
+        </header>
+        <!-- //.header -->
+
+        <form name="registMemberForm" method="post">
+            <input type="hidden" name="email" value=""/>
+            <input type="hidden" name="emailCertNo"/>
+            <input type="hidden" name="langType" value="korean"/>
+            
+            <!-- 전자상거래 규제 개선 -->
+            <input type="hidden" name="isOverseasSectPup" value="N" />
+             <input type="hidden" name="popupYn" value="N" />
+             <input type="hidden" name="redirectUrl" value="/front/dpa/searchSectItem.do?sectId=1476179" />
+             <input type="hidden" name="errorMessage" value="" />
+             <input type="hidden" name="token" />
+             <input type="hidden" name="snsType"/>
+         </form>
+
+         <script type="text/javascript">
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+        
+              window.fbAsyncInit = function() {
+                FB.init({
+                  appId      : '532674750212632',
+                  cookie     : true,
+                  status     : true,
+                  xfbml      : true,
+                  version    : 'v3.2'
+                });
+              }; 
+               
+            function fbLogin() {
+                var pathVal = "^헤더^마이페이지 레이어^페이스북 로그인";
+              
+                try {
+                     _trk_flashEnvView('_TRK_CP=' + pathVal);
+                } catch(e){}
+                  
+                   //현재 페이스북 로그인 여부 확인 후 FB.login fuction 호출 여부 구분
+                   FB.getLoginStatus(function(response){
+                 
+                      if(response.status == "connected") {
+                          var token = response.authResponse.accessToken;                  
+                          FB.api('/me', {fields: 'email'}, function(response){
+                              //opener.name = "parent";
+                              if(response.email !== undefined){
+                                  var form = $("form[name='registMemberForm']")[0];
+                                  //form.target = opener.name;                         
+                                  form.setAttribute("action", "https://www.hyundaihmall.com/front/cob/snsAuth.do");                      
+                                   
+                                  $("input[name='token']").val(token);
+                                  $("input[name='snsType']").val("10");
+                                   
+                                  form.submit();  
+                                  showLoadingBar("180px", "150px");
+                               }
+                               else{
+                                   // 페이스북 가입 마지막 단계(가입확인 메일 체크) 확인 안한 계정 로그인시
+                                   alert("check your confirmation email");
+                               }
+                               //window.close();
+                          });
+                      }else {
+                          FB.login(function(response){
+                              if(response.authResponse){
+                                  var token = response.authResponse.accessToken;                  
+                                  FB.api('/me', {fields: 'email'}, function(response){
+                                      //opener.name = "parent";
+                                      if(response.email !== undefined){
+                                          var form = $("form[name='registMemberForm']")[0];
+                                          //form.target = opener.name;                         
+                                          form.setAttribute("action", "https://www.hyundaihmall.com/front/cob/snsAuth.do");                      
+                                            
+                                          $("input[name='token']").val(token);
+                                          $("input[name='snsType']").val("10");
+                                            
+                                          form.submit();  
+                                          showLoadingBar("180px", "150px");
+                                      }
+                                      else{
+                                          // 페이스북 가입 마지막 단계(가입확인 메일 체크) 확인 안한 계정 로그인시
+                                          alert("check your confirmation email");
+                                      }
+                                      //window.close();
+                                  });
+                              }
+                          }, {scope: 'email'});
+                      }
+                  });
+            }
+            </script>
+              
+            <script type="text/javascript">
+              function naverLogin() {
+                  var pathVal = "^헤더^마이페이지 레이어^네이버 로그인";
+                   
+                        try {
+                          _trk_flashEnvView('_TRK_CP=' + pathVal);
+                     } catch(e){}
+                  
+                     var returnURL = "/front/dpa/searchSectItem.do?sectId=1476179";
+                  var redirect_uri ='https://www.hyundaihmall.com';
+                  /* if(returnURL.indexOf("&") > -1){
+                      returnURL = returnURL.replace(/&amp;/g,"||");
+                  } */
+                
+                  var gnbLoginYn = "Y";
+                  redirect_uri += '/front/cob/naverLoginChk.do?gnbLoginYn=' + gnbLoginYn + '&returnUrl=' + returnURL;
+                  
+                  var url = "/front/cob/naverLogin.do?redirect_uri=" + encodeURIComponent(redirect_uri);
+                  var popName = "NaverLogin";
+                  var popOption = "height=760, width=795, fullscreen=no, location=no, scrollbars=no, menubar=no, toolbar=no, titlebar=no, directories=no, resizable=no, top=0, left=0, status=no";
+                  window.open(url, popName, popOption);
+
+                  setTopBanner();
+                
+                  loadPCdirect();
+                  ajaxCallback();
+                }
+              
+            </script>
+        
+        <!--//header -->
+        
+        <!-- //gnb -->
+           
+        <script type="text/javascript">
+           $(document).on("mouseenter", ".ud_naviWrap .naviUL > li", function(){
+               if($(this).siblings("li").find(".dropdown").css("display") == "block"){
+                   $(this).siblings("li").children("a").removeClass("hover");
+                   $(this).siblings("li").children(".dropdown").css({ display : "none" });
+               }
+               
+               $(this).children("a").stop().animate({ color : "#FFF" }, 200);
+               
+               if($(this).children(".dropdown").length > 0){
+                   $(this).children("a").addClass("hover");
+                   
+                   if(($(this).children(".dropdown").width()+$(this).position().left) > $(".ud_naviWrap").width()) left_pos = -(($(this).children(".dropdown").width()+ parseInt($(this).children(".dropdown").css("paddingRight")) + parseInt($(this).children(".dropdown").css("paddingLeft")) +$(this).position().left) - $(".ud_naviWrap").width());
+                   else left_pos = '';
+                   
+                   $(this).children(".dropdown").css({ display : "block", left : left_pos });
+               }
+           }).on("mouseleave", ".ud_naviWrap .naviUL > li", function(){
+               $(this).children("a").stop().animate({ color : "#af8bbe" }, 200);
+               
+               if($(this).children(".dropdown").length > 0){
+                   $(this).children("a").removeClass("hover");
+                   $(this).children(".dropdown").css({ display : "none" });
+               }
+           });
+           
+           // 드롭다운 메뉴 스타일 설정
+           $(document).on("mouseenter", ".naviUL > li > .dropdown li", function(){
+               $(this).addClass("hover").stop().animate({ backgroundColor : "#46166b" }, 100).children("a").css({ color : "#FFF" });
+           }).on("mouseleave", ".naviUL > li > .dropdown li", function(){
+               $(this).addClass("hover").stop().animate({ backgroundColor : "#FFF" }, 100).children("a").css({ color : "#46166b" });
+           });
+        </script>
+        
+        <div id="container">
+                <div id="content">
+                    <div class="body">
+                        <div class="ud_naviWrap">
+                          <a href="/front/dpa/searchSectItem.do?sectId=1476179"><img src="http://image.hyundaihmall.com/hmall/sp/urbandecay/img_ud_01.jpg" alt="URBAN DECAY" /></a>
+                          <ul class="naviUL">
+                                                                                 <li>
+                                     <a href="/front/dpa/searchSectItem.do?sectId=1476185" >
+                                        About UD              
+                                     </a>
+                
+                                       <!-- subMenu Layer -->
+                                                                     <!-- //subMenu Layer -->
+                                   </li>
+                                                          <li>
+                                     <a href="/front/dpa/searchSectItem.do?sectId=1476187" >
+                                        FEATURED              
+                                     </a>
+                
+                                       <!-- subMenu Layer -->
+                                                                     <!-- //subMenu Layer -->
+                                   </li>
+                                                          <li>
+                                     <a href="/front/dpa/searchSectItem.do?sectId=1476223" >
+                                        LIPS              
+                                     </a>
+                
+                                       <!-- subMenu Layer -->
+                                                                     <!-- //subMenu Layer -->
+                                   </li>
+                                                          <li>
+                                     <a href="/front/dpa/searchSectItem.do?sectId=1476254" >
+                                        TOOLS              
+                                     </a>
+                
+                                       <!-- subMenu Layer -->
+                                                                     <!-- //subMenu Layer -->
+                                   </li>
+                                                          <li>
+                                     <a href="/front/dpa/searchSectItem.do?sectId=1476255" >
+                                        NAKED              
+                                     </a>
+                
+                                       <!-- subMenu Layer -->
+                                                                     <!-- //subMenu Layer -->
+                                   </li>
+                                                          <li>
+                                     <a href="/front/dpa/searchSectItem.do?sectId=1476198" >
+                                        EYES              
+                                     </a>
+                
+                                       <!-- subMenu Layer -->
+                                                                     <!-- //subMenu Layer -->
+                                   </li>
+                                                          <li>
+                                     <a href="/front/dpa/searchSectItem.do?sectId=1476260" >
+                                        PALLETTES              
+                                     </a>
+                
+                                       <!-- subMenu Layer -->
+                                                                     <!-- //subMenu Layer -->
+                                   </li>
+                                                          <li>
+                                     <a href="/front/dpa/searchSectItem.do?sectId=1476228" >
+                                        FACE              
+                                     </a>
+                
+                                       <!-- subMenu Layer -->
+                                                                     <!-- //subMenu Layer -->
+                                   </li>
+                                                  </ul>
+                        </div>
+                        <div class="ud_visualWrap">
+                            <div id="ud_slide">
+                                <ul class="carouselUL">
+                                
+                                <!-- 상단 큰 배너 -->
+                                                                                                                <li data-navi-name="네이키드허니">
+                                    <a href="http://www.hyundaihmall.com/front/pda/itemPtc.do?slitmCd=2091759549">	                            <img src="//image.hyundaihmall.com/static/image/sect/dispbnnr14761799511020191112155913.jpg"  alt="" />
+                                                                </a>	                        </li>
+                                                                                                                                            <li data-navi-name="스테이 네이키드">
+                                    <a href="http://www.hyundaihmall.com/front/pda/itemPtc.do?slitmCd=2089074165">	                            <img src="//image.hyundaihmall.com/static/image/sect/dispbnnr14761799513020191112154459.jpg"  alt="" />
+                                                                </a>	                        </li>
+                                                                                                                                            <li data-navi-name="올나이트 픽서">
+                                    <a href="http://www.hyundaihmall.com/front/pda/itemPtc.do?slitmCd=2046971913">	                            <img src="//image.hyundaihmall.com/static/image/sect/dispbnnr14761799511020191112154324.jpg"  alt="" />
+                                                                </a>	                        </li>
+                                                                                                                                            <li data-navi-name="바이스 립 케미스트">
+                                    <a href="http://www.hyundaihmall.com/front/pda/itemPtc.do?slitmCd=2087472202">	                            <img src="//image.hyundaihmall.com/static/image/sect/dispbnnr14761799514020191112155936.jpg"  alt="" />
+                                                                </a>	                        </li>
+                                                                                    </ul>
+                            </div>
+                        </div>
+                        <div class="ud_contentWrap">
+                            <h3><img src="http://image.hyundaihmall.com/hmall/sp/urbandecay/tt_ud_01.jpg" alt="" /></h3>                   
+                            <div class="ud_pdList">
+                                <ul class="goods_list">
+                                                        </ul>
+                            </div>
+                             
+                                                                    <div class="mt40">
+                            <a href="http://www.hyundaihmall.com/front/dpa/searchSectItem.do?sectId=1476251">                        <img src="//image.hyundaihmall.com/static/image/sect/dispbnnr14761799531020170227140850.jpg" title="SETTING SPRAY" alt="SETTING SPRAY" />
+                                                </a>                    </div>
+                                               
+                                                    
+        <div class="html_contWrap">
+            <div>
+                <div class="mt40 alignC">
+                    <a href="http://www.urbandecay.co.kr/" target=_blank>
+                        <img alt="" src="http://image.hyundaihmall.com/CO/EDITOR/20150824/17581751/m454v.jpg">
+                    </a>
+                    <a href="http://urbandecay.tumblr.com/" target='_blank"'>
+                        <img src="http://image.hyundaihmall.com/CO/EDITOR/20150824/181608198/xlkrs.jpg" width=282>
+                    </a>
+                    <a href="http://www.urbandecay.co.kr/" target=_blank>
+                        <img src="http://image.hyundaihmall.com/CO/EDITOR/20150825/174346269/i1158.jpg">
+                    </a> 
+                </div>
+            </div>
+        </div>
+                                            </div>
+                        
+                        <script type="text/javascript">
+                            $(window).on("load", function(){
+                                $("#ud_slide").hmall_slide({
+                                    autoSlide : "auto",
+                                    slideDirection : "horizontal",  // horizontal - vertical
+                                    slideType : "swipe",    // default - fade - swipe
+                                    navigation : "visible",     // visible - none
+                                    navigationFloat : "float",  // float - none
+                                    navigationFloatType : "text",   // image - text
+                                    navigationEasing : "easeInOutExpo",
+                                    navigationColorType : "border", // border - bgcolor
+                                    navigationBorderColor : "FFF",
+                                    navigationBgColor : "FFF",
+                                    navigationActiveTxtColor : "000",
+                                    navigationNonActiveTxtColor : "FEFEFE",
+                                    directionButn : "hidden",   // visible - hidden
+                                    prevButton : "arrow_l_2.png",
+                                    nextButton : "arrow_r_2.png",
+                                    mouseEvent : "click",
+                                    animateSpeed : 800,
+                                    autoSlideSpeed : 4000
+                                });
+                            });
+                        </script>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 찜하기 레이어 -->
+        <div class="popup id_duplicate posA hidden" id="jjim_codi" style="width:400px; z-index:99999999;"></div>
+        <!-- //찜하기 레이어 -->
+        <!-- 상품 크게보기 레이어 -->
+        <div class="popup id_duplicate posA" id="pd_zoom" style="width:1024px; z-index:99999998;"></div>
+        <!--//상품 크게보기 레이어 -->
+
+        <!-- 푸터 영역 시작 -->
+        <footer class="footer">
+            <div class="link-area">
+                <div class="link-area-in">
+                    <h2 class="hiding">푸터메뉴</h2>
+                    <div class="short-menu">
+                        <ul>
+                            <li><a href="javascript:;">현대백화점그룹</a></li>
+                            <li><a href="javascript:;">현대백화점소개</a></li>
+                            <li><a href="javascript:;">현대홈쇼핑소개</a></li>
+                            <li><a href="javascript:;">윤리경영</a></li>
+                            <li><a href="javascript:;">IR</a></li>
+                            <li><a href="javascript:;">채용안내</a></li>
+                            <li><a href="javascript:;">신규입점</a></li>
+                            <li><a href="javascript:;">마케팅/제휴안내/광고</a></li>
+                        </ul>
+                    </div>
+                    <!-- // .short-menu -->
+                    <!-- 클래스 on 추가시 노출-->
+                    <div class="family-site">
+                        <div class="select-label" data-toggle-target='family-site' data-auto-close='true'>Famliy Site</div>
+                        <div class="select-layer">
+                            <h3 class="group">쇼핑몰 Site</h3>
+                            <ul>
+                                <li><a href="javascript:;">더현대닷컴</a></li>
+                                <li><a href="javascript:;">현대백화점 DUTY FREE</a></li>
+                                <li><a href="javascript:;">e수퍼마켓</a></li>
+                                <li><a href="javascript:;">더한섬</a></li>
+                                <li><a href="javascript:;">현대리바트몰</a></li>
+                                <li><a href="javascript:;">현대렌탈케어</a></li>
+                                <li><a href="javascript:;">H패션몰</a></li>
+                                <li><a href="javascript:;">VR STATION</a></li>
+                            </ul>
+                            <h3 class="group">관계사 Site</h3>
+                            <ul>
+                                <li><a href="javascript:;">현대백화점 그룹</a></li>
+                                <li><a href="javascript:;">현대백화점</a></li>
+                                <li><a href="javascript:;">현대그린푸드</a></li>
+                                <li><a href="javascript:;">한섬</a></li>
+                                <li><a href="javascript:;">현대리바트</a></li>
+                                <li><a href="javascript:;">현대H&amp;S</a></li>
+                                <li><a href="javascript:;">현대HCN</a></li>
+                                <li><a href="javascript:;">현대미디어</a></li>
+                                <li><a href="javascript:;">현대렌탈케어</a></li>
+                                <li><a href="javascript:;">현대드림투어</a></li>
+                                <li><a href="javascript:;">에버다임</a></li>
+                                <li><a href="javascript:;">씨엔에스푸드시스템</a></li>
+                                <li><a href="javascript:;">현대캐터링시스템</a></li>
+                                <li><a href="javascript:;">현대IT&amp;E</a></li>
+                            </ul>
+                        </div>
+                        <!-- // .select-layer -->
+                    </div>
+                    <!-- // .family-site -->
+                </div>
+                <!-- // .link-area-in -->
+            </div>
+            <!-- // .link-area -->
+        
+            <div class="footer-contents">
+                <div class="footer-logo"><img src="//imagedev.hmall.com/p/img/co/footer-logo.jpg" alt="HYUNDAI"></div>
+                <div class="info-area">
+                    <div class="policy-link-list">
+                        <ul>
+                            <li><a href="javascript:;">이용약관</a></li>
+                            <li><a href="javascript:;"><strong>개인정보 처리방침</strong></a></li>
+                            <li><a href="javascript:;">사업자정보확인</a></li>
+                            <li><a href="javascript:;">공정거래</a></li>
+                            <li><a href="javascript:;">자율준수</a></li>
+                        </ul>
+                    </div>
+                    <!-- // .policy-link-list -->
+        
+                    <!-- on 클래스 추가 시 노출 -->
+                    <div class="footer-info on">
+                        <button class="btn-footer" data-toggle-target='footer-info'><strong>(주)현대홈쇼핑</strong></button>
+                        <div class="footer-info-box">
+                            <div class="hmall-info">
+                                <div class="list-contents">
+                                    <p><span>대표이사 : 강찬석</span><span>주소 : 서울특별시 강동구 올림픽로70길 34 (주)현대홈쇼핑</span></p>
+                                    <p><span>고객센터 TEL : 1600-0000(유료)</span><span>고객만족사업부 FAX : 02-2143-2731</span></p>
+                                    <p>
+                                        <span>
+                                            기타문의 :
+                                            <a href="mailto:webmaster@hyundaihmall.com">webmaster@hyundaihmall.com</a>
+                                        </span>
+                                        <span>사업자등록번호: 211-86-76540</span>
+                                    </p>
+                                    <p><span>통신판매업 신고 : 제 25-3133호</span><span>부가통신 신고번호 : 3787</span></p>
+                                    <p><span>정보보호최고책임자 : 정보보호담당 오권호</span><span>청소년보호책임자 : Hmall사업부 홍성일</span></p>
+                                    <p><span>호스팅서비스 : (주)현대홈쇼핑</span></p>
+                                </div>
+                            </div>
+                            <!-- // .hamall-info -->
+        
+                            <div class="service-info-wrap">
+                                <p class="safe-info">
+                                    우리은행 구매안전 서비스
+                                    <a href="javascript:;">가입사실 확인</a>
+                                    고객님은 안전거래를 위해 현금 결제 시 저희 쇼핑몰에서 가입한 우리은행의 구매안전 서비스를 이용하실 수 있습니다.
+                                </p>
+                                <div class="cs-link">
+                                    <a href="javascript:;">ARS 안내</a>
+                                    <a href="javascript:;">카톡 주문 안내</a>
+                                </div>
+                            </div>
+                            <!-- // .service-info -->
+                        </div>
+                        <!-- // .foonter-info-box -->
+                    </div>
+                    <!-- // .footer-info -->
+        
+                </div>
+                <!-- // .info-area -->
+            </div>
+            <!-- // .footer-contents-->
+        </footer>
+        <!-- // 푸터 영역 끝 -->
+    </div>
+    <!-- //.wrap -->
+</body>
+
+</html>

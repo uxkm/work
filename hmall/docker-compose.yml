@@ -1,0 +1,34 @@
+version: "3.6"
+services:
+  hmall-uiux:
+    image: registry.wylie.co.kr/hmall/uiux
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.backend=hmall-uiux"
+        - "traefik.docker.network=proxy"
+        - "traefik.frontend.rule=Host:html.wylie.co.kr; PathPrefixStrip:/"
+        - "traefik.frontend.rule=Host:imagedev.hyundaihmall.com; PathPrefixStrip:/"
+        - "traefik.port=80"
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+    environment:
+      - TZ=Asia/Seoul
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

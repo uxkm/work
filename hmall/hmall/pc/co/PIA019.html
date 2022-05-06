@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>OTP 로그인</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/slick.min.css"><!-- Slick UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/login.css">
+</head>
+<body>
+    <!-- 윈도우 팝업 클래스 popup-win : width:540px , height:580px -->
+    <div class="popup-win wp-otp-log">
+        <div class="pop-wrap" tabindex="0">
+            <div class="pop-content-wrap">
+                <strong class="pop-title">로그인</strong>
+                <div class="pop-content">
+                    <div class="tabgroup bdline">
+                        <div class="tab tab-default">
+                            <ul class="tabmenu ui-tab" role="tablist">
+                                <li role="presentation" class="ui-active"><a href="#hpoint" aria-controls="hpoint" role="tab" data-modules-tab>H.Point 아이디</a></li>
+                                <li role="presentation"><a href="#hmall" aria-controls="hmall" data-modules-tab>Hmall 아이디</a></li>
+                            </ul>
+                        </div>
+                        <!-- //.tab -->
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane ui-active" id="hpoint">
+                                <div class="login-form">
+                                    <!-- 
+                                        input focus/선택 시  inputbox class= selected 추가 예) <div class="inputbox selected">
+                                        input disabled 시  inputbox class= disabled 추가 예) <div class="inputbox disabled">
+                                        input readonly 시  inputbox class= readonly 추가 예) <div class="inputbox readonly">
+                                        input 입력 실패 시  inputbox class= failed 추가 예) <div class="inputbox failed">
+                                        input 입력 성공 시  inputbox class= success 추가 예) <div class="inputbox success">
+                                        -->
+                                    <div class="inputbox xl">
+                                        <label class="inplabel"><input type="password" name="" placeholder="OTP 인증번호" title="OTP 인증번호"></label>
+                                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                        <i class="icon lock"></i>
+                                    </div>
+                                    <!-- 입력 실패 메세지 -->
+                                    <p class="failed-msg" style="display: none;">
+                                        <i class="icon error"></i>
+                                        <span>OTP 인증번호를 입력해 주세요.</span>
+                                    </p>
+                                    <!-- <p class="failed-msg">아이디를 입력해 주세요.</p> -->
+                                    <!-- <p class="failed-msg">비밀번호를 입력해 주세요.</p> -->
+                                    <!-- <p class="failed-msg">아이디 또는 비밀번호를 다시 확인해 주세요<br>H.Point 회원이시면 상단의 'H.Point 아이디'를 선택하세요.</p> -->
+                                </div>
+                                <!-- //.login-form -->
+            
+                                <button class="btn btn-login btn-default"><span>로그인</span></button>
+                                
+                                <div class="bottom-txt">
+                                    <p class="caption13">H.Point 앱을 실행하여, 설정 메뉴의 로그인/회원 설정 항목에서<br>‘OTP 인증번호 발급’을 누른 후 발급되는 일회용 인증번호를 입력해 주세요.</p>
+                                </div>
+                            
+                                <div class="login-btn">
+                                    <a href="javascript:;" class="btn alink"><span>아이디 / 비밀번호 로그인</span></a>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="hmall">
+                                <div class="login-form">
+                                    <!-- 
+                                        input focus/선택 시  inputbox class= selected 추가 예) <div class="inputbox selected">
+                                        input disabled 시  inputbox class= disabled 추가 예) <div class="inputbox disabled">
+                                        input readonly 시  inputbox class= readonly 추가 예) <div class="inputbox readonly">
+                                        input 입력 실패 시  inputbox class= failed 추가 예) <div class="inputbox failed">
+                                        input 입력 성공 시  inputbox class= success 추가 예) <div class="inputbox success">
+                                        -->
+                                    <div class="inputbox xl">
+                                        <label class="inplabel"><input type="text" name="" placeholder="아이디 또는 이메일 주소 입력" title="아이디 또는 이메일 주소 입력"></label>
+                                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                        <i class="icon person"></i>
+                                    </div>
+                                    <div class="inputbox xl">
+                                        <label class="inplabel"><input type="password" name="" placeholder="비밀번호" title="비밀번호 입력"></label>
+                                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                        <i class="icon lock"></i>
+                                    </div>
+                                    <!-- 입력 실패 메세지 -->
+                                    <p class="failed-msg" style="display: none;">
+                                        <i class="icon error"></i>
+                                        <span>아이디를 입력해 주세요.</span>
+                                    </p>
+                                    <!-- <p class="failed-msg">아이디를 입력해 주세요.</p> -->
+                                    <!-- <p class="failed-msg">비밀번호를 입력해 주세요.</p> -->
+                                    <!-- <p class="failed-msg">아이디 또는 비밀번호를 다시 확인해 주세요<br>H.Point 회원이시면 상단의 'H.Point 아이디'를 선택하세요.</p> -->
+                                </div>
+                                <!-- //.login-form -->
+            
+                                <div class="login-relate">
+                                    <div class="checkbox-wrap">
+                                        <div class="checkbox">
+                                            <label class="chklabel"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span>아이디 저장</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //.login-relate -->                
+                                <!-- <div class="btngroup btnlen1"> -->
+                                    <button class="btn btn-login btn-default"><span>로그인</span></button>
+                                <!-- </div> -->
+                                
+                                <ul class="login-find">
+                                    <li><a href="javascript:;">아이디 찾기</a></li>
+                                    <li><a href="javascript:;">비밀번호 찾기</a></li>
+                                    <li><a href="javascript:;">회원가입</a></li>
+                                </ul>
+                
+                                <!-- Hmall 아이디 로그인에서만 노출 -->
+            
+                                <div class="btngroup btnlen2">
+                                    <button class="btn btn-naver"><i class="icon"></i><span>네이버 로그인</span></button>
+                                    <button class="btn btn-kakao"><i class="icon"></i><span>카카오톡 로그인</span></button>
+                                </div>
+    
+                
+                                <div class="login-ad">
+                                    <a href="javascript:;">
+                                        <img src="//imagedev.hmall.com/p/img/co/sample/img-login-ad-2x.png" alt="휴대폰 번호로 로그인">
+                                        <span style="color:#93BFBD;">AD</span>
+                                    </a>
+                                </div>
+                                            
+                                <div class="btngroup btnlen1">
+                                    <button class="btn btn-linelgray"><span>비회원 주문조회</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //.tab-content -->
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

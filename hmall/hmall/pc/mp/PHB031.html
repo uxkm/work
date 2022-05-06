@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>결제가능한 카드 포인트 안내</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/mp/mypage.css">
+
+</head>
+<body>
+<div class="ui-modal payable-card-point" id="phb031" tabindex="-1" role="dialog" aria-label="결제가능한 카드 포인트 안내">
+    <div class="ui-modal-dialog" role="document">
+        <div class="content">
+            <p class="ui-title">결제가능한 카드 포인트 안내</p>
+            <div class="content-body">
+                <div class="min-h188" data-modules-scroll>
+                    <div class="border-line-box">
+                        <p class="tit">삼성카드 보너스 포인트</p>
+                        <p class="txt">1포인트 이상부터 사용</p>
+                    </div>
+                    <div class="border-line-box">
+                        <p class="tit">KB포인트리</p>
+                        <p class="txt">1점 이상부터 사용</p>
+                    </div>
+                    <div class="border-line-box">
+                        <p class="tit">비씨TOP포인트</p>
+                        <p class="txt">1포인트 이상부터 사용</p>
+                    </div>
+                    <div class="border-line-box">
+                        <p class="tit">마이 신한포인트</p>
+                        <p class="txt">5,000포인트 이상 적립 시 1포인트 단위로 사용가능</p>
+                    </div>
+                    <div class="border-line-box">
+                        <p class="tit">하나머니</p>
+                        <p class="txt">1포인트 이상부터 사용</p>
+                    </div>
+                    <div class="border-line-box">
+                        <p class="tit">시티카드 시티포인트</p>
+                        <p class="txt">최대 결제금액의 10%까지 1포인트부터 사용 가능</p>
+                    </div>
+                    <div class="border-line-box">
+                        <p class="tit">우리모아 포인트</p>
+                        <p class="txt">1,000포인트 이상 적립 시 우리카드 홈페이지에서 1,000포인트 단위로 비씨TOP포인트로 전환하여 사용가능</p>
+                    </div>
+                    <div class="border-line-box">
+                        <p class="tit">현대카드 M포인트</p>
+                        <p class="txt">최신 결제금액의 10%까지 1포인트부터 사용 가능</p>
+                    </div>
+
+                </div>
+                <div class="bg-gray-box">
+                    <p class="tit">결제방법 및 유의사항</p>
+                    <ul class="dotlist">
+                        <li>포인트가 부족할 경우, 다음과 같은 메시지가 나올 수 있습니다. (유효기간 경과 카드, 할부개월 오류 등)</li>
+                        <li>기업공용(법인)카드, 가족카드는 사용이 불가합니다.</li>
+                        <li>포인트 관련사항 및 포인트 확인은 카드사 홈페이지에서 확인할 수 있습니다.</li>
+                        <li>포인트 차감은 카드 청구시 포인트가 차감된 금액으로 청구됩니다.</li>
+                    </ul>
+                </div>
+
+                <div class="btngroup">
+                    <button class="btn btn-default"><span>확인</span></button>
+                    <!-- 데이터 전송 후 클릭시 $(element).modal().hide() -->
+                </div>
+            </div>
+            <!-- //.content-body -->
+            
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.content -->
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+<!-- //.ui-modal -->
+<script>
+    $('#phb031').modal().show();
+</script>
+</body>
+</html>

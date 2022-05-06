@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>포인트사용인증 이메일인증</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/login.css">
+</head>
+<body id="popWin"> <!--20200828 금요일 id 값 추가-->
+    <!--popup-win : 윈도우 팝업일 경우 // width:540px , min-height:482px, height:685px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win point-use point-use-email"> <!--20201007 수요일 point-use 클래스 추가-->
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">포인트 사용인증</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <p class="desc">안전한 거래를 위해 H.Point/적립금 사용시 인증이 필요합니다.<br/> <em>(5천원 이상 전액 결제 시)</em></p>
+                    <div class="content"> <!--20200820 목요일 pc공통레이아웃 적용 완료 // 탭 스크립트는 추후 적용될 예정-->
+                        <div class="tabgroup tab-bottom">
+                            <!--ui-tab-->
+                            <ul class="ui-tab" role="tablist">
+                                <li class="dim" role="presentation"><a href="#pointUse" role="tab" aria-controls="pointuse" data-modules-tab=""><span>휴대폰 본인인증</span></a></li> <!--둘 중 한가지의 인증만 가능할 경우, 나머지 불가능한 인증은 딤처리 방식 : class=dim 추가-->
+                                <li class="ui-active" role="presentation"><a href="#pointUseEmail" role="tab" aria-controls="pointuseemail" data-modules-tab=""><span>이메일로 인증</span></a></li>  
+                            </ul>
+                            <!--//ui-tab-->
+                            <!--Tab panes-->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane" id="pointUse">
+                                    <!--privacy-wrap-->
+                                    <div class="privacy-wrap">
+                                        <div class="checkbox">
+                                            <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>개인정보 수집 및 이용에 동의합니다.</span></label>
+                                        </div>
+                                        <div class="tblwrap">
+                                            <table>
+                                                <caption>개인정보 수집 및 이용에 동의합니다.</caption>
+                                                <colgroup>
+                                                    <col style="width:130px">
+                                                    <col style="width:166px">
+                                                    <col style="width:164px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">구분</th>
+                                                        <th scope="col">수집ㆍ이용항목</th>
+                                                        <th scope="col">보유기간</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="txt-center" rowspan="3">본인인증</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="txt-center">CI</td>
+                                                        <td class="txt-center bold">저장하지 않음</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="txt-center">이름, 성별 , 생년월일</td>
+                                                        <td class="txt-center bold">저장하지 않음</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <ul class="dotlist"> <!--pc공통 레이아웃 작업 받은 후 클래스명 변경 될 수 있음-->
+                                            <li>수집목적 : 포인트 사용을 위한 인증</li>
+                                        </ul>
+                                        <!--20200820 pc공통 레이아웃으로 수정-->
+                                        <button class="btn btn-default medium"><span>인증하기</span></button>
+                                    </div>
+                                    <!--//privacy-wrap-->
+                                    <div class="noti-wrap">
+                                        <div class="noti-tit-wrap">
+                                            <strong class="ctypo14"><i class="icon noti"></i>본인인증에 실패하셨나요?</strong>
+                                            <a href="#">
+                                                <span>타 기관 인증하기<i class="icon btn-arrow"></i></span> <!--pc공통 레이아웃 작업 받은 후 클래스명 변경 될 수 있음-->
+                                            </a>
+                                        </div>
+                                        <p class="caption13">회원님의 정보가 해당 인증기관에 등록되어 있지 않거나 기타 다른 이유로 실패한 경우일수 있습니다. </p>
+                                    </div>
+                                    <!--20201007 수요일 caution 텍스트 추가-->
+                                    <ul class="caution-list">
+                                        <li>인증 진행 시, 필요한 개인정보가 수집ㆍ이용됩니다. <br/> 개인정보 수집ㆍ이용은 거부하실 수 있으나, 거부하는 경우 이용이 제한됩니다.</li>
+                                    </ul>
+                                    <!--//20201007 수요일 caution 텍스트 추가-->
+                                </div>
+                                <div role="tabpanel" class="tab-pane ui-active" id="pointUseEmail">
+                                    <!--privacy-wrap-->
+                                    <div class="privacy-wrap">
+                                        <div class="field">
+                                            <div class="inputbox disabled">
+                                                <label class="inplabel"><input type="text" name="" value="홍길동" placeholder="이름을 입력해주세요" title="이름 입력" disabled="" readonly=""></label>
+                                                <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <div class="inputbox disabled">
+                                                <label class="inplabel"><input type="text" name="" value="hongildong@naver.com" placeholder="이메일을 입력해주세요" title="이메일 입력" disabled="" readonly=""></label>
+                                                <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                            </div>
+                                        </div>
+                                        <!--PIA035_포인트 사용 인증(이메일발송됨) 의 경우에 class="email-send" 추가 -> display:none -->
+                                        <div class="checkbox field-set">
+                                            <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>개인정보 수집 및 이용에 동의합니다.</span></label>
+                                        </div>
+                                        <!--PIA035_포인트 사용 인증(이메일발송됨) 의 경우에 class="email-send" 추가 -> display:none -->
+                                        <div class="tblwrap">
+                                            <table>
+                                                <caption>개인정보 수집 및 이용에 동의합니다.</caption>
+                                                <colgroup>
+                                                    <col style="width:130px">
+                                                    <col style="width:166px">
+                                                    <col style="width:164px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">구분</th>
+                                                        <th scope="col">수집항목</th>
+                                                        <th scope="col">보유기간</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="txt-center">이메일</td>
+                                                        <td class="txt-center">이메일</td>
+                                                        <td class="txt-center bold">저장하지 않음</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!--PIA035_포인트 사용 인증(이메일발송됨) 의 경우에 class="email-send" 추가 -> display:none -->
+                                        <ul class="dotlist"> <!--pc공통 레이아웃 작업 받은 후 클래스명 변경 될 수 있음-->
+                                            <li>수집목적 : 포인트 사용을 위한 인증</li>
+                                        </ul>
+                                        <!--20200820 pc공통 레이아웃으로 수정-->
+                                        <button class="btn btn-linered medium"><span>인증메일 발송</span></button>  <!--PIA035_포인트 사용 인증(이메일발송됨) 의 경우에 class="email-send" 추가 -> display:none -->
+                                        <!--PIA035_포인트 사용 인증(이메일발송됨) 의 경우에 위의 인증메일 발송에 class="email-send" 추가후 하단의 button으로 변경
+                                            <button class="btn btn-default medium certi"><span>인증하기</span></button>
+                                        -->
+                                        <!--20201007 수요일 caution 텍스트 추가-->
+                                        <ul class="caution-list">
+                                            <li>인증 진행 시, 필요한 개인정보가 수집ㆍ이용됩니다. <br/> 개인정보 수집ㆍ이용은 거부하실 수 있으나, 거부하는 경우 이용이 제한됩니다.</li>
+                                        </ul>
+                                        <!--//20201007 수요일 caution 텍스트 추가-->
+                                    </div>
+                                    <!--//privacy-wrap-->
+                                </div>
+                            </div>
+                            <!--//Tab panes -->
+                        </div>
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+</body>
+</html>

@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+.video-wrapper   { position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background-color: #000; }
+.video-wrapper video	{ position: absolute; top: 0; left: 0; z-index: 10; width: 100%; height: 100%; }
+.video-wrapper:not(:fullscreen) video[poster]	{ object-fit: cover; }
+.video-wrapper video:fullscreen { object-fit: contain !important; }
+.video-wrapper button   { outline: 0; background: transparent; }
+.video-wrapper ._control button   { font-size: 14px; color: #fff; }
+.video-wrapper ._video-container, .video-wrapper ._control   { position: absolute; top: 0; z-index: 100; width: 100%; height: 100%; }
+.video-wrapper ._video-container > img  { position: relative; z-index: 11; width: 100%; height: 100%; object-fit: cover; }
+
+.video-wrapper ._control ._butn, .video-wrapper ._control ._msgbox   { vertical-align: middle; display: inline-block; }
+.video-wrapper ._control ._butn, .video-wrapper ._control ._msgbox,
+/*.video-wrapper ._control ._butn button._back, .video-wrapper ._control ._butn button._share,
+.video-wrapper ._control ._butn button._play._live, .video-wrapper ._control ._butn button._play._shopping, .video-wrapper ._control-panel button  { font-size: 0; }*/
+.video-wrapper ._control ._butn button, .video-wrapper ._control-panel button  { font-size: 0; }
+
+.video-wrapper ._control { background: rgba(0,0,0,0.6); text-align: center; }
+.video-wrapper ._control:after  { content: ""; height: 100%; vertical-align: middle; display: inline-block; }
+.video-wrapper ._control ._butn button    { position: relative; z-index: 1; width: 50px; height: 50px; font-weight: bold; margin: 0 10px; display: none; }
+.video-wrapper ._control ._butn button > i, .video-wrapper ._control-panel button > i  { width: 64px; height: 54px; background: url('http://image.hyundaihmall.com/hmall/_images/common/button/sprite_video_01.png') no-repeat 0 0; background-size: 128px; display: inline-block; }
+.video-wrapper ._control ._butn button._play ._icon, .video-wrapper ._control ._butn button._reload ._icon,
+.video-wrapper ._control ._butn button._detail ._icon, .video-wrapper ._control ._butn button._pause ._icon    { position: relative; z-index: 10; width: 40px; height: 40px; }
+.video-wrapper ._control ._butn button._play:after, .video-wrapper ._control ._butn button._reload:after,
+.video-wrapper ._control ._butn button._detail:after, .video-wrapper ._control ._butn button._pause:after{ content: ""; position: absolute; top: 0; left: -1px; z-index: 1; width: 50px; height: 50px; border-radius: 30px; background: rgba(0,0,0,0.6); display: inline-block; }
+.video-wrapper ._control ._butn button._play ._icon    { background-position: -12px -404px; }
+.video-wrapper ._control ._butn button._reload ._icon    { background-position: -76px -451px; }
+.video-wrapper ._control ._butn button._detail ._icon    { background-position: -14px -450px; }
+.video-wrapper ._control ._butn button._pause ._icon    { background-position: -76px -404px; }
+.video-wrapper ._control ._butn button._back, .video-wrapper ._control ._butn button._share   { position: absolute; top: 10px; display: inline-block; }
+.video-wrapper ._control ._butn button._back    { left: 0; }
+.video-wrapper ._control ._butn button._back ._icon    { background-position: -80px -143px; }
+.video-wrapper ._control ._butn button._back, .video-wrapper ._control ._butn button._back > i   { width: 32px; height: 32px; }
+.video-wrapper ._control ._butn button._share   { right: 0; }
+.video-wrapper ._control ._butn button._share ._icon    { background-position: -17px -145px; }
+.video-wrapper ._control ._butn button._share, .video-wrapper ._control ._butn button._share > i  { width: 30px; height: 30px; }
+
+.video-wrapper ._control ._msgbox > div { display: none; }
+.video-wrapper ._control ._msgbox > div > p   { text-align: center; line-height: 140%; }
+.video-wrapper ._control ._msgbox > div button   { padding: 5px 14px 6px; margin: 0 3px; }
+.video-wrapper ._control ._msgbox > div button._cancel     { color: #111; background: rgba(255,255,255,0.9); }
+.video-wrapper ._control ._msgbox > div button._confirm, .video-wrapper ._control ._msgbox > div button._nextBrdcs, .video-wrapper ._control ._msgbox > div button._refresh    { background-color: rgba(255,83,64,0.8); }
+.video-wrapper ._control ._msgbox > div > p { font-size: 15px; color: #fff; letter-spacing: -0.5px; }
+.video-wrapper ._control ._msgbox > div > p + button { margin: 15px 0 0; }
+.video-wrapper ._control ._duration { position: absolute; top: 7px; right: 7px; z-index: 101; font-size: 14px; color: #fff; padding: 4px 8px 5px 8px; border-radius: 10px; letter-spacing: -0.5px; background: hsla(0, 0%, 0%, .7); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.video-wrapper ._control ._duration ._status { font-size: 13px; font-weight: bold; margin: 0 5px 0 0; letter-spacing: 0; display: inline-block; }
+.video-wrapper ._control ._duration ._status._ready  { margin: 0 0 0 0; }
+
+.video-wrapper ._control-panel{ position:absolute; bottom:10px; z-index:110; width:100%; font-size:0; color:#ccc; padding: 0 10px; text-align:center; justify-content: space-around; -webkit-justify-content: space-around; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: none; }
+.video-wrapper ._control-panel._talk    { display: flex !important; }
+.video-wrapper ._control-panel > div:first-child   { border-radius: 6px 0 0 6px; }
+.video-wrapper ._control-panel > button:last-child   { border-radius: 0 6px 6px 0; }
+.video-wrapper ._control-panel > div, .video-wrapper ._control-panel > button   { vertical-align: middle; }
+.video-wrapper ._control-panel button    { width: 30px; height: 30px; cursor: pointer; }
+.video-wrapper ._control-panel button > i { width: 30px; height: 30px; background-size: 128px; }
+.video-wrapper ._control-panel button._sound ._icon { background-position: -16px -210px; }
+.video-wrapper ._control-panel button._sound._mute ._icon { background-position: -80px -210px; }
+.video-wrapper ._control-panel button._fullscreen ._icon { background-position: -17px -82px; }
+.video-wrapper ._control-panel button._fullscreen._active ._icon { background-position: -82px -82px; }
+.video-wrapper ._control-panel .time    { height: 30px; padding: 7px 0 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.video-wrapper ._control-panel .time > span   { font-size: 14px; color: #fff; letter-spacing: -0.2px; }
+.video-wrapper ._control-panel .time > span._onair  { margin: 0 5px 0 0; }
+.video-wrapper ._control-panel .time > span._onair._ended   { font-size: 0; }
+.video-wrapper ._control-panel .time > span._onair._ended:before,
+.video-wrapper ._control ._duration ._status._ready:before    { content: none; }
+.video-wrapper[data-type=onair] ._control-panel .time > span._onair._ended:after { content: "방송종료"; font-size: 13px; display: inline-block; }
+.video-wrapper ._control-panel .time > span._live, .video-wrapper ._control-panel .time > span._onair, .video-wrapper ._control-panel .time > span._talk   { font-size: 13px; letter-spacing: 0; }
+.video-wrapper ._control ._duration ._status:before, .video-wrapper ._control-panel .time > span._live:before, .video-wrapper ._control-panel .time > span._onair:before   { content: ""; width: 6px; height: 6px; border-radius: 6px; margin: 0 4px 1px 2px; vertical-align: 1px; background: #ef0033; display: inline-block; -webkit-animation: breathdelay 2s infinite ease-in-out both; animation: breathdelay 2s infinite ease-in-out both; }
+/*.video-wrapper[data-type=onair] ._control ._duration, .video-wrapper[data-type=live] ._control ._duration    { background: hsla(0,100%,40%,0.7); }*/
+/*.video-wrapper[data-type=onair] ._control ._duration ._status:before, .video-wrapper[data-type=live] ._control ._duration ._status:before    { background: #fff; }*/
+.video-wrapper ._control-panel .time > span._current:after { content: "/"; margin: 0 2px; display: inline-block; }
+@-webkit-keyframes breathdelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+@keyframes breathdelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 40% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+      }
+}
+.video-wrapper ._control-panel .progress-bar { width: 55%; height: 30px; }
+.video-wrapper ._control-panel .progress-bar._onair { width: 35%; }
+.video-wrapper ._control-panel .talk-chat { font-size: 13px; text-align: left; padding: 7px 0 0; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -0.5px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.video-wrapper ._control-panel .progress { position: relative; height: 2px; margin: 14px 0 0; border-radius:10px; cursor:pointer; }
+.video-wrapper ._control-panel .progress span { height:100%; position:absolute; top:0; left:0; display:block; }
+.video-wrapper ._control-panel .time-bar{ z-index:10; width:0; background: rgba(255,83,64,1); }
+.video-wrapper ._control-panel .time-bar:after  { content: ""; position: absolute; top: -4px; right: 0; width: 10px; height: 10px; border-radius: 8px; background: rgba(255,83,64,1); display: inline-block; }
+.video-wrapper ._control-panel .buffer-bar  { z-index:5; width:0; background: rgba(255,255,255,0.3); }
+.video-wrapper ._control-panel .buffer-bg   { z-index:3; width: 100%; background: rgba(255,255,255,0.15); }
+
+.video-wrapper ._preview    { position: absolute; z-index: 1000; border: 1px solid #fff; display: none; }
+.video-wrapper ._preview canvas   { display: none; }
+.video-wrapper ._preview img   { width: 120px; height: 67px; }
+.video-wrapper ._preview span   { position: absolute; bottom: 0; left: 0; width: 100%; font-size: 12px; color: #fff; letter-spacing: -0.5px; padding: 4px 0; background-color: rgba(0,0,0,0.85); text-align: center; display: block; }
+
+.video-wrapper ._loading { position: absolute; top: 50%; left: 50%; z-index: 101; text-align: center; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+.video-wrapper ._loading:after  { content: "동영상 정보를 불러오고 있습니다."; width: 204px; font-size: 14px; color: #fff; margin: 10px 0 0; display: block; }
+.video-wrapper ._loading._resume:after  { content: "최근 재생 위치를 불러오고 있습니다."; width: 214px; }
+.video-wrapper ._loading > div { width: 18px; height: 18px; background-color: #ff5340; border-radius: 100%; display: inline-block; -webkit-animation: bouncedelay 1.4s infinite ease-in-out both; animation: bouncedelay 1.4s infinite ease-in-out both; }
+.video-wrapper ._loading .bounce1 { -webkit-animation-delay: -0.32s; animation-delay: -0.32s; }
+.video-wrapper ._loading .bounce2 { -webkit-animation-delay: -0.16s; animation-delay: -0.16s; }
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+@keyframes bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 40% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+      }
+}
+
+.video-wrapper ._control ._butn ._share { display: none !important; }

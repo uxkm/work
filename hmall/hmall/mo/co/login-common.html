@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- OpenGraph -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="//imagedev.hmall.com/m/img/co/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:url" content="https://hmall.com">
+<meta property="og:type" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. 볼거리 가득! 쓸 곳 많은 H.Point 혜택">
+<meta property="og:image" content="//imagedev.hmall.com/m/img/co/meta/hmall_meta.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="750">
+<!-- favicon -->
+<meta itemprop="image" content="//imagedev.hmall.com/m/img/co/favicon/favicon_128.png">
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/m/img/co/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="//imagedev.hmall.com/m/img/co/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//imagedev.hmall.com/m/img/co/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//imagedev.hmall.com/m/img/co/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//imagedev.hmall.com/m/img/co/favicon/favicon-16x16.png">
+<link rel="manifest" href="//imagedev.hmall.com/m/img/co/favicon/manifest.json">
+<title>로그인</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/popup.css"><!-- 공통 popup/layer css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/jquery-ui.css"><!-- 공통 jQuery UI css -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-3.4.1.min.js"></script><!-- 공통 jQuery Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.easing.min.js"></script><!-- 공통 jQuery UI Effect -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-ui.1.12.1.min.js"></script><!-- 공통 jQuery UI js -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.touchFlow.js"></script><!-- 공통 UI에 사용하는 Touch Swipe -->
+<script src="//imagedev.hmall.com/m/js/co/ukDetect.min.js"></script><!-- 공통 UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/m/js/co/slick.min.js"></script><!-- 공통 Slick Slider Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/common.js"></script><!-- 공통 UI에 사용하는 js -->
+
+<!-- Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/login.css">
+</head>
+<body>
+<!-- 
+Contents 각페이지마다 해당되는 wrap에 class 추가 예: <div class="wrap login">
+-->
+<div class="wrap login">
+    <div class="nav-skip"><a href="#cTitle">본문 콘텐츠로 건너뛰기</a></div>
+
+    <!-- GNB 상단 -->
+    <header class="header gnb-history" role="banner">
+        <button class="btn btn-back"><i class="icon"></i><span class="hiding">뒤로가기</span></button>
+        <h1 class="hiding">현대Hmall</h1>
+        <h2 class="htitle"><span>로그인</span></h2>
+        <button class="btn btn-search"><i class="icon"></i><span class="hiding">검색</span></button>
+        <a href="javascript:;" class="link-cart"><i class="icon"></i><span class="hiding">장바구니</span><em class="badge black sm">99+</em></a>
+    </header>
+    <!-- //.header -->
+
+    <main class="cmain" role="main">
+        <div class="container">
+            <section class="cnt-login" role="contentinfo" aria-label="로그인">
+                <h2 id="cTitle" class="hiding">로그인</h2>
+
+                <p class="login-greeting">안녕하세요. <strong class="logo">Hmall</strong>입니다.</p>
+
+                <ul class="logintab" role="tablist">
+                    <li class="selected" role="presentation"><a href="javascript:;" role="tab" aria-selected="true"><span>H.Point 아이디</span></a></li>
+                    <li role="presentation"><a href="javascript:;" role="tab" aria-selected="false"><span>Hmall 아이디</span></a></li>
+                </ul>
+
+                <nav class="loginmenu" aria-label="로그인 메뉴">
+                    <ul>
+                        <li class="active" aria-current="page">
+                            <a href="javascript:;"><span>H.Point 아이디</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:;"><span>Hmall 아이디</span></a>
+                        </li>
+                    </ul>
+                </nav> 
+
+                <div class="logincnt selected" role="tabpanel" aria-label="H.Point 아이디" aria-selected="true">
+                    <!-- H.Point 아이디/비밀번호 로그인 -->
+                    <div class="login-form">
+                        <div class="form-wrap error"> <!-- error 클래스 : 에러 메세지 제어 -->
+                            <div class="input-wrap">
+                                <label>
+                                    <input type="text" placeholder="아이디 또는 이메일 아이디 입력"/>
+                                </label>
+                            </div>
+                            <div class="input-wrap">
+                                <label>
+                                    <input type="password" placeholder="비밀번호"/>
+                                </label>
+                            </div>
+                            <p class="msg-error">아이디를 입력해 주세요</p>
+                            <p class="msg-error">비밀번호를 입력해 주세요</p>
+                            <p class="msg-error">아이디 또는 비밀번호를 다시 확인해 주세요<br>Hmall 회원이시면 상단의 'Hmall 아이디'를 선택하세요.</p>
+                        </div>
+                        <!-- //.form-wrap -->
+
+                        <div class="checkbox-wrap">
+                            <label>
+                                <input type="checkbox">
+                                <span class="label">아이디 저장</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- //.login-form -->
+
+                    <div class="login-relate">
+                        <div class="pckeyboard">
+                            <button class="btn">PC 자판 이미지 보기</button>
+                            <div class="keyboard-img">
+                                <img src="https://imagessl.hyundaihmall.com/static/smart/2015/mobile/images/image_5.0/login/img_key.png" alt="키보드 이미지">
+                            </div>
+                        </div>
+                        <a href="javascript:;" class="login-error-regist">로그인 오류신고</a>
+                    </div>
+                    <!-- 
+                        임시 스크립트 = 
+                     -->
+
+                    <div class="btngroup">
+                        <button class="btn btn-login"><span>로그인</span></button>
+                    </div>
+
+                    <ul class="login-find">
+                        <li><a href="javascript:;">아이디 찾기</a></li>
+                        <li><a href="javascript:;">비밀번호 찾기</a></li>
+                        <li><a href="javascript:;">회원가입</a></li>
+                    </ul>
+
+                    <div class="btngroup">
+                        <button class="btn btn-otp"><span>OTP 인증번호 로그인</span></button>
+                    </div>
+
+                    <!-- H.Point OTP인증번호 로그인 -->
+                    <div class="login-form">
+                        <div class="form-wrap error">
+                            <div class="input-wrap type-button">
+                                <label>
+                                    <input type="text" placeholder="OTP 인증번호"/>
+                                </label>
+                                <button class="btn btn-login"><span>로그인</span></button>
+                            </div>
+                            <p class="msg-error">OTP 인증번호를 입력해 주세요</p>
+                            <p class="msg-error">OTP 인증번호를 다시 확인해 주세요</p>
+                        </div>
+                        <!-- //.form-wrap -->
+                        <p class="otp-txt">H.Point 어플리케이션을 실행하여, 설정 메뉴의 로그인/회원설정 항목에서 OTP 인증번호 발급을 누른 후 발급되는 일회용 인증번호를 입력해 주세요.</p>
+                    </div>
+                    <!-- //.login-form -->
+                </div>
+                <!-- //.logincnt -->
+
+                <div class="logincnt" role="tabpanel" aria-label="Hmall 아이디" aria-selected="false">
+                    <div class="login-form">
+                        <div class="form-wrap"> <!-- error 클래스 : 에러 메세지 제어 -->
+                            <div class="input-wrap">
+                                <label>
+                                    <input type="text" placeholder="아이디 또는 이메일 아이디 입력"/>
+                                </label>
+                            </div>
+                            <div class="input-wrap">
+                                <label>
+                                    <input type="password" placeholder="비밀번호"/>
+                                </label>
+                            </div>
+                            <p class="msg-error">아이디를 입력해 주세요</p>
+                            <p class="msg-error">비밀번호를 입력해 주세요</p>
+                            <p class="msg-error">아이디 또는 비밀번호를 다시 확인해 주세요<br>H.Point 회원이시면 상단의 'H.Point 아이디'를 선택하세요.</p>
+                        </div>
+                        <!-- //.login-form -->
+
+                        <div class="checkbox-wrap">
+                            <label>
+                                <input type="checkbox">
+                                <span class="label">아이디 저장</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.logincnt -->
+
+                <div class="login-relate">
+                    <div class="pckeyboard">
+                        <button class="btn">PC 자판 이미지 보기</button>
+                        <div class="keyboard-img">
+                            <img src="https://imagessl.hyundaihmall.com/static/smart/2015/mobile/images/image_5.0/login/img_key.png" alt="키보드 이미지">
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="login-error-regist">로그인 오류신고</a>
+                </div>
+
+                <div class="btngroup">
+                    <button class="btn btn-login"><span>로그인</span></button>
+                </div>
+
+                <ul class="login-find">
+                    <li><a href="javascript:;">아이디 찾기</a></li>
+                    <li><a href="javascript:;">비밀번호 찾기</a></li>
+                    <li><a href="javascript:;">회원가입</a></li>
+                </ul>
+
+                <!-- H.Point 선택시 -->
+                <div class="btngroup">
+                    <a href="javascript:;" class="btn btn-otp"><span>OTP 인증번호 로그인</span></a>
+                </div>
+                <div class="btngroup">
+                    <a href="javascript:;" class="btn btn-otp"><span>아이디/비밀번호 로그인</span></a>
+                </div>
+
+                <ul class="login-sns">
+                    <li><a href="javascript:;" class="btn btn-naver"><i class="icon"></i><span>네이버 로그인</span></a></li>
+                    <li><a href="javascript:;" class="btn btn-kakao"><i class="icon"></i><span>카카오톡 로그인</span></a></li>
+                    <li><a href="javascript:;" class="btn btn-facebook"><i class="icon"></i><span>페이스북 로그인</span></a></li>
+                </ul>
+
+                <div class="login-ad">
+                    <a href="javascript:;"><img src="https://imagessl.hyundaihmall.com/hmall/co/mo-login-ad.png" alt="휴대폰 번호로 로그인"></a>
+                </div>
+
+                <div class="nonmembership">
+                    <a href="javascript" class="btn btn_nonmember"><span>비회원 주문조회</span></a>
+                </div>
+            </section>
+        </div>
+        <!-- //.container -->
+    </main>
+    <!-- //.cmain -->
+
+    <!-- 하단 푸터 -->
+    <footer class="footer" role="contentinfo">
+        <div class="family-site">
+            <h2 class="minor-headings">패밀리 사이트</h2>
+            <div class="selectbox">
+                <label class="sellabel">
+                    <select name="">
+                        <option selected>Family Site 선택</option>
+                        <option>현대백화점</option>
+                        <option>현대그린푸드</option>
+                        <option>한섬</option>
+                        <option>현대리바트</option>
+                        <option>현대H&amp;S</option>
+                        <option>현대HCN</option>
+                        <option>현대미디어</option>
+                        <option>현대렌탈케어</option>
+                        <option>현대드림투어</option>
+                        <option>에버다임</option>
+                        <option>씨엔에스푸드시스템</option>
+                        <option>현대캐터링시스템</option>
+                        <option>현대IT&amp;E</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <!-- //.family-site -->
+
+        <!-- 로그인 전 - 모바일웹 -->
+        <!-- <div class="btngroup btnlen2" role="group" aria-label="로그인/APP다운로드">
+            <a href="javascript:;" class="btn btn-login btn-linelgray"><span>로그인</span></a>
+            <a href="javascript:;" class="btn btn-appdown btn-linelgray"><span>APP다운로드</span></a>
+        </div> -->
+        <!-- //.btngroup -->
+
+        <!-- 로그인 후 - 모바일웹 -->
+        <!-- <div class="btngroup btnlen1" role="group" aria-label="APP다운로드">
+            <a href="javascript:;" class="btn btn-appdown btn-linelgray"><span>APP다운로드</span></a>
+        </div> -->
+        <!-- //.btngroup -->
+
+        <div class="footer-expand">
+            <!-- default 푸터 정보 닫힘 -->
+            <button class="footer-company" data-modules-dropdown aria-expanded="false"><span>(주)현대홈쇼핑</span><i class="icon"></i></button> <!-- active 클래스 : 푸터 정보 열릴 때 추가 -->
+            <div class="footer-info" role="region" aria-label="(주)현대홈쇼핑 회사 정보"> <!-- active 클래스 : 푸터 정보 footer-info 열릴 때 추가 -->
+                <p>대표이사 강찬석</p>
+                <address>서울특별시 강동구 올림픽로70길 34</address>
+                <ul class="len2">
+                    <li>고객센터 TEL : <a href="tel:1600-0000">1600-0000(유료)</a></li>
+                    <li>고객만족사업부 FAX : 02-2143-2731</li>
+                </ul>
+                <p>기타문의 : <a href="mailto:webmaster@hyundaihmall.com">webmaster@hyundaihmall.com</a></p>
+                <p class="mt15px">사업자등록번호 : 211-86-76540 </p>
+                <p>통신판매업 신고 : 제 25-3133호 부가통신 신고번호 : 3787</p>
+                <p>정보보호최고책임자 : 정보보호담당 오권호</p>
+                <p>청소년보호책임자 : Hmall사업부 홍성일</p>
+                <p>호스팅서비스 : (주)현대홈쇼핑</p>
+                <ul class="len2">
+                    <li>모바일전용문의 : <a href="tel:1600-0009">1600-0009(유료)</a></li>
+                    <li><a href="javascript:;" class="bold">회원탈퇴</a></li>
+                </ul>
+                
+                <ul class="footer-linkgroup">
+                    <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" target="_blank" title="새 창" class="alink"><span>현대백화점그룹</span><i class="icon"></i></a></li>
+                    <li><a href="javascript:;" class="alink"><span>우리은행 구매안전 서비스</span><i class="icon"></i></a></li>
+                </ul>
+            </div>
+            <!-- //.footer-info -->
+        </div>
+        <!-- //.footer-expand -->
+
+        <ul class="fmenu">
+            <li><a href="/hmall/mo/co/MJA001.html">이용약관</a></li>
+            <li><a href="/hmall/mo/co/MJA001.html"><strong>개인정보 처리방침</strong></a></li>
+            <li><a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2118676540&apv_perm_no=">사업자정보확인</a></li>
+        </ul>
+        <!-- //.fmenu -->
+    </footer>
+    <!-- //.footer -->
+
+    <!-- 상품 상세일 경우에 보이는 디바이스별 하단 버튼 -->
+    <!-- 하단 버튼영역 - 상품상세 App - app의 경우는 class app 추가 -->
+    <div class="btngroup bgfixed btnlen2 app" style="display:none;">
+        <button class="btn btn-cart"><span>장바구니</span></button>
+        <button class="btn btn-purchase"><span>구매하기</span></button>
+    </div>
+    <!-- //.btngroup -->
+
+    <!-- 하단 버튼영역 - 상품상세 모바일 Web -->
+    <div class="btngroup bgfixed btnlen2" style="display:none;">
+        <button class="btn btn-applink"><span>앱으로 연결</span></button>
+        <button class="btn btn-purchase"><span>구매하기</span></button>
+    </div>
+    <!-- //.btngroup -->
+
+    <!-- 하단 버튼영역 유형 선물하기 버튼이 있을 경우 - 상품상세 App, 모바일 Web - app의 경우는 class app 추가 - 시안 확정안됨 -->
+    <div class="btngroup bgfixed btnlen3 app" style="display:none;">
+        <button class="btn btn-cart"><span>장바구니</span></button>
+        <button class="btn btn-present"><i class="icon"></i><span class="hiding">선물하기</span></button>
+        <button class="btn btn-purchase"><span>바로구매</span></button>
+    </div>
+    <!-- //.btngroup -->
+    <!-- //상품 상세일 경우에 보이는 디바이스별 하단 버튼 -->
+    
+    <!-- 플로팅 메뉴 -->
+    <div class="floating-menu">
+        <div class="floating-group">
+            <!-- 글씨크기 조정 : APP에서만 노출. 스크롤시 감춤 
+                크게, 작게 조정 불가 시 각 버튼에 disabled, aria-disabled="true" 추가
+            -->
+            <!-- <div class="font-resize">
+                <button class="btn btn-fontplus"><i class="icon"></i><span>크게</span></button>
+                <button class="btn btn-fontminus" aria-disabled="true" disabled><i class="icon"></i><span>작게</span></button>
+            </div> -->
+
+            <!-- 최근본 페이지가 있을 시 -->
+            <!-- <a href="javascript:;" class="btn btn-return"><i class="icon return"></i><span class="hiding">이전 페이지로 이동</span></a> -->
+        </div>
+
+        <!-- 상품상세에서 노출 --> <!-- 2020-07-15 위치변경 -->
+        <!-- <button type="button" class="btn-chatbot"><i class="icon"></i><span class="hiding">챗봇 상담하기</span></button> -->
+
+        <!-- 스크롤시 -->
+        <a href="#" class="btn btn-topmove"><i class="icon topmove"></i><span class="hiding">상단으로</span></a>
+    </div>
+    <!-- //floating-menu -->
+    
+    <script>
+        /* 공통 하단 탭바/FloatMenu 호출 */
+        var floatingMenu = new UIComponent.mobile.floatingmenu({
+            'dom':$('.floating-menu'),
+            'option':{
+                'setTimer':3000,        // 3초뒤에 사라지고 스크롤 움직이면 다시 보임
+            }
+        });
+        var navTabBar = new UIComponent.mobile.navTabBar({
+            'dom':$('.nav-tabbar')
+        });
+    </script>
+</div>
+<!-- //.wrap -->
+</body>
+</html>

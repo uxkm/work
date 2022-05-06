@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>이런 상품 어떠세요?</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/od/order.css">
+
+</head>
+<body>
+<!-- [12/23]_수정(popup.css 수정완료 : 익스11에서 팝업사이즈 오류로 인한 수정 max-width:initial ->  max-width:1080px;) -->
+<!-- [12/23]_수정(ui-modal 클래스변경) -->
+<div  class="ui-modal cart-recom" id="cart-recommend"  tabindex="-1" role="dialog" aria-label="이런 상품 어떠세요? 레이어 팝업">
+    <div class="ui-modal-dialog w1080" role="document">
+        <div class="content">
+            <p class="ui-title">이런 상품 어떠세요?</p>
+            <div class="content-body">
+                <div class="pdlist-wrap col5"> <!--// 5xn class="col5" 추가 -->
+                    <ul>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                    <div class="pdprice">
+                                        <span class="rateprice" aria-label="가격">
+                                            <p class="discount" aria-label="가격"><em>269,000</em>원</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 마우스 오버시 새창열기 기능 추가) -->
+                            <a href="#" class="hoverview" target="_blank"><i class="icon"></i>새창열기</a> 
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 장바구니 버튼 삭제) -->
+                            <!-- <div class="alimlike">
+                                <a href="javascript:;" class="btn btn-cart"><i class="icon"></i><span class="hiding">장바구니</span></a>
+                            </div> -->
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                    <div class="pdprice">
+                                        <span class="rateprice" aria-label="가격">
+                                            <p class="discount" aria-label="가격"><em>269,000</em>원</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 마우스 오버시 새창열기 기능 추가) -->
+                            <a href="#" class="hoverview" target="_blank"><i class="icon"></i>새창열기</a> 
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 장바구니 버튼 삭제) -->
+                            <!-- <div class="alimlike">
+                                <a href="javascript:;" class="btn btn-cart"><i class="icon"></i><span class="hiding">장바구니</span></a>
+                            </div> -->
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                    <div class="pdprice">
+                                        <span class="rateprice" aria-label="가격">
+                                            <p class="discount" aria-label="가격"><em>269,000</em>원</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 마우스 오버시 새창열기 기능 추가) -->
+                            <a href="#" class="hoverview" target="_blank"><i class="icon"></i>새창열기</a> 
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 장바구니 버튼 삭제) -->
+                            <!-- <div class="alimlike">
+                                <a href="javascript:;" class="btn btn-cart"><i class="icon"></i><span class="hiding">장바구니</span></a>
+                            </div> -->
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                    <div class="pdprice">
+                                        <span class="rateprice" aria-label="가격">
+                                            <p class="discount" aria-label="가격"><em>269,000</em>원</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 마우스 오버시 새창열기 기능 추가) -->
+                            <a href="#" class="hoverview" target="_blank"><i class="icon"></i>새창열기</a> 
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 장바구니 버튼 삭제) -->
+                            <!-- <div class="alimlike">
+                                <a href="javascript:;" class="btn btn-cart"><i class="icon"></i><span class="hiding">장바구니</span></a>
+                            </div> -->
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                    <div class="pdprice">
+                                        <span class="rateprice" aria-label="가격">
+                                            <p class="discount" aria-label="가격"><em>269,000</em>원</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 마우스 오버시 새창열기 기능 추가) -->
+                            <a href="#" class="hoverview" target="_blank"><i class="icon"></i>새창열기</a> 
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 장바구니 버튼 삭제) -->
+                            <!-- <div class="alimlike">
+                                <a href="javascript:;" class="btn btn-cart"><i class="icon"></i><span class="hiding">장바구니</span></a>
+                            </div> -->
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                    <div class="pdprice">
+                                        <span class="rateprice" aria-label="가격">
+                                            <p class="discount" aria-label="가격"><em>269,000</em>원</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 마우스 오버시 새창열기 기능 추가) -->
+                            <a href="#" class="hoverview" target="_blank"><i class="icon"></i>새창열기</a> 
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 장바구니 버튼 삭제) -->
+                            <!-- <div class="alimlike">
+                                <a href="javascript:;" class="btn btn-cart"><i class="icon"></i><span class="hiding">장바구니</span></a>
+                            </div> -->
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                    <div class="pdprice">
+                                        <span class="rateprice" aria-label="가격">
+                                            <p class="discount" aria-label="가격"><em>269,000</em>원</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 마우스 오버시 새창열기 기능 추가) -->
+                            <a href="#" class="hoverview" target="_blank"><i class="icon"></i>새창열기</a> 
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 장바구니 버튼 삭제) -->
+                            <!-- <div class="alimlike">
+                                <a href="javascript:;" class="btn btn-cart"><i class="icon"></i><span class="hiding">장바구니</span></a>
+                            </div> -->
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                    <div class="pdprice">
+                                        <span class="rateprice" aria-label="가격">
+                                            <p class="discount" aria-label="가격"><em>269,000</em>원</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 마우스 오버시 새창열기 기능 추가) -->
+                            <a href="#" class="hoverview" target="_blank"><i class="icon"></i>새창열기</a> 
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 장바구니 버튼 삭제) -->
+                            <!-- <div class="alimlike">
+                                <a href="javascript:;" class="btn btn-cart"><i class="icon"></i><span class="hiding">장바구니</span></a>
+                            </div> -->
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                    <div class="pdprice">
+                                        <span class="rateprice" aria-label="가격">
+                                            <p class="discount" aria-label="가격"><em>269,000</em>원</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 마우스 오버시 새창열기 기능 추가) -->
+                            <a href="#" class="hoverview" target="_blank"><i class="icon"></i>새창열기</a> 
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 장바구니 버튼 삭제) -->
+                            <!-- <div class="alimlike">
+                                <a href="javascript:;" class="btn btn-cart"><i class="icon"></i><span class="hiding">장바구니</span></a>
+                            </div> -->
+                        </li>
+                        <li class="pdthumb">
+                            <a href="javascript:;">
+                                <div class="thumb">
+                                    <img src="//imagedev.hmall.com/p/img/dp/sample/img-thum-340.png" alt="참존 디에이지 레드-애디션 3종세트X4개">
+                                </div>
+                                <div class="figcaption">
+                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                    <div class="pdprice">
+                                        <span class="rateprice" aria-label="가격">
+                                            <p class="discount" aria-label="가격"><em>269,000</em>원</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 마우스 오버시 새창열기 기능 추가) -->
+                            <a href="#" class="hoverview" target="_blank"><i class="icon"></i>새창열기</a> 
+                            <!-- [12/23]_수정(디자인파일12/22기준 : 장바구니 버튼 삭제) -->
+                            <!-- <div class="alimlike">
+                                <a href="javascript:;" class="btn btn-cart"><i class="icon"></i><span class="hiding">장바구니</span></a>
+                            </div> -->
+                        </li>
+                    </ul>
+                    <!-- [12/23]_수정(디자인파일12/22기준 : 페이징버튼영역삭제) -->
+                    <!-- <div class="paging">
+                        <a href="javascript:;" class="page-first" aria-label="처음페이지 이동"><i class="icon"></i><span class="hiding">처음페이지 이동</span></a>
+                        <a href="javascript:;" class="page-prev" aria-label="이전페이지 이동"><i class="icon"></i><span class="hiding">이전페이지 이동</span></a>
+                        <a href="javascript:;"><span>1</span></a>
+                        <a href="javascript:;"><span>2</span></a>
+                        <strong aria-label="현재 선택페이지"><span>3</span></strong>
+                        <a href="javascript:;"><span>4</span></a>
+                        <a href="javascript:;"><span>6</span></a>
+                        <a href="javascript:;"><span>7</span></a>
+                        <a href="javascript:;"><span>8</span></a>
+                        <a href="javascript:;"><span>9</span></a>
+                        <a href="javascript:;"><span>10</span></a>
+                        <a href="javascript:;" class="page-next" aria-label="다음페이지 이동"><i class="icon"></i><span class="hiding">다음페이지 이동</span></a>
+                        <a href="javascript:;" class="page-last" aria-label="마지막페이지 이동"><i class="icon"></i><span class="hiding">마지막페이지 이동</span></a>
+                    </div> -->
+                </div>
+            </div>
+            <!-- //.content-body -->
+            
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.content -->
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+<!-- //.ui-modal -->
+<script>
+    $('#cart-recommend').modal().show();
+</script>
+</body>
+</html>

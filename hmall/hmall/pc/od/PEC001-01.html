@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>사은품/구성품 선택</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/od/order.css">
+
+</head>
+<body>
+<div class="ui-modal pop-pec001-01" id="pec001-01" tabindex="-1" role="dialog" aria-label="사은품/구성품 선택">
+    <div class="ui-modal-dialog w880" role="document">
+        <div class="content">
+            <p class="ui-title">사은품/구성품 선택</p>
+            <div class="content-body">
+                <div class="tblwrap">
+                    <table>
+                        <caption>사은품/구성품 선택</caption>
+                        <colgroup>
+                            <col style="width:50%">
+                            <col style="width:10%">
+                            <col style="width:20%">
+                            <col style="width:20%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">상품명</th>
+                                <th scope="col">수량</th>
+                                <th scope="col" colspan="2">색상/종류</th>
+                            </tr>
+                        </thead>
+                        <!--4개 이상일 경우 스크롤 생김 : 디자인 확인 완료-->
+                        <tbody>
+                            <tr>
+                                <td class="txt-left">전기그릴</td>
+                                <td class="txt-center">1개</td>
+                                <!-- [12/10]_수정(선택없음 사항일 경우 케이스 추가 - 셀렉트박스 삭제 + 텍스트 노출 + colspan="2") -->
+                                <td>
+                                    <!-- [12/15]_수정(다시 셀렉트박스로 변경) -->
+                                    <div class="custom-selectbox md" data-modules-selectbox>
+                                        <select>
+                                            <option>없음</option>
+                                            <option>사은품</option>
+                                            <option>사은품</option>
+                                            <option>사은품</option>
+                                        </select>
+                                    </div>
+                                    <!--// [12/15] -->
+                                    <!-- [12/10]_수정(선택없음 사항일 경우 케이스 추가 - 셀렉트박스 삭제 + 텍스트 노출) -->
+                                    <!-- <span class="ctypo13">없음</span> -->
+                                    <!--// [12/10] -->
+                                </td>
+                                <td class="txt-center">
+                                    <span class="color-ff5340">필수사은품</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="txt-left">
+                                    <label class="radlabel sm">
+                                        <input type="radio" name="radio1" checked>
+                                        <i class="icon"></i>
+                                        <span>보송이 팬티 특대형 남아</span>
+                                    </label>
+                                </td>
+                                <td class="txt-center">1개</td>
+                                <td>
+                                    <div class="custom-selectbox md" data-modules-selectbox>
+                                        <select>
+                                            <option>없음</option>
+                                            <option>사은품</option>
+                                            <option>사은품</option>
+                                            <option>사은품</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td rowspan="2" class="txt-center">
+                                    <span class="color-ff5340">선택사은품</span><br>원하시는 사은품<br>1개를 선택하세요.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="txt-left">
+                                    <label class="radlabel sm">
+                                        <input type="radio" name="radio1">
+                                        <i class="icon"></i>
+                                        <span>보송이 천연코튼 특대형</span>
+                                    </label>
+                                </td>
+                                <td class="txt-center">1개</td>
+                                <td>
+                                    <div class="custom-selectbox md" data-modules-selectbox>
+                                        <select>
+                                            <option>없음</option>
+                                            <option>사은품</option>
+                                            <option>사은품</option>
+                                            <option>사은품</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="btngroup">
+                    <button class="btn btn-linelgray"><span>취소</span></button>
+                    <button class="btn btn-default"><span>선택완료</span></button>
+                    <!-- 데이터 전송 후 클릭시 $(element).modal().hide() -->
+                </div>
+            </div>
+            <!-- //.content-body -->
+            
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.content -->
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+<!-- //.ui-modal -->
+<script>
+    $('#pec001-01').modal().show();
+</script>
+</body>
+</html>

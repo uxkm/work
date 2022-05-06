@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>마이페이지 &gt; 주문현황 &gt; 영수증/세금계산서 &gt; 세금계산서 신청/조회 | 현대Hmall</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/mp/mypage.css"><!-- 마이페이지 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/slick.min.css"><!-- Slick UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+</head>
+<body>
+<div class="wrap mp-tax">
+    <div class="nav-skip"><a href="#mainContents">본문 콘텐츠로 건너뛰기</a></div>
+
+    <main class="cmain mypage" role="main" id="mainContents">
+        <div class="container">
+                <!-- LNB 시작 -->
+                <div class="side-content">
+                    <h2 class="side-menu-title">마이페이지</h2>
+                    <div class="side-menu-list">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">주문현황</a>
+                                <ul>
+                                    <li><a href="javascript:;">주문/배송현황</a></li>
+                                    <li><a href="javascript:;">취소/반품/교환/AS관리</a></li>
+                                    <li><a href="javascript:;">영수증/세금계산서</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;">쇼핑통장</a>
+                                <ul>
+                                    <li><a href="javascript:;">쿠폰</a></li>
+                                    <li><a href="javascript:;">H.Point</a></li>
+                                    <li><a href="javascript:;">적립금</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;">관심상품</a>
+                                <ul>
+                                    <li><a href="javascript:;">찜</a></li>
+                                    <li><a href="javascript:;">최근 본 상품</a></li>
+                                    <li><a href="javascript:;">방송상품알림</a></li>
+                                    <li><a href="javascript:;">상품재입고알림</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;">상품평/Q&A</a>
+                                <ul>
+                                    <li><a href="javascript:;">상품평 등록/관리</a></li>
+                                    <li><a href="javascript:;">나의 Q&amp;A</a></li>
+                                </ul>
+                            </li>
+                            <li class="alone">
+                                <a href="javascript:;">이벤트 참여현황</a>
+                            </li>
+                            <li class="alone">
+                                <a href="javascript:;">1:1 상담</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">회원정보</a>
+                                <ul>
+                                    <li><a href="javascript:;">회원정보 설정</a></li>
+                                    <li><a href="javascript:;">배송지목록 설정</a></li>
+                                    <li><a href="javascript:;">Hmall Pay 관리</a></li>
+                                    <li><a href="javascript:;">개인정보 이용현황</a></li>
+                                    <li><a href="javascript:;">회원탈퇴</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- // LNB 끝 -->
+
+                <div class="contents">
+                    <!-- 본문 컨텐츠 영역 시작 -->
+                    <div class="cash-list-wrap">
+                        <h3 class="contents-title01">세금계산서 신청/조회</h3>
+
+                        <div class="tabgroup">
+                            <!-- 탭 목록 -->
+                            <div class="tab tab-default">
+                                <ul class="tabmenu" role="tablist">
+                                    <li role="presentation"><a href="javascript:;" role="tab" aria-selected="false"><span>현금영수증 신청/조회</span></a></li>
+                                    <li role="presentation"><a href="javascript:;" role="tab" aria-selected="false"><span>신용카드 영수증 조회</span></a></li>
+                                    <li class="selected" role="presentation"><a href="javascript:;" role="tab" aria-selected="true"><span>세금계산서 신청/조회</span></a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 탭 컨텐츠 시작 -->
+                            <div class="default-tab-content" aria-label="세금계산서 신청/조회">
+                                <p class="text-basic">※ 부가가치세법 제33조(세금계산서 발급의무의 면제 등)에 의해 신용카드로 결제하신 경우 세금계산서를 발급하지 아니함<br>(신용카드 영수증으로 부가세신고 가능)</p>
+                               
+                                <div class="list-top-area line2">
+                                    <strong class="list-title">발행 가능한 주문현황</strong>
+                                    
+                                    <div class="search-data">
+                                        <ul class="date-btn-list">
+                                            <li><button class="btn"><span>오늘</span></button></li>
+                                            <li><button class="btn"><span>일주일</span></button></li>
+                                            <li><button class="btn"><span>1개월</span></button></li>
+                                            <li><button class="btn"><span>3개월</span></button></li>
+                                            <li><button class="btn"><span>6개월</span></button></li>
+                                            <li><button class="btn"><span>전체보기</span></button></li>
+                                        </ul>
+
+                                        <!-- 기간 검색 -->
+                                        <div class="calendar">
+                                            <div class="field">
+                                                <div class="inputbox">
+                                                    <label class="inplabel"><input type="text" name="" title="시작날짜" value="20200317"></label>
+                                                    <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                                </div>
+                                            </div>
+                                            <!-- // .field -->
+                                            <button class="btn btn-calender"><span>시작날짜 선택</span></button>
+                                        
+                                            <span class="bridge-text">~</span>
+                                        
+                                            <div class="field">
+                                                <div class="inputbox">
+                                                    <label class="inplabel"><input type="text" name="" title="종료날짜" value="20200617"></label>
+                                                    <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                                </div>
+                                            </div>
+                                            <!-- // .field -->
+                                            <button class="btn btn-calender"><span>종료날짜 선택</span></button>
+                                        </div>
+                                        <!-- // .calendar -->
+
+                                        <!-- 상품명 검색 -->
+                                        <div class="prd-name-search">
+                                            <div class="field">
+                                                <div class="inputbox">
+                                                    <span class="input-wrap">
+                                                        <label class="inplabel">상품명 검색</label><input type="text" name="" placeholder="입력하세요">
+                                                    </span>
+                                                    <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                                </div>
+                                                <button class="btn"><span>검색</span></button>
+                                            </div>
+                                            <!-- // .field -->
+                                        </div>
+                                        <!-- // .prd-name-search -->
+
+                                        <!-- 셀렉트 -->
+                                        <div class="selectbox">
+                                            <label class="sellabel">
+                                                <select name="">
+                                                    <option value="10개" selected="">10개</option>
+                                                    <option value="20개">20개</option>
+                                                    <option value="30개">50개</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <!-- // .selectbox -->
+                                    </div>
+                                    <!-- // .search-date -->
+                                </div>
+                                <!-- // .list-top-area -->
+
+                                <div class="tblwrap">
+                                    <table>
+                                        <caption>발행 가능한 주문현황</caption>
+                                        <colgroup>
+                                            <col style="width:10%">
+                                            <col style="width:15%">
+                                            <col style="width:14%">
+                                            <col style="width:42%">
+                                            <col style="width:30%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">주문일</th>
+                                                <th scope="col">주문번호</th>
+                                                <th scope="col">총 결제금액</th>
+                                                <th scope="col">상품명</th>
+                                                <th scope="col">세금계산서 발행신청</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="6"><p class="list-none-text">발행 가능한 내역이 없습니다.</p></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- // .tblwrap -->
+`
+                                <div class="info-list">
+                                    <strong class="info-text">안내</strong>
+                                    <ul class="dotlist">
+                                        <li>주문상태가 “발송준비” 이후인 상품에 한하여 신청하실 수 있습니다.</li>
+                                        <li>부가세법 시행령 제57조 제2항에 따라 신용카드매출전표로 부가세신고가 가능하며, 신용카드매출전표를 발행한 경우 별도의 세금계산서는 발행되지 않습니다.</li>
+                                        <li>신용카드 영수증 조회 메뉴를 이용해주세요</li>
+                                    </ul>
+                                </div>
+                                <!-- // .info-list -->
+
+                                <!-- 세금계산서 처리 내역 -->
+                                <div class="list-top-area line2">
+                                    <strong class="list-title">세금계산서 처리 내역</strong>
+                                
+                                    <div class="search-data">
+                                        <ul class="date-btn-list">
+                                            <li><button class="btn"><span>오늘</span></button></li>
+                                            <li><button class="btn"><span>일주일</span></button></li>
+                                            <li><button class="btn"><span>1개월</span></button></li>
+                                            <li><button class="btn"><span>3개월</span></button></li>
+                                            <li><button class="btn"><span>6개월</span></button></li>
+                                            <li><button class="btn"><span>전체보기</span></button></li>
+                                        </ul>
+                                
+                                        <!-- 기간 검색 -->
+                                        <div class="calendar">
+                                            <div class="field">
+                                                <div class="inputbox">
+                                                    <label class="inplabel"><input type="text" name="" title="시작날짜" value="20200317"></label>
+                                                    <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                                </div>
+                                            </div>
+                                            <!-- // .field -->
+                                            <button class="btn btn-calender"><span>시작날짜 선택</span></button>
+                                        
+                                            <span class="bridge-text">~</span>
+                                        
+                                            <div class="field">
+                                                <div class="inputbox">
+                                                    <label class="inplabel"><input type="text" name="" title="종료날짜" value="20200617"></label>
+                                                    <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                                </div>
+                                            </div>
+                                            <!-- // .field -->
+                                            <button class="btn btn-calender"><span>종료날짜 선택</span></button>
+                                        </div>
+                                        <!-- // .calendar -->
+                                
+                                        <!-- 상품명 검색 -->
+                                        <div class="prd-name-search">
+                                            <div class="field">
+                                                <div class="inputbox">
+                                                    <span class="input-wrap">
+                                                        <label class="inplabel">상품명 검색</label><input type="text" name="" placeholder="입력하세요">
+                                                    </span>
+                                                    <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                                </div>
+                                                <button class="btn"><span>검색</span></button>
+                                            </div>
+                                            <!-- // .field -->
+                                        </div>
+                                        <!-- // .prd-name-search -->
+                                
+                                        <!-- 셀렉트 -->
+                                        <div class="selectbox">
+                                            <label class="sellabel">
+                                                <select name="">
+                                                    <option value="10개" selected="">10개</option>
+                                                    <option value="20개">20개</option>
+                                                    <option value="30개">50개</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <!-- // .selectbox -->
+                                    </div>
+                                    <!-- // .search-date -->
+                                </div>
+                                <!-- // .list-top-area -->
+                                
+                                <div class="tblwrap">
+                                    <table>
+                                        <caption>발행 가능한 주문현황</caption>
+                                        <colgroup>
+                                            <col style="width:10%">
+                                            <col style="width:10%">
+                                            <col style="width:13%">
+                                            <col style="width:12%">
+                                            <col style="width:30%">
+                                            <col style="width:17%">
+                                            <col style="width:8%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">신청일</th>
+                                                <th scope="col">주문일</th>
+                                                <th scope="col">주문번호</th>
+                                                <th scope="col">총 결제금액</th>
+                                                <th scope="col">상품명</th>
+                                                <th scope="col">세금계산서 처리현황</th>
+                                                <th scope="col">인쇄</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="6">
+                                                    <p class="list-none-text">발행한 내역이 없습니다.</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- // .tblwrap -->
+                                
+                                <div class="info-list">
+                                    <strong class="info-text">안내</strong>
+                                    <ul class="dotlist">
+                                        <li>인쇄하시기 전에 익스플로러 → 도구 → 인터넷 옵션 → 고급 → 인쇄 에서 ‘배경 및 이미지 인쇄’를 체크해주세요.</li>
+                                    </ul>
+                                </div>
+                                <!-- // .info-list -->
+
+                                <div class="guide-box">
+                                    <p class="guide-title"><span>꼭 읽어보세요!</span><strong>세금계산서 신청안내</strong></p>
+                                    <div class="dotlist">
+                                        <ul>
+                                            <li>2010년 1월 1일부터 부가가치세법에 의거 전자세금계산서제도가 시행됨에 따라 고객님께는 전자서명이 된 전자세금계산서가 이메일로 발송되고, 국세청에도 전송됩니다. 발행내역은 국세청 전자세금계산서사이트 <a href="http://www.hometax.go.kr" target="_blank" title="새창">www.hometax.go.kr</a>와 당사 홈페이지 <a href="http://www.hyundaihmall.com" target="_blank" title="새창">www.hyundaihmall.com</a> 에서 확인할 수 있습니다.</li>
+                                            <li>
+                                                <strong>전자세금계산서 신청가능 기간</strong>
+                                                <ul>
+                                                    <li>
+                                                        <strong>배송완료된 달의 다음달 10일 13시까지 발행 가능</strong>
+                                                        예) 8월 5일이 배송완료일인 경우 : 9월 10일 13시까지 신청가능
+                                                    </li>
+                                                    <li>
+                                                        <em class="point-gold">해당월 10일이 토/일인 경우 금요일 마감, 공휴일인 경우 전일마감</em><br>
+                                                        예) 9월 10일(토/일)인 경우 : 9월 9일(금) 13시까지 신청가능
+                                                    </li>
+                                                    <li>익월 10일 13시까지 마감하는 이유는 국세청 전자세금계산서 사이트로 전송시, 그에 따른 문제에 미리 대처하여 부가가치세법 시행령 제 54조 1항에 의거하여 세금계산서 발행기한을 (매월 10일)을 넘기지 않도록 하기 위함입니다.</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <span class="warning">&lt;주의&gt;</span>Daum(hanmail.net 또는 daum) 메일주소를 이용하시는 고객에게는 메일이 발송되지 않으니 불편하시더라도 다른 메일 주소로 신청해 주시기 바랍니다.
+                                            </li>
+                                            <li>세금계산서 발행에 대한 문의는 아래의 연락처를 이용해 주세요.<br>TEL : 1600-0000(유료) Fax : 02-2143-2198</li>
+                                        </ul>
+                                    </div>
+                                    <!-- // .dotlist -->
+                                </div>
+                                <!-- // .guide-box -->
+
+                            </div>
+                            <!-- // 탭 컨텐츠 끝 -->
+                        </div>
+                        <!-- // .tabgroup -->
+
+                    </div>
+                    <!-- // 본문 컨텐츠 영역 끝 -->
+                </div>
+                <!-- // .contents -->
+            </section>
+            <!-- // .cnt-home -->
+        </div>
+        <!-- //.container -->
+    </main>
+    <!-- //.cmain -->
+</div>
+<!-- //.wrap -->
+</body>
+</html>

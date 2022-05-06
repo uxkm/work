@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>배송지 입력</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/od/order.css">
+
+</head>
+<body>
+<div class="ui-modal pop-pec003" id="pec003" tabindex="-1" role="dialog" aria-label="배송지 입력">
+    <div class="ui-modal-dialog" role="document">
+        <div class="content">
+            <p class="ui-title">배송지 입력</p>
+            <div class="content-body">
+                <div>
+                    <!-- Nav tabs -->
+                    <ul class="ui-tab ff5340" role="tablist">
+                        <li role="presentation" class="ui-active"><a href="#addresslist" aria-controls="addresslist" role="tab" data-modules-tab="">배송지 목록</a></li>
+                        <li role="presentation"><a href="#addressadd" aria-controls="addressadd" role="tab" data-modules-tab="">배송지 추가</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane ui-active" id="addresslist">
+                            <ul class="addresslist">
+                                <li>
+                                    <label class="radlabel">
+                                        <input type="radio" name="radio1" checked>
+                                        <i class="icon"></i>
+                                        <span class="hiding">text</span>
+                                    </label>
+                                    <div class="info">
+                                        <p class="name">홍길동 <span class="tag red">기본 배송지</span></p>
+                                        <p class="add">(12354) 서울시 강동구 올림픽대로 70길 34 ㈜현대홈쇼핑 10층 22호</p>
+                                        <p class="tel">010-1234-5678</p>
+                                    </div>
+                                    <div class="btngroup abs">
+                                        <button class="btn btn-linelgray small30"><span>수정</span></button>
+                                    </div>
+                                </li>
+                                <li class="disabled">
+                                    <label class="radlabel">
+                                        <input type="radio" name="radio1" disabled>
+                                        <i class="icon"></i>
+                                        <span class="hiding">text</span>
+                                    </label>
+                                    <div class="info">
+                                        <p class="name">김철수 <span class="tag bgred">새벽배송 불가</span></p>
+                                        <p class="add">(12354) 서울시 강동구 올림픽대로 70길 34 ㈜현대홈쇼핑 10층 22호</p>
+                                        <p class="tel">010-1234-5678</p>
+                                        <p class="tel">010-1234-5678</p>
+                                    </div>
+                                    <div class="btngroup abs">
+                                        <button class="btn btn-linelgray small30"><span>수정</span></button>
+                                        <button class="btn btn-linelgray small30"><span>삭제</span></button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label class="radlabel">
+                                        <input type="radio" name="radio1">
+                                        <i class="icon"></i>
+                                        <span class="hiding">text</span>
+                                    </label>
+                                    <div class="info">
+                                        <p class="name">김영희</p>
+                                        <p class="add">(12354) 서울시 강동구 올림픽대로 70길 34 ㈜현대홈쇼핑 10층 22호</p>
+                                        <p class="tel">010-1234-5678</p>
+                                        <p class="tel">010-1234-5678</p>
+                                    </div>
+                                    <div class="btngroup abs">
+                                        <button class="btn btn-linelgray small30"><span>수정</span></button>
+                                        <button class="btn btn-linelgray small30"><span>삭제</span></button>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <!-- 지정된 배송지가 없는 경우 -->
+                            <div class="nodata">
+                                <!-- [12/10]_수정(데이터 i class 변경됨  "icon nodata-type10" -> "icon nodata-type15"로 변경) -->
+                                <span class="bgcircle"><i class="icon nodata-type15"></i></span>
+                                <p>지정된 배송지가 없습니다.</p>
+                            </div>
+                            <!-- // 지정된 배송지가 없는 경우 -->
+
+                            <div class="btngroup">
+                                <button class="btn btn-default"><span>확인</span></button>
+                                <!-- 데이터 전송 후 클릭시 $(element).modal().hide() -->
+                            </div>            
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="addressadd">
+                            <div class="inputbox">
+                                <label class="inplabel"><input type="text" name="" value="" placeholder="받으실 분"></label>
+                                <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                            </div>
+
+                            <div class="inputbox">
+                                <label class="inplabel btnlabel"><input type="text" name="" value="" placeholder="우편번호"></label>
+                                <button class="btn btn-lineblack btn-confirm"><span>우편번호 찾기</span></button>
+                                <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                            </div>
+                           
+                            <!-- [11/04]_수정(주소 누락건 추가) -->
+                            <div class="inputbox">
+                                <label class="inplabel"><input type="text" name="" value="" placeholder="주소"></label>
+                                <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                            </div>
+                            <!--// [11/04] -->
+                            
+                            <div class="inputbox">
+                                <label class="inplabel"><input type="text" name="" value="" placeholder="상세 주소를 입력해주세요."></label>
+                                <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                            </div>
+                            <div class="inputbox">
+                                <label class="inplabel"><input type="text" name="" value="" placeholder="전화번호 1(필수입력) (예 : 01012345678)"></label>
+                                <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                            </div>
+                            <div class="inputbox">
+                                <label class="inplabel"><input type="text" name="" value="" placeholder="전화번호 2(필수입력) (예 : 01012345678)"></label>
+                                <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                            </div>
+                            <label class="chklabel">
+                                <input type="checkbox" name="">
+                                <i class="icon"></i>
+                                <span>기본배송지로 지정</span>
+                            </label>
+                            <div class="btngroup">
+                                <button class="btn btn-linelgray"><span>취소</span></button>
+                                <button class="btn btn-default"><span>확인</span></button>
+                                <!-- 데이터 전송 후 클릭시 $(element).modal().hide() -->
+                            </div>            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //.content-body -->
+            
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.content -->
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+<!-- //.ui-modal -->
+<script>
+    $('#pec003').modal().show();
+</script>
+</body>
+</html>

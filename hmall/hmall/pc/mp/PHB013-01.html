@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" conte nt="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>영수증조회</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/mp/mypage.css">
+
+</head>
+<body id="popWin">         
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:800px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win wd880 receipt-check">
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">카드영수증</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <div class="content">
+                        <div class="receipt-area">
+                            <div class="receipt-contents type-border">
+                                <h3 class="title22">매출전표 SALES SLIP</h3>
+                                <div class="tblwrap type-dashed">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:16%;">
+                                            <col style="width:34%;">
+                                            <col style="width:16%;">
+                                            <col style="width:34%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">카드종류 <span>CARD TYPE</span></th>
+                                                <td>20200427</td>
+                                                <th scope="row">거래종류 <span>INSTALLMENT</span></th>
+                                                <td>승인</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">카드번호 <span>CARD NO</span></th>
+                                                <td colspan="3">9999-9999-99**-****</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">유효기간 <span>EXPIRY</span></th>
+                                                <td>**/**</td>
+                                                <th scope="row">할부 <span>INSTALLMENT</span></th>
+                                                <td>유이자 12개월</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">거래일시 <span>EXPIRY</span></th>
+                                                <td>20190709</td>
+                                                <th scope="row">승인번호 <span>APPROVAL NO</span></th>
+                                                <td>01258596</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">가맹점명 <span>MERCHANT NAME</span></th>
+                                                <td colspan="3">(주)현대홈쇼핑</td>
+                                            </tr> 
+                                            <tr>
+                                                <th scope="row">대표자명 <span>MASTER</span></th>
+                                                <td>강찬석</td>
+                                                <th scope="row" class="b-tl">금액 <span>AMOUNT</span></th>
+                                                <td class="b-tr bold">7,636</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">사업자 등록번호 <span>SHOP NO</span></th>
+                                                <td>211-86-76540</td>
+                                                <th scope="row" class="b-l">세금 <span>TAXES</span></th>
+                                                <td class="b-r bold">764</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">주문번호 <span>ORDER NO</span></th>
+                                                <td>56565656</td>
+                                                <th scope="row" class="b-bl">합계 <span>TOTAL</span></th>
+                                                <td class="b-br bold">8,400</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+    
+                                <h4 class="ctypo15">공급자 정보</h4>
+                                <div class="tblwrap type-dashed">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:16%;">
+                                            <col style="width:34%;">
+                                            <col style="width:16%;">
+                                            <col style="width:34%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">품명 <span>DESCRIPTION</span></th>
+                                                <td colspan="3">그레인스 쿠키 샤르망 세트</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">업체명 <span>SHOP NAME</span></th>
+                                                <td>(주)현대홈쇼핑</td>
+                                                <th scope="row" class="b-tl">금액 <span>AMOUNT</span></th>
+                                                <td class="b-tr bold">7,636</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">사업자 등록번호 <span>SHOP NO</span></th>
+                                                <td>211-86-76540</td>
+                                                <th scope="row" class="b-l">세금 <span>TAXES</span></th>
+                                                <td class="b-r bold">764</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">대표자명 <span>MASTER</span></th>
+                                                <td>홍길동</td>
+                                                <th scope="row" class="b-bl">합계 <span>TOTAL</span></th>
+                                                <td class="b-br bold">8,400</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tblwrap type-dashed">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:16%;">
+                                            <col style="width:34%;">
+                                            <col style="width:16%;">
+                                            <col style="width:34%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">품명 <span>DESCRIPTION</span></th>
+                                                <td colspan="3">그레인스 쿠키 샤르망 세트</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">업체명 <span>SHOP NAME</span></th>
+                                                <td>(주)현대홈쇼핑</td>
+                                                <th scope="row" class="b-tl">금액 <span>AMOUNT</span></th>
+                                                <td class="b-tr bold">7,636</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">사업자 등록번호 <span>SHOP NO</span></th>
+                                                <td>211-86-76540</td>
+                                                <th scope="row" class="b-l">세금 <span>TAXES</span></th>
+                                                <td class="b-r bold">764</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">대표자명 <span>MASTER</span></th>
+                                                <td>홍길동</td>
+                                                <th scope="row" class="b-bl">합계 <span>TOTAL</span></th>
+                                                <td class="b-br bold">8,400</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="caption13">※ 부가가치세법 제 33조 제2항에 따라 신용카드 매출전표도 매입세금계산서로 사용할 수 있으며 별도의 세금계산서를 교부하지 않습니다.</p>
+                            </div>
+                        </div>
+                        <div class="btngroup">
+                            <button class="btn btn-linered medium"><span>인쇄하기</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>주소검색</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/etc.css">
+
+</head>
+<!-- [10/28]_수정(etc.css , 주소검색 '상세주소를 입력해주세요' 케이스 추가) -->
+<body id="popWin">         
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:800px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win pop-phc038 adressearch" id="modalAdressSearch">
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">주소검색</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <div class="content">
+                        <div class="content-head">
+                            <!-- <div class="msginfo">
+                                <p>적립금은 소멸예정 순으로 사용되며 해당 기간 내 사용하지 않은 경우 적립금은 소멸됩니다.</p>
+                            </div> -->
+                        </div>
+                        <!-- //.content-head -->
+                        <div class="content-body">
+                            <!--form-list-->
+                            <div class="form-list">
+                                <div class="inputbox">
+                                    <label class="inplabel icon-find"><input type="text" name="" value="" placeholder="주소를 입력해 주세요"></label>
+                                    <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                                    <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                </div>
+                            </div>  
+                            <!--//form-list-->
+                            <!--검색결과-->
+                            <div class="search-result-wrap">
+                                <!--filter-wrap 상세주소를 입력해주세요 케이스일 경우 filter-wrap 삭제
+                                <div class="filter-wrap">
+                                    <div class="custom-selectbox sm" data-modules-selectbox>
+                                        <select>
+                                            <option>시/도</option>
+                                        </select>
+                                    </div>
+                                    <div class="custom-selectbox sm" data-modules-selectbox>
+                                        <select>
+                                            <option>시/군/구</option>
+                                        </select>
+                                    </div>
+                                    <span class="list-count">총<em>996</em>건</span>
+                                </div>
+                                -->
+                                <!--ad-list-->
+                                <ul class="ad-list">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <strong class="zipcode">04758</strong>
+                                            <dl class="add-row">
+                                                <dt class="add-label">도로명</dt>
+                                                <dd class="add-value">경기도 이천시 마장면 억만리 51</dd>
+                                                <dt class="add-label">지번</dt>
+                                                <dd class="add-value">경기도 이천시 마장면 덕평리 101-1 SLX 물류센터두줄 표현 내용</dd>
+                                            </dl>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--//ad-list-->
+                                <!--상세주소를 입력해주세요-->
+                                <div class="field">
+                                    <div class="inputbox failed">
+                                        <label class="inplabel"><input type="text" name="" value="" placeholder="상세 주소를 입력해 주세요."></label>
+                                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                    </div>
+                                    <!-- 입력 실패 메세지 -->
+                                    <p class="failed-msg">
+                                        <i class="icon error"></i>
+                                        <span>상세 주소를 입력해 주시기 바랍니다.</span>
+                                    </p>
+                                </div>
+                                <!--//상세주소를 입력해주세요-->
+                                <div class="btngroup addressuse">
+                                    <button class="btn btn-default medium"><span>주소사용</span></button>
+                                </div>
+                            </div>
+                            <!--//검색결과-->
+                        </div>
+                        <!-- //.content-body -->            
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+</body>
+</html>

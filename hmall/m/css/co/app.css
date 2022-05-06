@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+/* 앱 공통 */
+body.app{background-color:#fff;}
+.app-wrap{position:relative;margin:0 -15px;}
+.app-service .app-wrap{padding-bottom:25px;}
+.app-wrap .fixed{position:fixed;bottom:0;left:0;display:flex;width:100%;padding:0;}
+.app-wrap .fixed .btn{width:100%;height:50px;border-radius:0;}
+.app-wrap .fixed .btn span{font-size:16px;font-weight:700;}
+.app-wrap .tab:first-child{border-top:none;}
+.app-wrap.noti{padding-bottom:54px;}
+.app-title{margin:-10px 0 0 0;padding-bottom:12px;color:#333;font-size:17px;line-height:22px;font-weight:700;text-align:center;letter-spacing:-0.64px;border-bottom:1px solid #eee;}
+.app-section{padding:17px 15px;}
+.app-section ~ .app-section{border-top:9px solid #F8F8F8;}
+.app-section .section-tit{color:#333;font-size:16px;line-height:24px;font-weight:700;letter-spacing:-0.64px;}
+.app-section .section-text{margin-top:4px;color:#666;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+.app-section .section-text{margin-top:4px;color:#666;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+.app-section .dotlist li::before{top:0;transform:translateY(0);}
+.app-section.border{margin:0 15px;padding:20px 0;}
+.app-section.border ~ .app-section.border{border-top:1px solid #eee;} 
+
+.popup-layerwrap .layer .layer-body .app-wrap{margin:0;}
+
+.btn-setting{position:absolute;top:0;right:51px;width:44px;height:43px;}
+.btn-setting .icon{position:absolute;top:50%;left:50%;width:22px;height:22px;background:url(//imagedev.hmall.com/m/img/co/icon/icon-setting.png) no-repeat 50% 50%;background-size:22px 22px;transform:translate(-50%,-50%);}
+
+.bottom-text{position:fixed;left:0;bottom:0;padding:17px 0;width:100%;color:#666;font-size:14px;line-height:20px;letter-spacing:-0.56px;text-align:center;background-color:#f4f4f4;}
+.bottom-text-bg{position:fixed;;left:15px;bottom:60px;padding:8px 0;width:calc(100% - 30px);color:#fff;font-size:14px;line-height:20px;letter-spacing:-0.56px;text-align:center;border-radius:33px;background:rgba(0,0,0,0.7);}
+
+.no-result-box{position:relative;margin:180px 0;}
+.no-result-box:before{content:'';display:block;margin:0 auto 18px;width:140px;height:140px;border-radius:50%;background-color:#f4f4f4;}
+.no-result-box:after{content:'';display:block;position:absolute;top:41px;left:50%;margin-left:-35px;width:70px;height:58px;background:url(//imagedev.hmall.com/m/img/co/icon/sprite-icon-status.png) no-repeat;background-size:280px auto;background-position:-176px -42px;}
+.no-result-box .txt{display:block;color:#666;font-size:14px;line-height:22px;letter-spacing:-0.56px;text-align:center;}
+
+/* 스위치 */
+.btn-switch{display:inline-block;}
+.btn-switch input[type='checkbox']{position:absolute;width:0;height:0;line-height:0;text-indent:-9999px;}
+.btn-switch input[type='checkbox'] + i{display:block;position:relative;width:40px;height:22px;background:#ddd;border-radius:15px;}
+.btn-switch input[type='checkbox'] + i span{position:absolute;left:2px;top:50%;transform:translateY(-50%);width:18px;height:18px;background:#fff;border-radius:50%;transition:left 0.3s;}
+.btn-switch input[type='checkbox']:checked + i{background:#FF5340;}
+.btn-switch input[type='checkbox']:checked + i span{left:20px;}
+
+/* 권한 리스트 */
+.right-list{margin-top:15px;}
+.right-list li{position:relative;margin-top:8px;}
+.right-list li:first-child{margin-top:0;}
+.right-list li span{display:block;}
+.right-list li .img{position:absolute;top:50%;left:0;width:46px;height:46px;border-radius:50%;background-color:#F4F4F4;transform:translateY(-50%);}
+.right-list li .img img{position:absolute;top:50%;left:50%;width:50%;transform:translate(-50%,-50%);}
+.right-list li .tit{padding-left:61px;line-height:20px;color:#333;font-size:14px;} 
+.right-list li .text{margin-top:3px;padding-left:61px;line-height:20px;color:#999;font-size:14px;}
+
+/* 세팅 리스트 */
+.setting-list{}
+.setting-list li{position:relative;padding:17px 40px 17px 0;border-top:1px solid #eee;}
+.setting-list li:first-child{padding-top:0;border-top:none;}
+.setting-list li:first-child .btn-switch{margin-top:-8.5px;}
+.setting-list li:last-child{padding-bottom:0;}
+.setting-list li:last-child .btn-switch{margin-top:8.5px;}
+.setting-list li span{display:block;}
+.setting-list li .tit{color:#333;font-size:16px;line-height:22px;letter-spacing:-0.64px;font-weight:700;}
+.setting-list li .text{margin-top:4px;color:#999;font-size:13px;line-height:19px;letter-spacing:-0.56px;}
+.setting-list li .btn-switch{position:absolute;top:50%;right:0;transform:translateY(-50%);}
+
+/* 링크 리스트 */
+.link-list{}
+.link-list li{position:relative;margin-top:20px;}
+.link-list li:first-child{margin-top:0;}
+.link-list li span{display:block;}
+.link-list li .tit{color:#333;font-size:16px;line-height:22px;letter-spacing:-0.64px;font-weight:700;}
+.link-list li .text{margin-top:4px;color:#999;font-size:13px;line-height:19px;letter-spacing:-0.56px;}
+.link-list li .icon{display:inline-block;position:absolute;top:50%;right:0;width:8px;height:14px;background:url(//imagedev.hmall.com/m/img/co/icon/ico-arrow-right-type1-2x.png) no-repeat 50% 50%;background-size:8px 14px;transform:translateY(-50%);}
+.link-list li .btn-linelgray{position:absolute;top:50%;right:0;padding:0 10px;height:28px;transform:translateY(-50%);}
+.link-list li .btn-linelgray span{font-size:13px;font-weight:400;}
+
+/* 정보 리스트 */
+.info-list{}
+.info-list li{position:relative;margin-top:20px;}
+.info-list li:first-child{margin-top:0;}
+.info-list li span{display:block;}
+.info-list li .tit{color:#888;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+.info-list li .text{margin-top:1px;color:#333;font-size:16px;line-height:20px;letter-spacing:-0.64px;font-weight:700;}
+.info-list li .btn-linelgray{position:absolute;top:50%;right:0;padding:0 10px;height:28px;transform:translateY(-50%);}
+.info-list li .btn-linelgray span{font-size:13px;font-weight:400;}
+
+/* 서비스 정보 */
+.service-info{margin-bottom:10px;font-size:0;}
+.service-info dt{display:inline-block;margin-bottom:5px;padding:8px 0;width:93px;color:#333;font-size:14px;text-align:center;letter-spacing:-0.64px;border-radius:16px;background-color:#eee;}
+.service-info dd{display:inline-block;margin-bottom:5px;padding-left:10px;width:calc(100% - 93px);line-height:30px;color:#333;font-size:16px;letter-spacing:-0.64px;}
+.service-info-text{}
+.service-info-text dt{color:#333;font-size:14px;line-height:20px;font-weight:700;letter-spacing:-0.64px;}
+.service-info-text dd{margin-top:2px;color:#333;font-size:14px;line-height:20px;letter-spacing:-0.64px;}
+
+/* 라이센스 텍스트 영역 */
+.license-text-area{padding:0 15px;}
+
+/* 알림함 리스트 */
+.noti-list{}
+.noti-list li{position:relative;margin-top:20px;padding-top:20px;border-top:1px solid #eee;}
+.noti-list li:first-child{margin-top:0;padding-top:0;border-top:none;}
+.noti-list li:first-child .icon{top:0;}
+.noti-list li span{display:block;}
+.noti-list li .icon{position:absolute;top:20px;left:0;width:42px;height:42px;border-radius:50%;background-color:#f4f4f4;}
+.noti-list li .icon i{display:block;position:absolute;top:50%;left:50%;width:24px;height:24px;background:url(//imagedev.hmall.com/m/img/co/icon/icon-noti-off.png) no-repeat 50% 50%;background-size:24px 24px;transform:translate(-50%,-50%);}
+.noti-list li.new .icon:after{content:'';display:block;position:absolute;top:2px;right:2px;width:8px;height:8px;border-radius:50%;background-color:#FF5340;}
+.noti-list li.new .icon i{background:url(//imagedev.hmall.com/m/img/co/icon/icon-noti-on.png) no-repeat 50% 50%;background-size:24px 24px;transform:translate(-50%,-50%);}
+.noti-list li .tit{padding-left:57px;color:#333;font-size:16px;line-height:22px;font-weight:700;letter-spacing:-0.64px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.noti-list li .text{display:-webkit-box;margin-top:6px;padding-left:57px;color:#666;font-size:14px;line-height:20px;letter-spacing:-0.56px;overflow:hidden;text-overflow:ellipsis;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.noti-list li .img{margin-top:10px;border-radius:5px;overflow:hidden;}
+.noti-list li .img + .date{margin-top:5px;text-align:right;}
+.noti-list li .date{margin-top:10px;padding-left:57px;color:#999;font-size:13px;line-height:19px;letter-spacing:-0.52px;}
+
+.app-service .service-info .bigtext{font-size:24px;}

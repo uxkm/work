@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>마이페이지 &gt; 주문현황 &gt; 주문/배송현황 | 현대Hmall</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/mp/mypage.css"><!-- 마이페이지 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/mp/mypage.css"><!-- 마이페이지 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/slick.min.css"><!-- Slick UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+</head>
+<body>
+<div class="wrap mp-order">
+    <div class="nav-skip"><a href="#mainContents">본문 콘텐츠로 건너뛰기</a></div>
+
+    <main class="cmain mypage" role="main" id="mainContents">
+        <div class="container">
+            <!-- LNB 시작 -->
+            <div class="side-content">
+                <h2 class="side-menu-title">마이페이지</h2>
+                <div class="side-menu-list">
+                    <ul>
+                        <li>
+                            <a href="javascript:;">주문현황</a>
+                            <ul>
+                                <li><a href="javascript:;">주문/배송현황</a></li>
+                                <li><a href="javascript:;">취소/반품/교환/AS관리</a></li>
+                                <li><a href="javascript:;">영수증/세금계산서</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">쇼핑통장</a>
+                            <ul>
+                                <li><a href="javascript:;">쿠폰</a></li>
+                                <li><a href="javascript:;">H.Point</a></li>
+                                <li><a href="javascript:;">적립금</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">관심상품</a>
+                            <ul>
+                                <li><a href="javascript:;">찜</a></li>
+                                <li><a href="javascript:;">최근 본 상품</a></li>
+                                <li><a href="javascript:;">방송상품알림</a></li>
+                                <li><a href="javascript:;">상품재입고알림</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">상품평/Q&A</a>
+                            <ul>
+                                <li><a href="javascript:;">상품평 등록/관리</a></li>
+                                <li><a href="javascript:;">나의 Q&amp;A</a></li>
+                            </ul>
+                        </li>
+                        <li class="alone">
+                            <a href="javascript:;">이벤트 참여현황</a>
+                        </li>
+                        <li class="alone">
+                            <a href="javascript:;">1:1 상담</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">회원정보</a>
+                            <ul>
+                                <li><a href="javascript:;">회원정보 설정</a></li>
+                                <li><a href="javascript:;">배송지목록 설정</a></li>
+                                <li><a href="javascript:;">Hmall Pay 관리</a></li>
+                                <li><a href="javascript:;">개인정보 이용현황</a></li>
+                                <li><a href="javascript:;">회원탈퇴</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- // LNB 끝 -->
+
+            <div class="contents">
+                <!-- 본문 컨텐츠 영역 시작 -->
+                <div class="mp-main-wrap">
+                    <div class="list-top-area">
+                        <strong class="list-title">주문/배송현황<span class="sub-txt">(최근 2개월)</span></strong>
+                    </div>
+                    <!-- //.list-top-area -->
+                    <div class="info-box">
+                        <div class="box-wrap">
+                            <div class="order">
+                                <span><i class="icon"></i></span>
+                                <dl>
+                                    <dt>주문접수</dt>
+                                    <dd>00</dd>
+                                </dl>
+                                <dl>
+                                    <dt>결제완료</dt>
+                                    <dd>00</dd>
+                                </dl>
+                            </div>
+                            <!-- //.order -->
+                            <div class="delivery">
+                                <span><i class="icon"></i></span>
+                                <dl>
+                                    <dt>상품준비중</dt>
+                                    <dd>00</dd>
+                                </dl>
+                                <dl>
+                                    <dt>상품발송</dt>
+                                    <dd>00</dd>
+                                </dl>
+                                <dl>
+                                    <dt>해외주문</dt>
+                                    <dd>00</dd>
+                                </dl>
+                            </div>
+                            <!-- //.delivery -->
+                            <div class="review">
+                                <span><i class="icon"></i></span>
+                                <dl>
+                                    <dt>상품평 대기</dt>
+                                    <dd>1</dd>
+                                </dl>
+                                <div class="hover-info">
+                                    <span class="icon">혜택안내</span>
+                                    <div class="h-info-wrap">
+                                        <div class="tb-tit">상품평 작성혜택</div>
+                                        <div class="tb-contents">
+                                            <div class="tblwrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col width="40%">
+                                                        <col width="20%">
+                                                        <col width="20%">
+                                                        <col width="10%">
+                                                        <col width="10%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" rowspan="2">등급구분</th>
+                                                            <th scope="col" colspan="2">텍스트</th>
+                                                            <th scope="col" rowspan="2">포토</th>
+                                                            <th scope="col" rowspan="2">동영상</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">100자 이하</th>
+                                                            <th scope="col">100자 초과</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>SILVER, GOLD, PLATINUM</td>
+                                                            <td rowspan="2">10p</td>
+                                                            <td>100p</td>
+                                                            <td rowspan="2">+50p</td>
+                                                            <td rowspan="2">+100p</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>TOP CLASS, DIAMOND</td>
+                                                            <td>200p</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>          
+                                            </div>                 
+                                        </div>
+                                        <!-- //.tb-contents -->
+                                    </div>
+                                    <!-- //.h-info-wrap -->
+                                </div>
+                                <!-- //.hover-info -->
+                            </div>
+                            <!-- //.review -->
+                        </div>
+                        <!-- //.box-wrap -->
+                    </div>                            
+                    <!-- //.info-box -->
+                    <ul class="dotlist">
+                        <li>구매확정이 완료된 주문은 진행중인 주문에 포함되지 않으며, 진행상태에 따라 배송지 변경, 취소, 교환 반품신청이 가능합니다.</li>
+                        <li>가전, 가구 등 설치상품은 물류 이동으로 인해 상품발송 후 설치 방문까지 2~3일 정도 기간이 추가될 수 있습니다.</li>
+                    </ul>
+                    <!-- //.dotlist -->
+    
+                    <div class="search-data">
+                        <ul class="date-btn-list">
+                            <li><button class="btn"><span>오늘</span></button></li>
+                            <li><button class="btn"><span>일주일</span></button></li>
+                            <li><button class="btn"><span>1개월</span></button></li>
+                            <li><button class="btn"><span>3개월</span></button></li>
+                            <li><button class="btn"><span>6개월</span></button></li>
+                            <li><button class="btn"><span>전체보기</span></button></li>
+                        </ul>
+
+                        <!-- 기간 검색 -->
+                        <div class="calendar">
+                            <div class="field">
+                                <div class="inputbox">
+                                    <label for="start-date" class="inplabel"><input type="text" id="start-date" name="" title="시작날짜" value="20200317"></label>
+                                    <button class="btn ico-clearabled"><i class="icon"></i><span aria-hidden="true">지우기</span></button>
+                                </div>
+                            </div>
+                            <!-- // .field -->
+                            <button class="btn btn-calender"><span>시작날짜 선택</span></button>
+                        
+                            <span class="bridge-text">~</span>
+                        
+                            <div class="field">
+                                <div class="inputbox">
+                                    <label for="end-date" class="inplabel"><input type="text" id="end-date" name="" title="종료날짜" value="20200617"></label>
+                                    <button class="btn ico-clearabled"><i class="icon"></i><span aria-hidden="true">지우기</span></button>
+                                </div>
+                            </div>
+                            <!-- // .field -->
+                            <button class="btn btn-calender"><span>종료날짜 선택</span></button>
+                        </div>
+                        <!-- // .calendar -->
+
+                        <!-- 상품명 검색 -->
+                        <div class="prd-name-search">
+                            <div class="field">
+                                <div class="inputbox">
+                                    <span class="input-wrap">
+                                        <label class="inplabel" for="prd-srch">상품명 검색</label><input type="text" id="prd-srch" name="" placeholder="입력하세요">
+                                    </span>
+                                    <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                </div>
+                                <button class="btn"><span>검색</span></button>
+                            </div>
+                            <!-- // .field -->
+                        </div>
+                        <!-- // .prd-name-search -->
+
+                        <!-- 셀렉트 -->
+                        <div class="selectbox">
+                            <label class="sellabel" for="num-select">
+                                <select id="num-select" name="">
+                                    <option value="전체" selected="">전체</option>
+                                    <option value="주문접수/배송내역">주문접수/배송내역</option>
+                                    <option value="취소내역">취소내역</option>
+                                    <option value="반품/교환/AS내역">반품/교환/AS내역</option>
+                                </select>
+                            </label>
+                        </div>
+                        <!-- // .selectbox -->
+                        
+                        <!-- 셀렉트 -->
+                        <div class="selectbox">
+                            <label class="sellabel" for="num-select">
+                                <select id="num-select" name="">
+                                    <option value="10개" selected="">10개</option>
+                                    <option value="20개">20개</option>
+                                    <option value="30개">50개</option>
+                                </select>
+                            </label>
+                        </div>
+                        <!-- // .selectbox -->
+                    </div>
+                    <!-- // .search-date -->
+
+                    <div class="tblwrap">
+                        <table>
+                        <colgroup>
+                            <col width="15%">
+                            <col width="40%">
+                            <col width="15%">
+                            <col width="15%">
+                            <col width="15%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">주문일자/주문번호</th>
+                                <th scope="col">상품명/상품정보/수량</th>
+                                <th scope="col">총 결제금액</th>
+                                <th scope="col">주문상태</th>
+                                <th scope="col">취소/반품/교환<br>AS신청/상품평</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5">
+                                    <div class="order-list data-none"> <!-- 주문 내역이 없을 경우 class="data-none" 추가 -->
+                                        <span>3개월 이내 주문/배송 내역이 없습니다.</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="order-list">
+                                        <span class="date">2020-05-13</span>
+                                        <span class="num"><a href="javascript:;">20200513404374</a></span>
+                                        <span class="ord">모바일주문</span>
+                                        <span class="smiletest"><a href="javascript:;"><img src="http://image.hyundaihmall.com/hmall/smiletest_flag.png" alt="스마일테스터"></a></span>
+                                    </div>
+                                    <!-- //.order-list -->
+                                </td>
+                                <td>
+                                    <div class="order-list">
+                                        <div class="product-info">
+                                            <div class="left-area">
+                                                <a href="javascript:;"><img src="https://imagessl.hyundaihmall.com/static/6/1/36/37/2037361618_0_100.jpg" alt="임시이미지"></a>
+                                            </div>
+                                            <!-- //.left-area -->
+                                            <div class="right-area">
+                                                <div class="basic">
+                                                    <span class="small">현대Hmall 독점특가세일 5%</span>
+                                                    <span class="link"><a href="javascript:;">[녹차원] 국내산현미녹차 100티백</a></span>
+                                                    <span class="link"><a href="javascript:;">국내산현미녹차 100티백</a></span>
+                                                    <span class="point">[ 단일상품 | <em>0</em>개 ]</span>
+                                                    <span class="point arrow">→(교환)[ 단일상품 | <em>10</em>개 ]</span>
+                                                    <span class="price"><em>25,000</em>원</span>                                                                
+                                                    <span class="arrow">기본구성 : 젤리케이스(<em>0</em>원/<em>1</em>개</span>
+                                                    <span class="btn"><a href="javascript:;">배송지 변경</a></span>
+                                                </div>
+                                                <!-- //.basic -->
+                                                <div class="option-box">
+                                                    <span>[추가구성품] 총 <em>2</em>개/합계금액 : <em>90,000</em>원</span>
+                                                    <span class="arrow">추가구성 : 아이옷/3세(+<em>45,000</em>원/<em>1</em>개)</span>
+                                                    <span class="arrow">추가구성 : 아이옷/3세(+<em>45,000</em>원/<em>1</em>개)</span>
+                                                </div>
+                                                <!-- //.option-box -->
+                                                <div class="option-box">
+                                                    <span class="point">[필수사은품]</span>
+                                                    <span class="arrow">추가구성 : 아이옷/3세(+<em>45,000</em>원/<em>1</em>개)</span>
+                                                </div>
+                                                <!-- //.option-box -->
+                                                <div class="hope">
+                                                    <span>배송희망일 : 2013-12-30</span>
+                                                    <span class="point">배송희망일 : 2013-12-30</span>
+                                                    <span>※협력사 사정으로 일부 지연될 수 있습니다.</span>
+                                                </div>
+                                                <!-- //.hope -->
+                                            </div>
+                                            <!-- //.right-area -->
+                                        </div>
+                                        <!-- //.product-info -->
+                                    </div>
+                                    <!-- //.order-list -->
+                                </td>
+                                <td>
+                                    <div class="order-list">
+                                        <span class="price"><em>74,000</em>원</span>
+                                        <span class="btn pay"><a href="javascript:;">결제수단변경</a></span>
+                                    </div>
+                                    <!-- //.order-list -->
+                                </td>
+                                <td>
+                                    <div class="order-list">
+                                        <span>주문취소</span>
+                                        <span class="btn"><a href="javascript:;">배송추적</a></span>
+                                        <span class="btn coupon"><a href="javascript:;">교환권</a></span>
+                                    </div>
+                                    <!-- //.order-list -->
+                                </td>
+                                <td>
+                                    <div class="order-list">
+                                        <span class="btn point"><a href="javascript:;">1:1상담신청</a></span>                                                    
+                                        <span class="btn badge"><a href="javascript:;">상품평쓰기</a></span>
+                                        <span class="btn"><a href="javascript:;">상품평확인</a></span>
+                                    </div>
+                                    <!-- //.order-list -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="order-list">
+                                        <span class="date">2020-05-12</span>
+                                        <span class="num"><a href="javascript:;">20200512405585</a></span>
+                                        <span class="ord">모바일주문</span>
+                                        <span class="smiletest"><a href="javascript:;"><img src="http://image.hyundaihmall.com/hmall/smiletest_flag.png" alt="스마일테스터"></a></span>
+                                    </div>
+                                    <!-- //.order-list -->
+                                </td>
+                                <td>
+                                    <div class="order-list">
+                                        <div class="product-info">
+                                            <div class="left-area">
+                                                <a href="javascript:;"><img src="https://imagessl.hyundaihmall.com/static/6/1/36/37/2037361618_0_100.jpg" alt="임시이미지"></a>
+                                            </div>
+                                            <!-- //.left-area -->
+                                            <div class="right-area">
+                                                <div class="basic">
+                                                    <span class="small">현대Hmall 독점특가세일 5%</span>
+                                                    <span class="link"><a href="javascript:;">[BenQ] EW2780 아이케어 27형 모니터 무상 3년 AS</a></span>
+                                                    <span class="link"><a href="javascript:;">EW2780 아이케어 27형 모니터 무상 3년 AS</a></span>
+                                                    <span class="point">[ 27형 모니터[5QEW2780] | <em>1</em>개]</span>
+                                                    <span class="point arrow">→(교환)[ 단일상품 | <em>10</em>개 ]</span>
+                                                    <span class="price"><em>259,000</em>원</span>                                                                
+                                                    <span class="arrow">기본구성 : 젤리케이스(<em>0</em>원/<em>1</em>개</span>
+                                                    <span class="btn"><a href="javascript:;">배송지 변경</a></span>
+                                                </div>
+                                                <!-- //.basic -->
+                                                <div class="option-box">
+                                                    <span>[추가구성품] 총 <em>2</em>개/합계금액 : <em>90,000</em>원</span>
+                                                    <span class="arrow">추가구성 : 아이옷/3세(+<em>45,000</em>원/<em>1</em>개)</span>
+                                                    <span class="arrow">추가구성 : 아이옷/3세(+<em>45,000</em>원/<em>1</em>개)</span>
+                                                </div>
+                                                <!-- //.option-box -->
+                                                <div class="option-box">
+                                                    <span class="point">[필수사은품]</span>
+                                                    <span class="arrow">추가구성 : 아이옷/3세(+<em>45,000</em>원/<em>1</em>개)</span>
+                                                </div>
+                                                <!-- //.option-box -->
+                                                <div class="hope">
+                                                    <span>배송희망일 : 2013-12-30</span>
+                                                    <span class="point">배송희망일 : 2013-12-30</span>
+                                                    <span>※협력사 사정으로 일부 지연될 수 있습니다.</span>
+                                                </div>
+                                                <!-- //.hope -->
+                                            </div>
+                                            <!-- //.right-area -->
+                                        </div>
+                                        <!-- //.product-info -->
+                                    </div>
+                                    <!-- //.order-list -->
+                                </td>
+                                <td>
+                                    <div class="order-list">
+                                        <span class="price"><em>243,370</em>원</span>
+                                        <span class="btn pay"><a href="javascript:;">결제수단변경</a></span>
+                                    </div>
+                                    <!-- //.order-list -->
+                                </td>
+                                <td>
+                                    <div class="order-list">
+                                        <span>배송완료</span>
+                                        <span class="btn"><a href="javascript:;">배송추적</a></span>
+                                        <span class="btn coupon"><a href="javascript:;">교환권</a></span>
+                                    </div>
+                                    <!-- //.order-list -->
+                                </td>
+                                <td>
+                                    <div class="order-list">
+                                        <span class="btn point"><a href="javascript:;">1:1상담신청</a></span>                                                    
+                                        <span class="btn badge"><a href="javascript:;">상품평쓰기</a></span>
+                                        <span class="btn"><a href="javascript:;">상품평확인</a></span>
+                                    </div>
+                                    <!-- //.order-list -->
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <!-- //.tblwrap -->
+
+                    <div class="guideBox">
+                        <div class="left-area">
+                            <span class="tit"><img src="https://imagessl.hyundaihmall.com/hmall/co/tit_guide.gif" alt="꼭! 읽어보세요"></span>
+                            <span class="txt"><img src="https://imagessl.hyundaihmall.com/hmall/co/mp_txt10.gif" alt="현대Hmall 가이드"></span>  
+                        </div>
+                        <!-- //.left-area -->
+                        <div class="right-area">
+                            <div class="btngroup right">
+                                <button class="btn btn-round xs"><span>쇼핑가이드 자세히보기</span></button>
+                            </div>                                   
+                            <ul class="guideList">
+                                <li>배송추척 : 발송이 완료된 상품은 배송추적을 통해 현재 위치를 확인하실 수 있습니다.</li>
+                                <li>즉시취소가능 범위
+                                    <ul class="dash">
+                                        <li><span class="point">신용카드</span> : 상품준비중(주문제작/설치 등 일부상품 제외),</li>
+                                        <li><span class="point">현금,상품권</span> : 주문접수</li>
+                                        <li>즉시취소 가능한 주문에만 즉시취소버튼이 표시됩니다.</li>
+                                    </ul>
+                                </li>
+                                <li>결제수단 변경은 주문 접수 단계까지 가능합니다.(카드, 현금, 상품권을 함께 사용한 주문 제외)</li>
+                                <li>상품 속성/배송지변경은 결제 완료 단계까지만 가능합니다.(상품속성이란? 상품의 색상 및 사이즈등을 의미합니다.)</li>
+                            </ul>
+                            <!-- //.guideList -->
+                        </div>
+                        <!-- //.right-area -->
+                    </div>
+                    <!-- //.guideBox -->
+
+                    <div class="list-top-area">
+                        <strong class="list-title">주문상태안내</strong>
+                    </div>
+                    <!-- //.list-top-area -->
+                    
+                    <div class="mp-info-table">
+                        <div class="tblwrap info">
+                            <table>
+                                <colgroup>
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="40%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" rowspan="6" class="type1">접수 → 배송완료</th>
+                                        <th scope="row" class="type2">주문접수</th>
+                                        <td class="type3">주문접수 후 입금을 확인하는 단계입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">결제완료</th>
+                                        <td class="type3">주문/결제가 완료되었거나 입금확인이 완료된 단계입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">상품 준비중</th>
+                                        <td class="type3">주문하신 상품을 발송하기 위해 상품을 준비하는 단계입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">발송 준비중</th>
+                                        <td class="type3">주문하신 상품을 택배사로 전달하는 단계입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">상품발송</th>
+                                        <td class="type3">택배사를 통해 상품발송이 완료되어 배송추적이 가능한 단계입니다.<br>(적립금은 상품발송 단계에서만 내려받으실 수 있습니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">배송완료</th>
+                                        <td class="type3">택배 송장 조회결과 배송완료된 단계입니다.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //.tblwrap info -->
+                        <div class="tblwrap info">
+                            <table>
+                                <colgroup>
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="40%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="type1">주문취소</th>
+                                        <th scope="row" class="type2">주문취소</th>
+                                        <td class="type3">주문취소처리가 완료된 단계입니다.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //.tblwrap info -->
+                        <div class="tblwrap info">
+                            <table>
+                                <colgroup>
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="40%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" rowspan="5" class="type1">반품</th>
+                                        <th scope="row" class="type2">반품접수</th>
+                                        <td class="type3">반품신청이 접수되어 처리중인 상태입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">상품 회수중</th>
+                                        <td class="type3">반품접수된 상품이 택배사를 통해 회수중인 상태입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">상품 확인중</th>
+                                        <td class="type3">당사 물류센터로 상품도착 후 백화점 매장으로 상품 이동중인 단계입니다.<br>(백화점 상품에 한함)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">반품완료</th>
+                                        <td class="type3">반품처리가 완료된 상태입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">반품취소</th>
+                                        <td class="type3">반품취소가 완료된 상태입니다.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //.tblwrap info -->
+                        <div class="tblwrap info">
+                            <table>
+                                <colgroup>
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="40%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" rowspan="6" class="type1">교환</th>
+                                        <th scope="row" class="type2">교환접수</th>
+                                        <td class="type3">교환신청이 접수되어 처리중인 상태입니다. (해외배송 제외)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">교환상품 준비중</th>
+                                        <td class="type3">교환 상품을 발송하기 위해 상품을 준비하는 단계입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">교환상품발송 준비중</th>
+                                        <td class="type3">교환 상품을 택배사로 전달하는 단계입니다. (해외배송 제외)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">교환상품발송</th>
+                                        <td class="type3">교환 상품이 택배사를 통해 발송이 완료되어 배송추적이 가능한 단계입니다.<br>(해외배송 제외)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">교환완료</th>
+                                        <td class="type3">교환처리가 완료된 상태입니다. (해외배송 제외)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">교환취소</th>
+                                        <td class="type3">교환취소가 완료된 상태입니다.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //.tblwrap info -->
+                        <div class="tblwrap info">
+                            <table>
+                                <colgroup>
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="40%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" rowspan="2" class="type1">A/S</th>
+                                        <th scope="row" class="type2">A/S 접수</th>
+                                        <td class="type3">A/S신청이 접수되어 처리중인 상태입니다. (해외배송 제외)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="type2">A/S 완료</th>
+                                        <td class="type3">A/S처리가 완료된 상태입니다. (해외배송 제외)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //.tblwrap info -->
+                    </div>
+                    <!-- //.mp-info-table -->
+                    <div class="guideBox">
+                        <div class="left-area">
+                            <span class="tit"><img src="https://imagessl.hyundaihmall.com/hmall/co/tit_guide.gif" alt="꼭! 읽어보세요"></span>
+                            <span class="txt"><img src="https://imagessl.hyundaihmall.com/hmall/co/tit_guide3.gif" alt="Notice"></span>  
+                        </div>
+                        <!-- //.left-area -->
+                        <div class="right-area">
+                            <ul class="guideList">
+                                <li>주문상태가 “상품발송”이 되면 상품에 대한 “배송조회”가 가능합니다. 주문하신 상품이 업체직배일 경우 상품별로 따로 <br>배송될 수도 있사오니양해해 주십시오.</li>
+                                <li>결제수단을 무통장입금이나 상품권으로 선택하신 경우, <span class="point">7일 이내에 입금/접수 확인이 되지 않으면 주문이 취소됩니다.</span></li>
+                                <li>장바구니 상품 금액 중 일부만 결제했을 시 추가결제 주문일로부터 7일이 지났을 시 주문은 자동으로 취소됩니다.<br>카드결제는 자동으로 환불처리가 이루어지며, 현금결제(무통장, 실시간계좌이체)는 예치금으로 환불 처리가 됩니다.</li>
+                                <li>주문과 관련하여 문제가 있으실 경우에는 취소/반품, 교환, A/S 신청이 가능합니다. 단, 주문의 진행상태에 따라 신청가능<br> 항목이 제한되어 있사오니 [신청가능항목안내]를 참고하시기 바랍니다.</li>
+                                <li><span class="point">취소/반품,교환신청은 상품발송 후 7일</span> 이내에만 가능합니다.</li>
+                                <li>현대Hmall에서 판매되는 현대백화점 상품을 반품하실 경우 반품상품 도착 후 상품상태를 점검한 다음 결제를 취소해 드립니다. 단, 반품된 상품 점검 시, 현대백화점 상품 교환/반품 불가사유에 해당될 경우에는 반품이 불가능하며, 고객님에게 이 사실을 통보 후 상품을 다시 배송해 드립니다.</li>
+                                <li>현금결제수단(무통장, 실시간 계좌이체 등)환불은 예치금 또는 환불요청계좌로 환불처리 됩니다.</li>
+                            </ul>
+                            <!-- //.guideList -->
+                        </div>
+                        <!-- //.right-area -->
+                    </div>
+                    <!-- //.guideBox -->
+                </div>
+                <!-- //.mp-main-wrap -->
+                <!-- // 본문 컨텐츠 영역 끝 -->
+            </div>
+            <!-- // .contents -->
+        </div>
+        <!-- //.container -->
+    </main>
+    <!-- //.cmain -->
+</div>
+<!-- //.wrap -->
+</body>
+</html>

@@ -1,0 +1,133 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="../co/commonRenew.jsp"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- OpenGraph -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="//imagedev.hmall.com/m/img/co/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:url" content="https://hmall.com">
+<meta property="og:type" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. 볼거리 가득! 쓸 곳 많은 H.Point 혜택">
+<meta property="og:image" content="//imagedev.hmall.com/m/img/co/meta/hmall_meta.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="750">
+<!-- favicon -->
+<meta itemprop="image" content="//imagedev.hmall.com/m/img/co/favicon/favicon_128.png">
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/m/img/co/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="//imagedev.hmall.com/m/img/co/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//imagedev.hmall.com/m/img/co/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//imagedev.hmall.com/m/img/co/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//imagedev.hmall.com/m/img/co/favicon/favicon-16x16.png">
+<link rel="manifest" href="//imagedev.hmall.com/m/img/co/favicon/manifest.json">
+<title>결제진행</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/popup.css"><!-- 공통 popup/layer css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/jquery-ui.css"><!-- 공통 jQuery UI css -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-3.4.1.min.js"></script><!-- 공통 jQuery Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.easing.min.js"></script><!-- 공통 jQuery UI Effect -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-ui.1.12.1.min.js"></script><!-- 공통 jQuery UI js -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.touchFlow.js"></script><!-- 공통 UI에 사용하는 Touch Swipe -->
+<script src="//imagedev.hmall.com/m/js/co/ukDetect.min.js"></script><!-- 공통 UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/m/js/co/slick.min.js"></script><!-- 공통 Slick Slider Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/common.js"></script><!-- 공통 UI에 사용하는 js -->
+
+<!-- Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/od/order.css">
+<script src="//imagedev.hmall.com/m/js/od/order.js"></script>
+<%
+	String sessionid = (String)request.getSession().getId(); 
+%>
+<%@ include file="/jsp/mobile/co/includeScriptlibForHpay.jsp" %>
+<script type="text/javascript">
+
+function hpayRequest() {
+	
+	var pwdCheckSuccYn = "${pwdCheckSuccYn}";
+	var resultCode = "${resultCode}";
+	
+	if(pwdCheckSuccYn == "Y"){
+		if(resultCode == "0"){
+			window.location.href="/m/makeOrder.do";
+		}
+		
+		if(resultCode == "10"){
+		    $("form[name='pinFrm2']").submit();
+		}
+		
+		if(resultCode == "20"){
+			//결제수단 변경
+			window.location.href="/m/multiStlmWayChg.do";
+		}
+	}else{
+		alert("비밀번호를 다시 확인해주세요");
+		if(resultCode == "10"){
+		    $("#PType").val("PWD");
+		    $("#PForgetUrl").val("${serverHostForSSL}/m/hpayManage.do;SMART_JSESSIONID=<%=sessionid%>");
+		    $("#PNextUrl").val("${serverHostForSSL}/m/hpayPinResponse.do;SMART_JSESSIONID=<%=sessionid%>?resultCode=10");
+		    $("#PCancUrl").val("${serverHostForSSL}/m/hpayPinResponse.do;SMART_JSESSIONID=<%=sessionid%>?resultCode=11");
+		}
+	    $("form[name='pinFrm']").submit();
+	}
+	
+}
+
+</script>
+</head>
+<body onload="hpayRequest();" style="background-color:#fff;">
+	<form action="${serverHostForSSL}/m/checkHpayPinCust.do" method="post" id="pinFrm" name="pinFrm">
+  		<input type="hidden" id="_method"  			name="_method" value="confirmPinPwd" />
+  		<input type="hidden" id="PMid"  			name="PMid" value="${pMid}" />
+  		<input type="hidden" id="POid"  			name="POid" value="${pTrDt}${pTrTime}" />
+  		<input type="hidden" id="PTrDt"  			name="PTrDt" value="${pTrDt}" />
+  		<input type="hidden" id="PTrTime"  			name="PTrTime" value="${pTrTime}" />
+  		<input type="hidden" id="PType"  			name="PType" value="PAY" />
+  		<input type="hidden" id="PForgetUrl"  		name="PForgetUrl" value="" />
+  		<input type="hidden" id="PNextUrl"  		name="PNextUrl" value="${serverHostForSSL}/m/hpayPinResponse.do;SMART_JSESSIONID=<%=sessionid%>?resultCode=0" />
+  		<input type="hidden" id="PCancUrl"  		name="PCancUrl" value="${serverHostForSSL}/m/hpayPinResponse.do;SMART_JSESSIONID=<%=sessionid%>?resultCode=1" />
+  		<input type="hidden" id="PMchtParam"  		name="PMchtParam" value="${bnkCd}" />
+  		<input type="hidden" id="PHash"  			name="PHash" value="${pHash}" />
+	</form>
+	
+	<form action="${serverHostForSSL}/m/hpayPinChange.do" id="pinFrm2" name="pinFrm2" method="post">
+   		<input type="hidden" id="_method2"  			name="_method" value="regPinPwd" />
+   		<input type="hidden" id="PMid2"  			name="PMid" value="${pMid}" />
+   		<input type="hidden" id="POid2"  			name="POid" value="${pTrDt}${pTrTime}" />
+   		<input type="hidden" id="PTrDt2"  			name="PTrDt" value="${pTrDt}" />
+   		<input type="hidden" id="PTrTime2"  			name="PTrTime" value="${pTrTime}" />
+   		<input type="hidden" id="PEqualNumYn2"  		name="PEqualNumYn" value="Y" />
+   		<input type="hidden" id="PStraightNumYn2"  	name="PStraightNumYn" value="Y" />
+   		<input type="hidden" id="PNextUrl2"  		name="PNextUrl" value="${serverHostForSSL}/m/hpayPinRegResponse.do;SMART_JSESSIONID=<%=sessionid%>?resultCode=10" />
+   		<input type="hidden" id="PCancUrl2"  		name="PCancUrl" value="${serverHostForSSL}/m/hpayPinRegResponse.do;SMART_JSESSIONID=<%=sessionid%>?resultCode=11" />
+   		<input type="hidden" id="PMchtParam2"  		name="PMchtParam" value="" />
+   		<input type="hidden" id="PHash2"  			name="PHash" value="${pHash}" />
+   		<input type="hidden" id="PType"           name="PType" value="pwdChange" />
+   	</form>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>고객의의견수정하기</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/cc/customer.css">
+</head>
+<body id="popWin">         
+    <!--윈도우팝업(새창으로열기) PJD005 주문관련의견 버튼 클릭 시  윈도우 팝업 // 20200825 script 요청드림-->  
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:800px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win wd800 cus-opinion product-opinion"> <!--20200828 금요일 pc레이아웃 공통작업 wd800 클래스 추가-->
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">주문관련 의견</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <div class="content"> 
+                      
+                        <!--tblwrap-->
+                        <div class="tblwrap">
+                            <table>
+                                <caption>주문관련의견</caption>
+                                <colgroup>
+                                    <col style="width:120px">
+                                    <col style="width:235px">
+                                    <col style="width:120px">
+                                    <col style="width:325px">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="txt-left">이름</th>
+                                        <td colspan="3">김현대</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="txt-left">공개여부</th>
+                                        <td>
+                                            <div class="custom-selectbox" data-modules-selectbox="">
+                                                <select>
+                                                    <option>비공개</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <th scope="row" class="txt-left">접수유형</th>
+                                        <td>
+                                            <div class="custom-selectbox receipt-type" data-modules-selectbox="">
+                                                <select>
+                                                    <option>선택하세요</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="txt-left">답변알림</th>
+                                        <td colspan="3">
+                                            <div class="radio-form">
+                                                <!--radiobox-->
+                                                <div class="radiobox">
+                                                    <label class="radlabel"><input type="radio" name="answer" checked="" aria-checked="true"><i class="icon"></i><span>SMS</span></label>
+                                                    <label class="radlabel"><input type="radio" name="answer" aria-checked="false"><i class="icon"></i><span>이메일</span></label>
+                                                    <label class="radlabel"><input type="radio" name="answer" aria-checked="false"><i class="icon"></i><span>SMS+이메일</span></label>
+                                                    <label class="radlabel"><input type="radio" name="answer" aria-checked="false"><i class="icon"></i><span>수신거부</span></label>
+                                                </div>
+                                                <!--//radiobox-->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="txt-left">의견유형</th>
+                                        <td colspan="3">주문관련</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="txt-left">주문상품</th>
+                                        <td colspan="3" class="nowrap">
+                                            <p>
+                                                상품명상품명상품명상품명상품명 최대 2줄 노출 상품명상품명상품명상품명상품명 최대 2줄
+                                                상품명상품명상품명상품명상품명 최대 2줄 상품명상품명상품명상품명상품명 최대 2줄
+                                                상품명상품명상품명상품명상품명 최대 2줄 상품명상품명상품명상품명상품명 최대 2줄
+                                                상품명상품명상품명상품명상품명 최대 2줄 상품명상품명상품명상품명상품명 최대 2줄
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="txt-left">주문번호</th>
+                                        <td colspan="3">20200624417075</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="txt-left">제목</th>
+                                        <td colspan="3">
+                                            <div class="inputbox">
+                                                <label class="inplabel"><input type="text" name="" value="" placeholder=""></label>
+                                                <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="txt-left">내용</th>
+                                        <td colspan="3">
+                                            <div class="textareabox">
+                                                <label class="txtlabel">
+                                                    <textarea cols="48" rows="7" placeholder="문의하실 내용을 구체적으로 적어주시면정확하고 빠른 답변에 도움이 됩니다." aria-placeholder="문의하실 내용을 구체적으로 적어주시면
+                                                    정확하고 빠른 답변에 도움이 됩니다."></textarea>
+                                                </label>
+                                                <span class="txtcount"><em>0</em><b>2000</b></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="txt-left">파일첨부</th>
+                                        <td colspan="3"> <!--20200831 금요일 첨부파일 pc레이아웃 공통으로 수정-->
+                                            <div class="filebox sm">
+                                                <label class="file-input">
+                                                    <span data-default="파일첨부" class="file-text"></span>
+                                                    <span class="btn btn-file sm">첨부파일</span>
+                                                    <input type="file" class="hiding">
+                                                </label>
+                                            </div>
+                                            <span class="filebox-txt">image12345.png
+                                                <button class="btn btn-close"><i class="icon xico"></i><span class="hiding">삭제</span></button>
+                                            </span>
+                                            <ul class="noti">
+                                                <li>질문하시는 내용과 관련된 자료가 있으시면 등록해주세요</li>
+                                                <li>파일명은 반드시 영문으로 해주시고, 확장자는 jpg(jpeg) , gif, png 인 파일만 가능합니다 (용량 10MB 이내)</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--//tblwrap-->
+
+                        <div class="btngroup">
+                            <!-- 20200828 금요일 취소버튼 클릭 시 닫힘 -->
+                            <button class="btn btn-linelgray small" data-dismiss="window"><span>취소</span></button>
+                            <button class="btn btn-default small" data-modules-winpopup="href:PJD010.html;name:PJD010;width:589;height:355;"><span>확인</span></button>
+                        </div>
+
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+    <!--//윈도우팝업 -->
+</body>
+</html>

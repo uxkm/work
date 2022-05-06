@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com/">
+<meta name="author" content="@Hmall">
+<meta name="description" content="Hmall GUIDE - 백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="Hmall GUIDE HTML5, CSS3, Responsive web design, device testing, RWD">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon/favicon.ico">
+<title>Hmall UI/UX GUIDE</title>
+<script src="../../js/jquery-3.4.1.min.js"></script>
+<script src="../../js/jquery.easing.min.js"></script>
+<script src="../../js/ukDetect.min.js"></script>
+<style>
+/* StyleGuide Layout */
+.cguide-layout{padding:15px 0;}
+.cguide-layout > .guide-title1{margin-bottom:15px;padding:0 15px;color:#333;font-size:30px;line-height:23px;letter-spacing:-1.2px;}
+.cguide-layout > .guide-title2{margin-bottom:6px;padding:0 15px;color:#333;font-size:14px;line-height:23px;letter-spacing:-0.56px;}
+.cguide-layout > .guide-box{margin-bottom:20px;padding:0 15px;}
+.cguide-layout > .guide-box.full{padding:0;}
+.cguide-layout > .guide-box .btngroup{margin-bottom:10px;}
+
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,table,th,td,input,select,textarea,button,label,a,span,strong,i,b,ins,del,main,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{margin:0;padding:0;font-family:'Malgun Gothic',-apple-system,'droid sans fallback','Apple SD Gothic Neo','AppleGothic',sans-serif;color:#666;font-size:14px;line-height:1;font-weight:400;letter-spacing:-0.56px;vertical-align:top;word-wrap:break-word;word-break:break-all;box-sizing:border-box;}
+*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html, body{height:100%;}
+body{min-width:320px;-webkit-text-size-adjust:none;}
+fieldset, img{border:0 none;}
+img{width:100%;margin:0;padding:0;vertical-align:middle;}
+ul, ol, menu, li{list-style:none;}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after, q:before, q:after {content:'';content:none;}
+label{vertical-align:middle;}
+input, select, textarea, button{font-size:100%;vertical-align:middle;}
+button{border:0 none;background-color:transparent;cursor:pointer;}
+table{width:100%;border-collapse:collapse;border-spacing:0;}
+span, i, b, ins, del, strong, label{vertical-align:middle;}
+a{text-decoration:none;}
+a:hover,a:active,a:visited,a:focus{text-decoration:none;}
+address,caption,cite,code,dfn,em,var,i,ins{font-style:normal;font-weight:normal;}
+iframe{width:100%;height:100%;margin:0;border:0;}
+/* WebKit Scrollbar Style */
+.x64 *::-webkit-scrollbar{width:6px;height:4px;} 
+.x64 *::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);} 
+.x64 *::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);}
+/* Accessbility Text Hide */
+[aria-hidden="true"]{overflow:hidden;position:absolute;width:0;height:0;line-height:1;}
+/* Skip Navigation */
+.nav-skip{position:absolute;top:-1px;width:100%;text-align:center;}
+.nav-skip a{overflow:hidden;position:absolute;width:0;height:0;line-height:1;}
+.nav-skip a:focus{display:block;z-index:10;width:100%;height:auto;padding:10px;background:#222;color:#fff;}
+/* Border Color & Border Radius & Background Color & Text Color */
+.bdr0{border-radius:0!important;}
+.bdr3{border-radius:3px!important;}
+.bdr4{border-radius:4px!important;}
+.bdc-f14a38{border-color:#f14a38!important;}
+.bdc-ff5340{border-color:#ff5340!important;}
+.bdc-666{border-color:#666!important;}
+.bdc-ccc{border-color:#ccc!important;}
+.bdc-ddd{border-color:#ccc!important;}
+.bgc-ff5340{background-color:#ff5340!important;}
+.bgc-f4f4f4{background-color:#f4f4f4!important;}
+.bgc-f8f8f8{background-color:#f8f8f8!important;}
+.bgc-fff{background-color:#fff!important;}
+.color-ff5340{color:#ff5340!important;}
+.color-000{color:#000!important;}
+.color-111{color:#111!important;}
+.color-333{color:#333!important;}
+.color-666{color:#666!important;}
+.color-999{color:#999!important;}
+.color-ddd{color:#ddd!important;}
+.color-eee{color:#eee!important;}
+/* Typo Graphy Title */
+.large-title,
+.middle-title,
+.major-headings{color:#333;line-height:24px;}
+.large-title{font-size:18px;letter-spacing:-0.72px;}
+.middle-title,
+.major-headings{font-size:16px;letter-spacing:-0.64px;}
+.large-title,
+.middle-title{font-weight:700;}
+.major-headings{font-weight:400;}
+.subheadings{color:#333;font-size:15px;line-height:21px;font-weight:700;letter-spacing:-0.6px;}
+.minor-headings{color:#333;font-size:14px;line-height:20px;font-weight:700;letter-spacing:-0.56px;}
+/* Typo Graphy Contents  */
+.ctypo1{color:#666;font-size:15px;line-height:20px;letter-spacing:-0.6px;}
+.ctypo2{color:#666;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+.ctypo3{color:#999;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+/* Typo Graphy Contents Abstract */
+.abstract1,
+.abstract2{font-size:13px;line-height:19px;letter-spacing:-0.52px;}
+.abstract1{color:#666;}
+.abstract2{color:#999;}
+/* Display */
+.block{display:block;}
+.inline-block{display:inline-block;}
+.inline{display:inline;}
+.flex{display:flex;}
+.inline-flex{display:inline-flex;}
+/* Position */
+.sta{position:static;}
+.rel{position:relative;}
+.fix{position:fixed;}
+.abs{position:absolute;}
+/* Icon */
+.icon{display:inline-block;}
+button{border:1px solid transparent;outline:0;cursor:pointer;-webkit-appearance:button;-moz-appearance:none;-webkit-appearance:none;appearance:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;}
+/* Accordian Menu */
+.accordion{margin:0;padding:0;}
+.accordion h3{padding:10px 15px;border-top:1px solid #eee;border-bottom:1px solid #eee;}
+.accordion h3:not(:first-child){border-top:0;}
+.accordion h3.selected{padding-bottom:0;border-bottom:0;}
+.accordion .accordion-trigger{position:relative;width:100%;text-align:left;}
+.accordion .accordion-trigger span{color:#333;font-size:16px;font-weight:700;line-height:19px;letter-spacing:-0.64px;}
+.accordion .accordion-trigger .icon{display:inline-block;position:absolute;top:50%;right:0;width:15px;height:9px;background-repeat:no-repeat;background-position:50% 50%;background-size:15px 9px;transform:translateY(-50%);}
+.accordion .accordion-trigger[aria-expanded="true"] .icon{background-image:url(../p/img/co/icon/ico-arrow-top-type1-2x.png);}
+.accordion .accordion-trigger[aria-expanded="false"] .icon{background-image:url(../p/img/co/icon/ico-arrow-bottom-type1-2x.png);}
+.accordion .accordion-panel{padding:10px 15px;}
+.accordion .accordion-panel.selected{border-bottom:1px solid #eee;}
+.accordion.sm h3{padding:10px 6px;}
+.accordion.sm h3.selected{padding-bottom:0;border-bottom:0;}
+.accordion.sm .accordion-trigger span{font-size:15px;font-weight:400;letter-spacing:-0.6px;}
+.accordion.sm .accordion-panel{padding:10px 6px;}
+.accordion.sm .accordion-trigger .icon{width:13px;height:7px;background-size:13px 7px;}
+.accordion.sm .accordion-trigger[aria-expanded="true"] .icon{background-image:url(../p/img/co/icon/ico-arrow-top-type4-2x.png);}
+.accordion.sm .accordion-trigger[aria-expanded="false"] .icon{background-image:url(../p/img/co/icon/ico-arrow-bottom-type4-2x.png);}
+/* List Style Dot Type */
+.dotlist{margin:0;padding:0;}
+.dotlist li{position:relative;padding-left:15px;color:#666;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+.dotlist li::before{content:"ㆍ";display:inline-block;position:absolute;top:50%;left:0;color:#666;font-size:14px;line-height:20px;letter-spacing:-0.56px;transform:translateY(-50%);}
+</style>
+</head>
+<body>
+<div class="section cguide-layout" role="contentinfo" aria-label="Accordian Style">
+    <h2 class="guide-title1">ACCORDIAN</h2>
+    <h3 class="guide-title2">Type1</h3>
+    <div class="guide-box">
+        <div class="accordion">
+            <h3 class="selected"><button class="accordion-trigger" aria-expanded="true"><span>배송 정보</span><i class="icon"></i></button></h3>
+            <div class="accordion-panel selected" role="region" aria-label="배송 정보">
+                <ul class="dotlist">
+                    <li>상품확인 후 환불/반품 관련 배송비:2500원</li>
+                    <li>교환 관련 배송비 : 2500원</li>
+                </ul>
+            </div>
+            <!-- //.accordion-panel -->
+            <h3><button class="accordion-trigger" aria-expanded="false"><span>상품정보 제공 고시</span><i class="icon"></i></button></h3>
+            <div class="accordion-panel" role="region" aria-label="상품정보 제공 고시" hidden>
+                <ul class="dotlist">
+                    <li>상품확인 후 환불/반품 관련 배송비:2500원</li>
+                    <li>교환 관련 배송비 : 2500원</li>
+                </ul>
+            </div>
+            <!-- //.accordion-panel -->
+            <h3><button class="accordion-trigger" aria-expanded="false"><span>어린이 안전법</span><i class="icon"></i></button></h3>
+            <div class="accordion-panel" role="region" aria-label="어린이 안전법" hidden>
+                <ul class="dotlist">
+                    <li>상품확인 후 환불/반품 관련 배송비:2500원</li>
+                    <li>교환 관련 배송비 : 2500원</li>
+                </ul>
+            </div>
+            <!-- //.accordion-panel -->
+            <h3><button class="accordion-trigger" aria-expanded="false"><span>생활화학 안전법</span><i class="icon"></i></button></h3>
+            <div class="accordion-panel" role="region" aria-label="생활화학 안전법" hidden>
+                <ul class="dotlist">
+                    <li>상품확인 후 환불/반품 관련 배송비:2500원</li>
+                    <li>교환 관련 배송비 : 2500원</li>
+                </ul>
+            </div>
+            <!-- //.accordion-panel -->
+            <h3><button class="accordion-trigger" aria-expanded="false"><span>배송/교환/환불/AS/유의사항</span><i class="icon"></i></button></h3>
+            <div class="accordion-panel" role="region" aria-label="배송/교환/환불/AS/유의사항" hidden>
+                <ul class="dotlist">
+                    <li>상품확인 후 환불/반품 관련 배송비:2500원</li>
+                    <li>교환 관련 배송비 : 2500원</li>
+                </ul>
+            </div>
+            <!-- //.accordion-panel -->
+        </div>
+        <!-- //.acccordion -->
+    </div>
+    <h3 class="guide-title2">Type2</h3>
+    <div class="guide-box">
+        <div class="accordion sm">
+            <h3 class="selected"><button class="accordion-trigger" aria-expanded="true"><span>배송 정보</span><i class="icon"></i></button></h3>
+            <div class="accordion-panel selected" role="region" aria-label="배송 정보">
+                <ul class="dotlist">
+                    <li>상품확인 후 환불/반품 관련 배송비:2500원</li>
+                    <li>교환 관련 배송비 : 2500원</li>
+                </ul>
+            </div>
+            <!-- //.accordion-panel -->
+            <h3><button class="accordion-trigger" aria-expanded="false"><span>상품정보 제공 고시</span><i class="icon"></i></button></h3>
+            <div class="accordion-panel" role="region" aria-label="상품정보 제공 고시" hidden>
+                <ul class="dotlist">
+                    <li>상품확인 후 환불/반품 관련 배송비:2500원</li>
+                    <li>교환 관련 배송비 : 2500원</li>
+                </ul>
+            </div>
+            <!-- //.accordion-panel -->
+            <h3><button class="accordion-trigger" aria-expanded="false"><span>어린이 안전법</span><i class="icon"></i></button></h3>
+            <div class="accordion-panel" role="region" aria-label="어린이 안전법" hidden>
+                <ul class="dotlist">
+                    <li>상품확인 후 환불/반품 관련 배송비:2500원</li>
+                    <li>교환 관련 배송비 : 2500원</li>
+                </ul>
+            </div>
+            <!-- //.accordion-panel -->
+            <h3><button class="accordion-trigger" aria-expanded="false"><span>생활화학 안전법</span><i class="icon"></i></button></h3>
+            <div class="accordion-panel" role="region" aria-label="생활화학 안전법" hidden>
+                <ul class="dotlist">
+                    <li>상품확인 후 환불/반품 관련 배송비:2500원</li>
+                    <li>교환 관련 배송비 : 2500원</li>
+                </ul>
+            </div>
+            <!-- //.accordion-panel -->
+            <h3><button class="accordion-trigger" aria-expanded="false"><span>배송/교환/환불/AS/유의사항</span><i class="icon"></i></button></h3>
+            <div class="accordion-panel" role="region" aria-label="배송/교환/환불/AS/유의사항" hidden>
+                <ul class="dotlist">
+                    <li>상품확인 후 환불/반품 관련 배송비:2500원</li>
+                    <li>교환 관련 배송비 : 2500원</li>
+                </ul>
+            </div>
+            <!-- //.accordion-panel -->
+        </div>
+        <!-- //.acccordion -->
+    </div>
+</div>
+<!-- //.section -->
+			
+</body>
+</html>

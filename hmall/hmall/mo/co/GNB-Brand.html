@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- OpenGraph -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="//imagedev.hmall.com/m/img/co/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:url" content="https://hmall.com">
+<meta property="og:type" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. 볼거리 가득! 쓸 곳 많은 H.Point 혜택">
+<meta property="og:image" content="//imagedev.hmall.com/m/img/co/meta/hmall_meta.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="750">
+<!-- favicon -->
+<meta itemprop="image" content="//imagedev.hmall.com/m/img/co/favicon/favicon_128.png">
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/m/img/co/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="//imagedev.hmall.com/m/img/co/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//imagedev.hmall.com/m/img/co/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//imagedev.hmall.com/m/img/co/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//imagedev.hmall.com/m/img/co/favicon/favicon-16x16.png">
+<link rel="manifest" href="//imagedev.hmall.com/m/img/co/favicon/manifest.json">
+<title>브랜드 검색</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/popup.css"><!-- 공통 popup/layer css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/jquery-ui.css"><!-- 공통 jQuery UI css -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-3.4.1.min.js"></script><!-- 공통 jQuery Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.easing.min.js"></script><!-- 공통 jQuery UI Effect -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-ui.1.12.1.min.js"></script><!-- 공통 jQuery UI js -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.touchFlow.js"></script><!-- 공통 UI에 사용하는 Touch Swipe -->
+<script src="//imagedev.hmall.com/m/js/co/ukDetect.min.js"></script><!-- 공통 UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/m/js/co/slick.min.js"></script><!-- 공통 Slick Slider Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/common.js"></script><!-- 공통 UI에 사용하는 js -->
+
+<!-- Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/pd/search.css">
+</head>
+<body>
+<!-- 
+Contents 각페이지마다 해당되는 wrap에 class 추가 예: <div class="wrap brandsearch">
+-->
+<div class="wrap brandsearch">
+    <div class="nav-skip"><a href="#cntWrap">본문 콘텐츠로 건너뛰기</a></div>
+    
+    <!-- GNB 상단 - 2Depth 및 리스트 페이지 공통 -->
+    <header class="header gnb-history" role="banner">
+        <button class="btn btn-back" aria-label="뒤로가기"><i class="icon"></i><span class="hiding">뒤로가기</span></button>
+        <h1 class="hiding">현대Hmall</h1>
+        <h2 class="htitle"><span>브랜드</span></h2>
+        <!-- htitle 정의 -->
+        <!-- 
+        <h2 class="htitle"><span>여성브랜드의류</span></h2>
+        <h2 class="htitle"><span>기획전</span></h2>
+        <h2 class="htitle"><span>브랜드샵 명</span></h2>
+        <h2 class="htitle"><span>스페셜샵 명</span></h2>
+        <h2 class="htitle"><span>이벤트</span></h2>
+        <h2 class="htitle"><span>마이페이지</span></h2>
+        <h2 class="htitle"><span>고객센터</span></h2>
+        -->
+        <button class="btn btn-search"><i class="icon"></i><span class="hiding">검색</span></button>
+        <a href="javascript:;" class="link-cart"><i class="icon"></i><span class="hiding">장바구니</span><em class="badge black sm">99+</em></a>
+    </header>
+    <!-- //.header -->
+
+    <main class="cmain" role="main">
+        <div id="cntWrap" class="container">
+            <section class="cnt-brand" role="contentinfo" aria-label="브랜드 검색">
+                <h2 class="hiding">브랜드 검색</h2>
+
+                <div class="brandsearch">
+                    <ul class="brandtab" role="tablist">
+                        <li class="selected" role="presentation"><a href="javascript:;" role="tab" aria-selected="true"><span>ㄱㄴㄷ</span></a></li>
+                        <li role="presentation"><a href="javascript:;" role="tab" aria-selected="false"><span>ABC</span></a></li>
+                    </ul>
+                    <div class="brandcnt selected" role="tabpanel" aria-label="ㄱㄴㄷ순서 검색" aria-selected="true">
+                        <ul class="brandinitial">
+                            <li class="selected"><a href="javascript:;">ㄱ</a>
+                                <div class="brandlist">
+                                    <strong class="hiding">ㄱㄴㄷ 순 ㄱ 검색결과</strong>
+                                    <ul>
+                                        <li><a href="javascript:;">가구느낌</a></li>
+                                        <li><a href="javascript:;">가구데코</a></li>
+                                        <li><a href="javascript:;">가구야</a></li>
+                                        <li><a href="javascript:;">가구야히메</a></li>
+                                        <li><a href="javascript:;">가구엠디</a></li>
+                                        <li><a href="javascript:;">가나출판사</a></li>
+                                        <li><a href="javascript:;">가네시</a></li>
+                                        <li><a href="javascript:;">가누다</a></li>
+                                        <li><a href="javascript:;">가니</a></li>
+                                        <li><a href="javascript:;">가담다</a></li>
+                                        <li><a href="javascript:;">가데</a></li>
+                                        <li><a href="javascript:;">가디언플러스</a></li>
+                                        <li><a href="javascript:;">가락마캣</a></li>
+                                        <li><a href="javascript:;">가람어린이</a></li>
+                                        <li><a href="javascript:;">가루랑</a></li>
+                                        <li><a href="javascript:;">가루니에티보</a></li>
+                                        <li><a href="javascript:;">가르멘디</a></li>
+                                        <li><a href="javascript:;">가마솥누룽지</a></li>
+                                        <li><a href="javascript:;">가마지기</a></li>
+                                        <li><a href="javascript:;">가먼트레이블</a></li>
+                                        <li><a href="javascript:;">가민</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:;">ㄴ</a></li>
+                            <li><a href="javascript:;">ㄷ</a></li>
+                            <li><a href="javascript:;">ㄹ</a></li>
+                            <li><a href="javascript:;">ㅁ</a></li>
+                            <li><a href="javascript:;">ㅂ</a></li>
+                            <li><a href="javascript:;">ㅅ</a></li>
+                            <li><a href="javascript:;">ㅇ</a></li>
+                            <li><a href="javascript:;">ㅈ</a></li>
+                            <li><a href="javascript:;">ㅊ</a></li>
+                            <li><a href="javascript:;">ㅋ</a></li>
+                            <li><a href="javascript:;">ㅌ</a></li>
+                            <li><a href="javascript:;">ㅍ</a></li>
+                            <li><a href="javascript:;">ㅎ</a></li>
+                        </ul>
+                    </div>
+                    <div class="brandcnt" role="tabpanel" aria-label="ABC 순서 검색" aria-selected="false">
+                        <ul class="brandinitial">
+                            <li><a href="javascript:;">A</a></li>
+                            <li><a href="javascript:;">B</a></li>
+                            <li><a href="javascript:;">C</a></li>
+                            <li><a href="javascript:;">D</a></li>
+                            <li><a href="javascript:;">E</a></li>
+                            <li><a href="javascript:;">F</a></li>
+                            <li><a href="javascript:;">G</a></li>
+                            <li><a href="javascript:;">H</a></li>
+                            <li><a href="javascript:;">I</a></li>
+                            <li><a href="javascript:;">J</a></li>
+                            <li><a href="javascript:;">K</a></li>
+                            <li><a href="javascript:;">L</a></li>
+                            <li><a href="javascript:;">M</a></li>
+                            <li><a href="javascript:;">N</a></li>
+                            <li><a href="javascript:;">O</a></li>
+                            <li><a href="javascript:;">P</a></li>
+                            <li><a href="javascript:;">Q</a></li>
+                            <li><a href="javascript:;">R</a></li>
+                            <li><a href="javascript:;">S</a></li>
+                            <li><a href="javascript:;">T</a></li>
+                            <li><a href="javascript:;">U</a></li>
+                            <li><a href="javascript:;">V</a></li>
+                            <li><a href="javascript:;">W</a></li>
+                            <li><a href="javascript:;">X</a></li>
+                            <li><a href="javascript:;">Y</a></li>
+                            <li><a href="javascript:;">Z</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- //.container -->
+    </main>
+    <!-- //.cmain -->
+</div>
+<!-- //.wrap -->
+</body>
+</html>

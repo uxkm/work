@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>사이즈조견표</title> 
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  --> 
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/pd/product.css">
+
+</head>
+<body id="popWin">         
+    <!--윈도우팝업(새창으로열기) LNB 고객의 의견 클릭 시 윈도우 팝업 // 20200825 script 요청드림-->  
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:800px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win wd880 sizetable"> 
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">사이즈 조견표(사이즈 정보안내)</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <div class="content"> 
+                        <div class="desc-box">
+                            <p class="ctypo15">제시된 사이즈는 일반적인 평균 사이즈 조견표 입니다.</p>
+                            <p class="ctypo15">(제조회사별로 약간의 차이가 날 수도 있습니다.)</p>
+                            <p class="ctypo15">해당 상품별 정확한 세부 사이즈는 [상품상세정보]를 참조하여 주시기 바랍니다.</p>
+                        </div>
+                        <!--여성복-->
+                        <ul class="product_comparison_UL2" id="comparison_tb_1">
+                            <li class="first on"><a class="tabLink" href="#comparison_tb_1">여성복</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_2">남성복</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_3">영캐주얼</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_4">언더웨어</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_5">반지</a></li>
+                        </ul>
+                        <div id="comparison1">
+                            <p class="ctypo17 bold">여성복</p>
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>여성복사이즈조견표</caption>
+                                    <colgroup>
+                                        <col style="width:calc(100%/6)">
+                                        <col style="width:calc(100%/6)">
+                                        <col style="width:calc(100%/6)">
+                                        <col style="width:calc(100%/6)">
+                                        <col style="width:calc(100%/6)">
+                                        <col style="width:calc(100%/6)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">XS/44</th>
+                                            <th scope="col">S/55</th>
+                                            <th scope="col">M/66</th>
+                                            <th scope="col">L/77</th>
+                                            <th scope="col">XL/88</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">어깨넓이</td>
+                                            <td class="txt-center">37 ~ 38</td>
+                                            <td class="txt-center">38 ~ 39</td>
+                                            <td class="txt-center">39 ~ 40</td>
+                                            <td class="txt-center">40 ~ 41</td>
+                                            <td class="txt-center">41 ~ 42</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">가슴둘레</td>
+                                            <td class="txt-center">86 ~ 88</td>
+                                            <td class="txt-center">91 ~ 93</td>
+                                            <td class="txt-center">96 ~ 98</td>
+                                            <td class="txt-center">101 ~ 103</td>
+                                            <td class="txt-center">105 ~ 108</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">허리둘레</td>
+                                            <td class="txt-center">79 ~ 81</td>
+                                            <td class="txt-center">84 ~ 86</td>
+                                            <td class="txt-center">89 ~ 91</td>
+                                            <td class="txt-center">94 ~ 96</td>
+                                            <td class="txt-center">99 ~ 101</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">팔길이(긴팔)</td>
+                                            <td class="txt-center">60.5</td>
+                                            <td class="txt-center">61</td>
+                                            <td class="txt-center">61.5</td>
+                                            <td class="txt-center">62</td>
+                                            <td class="txt-center">62.5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="ctypo17 bold">상의류</p>
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>여성복사이즈조견표상의류</caption>
+                                    <colgroup>
+                                        <col style="width:calc(100%/6)">
+                                        <col style="width:calc(100%/6)">
+                                        <col style="width:calc(100%/6)">
+                                        <col style="width:calc(100%/6)">
+                                        <col style="width:calc(100%/6)">
+                                        <col style="width:calc(100%/6)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">XS/44</th>
+                                            <th scope="col">S/55</th>
+                                            <th scope="col">M/66</th>
+                                            <th scope="col">L/77</th>
+                                            <th scope="col">XL/88</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">어깨넓이</td>
+                                            <td class="txt-center">36 ~ 37</td>
+                                            <td class="txt-center">37 ~ 38</td>
+                                            <td class="txt-center">38 ~ 39</td>
+                                            <td class="txt-center">39 ~ 40</td>
+                                            <td class="txt-center">40 ~ 41</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">가슴둘레</td>
+                                            <td class="txt-center">84 ~ 85</td>
+                                            <td class="txt-center">89 ~ 90</td>
+                                            <td class="txt-center">94 ~ 95</td>
+                                            <td class="txt-center">99 ~ 100</td>
+                                            <td class="txt-center">103 ~ 105</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">허리둘레</td>
+                                            <td class="txt-center">72 ~ 73</td>
+                                            <td class="txt-center">77 ~ 78</td>
+                                            <td class="txt-center">82 ~ 83</td>
+                                            <td class="txt-center">87 ~ 88</td>
+                                            <td class="txt-center">90 ~ 91</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--//여성복-->
+                        <!--남성복-->
+                        <ul class="product_comparison_UL2" id="comparison_tb_2">
+                            <li class="first"><a class="tabLink" href="#comparison_tb_1">여성복</a></li>
+                            <li class="on"><a class="tabLink" href="#comparison_tb_2">남성복</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_3">영캐주얼</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_4">언더웨어</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_5">반지</a></li>
+                        </ul>
+                        <div id="comparison2">
+                            <p class="ctypo17 bold">재킷류</p>
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>남성복사이즈조견표재킷류</caption>
+                                    <colgroup>
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">S/95</th>
+                                            <th scope="col">M/100</th>
+                                            <th scope="col">L/105</th>
+                                            <th scope="col">XL/110</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">가슴둘레</td>
+                                            <td class="txt-center">120 ~ 124</td>
+                                            <td class="txt-center">124 ~ 128</td>
+                                            <td class="txt-center">128 ~ 132</td>
+                                            <td class="txt-center">132 ~ 136</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">총기장</td>
+                                            <td class="txt-center">74 ~ 77</td>
+                                            <td class="txt-center">76 ~ 78</td>
+                                            <td class="txt-center">78 ~ 80</td>
+                                            <td class="txt-center">80 ~ 82</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">팔길이<br/>(긴팔)</td>
+                                            <td class="txt-center">60</td>
+                                            <td class="txt-center">61</td>
+                                            <td class="txt-center">62</td>
+                                            <td class="txt-center">63</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="ctypo17 bold">상의류</p>
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>남성복사이즈조견표상의류</caption>
+                                    <colgroup>
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">S/95</th>
+                                            <th scope="col">M/100</th>
+                                            <th scope="col">L/105</th>
+                                            <th scope="col">XL/110</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">가슴둘레</td>
+                                            <td class="txt-center">104 ~ 109</td>
+                                            <td class="txt-center">109 ~ 115</td>
+                                            <td class="txt-center">114 ~ 120</td>
+                                            <td class="txt-center">119 ~ 125</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">총기장</td>
+                                            <td class="txt-center">70 ~ 75</td>
+                                            <td class="txt-center">72 ~ 77</td>
+                                            <td class="txt-center">75 ~ 80</td>
+                                            <td class="txt-center">78 ~ 83</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">팔길이<br/>(긴팔)</td>
+                                            <td class="txt-center">59</td>
+                                            <td class="txt-center">60</td>
+                                            <td class="txt-center">61</td>
+                                            <td class="txt-center">62</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="ctypo17 bold">하의류</p>
+                            <span class="size-noti">※ 각 상품에 표기된 허리사이즈를 따름</span>
+                        </div>
+                        <!--//남성복-->
+                        <!--영캐쥬얼-->
+                        <ul class="product_comparison_UL2" id="comparison_tb_3">
+                            <li class="first"><a class="tabLink" href="#comparison_tb_1">여성복</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_2">남성복</a></li>
+                            <li class="on"><a class="tabLink" href="#comparison_tb_3">영캐주얼</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_4">언더웨어</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_5">반지</a></li>
+                        </ul>
+                        <div id="comparison3">
+                            <p class="ctypo17 bold">재킷류</p>
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>영캐주얼사이즈조견표재킷류</caption>
+                                    <colgroup>
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">90</th>
+                                            <th scope="col">95</th>
+                                            <th scope="col">100</th>
+                                            <th scope="col">105</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">가슴둘레</td>
+                                            <td class="txt-center">75 ~ 81</td>
+                                            <td class="txt-center">96 ~ 98</td>
+                                            <td class="txt-center">99 ~ 102</td>
+                                            <td class="txt-center">102 ~ 121</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">밑단둘래</td>
+                                            <td class="txt-center">96.5 ~ 99</td>
+                                            <td class="txt-center">105 ~ 110</td>
+                                            <td class="txt-center">114 ~ 116</td>
+                                            <td class="txt-center">120 ~ 121</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">팔길이</td>
+                                            <td class="txt-center">60 ~ 61</td>
+                                            <td class="txt-center">62 ~ 64</td>
+                                            <td class="txt-center">64 ~ 65</td>
+                                            <td class="txt-center">65 ~ 66</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="ctypo17 bold">상의류</p>
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>영캐주얼사이즈조견표상의류</caption>
+                                    <colgroup>
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                        <col style="width:calc(100%/5)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">90</th>
+                                            <th scope="col">95</th>
+                                            <th scope="col">100</th>
+                                            <th scope="col">105</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">가슴둘레</td>
+                                            <td class="txt-center">87 ~ 88</td>
+                                            <td class="txt-center">100 ~ 102</td>
+                                            <td class="txt-center">105 ~ 107</td>
+                                            <td class="txt-center">111 ~ 113</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">밑단둘레</td>
+                                            <td class="txt-center">76 ~ 80</td>
+                                            <td class="txt-center">84 ~ 85</td>
+                                            <td class="txt-center">90 ~ 91</td>
+                                            <td class="txt-center">95 ~ 96</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">팔길이</td>
+                                            <td class="txt-center">61 ~ 63</td>
+                                            <td class="txt-center">63</td>
+                                            <td class="txt-center">64</td>
+                                            <td class="txt-center">65</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="ctypo17 bold">하의류</p>
+                            <span class="size-noti">※ 각 상품에 표기된 허리사이즈를 따름</span>
+                        </div>
+                        <!--//영캐쥬얼-->
+                        <!--언더웨어-->
+                        <ul class="product_comparison_UL2" id="comparison_tb_4">
+                            <li class="first"><a class="tabLink" href="#comparison_tb_1">여성복</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_2">남성복</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_3">영캐주얼</a></li>
+                            <li class="on"><a class="tabLink" href="#comparison_tb_4">언더웨어</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_5">반지</a></li>
+                        </ul>
+                        <div id="comparison4">
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>언더웨어사이즈조견표</caption>
+                                    <colgroup>
+                                        <col style="width:calc(100%/4)">
+                                        <col style="width:calc(100%/4)">
+                                        <col style="width:calc(100%/4)">
+                                        <col style="width:calc(100%/4)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">75A</th>
+                                            <th scope="col">75B</th>
+                                            <th scope="col">75C</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">밑가슴둘레</td>
+                                            <td class="txt-center">75</td>
+                                            <td class="txt-center">75</td>
+                                            <td class="txt-center">75</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">가슴둘레</td>
+                                            <td class="txt-center">82.5</td>
+                                            <td class="txt-center">85</td>
+                                            <td class="txt-center">87.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">팬티</td>
+                                            <td class="txt-center">90</td>
+                                            <td class="txt-center">90</td>
+                                            <td class="txt-center">90</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>언더웨어사이즈조견표</caption>
+                                    <colgroup>
+                                        <col style="width:calc(100%/4)">
+                                        <col style="width:calc(100%/4)">
+                                        <col style="width:calc(100%/4)">
+                                        <col style="width:calc(100%/4)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">80A</th>
+                                            <th scope="col">80B</th>
+                                            <th scope="col">80C</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">밑가슴둘레</td>
+                                            <td class="txt-center">80</td>
+                                            <td class="txt-center">80</td>
+                                            <td class="txt-center">80</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">가슴둘레</td>
+                                            <td class="txt-center">87.5</td>
+                                            <td class="txt-center">90</td>
+                                            <td class="txt-center">92.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">팬티</td>
+                                            <td class="txt-center">95</td>
+                                            <td class="txt-center">95</td>
+                                            <td class="txt-center">95</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>언더웨어사이즈조견표</caption>
+                                    <colgroup>
+                                        <col style="width:calc(100%/4)">
+                                        <col style="width:calc(100%/4)">
+                                        <col style="width:calc(100%/4)">
+                                        <col style="width:calc(100%/4)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">85A</th>
+                                            <th scope="col">85B</th>
+                                            <th scope="col">85C</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">밑가슴둘레</td>
+                                            <td class="txt-center">85</td>
+                                            <td class="txt-center">85</td>
+                                            <td class="txt-center">85</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">가슴둘레</td>
+                                            <td class="txt-center">92.5</td>
+                                            <td class="txt-center">95</td>
+                                            <td class="txt-center">97.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">팬티</td>
+                                            <td class="txt-center">100</td>
+                                            <td class="txt-center">100</td>
+                                            <td class="txt-center">100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--//언더웨어-->
+                        <!--반지-->
+                        <ul class="product_comparison_UL2" id="comparison_tb_5">
+                            <li class="first"><a class="tabLink" href="#comparison_tb_1">여성복</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_2">남성복</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_3">영캐주얼</a></li>
+                            <li><a class="tabLink" href="#comparison_tb_4">언더웨어</a></li>
+                            <li class="on"><a class="tabLink" href="#comparison_tb_5">반지</a></li>
+                        </ul>
+                        <div id="comparison5">
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>반지사이즈조견표</caption>
+                                    <colgroup>
+                                        <col style="width:auto">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">1호</th>
+                                            <th scope="col">2호</th>
+                                            <th scope="col">3호</th>
+                                            <th scope="col">4호</th>
+                                            <th scope="col">5호</th>
+                                            <th scope="col">6호</th>
+                                            <th scope="col">7호</th>
+                                            <th scope="col">8호</th>
+                                            <th scope="col">9호</th>
+                                            <th scope="col">10호</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">반지안지름</td>
+                                            <td class="txt-center">13.1</td>
+                                            <td class="txt-center">13.6</td>
+                                            <td class="txt-center">13.8</td>
+                                            <td class="txt-center">14.2</td>
+                                            <td class="txt-center">14.5</td>
+                                            <td class="txt-center">14.7</td>
+                                            <td class="txt-center">15.0</td>
+                                            <td class="txt-center">15.4</td>
+                                            <td class="txt-center">15.8</td>
+                                            <td class="txt-center">16.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">반지 둘레</td>
+                                            <td class="txt-center">41.1</td>
+                                            <td class="txt-center">43.3</td>
+                                            <td class="txt-center">43.7</td>
+                                            <td class="txt-center">44.6</td>
+                                            <td class="txt-center">45.5</td>
+                                            <td class="txt-center">46.1</td>
+                                            <td class="txt-center">47.1</td>
+                                            <td class="txt-center">48.4</td>
+                                            <td class="txt-center">49.6</td>
+                                            <td class="txt-center">50.2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>반지사이즈조견표</caption>
+                                    <colgroup>
+                                        <col style="width:auto">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">1호</th>
+                                            <th scope="col">2호</th>
+                                            <th scope="col">3호</th>
+                                            <th scope="col">4호</th>
+                                            <th scope="col">5호</th>
+                                            <th scope="col">6호</th>
+                                            <th scope="col">7호</th>
+                                            <th scope="col">8호</th>
+                                            <th scope="col">9호</th>
+                                            <th scope="col">10호</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">반지안지름</td>
+                                            <td class="txt-center">16.4</td>
+                                            <td class="txt-center">16.6</td>
+                                            <td class="txt-center">17.0</td>
+                                            <td class="txt-center">17.2</td>
+                                            <td class="txt-center">17.7</td>
+                                            <td class="txt-center">17.9</td>
+                                            <td class="txt-center">18.2</td>
+                                            <td class="txt-center">18.4</td>
+                                            <td class="txt-center">18.7</td>
+                                            <td class="txt-center">19.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">반지 둘레</td>
+                                            <td class="txt-center">51.5</td>
+                                            <td class="txt-center">52.1</td>
+                                            <td class="txt-center">53.4</td>
+                                            <td class="txt-center">54.0</td>
+                                            <td class="txt-center">55.6</td>
+                                            <td class="txt-center">56.2</td>
+                                            <td class="txt-center">57.2</td>
+                                            <td class="txt-center">57.8</td>
+                                            <td class="txt-center">58.7</td>
+                                            <td class="txt-center">60.0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tblwrap">
+                                <table>
+                                    <caption>반지사이즈조견표</caption>
+                                    <colgroup>
+                                        <col style="width:auto">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                        <col style="width:calc(100%/11)">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">사이즈</th>
+                                            <th scope="col">1호</th>
+                                            <th scope="col">2호</th>
+                                            <th scope="col">3호</th>
+                                            <th scope="col">4호</th>
+                                            <th scope="col">5호</th>
+                                            <th scope="col">6호</th>
+                                            <th scope="col">7호</th>
+                                            <th scope="col">8호</th>
+                                            <th scope="col">9호</th>
+                                            <th scope="col">10호</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="txt-center">반지안지름</td>
+                                            <td class="txt-center">19.3</td>
+                                            <td class="txt-center">19.6</td>
+                                            <td class="txt-center">19.9</td>
+                                            <td class="txt-center">20.2</td>
+                                            <td class="txt-center">20.5</td>
+                                            <td class="txt-center">20.9</td>
+                                            <td class="txt-center">21.2</td>
+                                            <td class="txt-center">21.5</td>
+                                            <td class="txt-center">21.7</td>
+                                            <td class="txt-center">22.2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-center">반지 둘레</td>
+                                            <td class="txt-center">60.6</td>
+                                            <td class="txt-center">61.9</td>
+                                            <td class="txt-center">62.5</td>
+                                            <td class="txt-center">63.5</td>
+                                            <td class="txt-center">64.4</td>
+                                            <td class="txt-center">65.7</td>
+                                            <td class="txt-center">66.6</td>
+                                            <td class="txt-center">67.5</td>
+                                            <td class="txt-center">68.2</td>
+                                            <td class="txt-center">69.7</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--//반지-->
+                    </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+    <!--//윈도우팝업 1:1 상담신청-->
+</body>
+
+
+</body>
+</html>

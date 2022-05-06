@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="https://imagessl.hyundaihmall.com/static/smart/2014/mobile/favicon_128.png" itemprop="image">
+    <link rel="shortcut icon" href="https://imagessl.hyundaihmall.com/static/smart/2014/mobile/favicon.ico">
+    <link href="https://imagessl.hyundaihmall.com/static/smart/2014/mobile/favicon_120.png" rel="apple-touch-icon" sizes="120x120">
+    <link href="https://imagessl.hyundaihmall.com/static/smart/2014/mobile/favicon_114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="https://imagessl.hyundaihmall.com/static/smart/2014/mobile/favicon_57.png" rel="apple-touch-icon">
+    <link rel="stylesheet" type="text/css" href="https://imagessl.hyundaihmall.com/mo/css/css_5.0/common_star.css" />
+    <link rel="stylesheet" type="text/css" href="https://imagessl.hyundaihmall.com/mo/css/css_5.0/layout_star.css" />
+    <link rel="stylesheet" type="text/css" href="https://imagessl.hyundaihmall.com/mo/css/css_5.0/dp_star.css">
+    <link rel="stylesheet" type="text/css" href="https://imagessl.hyundaihmall.com/mo/css/css_5.0/pd_star.css">
+    <link rel="stylesheet" type="text/css" href="https://imagessl.hyundaihmall.com/mo/css/css_5.0/sec-mblLive.css">  <!-- mbl-prj -->
+    <link rel="stylesheet" type="text/css" href="https://imagessl.hyundaihmall.com/mo/css/css_5.0/hmall.video.css">
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/slick.custom.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/jquery.dg.mfloatlayer.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/jquery.dg.smartresize.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/jquery.dg.fslide.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/jquery.cookie-1.4.1.min.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/common.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/ui.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/dp.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/pd.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/pd301.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/od.js"></script>
+    <script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/mobileUtil.js"></script>
+    <link href="https://imagessl.hyundaihmall.com/mo/css/css_5.0/easySelect.css" rel="stylesheet">
+    <script src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/easySelect.js"></script>
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/livetalk.css"><!-- 상품보기 신규추가 -->
+    <script type="text/javascript">
+        var appYn = 'N';
+    </script>
+</head>
+<body>
+<div class="dimScreen"></div>
+<div id="mblLive" class="mblLiveWrap _fullscreen">
+<!--<div id="mblLive" class="mblLiveWrap _fullscreen">-->
+    <!-- 팝업 -->
+    <!--<div id="mblLive-popup" class="mblLive-popupWrap" style="display: none;">
+        &lt;!&ndash; 앱유도 &ndash;&gt;
+        <div class="link-app-popup" style="display: none;">
+            <i class="logo"></i>
+            <a href="#" class="cross">닫기</a>
+            <span class="txt">Hmall APP으로 편리하게 모바일 라이브 이용하고 다양한 혜택도 받아보세요!</span>
+
+            <div class="butnWrap">
+                <button>웹에서 볼게요</button>
+                <button>앱으로 이동</button>
+            </div>
+        </div>
+        &lt;!&ndash; // &ndash;&gt;
+
+        &lt;!&ndash; 앱유도2 &ndash;&gt;
+        <div class="link-app-popup _store" style="display: none;">
+            <i class="warn"></i>
+            <span class="txt">해당 기능은 Hmall APP에서만 이용할 수 있습니다.<br>앱으로 연결 하시겠습니까?</span>
+
+            <div class="butnWrap">
+                <button>취소</button>
+                <button>확인</button>
+            </div>
+        </div>
+        &lt;!&ndash; // &ndash;&gt;
+
+        &lt;!&ndash; 닉네임 설정 &ndash;&gt;
+        <div class="nickname-setup" style="display: none;">
+            <span class="txt">
+                <strong class="title">닉네임 설정</strong>
+                모바일 라이브 채팅 시 사용할<br>닉네임을 입력하세요.<br>
+                <em class="addition">(마이페이지에서도 설정 가능합니다.)</em>
+            </span>
+            <div class="input-nickname">
+                <label for="new-nickname"><input type="text" id="new-nickname" name="" placeholder="닉네임을 입력해 주세요."></label>
+                <a href="#" class="duplicate-chk">중복확인</a>
+
+                <div class="error-msg">
+                    <span class="require">필수 정보입니다.</span>
+                    <span class="already">이미 존재하는 닉네임입니다.</span>
+                </div>
+            </div>
+            <div class="butnWrap">
+                <button>취소</button>
+                <button>확인</button>
+            </div>
+        </div>
+        &lt;!&ndash; // &ndash;&gt;
+
+        &lt;!&ndash; 밴 &ndash;&gt;
+        <div class="ban-popup" style="display: none;">
+            <i class="warn"></i>
+            <span class="txt">고객님의 부적절한 언어 사용으로 채팅 참여가 불가능합니다.</span>
+
+            <div class="butnWrap">
+                <button>확인</button>
+            </div>
+        </div>
+        &lt;!&ndash; // &ndash;&gt;
+    </div>-->
+    <!-- //팝업 -->
+
+    <!-- 시청자수 -->
+    <div class="realView">
+        <i class="person"></i> <span class="count">2,020</span>
+    </div>
+    <!-- // -->
+
+    <!-- 비디오 -->
+    <div id="mblLive-Vod" class="video-wrapper _init" data-type="live" data-begintime="202004131500" data-servercurrenttime="20200413152836" data-time="202004132000" data-src="https://api.wecandeo.com/live/cast.m3u8?k=eexqipubxERb1zipHkpYZrKisxH6b4hdND8lzfq3AdFiiq3tVwlzuzzeisAieie" data-url="/front/pda/smItemDetailR.do?ItemCode=2103265675">
+        <div class="_video-container">
+            <!--<img src="https://imagessl.hyundaihmall.com/HM/HM008/20190325/160933/0808.png" alt="">-->
+            <img src="https://wallpapersmug.com/download/720x1280/867960/thor-artwork.jpg" alt="">
+        </div>
+    </div>
+    <!-- //비디오 -->
+
+    <!-- 안내 & 채팅 메세지 & 메세지 입력 박스 -->
+    <div id="mblLive-Chat" class="chat-container">
+        <!-- 안내 -->
+        <div class="mblLive-notice _fold">
+            <ul>
+                <li><span>금일 구매 시 오늘만 깔라만시 주스 6병+2병 추가 구성으로 구매할 수 있습니다.</span></li>
+                <li><a href="#1">링크 걸리는 텍스트도 있어요.</a></li>
+                <li><a href="#2">링크 걸리는 텍스트도 있어요. 두번 있어요.</a></li>
+            </ul>
+            <div class="butn">
+                <button class="never">다시 열지 않음</button>
+                <button class="fold">접어두기</button>
+            </div>
+            <a href="#" class="arrow"></a>
+        </div>
+        <!-- //안내 -->
+
+        <!-- 채팅 메세지 -->
+        <div class="mblLive-message">
+
+            <!-- 새글 -->
+            <!--<a href="#" class="new-message"><strong class="txt"></strong><i class="arrow"></i></a>-->
+            <!-- // -->
+
+            <div class="link-app">
+                <!-- 앱으로 연결 -->
+                <a href="#" class="txt">앱으로<br>연결</a>
+                <a href="#" class="cross"></a>
+                <!-- // -->
+            </div>
+
+            <!-- 공유하기 -->
+            <div class="share">
+                <a href="#" id="btn_sns" class="view-share">공유</a>
+            </div>
+
+            <div class="shareFloat">
+                <p class="shareTitle">공유하기</p>
+                <ul class="shareAncset">
+                    <li>
+                        <a href="#"><img src="https://imagessl.hyundaihmall.com/hmall/co/shareFloat_Talk.png"><span>카카오톡</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="https://imagessl.hyundaihmall.com/hmall/co/shareFloat_SMS.png"><span>문자</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="https://imagessl.hyundaihmall.com/hmall/co/shareFloat_URL.png"><span>URL복사</span></a>
+                    </li>
+                </ul>
+                <a href="#" class="shareCancel">취소</a>
+
+                <a href="#" class="another-apps">다른 앱으로 공유</a>
+            </div>
+            <!-- //공유하기 -->
+
+            <!--<div class="buy-benefit">
+                &lt;!&ndash; 구매혜택 &ndash;&gt;
+                <a href="#" class="view-benefit">혜택</a>
+            </div>-->
+
+            <div class="mblLive-message-innerWrap">
+                <ul>
+                    <li class="system">
+                        <!-- 입장 -->
+                        <span class="user-enter">모바일라이브님이 입장하셨습니다.</span>
+                    </li>
+
+                    <li class="system">
+                        <!-- 캠페인 -->
+                        <span class="notice"><i class="logo"></i>모바일라이브 SHOW핑에 오신것을 환영합니다. 미풍양속을 해치는 단어 및 내용을 입력해 주신 경우 통보없이 임의 삭제될 수 있으니 양해 부탁드립니다.</span>
+                    </li>
+                    <!--
+                    <li class="customer">
+                        <div class="messageWrap">
+                            <em class="user">고객명</em>
+                            <span class="message">안녕하세요~ 지금 바로 주문하면 적립금도 같이 지급되나요?</span>
+                        </div>
+                    </li>
+
+                    <li class="admin">
+                        &lt;!&ndash; 관리자 &ndash;&gt;
+                        <div class="messageWrap">
+                            <em class="user">야수PD</em>
+                            <span class="message">고객명님 안녕하세요! 적립금은 개수와 상관없이 2,000원 지급됩니다.</span>
+                        </div>
+                    </li>
+
+                    <li class="customer">
+                        <div class="messageWrap">
+                            <em class="user _crown">hobak**2973</em>
+                            <span class="message">구매인증은 어떻게 하나요? 버튼 누르면 끝이예요?</span>
+                        </div>
+                    </li>
+
+                    <li class="system">
+                        &lt;!&ndash; 구매인증 &ndash;&gt;
+                        <span class="purchase-ok"><i class="check"></i>구매인증 되었습니다.</span>
+                    </li>
+
+                    <li class="customer">
+                        <div class="messageWrap">
+                            <em class="user _crown">hobak**2973</em>
+                            <span class="message">오~ 자동인증도 되는군요. 좋아졌네요.</span>
+                        </div>
+                    </li>
+
+                    <li class="admin">
+                        &lt;!&ndash; 관리자 &ndash;&gt;
+                        <div class="messageWrap">
+                            <em class="user">쇼라PD</em>
+                            <span class="message">구매인증 말고도 좋아진 부분 또 있는데 맞추시면 적립금 100,000원 쏩니다.</span>
+                        </div>
+                    </li>
+
+                    <li class="customer">
+                        <div class="messageWrap">
+                            <em class="user">0sunE**2626</em>
+                            <span class="message">아이폰11 샀어요. 11월내로 온다는데 기다려져요. 빨리 주세요. 현기증 나니까요.</span>
+                        </div>
+                    </li>
+
+                    <li class="reply">
+                        <div class="cornerWrap">
+                            <div class="messageWrap _customer">
+                                <em class="user">덕소두산최고**2462</em>
+                                <span class="message">
+                                    구매인증은 어떻게 하나요? 버튼 누르면 끝이예요?
+                                    구매인증은 어떻게 하나요? 버튼 누르면 끝이예요?
+                                    구매인증은 어떻게 하나요? 버튼 누르면 끝이예요?
+                                    구매인증은 어떻게 하나요? 버튼 누르면 끝이예요?
+                                </span>
+                            </div>
+                            <div class="messageWrap">
+                                <em class="user">미녀PD</em>
+                                <span class="message">
+                                    <span class="default">{ $id$ }님 안녕하세요.</span>
+                                    문의주신 부분은 고객 게시판에 남겨주시면 처리해 드리겠습니다. 지금은 꽤 바쁘거든요?!
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="whisper">
+                        &lt;!&ndash; 귓속말 &ndash;&gt;
+                        <h3 class="title"><i class="balloon"></i><span class="txt">귓속말</span></h3>
+                        <div class="cornerWrap">
+                            <div class="messageWrap">
+                                <em class="user">미녀PD</em>
+                                <span class="message">
+                                    <span class="default">{ $id$ }님 안녕하세요.</span>
+                                    문의주신 부분은 고객 게시판에 남겨주시면 처리해 드리겠습니다. 지금은 꽤 바쁘거든요?!
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="customer">
+                        <div class="messageWrap">
+                            <em class="user">덕소두산최고**2462</em>
+                            <span class="message">사는 김에 에어팟 프로 <em class="clean">**</em> 사세요. 두번 사세요.</span>
+                        </div>
+                    </li>
+
+                    <li class="system">
+                        &lt;!&ndash; 부적절 메세지 경고 &ndash;&gt;
+                        <span class="caution"><i class="check"></i>부적절한 언어 사용 고객은 채팅 참여가 제한될 수 있습니다.</span>
+                    </li>
+
+                    <li class="customer">
+                        <div class="messageWrap">
+                            <em class="user">모라이브**2143</em>
+                            <span class="message">리뉴얼 해요. 새로 만들고 앱도 만들어요. 이번엔 네이티브로 하나봐요.</span>
+                        </div>
+                    </li>
+
+                    <li class="admin">
+                        &lt;!&ndash; 관리자 &ndash;&gt;
+                        <div class="messageWrap">
+                            <em class="user">미녀PD</em>
+                            <span class="message">리뉴얼 해요. 새로 만들고 앱도 만들어요. 이번엔 네이티브로 하나봐요.</span>
+                        </div>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <!-- //채팅 메세지 -->
+
+        <!-- 판매상품 미리보기 -->
+        <!--<div class="mblLive-preview">
+            <a href="#">
+                <span class="thumb"><img src="https://imagessl.hyundaihmall.com/static/8/1/03/73/2073031807_0_300.jpg" alt=""></span>
+                <span class="txt">
+                    <span class="name">[감동]블랙라벨 고당도 햇 감귤 소과 3kg(2개구매시 1kg 추가발송)</span>
+                    <span class="view">모든 상품 보기 <em>&gt;</em></span>
+                </span>
+            </a>
+        </div>-->
+        <!-- // -->
+
+        <!--
+            메세지 입력 박스
+            메세지 입력 박스 선택 시 _focus 클래스 추가 ( class="mblLive-input _focus" )
+        -->
+        <div class="mblLive-input">
+            <input type="text" class="input-message" name="" placeholder="채팅에 참여해 보세요.">
+            <button class="butn-send">
+                <span class="txt">전송</span>
+            </button>
+            <button class="butn-replay _prev">
+                <span class="txt">이전</span>
+            </button>
+            <button class="butn-replay _next">
+                <span class="txt">다음</span>
+            </button>
+            <button class="butn-viewPrd">
+                <span class="badge _hidden">0</span>
+                <span class="txt">상품보기</span>
+            </button>
+            <button class="butn-like">
+                <!-- 좋아요 전 : "uncheck", 좋아요 후 : "uncheck _ok" -->
+                <i class="uncheck _ok"></i>
+                <span class="txt">좋아요</span>
+            </button>
+            <button class="butn-purchase">
+                <!-- add.0626 구매인증 전 : "butn-purchase", 구매인증 후 : "butn-purchase _ok" -->
+                <!-- del.0626 구매인증 전 : "uncheck", 구매인증 후 : "uncheck _ok" -->
+                <!-- del.0626 <i class="uncheck"></i>-->
+                <span class="txt">인증<br>확인</span>
+            </button>
+            <button class="butn-close">
+                <span class="txt">닫기</span>
+            </button>
+        </div>
+        <!-- //메세지 입력 박스 -->
+
+        <!-- @구매혜택 레이어 -->
+        <!--<div class="mblLive-benefit">
+            <h3>
+                모바일 라이브 구매 혜택
+                <a href="#" class="close">닫기</a>
+            </h3>
+            <ul>
+                <li>
+                    <img src="http://placehold.it/450x274/111/fff/?text=1" alt="">
+                    <strong class="title">생방송 중 구매시 사은품 지급</strong>
+                    <span class="sub-title">500명 한정</span>
+                </li>
+                &lt;!&ndash; // &ndash;&gt;
+            </ul>
+        </div>-->
+        <!-- // -->
+
+        <!--<div class="mblLive-prdList">
+            &lt;!&ndash; 상품보기 &ndash;&gt;
+            <h3 class="title"><span class="txt">상품보기</span> <a href="#" class="cross">닫기</a></h3>
+
+            &lt;!&ndash; 리스트 &ndash;&gt;
+            <div class="itemScrollWrap">
+                <div class="itemWrap">
+                    <div class="pinter-left">
+                        <div class="items">
+                            <a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/8/0/37/25/2025370821_0_300.jpg"></a>
+                            <span class="itemtxt">
+                                <span class="goods_name">타미힐피거 원피스</span>
+                                <span class="price">&nbsp;</span>
+
+                                <a href="#" class="buy">알림톡 신청</a>
+                                <div class="benefit">
+                                    <a href="#"><em>10%</em> 적립</a>
+                                    <a href="#"><em>5%</em> 적립</a>
+                                </div>
+                            </span>
+                        </div>
+                        &lt;!&ndash; // &ndash;&gt;
+                        <div class="items">
+                            <a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/5/1/21/69/2069211599_0_300.jpg"></a>
+                            <span class="itemtxt">
+                                <span class="goods_name">타미힐피거 원피스/셔츠팬츠1</span>
+                                <span class="price">혜택가 <strong>45,000</strong>원</span>
+
+                                <a href="#" class="buy">구매하기</a>
+                                <div class="benefit">
+                                    <a href="#"><em>5%</em> 적립</a>
+                                </div>
+                            </span>
+                        </div>
+                        &lt;!&ndash; // &ndash;&gt;
+                        <div class="items">
+                            <a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/8/0/37/25/2025370821_0_300.jpg"></a>
+                            <span class="itemtxt">
+                                <span class="goods_name">타미힐피거 원피스/셔츠팬츠1 타미힐피거 원피스/셔츠팬츠1</span>
+                                <span class="price">혜택가 <strong>45,000</strong>원</span>
+
+                                <a href="#" class="buy">구매하기</a>
+                            </span>
+                        </div>
+                        &lt;!&ndash; // &ndash;&gt;
+                        <div class="items">
+                            <a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/5/1/21/69/2069211599_0_300.jpg"></a>
+                            <span class="itemtxt">
+                                <span class="goods_name">타미힐피거 원피스/셔츠팬츠1</span>
+                                <span class="price">혜택가 <strong>45,000</strong>원</span>
+
+                                <a href="#" class="buy">구매하기</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="pinter-right">
+                        <div class="items">
+                            <a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/2/9/14/65/2065149228_0_300.jpg"></a>
+                            <span class="itemtxt">
+                                <span class="goods_name">타미힐피거 원피스/셔츠팬츠1</span>
+                                <span class="price">혜택가 <strong>45,000</strong>원</span>
+
+                                <a href="#" class="buy">구매하기</a>
+                                <div class="benefit">
+                                    <a href="#"><em>10%</em> 적립</a>
+                                </div>
+                            </span>
+                        </div>
+                        &lt;!&ndash; // &ndash;&gt;
+                        <div class="items">
+                            <a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/1/5/64/67/2067645104_0_300.jpg"></a>
+                            <span class="itemtxt">
+                                <span class="goods_name">타미힐피거 원피스 타미힐피거 원피스 타미힐피거 원피스 타미힐피거 원피스 타미힐피거 원피스 타미힐피거 원피스</span>
+                                <span class="price">&nbsp;</span>
+
+                                <a href="#" class="buy">알림톡 신청</a>
+                            </span>
+                        </div>
+                        &lt;!&ndash; // &ndash;&gt;
+                        <div class="items">
+                            <a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/2/9/14/65/2065149228_0_300.jpg"></a>
+                            <span class="itemtxt">
+                                <span class="goods_name">타미힐피거 원피스/셔츠팬츠1</span>
+                                <span class="price">혜택가 <strong>45,000</strong>원</span>
+
+                                <a href="#" class="buy">구매하기</a>
+                            </span>
+                        </div>
+                        &lt;!&ndash; // &ndash;&gt;
+                        <div class="items">
+                            <a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/1/5/64/67/2067645104_0_300.jpg"></a>
+                            <span class="itemtxt">
+                                <span class="goods_name">타미힐피거 원피스/셔츠팬츠1</span>
+                                <span class="price">혜택가 <strong>45,000</strong>원</span>
+
+                                <a href="#" class="buy">구매하기</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            &lt;!&ndash; //리스트 &ndash;&gt;
+
+            &lt;!&ndash; 자세히 &ndash;&gt;
+            <div class="itemDetailScrollWrap">
+                &lt;!&ndash; 샘플 &ndash;&gt;
+                <div><p><img src="https://imagessl.hyundaihmall.com/CO/EDITOR/20180822/161607934/7rwv7.jpg"></p> <p>&nbsp;</p> <p><img src="https://imagessl.hyundaihmall.com/CO/EDITOR/20180822/161615181/g7f3y.jpg"></p> <p>&nbsp;</p> <p><img src="https://imagessl.hyundaihmall.com/CO/EDITOR/20180822/161625983/u916x.jpg"></p> <p>&nbsp;</p> <p><img src="https://imagessl.hyundaihmall.com/CO/EDITOR/20180822/161655173/5ehy6.jpg"></p> <p>&nbsp;</p> <p>&nbsp;</p> <dt>구성</dt> <dd>&lt; 12개월="" 구독=""&gt;&gt; <br>* 구성 : 12개월 (시작 월령부터 총 12번 배송) <br> ★ 월 6종 x 12개월동안 배송 <br> <br>&lt; 구성="" 상세=""&gt;&gt; <br>- 월 6종 / 매월 제공 (총 72종) <br>① 호비랑 나랑 (마음책) : 총 12구성 <br>② 호비랑 나랑 (생각책) : 총 12구성 <br>③ 마이토이(교구) : 총 12구성 <br>④ 그림책(보드북) : 총 12구성 <br>⑤ 부모가이드 : 총 12구성 <br>⑥ 놀이극장(콘텐츠다운로드) : 총 12구성 <br></dd> <dt>특징</dt> <dd>포장상태(비닐랩핑된 개별포장여부) : 개별 비닐 랩핑 <br>부분구매가능여부 :부분구매 불가능 <br>도서타입(양장본,펼침북,사운드북) : 양장본,펼침북 <br>사용연령 : 생후 13개월~36개월 <br>시리즈 목록 : 놀이그림책, 마이토이,부모가이드,별책,영상물(다운로드) <br></dd> <dt>배송/교환/환불 AS유의사항</dt> <dd>1. 7개호 이상 수령 후, 구독 해지 : 44,000원X구독개월수 <br>2. 1~6개호 수령 후, 구독 해지 : (44,000원X구독개월수)+사은품 위약금 (사은품 X 80%~30%) <br>※ 해지시 1개월 분 가격은 정상가 기준(월 44,000원)으로 산정됩니다. <br>※ 사은품 가격 <br>○호비손인형(15년 발주분) : 15,000원 <br>○호비손인형(17년 발주분) : 15,000원 <br>○호비캐릭터상 : 25,000원 <br>○ABC라디오 : 17,000원 <br>○호비붕붕카 : 50,000원 <br>○호비와 친구들 : 38,000원 <br>○호비 인형 베개 : 13,500원 <br>○호비 배낭 물총 : 15,000원 <br>○호비와 랄라 유아변기 : 45,000원</dd> <dt></dt> <dd></dd> </div>
+                &lt;!&ndash; //샘플 &ndash;&gt;
+            </div>
+            &lt;!&ndash; //자세히 &ndash;&gt;
+            &lt;!&ndash; //상품보기 &ndash;&gt;
+        </div>-->
+        
+        <!-- 상품보기 tobe버전 디자인 적용 --> 
+        <div class="mblLive-prdList">
+            <h3 class="title"><span class="txt">상품보기</span> <a href="#" class="cross">닫기</a></h3>
+            <div class="itemScrollWrap">
+                <div class="itemWrap">
+                    <div class="product-list exhibition">
+                        <div class="pdwrap pdgrid">
+                            <div class="pdlist-wrap">
+                                <figure class="pdthumb">
+                                    <a href="javascript:;">
+                                        <div class="thumb">
+                                            <img src="//imagedev.hmall.com/m/img/pd/sample/img-thum01-2x.jpg" alt="[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종">
+                                        </div>
+                                    </a>
+                                    <figcaption>
+                                        <a href="javascript:;">
+                                            <div class="pdname" aria-label="제품명">헤드스파 트리트먼트 더 프리미엄 패키지 트리트먼트 더 프리미엄 트리트먼트 더 프리미엄</div>
+                                            <div class="pdprice">
+                                                <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                                    <ins class="discount" aria-label="할인가"><em>999,999,999</em><b>원</b></ins>
+                                                    <em class="rate" aria-label="할인율">50<i>%</i></em>
+                                                    <del class="normal" aria-label="정상가"><em>999,999,999</em><b>원</b></del>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="pdinfo">
+                                            <div class="benefits">
+                                                <span class="flag">
+                                                    <em>TV상품</em>
+                                                </span>
+                                                <span>999,999P</span>
+                                                <span>무12</span>
+                                                <span>무료배송</span>
+                                            </div>
+                                            <div class="pdfunc">
+                                                <span class="like-count"><em>4.5</em><b>(100)</b></span>
+                                                <span class="alimlike">
+                                                    <a href="javascript:;" class="btn btn-alim"><i class="icon"></i><span class="hiding">알리미</span></a>
+                                                    <a href="javascript:;" class="btn btn-like"><i class="icon heart"></i><span class="hiding">찜</span></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </figcaption>
+                                    <button class="btn btn-linered sm"><span>알림톡 신청</span></button>
+                                    <div class="btngroup btnlen2">
+                                        <button class="btn btn-linelgray sm"><span>10% 적립</span></button>
+                                        <button class="btn btn-linelgray sm"><span>5% 적립</span></button>
+                                    </div>
+                                </figure>
+                                <figure class="pdthumb">
+                                    <a href="javascript:;">
+                                        <div class="thumb">
+                                            <img src="//imagedev.hmall.com/m/img/pd/sample/img-thum01-2x.jpg" alt="[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종">
+                                        </div>
+                                    </a>
+                                    <figcaption>
+                                        <a href="javascript:;">
+                                            <div class="pdname" aria-label="제품명">헤드스파 트리트먼트 더 프리미엄 패키지 트리트먼트 더 프리미엄 트리트먼트 더 프리미엄</div>
+                                            <div class="pdprice">
+                                                <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                                    <ins class="discount" aria-label="할인가"><em>999,999,999</em><b>원</b></ins>
+                                                    <em class="rate" aria-label="할인율">50<i>%</i></em>
+                                                    <del class="normal" aria-label="정상가"><em>999,999,999</em><b>원</b></del>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="pdinfo">
+                                            <div class="benefits">
+                                                <span class="flag">
+                                                    <em>TV상품</em>
+                                                </span>
+                                                <span>999,999P</span>
+                                                <span>무12</span>
+                                                <span>무료배송</span>
+                                            </div>
+                                            <div class="pdfunc">
+                                                <span class="like-count"><em>4.5</em><b>(100)</b></span>
+                                                <span class="alimlike">
+                                                    <a href="javascript:;" class="btn btn-alim"><i class="icon"></i><span class="hiding">알리미</span></a>
+                                                    <a href="javascript:;" class="btn btn-like"><i class="icon heart"></i><span class="hiding">찜</span></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </figcaption>
+                                    <button class="btn btn-linered sm"><span>구매하기</span></button>
+                                    <div class="btngroup btnlen1">
+                                        <button class="btn btn-linelgray sm"><span>10% 적립</span></button>
+                                    </div>
+                                </figure>
+                                <figure class="pdthumb">
+                                    <a href="javascript:;">
+                                        <div class="thumb">
+                                            <img src="//imagedev.hmall.com/m/img/pd/sample/img-thum01-2x.jpg" alt="[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종">
+                                        </div>
+                                    </a>
+                                    <figcaption>
+                                        <a href="javascript:;">
+                                            <div class="pdname" aria-label="제품명">헤드스파 트리트먼트 더 프리미엄 패키지 트리트먼트 더 프리미엄 트리트먼트 더 프리미엄</div>
+                                            <div class="pdprice">
+                                                <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                                    <ins class="discount" aria-label="할인가"><em>999,999,999</em><b>원</b></ins>
+                                                    <em class="rate" aria-label="할인율">50<i>%</i></em>
+                                                    <del class="normal" aria-label="정상가"><em>999,999,999</em><b>원</b></del>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="pdinfo">
+                                            <div class="benefits">
+                                                <span class="flag">
+                                                    <em>TV상품</em>
+                                                </span>
+                                                <span>999,999P</span>
+                                                <span>무12</span>
+                                                <span>무료배송</span>
+                                            </div>
+                                            <div class="pdfunc">
+                                                <span class="like-count"><em>4.5</em><b>(100)</b></span>
+                                                <span class="alimlike">
+                                                    <a href="javascript:;" class="btn btn-alim"><i class="icon"></i><span class="hiding">알리미</span></a>
+                                                    <a href="javascript:;" class="btn btn-like"><i class="icon heart"></i><span class="hiding">찜</span></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </figcaption>
+                                    <button class="btn btn-linered sm"><span>알림톡 신청</span></button>
+                                    <div class="btngroup btnlen2">
+                                        <button class="btn btn-linelgray sm"><span>10% 적립</span></button>
+                                        <button class="btn btn-linelgray sm"><span>5% 적립</span></button>
+                                    </div>
+                                </figure>
+                                <figure class="pdthumb">
+                                    <a href="javascript:;">
+                                        <div class="thumb">
+                                            <img src="//imagedev.hmall.com/m/img/pd/sample/img-thum01-2x.jpg" alt="[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종">
+                                        </div>
+                                    </a>
+                                    <figcaption>
+                                        <a href="javascript:;">
+                                            <div class="pdname" aria-label="제품명">헤드스파 트리트먼트 더 프리미엄 패키지 트리트먼트 더 프리미엄 트리트먼트 더 프리미엄</div>
+                                            <div class="pdprice">
+                                                <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                                    <ins class="discount" aria-label="할인가"><em>999,999,999</em><b>원</b></ins>
+                                                    <em class="rate" aria-label="할인율">50<i>%</i></em>
+                                                    <del class="normal" aria-label="정상가"><em>999,999,999</em><b>원</b></del>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="pdinfo">
+                                            <div class="benefits">
+                                                <span class="flag">
+                                                    <em>TV상품</em>
+                                                </span>
+                                                <span>999,999P</span>
+                                                <span>무12</span>
+                                                <span>무료배송</span>
+                                            </div>
+                                            <div class="pdfunc">
+                                                <span class="like-count"><em>4.5</em><b>(100)</b></span>
+                                                <span class="alimlike">
+                                                    <a href="javascript:;" class="btn btn-alim"><i class="icon"></i><span class="hiding">알리미</span></a>
+                                                    <a href="javascript:;" class="btn btn-like"><i class="icon heart"></i><span class="hiding">찜</span></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </figcaption>
+                                    <button class="btn btn-linered sm"><span>구매하기</span></button>
+                                    <div class="btngroup btnlen1">
+                                        <button class="btn btn-linelgray sm"><span>10% 적립</span></button>
+                                    </div>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 상품보기 tobe버전 디자인 적용 --> 
+    </div>
+    <!-- //채팅 메세지 & 메세지 입력 박스 -->
+    
+</div>
+
+<script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/hmall.video.js"></script>
+<script type="text/javascript" src="https://imagessl.hyundaihmall.com/mo/js/js_5.0/sec-mblLive.js"></script> <!-- mbl-prj -->
+
+<script type="text/javascript">
+    // 풀스크린 & 다시보기 & 채팅 유무 테스트 --------------------------------------------
+    if(location.href.indexOf("f=y") > 0){
+        $("#mblLive").addClass("_fullscreen");
+    }
+
+    if(location.href.indexOf("r=y") > 0){
+        $("#mblLive").addClass("_replay");
+    }
+
+    if(location.href.indexOf("c=n") > 0){
+        $("#mblLive").addClass("_nochat");
+    }
+
+    if(location.href.indexOf("c=y") > 0){
+        $("#mblLive").addClass("_chat");
+    }
+    // 풀스크린 & 다시보기 & 채팅 유무 테스트 --------------------------------------------
+
+    // @init
+    mobileLiveChat.initMblLive();
+
+    // 공유하기
+    $(document).on("click", ".mblLiveWrap #btn_sns", function() {
+        $(".dimScreen").show();
+        $(".mblLiveWrap .shareFloat").addClass("_active");
+
+        return false;
+    });
+
+    $(document).on("click", ".dimScreen, .shareCancel", function(){
+        $(".dimScreen").hide();
+        $(".mblLiveWrap .shareFloat").removeClass("_active");
+
+        return false;
+    });
+
+    // @액션
+    function customerActions(el, action){
+        if(action == "notReopen"){
+            console.log("@다시 열지 않음");
+        } else if(action == "ban"){
+            console.log("@강제 퇴장");
+        } else if(action == "linkToApp") {
+            console.log("@앱으로 연결 - 스토어 구분");
+        } else if(action == "nickname-duplicate"){
+            console.log("@닉네임 중복 확인");
+            console.log("@설정된 닉네임 : " + $(el).find("#new-nickname").val());
+
+            // error-msg : require (필수조건)
+            $(el).find(".error-msg, .require").addClass("_visible");
+
+            // error-msg : already (이미 존재하는 닉네임)
+            $(el).find(".error-msg, .already").addClass("_visible");
+        } else if(action == "nickname-confirm"){
+            console.log("@닉네임 설정 확인");
+            console.log("@설정된 닉네임 : " + $(el).find("#new-nickname").val());
+        } else if(action == "like"){
+            console.log("@좋아요");
+
+            //$(el).children("i").addClass("_ok");
+            $(el).children("i").removeClass("_ok");
+        } else if(action == "purchase"){
+            console.log("@구매인증");
+
+            $(el).children("i").addClass("_ok");
+            //$(el).children("i").removeClass("_ok");
+        }
+
+        return false;
+    }
+
+    // @구매혜택 슬라이드
+    function purchaseBenefits(){
+        var element = '<li>';
+        element += '<img src="http://placehold.it/640x330/111/fff/?text=1" alt="">';
+        element += '<strong class="title">111 생방송 중 구매시 사은품 지급</strong>';
+        element += '<span class="sub-title">500명 한정</span>';
+        element += '</li>';
+        element += '<li>';
+        element += '<img src="http://placehold.it/640x330/111/fff/?text=2" alt="">';
+        element += '<strong class="title">222 생방송 중 구매시 사은품 지급</strong>';
+        element += '<span class="sub-title">500명 한정</span>';
+        element += '</li>';
+
+        window.mobileLiveChat.benefitview.init(element);
+    }
+    purchaseBenefits();
+
+    // @하단 상품 미리보기
+    function prdPreview(){
+        var element = '<a href="#">';
+        element += '<span class="thumb"><img src="https://imagessl.hyundaihmall.com/static/8/1/03/73/2073031807_0_300.jpg" alt=""></span>';
+        element += '<span class="txt">';
+        element += '<span class="name">[감동]블랙라벨 고당도 햇 감귤 소과 3kg(2개구매시 1kg 추가발송)</span>';
+        element += '<span class="view">모든 상품 보기 <em>&gt;</em></span>';
+        element += '</span>';
+        element += '</a>';
+
+        window.mobileLiveChat.moreitems.appendElement(element, "preview");
+    }
+    prdPreview();
+
+    // @하단 상품보기 선택 후 리스트
+    function prdList(){
+        var element = '<div class="pinter-left">';
+        element += '<div class="items">';
+        element += '<a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/8/0/37/25/2025370821_0_300.jpg"></a>';
+        element += '<span class="itemtxt">';
+        element += '<span class="goods_name">타미힐피거 원피스</span>';
+        element += '<span class="price">&nbsp;</span>';
+        element += '<a href="#" class="buy">알림톡 신청</a>';
+        element += '<div class="benefit">';
+        element += '<a href="#"><em>10%</em> 적립</a>';
+        element += '<a href="#"><em>5%</em> 적립</a>';
+        element += '</div>';
+        element += '</span>';
+        element += '</div>';
+        element += '<div class="items">';
+        element += '<a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/8/0/37/25/2025370821_0_300.jpg"></a>';
+        element += '<span class="itemtxt">';
+        element += '<span class="goods_name">타미힐피거 원피스</span>';
+        element += '<span class="price">&nbsp;</span>';
+        element += '<a href="#" class="buy">알림톡 신청</a>';
+        element += '<div class="benefit">';
+        element += '<a href="#"><em>10%</em> 적립</a>';
+        element += '</div>';
+        element += '</span>';
+        element += '</div>';
+        element += '<div class="items">';
+        element += '<a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/8/0/37/25/2025370821_0_300.jpg"></a>';
+        element += '<span class="itemtxt">';
+        element += '<span class="goods_name">타미힐피거 원피스</span>';
+        element += '<span class="price">&nbsp;</span>';
+        element += '<a href="#" class="buy">알림톡 신청</a>';
+        element += '<div class="benefit">';
+        element += '<a href="#"><em>5%</em> 적립</a>';
+        element += '</div>';
+        element += '</span>';
+        element += '</div>';
+        element += '</div>';
+        element += '<div class="pinter-right">';
+        element += '<div class="items">';
+        element += '<a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/8/0/37/25/2025370821_0_300.jpg"></a>';
+        element += '<span class="itemtxt">';
+        element += '<span class="goods_name">타미힐피거 원피스</span>';
+        element += '<span class="price">&nbsp;</span>';
+        element += '<a href="#" class="buy">알림톡 신청</a>';
+        element += '</span>';
+        element += '</div>';
+        element += '<div class="items">';
+        element += '<a href="#" class="detail"><img src="https://imagessl.hyundaihmall.com/static/8/0/37/25/2025370821_0_300.jpg"></a>';
+        element += '<span class="itemtxt">';
+        element += '<span class="goods_name">타미힐피거 원피스</span>';
+        element += '<span class="price">&nbsp;</span>';
+        element += '<a href="#" class="buy">알림톡 신청</a>';
+        element += '<div class="benefit">';
+        element += '<a href="#"><em>10%</em> 적립</a>';cc
+        element += '<a href="#"><em>5%</em> 적립</a>';
+        element += '</div>';
+        element += '</span>';
+        element += '</div>';
+        element += '</div>';
+
+        window.mobileLiveChat.moreitems.appendElement(element, "list");
+    }
+    // prdList();
+
+    // @하단 상품보기 - 자세히보기
+    function prdDetailView(){
+        var element = '<div><p><img src="https://imagessl.hyundaihmall.com/CO/EDITOR/20180822/161607934/7rwv7.jpg"></p> <p>&nbsp;</p> <p><img src="https://imagessl.hyundaihmall.com/CO/EDITOR/20180822/161615181/g7f3y.jpg"></p> <p>&nbsp;</p> <p><img src="https://imagessl.hyundaihmall.com/CO/EDITOR/20180822/161625983/u916x.jpg"></p> <p>&nbsp;</p> <p><img src="https://imagessl.hyundaihmall.com/CO/EDITOR/20180822/161655173/5ehy6.jpg"></p> <p>&nbsp;</p> <p>&nbsp;</p> <dt>구성</dt> <dd>&lt; 12개월="" 구독=""&gt;&gt; <br>* 구성 : 12개월 (시작 월령부터 총 12번 배송) <br> ★ 월 6종 x 12개월동안 배송 <br> <br>&lt; 구성="" 상세=""&gt;&gt; <br>- 월 6종 / 매월 제공 (총 72종) <br>① 호비랑 나랑 (마음책) : 총 12구성 <br>② 호비랑 나랑 (생각책) : 총 12구성 <br>③ 마이토이(교구) : 총 12구성 <br>④ 그림책(보드북) : 총 12구성 <br>⑤ 부모가이드 : 총 12구성 <br>⑥ 놀이극장(콘텐츠다운로드) : 총 12구성 <br></dd> <dt>특징</dt> <dd>포장상태(비닐랩핑된 개별포장여부) : 개별 비닐 랩핑 <br>부분구매가능여부 :부분구매 불가능 <br>도서타입(양장본,펼침북,사운드북) : 양장본,펼침북 <br>사용연령 : 생후 13개월~36개월 <br>시리즈 목록 : 놀이그림책, 마이토이,부모가이드,별책,영상물(다운로드) <br></dd> <dt>배송/교환/환불 AS유의사항</dt> <dd>1. 7개호 이상 수령 후, 구독 해지 : 44,000원X구독개월수 <br>2. 1~6개호 수령 후, 구독 해지 : (44,000원X구독개월수)+사은품 위약금 (사은품 X 80%~30%) <br>※ 해지시 1개월 분 가격은 정상가 기준(월 44,000원)으로 산정됩니다. <br>※ 사은품 가격 <br>○호비손인형(15년 발주분) : 15,000원 <br>○호비손인형(17년 발주분) : 15,000원 <br>○호비캐릭터상 : 25,000원 <br>○ABC라디오 : 17,000원 <br>○호비붕붕카 : 50,000원 <br>○호비와 친구들 : 38,000원 <br>○호비 인형 베개 : 13,500원 <br>○호비 배낭 물총 : 15,000원 <br>○호비와 랄라 유아변기 : 45,000원</dd> <dt></dt> <dd></dd> </div>';
+
+        window.mobileLiveChat.moreitems.appendElement(element, "detail");
+    }
+
+    // @테스트 - 채팅 추가 ------------------------------------------------------------------
+    var a = 1;
+    var testChat = setInterval(function(){
+        var b = [ '<li class="system" data-chatidx="'+ a +'"><span class="user-enter"><strong>고객'+ a +'</strong>님이 입장하셨습니다.</span></li>', '<li class="admin" data-chatidx="'+ a +'"><div class="messageWrap"> <em class="user">쇼라PD</em> <span class="message">구매인증 말고도 좋아진 부분 또 있는데 맞추시면 적립금 100,000원 쏩니다.</span></div></li>', '<li class="customer" data-chatidx="'+ a +'"><div class="messageWrap"> <em class="user">0sunE**2626</em> <span class="message">아이폰11 샀어요. 11월내로 온다는데 기다려져요. 빨리 주세요. 현기증 나니까요.</span></div></li>', '<li class="whisper" data-chatidx="'+ a +'"><h3 class="title"><i class="balloon"></i><span class="txt">귓속말</span></h3><div class="cornerWrap"><div class="messageWrap"> <em class="user">미녀PD</em> <span class="message"> <span class="default">{ $id$ }님 안녕하세요.</span> 문의주신 부분은 고객 게시판에 남겨주시면 처리해 드리겠습니다. 지금은 꽤 바쁘거든요?! </span></div></div></li>', '<li class="reply" data-chatidx="'+ a +'"><div class="cornerWrap"><div class="messageWrap _customer"> <em class="user">덕소두산최고**2462</em> <span class="message"> 구매인증은 어떻게 하나요? 버튼 누르면 끝이예요? 구매인증은 어떻게 하나요? 버튼 누르면 끝이예요? 구매인증은 어떻게 하나요? 버튼 누르면 끝이예요? 구매인증은 어떻게 하나요? 버튼 누르면 끝이예요? </span></div><div class="messageWrap"> <em class="user">미녀PD</em> <span class="message"> <span class="default">{ $id$ }님 안녕하세요.</span> 문의주신 부분은 고객 게시판에 남겨주시면 처리해 드리겠습니다. 지금은 꽤 바쁘거든요?! </span></div></div></li>' ];
+        a++;
+        $(".mblLive-message-innerWrap ul").append(b[Math.floor(Math.random() * b.length)]);
+
+        // @채팅 메세지 감지 메세지 하단 이동
+        window.mobileLiveChat.updateChat();
+    }, 800);
+    // @테스트 - 채팅 추가 ------------------------------------------------------------------
+</script>
+</body>
+</html>

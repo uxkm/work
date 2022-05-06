@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com/">
+<meta name="author" content="@Hmall">
+<meta name="description" content="Hmall GUIDE - 백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="Hmall GUIDE HTML5, CSS3, Responsive web design, device testing, RWD">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon/favicon.ico">
+<title>Hmall UI/UX GUIDE</title>
+<script src="../../js/jquery-3.4.1.min.js"></script>
+<script src="../../js/jquery.easing.min.js"></script>
+<script src="../../js/ukDetect.min.js"></script>
+<style>
+/* StyleGuide Layout */
+.cguide-layout{padding:15px 0;}
+.cguide-layout > .guide-title1{margin-bottom:15px;padding:0 15px;color:#333;font-size:30px;line-height:23px;letter-spacing:-1.2px;}
+.cguide-layout > .guide-title2{margin-bottom:6px;padding:0 15px;color:#333;font-size:14px;line-height:23px;letter-spacing:-0.56px;}
+.cguide-layout > .guide-box{margin-bottom:20px;padding:0 15px;}
+.cguide-layout > .guide-box.full{padding:0;}
+.cguide-layout > .guide-box .btngroup{margin-bottom:10px;}
+
+
+
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,table,th,td,input,select,textarea,button,label,a,span,strong,i,b,ins,del,main,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{margin:0;padding:0;font-family:'Malgun Gothic',-apple-system,'droid sans fallback','Apple SD Gothic Neo','AppleGothic',sans-serif;color:#666;font-size:14px;line-height:1;font-weight:400;letter-spacing:-0.56px;vertical-align:top;word-wrap:break-word;word-break:break-all;box-sizing:border-box;}
+*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html, body{height:100%;}
+body{min-width:320px;-webkit-text-size-adjust:none;}
+fieldset, img{border:0 none;}
+img{width:100%;margin:0;padding:0;vertical-align:middle;}
+ul, ol, menu, li{list-style:none;}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after, q:before, q:after {content:'';content:none;}
+label{vertical-align:middle;}
+input, select, textarea, button{font-size:100%;vertical-align:middle;}
+button{border:0 none;background-color:transparent;cursor:pointer;}
+table{width:100%;border-collapse:collapse;border-spacing:0;}
+span, i, b, ins, del, strong, label{vertical-align:middle;}
+a{text-decoration:none;}
+a:hover,a:active,a:visited,a:focus{text-decoration:none;}
+address,caption,cite,code,dfn,em,var,i,ins{font-style:normal;font-weight:normal;}
+iframe{width:100%;height:100%;margin:0;border:0;}
+/* WebKit Scrollbar Style */
+.x64 *::-webkit-scrollbar{width:6px;height:4px;} 
+.x64 *::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);} 
+.x64 *::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);}
+/* Accessbility Text Hide */
+.hiding{overflow:hidden;position:absolute;width:0;height:0;line-height:1;}
+/* Skip Navigation */
+.nav-skip{position:absolute;top:-1px;width:100%;text-align:center;}
+.nav-skip a{overflow:hidden;position:absolute;width:0;height:0;line-height:1;}
+.nav-skip a:focus{display:block;z-index:10;width:100%;height:auto;padding:10px;background:#222;color:#fff;}
+/* Border Color & Border Radius & Background Color & Text Color */
+.bdr0{border-radius:0!important;}
+.bdr3{border-radius:3px!important;}
+.bdr4{border-radius:4px!important;}
+.bdc-f14a38{border-color:#f14a38!important;}
+.bdc-ff5340{border-color:#ff5340!important;}
+.bdc-666{border-color:#666!important;}
+.bdc-ccc{border-color:#ccc!important;}
+.bdc-ddd{border-color:#ccc!important;}
+.bgc-ff5340{background-color:#ff5340!important;}
+.bgc-f4f4f4{background-color:#f4f4f4!important;}
+.bgc-f8f8f8{background-color:#f8f8f8!important;}
+.bgc-fff{background-color:#fff!important;}
+.color-ff5340{color:#ff5340!important;}
+.color-000{color:#000!important;}
+.color-111{color:#111!important;}
+.color-333{color:#333!important;}
+.color-666{color:#666!important;}
+.color-999{color:#999!important;}
+.color-ddd{color:#ddd!important;}
+.color-eee{color:#eee!important;}
+/* Typo Graphy Title */
+.large-title,
+.middle-title,
+.major-headings{color:#333;line-height:24px;}
+.large-title{font-size:18px;letter-spacing:-0.72px;}
+.middle-title,
+.major-headings{font-size:16px;letter-spacing:-0.64px;}
+.large-title,
+.middle-title{font-weight:700;}
+.major-headings{font-weight:400;}
+.subheadings{color:#333;font-size:15px;line-height:21px;font-weight:700;letter-spacing:-0.6px;}
+.minor-headings{color:#333;font-size:14px;line-height:20px;font-weight:700;letter-spacing:-0.56px;}
+/* Typo Graphy Contents  */
+.ctypo1{color:#666;font-size:15px;line-height:20px;letter-spacing:-0.6px;}
+.ctypo2{color:#666;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+.ctypo3{color:#999;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+/* Typo Graphy Contents Abstract */
+.abstract1,
+.abstract2{font-size:13px;line-height:19px;letter-spacing:-0.52px;}
+.abstract1{color:#666;}
+.abstract2{color:#999;}
+/* Display */
+.block{display:block;}
+.inline-block{display:inline-block;}
+.inline{display:inline;}
+.flex{display:flex;}
+.inline-flex{display:inline-flex;}
+/* Position */
+.sta{position:static;}
+.rel{position:relative;}
+.fix{position:fixed;}
+.abs{position:absolute;}
+/* Icon */
+.icon{display:inline-block;}
+/* Button Common Style */
+button{border:1px solid transparent;outline:0;cursor:pointer;-webkit-appearance:button;-moz-appearance:none;-webkit-appearance:none;appearance:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;}
+.btn{display:flex;justify-content:center;align-items:center;position:relative;height:40px;padding:0 14px;border:1px solid transparent;background-color:#fff;color:#898b92;line-height:1;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;}
+.btn .icon{display:inline-block;background-repeat:no-repeat;line-height:1;vertical-align:middle;}
+.btn span{display:inline-block;font-size:15px;line-height:1;font-weight:700;letter-spacing:-0.6px;vertical-align:middle;}
+.btn .icon + span{margin-left:5px;color:#333;font-size:16px;letter-spacing:-0.64px;}
+.btn[disabled]{border-color:#eee;background-color:#f8f8f8;cursor:not-allowed;}
+.btn[disabled] span{color:#aaa;}
+/* Button Group */
+.btngroup{display:flex;justify-content:space-between;position:relative;}
+/* Button Group Default 그룹안의 버튼이 1개 일 경우 */
+.btngroup.btnlen1 .btn{width:100%;min-width:auto;height:40px;border-radius:3px;}
+/* Button Group Default 그룹안의 버튼이 2개 일 경우 */
+.btngroup.btnlen2 .btn{width:calc((100% - 9px)/2);}
+/* Button Group 큰 사이즈(X-Large) 그룹안의 버튼이 2개 일 경우 */
+.btngroup.btnlen2 .btn.xl{width:50%;border-radius:3px 0 0 3px;border-right:0;}
+.btngroup.btnlen2 .btn.xl + .btn.xl{border-radius:0 3px 3px 0;}
+/* Button Group 큰 사이즈(Small) 그룹안의 버튼이 2개 일 경우 */
+.btngroup.btnlen3 .btn.sm{min-width:113px;}
+/* Bottom Tabbar Button */
+.bgfixed{padding:15px 15px 24px;box-shadow:0 -3px 8px 0 rgba(0, 0, 0, 0.05);background-color:#ffffff;}
+.bgfixed::before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:1px;background:#eee;}
+.bgfixed .btn{width:100%;min-width:auto;height:50px;border-radius:4px;border:1px solid #f14a38;background-color:#ff5340;}
+.bgfixed .btn span{color:#fff;font-size:18px;letter-spacing:-0.72px;}
+.bgfixed .btn-cart{background-color:#fff;}
+.bgfixed .btn-cart span{color:#ff5340;}
+.bgfixed.btnlen1{padding-right:0;padding-left:0;box-shadow:none;}
+.bgfixed.btnlen1::before{display:none;}
+.bgfixed.btnlen1 > .btn{width:100%;height:50px;border-radius:0;}
+.bgfixed.btnlen1 > .btn span{font-size:16px;font-weight:700;}
+.bgfixed.btnlen2 > .btn{width:calc((100% - 5px)/2);}
+.bgfixed.btnlen2 > .btn span{font-weight:400;}
+/* 유형별 그룹 버튼 정의 */
+.btngroup.flex{display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;}
+.btngroup.flex .btn + .btn{margin-left:3px;}
+.btngroup.sta{position:static;}
+.btngroup.rel{position:relative;}
+.btngroup.fix{position:fixed;right:0;bottom:0;left:0;padding:5px;border-top:1px solid #e2e2e2;background:#fff;z-index:10;}
+.btngroup.abs{position:absolute;}
+.btngroup.column2{display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;}
+.btngroup.column2 .btn{width:50%;border:1px solid #f4f4f4;}
+.btngroup.column2 .btn + .btn{border-left:1px solid #f4f4f4;}
+.btngroup.column3 .btn{width:33.33%;}
+.btngroup.column3 .btn + .btn{border-left:1px solid #f4f4f4;}
+/* 기본 유형별 버튼 정의 */
+.btn-default{border:0;background-color:#ff5340;}
+.btn-default span{color:#fff;}
+.btn-black{border:0;background-color:#333;}
+.btn-black span{color:#fff;}
+.btn-blackr{border:0;background-color:#333;}
+.btn-blackr span{color:#fff;}
+.btn-red{border:0;background-color:#ff5340;}
+.btn-red span{color:#fff;}
+.btn-redr{border:0;background-color:#ff5340;}
+.btn-redr span{color:#fff;}
+.btn-round{border-color:#ddd;border-radius:13px;}
+.btn-round span{color:#666;}
+.btn-linered{border-color:#ff5340;}
+.btn-linered span{color:#ff5340;}
+.btn-lineblack{border-color:#666;}
+.btn-lineblack span{color:#333;}
+.btn-linegray{border-color:#ccc;}
+.btn-linegray span{color:#333;}
+.btn-linelgray{border-color:#ddd;}
+.btn-linelgray span{color:#666;}
+/* 사이즈 큰 경우(X-Large) 유형별 버튼 정의 */
+.xl,
+.btngroup.btnlen1 .xl,
+.btngroup.btnlen2 .xl,
+.btngroup.btnlen3 .xl{height:50px;}
+.btn-default.xl span,
+.btn-linered.xl span,
+.btn-lineblack.xl span,
+.btn-linegray.xl span,
+.btn-linelgray.xl span{font-size:16px;letter-spacing:-0.64px;}
+/* 사이즈 작은 경우(Small) 유형별 버튼 정의 */
+.md,
+.btngroup.btnlen1 .md,
+.btngroup.btnlen2 .md,
+.btngroup.btnlen3 .md{width:80px;height:40px;padding:0 14px;}
+.btn-default.md span,
+.btn-linered.md span,
+.btn-lineblack.md span,
+.btn-linegray.md span,
+.btn-linelgray.md span{font-size:14px;letter-spacing:-0.56px;}
+.sm,
+.btngroup.btnlen1 .sm,
+.btngroup.btnlen2 .sm,
+.btngroup.btnlen3 .sm{min-width:109px;height:30px;padding:0 9px;}
+.btn-default.sm,
+.btngroup.btnlen1 .btn-default.sm,
+.btngroup.btnlen2 .btn-default.sm,
+.btngroup.btnlen3 .btn-default.sm{padding:0 10px;}
+.btn-default.sm span,
+.btn-linered.sm span,
+.btn-lineblack.sm span,
+.btn-linegray.sm span,
+.btn-linelgray.sm span{font-size:14px;letter-spacing:-0.56px;}
+/* 사이즈 더 작은 경우(Small X-Size) 유형별 버튼 정의 */
+.xs,
+.btngroup.btnlen1 .xs,
+.btngroup.btnlen2 .xs,
+.btngroup.btnlen3 .xs{height:24px;}
+.btn-black.xs{padding:0 5px;}
+.btn-round.xs{padding:0 9px;}
+.btn-default.xs span,
+.btn-black.xs span,
+.btn-round.xs span,
+.btn-linered.xs span,
+.btn-lineblack.xs span,
+.btn-linegray.xs span,
+.btn-linelgray.xs span{font-size:13px;letter-spacing:-0.52px;}
+/* 유형별 버튼 정의 */
+.btn-agree{}
+.btn-disagree{}
+.btn-return{}
+.btn-return .icon{background-position:0 -48px;background-color:#fff;}
+.btn-topmove{}
+.btn-topmove .icon{background:#fff;overflow:hidden;}
+.btn-topmove .icon:before{content:"";position:absolute;top:17px;left:50%;display:block;width:15px;height:15px;border-top:1px solid #000;border-left:1px solid #000;transform:translate(-50%, -50%) rotate(45deg);-webkit-transform:translate(-50%, -50%) rotate(45deg);-moz-transform:translate(-50%, -50%) rotate(45deg);-ms-transform:translate(-50%, -50%) rotate(45deg);-o-transform:translate(-50%, -50%) rotate(45deg);}
+.btn-fontminus,
+.btn-fontplus{padding:0;}
+.btn-login{}
+.btn-logout{}
+.btn-appdown{}
+.btn-set{}
+.btn-set-cancel{}
+.btn-close{}
+.btn-close .icon{background:none;}
+.btn-close .icon:before,
+.btn-close .icon:after{content:'';position:absolute;height:1px;width:20px;top:50%;left:50%;margin:-1px 0 0 -10px;background:#999;}
+.btn-close .icon:before{border-radius:5px;-webkit-transform:rotate(45deg); -moz-transform:rotate(45deg); -ms-transform:rotate(45deg); -o-transform:rotate(45deg); transform:rotate(45deg); -webkit-border-radius:5px; -moz-border-radius:5px; -ms-border-radius:5px; -o-border-radius:5px; }
+.btn-close .icon:after{border-radius:5px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);}
+.btn-close span{color:transparent;}
+.btn-cucenter{}
+.btn-lock{}
+.btn-unlock{}
+.btn-applink{background:#a2a2a2;}
+.btn-applink span{color:#fff;font-size:18px;}
+.btn-payment{}/* 결제하기 */
+.btn-cart{background:#a2a2a2;}/* 장바구니 */
+.btn-cart span{color:#fff;font-size:18px;}
+.btn-purchase{min-width:50%;background:#ff5340;}/* 구매하기 */
+.btn-purchase span{color:#fff;font-size:18px;}
+.btn-present{width:15%;max-width:50px;background:#bbb;}
+.btn-present .icon{background-position:0 -74px;}
+.btn-home{}
+.btn-home .icon{background-position:-126px 0;}
+.btn-back{}
+.btn-back .icon{background-position:0 -48px;}
+.btn-search{}
+.btn-search .icon{background-position:-56px -48px;}
+.btn-like{}
+.btn-like .icon{position:static;width:10px;height:10px;margin:5px 10px 0 0;background:#999;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);}
+.btn-like .icon:before,
+.btn-like .icon:after{position:absolute;width:10px;height:10px;content:'';-webkit-border-radius:50%;-moz-border-radius:50%;-o-border-radius:50%;border-radius:50%;background-color:#999;}
+.btn-like .icon:before{bottom:0px;left:-5px;}
+.btn-like .icon:after{top:-5px;right:0px;}
+.btn-share{}
+.btn-share .icon{display:none;}
+.btn-coupon{}
+.btn-coupon .icon{display:none;}
+.btn-dbcheck{}
+.btn-dbcheck span{}
+/* Icon 유형별 정의 */
+.ico-phonersa .icon{width:18px;height:18px;background:url(/m/img/co/icon/ico-phonersa-2x.png) no-repeat 50% 50%;background-size:18px 18px;}
+.ico-clearabled .icon{width:20px;height:20px;background:url(/m/img/co/icon/ico-circle-delete-2x.png) no-repeat 50% 50%;background-size:20px 20px;}
+/* Show Detail & View More */
+.btn-showdetail{width:100%;padding:0 15px;border-top:1px solid #f2f2f2;border-bottom:1px solid #f2f2f2;background:#fff;text-align:center;}
+.btn-showdetail span{margin-right:5px;color:#999;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+.btn-showdetail .icon{width:13px;height:7px;background:url(/m/img/co/icon/ico-arrow-bottom-type4-2x.png) no-repeat 50% 50%;background-size:13px 7px;}
+.btn-viewmore{width:100%;padding:10px;border-top:1px solid #f2f2f2;border-bottom:1px solid #f2f2f2;background:#fff;text-align:center;}
+.btn-viewmore span{margin-right:5px;color:#999;font-size:15px;line-height:19px;letter-spacing:-0.6px;}
+.btn-viewmore .icon{width:7px;height:13px;background:url(/m/img/co/icon/ico-arrow-right-type4-2x.png) no-repeat 50% 50%;background-size:7px 13px;}
+/* Link Style */
+.alink{display:flex;position:relative;padding:15px;background:#fff;color:#333;font-size:16px;font-weight:700;}
+.alink span{display:inline-block;color:inherit;font-size:inherit;font-weight:inherit;line-height:16px;letter-spacing:-0.64px;}
+.alink .icon{display:inline-block;position:absolute;top:50%;right:15px;width:9px;height:15px;background:url(/m/img/co/icon/ico-arrow-right-type1-2x.png) no-repeat 50% 50%;background-size:9px 15px;transform:translateY(-50%);}
+
+</style>
+</head>
+<body>
+<div class="section cguide-layout" role="contentinfo" aria-label="Button Style">
+    <h2 class="guide-title1" style="padding:0 15px;">BUTTON</h2>
+    <h3 class="guide-title2" style="padding:0 15px;">하단바 버튼</h3>
+    <p style="padding:0 15px;color:#ff5340;font-size:14px;line-height:20px;letter-spacing:-0.56px;">
+        구매하기 버튼은 레이아웃의 우측으로 정렬<br>
+        따라다니는 하단바 - 1개일 경우 full 버튼, 2개 이상일 경우 양쪽 여백이 있는 btn으로 구성
+    </p>
+    <div class="guide-box full">
+        <div class="btngroup bgfixed btnlen1">
+            <button class="btn btn-payment"><span>결제하기</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup bgfixed btnlen2">
+            <button class="btn btn-cart"><span>장바구니</span></button>
+            <button class="btn btn-purchase"><span>구매하기</span></button>
+        </div>
+    </div>
+    
+    <hr>
+    <hr>
+
+    <h3 class="guide-title2">Button Disabled</h3>
+    <div class="guide-box">
+        <div class="btngroup btnlen1">
+            <button class="btn btn-default" aria-disabled="true" disabled><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+    </div>
+
+    <hr>
+    <hr>
+
+    <h3 class="guide-title2">Button Default</h3>
+    <div class="guide-box">
+        <div class="btngroup btnlen1">
+            <button class="btn btn-default"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen1">
+            <button class="btn btn-linered"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen1">
+            <button class="btn btn-lineblack"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen1">
+            <button class="btn btn-linegray"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen1">
+            <button class="btn btn-linelgray"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen2">
+            <button class="btn btn-linegray"><span>버튼2</span></button>
+            <button class="btn btn-lineblack"><span>버튼1</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen1">
+            <button class="btn btn-lineblack ico-phonersa"><i class="icon"></i><span>휴대폰 인증</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup">
+            <button class="btn btn-linelgray"><span>버튼 텍스트 길이가 길 경우의 예시</span></button>
+        </div>
+    </div>
+
+    <hr>
+    <hr>
+
+    <h3 class="guide-title2">Button 사이즈 큰 경우(X-Large)</h3>
+    <div class="guide-box">
+        <div class="btngroup btnlen1">
+            <button class="btn btn-default xl"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen1">
+            <button class="btn btn-linered xl"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen1">
+            <button class="btn btn-lineblack xl"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen1">
+            <button class="btn btn-linegray xl"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen1">
+            <button class="btn btn-linelgray xl"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen2">
+            <button class="btn btn-lineblack xl"><span>버튼2</span></button>
+            <button class="btn btn-default xl"><span>버튼1</span></button>
+        </div>
+        <!-- //.btngroup -->
+    </div>
+
+    <hr>
+    <hr>
+
+    <h3 class="guide-title2">Button 사이즈 작은 경우(Small)</h3>
+    <div class="guide-box">
+        <div class="btngroup">
+            <button class="btn btn-default sm"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup">
+            <button class="btn btn-linered sm"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup">
+            <button class="btn btn-lineblack sm"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup">
+            <button class="btn btn-linegray sm"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup">
+            <button class="btn btn-linelgray sm"><span>버튼</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup btnlen3">
+            <button class="btn btn-linelgray sm"><span>버튼1</span></button>
+            <button class="btn btn-linelgray sm"><span>버튼2</span></button>
+            <button class="btn btn-linelgray sm"><span>버튼3</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <div class="btngroup"">
+            <button class="btn btn-linelgray sm"><span>버튼 텍스트 길이가 길 경우의 예시</span></button>
+        </div>
+        <div class="btngroup"">
+            <button class="btn btn-lineblack md"><span>중복 확인</span></button>
+            <button class="btn btn-lineblack md"><span>두자</span></button>
+            <button class="btn btn-lineblack md"><span>세글자</span></button>
+        </div>
+    </div>
+
+    <hr>
+    <hr>
+
+    <h3 class="guide-title2">Contents안에 사용되는 최소 작은 버튼(X-Small)</h3>
+    <div class="guide-box">
+        <div class="btngroup">
+            <button class="btn btn-black xs"><span>두자</span></button>
+            <button class="btn btn-black xs"><span>선택삭제</span></button>
+            <button class="btn btn-round xs"><span>두자</span></button>
+            <button class="btn btn-round xs"><span>상세보기</span></button>
+        </div>
+        <!-- //.btngroup -->
+    </div>
+
+    <hr>
+    <hr>
+
+    <h3 class="guide-title2">더보기/자세히 보기 버튼</h3>
+    <div class="guide-box">
+        <div class="btngroup">
+            <button class="btn btn-showdetail"><span>자세히 보기</span><i class="icon"></i></button>
+        </div>
+        <div class="btngroup">
+            <button class="btn btn-viewmore"><span>더보기</span><i class="icon"></i></button>
+        </div>
+        <!-- //.btngroup -->
+    </div>
+
+    <hr>
+    <hr>
+
+    <h3 class="guide-title2">Full Link 영역</h3>
+    <div class="guide-box">
+        <a href="#" class="alink"><span>편의점 택배</span><i class="icon"></i></a>
+    </div>
+
+</div>
+<!-- //.section -->
+			
+</body>
+</html>

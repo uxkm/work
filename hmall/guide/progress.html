@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com/">
+<meta name="author" content="@Hmall">
+<meta name="description" content="Hmall GUIDE - 백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="Hmall GUIDE HTML5, CSS3, Responsive web design, device testing, RWD">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico">
+<title>Hmall UI/UX GUIDE</title>
+<link rel="stylesheet" type="text/css" href="css/ukReset.min.css">
+<link rel="stylesheet" type="text/css" href="css/ukGuide.css">
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/ukDetect.min.js"></script> 
+<style>
+    .fix{width:100%;}
+    .fix table tr th,td {padding: 3px;}
+    .ukfixed .fix{position:fixed;bottom:0;background:#fff;}
+    .process{display:flex;justify-content:start;margin-right:5px;}
+    .process dt{display:inline-block;width:66px;}
+    .process dd{display:inline-block;}
+    .process dd *{display:inline-block;vertical-align:baseline;}
+    .process dd p:first-child{margin:0;}
+    .process dd p:first-child::before{display:none;}
+    .process dd p {padding: 5px 10px;margin-right:2px;}
+    .process dd i{margin-right:5px;}
+    .process dd em{margin-left:5px;}
+    .process dd em::after{content:"%";}
+</style>
+</head>
+<body>
+<div class="ukcsection">
+    <section class="section pad0" role="contentinfo" aria-label="퍼블리싱 진행현황" style="min-width:1400px;">
+        <h2>PC/Mobile/APP 퍼블리싱 진행현황</h2>
+        <div class="fix">
+            <table border="1" cellpadding="0" cellspacing="0"> 
+                <tr>
+                    <th colspan="2"><a href="javascript:;" onclick="UK_GUIDE.page.orderNum();">TOTAL</a></th>
+                    <td colspan="3"><a href="javascript:;" onclick="UK_GUIDE.page.sort('','');"><strong class="tot"></strong></a></td>
+                    <th colspan="2"><a href="javascript:;" onclick="UK_GUIDE.page.sort('today','','');"><strong id="today"></strong></a></td>
+                    <td colspan="7" id="todayCnt"></td>
+                </tr>
+                <tr class="mo">
+                    <th>Mobile</th>
+                </tr>
+                <tr class="pc">
+                    <th>PC</th>
+                </tr>
+                <tr class="app">
+                    <th>APP</th>
+                </tr>
+            </table>
+        </div>
+        <!-- <div class="ukcountwrap">
+            <figure class="total">
+                <figcaption>전체 진행률</figcaption>
+                <p class="ukcount">
+                    <span class="pagecount"><strong>페이지 : </strong><b>0</b><i>0</i></span>
+                    <span class="percent"><strong>진행률 : </strong><i>0</i></span>
+                </p>
+            </figure>
+            <figure class="pub1">
+                <figcaption>김대민</figcaption>
+                <p class="ukcount">
+                    <span class="pagecount"><strong>페이지 : </strong><b>0</b><i>0</i></span>
+                    <span class="percent"><strong>진행률 : </strong><i>0</i></span>
+                </p>
+            </figure>
+            <figure class="pub2">
+                <figcaption>조윤호</figcaption>
+                <p class="ukcount">
+                    <span class="pagecount"><strong>페이지 : </strong><b>0</b><i>0</i></span>
+                    <span class="percent"><strong>진행률 : </strong><i>0</i></span>
+                </p>
+            </figure>
+            <figure class="pub3">
+                <figcaption>박윤미</figcaption>
+                <p class="ukcount">
+                    <span class="pagecount"><strong>페이지 : </strong><b>0</b><i>0</i></span>
+                    <span class="percent"><strong>진행률 : </strong><i>0</i></span>
+                </p>
+            </figure>
+            <figure class="pub4">
+                <figcaption>조아라</figcaption>
+                <p class="ukcount">
+                    <span class="pagecount"><strong>페이지 : </strong><b>0</b><i>0</i></span>
+                    <span class="percent"><strong>진행률 : </strong><i>0</i></span>
+                </p>
+            </figure>
+        </div> -->
+        <div id="filterd"></div>
+        <div class="uktable wmin1400">
+            <table id="table" class="tablesorter">
+            <colgroup>
+                <col style="width:50px;"><!-- 구분 -->
+                <col style="width:50px;"><!-- 구분 -->
+                <col style="width:100px;"><!-- 분류0 -->
+                <col style="width:100px;"><!--  분류1 -->
+                <col style="width:100px;"><!-- 분류2 -->
+                <!-- <col style="width:60px;">메뉴ID -->
+                <col style="width:80px;"><!-- 담당 -->
+
+                <!-- <col style="width:40px;">기획승인 -->
+                <!-- <col style="width:50px;">디자인 계획종료 -->
+                <!-- <col style="width:50px;">계획시작 -->
+                <!-- <col style="width:50px;">계획종료 -->
+                
+                <!-- <col style="width:100px;">전달받은 시안 -->
+                <col style="width:100px;"><!-- 전달받은 시안 -->
+                <col style="width:100px;"><!-- 실제시작 -->
+                <col style="width:100px;"><!-- 실제완료 -->
+                <col style="width:100px;"><!-- 실제완료 -->
+                <!-- <col style="width:80px;">진행상태 -->
+                <col style="width:100px;"><!-- 진행도 -->
+                <col style="width:100px;"><!-- ID -->
+                <col style="width:200px;"><!-- URL -->
+                <col style="width:*;"><!-- 비고 -->
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">NO</th>
+                    <th scope="col">구분</th>
+                    <th scope="col" class="filter-match">분류0</th>
+                    <th scope="col">분류1</th>
+                    <th scope="col">분류2</th>
+                    <!-- <th scope="col">메뉴ID</th> -->
+                    <th scope="col" class="filter-match">담당</th>
+                    <!-- 
+                    <th scope="col">기획<br>승인</th>
+                    <th scope="col">디자인<br>계획종료</th>
+                    <th scope="col">PUB<br>계획시작</th>
+                    <th scope="col">PUB<br>계획종료</th>
+                     -->
+                    <!-- <th scope="col">시안 승인</th> -->
+                    <th scope="col">디자인 전달</th>
+                    <th scope="col" class="filter-match">퍼블 시작</th>
+                    <th scope="col" class="filter-match">퍼블 종료</th>
+                    <th scope="col" class="filter-match">최종 수정</th>
+                    <!-- <th scope="col">진행상태</th> -->
+                    <th scope="col" class="filter-match">진행률</th>
+                    <th scope="col">메뉴 ID</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">비고</th>
+                </tr>
+            </thead>
+            <tbody id="ukPageBody">
+            </tbody>
+            </table>
+        </div>
+        <!-- //.uktable -->
+        
+        
+    </section>
+</div>
+<!-- //.ukcsection -->
+<a href="#" class="btn-sctop">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+    <span class="screen-reader-text">Back to top</span>
+</a>
+
+<div class="iframe" style="width: 414px; height:900px;position: absolute;border:3px solid #000;display: none;z-index: 9999;background: #fff">
+    <div style="text-align: center;background: #000;color:#fff;padding:10px;position: relative;"></div>
+    <iframe id="ifrm" style="width: 100%; height: 800px;margin:0;" frameborder="0"></iframe>
+    <div style="text-align: center;background: #000;color: #fff;cursor:pointer;padding:10px;margin-top: 18px;" class="close">Close</div>
+</div>
+
+<!-- <script src="js/ukStyle.js"></script> -->
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/jquery.tablesorter.widgets.min.js"></script>
+<script src="js/ukTableSorter.min.js"></script>
+<script src="js/ukGuideData.js"></script>
+<script src="js/ukGuide.js"></script>
+<script>
+    setTimeout(function(){
+        UK_GUIDE.page.init();
+    })
+    
+</script>
+<script>
+    scrollToTopAction();
+    ukCountWrapFixed();
+    function scrollToTopAction() {
+        var $scTopBtn = $('.btn-sctop');
+        $(document).on( 'scroll', function(){
+            $(window).scrollTop() > 250 ? $scTopBtn.addClass('show') : $scTopBtn.removeClass('show');
+        });
+        $scTopBtn.each(function(){
+            $(this).click(ukAnimateAction)
+        });
+    }
+    function ukCountWrapFixed() {
+        var bodyFixed = $('body');
+        //var ukCountWrap = $('.ukcountwrap');
+        var ukCountWrap = $('.fix');
+        var ukCountWrapOffset = ukCountWrap.offset();
+
+        $(window).on('scroll touchmove mousewheel', function() {
+             //$(document).scrollTop() > ukCountWrapOffset.top ? bodyFixed.addClass('ukfixed') : bodyFixed.removeClass('ukfixed')
+        });
+    }
+    function ukAnimateAction(){
+        $('html,body').animate({ scrollTop: 0 }, 10);
+        return false;
+    }
+</script>
+</body>
+</html>

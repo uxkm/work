@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- OpenGraph -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="//imagedev.hmall.com/m/img/co/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:url" content="https://hmall.com">
+<meta property="og:type" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. 볼거리 가득! 쓸 곳 많은 H.Point 혜택">
+<meta property="og:image" content="//imagedev.hmall.com/m/img/co/meta/hmall_meta.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="750">
+<!-- favicon -->
+<meta itemprop="image" content="//imagedev.hmall.com/m/img/co/favicon/favicon_128.png">
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/m/img/co/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="//imagedev.hmall.com/m/img/co/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//imagedev.hmall.com/m/img/co/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//imagedev.hmall.com/m/img/co/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//imagedev.hmall.com/m/img/co/favicon/favicon-16x16.png">
+<link rel="manifest" href="//imagedev.hmall.com/m/img/co/favicon/manifest.json">
+<title>배송지 추가</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/popup.css"><!-- 공통 popup/layer css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/jquery-ui.css"><!-- 공통 jQuery UI css -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-3.4.1.min.js"></script><!-- 공통 jQuery Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.easing.min.js"></script><!-- 공통 jQuery UI Effect -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-ui.1.12.1.min.js"></script><!-- 공통 jQuery UI js -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.touchFlow.js"></script><!-- 공통 UI에 사용하는 Touch Swipe -->
+<script src="//imagedev.hmall.com/m/js/co/ukDetect.min.js"></script><!-- 공통 UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/m/js/co/slick.min.js"></script><!-- 공통 Slick Slider Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/common.js"></script><!-- 공통 UI에 사용하는 js -->
+
+<!-- Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/mp/mypage.css">
+</head>
+<body>
+<!-- 레이어 팝업 - 배송지추가 -->
+<div class="popup-layerwrap fulllayer  mypage-shipping-mngadd active" role="dialog" aria-label="배송지추가"> <!-- active 클래스 제어 : 레이어 팝업 노출 -->
+    <div class="layer">
+        <h2 class="large-title">배송지추가</h2>
+        <div class="layer-body">
+            <div class="layer-section">
+                <div class="frmbox mngaddset">
+                    <h3 class="minor-headings">받으실 분</h3>
+                    <div class="field">
+                        <!-- 
+                            input 공통 
+                            input 속성이 disabled 일 때 inputbox에 동일하게 class disabled 추가
+                            input 속성이 readonly 일 때 inputbox에 동일하게 class readonly 추가
+                            input 속성이 focus 일 때 inputbox에 동일하게 class selected 추가
+    
+                            입력 오류 시 inputbox class failed 추가 class="inputbox failed"
+                            입력 성공 시 inputbox class success 추가 class="inputbox success"
+                         -->
+                        <div class="inputbox readonly">
+                            <label class="inplabel"><input type="text" name="" value="홍길동" placeholder="입력하세요" title="입력하세요"></label>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        </div>
+                        <p class="failed-msg">받으실 분을 입력해주세요.</p>
+                        <!-- <p class="success-msg">입력 성공 시 메시지</p> -->
+                    </div>
+                    <!-- //.field -->
+    
+                    <h3 class="minor-headings">배송주소</h3>
+                    <div class="field multi frmstyle">
+                        <div class="inputbox readonly">
+                            <label class="inplabel"><input type="text" name="" value="서울특별시 강동구 천호대로 400" placeholder="우편번호 검색" readonly></label>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                            <button class="btn btn-dbcheck btn-lineblack md"><span>우편번호 찾기</span></button>
+                        </div>
+                        <div class="inputbox">
+                            <label class="inplabel"><input type="text" name="" value="" placeholder="상세주소를 입력해주세요"></label>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        </div>
+                    </div>
+                    <!-- //.field -->
+    
+                    <h3 class="minor-headings">전화번호1</h3>
+                    <div class="field">
+                        <div class="inputbox selected">
+                            <label class="inplabel"><input type="number" name="" value="01012345678" placeholder="입력하세요" title="전화번호를 입력하세요"></label>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        </div>
+                    </div>
+                    <!-- //.field -->
+    
+                    <h3 class="minor-headings">전화번호2 <em>(선택)</em></h3>
+                    <div class="field">
+                        <div class="inputbox selected failed">
+                            <label class="inplabel"><input type="number" name="" value="01012345678" placeholder="입력하세요" title="전화번호를 입력하세요"></label>
+                            <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        </div>
+                        <p class="failed-msg">숫자만 입력하실 수 있습니다.</p>
+                    </div>
+                    <!-- //.field -->
+    
+                    <div class="checkbox">
+                        <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>기본 배송지로 지정</span></label>
+                    </div>
+                    <p class="ctypo3">배송 및 수거를 위한 고객님의 배송주소 재사용에 동의합니다.<br>※ 배송지는 목록에서 삭제하실 수 있습니다.</p>
+    
+                    <div class="btngroup btnlen2">
+                        <button class="btn btn-linelgray ml"><span>취소</span></button>
+                        <button class="btn btn-default ml"><span>동의 후 저장</span></button>
+                    </div>
+                </div>
+                <!-- //.frmbox -->
+               
+              
+            </div>
+        </div>
+        <!-- //.layer-body -->
+        <button class="btn btn-close"><i class="icon"></i><span class="hiding">닫기</span></button>
+    </div>
+    <!-- //.layer -->
+</div>
+<!-- //.popup-layerwrap -->
+</body>
+</html>

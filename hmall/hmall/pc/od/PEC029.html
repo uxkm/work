@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" conte nt="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>은행 선택/결제/현금영수증</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup2.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/od/order.css">
+
+</head>
+<body id="popWin">         
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:800px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win hmallpay-wrap">
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title"><img src="http://image.hyundaihmall.com/hmall/od/easypay/logo-hmallpay.png" alt="Hmall Pay"></strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <div class="content">
+                        <div class="hmallpay-bank-select">
+                            <a href="#" class="_setting">설정</a>
+                            <!-- 
+                                슬라이드 개수가 2개 이상일 경우에만 옵션 값 적용
+                                initialSlide:1; 
+                             -->
+                            <ul class="bank-swiper" data-modules-slick="paging:true;centerMode:true;centerPadding:40px;arrows:true;infinite:false;slidesToShow:1;dots:false;initialSlide:1;">
+                                <li class="add_account"><span>계좌번호 등록</span></li>
+                                <li class="b_code_004 _bgcolor" data-code="011"><span>100*********777</span></li>
+                                <li class="b_code_088 _bgcolor _check" data-code="111">
+                                    <span>
+                                        [안내]<br />
+                                        해당 계좌에 오류가 있습니다.<br />
+                                        신규 등록 바랍니다.
+                                    </span>
+                                </li>
+                                <li class="b_code_081 _bgcolor _check" data-code="211">
+                                    <span>
+                                        [점검]<br />
+                                        서비스 이용이 잠시 중단됩니다.<br />
+                                        (00:00~02:30)
+                                    </span>
+                                </li>
+                                <li data-code="012" class="b_code_020 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="013" class="b_code_011 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="014" class="b_code_003 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="015" class="b_code_027 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="016" class="b_code_023 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="017" class="b_code_007 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="018" class="b_code_045 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="019" class="b_code_071 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="020" class="b_code_048 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="021" class="b_code_032 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="022" class="b_code_039 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="023" class="b_code_031 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="024" class="b_code_034 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="025" class="b_code_037 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="026" class="b_code_002 _bgcolor"><span>100*********777</span></li>
+                                <li data-code="027" class="b_code_035 _bgcolor"><span>100*********777</span></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="hmallpay-content">
+                            <!--
+                                @table class
+                                    #현금영수증 없는 경우 : final-payment
+                                    #현금영수증 있는 경우 : final-payment _receipt
+                            -->
+                            <table class="final-payment _receipt" summary="최종 결제금액 및 현금영수증 입력 테이블">
+                                <tbody>
+                                <tr>
+                                    <th>최종 결제금액</th>
+                                    <td><em>2,747,687</em>원</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label for="cash-receipt">
+                                            <input type="checkbox" id="cash-receipt" name=""> <span>현금영수증</span>
+                                        </label>
+                                    </th>
+                                    <td><input type="number" name="" value="01012341234" readonly="readonly"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div class="hmallpay-butn-wrap">
+                            <a href="javascript:;" class="def-set">결제하기</a>
+                        </div>
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+    <script>
+        ;(function(core, $, undefined){
+            $(document).on('click', '.hmallpay-butn-wrap', goPinCheck)
+            function goPinCheck(){
+                var bnkCd = $('.bank-swiper').find('.slick-current li').data('code')
+                if(!bnkCd || $.trim(bnkCd) == ''){
+                    alert('결제하실 계좌를 선택해주세요.');
+                    return;
+                }
+                console.log(bnkCd);
+            }
+        })(window[LIB_NAME], jQuery);
+    </script>
+</body>
+</html>

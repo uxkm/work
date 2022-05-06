@@ -1,0 +1,3337 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>게시판</title>
+    <!-- includeScriptLib -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="apple-mobile-web-app-capable" content=" yes">
+    <meta name="robots" content="index,follow">
+    <meta name="title" content="https://hmall.com">
+    <meta name="author" content="@Hmall">
+    <meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+    <meta name="keywords" content="">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- OpenGraph -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="//imagedev.hmall.com/m/img/co/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="현대Hmall-백화점,홈쇼핑">
+    <meta property="og:url" content="https://hmall.com">
+    <meta property="og:type" content="현대Hmall-백화점,홈쇼핑">
+    <meta property="og:description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. 볼거리 가득! 쓸 곳 많은 h.point 혜택">
+    <meta property="og:image" content="//imagedev.hmall.com/m/img/co/meta/hmall_meta.jpg">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="750">
+
+    <!-- favicon -->
+    <meta itemprop="image" content="//imagedev.hmall.com/m/img/co/favicon/favicon_128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/m/img/co/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="//imagedev.hmall.com/m/img/co/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="//imagedev.hmall.com/m/img/co/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="//imagedev.hmall.com/m/img/co/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="//imagedev.hmall.com/m/img/co/favicon/favicon-16x16.png">
+    <link rel="manifest" href="//imagedev.hmall.com/m/img/co/favicon/manifest.json">
+
+    <!-- UI/UX Style -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/common.css?v=188010521"> <!-- 공통 css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/layout.css?v=188010521">
+    <!-- 공통 Layout css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/popup.css?v=188010521">
+    <!-- 공통 popup/layer css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/jquery-ui.css?v=188010521">
+    <!-- 공통 jQuery UI css -->
+
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/jquery-3.4.1.min.js?v=188010521"></script>
+    <!-- 공통 jQuery Plugin -->
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/jquery.easing.min.js?v=188010521"></script>
+    <!-- 공통 jQuery UI Effect -->
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/jquery-ui.1.12.1.min.js?v=188010521"></script>
+    <!-- 공통 jQuery UI js -->
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/jquery.touchFlow.js?v=188010521"></script>
+    <!-- 공통 UI에 사용하는 Touch Swipe -->
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/ukDetect.min.js?v=188010521"></script>
+    <!-- 공통 UI에 사용하는 Detect -->
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/slick.min.js?v=188010521"></script>
+    <!-- 공통 Slick Slider Plugin -->
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/common.js?v=188010521"></script>
+    <!-- 공통 UI에 사용하는 js -->
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/co.js?v=188010521"></script>
+    <!-- 공통 개발팀에서 사용하는 js -->
+
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/jquery.cookie-1.4.1.min.js?v=188010521"></script>
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/GoogleAnalyticsBuilder.js?v=188010521"></script>
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/dp/dp.js?v=188010521"></script>
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/section_tab.js?v=188010521"></script>
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/mobileUtil.js?v=188010521"></script>
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/ScreenNameObj.js?v=188010521"></script>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        var gaForTabNm = "";
+
+        function setDimension() {
+
+
+            if (location.pathname.indexOf("/m/smLoginP.do") > -1) {
+                return;
+            }
+
+            var GA_info = {};
+
+
+            GA_info = setDimenData(GA_info);
+
+
+            GA_Init(GA_info);
+
+
+            if (location.pathname.replace("//", "/") == '/m/pda/smItemDetailR.do') {
+                var product_array = [];
+                product_array.push(
+                    {
+                        'id': '',
+                        'name': '',
+                        'brand': '',
+                        'category': '',
+                        'dimension51': 'default',
+                        'dimension52': '',
+                        'dimension53': '',
+                        'dimension54': '',
+                        'dimension55': '',
+                        'dimension56': '',
+                        'dimension57': '',
+                        'dimension58': '',
+                        'dimension59': '',
+                        'dimension60': '',
+
+                        'dimension62': '',
+                        'dimension63': '',
+                        'dimension64': ''
+                    }
+                );
+
+                var ecommerce_hit = new Object();
+                ecommerce_hit[GAHitKey.NonInteraction] = '1';
+                var action_obj = new Object();
+
+
+                GADataSend_Ecommerce(GAEcommerceStepKey.Detail, action_obj, product_array, ecommerce_hit);
+
+            } else if (location.pathname == '/m/orderComplete.do') {
+                var product_array = [];
+
+
+
+                var ecommerce_hit = new Object();
+                ecommerce_hit[GAHitKey.NonInteraction] = '1';
+                ecommerce_hit[GAHitKey.currencyCode] = 'KRW';
+
+                ecommerce_hit[GACustomKey.Dimension74] = '';
+                ecommerce_hit[GACustomKey.Dimension75] = '';
+
+                ecommerce_hit[GACustomKey.Metric1] = 0;
+
+                ecommerce_hit[GACustomKey.Metric2] = 0;
+
+
+                var action_obj = new Object();
+                action_obj[GAActionFieldKey.TransactionID] = '';
+                action_obj[GAActionFieldKey.TransactionRevenue] = '0';
+                action_obj[GAActionFieldKey.TransactionShipping] = '0';
+
+                action_obj[GAActionFieldKey.TransactionCouponCode] = '';
+
+
+                GADataSend_Ecommerce(GAEcommerceStepKey.Purchase, action_obj, product_array, ecommerce_hit);
+            }
+        }
+
+
+        function setDimenData(GA_info) {
+            var _ga = getCookieGA('_ga');
+            if (_ga != null) {
+                GA_info[GACustomKey.Dimension1] = _ga;
+            }
+            var uid = getCookieGA('ENCEHCustNO');
+            if (uid == null || uid == '' || uid == undefined) {
+
+            } else {
+                GA_info[GACustomKey.Dimension2] = uid;
+                GA_info[GAHitKey.UserId] = uid;
+
+
+                $.ajax({
+                    type: "post"
+                    , url: "/m/GA_getDimension.do"
+                    , data: ""
+                    , dataType: "json"
+                    , async: true
+                    , success: function (data) {
+                        console.log("ajax Return");
+                    }
+                });
+
+            }
+            /*  */
+
+
+
+
+
+
+
+
+            var _gaid = getCookieGA('GAID');
+            if (_gaid != null) { GA_info[GACustomKey.Dimension11] = _gaid; }
+
+            GA_info[GACustomKey.Dimension12] = "N";
+
+
+
+
+            if (location.pathname == '/m/pde/smSearchL.do') {
+
+
+
+
+
+                GA_info[GACustomKey.Dimension19] = "N";
+
+
+            }
+
+            if (appYn == 'Y') {
+                GA_info[GACustomKey.Dimension16] = "APP";
+            } else {
+                GA_info[GACustomKey.Dimension16] = "MOWEB";
+            }
+
+            GA_info[GACustomKey.Dimension35] = location.href.replace("http://", "").replace("https://", "");
+
+            return GA_info;
+        }
+
+
+        function setGaDataSend_Event(evntType) {
+
+            var product_array = [];
+            var ecommerce_hit = new Object();
+            var action_obj = new Object();
+
+
+            if (location.pathname == '/m/pda/smItemDetailR.do'
+                || location.pathname == '/m/smMblLiveTalkMain.do') {
+                $("#divOptionArea div.selectedUitm").each(function () {
+                    $(this).find("ul.selectedUitmUl").each(function () {
+                        var SlitmCd = $(this).find("li.quantity1").attr('subslitmcd');
+                        var curItem = $('.selectingLayerScrollCont ul').find('#' + SlitmCd + 'Li a');
+                        try {
+                            product_array.push(
+                                {
+                                    'id': SlitmCd,
+                                    'name': curItem.attr('slitmNm'),
+                                    'brand': curItem.attr('brndNm'),
+                                    'category': curItem.attr('gacategory')
+                                }
+                            );
+                        } catch (e) {
+                            // TODO: handle exception
+                        }
+                    });
+                });
+                if (location.pathname == '/m/smMblLiveTalkMain.do') {
+                    ecommerce_hit[GAHitKey.EventLabel] = '모바일 라이브';
+                }
+
+                if (evntType == GAEcommerceStepKey.Checkout) {
+                    action_obj[GAActionFieldKey.CheckoutStep] = '1';
+                    GADataSend_Ecommerce(evntType, action_obj, product_array, ecommerce_hit);
+                } else {
+                    ecommerce_hit[GAHitKey.NonInteraction] = '1';
+                    GADataSend_Ecommerce(evntType, action_obj, product_array, ecommerce_hit);
+                }
+
+            } else if (appYn == 'Y' && typeof pageTemplate != 'undefined') {
+
+                $("#divOptionArea div.selectedUitm").each(function () {
+                    $(this).find("ul.selectedUitmUl").each(function () {
+                        var SlitmCd = $(this).find("li.quantity1").attr('subslitmcd');
+                        var curItem = $('.selectingLayerScrollCont ul').find('#' + SlitmCd + 'Li a');
+
+                        try {
+                            product_array.push(
+                                {
+                                    'id': SlitmCd,
+                                    'name': curItem.attr('slitmNm'),
+                                    'brand': curItem.attr('brndNm'),
+                                    'category': curItem.attr('gacategory')
+                                }
+                            );
+                        } catch (e) {
+                            // TODO: handle exception
+                        }
+                    });
+                });
+                if (evntType == GAEcommerceStepKey.Checkout) {
+                    action_obj[GAActionFieldKey.CheckoutStep] = '1';
+                    GADataSend_Ecommerce(evntType, action_obj, product_array, ecommerce_hit);
+                } else {
+                    ecommerce_hit[GAHitKey.NonInteraction] = '1';
+                    GADataSend_Ecommerce(evntType, action_obj, product_array, ecommerce_hit);
+                }
+            }
+            else if (location.pathname == '/m/order.do') {
+
+                try {
+
+                } catch (e) {
+                    // TODO: handle exception
+                }
+
+                if (evntType == GAEcommerceStepKey.Checkout) {
+                    var ecommerce_hit = new Object();
+                    var action_obj = new Object();
+                    action_obj[GAActionFieldKey.CheckoutStep] = '2';
+
+                    var selOrderType = $(".payment_select.boxtype li.selected").find("input[name='pay']").val();
+                    if (selOrderType == '1') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '01 카드';
+                        ecommerce_hit[GACustomKey.Dimension75] = '01 카드';
+                    } else if (selOrderType == '4') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '02 현금';
+                        ecommerce_hit[GACustomKey.Dimension75] = '02 현금';
+                    } else if (selOrderType == '3') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '12 휴대폰결제';
+                        ecommerce_hit[GACustomKey.Dimension75] = '12 휴대폰결제';
+                    } else if (selOrderType == 'payco') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '15 페이코';
+                        ecommerce_hit[GACustomKey.Dimension75] = '15 페이코';
+                    } else if (selOrderType == 'naverpay') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '21 네이버페이';
+                        ecommerce_hit[GACustomKey.Dimension75] = '21 네이버페이';
+                    } else if (selOrderType == 'smilepay') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '22 스마일페이';
+                        ecommerce_hit[GACustomKey.Dimension75] = '22 스마일페이';
+                    } else if (selOrderType == 'newkakaopay') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '23 카카오페이';
+                        ecommerce_hit[GACustomKey.Dimension75] = '23 카카오페이';
+                    } else if (selOrderType == 'hpay') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '24 현금간편결제';
+                        ecommerce_hit[GACustomKey.Dimension75] = '24 현금간편결제';
+                    } else if (selOrderType == 'toss') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '25 토스';
+                        ecommerce_hit[GACustomKey.Dimension75] = '25 토스';
+                    } else if (selOrderType == 'nfc') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '26 NFC결제';
+                        ecommerce_hit[GACustomKey.Dimension75] = '26 NFC결제';
+                    } else if (selOrderType == 'callpay') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '97 상담원 결제';
+                        ecommerce_hit[GACustomKey.Dimension75] = '97 상담원 결제';
+                    } else if (selOrderType == 'samsungpay') {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '99 삼성페이';
+                        ecommerce_hit[GACustomKey.Dimension75] = '99 삼성페이';
+                    } else if (selOrderType == undefined) {
+                        action_obj[GAActionFieldKey.CheckoutOptions] = '무형상품';
+                        ecommerce_hit[GACustomKey.Dimension75] = '무형상품';
+                    }
+
+                    GADataSend_Ecommerce(evntType, action_obj, product_array, ecommerce_hit);
+                }
+            } else {
+                GADataSend_Ecommerce(evntType, action_obj, product_array, ecommerce_hit);
+            }
+
+        }
+
+        function onAppMainPageTab(mainseq) {
+            var virtual_Obj = new Object();
+
+
+            virtual_Obj = setDimenData(virtual_Obj);
+            var tabNm = '';
+            var tabMn = "메인";
+
+            //안드로이드 왼쪽 메뉴에서 호출할 경우 tabNm을 재정의한다.
+            if (location.pathname == "/m/api/leftMenu.do") {
+                tabNm = '공통';
+                tabMn = "좌측메뉴";
+            } else if (tabNm == '') {
+                //아이폰/ 웹 일 경우 탭 정보가 없어서 추가한다.
+                tabNm = dupPrevent;
+            }
+            virtual_Obj[GACustomKey.Dimension31] = tabMn;
+            virtual_Obj[GACustomKey.Dimension32] = tabMn + '>' + tabNm;
+            virtual_Obj[GACustomKey.Dimension33] = tabMn + '>' + tabNm;
+            virtual_Obj[GACustomKey.Dimension34] = tabMn + '>' + tabNm;
+
+            virtual_Obj[GAHitKey.Title] = tabMn + '>' + tabNm;
+
+            if (mainseq == '193') {
+                virtual_Obj[GAHitKey.URL] = '';
+            }
+            GADataSend_Page(virtual_Obj);
+            virtual_Obj[GAHitKey.URL] = undefined;
+        }
+
+
+        /*
+        function sendSlitmClick(slitmNm, slitmCd, tabNm){
+            if(slitmNm == "" || slitmCd == "" || tabNm == "")
+                return;
+    
+            var product_array = [];
+            product_array.push({'id': slitmCd, 'name': slitmNm});
+    
+            var action_obj = new Object();
+            action_obj[GAActionFieldKey.ProductActionList] = tabNm;
+    
+            var ecommerce_hit = new Object();
+            GADataSend_Ecommerce(GAEcommerceStepKey.Click, action_obj, product_array, ecommerce_hit);
+        }
+        */
+
+
+        function getGaParameterByName(url, name) {
+            if (url == "" || name == "" || url == undefined || name == undefined) {
+                return;
+            }
+
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(url);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        function setGaPromotion(title, name, position, creative, id) {
+            var action_obj = new Object();
+            var ecommerce_hit = new Object();
+            var tabNm = title;
+            if (tabNm.length > 0) {
+                tabNm = tabNm.substring(tabNm.indexOf(">") + 1, tabNm.length);
+            }
+
+            ecommerce_hit[GAHitKey.Title] = title;
+            if (name == "좌측메뉴") {
+                ecommerce_hit[GACustomKey.Dimension31] = '공통';
+                ecommerce_hit[GACustomKey.Dimension32] = '공통>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension33] = '공통>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension34] = '공통>' + tabNm;
+            } else if (name == "마이페이지") {
+                ecommerce_hit[GACustomKey.Dimension31] = '마이페이지';
+                ecommerce_hit[GACustomKey.Dimension32] = '마이페이지>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension33] = '마이페이지>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension34] = '마이페이지>' + tabNm;
+            } else if (name == "검색결과") {
+                ecommerce_hit[GACustomKey.Dimension31] = '검색';
+                ecommerce_hit[GACustomKey.Dimension32] = '검색>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension33] = '검색>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension34] = '검색>' + tabNm;
+            } else if (name == "검색창") {
+                ecommerce_hit[GACustomKey.Dimension31] = '검색';
+                ecommerce_hit[GACustomKey.Dimension32] = '검색>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension33] = '검색>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension34] = '검색>' + tabNm;
+            } else if (name == "상품상세") {
+                ecommerce_hit[GACustomKey.Dimension31] = '상품';
+                ecommerce_hit[GACustomKey.Dimension32] = '상품>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension33] = '상품>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension34] = '상품>' + tabNm;
+            } else if (name == "주문완료") {
+                ecommerce_hit[GACustomKey.Dimension31] = '주문/장바구니';
+                ecommerce_hit[GACustomKey.Dimension32] = '주문/장바구니>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension33] = '주문/장바구니>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension34] = '주문/장바구니>' + tabNm;
+            } else {
+                ecommerce_hit[GACustomKey.Dimension31] = '메인';
+                ecommerce_hit[GACustomKey.Dimension32] = '메인>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension33] = '메인>' + tabNm;
+                ecommerce_hit[GACustomKey.Dimension34] = '메인>' + tabNm;
+            }
+
+            action_obj["promo1"] = {};
+            action_obj["promo1"][GAActionFieldKey.PromotionName] = name;
+            action_obj["promo1"][GAActionFieldKey.PromotionPosition] = position;
+            action_obj["promo1"][GAActionFieldKey.PromotionCreative] = creative;
+            action_obj["promo1"][GAActionFieldKey.PromotionID] = id;
+
+            GADataSend_Ecommerce(GAEcommerceStepKey.PromotionClick, action_obj, null, ecommerce_hit);
+        }
+
+        function setGaDataSend_Page(tabMn, tabNm) {
+            var virtual_Obj = new Object();
+
+            virtual_Obj = setDimenData(virtual_Obj);
+            virtual_Obj[GACustomKey.Dimension31] = tabMn;
+            virtual_Obj[GACustomKey.Dimension32] = tabMn + '>' + tabNm;
+            virtual_Obj[GACustomKey.Dimension33] = tabMn + '>' + tabNm;
+            virtual_Obj[GACustomKey.Dimension34] = tabMn + '>' + tabNm;
+
+            virtual_Obj[GAHitKey.Title] = tabMn + '>' + tabNm;
+
+            GADataSend_Page(virtual_Obj);
+            virtual_Obj[GAHitKey.URL] = undefined;
+        }
+
+        // 비즈스프링 쓸때까지는 이 함수를 호출. GA 호출 후 BIZ 호출.
+        function gaTagging(obj_GA, msg1, msg2, msg3) {
+
+            var title = $(obj_GA).attr("ga-custom-title") == undefined ? "" : $(obj_GA).attr("ga-custom-title");
+            var name = $(obj_GA).attr("ga-custom-name") == undefined ? "" : $(obj_GA).attr("ga-custom-name");
+            var position = $(obj_GA).attr("ga-custom-position") == undefined ? "" : $(obj_GA).attr("ga-custom-position");
+            var creative = $(obj_GA).attr("ga-custom-creative") == undefined ? "" : $(obj_GA).attr("ga-custom-creative");
+            var id = $(obj_GA).attr("ga-custom-id") == undefined ? "" : $(obj_GA).attr("ga-custom-id");
+            var etc = $(obj_GA).attr("ga-custom-etc") == undefined ? "" : $(obj_GA).attr("ga-custom-etc");
+            var etc2 = $(obj_GA).attr("ga-custom-etc2") == undefined ? "" : $(obj_GA).attr("ga-custom-etc2");
+
+            //마케팅플랫폼 전용 >>> 마케팅 플랫폼은 Tab명이 다르기 때문에 if문 처리
+            if (gaForTabNm != "" && gaForTabNm != null && gaForTabNm != undefined && etc2 == "Y") {
+                title = "메인>" + gaForTabNm;
+                name = "메인_" + gaForTabNm + "탭";
+            }
+
+            if (etc2 == "N") {//마케팅플랫폼 전용 >>> 마케팅플랫폼 jsp가 기획전에도 쓰이기 때문에 if문 처리.(mainTabYn)
+                //추후 이곳에 마케팅플랫폼 기획전일 경우 분기분 넣는다...
+
+            } else {
+                setGaPromotion(title, name, position, creative, id);
+            }
+            //Plan_spex는 파라미터가 4개
+            var msg4 = "";
+            if (etc == "untdSpexDtl") {
+                msg4 = msg1.split("^")[1]; //url
+                msg1 = msg1.split("^")[0]; //id
+            }
+
+            if (etc == "onAir") {
+                bizSpringTagForOnair(msg1, msg2, msg3);
+            } else if (etc == "home") {
+                bizSpringTagForHome(msg1, msg2, msg3);
+            } else if (etc == "moLive") { // 모바일라이브는 실제로 brodTitl > bfmtNo > url 임!!
+                bizMoLiveHome(msg1, msg2, msg3);
+            } else if (etc == "talkEtvHome") {  // VodEtvHm
+                broadTalkEtvHome(msg1);
+            } else if (etc == "vodEtvHm") {  //
+                notifyVodEtvHm(obj_GA);
+            } else if (etc == "app") {
+                bizSpringTagForApp(msg1, msg2, msg3);
+            } else if (etc == "moLive2") {
+                bizMoLive(msg1, msg2, msg3);
+            } else if (etc == "clickTrace") {
+                bizSpringTagClickTrace(msg1, msg2, msg3);
+            } else if (etc == "talkHome") {
+                broadTalkHome(msg1);
+            } else if (etc == "gotoSpexSect") {
+                goToSpexSect(msg1);
+            } else if (etc == "custDefItemLCst") {
+                custDefItemLCst(msg1, msg2);
+            } else if (etc == "openMobileLive") {
+                openMobileLive(msg1);
+            } else if (etc == "urlAction") { //비즈스프링 없고 url 이동만 할 경우
+                if (msg1.length > 1) {
+                    event.preventDefault();
+                    location.href = msg1;
+                }
+            } else if (etc == "grpItemBuy") { //다른고객이 많이 구매한 상품추천
+                custGrpItemBuy(msg1, msg2);
+            } else if (etc == "goodCategoryTag") {
+                goGoodCategoryTag(msg1, msg2, msg3);
+            } else if (etc == "goEvntCombine") {//goEvntCombine
+                goEvntCombine(msg1, msg2, msg3);
+            } else if (etc == "goodCpCdTag") {
+                goGoodCpCdTag(msg1, msg2);
+            } else if (etc == "goDptsCp") {
+                goDptsCp(msg1, msg2);
+            } else if (etc == "srchAsctLst") {
+                itemSrchAsctLst(msg1, msg2);
+            } else if (etc == "untdSpexDtl") {
+                bizSpringUntdSpexDtl(msg1, msg2, msg3, msg4);
+            } else if (etc == "untdSpexItemDtl") {
+                bizSpringUntdSpexItemDtl(msg1, msg2, msg3);
+            } else {
+
+            }
+        }
+
+    //for chrome debugger
+    //# sourceURL=script-for-TrackerGoogleAnalytics.js
+    </script>
+
+    <!-- GA Custum lib -->
+
+    <script type="text/javascript" src="https://imagedev.hmall.com/mo/js/netfunnel.js?v=188010521"></script>
+    <script type="text/javascript">
+        try {
+            NetFunnel_AliveNotice({ action_id: "smart_1" });
+        } catch (e) { }
+        var ck_nfn = getCookie('ck_nfn');
+        if (ck_nfn != "" && ck_nfn != null) {
+            var d = new Date();
+            d.setTime(d.getTime() + (3 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            var cname = "ck_nfn";
+            var cvalue = "check";
+            document.cookie = cname + "=" + cvalue + "; " + expires + ";path=/;domain=.hmall.com";
+        }
+
+    </script>
+
+
+
+    <script type="text/javascript">
+        document.domain = "hmall.com";
+        var appYn = 'N';
+        var appOldVerYn = 'N';
+        var imageServerV5 = "https://imagedev.hmall.com/static/smart/2015/mobile/images/image_5.0";
+        var appOpsyNm = "ios";
+        var appOpsyVerNm = "13_2_3";
+        var appVerNm = "0";
+        var appType = "2015";
+        var onlyWebYn = "N";
+
+        //Google Analytics
+        var init_Obj = new Object();
+
+        //GAID 리턴
+        function getAddId(os) {
+            var adid = "";
+            try {
+                if (os == "android") {
+                    adid = window.AndroidJS.getAdId();
+                    //alert("gaid=" + adid + "--" + appVerNm);
+                }
+            } catch (e) {
+            }
+
+            $.cookie('GAID', adid, { expires: 1, path: '/', domain: '.hmall.com', secure: false });
+        }
+
+        //Android Version Check
+        function getAndroidVersion(ua) {
+            ua = (ua || navigator.userAgent).toLowerCase();
+            var match = ua.match(/android\s([0-9\.]*)/i);
+            return match ? match[1] : undefined;
+        }
+
+        //아이폰
+        function setAdIdWebFromApp(adid) {
+            if (isEmpty(adid)) {
+                adid = "";
+            }
+            $.cookie('GAID', adid, { expires: 1, path: '/', domain: '.hmall.com', secure: false });
+        }
+
+        $(window).on("load", function () {
+
+            if (appYn == "Y") {
+
+                // app 인 경우 클래스 추가
+                $('html').addClass('app');
+
+                // 2016 모바일이주형 2016리뉴얼 페이지에서는 .back 클래스에 btn_none을 붙이지 않음
+                var uri = "/MCS/jsp/mobile/ev/smEvntBbcImgList.jsp";
+                if (uri.indexOf("smMypageL") > -1) {
+                } else if (uri.indexOf("smBaskList") > -1) {
+                } else if (uri.indexOf("smOrderComplete") > -1) {
+                } else if (uri.indexOf("smOrder") > -1) {
+                } else {
+                    $(".back").attr("class", "btn_none");
+                    $(".btn_none").text('');
+                }
+
+                if (appOpsyNm == "ios") {
+                    if (Number(appVerNm) > 33 && isEmpty($.cookie('GAID'))) {
+                        setTimeout(function () {
+                            window.location = "jscall:getAdId";
+                        }, 1000);
+                    }
+                } else {
+                    if (Number(appVerNm) > 62 && isEmpty($.cookie('GAID'))) {
+                        getAddId(appOpsyNm);
+                    }
+                }
+            }
+            //init GA
+            console.log("setDimension and useWindload 호출");
+            setDimension();
+            useWinload();
+        });
+
+        function getCookieGA(name) {
+            var cname = name + "=";
+            var dc = document.cookie;
+            if (dc.length > 0) {
+                begin = dc.indexOf(cname);
+                if (begin != -1) {
+                    begin += cname.length;
+                    end = dc.indexOf(";", begin);
+                    if (end == -1)
+                        end = dc.length;
+                    if ("EHCustName" == name || "LAST_SECT" == name) {
+                        return decodeURIComponent(dc.substring(begin, end));
+                    } else {
+                        return unescape(dc.substring(begin, end)).replace('GA1.2.',
+                            '');
+                    }
+                }
+            }
+            return null;
+        }
+
+        function cookieParsing() {
+
+            var gc = getRecentItemCookie('RECENT_VIEW_ITEMS');
+            var itemArray = new Array();
+            var cArray = gc.split("|");
+
+            if (cArray.length > 0) {
+                for (var i = 0; i < cArray.length; i++) {
+                    itemArray[i] = cArray[i].split("/")[0].substring(1);
+                }
+
+                window.AndroidJS.setRecentItemList(itemArray.toString());
+            }
+        }
+
+        function getRecentItemCookie(cookieName) {
+
+            cookieName = cookieName + '=';
+            var cookieData = document.cookie;
+            var start = cookieData.indexOf(cookieName);
+            var cookieValue = '';
+
+            if (start != -1) {
+                start += cookieName.length;
+                var end = cookieData.indexOf(';', start);
+
+                if (end == -1)
+                    end = cookieData.length;
+                cookieValue = cookieData.substring(start, end);
+            }
+            return unescape(cookieValue);
+        }
+
+        //모바일라이브 어플 화면 맵핑 2020.04.13
+        function openMobileLive(vdoType) {
+            if (isEmpty(vdoType))
+                vdoType = "02";
+            if (appYn == "Y") {
+                window.location.href = "/m/goAppLiveChat.do?vdoType=" + vdoType;
+            } else {
+                window.location.href = "/m/smMobileLiveChat.do";
+            }
+        }
+
+        //레이어팝업 활성여부 체크 : 해당 CSS 변경 확인필요.
+        function layerPopupCheck() {
+            var layerCheck = false;
+            // 레이어팝업체크
+            //if($("section[id='content']").css("display") == "block"){
+            if ($("main div.container").css("display") == "block") {
+                layerCheck = true;
+            }
+
+            // LNB 체크
+            if ($("div.dimScreen").css("display") == "block") {
+                layerCheck = false;
+            }
+
+            return layerCheck;
+        }
+
+        $.fn.size = function () {
+            return this.length;
+        }
+
+        /**
+         * 입력창 Byte 계산
+         * @param input
+         * @returns {Number}
+         */
+        function getByteLength(input) {
+            var iByteLength = 0;
+            for (var i = 0; i < input.length; i++) {
+                var sChar = escape(input.charAt(i));
+                if (sChar.length == 1) {
+                    iByteLength++;
+                } else if (sChar.indexOf("%u") != -1) {
+                    iByteLength += 2;
+                } else if (sChar.indexOf("%") != -1) {
+                    iByteLength += sChar.length / 3;
+                }
+            }
+            return iByteLength;
+        }
+
+        console.log('include scripts js loaded');
+    </script>
+
+    <!-- 2021.01.05 css 추가-->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/asis/css_4.0/ev.css" />
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/asis/css_4.0/prd-list.css" />
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/asis/css_5.0/upcube/etv_stamp/slayer.css">
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/asis/css_5.0/pd_star.css">
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/ev/event.css" />
+
+
+
+    <script src="//imagedev.hmall.com/m/js/asis/js_4.0/kakao_Link.js?v=188"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="//imagedev.hmall.com/m/js/asis/js_4.0/facebook_share.js?v=188"></script>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        var prmoNm = "[테스트]도전~ 나도 Q레이터!3";
+        var prmoNo = "01290382";
+        var snsInfwYn = "N";
+        var mktgGbcd = "01";
+        var shrCertNo = "";
+        var shrURL = '';
+
+        jQuery(function ($) {
+            prmoNm = "[테스트]도전~ 나도 Q레이터!3";
+            prmoNo = "01290382";
+            snsInfwYn = "N";
+            mktgGbcd = "01";
+            if (prmoNm == "") {
+                prmoNm = "";
+            }
+            if (prmoNo == "") {
+                prmoNo = "";
+            }
+            if (snsInfwYn == "") {
+                snsInfwYn = "";
+            }
+            if (appYn == "Y" && ((appOpsyNm == "android" && parseInt(appVerNm) >= 172) || appOpsyNm == "ios" && parseInt(appVerNm) >= 300)) {
+                $(".elseapp").css("display", "block");
+            }
+
+            /* $(document).on('click', '#another-apps', function() {
+                
+                if(appOpsyNm == "ios"){
+                    var nowUrl = window.location.href;                  
+                    window.location="jscall:callSharing:"+nowUrl;
+                    
+                }else{                  
+                    var sharelinkUrl = window.location.href + '&utm_source=sharedurl&utm_medium=share&utm_campaign=cmmnty&utm_content=others';
+                    AndroidJS.showShareableApp("공유하기", sharelinkUrl);
+                }
+            }); */
+        });
+        function fn_another() {
+            if (appOpsyNm == "ios") {
+                var nowUrl = window.location.href;
+                window.location = "jscall:callSharing:" + nowUrl;
+
+            } else {
+                var sharelinkUrl = window.location.href + '&utm_source=sharedurl&utm_medium=share&utm_campaign=cmmnty&utm_content=others';
+                AndroidJS.showShareableApp("공유하기", sharelinkUrl);
+            }
+        }
+        function snsShareEntry(type, evenNo) {
+
+            var UserIDSessionValue = custNo;
+            if (type == 'kakao') {
+                if ((mktgGbcd == "02" || mktgGbcd == "06") && UserIDSessionValue != "") { // (일반 or 모바일일반) & 로그인 상태시에만 공유데이터 저장
+                    $.ajax({
+                        type: "get"
+                        , url: "/MCS/eva/snsShrCertNoEvnt.do"
+                        , data: { prmoNo: evenNo, snsGbcd: "60" }
+                        , dataType: "json"
+                        , async: true
+                        , success: function (data) {
+                            if (data.errorCode != "000") {
+                                if (data.errorCode == "100") {
+                                    if (otpYn == "N") {
+                                        alert("이벤트 최초 응모시 \n '휴대폰 SMS 수신 확인'이 필요합니다. \n 하단에 수신확인하기 버튼을 눌러주세요.");
+                                        return false;
+                                    } else {
+                                        return;
+                                    }
+                                } else {
+                                    alert(data.errorMessage);
+                                }
+                            } else {
+                                if (data.shrCertNo != null && data.shrCertNo != "") {
+                                    shrCertNo = data.shrCertNo;
+                                    if (appYn == "Y" && appOpsyNm == 'android') {
+                                        var AppOpsyVerNm = '0';
+                                        if (AppOpsyVerNm > 54) {
+                                            goLinkKaKaoForApp();
+                                        } else {
+                                            goLinkKaKao();
+                                        }
+                                    } else if (appYn == "Y" && appOpsyNm == 'ios') {
+                                        var AppOpsyVerNm = '0';
+                                        if (AppOpsyVerNm > 35) {
+                                            goLinkKaKaoForApp();
+                                        } else {
+                                            goLinkKaKao();
+                                        }
+                                    } else {
+                                        goLinkKaKao();
+                                    }
+                                }
+                            }
+                        }
+                        ,
+                        error: function () {
+                            console.log("json error");
+                        }
+                    });
+                } else {
+                    if (appYn == "Y" && appOpsyNm == 'android') {
+                        var AppOpsyVerNm = '0';
+                        if (AppOpsyVerNm > 54) {
+                            goLinkKaKaoForApp();
+                        } else {
+                            goLinkKaKao();
+                        }
+                    } else if (appYn == "Y" && appOpsyNm == 'ios') {
+                        var AppOpsyVerNm = '0';
+                        if (AppOpsyVerNm > 35) {
+                            goLinkKaKaoForApp();
+                        } else {
+                            goLinkKaKao();
+                        }
+                    } else {
+                        goLinkKaKao();
+                    }
+                }
+            }
+
+            if (type == 'sms') {
+                var shareTitle = "[현대Hmall]" + prmoNm;
+                var sms_shareTitle = shareTitle.replace(/(&)/g, "%26");
+                var shareUrl = location.href + "&pReferCode=932&pTcCode=0000001501";
+                shareUrl = shareUrl + "&utm_source=sharedurl&utm_medium=share&utm_campaign=eventdetail&utm_content=sms";
+                var sms_shareUrl = shareUrl;
+
+                if (appOpsyNm == 'android') {
+                    sms_shareUrl = shareUrl.replace(/(&)/g, "%26");
+                }
+
+                var sms_body = encodeURIComponent(sms_shareTitle + "\n" + sms_shareUrl);
+
+                if (appYn == "Y") {
+                    WiseTracker.setCustomMvtTag(WiseTracker.CUSTOM_MVT_TAG_3, "이벤트상세_공유_SMS");
+                    WiseTracker.sendTransaction();
+                } else {
+                    try { _trk_clickTrace('EVT', "이벤트상세_공유_SMS"); } catch (e) { }
+                }
+
+                if (appOpsyNm == 'android') {
+                    window.open("sms:?body=" + sms_body);
+                } else if (appOpsyNm == 'ios') {
+                    window.location = "sms:&body=" + sms_body;
+                } else {
+                    window.open("sms:?body=" + sms_body);
+                }
+
+                //window.location.href = "sms://?body=[현대Hmall] https://www.hmall.com/m/pda/smItemDetailR.do?ItemCode=" + "&pReferCode=932&pTcCode=0000001501"; 
+            } else if (type == 'kastory') {
+                goLinkStory();
+            } else if (type == 'facebook') {
+                //fn_goSNS('facebook', location.href, prmoNm, '');
+                var snsShrUrl = location.href;
+                if (appYn == "Y" && appOpsyNm == 'android') {
+                    var AppOpsyVerNm = '0';
+                    WiseTracker.setCustomMvtTag(WiseTracker.CUSTOM_MVT_TAG_3, "이벤트상세_공유_페이스북");
+                    WiseTracker.sendTransaction();
+                    if (AppOpsyVerNm > 54) {
+                        if (AppOpsyVerNm >= 92) {
+                            window.AndroidJS.shareFacebook("facebook", prmoNm, snsShrUrl);
+                        } else {
+                            $(".close.textindent").trigger('click');
+                            goShareFacebook(snsShrUrl);
+                        }
+                    }
+                } else if (appYn == "Y" && appOpsyNm == 'ios') {
+                    WiseTracker.setCustomMvtTag(WiseTracker.CUSTOM_MVT_TAG_3, "이벤트상세_공유_페이스북");
+                    WiseTracker.sendTransaction();
+                    $(".close.textindent").trigger('click');
+                    goShareFacebook(snsShrUrl);
+                } else {
+                    try { _trk_clickTrace('EVT', "이벤트상세_공유_페이스북"); } catch (e) { }
+                    $(".close.textindent").trigger('click');
+                    goShareFacebook(snsShrUrl);
+                }
+            } else if (type == 'twitter') {
+                fn_goSNS('twitter', location.href, prmoNm, '');
+            } else if (type == 'url') {
+                fn_toClip();
+            }
+
+        }
+
+
+        //카카오스토리
+        function goLinkStory() {
+            var titleName = "[현대Hmall]";
+            var descName = prmoNm;
+            var imgPath = "https://imagedev.hmall.com//HM/HM163/20170525/124931/365.jpg";
+
+            if (appYn == "Y") {
+                WiseTracker.setCustomMvtTag(WiseTracker.CUSTOM_MVT_TAG_3, "이벤트상세_공유_카카오스토리");
+                WiseTracker.sendTransaction();
+            } else {
+                try { _trk_clickTrace('EVT', "이벤트상세_공유_카카오스토리"); } catch (e) { }
+            }
+
+
+
+            kakao.link("story").send({
+                post: location.href + "&pReferCode=932&pTcCode=0000001501&utm_source=sharedurl&utm_medium=share&utm_campaign=eventdetail&utm_content=kastory",
+                appid: "www.hmall.com",
+                appver: "1.0",
+                appname: "현대Hmall",
+                urlinfo: JSON.stringify({ title: titleName, desc: descName, imageurl: [imgPath], type: "article" })
+            })
+
+
+
+        }
+        var g_bInitKakao = false;
+        //카카오 톡 Web
+        function goLinkKaKao() {
+            if (!g_bInitKakao) {
+                Kakao.init('e49cd216fdfb66d7adf7f1370a79471b');
+                g_bInitKakao = true;
+            }
+            var imgPath = "https://imagedev.hmall.com//HM/HM163/20170525/124931/365.jpg";
+            try { _trk_clickTrace('EVT', "이벤트상세_공유_카카오톡"); } catch (e) { }
+
+
+            if (snsInfwYn == "Y" && shrCertNo != null && shrCertNo != "") {
+                shrURL = 'http://dev3.hmall.com/MCS/eva/snsAppShrEvntGate.do?shrCertNo=' + shrCertNo + '&prmoNo=' + prmoNo;
+            } else {
+                shrURL = location.href + "&pReferCode=932&pTcCode=0000001501";
+            }
+
+            shrURL = shrURL + "&utm_source=sharedurl&utm_medium=share&utm_campaign=eventdetail&utm_content=kakao";
+
+            Kakao.Link.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: "[현대Hmall]\n" + prmoNm,
+                    imageUrl: imgPath,
+                    link: {
+                        mobileWebUrl: shrURL,
+                        webUrl: shrURL
+                    },
+                    imageWidth: 200,
+                    imageHeight: 200
+                }
+                ,
+                buttons: [
+                    {
+                        title: '웹으로 보기',
+                        link: {
+                            mobileWebUrl: shrURL,
+                            webUrl: shrURL
+                        }
+                    },
+                    {
+                        title: '앱으로 보기',
+                        link: {
+                            mobileWebUrl: shrURL,
+                            webUrl: shrURL,
+                            androidExecParams: shrURL,
+                            iosExecParams: shrURL
+                        }
+                    }
+                ]
+            });
+        }
+
+        //카카오톡 App
+        function goLinkKaKaoForApp() {
+            var label = "[현대Hmall]\n" + prmoNm;
+            var image = "https://imagedev.hmall.com//HM/HM163/20170525/124931/365.jpg";
+
+
+
+            var WebBtnText = "웹으로 보기";
+            var AppBtnText = "앱으로 보기";
+            if (snsInfwYn == "Y" && shrCertNo != null && shrCertNo != "") {
+                shrURL = 'http://dev3.hmall.com/MCS/eva/snsAppShrEvntGate.do?shrCertNo=' + shrCertNo + '&prmoNo=' + prmoNo;
+            } else {
+                shrURL = location.href + "&pReferCode=932&pTcCode=0000001498";
+            }
+            shrURL = shrURL + "&utm_source=sharedurl&utm_medium=share&utm_campaign=eventdetail&utm_content=kakao";
+
+            var WebUrl = shrURL; // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+            var AppUrl = shrURL; //
+            var IosAppUrl = shrURL; //
+
+            WiseTracker.setCustomMvtTag(WiseTracker.CUSTOM_MVT_TAG_3, "이벤트상세_공유_카카오톡");
+            WiseTracker.sendTransaction();
+            if (appOpsyNm == 'android') {
+                window.AndroidJS.kakaoLink(label, image, WebBtnText, AppBtnText, WebUrl, AppUrl, IosAppUrl); //상단제목, 이미지주소, 웹버튼이름, 앱버튼이름, 이동주소
+            } else {
+                window.location = "kakaolink:`" + label + "`" + image + "`" + WebBtnText + "`" + AppBtnText + "`" + WebUrl + "`" + AppUrl + "`" + IosAppUrl + "`";
+            }
+        }
+        //TWITTER, FACEBOOK
+        function fn_goSNS(site, url, msg, tag) {
+            var goUrl;
+            url = url + "&pReferCode=932&pTcCode=0000001501";
+            if (site == "twitter") {
+                goUrl = "http://twitter.com/share?text=" + encodeURIComponent(msg) + "&url=" + encodeURIComponent(url);
+                //fn_goEcrm('twitter');
+            } else if (site == "facebook") {
+                goUrl = "http://www.facebook.com/sharer.php?u=" + encodeURIComponent(url) + "&t=" + encodeURIComponent(msg);
+                goUrl = goUrl + "&utm_source=sharedurl&utm_medium=share&utm_campaign=eventdetail&utm_content=fcbook";
+                //fn_goEcrm('facebook');
+            }
+
+            var goSNS = window.open(goUrl, site, '');
+            goSNS.focus();
+        }
+
+        //eCRM패턴 분석
+        function fn_goEcrm(clickLink) {
+            actionFrm.location.href = "https://www.hmall.com/redir/clickEv.html?clickLink=" + clickLink;
+        }
+
+        // clipboard url 복사
+        function fn_toClip() {
+            var WebUrl = location.href;
+            WebUrl = WebUrl + "&utm_source=sharedurl&utm_medium=share&utm_campaign=eventdetail&utm_content=urlcopy";
+
+            if (appOpsyNm == "android" && parseInt(appVerNm) >= 106) {
+                WiseTracker.setCustomMvtTag(WiseTracker.CUSTOM_MVT_TAG_3, "이벤트상세_공유_URL복사");
+                WiseTracker.sendTransaction();
+                window.AndroidJS.clipboard(WebUrl, "클립보드에 복사되었습니다.");
+            }
+            else if (appOpsyNm == "ios" && parseInt(appVerNm) >= 108) {
+                WiseTracker.setCustomMvtTag(WiseTracker.CUSTOM_MVT_TAG_3, "이벤트상세_공유_URL복사");
+                WiseTracker.sendTransaction();
+                window.location = "jscall:clipboard:" + WebUrl;
+            }
+            else {
+                try { _trk_clickTrace('EVT', "이벤트상세_공유_URL복사"); } catch (e) { }
+                if (document.all) {
+                    window.clipboardData.setData("Text", WebUrl);
+                    alert("클립보드에 복사되었습니다.");
+                }
+                else {
+                    temp = prompt("길게 터치하셔서 복사하세요.", WebUrl);
+                }
+            }
+        } 
+    </script>
+
+
+    <head>
+
+
+
+
+        <!-- Facebook setting -->
+
+        <meta property="og:url" content="https://hmall.com//MCS/eva/evntView.do" />
+        <meta property="og:title" content="현대홈쇼핑" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="현대Hmall" />
+        <meta property="og:image" content="https://imagedev.hmall.com//static/hmall_meta_800.jpg" />
+        <meta property="og:site_name" content="Hmall" />
+    </head>
+
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/asis/js_4.0/appBookmarkEnable.js?"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+
+
+
+    <style type="text/css">
+        .txtCenter {
+            text-align: center !important;
+        }
+
+        /*footer*/
+        .footer_script {
+            padding: 0 25px 15px;
+            background-color: #fff;
+            font-size: 10px;
+            color: #646464;
+            line-height: 1.4;
+        }
+
+        .footer_script ul {
+            overflow: hidden;
+        }
+
+        .footer_script li {
+            position: relative;
+            float: left;
+            width: 44.3%;
+            text-align: center;
+        }
+
+        .footer_script li:first-child {
+            width: 22.5%;
+            text-align: left;
+        }
+
+        .footer_script li:last-child {
+            width: 33.2%;
+            text-align: right;
+        }
+
+        .footer_script li:first-child:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 17px;
+            width: 1px;
+            height: 11px;
+            background-color: #999;
+        }
+
+        .footer_script li:last-child:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 17px;
+            width: 1px;
+            height: 11px;
+            background-color: #999;
+        }
+
+        .footer_script ul a {
+            display: block;
+            padding: 15px 0;
+            font-size: 12px;
+            color: #444;
+            font-weight: bold;
+        }
+
+        .footer_script li:nth-child(2) a {
+            color: #ef6856;
+        }
+
+        .footer_script .representatives {
+            padding-bottom: 3px;
+        }
+
+        .footer_script address {
+            font-style: normal;
+            white-space: nowrap;
+        }
+
+        .footer_script .v_bar {
+            display: inline-block;
+            padding: 0 4px;
+            vertical-align: middle;
+        }
+
+        .footer_script .clientcenter {
+            white-space: nowrap;
+        }
+
+        .footer_script .mailto {
+            border-bottom: 1px solid #075ecd;
+            letter-spacing: -1px;
+            color: #075ecd
+        }
+
+        .footer_script .tel {
+            color: #ef6856;
+            letter-spacing: -0.5px;
+        }
+
+        .footer_script .bank_link {
+            display: block;
+            padding-top: 3px;
+            color: #ad7c20;
+        }
+
+        .borNone .footer_script {
+            border-top: none;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        var isLogin = "";
+        var resultPtcp = '';
+        var sTodayDate = "";
+        var custNo = "";
+        var eventNo = "01290382";
+        var MktNm = "";
+        var otpYn = "N";//otp인증 여부
+        var bbcSeq = "";
+        var dispCd = "";
+        var page = parseInt('1');
+        var ePage = 0;
+        var totCnt = parseInt('3');
+        var listSize = parseInt('10');
+
+        var condGb = "";
+        var bbsEvntRcmmGbcd = "";
+
+        //베스트
+        var bestPhotoTotCnt = parseInt('0');
+        //처음 로드시
+        $(document).ready(function () {
+            $('#firstimg').attr('class', '_active');
+        });
+
+
+        $(document).ready(function () {
+
+            // 내글보기
+            if (condGb == "CUSTNO" && totCnt == 0) {
+                alert('작성하신 글이 없습니다.');
+                $(location).attr('href', '/MCS/eva/smEvntBbc.do?prmoNo=' + eventNo);
+            }
+
+            $('#uploadBtn').click(function () {
+                var UserIDSessionValue = custNo;
+                if (UserIDSessionValue == null || UserIDSessionValue == "") {
+                    if (confirm("로그인이 필요합니다. \n로그인 화면으로 이동하시겠습니까?")) {
+                        window.location.href = '/m/smLoginF.do?returnUrl=/MCS/eva/smEvntBbc.do?prmoNo=' + eventNo;
+                    }
+                    return false;
+                }
+
+                if (otpYn == "N") {
+                    alert("이벤트 최초 응모시 \n '휴대폰 SMS 수신 확인'이 필요합니다. \n 하단에 수신확인하기 버튼을 눌러주세요.")
+                    return false;
+                }
+
+
+                var upntCustChk = "N";
+                $.ajax({
+                    url: "/MCS/eva/checkUpntCustYn.do?prmoNo=" + eventNo,
+                    dataType: "json",
+                    async: false,
+                    processData: false,
+                    contentType: false,
+                    success: function (data, textStatus, jqXHR) {
+                        var errorMessage = data.errorMessage;
+
+                        if (errorMessage != "") {
+                            upntCustChk = "Y";
+                            if (errorMessage == "UPNT_REGISTER") {
+                                //통합멤버십 고객이 아닐경우 통합멤버십 전환가입 유도
+                                if (confirm("H.Point 통합회원 가입 후 이벤트 응모 가능합니다.\nH.Point 전환가입 하시겠습니까?")) {
+
+                                    window.location.href = "/m/smRegisterUpnt.do";
+                                } else {
+                                    location.reload();
+                                    return false;
+                                }
+                            } else {
+                                alert(errorMessage);
+                                return false;
+                            }
+                        }
+                    }, error: function (jqXHR, textStatus, errorThrown) {
+                        alert('사진등록  실패. etc');
+                        location.reload();
+                    }
+                });
+                if (upntCustChk == "Y") {
+                    return false;
+                }
+                $(location).attr('href', '/MCS/eva/smEvntBbcEditForm.do?prmoNo=' + eventNo);
+            });
+
+            $('#chkCondGb').click(function () {
+                if (custNo == null || custNo == "") {
+                    if (confirm("로그인이 필요합니다. \n로그인 화면으로 이동하시겠습니까?")) {
+                        window.location.href = '/m/smLoginF.do?returnUrl=/MCS/eva/smEvntBbc.do?prmoNo=' + eventNo;
+                    }
+                    return false;
+                }
+
+                // 첫페이지부터 조회
+                page = 1;
+                $('#detail_cont_3').html('');
+                search();
+            });
+
+            $('#orderBy').change(function () {
+                // 첫페이지부터 조회
+                page = 1;
+                $('#detail_cont_3').html('');
+                search();
+            });
+
+            $('.close_btn').on('click', function () {
+                $('.modal_img').empty();
+                $('.modal_info').empty();
+                $('.dimScreen2').hide();
+                $('.modal_new').hide();
+                $('body').removeClass('modal-open');
+            });
+
+            search();
+        });
+
+        function showImgDtl(id) {
+            var domId = 'pic_right_' + id;
+
+            // 2열 이벤트는 modal 방식으로 내용노출
+            $('#' + domId).parent().toggleClass('active');
+
+
+            if ($('#' + domId).children().children().size() == 1    // 상세이미지 로딩 전
+
+                && $('#' + domId).parent().attr('class').indexOf("active") > 0  // 상세이미지 비활성화 상태인 경우만
+
+            ) {
+
+                var bbcSeq = $('#' + domId).parent().val();
+                var objAppend = $('#' + domId).children().children().eq(0);
+
+                loadingBar.start();
+
+                $.ajax({
+                    type: "post"
+                    , url: "/MCS/eva/evntBbcAtflDtl.do?"
+                    , data: { prmoNo: eventNo, bbcSeq: bbcSeq }
+                    , dataType: "json"
+                    , async: true
+                    , success: function (data) {
+                        var atflVOList = data.atflVOList;
+
+                        if (data.atflVOList.length > 0) {
+                            var aTag = "";
+
+                            for (var i = 1; i < data.atflVOList.length; i++) {
+                                aTag += "<img class='thumbImg' src='" + data.atflVOList[i].filePath + "'>";
+                            }
+                        }
+
+                        objAppend.after(aTag);
+
+
+                        if (data.atflVOList.length == 1)
+                            $('.modal_img').addClass('oneitem');
+                        else
+                            $('.modal_img').removeClass('oneitem');
+
+
+                    }
+                });
+
+                loadingBar.stop();
+            } else {
+
+            }
+        }
+
+        function setModal(id) {
+            var domId = 'pic_right_' + id;
+
+            $('#' + domId).parent().find('.thumbImg').clone().appendTo($('.modal_img'));
+            $('#' + domId).parent().find('.pic_wrap').clone().appendTo($('.modal_info'));
+            $('#' + domId).parent().find('.heartCnt').clone().appendTo($('.modal_info'));
+
+            var domId = 'heartImg_' + id;
+            var obj = $('.' + domId);
+            if (obj.attr('src') == 'http://image.hmall.com/static/smart/2015/mobile/images/image_5.0/icon/btn_heart2_on.png') { // 좋아요 상태
+                // 클릭이벤트 재설정
+                obj.attr('onclick', '').unbind('click');
+                obj.unbind('click').bind('click', '', function () {
+                    deletercmm(id);
+                });
+            } else {
+                // 클릭이벤트 재설정
+                obj.attr('onclick', '').unbind('click');
+                obj.unbind('click').bind('click', '', function () {
+                    rcmm(id);
+                });
+            }
+
+            $('.dimScreen2').show();
+            $('.modal_new').show();
+
+            $('body').addClass('modal-open');
+            $('.modal_img').scrollTop(0);
+
+        }
+
+
+        // 좋아요
+        function rcmm(id) {
+            var domId = 'heartImg_' + id;
+
+            // 좋아요 클릭
+            if (custNo == null || custNo == "") {
+                if (confirm("로그인이 필요합니다. \n로그인 화면으로 이동하시겠습니까?")) {
+                    window.location.href = '/m/smLoginF.do?returnUrl=/MCS/eva/smEvntBbc.do?prmoNo=' + eventNo;
+                }
+                return false;
+            }
+
+            var obj = $('.' + domId);
+            var formData = new FormData();
+            var img_upld_path_gbcd = "";
+
+            formData.append("prmoNo", eventNo);
+            formData.append("bbcSeq", id);
+            formData.append("custNo", custNo);
+            formData.append("bbsEvntRcmmGbcd", bbsEvntRcmmGbcd);
+
+            $.ajax({
+                url: '/MCS/eva/saveEvntBbcRcmmDtl.do',
+                type: "post",
+                dataType: "json",
+                data: formData,
+                // cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data, textStatus, jqXHR) {
+                    var save = data.save;
+                    var errorMessages = data.errorMessages;
+                    if (save == "true") {
+                        obj.attr('src', 'http://image.hmall.com/static/smart/2015/mobile/images/image_5.0/icon/btn_heart2_on.png');
+                        obj.next().html(errorMessages);
+
+                        // 클릭이벤트 재설정
+                        obj.attr('onclick', '').unbind('click');
+                        obj.unbind('click').bind('click', '', function () {
+                            deletercmm(id);
+                        });
+
+                    } else {
+                        alert(errorMessages);
+                        return false;
+                    }
+                }, error: function (jqXHR, textStatus, errorThrown) {
+                    alert('저장실패. etc');
+                    return false;
+                }
+            });
+        }
+
+        // 좋아요
+        function deletercmm(id) {
+            var domId = 'heartImg_' + id;
+
+            // 좋아요 클릭
+            if (custNo == null || custNo == "") {
+                if (confirm("로그인이 필요합니다. \n로그인 화면으로 이동하시겠습니까?")) {
+                    window.location.href = '/m/smLoginF.do?returnUrl=/MCS/eva/smEvntBbc.do?prmoNo=' + eventNo;
+                }
+                return false;
+            }
+
+            var obj = $('.' + domId);
+            var formData = new FormData();
+            var img_upld_path_gbcd = "";
+
+            formData.append("prmoNo", eventNo);
+            formData.append("bbcSeq", id);
+            formData.append("custNo", custNo);
+
+            $.ajax({
+                url: '/MCS/eva/deleteEvntBbcCustRcmmDtlByBbcDtl.do',
+                type: "post",
+                dataType: "json",
+                data: formData,
+                // cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data, textStatus, jqXHR) {
+                    var save = data.save;
+                    var errorMessages = data.errorMessages;
+                    if (save == "true") {
+                        obj.attr('src', 'http://image.hmall.com/static/smart/2015/mobile/images/image_5.0/icon/btn_heart2_off.png');
+                        obj.next().html(errorMessages);
+
+                        // 클릭이벤트 재설정
+                        obj.attr('onclick', '').unbind('click');
+                        obj.unbind('click').bind('click', '', function () {
+                            rcmm(id);
+                        });
+
+                    } else {
+                        alert(errorMessages);
+                        return false;
+                    }
+                }, error: function (jqXHR, textStatus, errorThrown) {
+                    alert('저장실패. etc');
+                    return false;
+                }
+            });
+        }
+
+        //더보기
+        function search() {
+            if (ePage > 0) {
+                return;
+            }
+            loadingBar.start();
+
+
+            var orderBy = '';
+            if ($('#orderBy').val() == 'rcmm') { // 정렬
+                orderBy = 'rcmm';
+            }
+
+
+            // 내글만 보기
+            var condGb = "";
+            var condText = ""
+            if ($('#chkCondGb').is(":checked")) {
+                condGb = "CUSTNO";
+                condText = custNo;
+            } else {
+                if (eventNo == '00048028' || eventNo == '00048017') {
+                    condGb = "CUSTNO";
+                    condText = custNo;
+                }
+                else {
+                    condGb = "";
+                    condText = ""
+                }
+            }
+
+            $.ajax({
+                type: "get"
+                , url: "/MCS/eva/evntBbcImgDtlPage.do"
+                , data: { page: page, prmoNo: eventNo, orderBy: orderBy, condGb: condGb, condText: condText, listSize: listSize }
+                , dataType: "html"
+                , async: true
+                , success: function (data) {
+                    loadingBar.stop();
+
+                    $('#detail_cont_3').last().append(data);
+                }
+                ,
+                error: function () {
+                    loadingBar.stop();
+                    console.log("json error");
+                }
+            });
+        }
+
+        //게시글 수정
+        function doUpdateBbcDtl(bbcSeq) {
+            document.frm1.bbcSeq.value = bbcSeq;
+            document.frm1.submit();
+        }
+
+        //게시글 삭제
+        function doDelEvntBbcDtl(bbcSeq) {
+            if (confirm("게시된 글을 삭제하시겠습니까?")) {
+                $.ajax({
+                    type: "post",
+                    url: "/MCS/eva/deleteMyEvntBbcDtl.do",
+                    dataType: "json",
+                    data: {
+                        prmoNo: eventNo,
+                        bbcSeq: bbcSeq
+                    },
+                    success: function (data) {
+                        var errorMessages = data.errorMessages;
+
+                        $('.close_btn').trigger('click');
+
+                        // 첫페이지부터 조회
+                        page = 1;
+                        $('#detail_cont_3').html('');
+                        search();
+                    },
+                    error: function (data) {
+                        alert('삭제에 실패하였습니다');
+                    }
+                });
+            }
+        }
+
+
+        //베스트 포토
+        $(function () {
+            $('.bestPhotoSlideNav ._nototal').html(bestPhotoTotCnt);
+            $('.bestPhotoSlideNav ._nocurr').html($('.bestPhotoSlide ul li._active').index() + 1);
+        });
+
+
+        function rightClick() {
+            var nextIndex = parseInt($('.bestPhotoSlideNav ._nocurr').html());
+            var curIndex = nextIndex - 1;
+
+            var cnt = bestPhotoTotCnt - 1;
+            if (curIndex < cnt) {
+                $('.bestPhotoSlide ul li, .bestPhotoSlideNav ._nocurr').removeClass('_active');
+                $('.bestPhotoSlide ul li').eq(curIndex + 1).addClass('_active');
+                $('.bestPhotoSlideNav ._nocurr').html(curIndex + 2);
+            }
+        }
+
+        function leftClick() {
+            var preIndex = parseInt($('.bestPhotoSlideNav ._nocurr').html());
+            var curIndex = preIndex - 1;
+
+            if (curIndex > 0) {
+                $('.bestPhotoSlide ul li, .bestPhotoSlideNav ._nocurr').removeClass('_active');
+                $('.bestPhotoSlide ul li').eq(curIndex - 1).addClass('_active');
+                $('.bestPhotoSlideNav ._nocurr').html(curIndex);
+            }
+        }
+        _TRK_CP = "^이벤트^[테스트]도전~ 나도 Q레이터!3";
+    </script>
+    <script type="wisetracker/text" id="wiseTracker">
+    WiseTracker.setPageIdentity("EVNTB");    
+	WiseTracker.setContents("^이벤트^" + '[테스트]도전~ 나도 Q레이터!3');
+</script>
+
+<body>
+    <div class="dimScreen2"></div>
+    <div id="wrap">
+
+
+
+
+
+
+
+
+
+
+
+        <script src="//imagedev.hmall.com/gen/js/searchPopKeyWordList.js?v=188010521"></script>
+
+        <script src="//imagedev.hmall.com/gen/js/searchMblADTextList.js?v=188010521"></script>
+
+        <script src="//imagedev.hmall.com/gen/js/searchMblSpecialShopLinkList.js?v=188010521"></script>
+
+        <script src="//imagedev.hmall.com/gen/js/searchBrndShopLinkList.js?v=188010521"></script>
+        <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/pd/search.css">
+
+
+
+
+        <script type="text/javascript">
+            var detailPageYn = false;
+        </script>
+
+
+        <script type="text/javascript">
+            var gv_fileid = "";
+            var gv_streamurl = "";
+            var gv_nm = "";
+            var gv_adKeywordReturnYn = "Y"; // 검색어 광고 조회상태
+            var ga_search_type = "";
+            /* 검색어 광고 관련 이미지 경로 추가 2018.07.03*/
+            var popStart = 0; //인기검색어 1번만 로딩
+
+            // header.js 분리에 따른 변수 선언
+            var isBarCodeDisplay = "false";
+            var LAST_SEARCH = "_LAST_SEARCH";
+            var searchBaseKeywordHead = "A";
+            var imgImg = "//imagedev.hmall.com/m/img";
+            var imageServer = "https://imagedev.hmall.com";
+        </script>
+
+        <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/header.js?v=18801052101"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- GNB 상단 -->
+        <header class="header gnb-history" role="banner">
+            <button class="btn btn-back" onclick="history.back();"><i class="icon"></i><span
+                    class="hiding">뒤로가기</span></button>
+            <h1 class="logo"><a href="/MCS/index.do"><span class="img"><img
+                            src="//imagedev.hmall.com/m/img/co/logo-hmall@2x.png" alt="현대Hmall"></span></a></h1>
+            <button class="btn btn-search" name="searchActive"><i class="icon"></i><span
+                    class="hiding">검색</span></button>
+            <a href="http://dev3.hmall.com/m/basktList.do" class="link-cart"><i class="icon"></i><span
+                    class="hiding">장바구니</span>
+
+            </a>
+        </header>
+        <!-- //.header -->
+
+
+
+
+        <div class="nav-skip"><a href="#cntWrap">본문 콘텐츠로 건너뛰기</a></div>
+
+
+
+
+        <div class="ly-uksearch" aria-label="전체검색">
+            <div class="ly-searhead">
+                <button class="btn btn-back" id="backSearchLayer"><i class="icon"></i><span class="hiding">검색창
+                        닫기</span></button>
+                <form method="get" name="searchdiv" action="">
+                    <div class="inputbox search selected" role="search">
+                        <input type="hidden" name="gnbSearchYn" value="Y" />
+                        <input type="hidden" name="requestPath" value="w" />
+                        <input type="hidden" name="tab" value="all">
+                        <input type="hidden" name="csfDepth">
+                        <input type="hidden" name="csfNameCode">
+                        <input type="hidden" name="gaSearchType">
+
+                        <label class="inplabel">
+
+
+
+                            <input type="search" id="searchinput" name="searchTerm" title="검색어 입력" autocomplete="off">
+
+
+                        </label>
+                        <button type="button" class="btn ico-clearabled"><i class="icon"></i><span
+                                class="hiding">지우기</span></button>
+                        <button class="btn btn-search" type="button" onclick="searchSubmit();"><i class="icon"></i><span
+                                class="hiding">검색</span></button>
+                    </div>
+                </form>
+                <!-- APP 화면시 음성검색 -->
+                <button class="btn btn-voice"><i class="icon voice"></i><span class="hiding">음성검색</span></button>
+            </div>
+            <!-- //.searhead -->
+
+            <div class="ly-searbody">
+                <div class="popular" id="favorite_search_list">
+                    <h3 class="major-headings">인기검색어</h3>
+                    <ul></ul>
+                </div>
+
+                <!-- APP 일경우 class app 추가 -->
+                <div class="recent-area" id="recent-area" aria-hidden="최근검색어">
+                    <h3 class="major-headings">최근검색어</h3>
+                    <div class="recent">
+                        <ul id="recent_search_list"></ul>
+                        <button class="btn btn-delete" id="allDeleteCustKeyword"><i
+                                class="icon delete"></i><span>전체삭제</span></button>
+                    </div>
+                </div>
+
+                <div class="article banner-ad-area" id="adAreaFocus" style="display:none;">
+
+                </div>
+
+                <!-- S : 검색어 자동완성 -->
+                <div class="keyword-area hiding" id="keyword-area">
+                    <!-- 마크업 구조 변경 07/28 -->
+                    <div class="shopbox" style="display:none;">
+                        <p class="spacialshop" id="spacialshop"></p>
+                        <p class="brandshop" id="brandshop"></p>
+                    </div>
+                    <ul id="search_list"></ul>
+
+                    <div class="category-area" id="category-area" style="display:none;">
+                        <h3 class="major-headings">카테고리</h3>
+                        <ul id="recomm_category_list"></ul>
+                    </div>
+                </div>
+
+                <div class="banner-ad-area" id="adAreaKeyup" style="display:none;">
+
+                </div>
+                <!--- //.keyword-area -->
+
+                <div class="not-recommended hiding">
+                    <p>입력하신 단어로 검색어를 추천할 수 없습니다.</p>
+                </div>
+
+                <div class="keyword-tag" id="nowNeed">
+                    <h3 class="major-headings">지금 필요한 그것</h3>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <!-- //.ly-searbody -->
+        </div>
+        <!-- //.cmain -->
+        <form name="brndSearchMoveForm" action="http://dev3.hmall.com/m/dpa/smBrndSearchL.do" method="get">
+            <input type="hidden" name="srchBrndCd" value="" />
+            <input type="hidden" name="tabGbn" value="전체" />
+            <input type="hidden" name="moveGbn" value="first" />
+        </form>
+
+
+        <!-- 상품 상세일 경우에 보이는 디바이스별 하단 버튼 -->
+        <!-- 하단 버튼영역 - 상품상세 App - app의 경우는 class app 추가 -->
+        <div class="btngroup bgfixed btnlen2 app" style="display:none;">
+            <button class="btn btn-cart"><span>장바구니</span></button>
+            <button class="btn btn-purchase"><span>구매하기</span></button>
+        </div>
+        <!-- //.btngroup -->
+
+        <!-- 하단 버튼영역 - 상품상세 모바일 Web -->
+        <div class="btngroup bgfixed btnlen2" style="display:none;">
+            <button class="btn btn-applink"><span>앱으로 연결</span></button>
+            <button class="btn btn-purchase"><span>구매하기</span></button>
+        </div>
+        <!-- //.btngroup -->
+
+        <!-- 하단 버튼영역 유형 선물하기 버튼이 있을 경우 - 상품상세 App, 모바일 Web - app의 경우는 class app 추가 - 시안 확정안됨 -->
+        <div class="btngroup bgfixed btnlen3 app" style="display:none;">
+            <button class="btn btn-cart"><span>장바구니</span></button>
+            <button class="btn btn-present"><i class="icon"></i><span class="hiding">선물하기</span></button>
+            <button class="btn btn-purchase"><span>바로구매</span></button>
+        </div>
+        <!-- //.btngroup -->
+        <!-- //상품 상세일 경우에 보이는 디바이스별 하단 버튼 -->
+
+        <!-- 플로팅 메뉴 -->
+        <!-- 글씨크기 조정 : APP에서만 노출. 스크롤시 감춤
+크게, 작게 조정 불가 시 각 버튼에 disabled, aria-disabled="true" 추가
+-->
+
+        <!-- //floating-menu -->
+        <!-- //.wrap -->
+        <script type="text/javascript">
+            /* as-is에 있던 이벤트 찹여 함수 이관 - 2020.11.06 임재의 - S*/
+            //2019.08.14 전세린- 퍼블리셔 요청으로 doEv_x, doEv_o 함수 추가
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
+            function doEv_x() {
+                var paramUrl = window.location.href;
+                var eventNo = getParameterByName("EventNo");
+                var prmoNo = getParameterByName("prmoNo");
+
+                if (eventNo != null || prmoNo != null) {
+                    doEvntEntry();
+                }
+            }
+
+            function doEv_o() {
+                var paramUrl = window.location.href;
+                var eventNo = getParameterByName("EventNo");
+                var prmoNo = getParameterByName("prmoNo");
+                if (eventNo != null && eventNo.length > 0) {
+                    simpleEvntEnty2(eventNo);
+                } else if (prmoNo != null && prmoNo.length > 0) {
+                    simpleEvntEnty2(prmoNo);
+                }
+            }
+            function simpleEvntEnty2(eventNo) {
+
+                //로그인 체크
+                if (typeof isLogin != "undefined") {
+                    if (isLogin == null || isLogin == "") {
+                        alert("로그인 후 이용해 주세요.");
+                        window.location.href = '/m/smLoginF.do?returnUrl=' + location.href.split('hmall.com')[1];
+                        return false;
+                    }
+                }
+
+                if (roulette_flag != 0) {
+                    return false;
+                }
+
+                // 2017.03. 모바일앱전용 체크
+                if (typeof mblAppAplyYn != "undefined") {
+                    if (!isEmpty(mblAppAplyYn) && mblAppAplyYn == 'Y') {
+                        if (appYn != 'Y') {
+                            alert('App 전용 이벤트 입니다.\n App에서 응모해 주세요.');
+                            return false;
+                        }
+                    }
+                }
+
+                // 2017.03. OTP 유무 체크
+                if (typeof otpYn != "undefined") {
+                    if (otpYn == "N") {
+                        window.location.href = '/m/smSnsCert.do?btn=agree&returnUrl=' + location.href.split('hmall.com')[1];
+                        return false;
+                    }
+                }
+
+                roulette_flag = 1;
+
+                $.ajax({
+                    type: "get"
+                    , url: "/MCS/eva/etCpAddActionP.do?"
+                    , data: { EventNo: eventNo }
+                    , dataType: "json"
+                    , async: true
+                    , success: function (data) {
+                        if (data.actorError == 'true' || data.errorMessage != null) {
+                            roulette_flag = 0;
+                            if (data.errorMessage == "UPNT_REGISTER") {
+                                //통합멤버십 고객이 아닐경우 통합멤버십 전환가입 유도
+                                if (confirm("H.Point 통합회원 가입 후 이벤트 응모 가능합니다.\nH.Point 전환가입 하시겠습니까?")) {
+                                    window.location.href = "/m/smRegisterUpnt.do";
+                                }
+                            } else if (data.errorMessage == "APP_PUSH_N") {
+
+                                alert("푸시 메시지 수신에 동의하셔야 합니다.");
+                                if (appYn == "Y") {
+                                    if (appOpsyNm == "android") {
+                                        window.AndroidJS.openPushSettingPop();
+                                    } else {
+                                        window.location = 'jscall:openAppSettingView';
+                                    }
+                                }
+
+                                return;
+
+                            }
+                            else {
+                                alert(data.errorMessage);
+                            }
+
+                        } else if (data.successMessage != null) {
+                            if (data.appAgree) {
+                                var msg = "이벤트 참여가 완료되었습니다. 단, 푸쉬 알림 ON 상태일 때 최종 응모처리 되오니 앱 설정 상태를 확인해 주세요.\n(※ Hmall앱: 설정 > 알림설정 > 광고성 알림받기 ON)";
+                                alert(msg);
+                                roulette_flag = 0;
+                                return;
+                            }
+                            alert(data.successMessage);
+                            roulette_flag = 0;
+                        }
+                    },
+                    error: function () {
+                        console.log("json error");
+                        roulette_flag = 0;
+                    }
+                });
+            }
+            function fnSso() {
+                try {
+                    gfnSsoInit();
+                    gfnSsoReqHttp(fnSsoCallback1);
+                } catch (e) {
+                    var todayDate = new Date();
+                    todayDate.setDate(todayDate.getDate() + 5 / 24 / 60);
+                    document.cookie = "SSOAUTHYN=N; path=/; expires=" + todayDate.toGMTString() + ";domain=.hyundaihmall.com" + ';';
+                }
+            }
+    /*as-is에 있던 이벤트 찹여 함수 이관 - 2020.11.06 임재의 - E*/
+
+        </script>
+
+
+        <script src="//imagedev.hmall.com/gen/js/category_merge_smart.js?v=188010521"></script>
+        <script src="//imagedev.hmall.com/gen/js/special_bnnr.js?v=188010521"></script>
+        <script type="text/javascript">
+            var appYn = 'N';
+            var appVerNm = "0";
+            var appOpsyNm = "ios";
+            var itntId = "";
+
+
+            /* 카테고리/스페셜샵 영역 호출 */
+            $(window).ready(function () {
+                makeCategoryUi();
+                makeSpecialCategoryUi();
+
+                //신규 왼쪽드로워가 적용되지 않은 아이폰 앱
+                if (appYn == 'Y') {
+                    if (appOpsyNm == 'ios') {
+                        refreshUserInfo();
+                        if (appVerNm > 125) {
+                            window.location = "jscall:getpushNoticeCount";
+                            window.location = "jscall:canPingerPrintScan";
+                        }
+
+                        if (appVerNm <= 116) {
+                            //왼쪽 드로워가 적용되지 않은 IOS 앱일시
+                            $('.hamburger').hide();
+                            $('#top_title').css("color", "black");
+                            $('.sidebar-area::after').removeClass("active");
+                            $('.sidebar-area').addClass('_hide');
+
+                        }
+                        var gnb = '';// category, plan
+                        if (gnb == 'notitle') {
+                            $('.sidebar-area').remove();
+                            $('.quick-menu').remove();
+                            $('.sidebar-btngroup').remove();
+                        }
+                    } else if (appOpsyNm == 'android') {
+                        if (appVerNm < 131) {
+                            $('.before-login').remove();
+                        }
+                        // 푸쉬알림 카운트 받아오기
+                        window.AndroidJS.getpushNoticeCount();
+                    }
+                }
+            });
+
+
+            //사용자 로그인 정보 갱신
+            function refreshUserInfo() {
+                console.log("refreshUserInfo()");
+                itntId = "";
+                $.ajax({
+                    type: "post"
+                    , url: "http://dev3.hmall.com/m/api/getLoginUserInfo.do"
+                    // , url: "https://" + location.host + "/m/api/getLoginUserInfo.do"
+                    , dataType: "jsonp"
+                    , crossDomain: true
+                    , jsonpCallback: 'callback'
+                    , success: function (data) {
+                        if (data.isLogin == true) {
+                            $('.before-login').hide();
+                            $('.after-login').show();
+
+                            $('.user-name strong').text(data.custNm);
+                            if (data.EHCustGrade == "level1") {
+                                $(".sidebar-area").addClass('silver-lv');
+                                $(".after-login div.rating").html("<span class='silver-lv'><em>SILVER</em>등급입니다</span>");
+                            } else if (data.EHCustGrade == "level2") {
+                                $(".sidebar-area").addClass('gold-lv');
+                                $(".after-login div.rating").html("<span class='gold-lv'><em>GOLD</em>등급입니다</span>");
+                            } else if (data.EHCustGrade == "level3") {
+                                $(".sidebar-area").addClass('platinum-lv');
+                                $(".after-login div.rating").html("<span class='platinum-lv'><em>PLATINUM</em>등급입니다</span>");
+                            } else if (data.EHCustGrade == "level4") {
+                                $(".sidebar-area").addClass('diamond-lv');
+                                $(".after-login div.rating").html("<span class='diamond-lv'><em>DIAMOND</em>등급입니다</span>");
+                            } else if (data.EHCustGrade == "level5") {
+                                $(".sidebar-area").addClass('topclass-lv');
+                                $(".after-login div.rating").html("<span class='topclass-lv'><em>TOP CLASS</em>등급입니다</span>");
+                            }
+                            itntId = data.itntId;
+                            if (appYn == "Y" && appOpsyNm == "android") {
+                                window.AndroidJS.getpushNoticeCount();
+                            }
+                        } else {
+                            $('.before-login').show();
+                            $('.after-login').hide();
+                        }
+                    }
+                    , error: function (data) {
+                        console.log("getLoginUserInfo.do error");
+                        $('.before-login').show();
+                        $('.after-login').hide();
+                    }
+                });
+            }
+
+            //앱 푸쉬알림 카운트 받아오기 콜백
+            function getpushNoticeCountCallback(cnt) {
+                if (cnt > 0) {
+                    $('.alarm-badge').text(cnt);
+                    $('.alarm-badge').show();
+                }
+                else {
+                    $('.alarm-badge').hide();
+                }
+            }
+
+
+            function settingBtn() {
+                // 앱 버전에 따른 설정아이콘 링크설정
+                pagemoveWithTag("", "", "하단_설정");
+                setGaPromotion("공통>좌측메뉴", "좌측메뉴", "하단", "설정", "");
+                if (appYn == "Y") {
+                    if (appOpsyNm == "android") {
+                        if (parseInt(appVerNm) >= 120) {
+                            javascript: window.AndroidJS.openAppSettingView(itntId);
+                        } else {
+                            javascript: window.AndroidJS.openAppSettingView();
+                        }
+                    } else { //ios
+                        javascript: window.location = 'jscall:openAppSettingView';
+                    }
+                }
+            }
+
+            /* 카테고리 영역 html 노출 */
+            function makeCategoryUi() {
+                var gbn = 'category';// category, plan
+                var preEndPoint = 0;
+                var tree = $(".cate-menu");
+                var cateStr = "";
+                var cnt = 0;
+                var cate1 = "<div class='depth depth2'>";
+                var cate2 = "<div class='depth-menu'>";
+                var cate3 = "<div class='depth-menu'>"; //현대백화점 분기
+
+                var detpSpecial = "";
+                var cate10CodeName = "";
+                for (var i = 0; i < categoryTop.length; i++) {
+                    var code = Number(categoryTop[i].code);
+                    var cate = "<li>";
+                    //주간베스트일경우 태깅을 위해 분기
+                    if (code == 11) {
+                        cate = cate + "<a href='javascript:clickTraceWkCtgrBrnd()' class=\"cate99\"><i class='icon'></i><span>" + categoryTop[i].codeName + "</span></a>";
+                    } else if (code == 12) {
+                        cate = cate + "<a href='javascript:clickTraceWkBest()' class=\"cate" + code + "\"><i class='icon'></i><span>" + categoryTop[i].codeName + "</span></a>";
+                    } else {
+                        cate = cate + "<a href=# class='cate" + code + "'><i class='icon'></i><span>" + categoryTop[i].codeName + "</span></a>";
+                    }
+                    var codes = ["01", "02", "03", "04"]; //01 Hmall, 02 detp, 03 homeshopping, 04 dtv
+                    cate = cate + cate1;
+                    for (var k = 0; k < codes.length; k++) { //각 카테고리 순서가 뒤죽박죽 들어오기때문에 순서를 맞추기위해 hmall/dept/etv상품 순서대로 루핑한다.
+                        var cateGbCd = "";
+                        if (codes[k] == "01" || codes[k] == "03") {
+                            cateGbcd = cate2;
+                        } else {
+                            cateGbcd = cate3;   //현대백화점 분기문
+                        }
+                        var firstItem_up = "Y"; //상위 아이템의 첫번째인 경우를 담아두는 flag
+                        var flagNoItem_up = "Y"; //아이템이 하나라도 있는지 확인하는 flag
+                        for (var j = 0; j < hmallCategoryArr.length; j++) {
+                            if (hmallCategoryArr[j][0] == categoryTop[i].code) {
+                                if (hmallCategoryArr[j][4] == codes[k] && hmallCategoryArr[j][1] == "N") {
+                                    if (firstItem_up == "Y") {
+                                        firstItem_up = "N";
+                                        if (hmallCategoryArr[j][4] != '04') {
+                                            cate = cate + cateGbcd;
+                                        }
+                                        if (categoryTop[i].code == '09') {
+                                            if (hmallCategoryArr[j][4] == '03') {
+                                                cate = cate + "<strong class='depth-tit'><a href='javascript:;'>" + categoryTop[i].codeName + "</a></strong><ul>";
+                                            } else {
+                                                cate = cate + "<strong class='depth-tit'><a href='javascript:;'>TV+샵</a></strong><ul>";
+                                            }
+                                        } else {
+                                            cate = cate + "<ul>";
+                                        }
+                                        flagNoItem_up = "N";
+                                    }
+                                    if (hmallCategoryArr[j][4] == '01') {
+                                        cate = cate + "<li>" + "<a href='javascript:clickTraceCategory(\"" + hmallCategoryArr[j][3] + "\",\"" + categoryTop[i].codeName + "\",\"" + categoryTop[i].code + "\",\"" + hmallCategoryArr[j][4] + "\",\"" + hmallCategoryArr[j][1] + "\",\"" + hmallCategoryArr[j][2] + "\")'>" + hmallCategoryArr[j][2] + "</a></li>";
+                                    }
+                                    if (categoryTop[i].code == '09' || categoryTop[i].code == '10') {
+                                        if (categoryTop[i].code == '09' && hmallCategoryArr[j][4] == '04') {
+                                            cate = cate + "<li>" + "<a href='javascript:clickTraceCategory(\"" + hmallCategoryArr[j][3] + "\",\"TV+샵\",\"" + categoryTop[i].code + "\",\"" + hmallCategoryArr[j][4] + "\",\"" + hmallCategoryArr[j][1] + "\",\"" + hmallCategoryArr[j][2] + "\")'>" + hmallCategoryArr[j][2] + "</a></li>";
+                                        } else {
+                                            cate = cate + "<li>" + "<a href='javascript:clickTraceCategory(\"" + hmallCategoryArr[j][3] + "\",\"" + categoryTop[i].codeName + "\",\"" + categoryTop[i].code + "\",\"" + hmallCategoryArr[j][4] + "\",\"" + hmallCategoryArr[j][1] + "\",\"" + hmallCategoryArr[j][2] + "\")'>" + hmallCategoryArr[j][2] + "</a></li>";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if (flagNoItem_up == "N") { //한번이라도 값이 있었으면 닫아준다.
+                            cate = cate + "</ul>"
+                        }
+                        var emptyUl = cate.substr(cate.length - 9); // => "Tabs1"
+                        if (emptyUl == "<ul></ul>") {
+                            cate = cate.substring(0, cate.length - 9);
+                        }
+                        //각 카테고리 두번째 필드 출력
+                        var firstItem_dn = "Y";
+                        var flagNoItem_dn = "Y";
+
+                        for (var j = 0; j < hmallCategoryArr.length; j++) {
+                            if (hmallCategoryArr[j][0] == categoryTop[i].code) {
+                                if (hmallCategoryArr[j][4] == codes[k] && hmallCategoryArr[j][1] == "Y") {
+                                    if (hmallCategoryArr[j][4] == '01') {
+                                        if (firstItem_dn == "Y") {
+                                            cate = cate + "</div><div class='specialshop type-scroll' aria-label='" + categoryTop[i].codeName + "'> <h2 class='specialshop-tit'>스페셜샵</h2>" + "<ul class='specialshop-menu'>";
+                                            firstItem_dn = "N";
+                                            flagNoItem_dn = "N";
+                                        }
+                                        cate = cate + "<li>" + "<a href='javascript:clickTraceCategory(\"" + hmallCategoryArr[j][3] + "\",\"" + categoryTop[i].codeName + "\",\"" + categoryTop[i].code + "\",\"" + hmallCategoryArr[j][4] + "\",\"" + hmallCategoryArr[j][1] + "\",\"" + hmallCategoryArr[j][2] + "\")'><span>" + hmallCategoryArr[j][2] + "</span></a></li>";
+                                    } else {
+                                        cate10CodeName = categoryTop[i].codeName;
+                                        detpSpecial = detpSpecial + "<li>" + "<a href='javascript:clickTraceCategory(\"" + hmallCategoryArr[j][3] + "\",\"" + categoryTop[i].codeName + "\",\"" + categoryTop[i].code + "\",\"" + hmallCategoryArr[j][4] + "\",\"" + hmallCategoryArr[j][1] + "\",\"" + hmallCategoryArr[j][2] + "\")'><span>" + hmallCategoryArr[j][2] + "</span></a></li>";
+                                    }
+                                }
+                            }
+                        }
+                        if (flagNoItem_dn == "N") { //한번이라도 값이 있었으면 닫아준다.
+                            cate = cate + "</ul>"
+                        }
+                    }
+                    cate = cate + "</div>";
+                    cate = cate + "</li>";
+                    tree.append(cate);
+                }
+                $('.cate10').siblings('.depth.depth2').append("<div class='specialshop type-scroll' aria-label='" + cate10CodeName + "'> <h2 class='specialshop-tit'>스페셜샵</h2>" + "<ul class='specialshop-menu'>" + detpSpecial + "</ul></div>");
+            }
+
+            /* 스페셜샵 html 영역 노출 */
+            function makeSpecialCategoryUi() {
+                var specialContents = $("#specialshop .specialshop-menu");
+                var cateStr = "";
+                var idx = 0;
+
+                /* hmallSpecialShopArr 는special_bnnr.js 가 만들어 준다. */
+                for (var i = 0; i < hmallSpecialShopArr.length; i++) {
+                    var test = 'https://imagedev.hmall.com';
+                    cateStr = cateStr + "<li>";
+                    cateStr = cateStr + "  <a href='javascript:clickTraceSpecialShop(\"" + hmallSpecialShopArr[i][2] + "\",\"" + hmallSpecialShopArr[i][1] + "\")'>";
+                    cateStr = cateStr + "<span class='img'>" + "<img src='" + test + hmallSpecialShopArr[i][0] + "' alt='" + hmallSpecialShopArr[i][2]
+                        + "'onError=\"this.src='https://imagedev.hmall.com/hnm/mo/images/cos/02/img_not_available.jpg'\">" + "</span>";
+                    cateStr = cateStr + "    <span>" + hmallSpecialShopArr[i][2] + "</span>";
+                    cateStr = cateStr + "  </a>";
+                    cateStr = cateStr + "</li>";
+                    idx++;
+                }
+                specialContents.append(cateStr);
+
+                if (hmallSpecialShopArr.length <= 0) {
+                    $("#specialshop").hide();
+                }
+            }
+
+            /* 스페셜샵 페이지 이동 */
+            function clickTraceSpecialShop(dispNm, dispUrl) {
+                if (appYn == "N") {
+                    try {
+                        _trk_clickTrace('EVT', '좌측드로워_스페셜샵_' + dispNm);
+                    } catch (e) { }
+                } else if ((appOpsyNm == "android" && parseInt(appVerNm) >= 86) || (appOpsyNm == "ios" && parseInt(appVerNm) >= 83)) {
+                    WiseTracker.setCustomMvtTag("mvt3", "좌측드로워_스페셜샵_" + dispNm);
+                    WiseTracker.setInternalEvent("etvhm_spclshp");
+                    WiseTracker.sendTransaction();
+                }
+
+                /* clearCategoryTree(); */
+                /* setGaPromotion("공통>좌측메뉴", "좌측메뉴", "스페셜샵", dispNm, ""); */
+                goPage(dispUrl);
+            }
+
+            function clickTraceCategory(sectId, dispNm, cateCd, gubun, spexYn, detailNm) {
+                var depttag = "";
+                var tag = "";
+
+                if ($('.ca-10').hasClass("on")) {
+                    tag = "카테고리_현대백화점" + "_" + detailNm;
+                } else {
+                    tag = "카테고리_" + dispNm + "_" + detailNm;
+                }
+                clearCategoryTreeRenew();
+                pagemoveWithTag("", "", tag);
+                if (spexYn == "Y") {
+                    setGaPromotion("공통>좌측메뉴", "좌측메뉴", "브랜드 카테고리", dispNm, detailNm);
+                } else {
+                    setGaPromotion("공통>좌측메뉴", "좌측메뉴", "일반 카테고리", dispNm, detailNm);
+                }
+
+                var dispUrl = "";
+                if (gubun == "03" || gubun == "04") {
+                    dispUrl = "/m/dpa/searchSectItem.do?sectId=" + sectId;
+                } else if (spexYn == "Y") {
+                    dispUrl = "/m/dpa/smCategoryStep2.do?SectID=" + sectId;
+                } else if (gubun == "02") {
+                    dispUrl = "/m/smCategoryStep1.do?SectID=" + sectId;
+                } else {
+                    dispUrl = "/m/dpa/smCategoryHmallStep3.do?menuCode=" + sectId + "&lev=3&cateText=" + dispNm + "&cateCode=" + cateCd;
+                }
+
+                goPage(dispUrl);
+            }
+
+            /* 해외직구 페이지 이동 */
+            function clickTraceWkCtgrBrnd() {
+                /* clearCategoryTreeRenew(); */
+                /* setGaPromotion("공통>좌측메뉴", "좌측메뉴", "일반 카테고리", "해외직구", ""); */
+                pagemoveWithTag("/m/dpa/smSpecCtgrBrnd.do?SectId=1923819", "", "카테고리_해외직구");
+            }
+
+            /* 주간베스트 페이지이동 */
+            function clickTraceWkBest() {
+                /* clearCategoryTreeRenew(); */
+                /* setGaPromotion("공통>좌측메뉴", "좌측메뉴", "일반 카테고리", "주간베스트", ""); */
+                pagemoveWithTag("/m/dpa/wkBestTypeTot.do", "", "카테고리_주간베스트");
+            }
+
+
+            function pushbox() {
+                pagemoveWithTag("", "Y", "상단_쇼핑알림");
+
+                if (appOpsyNm == "android") {
+                    window.AndroidJS.openPushNoticeView();
+                } else {
+                    //"사서함";
+                    window.location = "jscall:openPushNoticeView";
+                }
+
+            }
+
+            function getUrlVars() {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < hashes.length; i++) {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+
+            /* 페이지 전환 */
+            function goPage(dispUrl) {
+                if (appYn == "Y" && appOpsyNm == "android") {
+                    window.AndroidJS.seturl(dispUrl);
+                } else if (appYn == "Y" && appOpsyNm == "ios") {
+                    window.webkit.messageHandlers.renewHandler.postMessage("jscall:seturl:" + dispUrl);
+                } else {
+                    location.href = dispUrl;
+                }
+            }
+
+            /* 로그인 페이지 전환 */
+            function loginAction() {
+                pagemoveWithTag("", "", "상단_로그인btn");
+                var loginUrl = "";
+                var href = window.location.href;
+                var queryString = href.split('?');
+
+                // TODO nz left menu 로그인임을 알리는 쿠키를 기록 앱을 위해서는?
+                // 로그인버튼을 클릭한 경우만 쿠키동의여부 팝업 노출처리 위해 셋팅
+                sessionStorage.setItem("recentCokiUseAgr", "Y");
+
+                if (appYn == "Y" && appOpsyNm == "ios") {
+                    javascript: window.location = 'jscall:openAppLoginView';
+                } else {
+                    if (location.pathname.indexOf("m/leftMenu.do") > -1) {
+                        loginUrl = "/m/smLoginF.do";
+                    } else if (queryString[1] == undefined) {
+                        loginUrl = "/m/smLoginF.do?returnUrl=" + location.pathname;
+                    } else {
+                        loginUrl = "/m/smLoginF.do?returnUrl=" + location.pathname + "?" + queryString[1];
+                    }
+                    goPage(loginUrl);
+                }
+            }
+
+            /* 태깅 링크페이지 이동 */
+            function pagemoveWithTag(link, topYn, item_tag) {
+
+                //Todo : 키워드 정의시 재 개발
+
+                var tag = '좌측드로워_';
+                var login = '';
+                if (topYn == 'Y') {
+                    if ($('.user-name strong').text() != '') {
+                        login = '로그인_';
+                    } else {
+                        login = '비로그인_';
+                    }
+                }
+
+                tag = tag + login + item_tag;
+                console.log("pagemoveWithTag : " + tag);
+                //ga click (promotion)
+                if (item_tag == "상단_최근본상품") {
+                    /* setGaPromotion("공통>좌측메뉴", "좌측메뉴", '상단', '최근본상품', ""); */
+                }
+                if (appYn == "N") {
+                    try {
+                        _trk_clickTrace('EVT', tag);
+                    } catch (e) { }
+                } else if ((appOpsyNm == "android" && parseInt(appVerNm) >= 86) || (appOpsyNm == "ios" && parseInt(appVerNm) >= 83)) {
+                    WiseTracker.setCustomMvtTag("mvt3", tag);
+                    WiseTracker.sendTransaction();
+                }
+
+                /* clearCategoryTreeRenew(); */
+                if (link != "") {
+                    goPage(link);
+                }
+            }
+
+            function closeBtn() {
+                $('.nav-tabbar').addClass('fixed');
+
+                if (appYn == 'N') {
+                    $(".sidebar-area").removeClass("active");
+                } else {
+                    //app drawer close
+                    if (appOpsyNm == "android" && onlyWebYn != "Y") {
+                        window.AndroidJS.closeDrawer();
+                    } else if (appOpsyNm == "android" && onlyWebYn == "Y") {
+                        leftDrawerTogle();
+                    }
+                    else {
+                        //ios
+                        if (appVerNm <= 116) {
+                            leftDrawerTogle();
+                        } else {
+                            window.location = "jscall:exit";
+                        }
+                    }
+                }
+                UI.windowScroll.enable();
+            }
+
+            // 1707 - 사이드바 카테고리 선택 후 영역 클리어
+            function clearCategoryTreeRenew() {
+                $("#leftCategory").each(function () {
+                    $(this).find("li").removeClass("active");
+                });
+
+                $(window).scrollTop(0);
+            }
+
+            /* 스페셜샵 더보기버튼제어 */
+            // $(document).on('click', '.btngroup button.btn-viewmore', function() {
+            //     if($('.specialshop-menu.active').length == 0){
+            //         $('#specialshop .specialshop-menu').addClass('active');
+            //         $('.btngroup button.btn-viewmore .arrow-down').parent().css('display','none');
+            //         $('.btngroup button.btn-viewmore .arrow-up').parent().css('display','block');
+            //     }else{
+            //         $('#specialshop .specialshop-menu').removeClass('active');
+            //         $('.btngroup button.btn-viewmore .arrow-down').parent().css('display','block');
+            //         $('.btngroup button.btn-viewmore .arrow-up').parent().css('display','none');
+            //     }
+            // });
+
+            /* 카테고리 2depth 영역 제어 */
+            $(document).on('click', '.cate-menu li', function () {
+                if ($(this).attr('class') == 'active') {
+                    $(this).removeClass('active');
+                } else if ($(this).find('.cate11').length == 0 && $(this).find('.cate12').length == 0 && $(this).find('.cate99').length == 0) {
+                    $(".cate-menu li.active").removeClass();
+                    $(this).addClass('active');
+                }
+            });
+
+            /* 햄버거 버튼 클릭 */
+            $(document).on('click', '.btn.btn-cate, .menu-recent, .menu-cate a', function () {
+
+                console.log($(this).attr('class'));
+
+                //app에서는 tabbar 고정
+                if (appYn != "Y") {
+                    $('.nav-tabbar').removeClass('fixed');
+                }
+
+                if ($(this).attr('class') != 'menu-recent' && appYn != "Y") {  //app에서 레프트 메뉴 별도 관리
+                    $('.sidebar-area').addClass('active');
+                    refreshUserInfo();
+                } else if ($(this).attr('class') == 'menu-recent') {
+                    $('.recentwrap').addClass('active');
+                }
+            });
+
+
+            //css 퍼블 내역 개발쪽으로 변경
+            // $(".sidebar-area .btn-close").click(function(){ //전체 카테고리 메뉴 닫기
+            //     $(".sidebar-area").removeClass("active");
+            //     UI.windowScroll.enable()
+            // });
+
+
+            //브랜드검색버튼 클릭이벤트
+            $(document).on('click', '#brndSrchMove', function () {
+                var pathVal = "좌측드로워_브랜드찾기btn";
+                if (appYn == "N") {
+                    //웹인경우
+                    try { _trk_clickTrace('EVT', pathVal); } catch (e) { }
+                } else {//앱인경우
+                    if ((appOpsyNm == "android" && parseInt(appVerNm) >= 86) || (appOpsyNm == "ios" && parseInt(appVerNm) >= 83)) {
+                        WiseTracker.setCustomMvtTag("mvt3", pathVal);
+                        WiseTracker.sendTransaction();
+                    }
+                }
+                /* setGaPromotion("공통>좌측메뉴", "좌측메뉴", "하단", "브랜드찾기", ""); */
+                var moveUrl = "/m/dpa/smBrndSrchMain.do";
+                goPage(moveUrl);
+            });
+
+    //for chrome debugger
+    //# sourceURL=script-for-leftmenu.js
+        </script>
+        <!-- 왼쪽메뉴 -->
+        <div class="sidebar-area">
+            <!- - active 클래스 제어 : Drawer 열고 닫음 -->
+                <div class="sidebarcnt">
+                    <button class="btn btn-close" type="button" onclick="closeBtn();return false;"><i
+                            class="icon"></i><span class="hiding">닫기</span></button>
+                    <div class="sidebar-head">
+                        <!-- 로그인 전 -->
+                        <div class="before-login">
+                            <a href="javascript:loginAction();" class="link-login"><span>로그인해주세요</span><i
+                                    class="icon"></i></a>
+                        </div>
+                        <!-- //.before-login -->
+
+                        <!-- 로그인 후 -->
+                        <div class="after-login" style="display:none">
+                            <span class="user-name"><strong></strong>님</span>
+                            <div class="rating">
+                                <!-- 등급노출 -->
+                            </div>
+                        </div>
+                        <!-- //.after-login -->
+
+                        <!-- APP일 시 노출 -->
+
+
+                        <!-- //.setting-app -->
+                    </div>
+                    <!-- //.sidebar-head -->
+                    <ul class="quick-menu" role="navigation">
+                        <li class="menu-mypage"><a
+                                href="javascript:pagemoveWithTag('/m/mpf/selectMyPageMain.do', 'Y', '상단_마이페이지');"><i
+                                    class="icon icon-mypage"></i><span>마이페이지</span></a></li>
+                        <li class="menu-coupon"><a
+                                href="javascript:pagemoveWithTag('/m/mpCustCouPonL.do', 'Y', '상단_쿠폰');"><i
+                                    class="icon icon-coupon"></i><span>쿠폰</span></a></li>
+                        <li class="menu-point"><a
+                                href="javascript:pagemoveWithTag('/m/smMypageHpoint.do', 'Y', '상단_포인트');"><i
+                                    class="icon icon-point"></i><span>포인트</span></a></li>
+                        <li class="menu-delivery"><a
+                                href="javascript:pagemoveWithTag('/m/smOrderPeriodL.do', 'Y', '상단_주문배송');"><i
+                                    class="icon icon-delivery"></i><span>주문배송</span></a></li>
+                    </ul>
+                    <!-- //.quick-menu -->
+
+                    <div class="category-group" aria-label="카테고리">
+                        <h2 class="category-tit">카테고리</h2>
+                        <!-- 브랜드 검색 페이지로 이동 -->
+                        <a href="javascript:;" class="link-brand" id="brndSrchMove"><span>브랜드 검색</span><i
+                                class="icon icon-search"></i></a>
+                        <ul class="cate-menu" id="leftCategory">
+                            <!-- 카테고리 컨텐츠 영역 -->
+                        </ul>
+                    </div>
+                    <!-- //.category-menu -->
+                    <div class="specialshop" id="specialshop" aria-label="스페셜샵">
+                        <h2 class="specialshop-tit">스페셜샵</h2>
+                        <ul class="specialshop-menu">
+                            <!-- active 클래스 제어 -->
+                            <!-- 스페셜샵 컨텐츠 영역 -->
+                        </ul>
+                        <div class="btngroup">
+                            <!-- [10/21] data-modules 적용 -->
+                            <button class="btn btn-viewmore"
+                                data-modules-customtoggle="parent:.specialshop;closeText:접기;"><span
+                                    data-text>더보기</span><i class="icon arrow-down"></i></button>
+                            <!-- <button class="btn btn-viewmore"><span>접기</span><i class="icon arrow-up"></i></button> -->
+                        </div>
+                    </div>
+                    <!-- //.specialshop -->
+
+                    <div class="sidebar-btngroup">
+                        <div class="btngroup btnlen1">
+                            <a href="javascript:pagemoveWithTag('/m/chMainR.do', '', '하단_고객센터');"
+                                class="btn btn-linegray"><span>고객센터</span></a>
+                        </div>
+                        <!-- //.btngroup -->
+                    </div>
+                    <!-- //.sidebar-btngroup -->
+                </div>
+        </div>
+        <!-- //왼쪽메뉴 -->
+
+        <!-- 2017.11.16 매장전시이주형 pdlist17 적용 -->
+        <!-- 2021.01.05 content event 클래스 추가-->
+        <section id="content" class="ev502 pdlist17 content event">
+            <div class="appzine_wrap">
+                <div>
+                    <style>
+                        #mobile_ajax a {
+                            position: absolute;
+                            display: block;
+                            z-index: 10;
+                        }
+                    </style>
+                    <div id="mobile_ajax" class="manual-mc _loaded"
+                        style="POSITION: relative; TEXT-ALIGN: center; WIDTH: 100%">
+
+                        <a class="btn1"
+                            style="OVERFLOW: hidden; HEIGHT: 2%; POSITION: absolute; LEFT: 20%; Z-INDEX: 10; DISPLAY: block; TOP: 40%; WIDTH: 60%; TEXT-INDENT: -9999px;"
+                            href="http://m.hyundaihmall.com/MCS/eva/smEvntAppZinDtl.do?prmoNo=00047895"></a>
+
+                        <div>
+                            <img class="manual-mc" style="DISPLAY: block; WIDTH: 100%"
+                                src="http://image.hyundaihmall.com/event/2018/0419_manmc_m.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="picEvWrap  ">
+                    <div class="picEvWrap_pd">
+
+                        <div class="btn_style">
+                            <button id="uploadBtn" type="button" class="btnOrange wType1">사진 올리기</button>
+                        </div>
+
+
+
+                        <p class="subCnt">전체(3)</p>
+                        <div class="navWrap">
+                            <div class="dl4 info_mgb15">
+                                <dl>
+                                    <dd style="margin-left:0;">
+                                        <select id="orderBy" class="select1">
+                                            <option value="latest">최근 등록 순</option>
+                                            <option value="rcmm">좋아요 순</option>
+
+                                        </select>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="subArray">
+                                <div class="check">
+                                    <span class="check1">
+                                        <label for="chkCondGb">내글만 보기</label>
+                                        <input type="checkbox" id="chkCondGb">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabCon">
+                            <div class="list4">
+                                <ul id="detail_cont_3" style="padding:0;">
+                                    <li class="list_pic" value="3">
+                                        <!-- 이미지 2개 업로드시 -->
+                                        <div class="pic_right" id="pic_right_3" onclick="showImgDtl('3')">
+                                            <div
+                                                style="background-image: url(&quot;https://mediadev.hmall.com/hmall/co/editor/20201116/21https://mediadev.hmall.com//banner_750_0@20201116_213757456.jpg&quot;)">
+                                                <img class="thumbImg"
+                                                    src="https://mediadev.hmall.com/hmall/co/editor/20201116/21https://mediadev.hmall.com//banner_750_0@20201116_213757456.jpg">
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="pic_wrap" onclick="showImgDtl('3')">
+                                            <h4 class="only_title">
+                                                <div class="review_title">
+                                                    <p class="review_title_p">테스트3</p>
+                                                    <p class="review_title_p_hide">333333333333333333333333333333333</p>
+                                                </div>
+                                            </h4>
+                                    
+                                            <div class="list4Con group" style="padding:0 10px;">
+                                                <div class="review">
+                                                    <em>
+                                                        2020-11-16 <br class="br_hide">
+                                    
+                                                        <br class="br_hide"><span class="span_hide">&nbsp;/&nbsp;</span>podog**
+                                    
+                                    
+                                                    </em>
+                                                </div>
+                                    
+                                            </div>
+                                        </div>
+                                    
+                                        <div id="heartCnt" class="heartCnt">
+                                    
+                                    
+                                            <img src="http://image.hyundaihmall.com/static/smart/2015/mobile/images/image_5.0/icon/btn_heart2_off.png"
+                                                id="heartImg_3" class="heartImg_3" onclick="rcmm('3')">
+                                    
+                                            <span>0</span>
+                                        </div>
+                                    
+                                    </li>
+                                    
+                                    
+                                    <li class="list_pic" value="2">
+                                        <!-- 이미지 2개 업로드시 -->
+                                        <div class="pic_right" id="pic_right_2" onclick="showImgDtl('2')">
+                                            <div
+                                                style="background-image: url(&quot;https://mediadev.hmall.com/hmall/co/editor/20201116/21https://mediadev.hmall.com//banner_750_2@20201116_213737188.jpg&quot;)">
+                                                <img class="thumbImg"
+                                                    src="https://mediadev.hmall.com/hmall/co/editor/20201116/21https://mediadev.hmall.com//banner_750_2@20201116_213737188.jpg">
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="pic_wrap" onclick="showImgDtl('2')">
+                                            <h4 class="only_title">
+                                                <div class="review_title">
+                                                    <p class="review_title_p">테스트2</p>
+                                                    <p class="review_title_p_hide">222222222222222222222222222222222222</p>
+                                                </div>
+                                            </h4>
+                                    
+                                            <div class="list4Con group" style="padding:0 10px;">
+                                                <div class="review">
+                                                    <em>
+                                                        2020-11-16 <br class="br_hide">
+                                    
+                                                        <br class="br_hide"><span class="span_hide">&nbsp;/&nbsp;</span>podog**
+                                    
+                                    
+                                                    </em>
+                                                </div>
+                                    
+                                            </div>
+                                        </div>
+                                    
+                                        <div id="heartCnt" class="heartCnt">
+                                    
+                                    
+                                            <img src="http://image.hyundaihmall.com/static/smart/2015/mobile/images/image_5.0/icon/btn_heart2_off.png"
+                                                id="heartImg_2" class="heartImg_2" onclick="rcmm('2')">
+                                    
+                                            <span>0</span>
+                                        </div>
+                                    
+                                    </li>
+                                    
+                                    
+                                    <li class="list_pic" value="1">
+                                        <!-- 이미지 2개 업로드시 -->
+                                        <div class="pic_right" id="pic_right_1" onclick="showImgDtl('1')">
+                                            <div
+                                                style="background-image: url(&quot;https://mediadev.hmall.com/hmall/co/editor/20201116/21https://mediadev.hmall.com//banner_560@20201116_213136399.jpg&quot;)">
+                                                <img class="thumbImg"
+                                                    src="https://mediadev.hmall.com/hmall/co/editor/20201116/21https://mediadev.hmall.com//banner_560@20201116_213136399.jpg">
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="pic_wrap" onclick="showImgDtl('1')">
+                                            <h4 class="only_title">
+                                                <div class="review_title">
+                                                    <p class="review_title_p">테스트</p>
+                                                    <p class="review_title_p_hide">12345678645678456784546</p>
+                                                </div>
+                                            </h4>
+                                    
+                                            <div class="list4Con group" style="padding:0 10px;">
+                                                <div class="review">
+                                                    <em>
+                                                        2020-11-16 <br class="br_hide">
+                                    
+                                                        <br class="br_hide"><span class="span_hide">&nbsp;/&nbsp;</span>podog**
+                                    
+                                    
+                                                    </em>
+                                                </div>
+                                    
+                                            </div>
+                                        </div>
+                                    
+                                        <div id="heartCnt" class="heartCnt">
+                                    
+                                    
+                                            <img src="http://image.hyundaihmall.com/static/smart/2015/mobile/images/image_5.0/icon/btn_heart2_off.png"
+                                                id="heartImg_1" class="heartImg_1" onclick="rcmm('1')">
+                                    
+                                            <span>0</span>
+                                        </div>
+                                    
+                                    </li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <script>
+
+
+
+                                        $(document).ready(function () {
+                                            // 전체 게시물 수
+                                            $('.subCnt').html('전체(3)');
+                                            totCnt = '3';
+
+                                            if (totCnt <= page * listSize) {
+                                                $("#more_view").hide();
+                                            } else {
+                                                $("#more_view").show();
+                                            }
+
+                                            page++;
+                                        });
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div id="more_view" style="width:100%;">
+                        <p onclick="search()"
+                            style="text-align:center;line-height:50px;font-size:16px;background:#fef8f8;border-top:1px solid #ccc;border-bottom:1px solid #ccc">
+                            더보기 ▼</p>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <script type="text/javascript">
+                var otpYn = "N";//otp인증 여부
+                var custMobile = "";//휴대폰번호
+                var sCustMobile = "";//휴대폰번호 처음
+                var s1CustMobile = "";//휴대폰번호 중간
+                var s2CustMobile = "";//휴대폰번호 끝
+                var custNo = "";
+                var EventNo = "01290382";
+                var prmoNo = '01290382';
+                var SectId = "";
+                var dispCd = "";
+
+                $(function () {
+                    if ($(".event-share-area").length == 0) {
+                        $(".event-cellphone-area").css({ "border-top": "1px solid #cccccc" });
+                    }
+                });
+
+                function goUrl(obj) {
+
+                    var btn = $(obj).attr("id");
+
+                    if (btn == "agree") {
+                        if (appYn == "N") {
+                            try {
+                                _trk_clickTrace('EVT', "이벤트상세_개인정보처리동의/수신btn");
+                            } catch (e) { }
+                        } else if ((appOpsyNm == "android" && parseInt(appVerNm) >= 86) || (appOpsyNm == "ios" && parseInt(appVerNm) >= 83)) {
+                            WiseTracker.setCustomMvtTag(WiseTracker.CUSTOM_MVT_TAG_3, "이벤트상세_개인정보처리동의/수신btn");
+                            WiseTracker.sendTransaction();
+                        }
+                    } else if (btn == "submit") {
+                        if (appYn == "N") {
+                            try {
+                                _trk_clickTrace('EVT', "이벤트상세_휴대전화번호변경btn");
+                            } catch (e) { }
+                        } else if ((appOpsyNm == "android" && parseInt(appVerNm) >= 86) || (appOpsyNm == "ios" && parseInt(appVerNm) >= 83)) {
+                            WiseTracker.setCustomMvtTag(WiseTracker.CUSTOM_MVT_TAG_3, "이벤트상세_휴대전화번호변경btn");
+                            WiseTracker.sendTransaction();
+                        }
+                    }
+
+                    var url = location.href;
+                    if (url.indexOf("smEvntBbc.do") > -1) {
+                        window.location.href = '/m/smSnsCert.do?returnUrl=/MCS/eva/smEvntBbc.do?prmoNo=' + EventNo;
+                    } else if (url.indexOf("etEventDispViewR.do") > -1) {
+                        window.location.href = '/m/smSnsCert.do?returnUrl=/MCS/eva/etEventDispViewR.do?EventNo=' + eventNo;
+                    } else if (url.indexOf("smEventTemplateViewR.do") > -1) {
+                        window.location.href = '/m/smSnsCert.do?returnUrl=/MCS/eva/smEventTemplateViewR.do?EventNo=' + EventNo;
+                    } else if (url.indexOf("smEvntAppZinDtl.do") > -1) {
+                        window.location.href = '/m/smSnsCert.do?returnUrl=/MCS/eva/smEvntAppZinDtl.do?prmoNo=' + prmoNo;
+                    } else if (url.indexOf("smFixPgmSpclShop.do") > -1) { // 고정PGM스페셜샵 추가
+                        window.location.href = 'smSnsCert.do?returnUrl=/m/smFixPgmSpclShop.do?SectId=' + SectId;
+                    } else if (url.indexOf("smEventKtViewR.do") > -1) { // KT멤버쉽
+                        window.location.href = '/m/smSnsCert.do?returnUrl=/m/smEventKtViewR.do';
+                    } else if (url.indexOf("evntView.do") > -1) {
+                        window.location.href = '/m/smSnsCert.do?returnUrl=/MCS/eva/evntView.do?prmoNo=' + EventNo + '&_IC_=evnt';
+                    }
+                    else {
+                        window.location.href = '/m/smSnsCert.do?returnUrl=/m/index.do';
+                    }
+                }
+            </script>
+
+            <!-- 2017.11.16 매장전시이주형 Otp 리뉴얼 -->
+
+
+        </section>
+
+        <footer></footer>
+    </div>
+
+
+
+
+    <script>
+        var lastUrl = location.href.substring(location.href.indexOf("/m"));
+        var doUrl = "-1";
+        var bkUrl = "-1";
+        var referrer = document.referrer;
+        // 상품평 쓰기 - footer를 제어하기 위한 변수 추가
+        var f_clicked = false;
+        var f_back = false;
+        var isIOSWEB = false;   // 상품평쓰기 : IOS WEB일경우 true로 변경
+        var isLogin = "";
+
+        //카테고리
+        function leftDrawerTogle_f() {
+            f_clicked = true;
+            f_back = false;
+            if (appYn == "Y" && appOpsyNm == "ios" && parseInt(appVerNm) >= 176) {
+                window.location = "jscall:leftDrawerTogle";
+            } else if (appYn == "Y" && appOpsyNm == "android" && parseInt(appVerNm) >= 149) {
+                window.AndroidJS.openDrawer();
+            }
+        }
+
+        function biztag_f(value) {
+            var tagNm = "";
+            if (value == "leftDrawer") {
+                tagNm = "하단탭바_카테고리";
+            } else if (value == "recent") {
+                tagNm = "하단탭바_최근본상품";
+            } else if (value == "home") {
+                tagNm = "하단탭바_홈";
+            } else if (value == "myPage") {
+                tagNm = "하단탭바_마이페이지";
+            } else if (value == "chMain") {
+                tagNm = "하단탭바_고객센터";
+            } else if (value == "back") {
+                tagNm = "하단탭바_뒤로가기";
+            }
+            try {
+                if (tagNm != "") {
+                    if (appYn == "N") {
+                        _trk_clickTrace('EVT', tagNm);
+                    } else {
+                        WiseTracker.setCustomMvtTag(WiseTracker.CUSTOM_MVT_TAG_3, tagNm);
+                        WiseTracker.sendTransaction();
+                    }
+                }
+            } catch (e) { }
+
+            if (value == "leftDrawer") {
+                leftDrawerTogle_f();
+            } else if (value == "recent") {
+                window.location.href = "/m/smRecentViewItemL.do";
+            } else if (value == "home") {
+                goHome_f();
+            } else if (value == "myPage") {
+                window.location.href = "/m/mpf/selectMyPageMain.do";
+            } else if (value == "chMain") {
+                window.location.href = "/m/chMainR.do";
+            } else if (value == "back") {
+                if (doUrl > -1) {
+                    window.location.href = "/m/mpf/selectMyPageMain.do";
+                } else if (bkUrl > -1) {
+                    if (referrer.indexOf("smProductReviewList.do") > -1) {
+                        window.location.href = "/m/index.do";
+                    } else {
+                        goback_f();
+                    }
+                } else {
+                    goback_f();
+                }
+            }
+        }
+
+        //푸터 뒤로가기
+        function goback_f() {
+            f_clicked = true;
+            f_back = true;
+            if (appYn == "Y" && appOpsyNm == "ios") {
+                window.location = "jscall:backpage";
+            } else if (appYn == "Y" && appOpsyNm == "android") {
+                window.AndroidJS.goBackApp();
+            } else {
+                if (isIOSWEB) {
+                    clickBack();
+                } else {
+                    window.history.back();
+                }
+            }
+        }
+
+        //푸터 홈버튼
+        function goHome_f() {
+            f_clicked = true;
+            f_back = false;
+            if (appYn == "Y" && appOpsyNm == "ios") {
+                window.location.href = "/m/index.do?clear=1&mainSeq=125";
+            } else if (appYn == "Y" && appOpsyNm == "android") {
+                window.AndroidJS.setDefaultTab();
+            } else {
+                goIndex();
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/footer.js?v=188010521"></script>
+
+    <footer class="footer" role="contentinfo">
+
+
+
+
+
+
+        <div class="btngroup btnlen2 " role="group" aria-label="로그인/APP다운로드">
+            <a href="javascript:;" class="btn btn-login btn-linegray"
+                onclick="javascript:fToLogin();GA_Event('푸터', '로그인', '');" tabindex="0"><span>로그인</span></a>
+
+
+            <a href="javascript:AppDownload('k');" class="btn btn-appdown btn-linegray" tabindex="0"
+                onClick="FamilySiteOpen('ins');GA_Event('푸터', 'APP설치', '');"><span>APP다운로드</span></a>
+        </div>
+
+
+        <div class="footer-expand">
+            <button class="footer-company" data-modules-dropdown aria-expanded="true"><span>(주)현대홈쇼핑</span><i
+                    class="icon"></i></button> <!-- active 클래스 제어 : 푸터 정보 footer-info 열림 -->
+            <div class="footer-info" role="region" aria-label="(주)현대홈쇼핑 회사 정보">
+                <!-- active 클래스 : 푸터 정보 footer-info 열릴 때 추가 -->
+                <p>대표이사 강찬석</p>
+                <address>서울특별시 강동구 올림픽로70길 34</address>
+                <ul class="len2">
+                    <li>고객센터 TEL : <a href="tel:1600-0000">1600-0000(유료)</a></li>
+                    <li>고객만족사업부 FAX : 02-2143-2731</li>
+                </ul>
+                <p>기타문의 : <a href="mailto:webmaster@hyundaihmall.com">webmaster@hyundaihmall.com</a></p>
+                <p class="mt15px">사업자등록번호 : 211-86-76540 </p>
+                <p>통신판매업 신고 : 제 25-3133호 부가통신 신고번호 : 3787</p>
+                <p>정보보호최고책임자 : 정보보호담당 오권호</p>
+                <p>청소년보호책임자 : Hmall사업부 홍성일</p>
+                <p>호스팅서비스 : (주)현대홈쇼핑</p>
+                <ul class="len2">
+                    <li>모바일전용문의 : <a href="tel:1600-0009">1600-0009(유료)</a></li>
+                    <li><a href="/m/leaveMemberForm.do" class="bold">회원탈퇴</a></li>
+                </ul>
+
+                <ul class="footer-linkgroup">
+                    <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" target="_blank" title="새 창"
+                            class="alink"><span>현대백화점그룹</span><i class="icon"></i></a></li>
+                    <li><a href="/m/woori_escrow.do" class="alink"><span>우리은행 구매안전 서비스</span><i class="icon"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //.footer-info -->
+        </div>
+        <!-- //.footer-expand -->
+
+        <ul class="fmenu">
+            <li><a href="/m/smAgreementList.do">이용약관</a></li>
+            <li><a href="/m/smPrivacy.do"><strong>개인정보 처리방침</strong></a></li>
+            <li><a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2118676540"
+                    tabindex="0">사업자정보확인</a></li>
+        </ul>
+        <!-- //.fmenu -->
+
+        <!-- 플로팅 메뉴 -->
+        <div class="floating-menu">
+            <div class="floating-group">
+                <!-- 글씨크기 조정 : 스크롤시 감춤
+                    크게, 작게 조정 불가 시 각 버튼에 disabled, aria-disabled="true" 추가
+                -->
+                <div class="font-resize" style="display:none;">
+                    <button class="btn btn-fontplus"><i class="icon"></i><span>크게</span></button>
+                    <button class="btn btn-fontminus" aria-disabled="true" disabled><i
+                            class="icon"></i><span>작게</span></button>
+                </div>
+                <!-- 최근본 페이지가 있을 시 -->
+                <a href="javascript:;" class="btn btn-return" style="display:none;"><i class="icon return"></i><span
+                        class="hiding">이전 페이지로 이동</span></a>
+            </div>
+            <!-- 스크롤시 -->
+
+            <!-- 모바일웹일때만 보임 -->
+
+
+            <a href="#" class="btn btn-topmove"><i class="icon topmove"></i><span class="hiding">상단으로</span></a>
+
+        </div>
+        <!-- //floating-menu -->
+
+        <script type="text/javascript" defer='defer'>
+            if (appYn == "N") {
+                (function () {
+                    function injectScript() {
+                        var _TRK_InSc = document.createElement('script');
+                        _TRK_InSc.type = 'text/javascript';
+                        _TRK_InSc.async = true;
+                        _TRK_InSc.src = '//imagedev.hmall.com/m/js/co/902_Insight_WebAnalytics.js?v=188';
+                        document.body.appendChild(_TRK_InSc);
+
+                        var _TRK_InTagSc = document.createElement('script');
+                        _TRK_InTagSc.type = 'text/javascript';
+                        _TRK_InTagSc.async = true;
+                        _TRK_InTagSc.src = '//imagedev.hmall.com/m/js/co/tagging.collector-1.1.min.js';
+                        document.body.appendChild(_TRK_InTagSc);
+
+                    }
+                    if (window.attachEvent) {
+                        window.attachEvent('onload', injectScript);
+                    } else {
+                        window.addEventListener('load', injectScript, false);
+                    }
+                })();
+            } else {
+                (function () {
+                    function injectScript() {
+                        var _TRK_InTagSc = document.createElement('script');
+                        _TRK_InTagSc.type = 'text/javascript';
+                        _TRK_InTagSc.async = true;
+                        _TRK_InTagSc.src = '//imagedev.hmall.com/m/js/co/tagging.collector-1.1.min.js';
+                        document.body.appendChild(_TRK_InTagSc);
+
+                    }
+                    if (window.attachEvent) {
+                        window.attachEvent('onload', injectScript);
+                    } else {
+                        window.addEventListener('load', injectScript, false);
+                    }
+                })();
+            }
+        </script>
+
+        <!-- 2019.03.15 Facebook Pixel Code 삽입 -->
+
+        <script>
+            if ((appYn != "Y") || (appYn == "Y" && appOpsyNm == "android")) {
+                !function (f, b, e, v, n, t, s) {
+                    if (f.fbq) return; n = f.fbq = function () {
+                        n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    };
+                    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                    n.queue = []; t = b.createElement(e); t.async = !0;
+                    t.src = v; s = b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t, s)
+                }(window, document, 'script',
+                    'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '307742333494098');
+                fbq('track', 'PageView');
+            }
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id=307742333494098&ev=PageView&noscript=1" /></noscript>
+        <!-- End Facebook Pixel Code -->
+
+
+        <script type="text/javascript">
+            if (appYn == "Y") {
+                if ((appOpsyNm == "android" && parseInt(appVerNm) >= 164)) {
+                    fbq('set', 'mobileBridge', '307742333494098', '1317280074966465');
+                }
+            }
+        </script>
+        <!-- End Facebook Pixel Code -->
+
+        <script type="text/javascript">
+            var _NGUL = "wcs.naver.net/wcslog.js";
+            var _NPR = location.protocol == "https:" ? "https://" + _NGUL : "http://" + _NGUL;
+            document.writeln("<scr" + "ipt type='text/ja" + "vascript' src='" + _NPR + "'></scr" + "ipt>");
+        </script>
+
+        <script type="text/javascript">
+            if (!wcs_add) var wcs_add = {};
+            wcs_add["wa"] = "s_48e6c83b5cd7";
+
+            if (!_nasa) var _nasa = {};
+
+            wcs.inflow();
+            wcs_do(_nasa);
+        </script>
+    </footer>
+
+    <!-- 모바일 안드로이드 160이상 버전이고 메인템플릿이면 보여주어서는 안됨 -->
+
+
+
+    <!-- 최근본쇼핑목록 -->
+    <div class="recentwrap" aria-label="최근본쇼핑">
+        <div id="recentShpgList"></div>
+    </div>
+    <!-- //최근본쇼핑목록 -->
+
+    <!-- 레이어 팝업 - 최초 접속 시 쿠키 수집/이용 안내 -->
+    <div class="popup-layerwrap cookie-info" style="z-index: 30;" id="recentCokiUseAgr" role="dialog"
+        aria-label="쿠키 사용 안내">
+        <!-- active 클래스 제어 : 레이어 팝업 노출 -->
+        <div class="layer">
+            <h2 class="large-title">크로스 채널 쇼핑 안내</h2>
+            <div class="layer-body">
+                <p>
+                    <!-- 2020-07-31 텍스트 수정 및 링크 추가 (디자인 미정) -->
+                    Hmall은 고객님의 최근본쇼핑 정보를 활용하여 다른 기기나 브라우저로 접속하실 경우에도 최상의 사용자 경험을 제공해드리고자 합니다.
+                    동의를 클릭하시면, 위 내용의 서비스를 이용하실 수 있게 됩니다.
+                    <a href="/m/smPrivacy.do" class="linkbtn"><span>Hmall 개인정보 처리방침 보기</span></a>
+                </p>
+            </div>
+            <!-- //.layer-body -->
+            <div class="btngroup btnlen2" aria-label="쿠키 수집 동의/미동의 선택">
+                <button class="btn btn-linegray xl"
+                    onclick="javascript:setRecentCookieAgr('N');"><span>미동의</span></button>
+                <button class="btn btn-default xl"
+                    onclick="javascript:setRecentCookieAgr('Y');"><span>동의</span></button>
+            </div>
+            <!-- //.btngroup -->
+        </div>
+        <!-- //.layer -->
+    </div>
+
+    <!-- 우수고객SHOP 이용안내 -->
+    <div class="popup-layerwrap alert vip-connect" role="dialog" aria-label="우수고객SHOP 이용안내">
+        <div class="layer">
+            <div class="layer-body">
+                <p class="ctypo2">우수고객SHOP은<br />TOPCLASS, DIAMOND 등급<br />고객님만 입장이 가능합니다.</p>
+            </div>
+            <!-- //.layer-body -->
+            <div class="btngroup btnlen1">
+                <button class="btn btn-default"
+                    onclick="javascript:$('.vip-connect').removeClass('active')"><span>확인</span></button>
+            </div>
+        </div>
+        <!-- //.layer -->
+    </div>
+    <!-- //우수고객SHOP 이용안내 -->
+
+    <!-- 201811 - 하단탭바-->
+
+
+    <nav class="nav-tabbar fixed" role="navigation" aria-label="하단 탭바">
+        <ul class="tabbar">
+            <li class="menu-home"><a href="#" onclick="biztag_f('home');GA_Event('공통', '하단탭바', '홈'); return false;"><i
+                        class="icon"></i><span>홈</span></a></li>
+            <li class="menu-cate"><a href="#"
+                    onclick="biztag_f('leftDrawer');GA_Event('공통', '하단탭바', '카테고리'); return false;"><i
+                        class="icon"></i><span>카테고리</span></a></li>
+            <li class="menu-onair">
+                <!-- 제어 클래스 close (a태그에 추가 및 삭제) : 버튼 스타일 변경 /  버튼 텍스트 변경 : OnAir 열리기 전 'On Air' / OnAir 열린 후 'On Air 닫기'-->
+
+                <a href="javascript:;" onclick="onAirArea(); return false;"><i class="icon"></i><span class="hiding">On
+                        Air</span></a>
+                <!-- On Air 리스트 -->
+                <div class="onairwrap">
+                    <!-- 제어 클래스 active : 생방중 상품 영역 노출 -->
+                </div>
+            </li>
+            <li class="menu-mypage"><a href="#"
+                    onclick="biztag_f('myPage');GA_Event('공통', '하단탭바', '마이페이지'); return false;"><i
+                        class="icon"></i><span>마이페이지</span></a></li>
+            <!-- android - 최근본쇼핑 없을 때 -->
+            <!-- <li class="menu-recent"><a href="javascript:;"><span class="img"></span><span>최근본쇼핑</span></a></li> -->
+            <!-- android - 최근본쇼핑 있을 때 -->
+            <li class="menu-recent"><a href="javascript:;"><span class="img"
+                        id="recentImg"></span><span>최근본쇼핑</span></a></li>
+            <!-- iOS 화면에 보이는 뒤로가기 버튼 -->
+            <!-- <li class="menu-back"><a href="javascript:;"><i class="icon"></i><span>뒤로가기</span></a></li> -->
+        </ul>
+    </nav>
+
+
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/co/hmall_video.js?v=188010521"></script>
+
+    <iframe name="actionFrm" frameborder=0 width=0 height=0 src="">
+    </iframe>
+    <script type="text/javascript" src="//imagedev.hmall.com/m/js/asis/js_4.0/ev.js?v=188"></script>
+
+    <form name="frm1" method="post" action="/MCS/eva/smEvntBbcEditForm.do?prmoNo=01290382">
+        <input type="hidden" name="bbcSeq" value="" />
+        <input type="hidden" name="dispCd" value="" />
+    </form>
+</body>
+
+</html>

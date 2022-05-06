@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" conte nt="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>마이페이지 &gt; 주문상세내역 &gt; 결제수단변경</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/mp/mypage.css">
+
+</head>
+<body id="popWin">         
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:800px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win wd880 change-payment-method">
+        <!--pop-wrap-->
+        <div class="pop-wrap">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">결제수단변경</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <div class="content"> 
+                        <h3 class="content-title">상세 주문내역</h3>
+                        <div class="order-list">
+                            <dl>
+                                <dt>
+                                    <div class="date">
+                                        <span>주문일</span>
+                                        <strong>2020.06.20</strong>
+                                        <span>주문번호</span>
+                                        <strong>20200422359330</strong>
+                                    </div>
+                                </dt>
+                                <dd>
+                                    <a href="javacript:;">
+                                        <span class="img"><img src="//imagedev.hmall.com/p/img/mp/sample/sample-order-1.jpg" alt="샘플이미지"></span>
+                                        <div class="box">
+                                            <span class="state sky">주문접수</span>
+                                            <span class="tit">[빈폴레이디스] 네이비 스트라이프 라운드</span>
+                                            <div class="info">
+                                                <ul>
+                                                    <li>블랙</li>
+                                                    <li>66</li>
+                                                    <li>1개</li>
+                                                </ul>
+                                            </div>
+                                            <span class="price"><strong>27,000</strong>원</span>
+                                        </div>
+                                    </a>
+
+                                    <!-- HmallPay(구성품/사은품 있는 경우) -->
+                                    <div class="bg-sky-box">
+                                        <dl class="dlwrap">
+                                            <dt>필수 사은품</dt>
+                                            <dd>
+                                                <ul>
+                                                    <li>총 2개</li>
+                                                    <li>합계: 266,000원</li>
+                                                </ul>
+                                                <p class="txt">각인서비스 / 각인진행 (1개 / 5,000원)</p>
+                                                <p class="txt">그라폰 파버카스텔 수성심 / 흑색 (1개 / 6,400원)</p>
+                                            </dd>
+                                        </dl>
+                                        <dl class="dlwrap">
+                                            <dt>선택 사은품</dt>
+                                            <dd>
+                                                <ul>
+                                                    <li>총 2개</li>
+                                                    <li>합계: 266,000원</li>
+                                                </ul>
+                                                <p class="txt">각인서비스 / 각인진행 (1개 / 5,000원)</p>
+                                                <p class="txt">그라폰 파버카스텔 수성심 / 흑색 (1개 / 6,400원)</p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <h3 class="content-title">결제 정보</h3>
+                        <!-- 20200915 아코디언 기능 추가 -->
+                        <div class="pay-info-box type-toggle"> 
+                            <h3><button data-modules-collapse="" class="accordion-trigger" aria-expanded="false"><span>자세히보기</span><i class="icon updown"></i></button></h3>
+                            <div class="accordion-panel" role="region" aria-label="결제 정보">
+                                <ul>
+                                    <li>
+                                        <dl class="between top">
+                                            <dt>총 주문금액</dt>
+                                            <dd><strong>80,000</strong>원</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <span class="minus-icon"><i class="icon"></i></span>
+                                        <dl class="between top">
+                                            <dt>할인금액</dt>
+                                            <dd><strong>0</strong>원</dd>
+                                        </dl>
+                                        <dl class="between">
+                                            <dt>Hmall 쿠폰할인</dt>
+                                            <dd><strong>10</strong>%</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <span class="result-icon"><i class="icon"></i></span>
+                                        <dl class="between top">
+                                            <dt>잔여 결제 금액</dt>
+                                            <dd class="result"><strong>0</strong>원</dd>
+                                        </dl>
+                                        <dl class="between">
+                                            <dt>결제하신 금액</dt>
+                                            <dd><strong>180,000</strong>원</dd>
+                                        </dl>
+                                        <dl class="between">
+                                            <dt>결제하실 금액</dt>
+                                            <dd><strong>0</strong>원</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- // 20200915 아코디언 기능 추가 -->
+
+                        <div class="pay-change-box"> 
+                            <dl>
+                                <dt>결제 변경금액</dt>
+                                <dd><strong>180,000</strong>원</dd>
+                            </dl>
+                        </div>
+
+                        <!-- 적립예상 Point 마크업 구조 추가(11/28) -->
+                        <div class="pay-change-box hp"> 
+                            <dl>
+                                <dt>적립예상 H.Point</dt>
+                                <dd><strong>10</strong>P</dd>
+                            </dl>
+                        </div>
+                        
+                        <h3 class="content-title">결제 수단</h3>
+                        <!-- [11/28]_수정(위키 272,273 결제수단변경 케이스 추가로 인한 마크업 구조변경) -->
+                        
+                        <div class="pay-typewrap">
+                            <ul class="paytype">
+                                <li>
+                                    <span>
+                                        <input type="radio" name="rad1" checked id="rad1-2">
+                                        <label for="rad1-2"><span class="text">카드결제</span></label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <input type="radio" name="rad1" id="rad1-0">
+                                        <label for="rad1-0"><span class="text">실시간 계좌이체</span></label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="hmallpay">
+                                        <input type="radio" name="rad1" id="rad1-1">
+                                        <label for="rad1-1">
+                                            <i class="icon"></i>
+                                            <span class="hiding">HmallPay</span>
+                                        </label>
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <!-- 결제수단변경 - 카드결제 -->
+                            <!-- 숨김처리 class hiding 추가 제거 또는 style="display:none" 또는 block올 제어 -->
+                            <div class="pay-typebox" aria-label="카드결제">
+                                <dl>
+                                    <dt>신용카드</dt>
+                                    <dd>
+                                        <ul>
+                                            <li class="payitem">
+                                                <strong class="tit">결제금액</strong>
+                                                <div class="payment-form">
+                                                    <span><strong>10,400</strong>원</span>
+                                                </div>
+                                            </li>
+                                            <li class="carditem">
+                                                <strong class="tit">카드선택</strong>
+                                                <div class="payment-form">
+                                                    <div class="form-wrap">
+                                                        <div class="custom-selectbox sm" data-modules-selectbox>
+                                                            <select>
+                                                                <option>카드종류를 선택해주세요</option>
+                                                                <option>카드1</option>
+                                                                <option>카드2</option>
+                                                                <option>카드3</option>
+                                                                <option>카드3</option>
+                                                                <option>카드3</option>
+                                                                <option>카드3</option>
+                                                                <option>카드3</option>
+                                                                <option>카드3</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="custom-selectbox sm disabled" data-modules-selectbox><!-- 카드 선택시 'disabled' 클래스 삭제 -->
+                                                            <select>
+                                                                <option>할부기간 선택</option>
+                                                                <option>3개월</option>
+                                                                <option>6개월</option>
+                                                                <option>12개월</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 카드결제(할인case/비씨카드 선택한경우) -->
+                                                    <div class="radio-box" style="display:none">
+                                                        <label class="radlabel sm">
+                                                            <input type="radio" name="rad2-1" checked>
+                                                            <i class="icon"></i>
+                                                            <span>PayAll(구 Speed결제)</span>
+                                                        </label>
+                                                        <label class="radlabel sm">
+                                                            <input type="radio" name="rad2-1">
+                                                            <i class="icon"></i>
+                                                            <span>안전결제</span>
+                                                        </label>
+                                                    </div>
+
+                                                    <!-- 카드결제(은련카드선택시) -->
+                                                    <ul class="dotlist" style="display:none">
+                                                        <li><em class="color-ff5340">部分银行卡不能支付,开通银行有限制 </em></li>
+                                                        <li>订购往中国地区配送服务时, <br>
+                                                            用卡支付后仅订购当天24点前可取消订购。 </li>
+                                                        <li>网上支付及银联卡使用相关咨询请拨打银联客服中心电话:<br> 
+                                                            <strong>0079-814-800-7159</strong> </li>
+                                                        <li>根据发卡行规定可能设有单次支付或当天支付的交易限藝。</li>
+                                                    </ul>
+                                                    
+                                                    <!-- 카드결제(법인카드만 가능한 경우) -->
+                                                    <p class="color-ff5340" style="display:none">법인카드만 사용 가능합니다.</p>
+
+                                                </div>
+                                            </li>
+                                            <li class="cardpoint">
+                                                <strong class="tit">카드포인트 사용</strong>
+                                                <div class="payment-form">
+                                                    <label class="radlabel sm">
+                                                        <input type="radio" name="rad2" checked>
+                                                        <i class="icon"></i>
+                                                        <span>사용함</span>
+                                                    </label>
+                                                    <label class="radlabel sm">
+                                                        <input type="radio" name="rad2">
+                                                        <i class="icon"></i>
+                                                        <span>사용안함</span>
+                                                    </label>
+                                                    <a href="javascript:;" class="btn atext" data-modules-modal="target:#payableCardPoint;"><span>포인트 이용안내</span><i class="arrow right"></i></a>
+                                                </div>
+                                            </li>
+
+                                            <!-- 카드결제(KB국민카드선택시) -->
+                                            <li style="display:none">
+                                                <strong class="tit">세이브 서비스</strong>
+                                                <div class="payment-form">
+                                                    <label class="chklabel sm">
+                                                        <input type="checkbox" name="">
+                                                        <i class="icon"></i>
+                                                        <span>KB포인트리 세이브 사용 (KB앱카드 결제 시 세이브 사용 불가)</span>
+                                                    </label>
+                                                    <a href="javascript:;" class="btn alink"><span>이용안내</span></a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- //.pay-typebox -->
+
+                            <div class="pay-typebox" aria-label="실시간 계좌이체" style="display:block">
+                                <dl>
+                                    <dt>현금 영수증 신청</dt>
+                                    <!-- [12/17]_수정(현금영수증은 전체 감싸고 있는 부분에 class cashbox 추가) -->
+                                    <dd class="cashbox">
+                                        <ul>
+                                            <li>
+                                                <strong class="tit">신청대상 금액</strong>
+                                                <div class="payment-form">
+                                                    <span><strong>10,400</strong>원</span>
+                                                    <div class="radio-box">
+                                                        <label class="radlabel sm">
+                                                            <input type="radio" name="rad4" checked>
+                                                            <i class="icon"></i>
+                                                            <span>발행</span>
+                                                        </label>
+                                                        <label class="radlabel sm">
+                                                            <input type="radio" name="rad4">
+                                                            <i class="icon"></i>
+                                                            <span>미발행</span>
+                                                        </label>
+                                                    </div>
+                                                    <p class="sub-txt">상품권의 경우는 현금 영수증이 발행되지 않습니다.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!-- [12/17]_수정(현금 영수증 신청은 공통 UI작업으로 payment-form안에 있는 구조에서 밖으로 내보내는 구조로 변경) -->
+                                        <!-- 미발행 시 display:none -->
+                                        <div class="payinfobox" style="display:block">
+                                            <div class="payfield">
+                                                <input type="radio" name="rad5-1" id="inDeduction1" checked>
+                                                <label for="inDeduction1">
+                                                    <i class="icon"></i>
+                                                    <span>소득공제용 (일반개인용)</span>
+                                                </label>
+                                                <div class="fieldbox">
+                                                    <div class="custom-selectbox sm" data-modules-selectbox>
+                                                        <select>
+                                                            <option>휴대폰번호</option>
+                                                        </select>
+                                                    </div>
+                                                    <label class="inplabel">
+                                                        <input type="text" name="" value="" placeholder="휴대폰번호">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="payfield">
+                                                <input type="radio" name="rad5-1" id="proofCash1">
+                                                <label for="proofCash1">
+                                                    <i class="icon"></i>
+                                                    <span>지출증빙용 (사업자용)</span>
+                                                </label>
+                                                <div class="fieldbox">
+                                                    <label class="inplabel">
+                                                        <span>사업자번호</span>
+                                                        <input type="text" name="" value="" placeholder="사업자등록번호">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.payinfobox -->
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- //.pay-typebox -->
+
+                            <div class="pay-typebox" aria-label="HmallPay" style="display:none">
+                                <dl>
+                                    <dt>Hmall Pay 결제</dt>
+                                    <dd>
+                                        <ul>
+                                            <li>
+                                                <strong class="tit">Hmall Pay란?</strong>
+                                                <div class="payment-form">
+                                                    <p>현금간편 결제(Hmall Pay)는 계좌등록 후 비밀번호 입력 한번으로 쉽고 빠르게 결제할 수 있는 서비스입니다.</p>
+                                                    <ol>
+                                                        <li>- 하루 최대 500만원까지 결제가능 (당일 취소금액 포함)</li>
+                                                        <li>- 은행 점검시간 현금간편결제(Hmall Pay) 이용불가</li>
+                                                    </ol>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>현금 영수증 신청</dt>
+                                    <!-- [12/17]_수정(현금영수증은 전체 감싸고 있는 부분에 class cashbox 추가) -->
+                                    <dd class="cashbox">
+                                        <ul>
+                                            <li>
+                                                <strong class="tit">신청대상 금액</strong>
+                                                <div class="payment-form">
+                                                    <span><strong>10,400</strong>원</span>
+                                                    <div class="radio-box">
+                                                        <label class="radlabel sm">
+                                                            <input type="radio" name="rad4" checked>
+                                                            <i class="icon"></i>
+                                                            <span>발행</span>
+                                                        </label>
+                                                        <label class="radlabel sm">
+                                                            <input type="radio" name="rad4">
+                                                            <i class="icon"></i>
+                                                            <span>미발행</span>
+                                                        </label>
+                                                    </div>
+                                                    <p class="sub-txt">상품권의 경우는 현금 영수증이 발행되지 않습니다.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!-- [12/17]_수정(현금 영수증 신청은 공통 UI작업으로 payment-form안에 있는 구조에서 밖으로 내보내는 구조로 변경) -->
+                                        <!-- 미발행 시 display:none -->
+                                        <div class="payinfobox" style="display:block">
+                                            <div class="payfield">
+                                                <input type="radio" name="rad4-1" id="inDeduction" checked>
+                                                <label for="inDeduction">
+                                                    <i class="icon"></i>
+                                                    <span>소득공제용 (일반개인용)</span>
+                                                </label>
+                                                <div class="fieldbox">
+                                                    <div class="custom-selectbox sm" data-modules-selectbox>
+                                                        <select>
+                                                            <option>휴대폰번호</option>
+                                                        </select>
+                                                    </div>
+                                                    <label class="inplabel" style="display:none">
+                                                        <input type="text" name="" value="" placeholder="휴대폰번호">
+                                                    </label>
+                                                    <label class="inplabel">
+                                                        <input type="text" name="" value="" placeholder="휴대폰번호">
+                                                    </label>
+                                                    <label class="inplabel" style="display:none">
+                                                        <input type="text" name="" value="" placeholder="휴대폰번호">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="payfield">
+                                                <input type="radio" name="rad4-1" id="proofCash">
+                                                <label for="proofCash">
+                                                    <i class="icon"></i>
+                                                    <span>지출증빙용 (사업자용)</span>
+                                                </label>
+                                                <div class="fieldbox">
+                                                    <label class="inplabel">
+                                                        <span>사업자번호</span>
+                                                        <input type="text" name="" value="" placeholder="사업자등록번호">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.payinfobox -->
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- //.pay-typebox -->
+
+                        </div>
+                        <!-- //.pay-typewrap -->
+
+                        <div class="payagree">
+                            <label class="chklabel">
+                                <input type="checkbox" name="">
+                                <i class="icon"></i>
+                                <span>결제수단변경 재결제 동의</span>
+                            </label>
+                            <p>결제수단변경으로 인한 재결제의 금액, 환불정보, 상품명, 배송정보를 확인하였으며 동의 하시겠습니까?</p>
+                        </div>
+                        
+
+                        <div class="btngroup">
+                            <button class="btn btn-linelgray medium" data-dismiss="window"><span>취소</span></button>
+                            <button class="btn btn-default medium"><span>결제하기</span></button>
+                        </div>
+                    </div>
+                    <!-- //.content -->
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+
+        <div class="ui-modal payable-card-point" id="payableCardPoint" role="dialog" aria-label="결제가능한 카드 포인트 안내">
+            <div class="ui-modal-dialog" role="document">
+                <div class="content">
+                    <p class="ui-title">결제가능한 카드 포인트 안내</p>
+                    <div class="content-body">
+                        <div class="min-h188" data-modules-scroll>
+                            <div class="border-line-box">
+                                <p class="tit">삼성카드 보너스 포인트</p>
+                                <p class="txt">1포인트 이상부터 사용</p>
+                            </div>
+                            <div class="border-line-box">
+                                <p class="tit">KB포인트리</p>
+                                <p class="txt">1점 이상부터 사용</p>
+                            </div>
+                            <div class="border-line-box">
+                                <p class="tit">비씨TOP포인트</p>
+                                <p class="txt">1포인트 이상부터 사용</p>
+                            </div>
+                            <div class="border-line-box">
+                                <p class="tit">마이 신한포인트</p>
+                                <p class="txt">5,000포인트 이상 적립 시 1포인트 단위로 사용가능</p>
+                            </div>
+                            <div class="border-line-box">
+                                <p class="tit">하나머니</p>
+                                <p class="txt">1포인트 이상부터 사용</p>
+                            </div>
+                            <div class="border-line-box">
+                                <p class="tit">시티카드 시티포인트</p>
+                                <p class="txt">최대 결제금액의 10%까지 1포인트부터 사용 가능</p>
+                            </div>
+                            <div class="border-line-box">
+                                <p class="tit">우리모아 포인트</p>
+                                <p class="txt">1,000포인트 이상 적립 시 우리카드 홈페이지에서 1,000포인트 단위로 비씨TOP포인트로 전환하여 사용가능</p>
+                            </div>
+                            <div class="border-line-box">
+                                <p class="tit">현대카드 M포인트</p>
+                                <p class="txt">최신 결제금액의 10%까지 1포인트부터 사용 가능</p>
+                            </div>
+        
+                        </div>
+                        <div class="bg-gray-box">
+                            <p class="tit">결제방법 및 유의사항</p>
+                            <ul class="dotlist">
+                                <li>포인트가 부족할 경우, 다음과 같은 메시지가 나올 수 있습니다. (유효기간 경과 카드, 할부개월 오류 등)</li>
+                                <li>기업공용(법인)카드, 가족카드는 사용이 불가합니다.</li>
+                                <li>포인트 관련사항 및 포인트 확인은 카드사 홈페이지에서 확인할 수 있습니다.</li>
+                                <li>포인트 차감은 카드 청구시 포인트가 차감된 금액으로 청구됩니다.</li>
+                            </ul>
+                        </div>
+        
+                        <div class="btngroup">
+                            <button class="btn btn-default"><span>확인</span></button>
+                            <!-- 데이터 전송 후 클릭시 $(element).modal().hide() -->
+                        </div>
+                    </div>
+                    <!-- //.content-body -->
+                    
+                    <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+                </div>
+                <!-- //.content -->
+            </div>
+            <!-- //.ui-modal-dialog -->
+        </div>
+        <!-- //.ui-modal -->
+    </div>
+    <!--popup-win-->
+</body>
+</html>

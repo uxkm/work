@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>스마일테스터 상세</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/ev/event.css">
+</head>
+<body>
+<!-- <div class="layer-popup alert pfi006-05" style="display:block;">
+    <div class="pop-wrap">
+        <div class="pop-content-wrap">
+            <div class="pop-content">
+                <p class="info-tit">아래 내용을 반드시 확인해주세요.</p>
+                <p class="info-txt">이름: 박명수</p>
+                <p class="info-txt">주소: 서울시 강동구 천호동</p>
+                <p class="info-txt">연락처: 010-9090-9090</p>
+                <p class="info-txt">옵션: 네이비 / 260</p>
+                <p class="info-txt">신청하시겠습니까?</p>
+            </div>
+            <div class="btngroup">
+                <button class="btn btn-default lyclose"><span>확인</span></button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- 클릭해서 호출하는 방식이 아닌 페이지를 로드 했을 때 생성되는 레이어는 
+    modal().show() 호출
+    예)
+    $(function(){
+        $("element"").modal().show()
+    })
+-->
+<!-- 공통 레이어 UI 변경 09/16 -->
+<script>
+    $(function(){
+        $("#alertInfoOption").modal().show()
+    })
+</script>
+<!-- 공통 레이어 UI 변경 09/16 -->
+<div class="ui-modal alert" id="alertInfoOption" tabindex="-1" role="dialog">
+    <div class="ui-modal-dialog" role="document">
+        <div class="content">
+            <p class="ctypo17 bold">아래 내용을 반드시 확인해주세요.</p>
+            <p class="ctypo14">이름: 박명수</p>
+            <p class="ctypo14">주소: 서울시 강동구 천호동</p>
+            <p class="ctypo14">연락처: 010-9090-9090</p>
+            <p class="ctypo14">옵션: 네이비 / 260</p>
+            <p class="ctypo14">신청하시겠습니까?</p>
+        </div>
+        <!-- //.content -->
+        <!-- alert은 버튼 위치 변경 -->
+        <div class="btngroup">
+            <button class="btn btn-linelgray" data-dismiss="modal"><span>취소</span></button>
+            <button class="btn btn-default"><span>확인</span></button>
+            <!-- 데이터 전송 후 닫힘 $(element).modal().hide() -->
+        </div>
+        <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+</body>
+</html>

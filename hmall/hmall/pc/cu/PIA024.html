@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>회원가입</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/cu/member.css">
+</head>
+<body class="cbody">
+<!-- wing banner 미노출 시 : wing-none 클래스 추가 -->
+<div class="wrap join-kakao">
+    <div class="nav-skip"><a href="#mainContents">본문 콘텐츠로 건너뛰기</a></div>
+
+    <!-- GNB 메인 -->
+    <main class="cmain main" role="main" id="mainContents"><!-- 메인페이지 'main' 클래스 추가 -->
+        <div class="container">
+            <div class="contents w600">
+                <div class="inner-box article">
+                    <div class="title-area">
+                        <h1 class="logo">
+                            <a href="/hmall/mo/co/MBA001.html">
+                                <span class="img"><img src="//imagedev.hmall.com/p/img/cu/logo-hmall-88.png" alt="현대Hmall"></span>
+                                <span>회원가입</span>
+                            </a>
+                        </h1>
+                    </div>
+
+                    <div class="join-notibox kakao">
+                        <i class="icon"></i>
+                        <p>카카오로 회원가입 시 이메일 주소가 아이디로 사용됩니다.</p>
+                    </div>
+
+                    <p class="form-tit">필수항목</p>
+                    <!-- 
+                    input focus/선택 시  inputbox class= selected 추가 예) <div class="inputbox selected">
+                    input disabled 시  inputbox class= disabled 추가 예) <div class="inputbox disabled">
+                    input readonly 시  inputbox class= readonly 추가 예) <div class="inputbox readonly">
+                    input 입력 실패 시  inputbox class= failed 추가 예) <div class="inputbox failed">
+                    input 입력 성공 시  inputbox class= success 추가 예) <div class="inputbox success">
+                    -->
+                    <div class="inputbox failed">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="이름"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <!-- 입력 실패 메세지 -->
+                    <p class="failed-msg">
+                        <i class="icon error"></i>
+                        <span>이름에 숫자는 지원하지 않습니다.</span>
+                    </p>
+
+                    <div class="inputbox disabled">
+                        <label class="inplabel"><input type="text" name="" value="honggildong@naver.com" placeholder="아이디 또는 이메일 (영문,숫자 4~30자리)" disabled></label>
+                    </div>
+
+                    <div class="inputbox">
+                        <label class="inplabel"><input type="password" name="" value="" placeholder="비밀번호(영소문자, 영대문자, 숫자, 특수문자 조합 6자리 이상)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <i class="icon lock"></i>
+                    </div>
+                    <!-- 입력 실패 메세지 -->
+                    <p class="failed-msg" style="display: none;">
+                        <i class="icon error"></i>
+                        <span>비밀번호를 입력해 주세요.</span>
+                    </p>
+
+                    <div class="inputbox failed">
+                        <label class="inplabel"><input type="password" name="" value="" placeholder="비밀번호 재확인"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <i class="icon lock"></i>
+                    </div>
+                    <!-- 입력 실패 메세지 -->
+                    <p class="failed-msg">
+                        <i class="icon error"></i>
+                        <span>비밀번호가 일치하지 않습니다.</span>
+                    </p>
+
+                    <div class="inputbox failed">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="휴대폰 번호 (예 : 01012345678)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <!-- 입력 실패 메세지 -->
+                    <p class="failed-msg">
+                        <i class="icon error"></i>
+                        <span>휴대폰 번호를 입력해주세요.</span>
+                    </p>                        
+
+                    <p class="form-tit">선택항목</p>                        
+                    <div class="inputbox">
+                        <label class="inplabel"><input type="text" name="" value="" placeholder="생년월일 (예 : 19900822)"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                    <!-- 입력 실패 메세지 -->
+                    <p class="failed-msg" style="display: none;">
+                        <i class="icon error"></i>
+                        <span>숫자 외에 다른 문자는 입력하실 수 없습니다.</span>
+                    </p>
+                </div>
+
+                <div class="inner-box article-border">
+                    <ul class="chk-list">
+                        <li>
+                            <div class="checkbox-wrap">
+                                <div class="checkbox">
+                                    <label class="chklabel"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span><em class="color-ff5340">[필수]</em> 이용약관 및 개인정보 수집/이용에 동의합니다.</span></label>
+                                </div>
+                            </div>
+
+                            <div class="lr-align">
+                                <span class="left-align">현대Hmall 이용약관</span>
+                                <a href="javascript:;" class="btn atext right-align"><span>내용보기</span><i class="arrow right"></i></a>
+                            </div>
+                            <div class="lr-align">
+                                <span class="left-align">개인정보 수집 및 이용</span>
+                                <a href="javascript:;" class="btn atext right-align"><span>내용보기</span><i class="arrow right"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox-wrap">
+                                <div class="checkbox">
+                                    <label class="chklabel"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span>[선택] 맞춤형 마케팅 동의</span></label>
+                                </div>
+                            </div>
+                            <div class="checkbox-wrap choice-agree">
+                                <div class="checkbox">
+                                    <label class="chklabel sm"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span>이메일</span></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label class="chklabel sm"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span>문자</span></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label class="chklabel sm"><input type="checkbox" name="" aria-checked="false"><i class="icon"></i><span>전화 (보험상담 등)</span></label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="inner-box">
+                    <p class="infotxt">이용약관과 개인정보 수집 및 이용을 확인하였으며,<br>만 14세 이상임을 동의하십니까?</p>
+                    <div class="btngroup">
+                        <button class="btn btn-default medium"><span>가입하기</span></button>
+                    </div>
+                    <p class="sub-txt">회원가입이 어려우신 경우, 고객센터 <span class="tel">080-077-0000</span>으로 문의해주세요.</p><!-- [01/11]_수정(안내문구 추가) -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //.cmain -->
+     
+</div>
+<!-- //.wrap -->
+</body>
+</html>

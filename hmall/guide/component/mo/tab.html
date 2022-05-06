@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com/">
+<meta name="author" content="@Hmall">
+<meta name="description" content="Hmall GUIDE - 백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="Hmall GUIDE HTML5, CSS3, Responsive web design, device testing, RWD">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon/favicon.ico">
+<title>Hmall UI/UX GUIDE</title>
+<script src="../../js/jquery-3.4.1.min.js"></script>
+<script src="../../js/jquery.easing.min.js"></script>
+<script src="../../js/ukDetect.min.js"></script>
+<script src="../../../m/js/co/common.js"></script>
+<style>
+/* StyleGuide Layout */
+.cguide-layout{padding:15px 0;}
+.cguide-layout > .guide-title1{margin-bottom:15px;padding:0 15px;color:#333;font-size:30px;line-height:23px;letter-spacing:-1.2px;}
+.cguide-layout > .guide-title2{margin-bottom:6px;padding:0 15px;color:#333;font-size:14px;line-height:23px;letter-spacing:-0.56px;}
+.cguide-layout > .guide-box{margin-bottom:20px;padding:0 15px;}
+.cguide-layout > .guide-box.full{padding:0;}
+.cguide-layout > .guide-box .btngroup{margin-bottom:10px;}
+
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,table,th,td,input,select,textarea,button,label,a,span,strong,i,b,ins,del,main,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{margin:0;padding:0;font-family:'Malgun Gothic',-apple-system,'droid sans fallback','Apple SD Gothic Neo','AppleGothic',sans-serif;color:#666;font-size:14px;line-height:1;font-weight:400;letter-spacing:-0.56px;vertical-align:top;word-wrap:break-word;word-break:break-all;box-sizing:border-box;}
+*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html, body{height:100%;}
+body{min-width:320px;-webkit-text-size-adjust:none;}
+fieldset, img{border:0 none;}
+img{width:100%;margin:0;padding:0;vertical-align:middle;}
+ul, ol, menu, li{list-style:none;}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after, q:before, q:after {content:'';content:none;}
+label{vertical-align:middle;}
+input, select, textarea, button{font-size:100%;vertical-align:middle;}
+button{border:0 none;background-color:transparent;cursor:pointer;}
+table{width:100%;border-collapse:collapse;border-spacing:0;}
+span, i, b, ins, del, strong, label{vertical-align:middle;}
+a{text-decoration:none;}
+a:hover,a:active,a:visited,a:focus{text-decoration:none;}
+address,caption,cite,code,dfn,em,var,i,ins{font-style:normal;font-weight:normal;}
+iframe{width:100%;height:100%;margin:0;border:0;}
+/* WebKit Scrollbar Style */
+.x64 *::-webkit-scrollbar{width:6px;height:4px;} 
+.x64 *::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);} 
+.x64 *::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);}
+/* Accessbility Text Hide */
+.hiding{overflow:hidden;position:absolute;width:0;height:0;line-height:1;}
+/* Skip Navigation */
+.nav-skip{position:absolute;top:-1px;width:100%;text-align:center;}
+.nav-skip a{overflow:hidden;position:absolute;width:0;height:0;line-height:1;}
+.nav-skip a:focus{display:block;z-index:10;width:100%;height:auto;padding:10px;background:#222;color:#fff;}
+/* Border Color & Border Radius & Background Color & Text Color */
+.bdr0{border-radius:0!important;}
+.bdr3{border-radius:3px!important;}
+.bdr4{border-radius:4px!important;}
+.bdc-f14a38{border-color:#f14a38!important;}
+.bdc-ff5340{border-color:#ff5340!important;}
+.bdc-666{border-color:#666!important;}
+.bdc-ccc{border-color:#ccc!important;}
+.bdc-ddd{border-color:#ccc!important;}
+.bgc-ff5340{background-color:#ff5340!important;}
+.bgc-f4f4f4{background-color:#f4f4f4!important;}
+.bgc-f8f8f8{background-color:#f8f8f8!important;}
+.bgc-fff{background-color:#fff!important;}
+.color-ff5340{color:#ff5340!important;}
+.color-000{color:#000!important;}
+.color-111{color:#111!important;}
+.color-333{color:#333!important;}
+.color-666{color:#666!important;}
+.color-999{color:#999!important;}
+.color-ddd{color:#ddd!important;}
+.color-eee{color:#eee!important;}
+/* Typo Graphy Title */
+.large-title,
+.middle-title,
+.major-headings{color:#333;line-height:24px;}
+.large-title{font-size:18px;letter-spacing:-0.72px;}
+.middle-title,
+.major-headings{font-size:16px;letter-spacing:-0.64px;}
+.large-title,
+.middle-title{font-weight:700;}
+.major-headings{font-weight:400;}
+.subheadings{color:#333;font-size:15px;line-height:21px;font-weight:700;letter-spacing:-0.6px;}
+.minor-headings{color:#333;font-size:14px;line-height:20px;font-weight:700;letter-spacing:-0.56px;}
+/* Typo Graphy Contents  */
+.ctypo1{color:#666;font-size:15px;line-height:20px;letter-spacing:-0.6px;}
+.ctypo2{color:#666;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+.ctypo3{color:#999;font-size:14px;line-height:20px;letter-spacing:-0.56px;}
+/* Typo Graphy Contents Abstract */
+.abstract1,
+.abstract2{font-size:13px;line-height:19px;letter-spacing:-0.52px;}
+.abstract1{color:#666;}
+.abstract2{color:#999;}
+/* Display */
+.block{display:block;}
+.inline-block{display:inline-block;}
+.inline{display:inline;}
+.flex{display:flex;}
+.inline-flex{display:inline-flex;}
+/* Position */
+.sta{position:static;}
+.rel{position:relative;}
+.fix{position:fixed;}
+.abs{position:absolute;}
+/* Icon */
+.icon{display:inline-block;}
+
+/* Tab Default*/
+.tab{overflow:hidden;display:flex;flex-direction:row;width:100%;border-top:1px solid #eee;border-bottom:1px solid #eee;}
+.tab-default .tabmenu > li.selected::after{content:"";display:block;position:absolute;bottom:0;left:0;width:100%;height:2px;background:#333;}
+.tabmenu{display:flex;justify-content:space-between;width:100%;}
+.tabmenu > li{display:inline-flex;justify-content:center;position:relative;width:50%;}
+.tabmenu > li > a{display:inline-flex;justify-content:center;align-items:center;width:100%;height:54px;padding:0 15px;color:#999;font-size:16px;font-weight:400;vertical-align:baseline;}
+.tabmenu > li > a > span{display:inline-block;color:inherit;font-size:inherit;font-weight:inherit;line-height:19px;letter-spacing:-0.64px;vertical-align:baseline;}
+.tabmenu > li.selected > a{color:#333;font-weight:700;}
+/* Tab Contents Group */
+.tabcnt{display:none;}
+.tabcnt.selected{display:block;}
+/* Tab type1 */
+.tab-bgred,
+.tab-bgblack,
+.tab-linered,
+.tab-lineblack{border:0;}
+.tab-bgred .tabmenu,
+.tab-bgblack .tabmenu,
+.tab-linered .tabmenu,
+.tab-lineblack .tabmenu{overflow:hidden;border-radius:3px;background:#f8f8f8;}
+.tab-bgred .tabmenu > li > a,
+.tab-bgblack .tabmenu > li > a,
+.tab-linered .tabmenu > li > a,
+.tab-lineblack .tabmenu > li > a{height:40px;border-radius:3px;background:transparent;color:#999;font-size:15px;}
+.tab-bgred .tabmenu > li > a > span,
+.tab-bgblack .tabmenu > li > a > span,
+.tab-linered .tabmenu > li > a > span,
+.tab-lineblack .tabmenu > li > a > span{letter-spacing:-0.6px;}
+.tab-bgred .tabmenu > li.selected > a,
+.tab-bgblack .tabmenu > li.selected > a,
+.tab-linered .tabmenu > li.selected > a,
+.tab-lineblack .tabmenu > li.selected > a{border-radius:3px;font-size:15px;}
+.tab-bgred .tabmenu > li.selected > a{background:#ff5340;color:#fff;}
+.tab-bgblack .tabmenu > li.selected > a{background:#333;color:#fff;}
+.tab-linered .tabmenu > li.selected > a{border:1px solid #ff5340;background:#fff;color:#ff5340;}
+.tab-lineblack .tabmenu > li.selected > a{border:1px solid #666;background:#fff;color:#333;}
+/* Tab Multi Group Type2 */
+.tab-multi{width:100%;border:1px solid #eee;border-radius:3px;background:#eee;}
+.tab-multi .tabmenu{flex-wrap:wrap;}
+.tab-multi .tabmenu > li{width:calc((100% - 3px)/4);margin-bottom:1px;}
+.tab-multi .tabmenu > li:nth-last-of-type(-n+4){margin-bottom:0;}
+.tab-multi .tabmenu > li > a{height:40px;background:#fff;}
+.tab-multi .tabmenu > li.selected > a{background:#ff5340;color:#fff;}
+/* Tab Multi Ling Group Type3 */
+.tab-multiline{padding:2px;border:1px solid #eee;border-radius:3px;background:#f8f8f8;}
+.tab-multiline .tabmenu > li > a{height:36px;}
+.tab-multiline .tabmenu > li::after{content:"";display:inline-block;position:absolute;top:50%;right:0;width:1px;height:14px;background:#eee;transform:translateY(-50%);}
+.tab-multiline .tabmenu > li.selected > a{border:1px solid #666;border-radius:3px;background:#fff;color:#333;}
+.tab-multiline .tabmenu > li:last-child::after,
+.tab-multiline .tabmenu > li.selected::after{display:none;}
+/* Tab Round Type4 */
+.tab-bgred.tabsm .tabmenu,
+.tab-bgblack.tabsm .tabmenu,
+.tab-linered.tabsm .tabmenu,
+.tab-lineblack.tabsm .tabmenu{border-radius:0;background:#fff;}
+.tab-bgred.tabsm .tabmenu > li,
+.tab-bgblack.tabsm .tabmenu > li,
+.tab-linered.tabsm .tabmenu > li,
+.tab-lineblack.tabsm .tabmenu > li{min-width:62px;}
+.tab-bgred.tabsm .tabmenu > li > a,
+.tab-bgblack.tabsm .tabmenu > li > a{height:30px;padding:0 15px;border-radius:100px;background:transparent;color:#999;font-size:14px;}
+.tab-linered.tabsm .tabmenu > li > a,
+.tab-lineblack.tabsm .tabmenu > li > a{height:30px;padding:0 14px;border-radius:100px;background:transparent;color:#999;font-size:14px;}
+.tab-bgred.tabsm .tabmenu > li > a > span,
+.tab-bgblack.tabsm .tabmenu > li > a > span,
+.tab-linered.tabsm .tabmenu > li > a > span,
+.tab-lineblack.tabsm .tabmenu > li > a > span{line-height:17px;letter-spacing:-0.56px;}
+.tab-bgred.tabsm .tabmenu > li.selected > a,
+.tab-bgblack.tabsm .tabmenu > li.selected > a,
+.tab-linered.tabsm .tabmenu > li.selected > a,
+.tab-lineblack.tabsm .tabmenu > li.selected > a{font-size:14px;}
+.tab-bgred.tabsm .tabmenu > li.selected > a{background:#ff5340;color:#fff;}
+.tab-bgblack.tabsm .tabmenu > li.selected > a{background:#333;color:#fff;}
+.tab-linered.tabsm .tabmenu > li.selected > a{border:1px solid #ff5340;background:#fff;color:#ff5340;}
+.tab-lineblack.tabsm .tabmenu > li.selected > a{border:1px solid #666;background:#fff;color:#333;}
+/* Tab Slider Type5 */
+.tab-slider{position:relative;border-top:1px solid #eee;border-bottom:1px solid #eee;}
+.tab-slider::after{content:"";display:block;position:absolute;top:0;right:0;z-index:1;width:20px;height:100%;background-image:linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);}
+.tab-sliderwrap{display:flex;flex-flow:row nowrap;overflow-x:auto;padding:20px 0;}
+.tab-slider .tabmenu{width:auto;padding:0 15px;white-space:nowrap;}
+.tab-slider .tabmenu > li{width:auto;min-width:auto;}
+.tab-slider .tabmenu > li:not(:last-child){margin-right:5px;}
+.tab-slider .tabmenu > li > a{flex-wrap:nowrap;width:auto;height:30px;padding:0 14px;border:1px solid #ddd;border-radius:15px;color:#999;font-size:14px;}
+.tab-slider .tabmenu > li > a > span{letter-spacing:-0.56px;}
+.tab-slider .tabmenu > li.selected > a{border-color:#ff5340;color:#ff5340;}
+.tab-slider.tab-nline .tab-sliderwrap{padding:15px 0;}
+.tab-slider.tab-nline .tabmenu > li{padding:0;}
+.tab-slider.tab-nline .tabmenu > li > a{height:auto;padding:0 5px;border:0;border-radius:0;}
+</style>
+</head>
+<body>
+<div class="section cguide-layout" role="contentinfo" aria-label="Tab Style">
+    <h2 class="guide-title1">TAB</h2>
+    <h3 class="guide-title2">Default</h3>
+    <div class="guide-box">
+        <div class="tab tab-default">
+            <ul class="tabmenu" role="tablist">
+                <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>상세설명</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>기본정보</span></a></li>
+            </ul>
+        </div>
+        <!-- //.tab -->
+    </div>
+
+    <h3 class="guide-title2">TYPE1</h3>
+    <div class="guide-box">
+        <div class="tab tab-bgred">
+            <ul class="tabmenu" role="tablist">
+                <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>선택1</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택2</span></a></li>
+            </ul>
+        </div>
+        <!-- //.tab -->
+        <br>
+        <div class="tab tab-linered">
+            <ul class="tabmenu" role="tablist">
+                <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>선택1</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택2</span></a></li>
+            </ul>
+        </div>
+        <!-- //.tab -->
+        <br>
+        <div class="tab tab-lineblack">
+            <ul class="tabmenu" role="tablist">
+                <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>선택1</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택2</span></a></li>
+            </ul>
+        </div>
+        <!-- //.tab -->
+    </div>
+
+    <h3 class="guide-title2">TYPE2</h3>
+    <div class="guide-box">
+        <div class="tab tab-multi">
+            <ul class="tabmenu" role="tablist">
+                <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>선택1</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택2</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택3</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택4</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택5</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택6</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택7</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택8</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택9</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택10</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택11</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택12</span></a></li>
+            </ul>
+        </div>
+        <!-- //.tab -->
+    </div>
+
+    <h3 class="guide-title2">TYPE3</h3>
+    <div class="guide-box">
+        <div class="tab tab-multiline">
+            <ul class="tabmenu" role="tablist">
+                <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>선택1</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택2</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택3</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택4</span></a></li>
+            </ul>
+        </div>
+        <!-- //.tab -->
+    </div>
+
+    <h3 class="guide-title2">TYPE4</h3>
+    <div class="guide-box">
+        <div class="tab tab-bgred tabsm">
+            <ul class="tabmenu" role="tablist">
+                <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>선택1</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택2</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택3</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택4</span></a></li>
+            </ul>
+        </div>
+        <!-- //.tab -->
+        <br>
+        <div class="tab tab-linered tabsm">
+            <ul class="tabmenu" role="tablist">
+                <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>선택1</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택2</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택3</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택4</span></a></li>
+            </ul>
+        </div>
+        <!-- //.tab -->
+        <br>
+        <div class="tab tab-bgblack tabsm">
+            <ul class="tabmenu" role="tablist">
+                <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>선택1</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택2</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택3</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택4</span></a></li>
+            </ul>
+        </div>
+        <!-- //.tab -->
+        <br>
+        <div class="tab tab-lineblack tabsm">
+            <ul class="tabmenu" role="tablist">
+                <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>선택1</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택2</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택3</span></a></li>
+                <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>선택4</span></a></li>
+            </ul>
+        </div>
+        <!-- //.tab -->
+    </div>
+
+    <h3 class="guide-title2">TYPE5</h3>
+    <div class="guide-box">
+        <div class="tab tab-slider tab-line">
+            <div class="tab-sliderwrap">
+                <ul class="tabmenu" role="tablist">
+                    <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>웰깁스</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>덴탈마스크</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>구찌가방</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>발렌시아가</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>벨르제이</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>구찌가방</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>발렌시아가</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>덴탈마스크</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>구찌가방</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>발렌시아가</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- //.tab -->
+        <br>
+        <div class="tab tab-slider tab-nline">
+            <div class="tab-sliderwrap">
+                <ul class="tabmenu" role="tablist">
+                    <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>웰깁스</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>덴탈마스크</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>구찌가방</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>발렌시아가</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>벨르제이</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>구찌가방</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>발렌시아가</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>덴탈마스크</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>구찌가방</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>발렌시아가</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- //.tab -->
+    </div>
+
+    <h3 class="guide-title2">Tab Group Contents1</h3>
+    <div class="guide-box">
+        <div class="tabgroup uxtabgp">
+            <div class="tab tab-default">
+                <ul class="tabmenu" role="tablist">
+                    <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true"><span>상세설명</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false"><span>기본정보</span></a></li>
+                </ul>
+            </div>
+            <!-- //.tab -->
+            <section class="tabcnt selected" role="tabpanel" aria-label="상세설명" aria-selected="true">
+                content1
+            </section>
+            <section class="tabcnt" role="tabpanel" aria-label="기본정보" aria-selected="false">
+                content2
+            </section>
+        </div>
+        <!-- //.tabgroup -->
+    </div>
+
+
+    <h3 class="guide-title2">Tab Group Contents2</h3>
+    <div class="guide-box">
+        <div class="tabgroup" data-id="tabgroup1">
+            <div class="tab tab-default">
+                <ul class="tabmenu" role="tablist">
+                    <li class="selected" role="presentation"><a href="#" role="tab" aria-selected="true" data-index="0"><span>상세설명</span></a></li>
+                    <li role="presentation"><a href="#" role="tab" aria-selected="false" data-index="1"><span>기본정보</span></a></li>
+                </ul>
+            </div>
+            <!-- //.tab -->
+            <section class="tabcnt selected" role="tabpanel" aria-label="상세설명" aria-selected="true">
+                content1
+            </section>
+            <section class="tabcnt" role="tabpanel" aria-label="기본정보" aria-selected="false">
+                content2
+            </section>
+        </div>
+        <!-- //.tabgroup -->
+    </div>
+</div>
+<!-- //.section -->
+<script>
+    uxTab = $('.tab');
+    uxTab.each(function(i, e){
+        var uxTabMenu = $(e).find('.tabmenu > li');
+        uxTabMenu.on('click focusin', function(){
+            var idx = $(this).index();
+            uxTabMenu.eq(idx).addClass('selected').siblings().removeClass('selected');
+            uxTabMenu.eq(idx).children().attr('aria-selected','true').parent().siblings().children().attr('aria-selected','false');
+            return false
+        });
+    });
+    uxTabGroup = $('.uxtabgp');
+    uxTabGroup.each(function(i, e){
+        var uxTabMenu = $(e).find('.tabmenu > li');
+        var uxtabCnt = $(e).find('> .tabcnt');
+        uxTabMenu.on('click focusin', function(){
+            var idx = $(this).index();
+            uxTabMenu.eq(idx).addClass('selected').siblings().removeClass('selected');
+            uxTabMenu.eq(idx).children().attr('aria-selected','true').parent().siblings().children().attr('aria-selected','false');
+            uxtabCnt.eq(idx).addClass('selected').siblings().removeClass('selected');
+            uxtabCnt.eq(idx).attr('aria-selected','true').siblings().attr('aria-selected','false');
+            return false
+        });
+    });
+    /* tabmenu */
+    var tabmenu1 = new UIComponent.mobile.tabmenu({
+        'dom':$(".tabgroup[data-id='tabgroup1']"),
+        'option':{
+            'name': 'tabmenu01',
+            'scroll': false,                        // 좌우 스크롤 여부
+            'index':0,                              // 시작시 view index
+            'changeCollbackBefore':null,            // before callback 함수
+            'changeCollbackAfter':changeTabmenu1,   // after callback 함수
+            'readyCollback':readyTabmenu1           // ready callback 함수
+        }
+    });
+
+    function changeTabmenu1(sender,index){
+        console.log("changeTabmenu1",sender.name,index);
+    }
+
+    function readyTabmenu1(sender){
+        console.log("readyTabmenu1",sender.name);
+    }
+</script>
+</body>
+</html>

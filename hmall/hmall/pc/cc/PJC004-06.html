@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>고객센터  1:1 반품신청 배송회수문의</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/cc/customer.css">
+</head>
+<body id="popWin">   <!--20200826 수요일 추가 윈도우 팝업은 body에 popWin 아이디값 설정해주셔야 합니다. -->         
+    <!--윈도우팝업(새창으로열기) 1:1 상담신청 : PJC004-001 상담할 상품을 선택하세요 클릭 시 윈도우 팝업 // 20200825 script 요청드림-->  <!--pc 공통 스크립트 잡은 후 윈도우 팝업 변경 가능성 있음-->
+    <!--popup-win : 윈도우 팝업일 경우 // width:649px , min-height:482px, height:1297px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win wd600 cus-consult product-delete case04"> <!--20200828 금요일 pc레이아웃 공통작업 wd600 클래스 추가-->
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">1:1 상담신청</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <p class="desc">
+                        당일 16시 이후 접수 건은 익일 오전 9시 이후 답변 가능 (단, 주말 공휴일 제외)
+                        <button class="btn btn-linelgray small30"><span>1:1 상담내역 보기</span></button> <!--마이페이지 1:1상담으로 이동-->
+                    </p>
+                    <!-- [12/15]_수정(TMS 고객센터 새 창 팝업 관련 내용 수정) -->
+                    <div class="content"> 
+                        <!--consult-wrap-->
+                        <div class="consult-wrap">
+                            <!--상담유형선택-->
+                            <div class="custom-selectbox" data-modules-selectbox="">
+                                <select>
+                                    <option>상담 유형선택</option>
+                                    <option>취소신청</option>
+                                    <option>반품신청</option>
+                                    <option>배송/회수문의</option>
+                                    <option>결제/환불문의</option>
+                                    <option selected="">교환신청</option>
+                                    <option>AS신청</option>
+                                    <option>시스템오류</option>
+                                    <option>서비스문의</option>
+                                </select>
+                            </div>
+                            <!--//상담유형선택-->
+                            <!--상담유형선택-->
+                            <div class="custom-selectbox" data-modules-selectbox="">
+                                <select>
+                                    <option>상담 사유 선택</option>
+                                    <option selected="">포장불량</option>
+                                    <option>색상변경</option>
+                                    <option>상품불량</option>
+                                    <option>사이즈변경</option>
+                                    <option>구성품누락</option>  <!--이 부분까지 1. 해당상품속성선택 2. 교환수량/사용여부 선택-->
+                                    <option>교환지연</option>  
+                                    <option>교환방법문의</option> 
+                                    <option>기타문의</option>   <!--'교환지연,교환방법문의.기타문의' 택배사,운송장,문의내용,사진동영상첨부,전화번호,이메일,답변방법-->
+                                </select>
+                            </div> 
+                            <!--//상담유형선택-->
+                        </div>
+                        <!--//consult-wrap-->
+
+                        <!--choice-item-->
+                        <div class="choice-item">
+                            <div class="pdwrap pdlist pdconsult">
+                                <div class="pdlist-wrap">
+                                    <figure class="pdthumb">
+                                        <!--20200828 금요일 디자인 사이즈로 인한 이미지 수정-->
+                                        <div class="thumb">
+                                            <img src="//imagedev.hmall.com/p/img/cc/order-item-sample.jpg" alt="[빈폴레이디스] 네이비 스트라이프 라운드">
+                                        </div>
+                                        <!--20200828 금요일 내용변경으로 인한 수정-->
+                                        <figcaption>
+                                            <div class="delive-stat">배송완료</div>
+                                            <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                            <div class="pdoption" aria-label="옵션/수량">
+                                                <span class="color">블랙</span>
+                                                <span class="option-num">66</span>
+                                                <span class="count"><em class="count-num">1</em>개</span>
+                                            </div>
+                                            <div class="pdprice">
+                                                <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                            </div>
+                                        </figcaption>
+                                        <!--다른상품선택 클릭시 PJD004-02 팝업 노출(주문상품선택팝업) // 20200826 수요일 윈도우 팝업 추가 //  현재 새창으로 뜨지 않는 부분은 검토중--->
+                                        <div class="another">
+                                            <button class="btn btn-linelgray small34" data-modules-winpopup="href:PJC004-02.html;width:602;min-height:580;"><i class="icon"></i><span>다른상품선택</span></button> 
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//choice-item-->
+
+                        <!--consult-form-wrap-->
+                        <div class="consult-form-wrap">
+                            <div class="consult-form">
+                                <!--교환속성선택-->
+                                <div class="field">
+                                    <div class="custom-selectbox" data-modules-selectbox="">
+                                        <select>
+                                            <option>교환 속성 선택</option>
+                                            <option>블랙 / S</option>
+                                            <option>블랙 / M</option>
+                                            <option>블랙 / L</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--//교환속성선택-->
+                                <!--운송장번호-->
+                                <div class="field">
+                                    <!--prop-change-->
+                                    <div class="prop-change">
+                                        <p class="ctypo15">사이즈 S</p>
+                                        <ul>
+                                            <li>
+                                                <strong>교환수량</strong>
+                                                <div class="ctrl">
+                                                    <div class="spinner">
+                                                        <button class="btn btn-minus" aria-label="수량 감소"><i class="icon"></i><span class="hiding">감소</span></button>
+                                                        <div class="inputbox">
+                                                            <label class="inplabel"><input type="number" name="" value="1" title="입력하세요"></label>
+                                                        </div>
+                                                        <button class="btn btn-plus" aria-label="수량 증가"><i class="icon"></i><span class="hiding">증가</span></button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <strong>사용여부</strong>
+                                                <div class="ctrl">
+                                                    <div class="radiobox">
+                                                        <label class="radlabel"><input type="radio" name="used" checked="" aria-checked="true"><i class="icon"></i><span>사용전</span></label>
+                                                        <label class="radlabel"><input type="radio" name="used"><i class="icon"></i><span>사용후</span></label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <button class="btn btn-close"><i class="icon"></i><span class="hiding">닫기</span></button>   
+                                    </div>
+                                    <!--//prop-change-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--//consult-form-wrap-->
+
+                        <!--consult-form-wrap-->
+                        <div class="consult-form-wrap field-only">
+                            <div class="consult-form">
+                                <!--택배사선택-->
+                                <div class="field">
+                                    <div class="custom-selectbox" data-modules-selectbox="">
+                                        <select>
+                                            <option>택배사 선택</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--//택배사선택-->
+                                <!--운송장번호-->
+                                <div class="field">
+                                    <div class="inputbox">
+                                        <label class="inplabel"><input type="text" name="" value="" placeholder="운송장 번호(-제외)" title="운송장 번호(-제외)"></label>
+                                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                    </div>
+                                </div>
+                                <!--//운송장번호-->
+                                <ul class="caution-list">
+                                    <li>편의점 등에서 택배를 이미 발송하신 경우 택배정보를 입력해주세요.</li>
+                                </ul>  
+                            </div>
+                        </div>
+                        <!--//consult-form-wrap-->
+
+                        <!--consult-form-wrap-->
+                        <div class="consult-form-wrap">
+                            <h3>문의내용</h3>
+                            <!--문의내용-->
+                            <div class="consult-form">
+                                <div class="field">
+                                    <div class="textareabox">
+                                        <label class="txtlabel">
+                                            <textarea cols="48" rows="7" placeholder="문의하실 내용을 구체적으로 적어주시면정확하고 빠른 답변에 도움이 됩니다." aria-placeholder="문의하실 내용을 구체적으로 적어주시면
+                                            정확하고 빠른 답변에 도움이 됩니다."></textarea>
+                                        </label>
+                                        <span class="txtcount"><em>0</em><b>500</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--//문의내용-->
+                        </div>
+                        <!--//consult-form-wrap-->
+
+                        <!--consult-form-wrap-->
+                        <div class="consult-form-wrap">
+                            <h3>사진/동영상 첨부</h3>
+                            <!--pickmov-add-->
+                            <div class="picmov-add">
+                                <!--picmov-aligner-->
+                                <div class="picmov-aligner">
+                                    <!--upload-->
+                                    <div class="upload">
+                                        <label class="filelabel">
+                                            <input type="file" title="파일 업로드">
+                                            <span class="upfile">
+                                                <img src="//imagedev.hmall.com/p/img/cc/picmov-sample.jpg" alt="업로드 파일 썸네일">
+                                            </span>
+                                        </label>
+                                        <button class="btn btn-close"><i class="icon close"></i><span class="hiding">파일 삭제</span></button>
+                                    </div>
+                                    <!--//upload-->
+                                    <!--upload-->
+                                    <div class="upload">
+                                        <label class="filelabel">
+                                            <input type="file" title="파일 업로드">
+                                            <span class="upfile">
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <!--//upload-->
+                                    <!--upload-->
+                                    <div class="upload">
+                                        <label class="filelabel">
+                                            <input type="file" title="파일 업로드">
+                                            <span class="upfile">
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <!--//upload-->
+                                    <!--upload-->
+                                    <div class="upload mov"> <!--동영상일경우 mov class 추가-->
+                                        <label class="filelabel">
+                                            <input type="file" title="파일 업로드">
+                                            <span class="upfile">
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <!--//upload-->
+                                </div>
+                                <!--//picmov-aligner-->
+                            </div>
+                            <!--//pickmov-add-->
+                        </div>
+                        <!--//consult-form-wrap-->
+
+                        <!--consult-form-wrap-->
+                        <div class="consult-form-wrap">
+                            <h3>답변 방법</h3>
+                            <!--답변방법-->
+                            <div class="consult-form">
+                                <!--radiobox-->
+                                <div class="radiobox">
+                                    <label class="radlabel"><input type="radio" name="answer" checked="" aria-checked="true"><i class="icon"></i><span>SMS</span></label>
+                                    <label class="radlabel"><input type="radio" name="answer" aria-checked="false"><i class="icon"></i><span>이메일</span></label>
+                                    <label class="radlabel"><input type="radio" name="answer" aria-checked="false"><i class="icon"></i><span>전화상담</span></label>
+                                </div>
+                                <!--//radiobox-->
+                                <!--휴대폰번호-->
+                                <div class="field">
+                                    <div class="inputbox">
+                                        <label class="inplabel"><input type="number" name="" placeholder="휴대폰 번호 (예:01012345678)" title="휴대폰 번호 입력"></label>
+                                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                    </div>
+                                </div>
+                                <!--//휴대폰번호-->
+                                <!--이메일
+                                <div class="field">
+                                    <div class="inputbox">
+                                        <label class="inplabel"><input type="number" name="" placeholder="이메일 userid@mail.com" title="이메일 입력"></label>
+                                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                    </div>
+                                </div>
+                                이메일-->
+                                <!--전화상담
+                                <div class="field">
+                                    <div class="inputbox">
+                                        <label class="inplabel"><input type="number" name="" placeholder="전화상담 0212345678" title="전화상담 입력"></label>
+                                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                                    </div>
+                                </div>
+                               전화상담-->
+                            </div>
+                            <!--//답변방법-->
+                        </div>
+                        <!--//consult-form-wrap-->
+                        <!-- 2020-09-29 마크업 추가 -->
+                        <div class="terms-box">
+                            <!-- [12/04]_수정(TMS 관련 수정 - PC_고객센터_1대1 상담신청_201022 체크박스 누락케이스 마크업 구조 변경 및 문구변경) -->
+                            <label class="chklabel">
+                                <input type="checkbox" name="" checked>
+                                <i class="icon"></i>
+                                <span>개인정보 수집 및 이용에 동의합니다</span>
+                            </label>
+                            <!--20201005 월요일 레이어팝업링크추가-->
+                            <a href="#modalCollectPersonalInfo" class="btn atext" data-modules-modal><span>내용보기</span><i class="arrow right"></i></a>
+                        </div>
+                        <!-- // 2020-09-29 마크업 추가 -->
+
+                        <!--btngroup-->
+                        <div class="btngroup">
+                            <!-- 20200828 금요일 취소버튼 클릭 시 닫힘 -->
+                            <button class="btn btn-linelgray medium" data-dismiss="window"><span>취소</span></button>
+                            <button class="btn btn-default medium"><span>확인</span></button>
+                        </div>
+                        <!--//btngroup-->
+
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+    <!--//윈도우팝업 1:1 상담신청-->
+    <!--20201005 월요일 레이어팝업추가 : 개인정보수집및이용-->
+    <div class="ui-modal" id="modalCollectPersonalInfo" tabindex="-1" role="dialog" aria-label="개인정보수집및이용">
+        <div class="ui-modal-dialog collect-perInfo" role="document">
+            <div class="content">
+                <p class="ui-title">개인정보 수집 및 이용</p>
+                <!-- //.content-head -->
+                <div class="content-body">
+                    <div class="tblwrap">
+                        <table>
+                            <caption>개인정보 수집 및 이용</caption>
+                            <colgroup>
+                                <col style="width:138px">
+                                <col style="width:140px">
+                                <col style="width:182px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="regular">목적</th>
+                                    <th scope="col" class="regular">항목</th>
+                                    <th scope="col">보유기간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="txt-center">1:1상담</td>
+                                    <td class="txt-center">휴대폰번호(SMS, 전화상담 선택 시), 이메일(이메일 선택 시)</td>
+                                    <td class="txt-center bold">회원탈퇴 시 <br/> 또는 법정 의무 보유기간</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //.content-body -->
+                
+                <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+            </div>
+            <!-- //.content -->
+        </div>
+        <!-- //.ui-modal-dialog -->
+    </div>
+    <!--//20201005 월요일 레이어팝업추가 : 개인정보수집및이용-->
+</body>
+</html>

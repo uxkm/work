@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>쿠폰다운로드</title> <!--20200921 월요일 수정완료-->
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/pd/product.css">
+<script src="//imagedev.hmall.com/p/js/pd/product.js"></script>
+</head>
+<body>
+<div class="wrap product-detail"><!-- wing banner 미노출 시 : wing-none 클래스 추가 -->
+    <main class="cmain" role="main" id="mainContents">
+        <div class="container">
+            
+        </div>
+        <!-- //.container -->
+     
+    </main>
+    <!-- //.cmain -->
+</div>
+<!-- //.wrap -->
+
+<div class="ui-modal" id="modalCouponDownload" tabindex="-1" role="dialog" aria-label="쿠폰다운로드">
+    <div class="ui-modal-dialog coupon-download" role="document">
+        <div class="content">
+            <p class="ui-title">쿠폰다운로드</p>
+            <!-- //.content-head -->
+            <div class="content-body">
+                <button class="btn btn-lineblack medium coupon"><span>쿠폰 일괄 다운로드</span></button>
+                <!--coupon-list-->
+                <div class="coupon-list">
+                    <!--coupon-box-->
+                    <div class="coupon-box">
+                        <div class="coupon">
+                            <p class="discount"><strong>20</strong><b>%</b></p>
+                            <div class="coupon-info">
+                                <p class="title"><strong>다이아몬드 고객 할인쿠폰</strong></p>
+                                <ul class="coupon-info-list">
+                                    <li>기준 금액 : 50,000원 이상</li>
+                                    <li>기간 : 2020.07.01 ~ 2020.07.31</li>
+                                    <li>조건 : 직접방문 시 적용, H.Point 회원</li>
+                                    <li class="app-coupon">APP 전용 할인쿠폰</li>
+                                </ul>
+                            </div>
+                            <!-- // .coupon-info -->
+                            <div class="prd-view">
+                                <!-- [12/16]_수정(디자인파일기준11/16 : 텍스트변경 "상품보기" -> "상세보기") -->
+                                <a href="javascript:;">상세<br/>보기</a>
+                            </div>
+                            <div class="btn-coupon-down">
+                                <a href="javascript:;">다운로드</a>
+                            </div>
+                        </div>
+                        <!-- // .coupon -->
+                        <!-- 쿠폰 디자인 위한 마크업 추가 09/15 -->
+                        <div class="coupon-bg"><div></div><div></div></div>
+                    </div>
+                    <!-- //.coupon-box -->
+                    <!--coupon-box-->
+                    <div class="coupon-box complete">  <!--다운로드 완료시 complete 클래스 추가-->
+                        <div class="coupon">
+                            <p class="discount"><strong>20</strong><b>%</b></p>
+                            <div class="coupon-info">
+                                <p class="title"><strong>다이아몬드 고객 할인쿠폰</strong></p>
+                                <ul class="coupon-info-list">
+                                    <li>기준 금액 : 50,000원 이상</li>
+                                    <li>기간 : 2020.07.01 ~ 2020.07.31</li>
+                                    <li>조건 : 직접방문 시 적용, H.Point 회원</li>
+                                </ul>
+                            </div>
+                            <!-- // .coupon-info -->
+                            <div class="btn-coupon-down"><a href="javascript:;">다운 완료</a></div>
+                        </div>
+                        <!-- // .coupon -->
+                        <!-- 쿠폰 디자인 위한 마크업 추가 09/15 -->
+                        <div class="coupon-bg"><div></div><div></div></div>
+                    </div>
+                    <!-- //.coupon-box -->
+                </div>
+                <!--//coupon-list-->
+                <!--20200924 목요일 기획서 누락 추가-->
+                <p class="noti">* 쿠폰별 기간 및 조건을 확인해 주시기 바랍니다.</p>
+            </div>
+            <!-- //.content-body -->
+            
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.content -->
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+<!-- //.ui-modal -->
+<script>
+    $('#modalCouponDownload').modal().show();
+</script>
+</body>
+</html>

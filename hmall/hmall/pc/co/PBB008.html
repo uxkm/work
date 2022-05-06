@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="apple-mobile-web-app-capable" content=" yes">
+    <meta name="robots" content="index,follow">
+    <meta name="title" content="https://hmall.com">
+    <meta name="author" content="@Hmall">
+    <meta name="description"
+        content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+    <meta name="keywords" content="">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+    <title>현대 Hamll</title>
+    <!-- UI/UX Style -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css">
+    <!-- jQuery UI css -->
+    <script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+    <script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+    <script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+    <script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+    <script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+    <script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+    <!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/main.css">
+</head>
+
+<body>
+    <div class="wrap home">
+        <!-- 최근 본 쇼핑 -->
+        <div class="layer-popup recently" style="display:block;"><!-- style 임시 적용 : 확인용 -->
+            <div class="pop-wrap">
+                <div class="pop-content-wrap">
+                    <strong class="pop-title">최근본쇼핑<button class="btn btn-linelgray sm"><span>편집</span></button> </strong>
+                    <!-- <strong class="pop-title">최근본쇼핑<button class="btn btn-linelgray sm"><span>편집취소</span></button> </strong> -->
+                    <div class="pop-content">
+                        <!-- 팝업 컨텐츠 -->
+
+                        <!-- 최근 본 쇼핑이 없는 경우  -->
+                        <div class="top-area">
+                            <p class="recently-none"><span>최근본쇼핑이 없습니다.</span></p>
+                            <p class="best-title">지금 BEST 상품을 만나보세요.</p>
+                        </div>
+                        <!-- // 최근 본 쇼핑이 없는 경우  -->
+
+                        <!-- 탭 리스트 -->
+                       <div class="sort-group tab-recent">
+                            <ul class="sort-menu" role="tablist">
+                                <li class="selected" role="presentation"><button role="tab" aria-selected="true" class="sort-total"><span>전체</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-product"><span>상품</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-search"><span>검색어</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-brand"><span>브랜드</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-categody"><span>카테고리</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-exhibition"><span>기획전</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-event"><span>이벤트</span></button></li>
+                            </ul>
+            
+                            <!-- 편집 시 분류 비활성화 - 각 button에 disabled 추가 -->
+                            <ul class="sort-menu" role="tablist" style="display:none">
+                                <li class="selected" role="presentation"><button role="tab" aria-selected="true" class="sort-total" disabled=""><span>전체</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-product" disabled=""><span>상품</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-search" disabled=""><span>검색어</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-brand" disabled=""><span>브랜드</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-categody" disabled=""><span>카테고리</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-exhibition" disabled=""><span>기획전</span></button></li>
+                                <li role="presentation"><button role="tab" aria-selected="false" class="sort-event" disabled=""><span>이벤트</span></button></li>
+                            </ul>
+                            <!-- //.sort-menu -->
+                        </div>
+                        <!-- 탭 리스트  -->
+
+                        <div class="sort-content" role="tabpanel" aria-label="전체" aria-selected="true">
+                            <!-- 최근 본 쇼핑 -->
+                            <div class="recently-list-wrap">
+                                <ul>
+                                    <!-- 최근 본 쇼핑 리스트 없는 경우 베스트 상품 -->
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="img"><img src="//imagedev.hmall.com/p/img/co/sample/img-recently01.jpg"
+                                                    alt="2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상"></span>
+                                            <span class="prd-info">
+                                                <span class="name">2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</span>
+                                                <span class="price-wrap">
+                                                    <span class="prd-price"><strong>27,000</strong>원</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="img"><img src="//imagedev.hmall.com/p/img/co/sample/img-recently01.jpg"
+                                                    alt="2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상"></span>
+                                            <span class="prd-info">
+                                                <span class="name">2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈
+                                                    최신상</span>
+                                                <span class="price-wrap">
+                                                    <span class="prd-price"><strong>27,000</strong>원</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <!-- // 최근 본 쇼핑 리스트 없는 경우 베스트 상품 -->
+
+                                    <!-- 최근 본 상품 있는 경우 -->
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="img"><img src="//imagedev.hmall.com/p/img/co/sample/img-recently01.jpg"
+                                                    alt="2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상"></span>
+                                            <span class="prd-info">
+                                                <span class="name">2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈
+                                                    최신상</span>
+                                                <span class="price-wrap">
+                                                    <span class="prd-price"><strong>27,000</strong>원</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <em class="shop-type product">상품</em>
+                                            <span class="recently-text">나이키</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <em class="shop-type search">검색어</em>
+                                            <span class="recently-text">남자양말</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <em class="shop-type brand">브랜드</em>
+                                            <span class="recently-text">나이키</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <em class="shop-type category">카테고리</em>
+                                            <span class="recently-text">카카오페이 5천원 즉석 할인</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <em class="shop-type exhibition">기획전</em>
+                                            <span class="recently-text">골든듀 x Hmall 최대 40% 할인골든듀 x Hmall 최대 40% 할인골든듀 x Hmall 최대 40% 할인골든듀 x Hmall 최대 40% 할인</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <em class="shop-type event">이벤트</em>
+                                            <span class="recently-text">카카오페이 5천원 즉석 할인</span>
+                                        </a>
+                                    </li>
+                                    <!-- // 최근 본 상품 있는 경우 -->
+
+                                    <!-- 최근 본 상품 편집 시 : 체크박스 추가  -->
+                                    <li>
+                                        <!-- 체크박스 -->
+                                        <span class="checkbox">
+                                            <label class="chklabel">
+                                                <input type="checkbox" name="" checked>
+                                                <i class="icon"></i>
+                                                <span>2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</span>
+                                            </label>
+                                        </span>
+                                        <!-- // 체크박스 -->
+                                    
+                                        <a href="javascript:;">
+                                            <span class="img"><img src="//imagedev.hmall.com/p/img/co/sample/img-recently01.jpg"
+                                                    alt="2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상"></span>
+                                            <span class="prd-info">
+                                                <span class="name">2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</span>
+                                                <span class="price-wrap">
+                                                    <span class="prd-price"><strong>27,000</strong>원</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <!-- 체크박스 -->
+                                        <span class="checkbox">
+                                            <label class="chklabel">
+                                                <input type="checkbox" name="">
+                                                <i class="icon"></i>
+                                                <span>2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</span>
+                                            </label>
+                                        </span>
+                                        <!-- // 체크박스 -->
+                                    
+                                        <a href="javascript:;">
+                                            <em class="shop-type brand">브랜드</em>
+                                            <span class="recently-text">나이키</span>
+                                        </a>
+                                    </li>
+                                    <!-- // 최근 본 상품 편집 시 : 체크박스 추가 -->
+                                </ul>
+                            </div>
+                            <!-- // 최근 본 쇼핑 -->
+                        </div>
+
+                        <!-- 버튼 영역 -->
+                        <div class="bottom-fixed">
+                            <div class="btngroup txt-center">
+                                <!-- 버튼 활성화 시 -->
+                                <button class="btn btn-default xl"><span>선택삭제</span></button>
+                                <!-- // 법튼 활성화 시 -->
+
+                                <!-- 버튼 비활성화 시 : 디자인 적용 전 -->
+                                <!-- <button class="btn btn-default xl" disabled><span>선택삭제</span></button> -->
+                                <!-- // 버튼 비활성화 시 : 디자인 적용 전 -->
+
+                                <button class="btn btn-default xl"><span>전체삭제</span></button>
+                            </div>
+                        </div>
+                        <!-- // 버튼 영역 -->
+
+                        <!-- //팝업 컨텐츠 -->
+                    </div>
+                </div>
+                <!-- // .pop-content-wrap -->
+                <button class="btn-close"><span>팝업 닫기</span></button>
+            </div>
+            <div class="layer-dim"></div><!-- [12/14]_수정(딤영역 추가) -->
+        </div>
+        <!-- // 최근 본 쇼핑 -->
+
+        <div class="layer-popup alert" style="display:none;"><!-- style 임시 적용 : 확인용 -->
+            <div class="pop-wrap">
+                <div class="pop-content-wrap">
+                    <div class="pop-content">
+                        <!-- 팝업 컨텐츠 -->
+                        <p class="text-type01">전체 삭제 하시겠습니까?</p>
+                        <!-- // 팝업 컨텐츠-->
+                    </div>
+                    <!-- 버튼 영역 -->
+                    <div class="btngroup">
+                        <button class="btn-cancel"><span>취소</span></button>
+                        <button class="btn-confirm"><span>확인</span></button>
+                    </div>
+                    <!-- // 버튼 영역 -->
+                </div>
+                <!-- // .pop-content-wrap -->
+            </div>
+        </div>
+
+    </div>
+    <!-- //.wrap -->
+
+</body>
+
+</html>

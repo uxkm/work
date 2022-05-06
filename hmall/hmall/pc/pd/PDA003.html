@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>상품 자세히 보기</title> 
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  --> 
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/pd/product.css">
+<script src="//imagedev.hmall.com/p/js/pd/product.js"></script>
+
+</head>
+<body>
+<div class="wrap product-detail"><!-- wing banner 미노출 시 : wing-none 클래스 추가 -->
+    <main class="cmain" role="main" id="mainContents"><!-- 마이페이지 'mypage' 클래스 추가 -->
+        <div class="container">
+            
+        </div>
+        <!-- //.container -->
+     
+    </main>
+    <!-- //.cmain -->
+</div>
+<!-- //.wrap -->
+
+<div class="ui-modal" id="modalOptionDeal" tabindex="-1" role="dialog" aria-label="옵션딜">
+    <div class="ui-modal-dialog modal-optiondeal" role="document">
+        <div class="content">
+            <p class="ui-title hiding">옵션딜</p>
+            <!-- 디자인 및 기능 구현에 맞추어 마크업 변경 09/25 -->
+            <!-- $(element).scrollTab('refresh') -->
+            <div class="option-deal-thumbnaii">
+                <!--[10/15] ul class="scrolltop-nav" class 추가-->
+                <ul class="ui-tab scrolltop-nav" role="tablist" data-modules-scrolltab="innerPadding:150;">
+                    <!-- [01/13]_수정(품절인 경우 class="end" 추가) -->
+                    <li role="presentation" class="ui-active end">
+                        <a href="#optList1" aria-controls="optList1" role="tab" data-modules-tab>
+                            <div class="thumb">
+                                <img src="//imagedev.hmall.com/p/img/pd/sample/img-optiondeal-sample.jpg" alt="옵션딜샘플이미지">
+                                <!-- [01/13]_수정(품절일 경우 케이스 추가) -->
+                                <span class="pdend">품절</span>
+                            </div>
+                            <p class="option">선택 01</p>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#optList2" aria-controls="optList2" role="tab" data-modules-tab>
+                            <div class="thumb">
+                                <img src="//imagedev.hmall.com/p/img/pd/sample/img-optiondeal-sample.jpg" alt="옵션딜샘플이미지">
+                            </div>
+                            <p class="option">선택 02</p>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#optList3" aria-controls="optList3" role="tab" data-modules-tab>
+                            <div class="thumb">
+                                <img src="//imagedev.hmall.com/p/img/pd/sample/img-optiondeal-sample.jpg" alt="옵션딜샘플이미지">
+                            </div>
+                            <p class="option">선택 03</p>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#optList4" aria-controls="optList4" role="tab" data-modules-tab>
+                            <div class="thumb">
+                                <img src="//imagedev.hmall.com/p/img/pd/sample/img-optiondeal-sample.jpg" alt="옵션딜샘플이미지">
+                            </div>
+                            <p class="option">선택 04</p>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#optList5" aria-controls="optList5" role="tab" data-modules-tab>
+                            <div class="thumb">
+                                <img src="//imagedev.hmall.com/p/img/pd/sample/img-optiondeal-sample.jpg" alt="옵션딜샘플이미지">
+                            </div>
+                            <p class="option">선택 05</p>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#optList6" aria-controls="optList6" role="tab" data-modules-tab>
+                            <div class="thumb">
+                                <img src="//imagedev.hmall.com/p/img/pd/sample/img-optiondeal-sample.jpg" alt="옵션딜샘플이미지">
+                            </div>
+                            <p class="option">선택 06</p>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#optList7" aria-controls="optList7" role="tab" data-modules-tab>
+                            <div class="thumb">
+                                <img src="//imagedev.hmall.com/p/img/pd/sample/img-optiondeal-sample.jpg" alt="옵션딜샘플이미지">
+                            </div>
+                            <p class="option">선택 07</p>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#optList8" aria-controls="optList8" role="tab" data-modules-tab>
+                            <div class="thumb">
+                                <img src="//imagedev.hmall.com/p/img/pd/sample/img-optiondeal-sample.jpg" alt="옵션딜샘플이미지">
+                            </div>
+                            <p class="option">선택 08</p>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#optList9" aria-controls="optList9" role="tab" data-modules-tab>
+                            <div class="thumb">
+                                <img src="//imagedev.hmall.com/p/img/pd/sample/img-optiondeal-sample.jpg" alt="옵션딜샘플이미지">
+                            </div>
+                            <p class="option">선택 09</p>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#optList10" aria-controls="optList10" role="tab" data-modules-tab>
+                            <div class="thumb">
+                                <img src="//imagedev.hmall.com/p/img/pd/sample/img-optiondeal-sample.jpg" alt="옵션딜샘플이미지">
+                            </div>
+                            <p class="option">선택 10</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //.option-deal-thumbnaii -->
+            <div class="content-body">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane ui-active" id="optList1">
+                        <div class="option-head">
+                            <!-- [12/02]_수정(이미지 크기 추가) -->
+                            <!-- [01/13]_수정(품절일 경우 class="end" 추가) -->
+                            <span class="tag-opt end">선택 01 (품절)</span>
+                            <p class="option-name">
+                                [15%특별할인][서울 웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권 [15%특별할인][서울웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권
+                            </p>
+                            <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                            <p class="option-price">
+                                <!-- [12/17]_수정(혜택가/ 판매가 추가) -->
+                                <strong class="pricetit">혜택가</strong>
+                                <!--판매가일경우-->
+                                <!-- <strong class="pricetit">판매가</strong> -->
+                                <!--// [12/17] -->
+                                <span>401,500</span>
+                                <em>원</em>
+                            </p>
+                            <!-- [12/17]_수정(별점 추가) -->
+                            <div class="review-star"> 
+                                <!-- 
+                                    starbg 별점 클래스 정의
+                                    0점(별 0개) : pt0 or 클래스 없음
+                                    10점(별 1/2개) : pt1
+                                    20점(별 1개) : pt2
+                                    30점(별 1개 반) : pt3
+                                    40점(별 2개) : pt4
+                                    50점(별 2개 반) : pt5
+                                    60점(별 3개) : pt6
+                                    70점(별 3개 반) : pt7
+                                    80점(별 4개) : pt8
+                                    90점(별 4개 반) : pt9
+                                    100점(별 5개) : pt10
+                                    -->
+                                <div class="starbg type-big pt8">
+                                    <p class="score"><span class="hiding">80점</span></p>
+                                </div>
+                                <p class="like-count"><em>4.5</em>(1,102)</p>
+                            </div>
+                            <!--// [12/17] -->
+                        </div>
+                        <div class="option-view">
+                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-product-detail-sample.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- //.tab-pane -->
+                    <div role="tabpanel" class="tab-pane" id="optList2">
+                        <div class="option-head">
+                            <span class="tag-opt">선택 02</span>
+                            <p class="option-name">
+                                [15%특별할인][서울 웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권 [15%특별할인][서울웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권
+                            </p>
+                            <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                            <p class="option-price"><span>401,500</span><em>원</em></p>
+                        </div>
+                        <div class="option-view">
+                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-product-detail-sample.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- //.tab-pane -->
+                    <div role="tabpanel" class="tab-pane" id="optList3">
+                        <div class="option-head">
+                            <span class="tag-opt">선택 03</span>
+                            <p class="option-name">
+                                [15%특별할인][서울 웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권 [15%특별할인][서울웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권
+                            </p>
+                            <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                            <p class="option-price"><span>401,500</span><em>원</em></p>
+                        </div>
+                        <div class="option-view">
+                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-product-detail-sample.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- //.tab-pane -->
+                    <div role="tabpanel" class="tab-pane" id="optList4">
+                        <div class="option-head">
+                            <span class="tag-opt">선택 04</span>
+                            <p class="option-name">
+                                [15%특별할인][서울 웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권 [15%특별할인][서울웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권
+                            </p>
+                            <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                            <p class="option-price"><span>401,500</span><em>원</em></p>
+                        </div>
+                        <div class="option-view">
+                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-product-detail-sample.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- //.tab-pane -->
+                    <div role="tabpanel" class="tab-pane" id="optList5">
+                        <div class="option-head">
+                            <span class="tag-opt">선택 05</span>
+                            <p class="option-name">
+                                [15%특별할인][서울 웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권 [15%특별할인][서울웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권
+                            </p>
+                            <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                            <p class="option-price"><span>401,500</span><em>원</em></p>
+                        </div>
+                        <div class="option-view">
+                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-product-detail-sample.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- //.tab-pane -->
+                    <div role="tabpanel" class="tab-pane" id="optList6">
+                        <div class="option-head">
+                            <span class="tag-opt">선택 06</span>
+                            <p class="option-name">
+                                [15%특별할인][서울 웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권 [15%특별할인][서울웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권
+                            </p>
+                            <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                            <p class="option-price"><span>401,500</span><em>원</em></p>
+                        </div>
+                        <div class="option-view">
+                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-product-detail-sample.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- //.tab-pane -->
+                    <div role="tabpanel" class="tab-pane" id="optList7">
+                        <div class="option-head">
+                            <span class="tag-opt">선택 07</span>
+                            <p class="option-name">
+                                [15%특별할인][서울 웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권 [15%특별할인][서울웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권
+                            </p>
+                            <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                            <p class="option-price"><span>401,500</span><em>원</em></p>
+                        </div>
+                        <div class="option-view">
+                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-product-detail-sample.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- //.tab-pane -->
+                    
+                    <div role="tabpanel" class="tab-pane" id="optList8">
+                        <div class="option-head">
+                            <span class="tag-opt">선택 08</span>
+                            <p class="option-name">
+                                [15%특별할인][서울 웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권 [15%특별할인][서울웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권
+                            </p>
+                            <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                            <p class="option-price"><span>401,500</span><em>원</em></p>
+                        </div>
+                        <div class="option-view">
+                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-product-detail-sample.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- //.tab-pane -->
+                    <div role="tabpanel" class="tab-pane" id="optList9">
+                        <div class="option-head">
+                            <span class="tag-opt">선택 09</span>
+                            <p class="option-name">
+                                [15%특별할인][서울 웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권 [15%특별할인][서울웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권
+                            </p>
+                            <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                            <p class="option-price"><span>401,500</span><em>원</em></p>
+                        </div>
+                        <div class="option-view">
+                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-product-detail-sample.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- //.tab-pane -->
+                    <div role="tabpanel" class="tab-pane" id="optList10">
+                        <div class="option-head">
+                            <span class="tag-opt">선택 10</span>
+                            <p class="option-name">
+                                [15%특별할인][서울 웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권 [15%특별할인][서울웨스틴조선호텔] 라운지&바 멜론 빙수(2인) 이용권
+                            </p>
+                            <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                            <p class="option-price"><span>401,500</span><em>원</em></p>
+                        </div>
+                        <div class="option-view">
+                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-product-detail-sample.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- //.tab-pane -->
+                </div>
+                <!-- //.tab-content -->
+
+                <!-- [12/15]_수정(마크업 수정) -->
+                <div class="option-deal-wrap"> 
+                    <!-- [12/15]_수정(data-modules-sticky 추가됨) -->
+                    <div class="util-option sticky" data-modules-sticky="className:product-option-sticky;"><!-- [11/26]_수정(옵션추가) -->
+                        <div class="sticky-inner">
+                            <div class="util-inner"><!-- 2020-09-08_스크립트수정 [구조 추가] -->
+                                <!-- [12/08]_수정(prduct-name 위치 변경) -->
+                                <!-- <strong class="prduct-name">아모레 퍼시픽 팩트 500% 용량+립+세럼+퍼프3+마스크팩</strong> -->
+                                <!--// [12/08] -->
+
+                                <div class="option-scroll" data-modules-scroll>
+                                    <!-- [12/08]_수정(prduct-name 위치 변경) -->
+                                    <strong class="prduct-name">아모레 퍼시픽 팩트 500% 용량+립+세럼+퍼프3+마스크팩</strong>
+                                    <!--// [12/08] -->
+                                    <!-- [12/21]_수정(원산지 추가) -->
+                                    <p class="prduct-origin">원산지 : 국내산 (상세설명 참고)</p>
+                                    <!--// [12/21] -->
+                                    <!-- [12/18]_수정(ui-dropdown-group 추가) -->
+                                    <div class="ui-dropdown-group">
+                                        <!-- [11/16]_수정(dropOption으로 수정) -->
+                                        <div class="ui-dropdown sel-prduct"> 
+                                            <a id="dropOption" class="drop" href="#" data-modules-dropdown="" aria-expanded="false">
+                                                <!-- [12/08]_수정(예시 : input 넣었을 경우) -->
+                                                <div class="figcaption">
+                                                    <div class="pdname" aria-label="제품명"><em class="choose-num">[선택01]</em> [15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                                    <input type="hidden" name="defaultNm" value="사이즈">
+                                                    <input type="hidden" name="uitmAttrTypeSeq" value="1">
+                                                </div>
+                                                <!--// [12/08] -->
+                                            </a>
+                                            <div class="dropdown-menu" role="menu" aria-labelledby="dropOption">
+                                                <div class="item-box-list">
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-sample-video-thumb.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지바 멜론 빙수(2인) 이용권">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdname" aria-label="제품명"><em class="choose-num">[선택01]</em> [15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                                            <div class="pdprice">
+                                                                <ins aria-label="가격"><em>45,000</em><b>원</b></ins>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-sample-video-thumb.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지바 멜론 빙수(2인) 이용권">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdname" aria-label="제품명"><em class="choose-num">[선택01]</em> [15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                                            <div class="pdprice">
+                                                                <ins aria-label="가격"><em>45,000</em><b>원</b></ins>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-sample-video-thumb.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지바 멜론 빙수(2인) 이용권">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdname" aria-label="제품명"><em class="choose-num">[선택01]</em> [15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                                            <div class="pdprice">
+                                                                <ins aria-label="가격"><em>45,000</em><b>원</b></ins>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-sample-video-thumb.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지바 멜론 빙수(2인) 이용권">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdname" aria-label="제품명"><em class="choose-num">[선택01]</em> [15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                                            <div class="pdprice">
+                                                                <ins aria-label="가격"><em>45,000</em><b>원</b></ins>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--// [11/16] -->
+                                    </div>
+                                    <!--// [12/18] -->
+
+                                    <!-- [12/18]_수정(ui-dropdown-group 추가) -->
+                                    <div class="ui-dropdown-group">
+                                        <!-- [11/16]_수정(dropOption으로 수정 -> 색상수량일경우)  // 현재 css 꺠짐 / 추후 디자인 문의 후 css 작업예정.-->
+                                        <div class="ui-dropdown sel-option"> 
+                                            <div id="dropOption" class="drop" href="#" data-modules-dropdown="" aria-expanded="false">
+                                                <a href="javascript:;">상품을 선택하세요.</a>
+                                            </div>
+                                            <div class="dropdown-menu" role="menu" aria-labelledby="dropOption">
+                                                <div class="item-box-list">
+                                                    <a href="javascript:;">
+                                                        <div class="figcaption">
+                                                            <div class="pdnum">
+                                                                <p class="num" aria-label="상품사이즈">260</p>
+                                                                <!--선택값 가져올 경우에는 restock-num 삭제-->
+                                                                <span class="restock-num">남은수량<em>60</em></span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <div class="figcaption">
+                                                            <div class="pdnum">
+                                                                <p class="num" aria-label="상품사이즈">270</p>
+                                                                <span class="restock-num">남은수량<em>80</em></span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="javascript:;" class="no-stock">  <!--재고없을 경우 no-stock class 추가-->
+                                                        <div class="figcaption">
+                                                            <div class="pdnum">
+                                                                <p class="num" aria-label="상품사이즈">280</p>
+                                                                <span class="restock-num">재고없음</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <div class="figcaption">
+                                                            <div class="pdnum">
+                                                                <p class="num" aria-label="상품사이즈">290</p>
+                                                                <span class="restock-num">남은수량<em>2</em></span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <!--bottom-fixed-->
+                                                <div class="bottom-fixed">
+                                                    <div class="bottom-wrap">
+                                                        <button class="btn btn-linelgray sm" data-modules-modal="target:#modalCusMethPre;"><span>속성별 선호도<i class="icon btn-arrow"></i></span></button>
+                                                        <!--재고가 없는 경우 재입고 알림 표시 // 재입고버튼 클릭 시 재입고알림신청 팝업-->
+                                                        <!-- [12/11]_수정(기획자확인 : 재입고알림 삭제) -->
+                                                        <!-- <div class="alarm-wrap">
+                                                            <p>원하는 상품이 품절일땐?</p>
+                                                            <button class="btn btn-round"><span>재입고알림</span></button>
+                                                        </div> -->
+                                                        <!--// [12/11] -->
+                                                    </div>
+                                                </div>
+                                                <!--//bottom-fixed-->
+                                            </div>
+                                        </div>
+                                        <!--// [11/16] -->
+                                    </div>
+                                    <!--// [12/18] -->    
+
+                                    <!-- [12/18]_수정(ui-dropdown-group 추가) -->
+                                    <div class="ui-dropdown-group">
+                                        <!-- [11/16]_수정(dropOption으로 수정) -->
+                                        <div class="ui-dropdown sel-prduct"> 
+                                            <a id="dropOption" class="drop" href="#" data-modules-dropdown="" aria-expanded="false">
+                                                상품을 선택하세요.
+                                            </a>
+                                            <div class="dropdown-menu" role="menu" aria-labelledby="dropOption">
+                                                <div class="item-box-list">
+                                                    <a href="javascript:;">
+                                                        <!-- [12/02]_수정(이미지 크기 수정 완료) -->
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-sample-video-thumb.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지바 멜론 빙수(2인) 이용권">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdname" aria-label="제품명"><em class="choose-num">[선택01]</em> [15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                                            <div class="pdprice">
+                                                                <ins aria-label="가격"><em>45,000</em><b>원</b></ins>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-sample-video-thumb.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지바 멜론 빙수(2인) 이용권">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdname" aria-label="제품명"><em class="choose-num">[선택01]</em> [15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                                            <div class="pdprice">
+                                                                <ins aria-label="가격"><em>45,000</em><b>원</b></ins>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-sample-video-thumb.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지바 멜론 빙수(2인) 이용권">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdname" aria-label="제품명"><em class="choose-num">[선택01]</em> [15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                                            <div class="pdprice">
+                                                                <ins aria-label="가격"><em>45,000</em><b>원</b></ins>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="javascript:;">
+                                                        <div class="thumb">
+                                                            <img src="//imagedev.hmall.com/p/img/pd/sample/img-sample-video-thumb.jpg" alt="[15%특별할인][서울 웨스틴조선호텔] 라운지바 멜론 빙수(2인) 이용권">
+                                                        </div>
+                                                        <div class="figcaption">
+                                                            <div class="pdname" aria-label="제품명"><em class="choose-num">[선택01]</em> [15%특별할인][서울 웨스틴조선호텔] 라운지&amp;바 멜론 빙수(2인) 이용권</div>
+                                                            <div class="pdprice">
+                                                                <ins aria-label="가격"><em>45,000</em><b>원</b></ins>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--// [11/16] -->
+                                    </div>
+                                    <!--// [12/18] -->
+
+                                    <!-- [12/07]_수정(케이스추가 : 구성상품 옵션 추가 // add-accessory 클래스 추가) -->
+                                    <div class="product-option-wrap add-accessory">
+                                        <p class="ctypo14">본 상품과 함께 추가로 구매할 수 있습니다. (선택)</p>
+                                        <!--추가구성품 수정-->
+                                        <div class="ui-dropdown-more-group">
+                                            <!--영역1-->
+                                            <div class="ui-dropdown sel-prduct"> 
+                                                <div id="dropOption" class="drop" href="#" data-modules-dropdown="" aria-expanded="false">
+                                                    <a href="javascript:;">추가 구성품을 선택하세요.</a>
+                                                </div>
+                                                <div class="dropdown-menu" role="menu" aria-labelledby="dropOption">
+                                                    <div class="item-box-list">
+                                                        <a href="javascript:;">
+                                                            <div class="figcaption">
+                                                                <p class="pd-option">액정 필름 (3,000원)</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:;">
+                                                            <div class="figcaption">
+                                                                <p class="pd-option">액정 필름 (3,000원)</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:;" class="no-stock">  <!--재고없을 경우 no-stock class 추가-->
+                                                            <div class="figcaption">
+                                                                <p class="pd-option">액정 필름 (3,000원)</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:;">
+                                                            <div class="figcaption">
+                                                                <p class="pd-option">액정 필름 (3,000원)</p>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--// 영역1-->
+                                            <!--영역2-->
+                                            <div class="ui-dropdown sel-prduct"> 
+                                                <div id="dropOption" class="drop" href="#" data-modules-dropdown="" aria-expanded="false">
+                                                    <a href="javascript:;">추가 구성품을 선택하세요.</a>
+                                                </div>
+                                                <div class="dropdown-menu" role="menu" aria-labelledby="dropOption">
+                                                    <div class="item-box-list">
+                                                        <a href="javascript:;">
+                                                            <div class="figcaption">
+                                                                <p class="pd-option">레이저 각인</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:;">
+                                                            <div class="figcaption">
+                                                                <p class="pd-option">수제 각인</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:;" class="no-stock">  <!--재고없을 경우 no-stock class 추가-->
+                                                            <div class="figcaption">
+                                                                <p class="pd-option">수제 각인</p>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:;">
+                                                            <div class="figcaption">
+                                                                <p class="pd-option">칼 각인</p>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--// 영역2-->
+                                        </div>
+                                        <!--//추가구성품 수정-->
+                                        <!--색상/속성-->
+                                        <div class="stock-item">
+                                            <div class="pditem">
+                                                <div class="product-info">
+                                                    <!-- <div class="thumb">
+                                                        <img src="//imagedev.hmall.com/p/img/pd/sample/img-propchange-sample.jpg" alt="[렌탈]에코체 음식물처리기 렌탈 ECC-888 서큘레이터 증정 월29900원 48개월 의무">
+                                                    </div> -->
+                                                    <div class="figcaption">
+                                                        <div class="pdoption" aria-label="옵션/수량">
+                                                            <span class="option">색상/속성 : <em>없음</em></span>
+                                                            <span class="stock-num">남은수량 : <em>9</em></span>
+                                                        </div>
+                                                        <div class="quantity">
+                                                            <!-- [12/08]_수정(케이스 추가 : 수량 선택 불가 시 count 에 disabled 클래스 추가) -->
+                                                            <div class="count disabled">
+                                                                <button class="btn btn-minus" aria-label="수량 감소"><i class="icon"></i><span class="hiding">감소</span></button>
+                                                                <div class="inputbox">
+                                                                    <label class="inplabel"><input type="number" name="" value="99" title="입력하세요"></label>
+                                                                </div>
+                                                                <button class="btn btn-plus" aria-label="수량 증가"><i class="icon"></i><span class="hiding">증가</span></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-delete"><i class="icon"></i><span class="hiding">삭제</span></button>
+                                            </div>
+                                        </div>
+                                        <!--//색상/속성-->
+                                    </div>
+                                    <!--// [12/07] (케이스추가 : 구성상품 옵션 추가)-->
+
+                                    
+                                    <!-- [11/16]_수정(dropOption으로수정) -->
+                                    <!-- <div class="custom-selectbox" data-modules-selectbox>
+                                        <select>
+                                            <option>상품을 선택하세요</option>
+                                        </select>
+                                    </div>
+                                    <div class="custom-selectbox" data-modules-selectbox>
+                                        <select>
+                                            <option>상품을 선택하세요</option>
+                                        </select>
+                                    </div>
+                                    <div class="custom-selectbox" data-modules-selectbox>
+                                        <select>
+                                            <option>상품을 선택하세요</option>
+                                        </select>
+                                    </div> -->
+    
+                                    <!--selprduct-list-->
+                                    <div class="selprduct-list">
+                                        <!--pditem-->
+                                        <div class="pditem">
+                                            <div class="product-info">
+                                                <div class="thumb">
+                                                    <img src="//imagedev.hmall.com/p/img/pd/sample/img-pdthumb-sample.jpg" alt="폴로 랄프로렌 메쉬 폴로 셔츠 화이트">
+                                                </div>
+                                                <div class="figcaption">
+                                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                                    <div class="pdoption" aria-label="옵션/수량">
+                                                        <span class="option">L</span>
+                                                        <span class="count">그레이</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="quantity">
+                                                <div class="count">
+                                                    <button class="btn btn-minus" aria-label="수량 감소"><i class="icon"></i><span class="hiding">감소</span></button>
+                                                    <div class="inputbox">
+                                                        <label class="inplabel"><input type="number" name="" value="99" title="입력하세요"></label>
+                                                    </div>
+                                                    <button class="btn btn-plus" aria-label="수량 증가"><i class="icon"></i><span class="hiding">증가</span></button>
+                                                </div>
+                                                <div class="pdprice">
+                                                    <ins aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                    <button class="btn-delete"><i class="icon"></i><span class="hiding">삭제</span></button>
+                                                </div>
+                                            </div>
+                                            <!--20200929 화요일 삭제버튼 추가-->
+                                            <button class="btn btn-close"><i class="icon xico"></i><span class="hiding">삭제</span></button>
+                                        </div>
+                                        <div class="pditem">
+                                            <div class="product-info">
+                                                <div class="thumb">
+                                                    <img src="//imagedev.hmall.com/p/img/pd/sample/img-pdthumb-sample.jpg" alt="폴로 랄프로렌 메쉬 폴로 셔츠 화이트">
+                                                </div>
+                                                <div class="figcaption">
+                                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                                    <div class="pdoption" aria-label="옵션/수량">
+                                                        <span class="option">L</span>
+                                                        <span class="count">그레이</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="quantity">
+                                                <div class="count">
+                                                    <button class="btn btn-minus" aria-label="수량 감소"><i class="icon"></i><span class="hiding">감소</span></button>
+                                                    <div class="inputbox">
+                                                        <label class="inplabel"><input type="number" name="" value="99" title="입력하세요"></label>
+                                                    </div>
+                                                    <button class="btn btn-plus" aria-label="수량 증가"><i class="icon"></i><span class="hiding">증가</span></button>
+                                                </div>
+                                                <div class="pdprice">
+                                                    <ins aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                    <button class="btn-delete"><i class="icon"></i><span class="hiding">삭제</span></button>
+                                                </div>
+                                            </div>
+                                            <!--20200929 화요일 삭제버튼 추가-->
+                                            <button class="btn btn-close"><i class="icon xico"></i><span class="hiding">삭제</span></button>
+                                        </div>
+                                        <div class="pditem">
+                                            <div class="product-info">
+                                                <div class="thumb">
+                                                    <img src="//imagedev.hmall.com/p/img/pd/sample/img-pdthumb-sample.jpg" alt="폴로 랄프로렌 메쉬 폴로 셔츠 화이트">
+                                                </div>
+                                                <div class="figcaption">
+                                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                                    <div class="pdoption" aria-label="옵션/수량">
+                                                        <span class="option">L</span>
+                                                        <span class="count">그레이</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="quantity">
+                                                <div class="count">
+                                                    <button class="btn btn-minus" aria-label="수량 감소"><i class="icon"></i><span class="hiding">감소</span></button>
+                                                    <div class="inputbox">
+                                                        <label class="inplabel"><input type="number" name="" value="99" title="입력하세요"></label>
+                                                    </div>
+                                                    <button class="btn btn-plus" aria-label="수량 증가"><i class="icon"></i><span class="hiding">증가</span></button>
+                                                </div>
+                                                <div class="pdprice">
+                                                    <ins aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                    <button class="btn-delete"><i class="icon"></i><span class="hiding">삭제</span></button>
+                                                </div>
+                                            </div>
+                                            <!--20200929 화요일 삭제버튼 추가-->
+                                            <button class="btn btn-close"><i class="icon xico"></i><span class="hiding">삭제</span></button>
+                                        </div>
+                                        <div class="pditem">
+                                            <div class="product-info">
+                                                <div class="thumb">
+                                                    <img src="//imagedev.hmall.com/p/img/pd/sample/img-pdthumb-sample.jpg" alt="폴로 랄프로렌 메쉬 폴로 셔츠 화이트">
+                                                </div>
+                                                <div class="figcaption">
+                                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                                    <div class="pdoption" aria-label="옵션/수량">
+                                                        <span class="option">L</span>
+                                                        <span class="count">그레이</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="quantity">
+                                                <div class="count">
+                                                    <button class="btn btn-minus" aria-label="수량 감소"><i class="icon"></i><span class="hiding">감소</span></button>
+                                                    <div class="inputbox">
+                                                        <label class="inplabel"><input type="number" name="" value="99" title="입력하세요"></label>
+                                                    </div>
+                                                    <button class="btn btn-plus" aria-label="수량 증가"><i class="icon"></i><span class="hiding">증가</span></button>
+                                                </div>
+                                                <div class="pdprice">
+                                                    <ins aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                    <button class="btn-delete"><i class="icon"></i><span class="hiding">삭제</span></button>
+                                                </div>
+                                            </div>
+                                            <!--20200929 화요일 삭제버튼 추가-->
+                                            <button class="btn btn-close"><i class="icon xico"></i><span class="hiding">삭제</span></button>
+                                        </div>
+                                        <div class="pditem">
+                                            <div class="product-info">
+                                                <div class="thumb">
+                                                    <img src="//imagedev.hmall.com/p/img/pd/sample/img-pdthumb-sample.jpg" alt="폴로 랄프로렌 메쉬 폴로 셔츠 화이트">
+                                                </div>
+                                                <div class="figcaption">
+                                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                                    <div class="pdoption" aria-label="옵션/수량">
+                                                        <span class="option">L</span>
+                                                        <span class="count">그레이</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="quantity">
+                                                <div class="count">
+                                                    <button class="btn btn-minus" aria-label="수량 감소"><i class="icon"></i><span class="hiding">감소</span></button>
+                                                    <div class="inputbox">
+                                                        <label class="inplabel"><input type="number" name="" value="99" title="입력하세요"></label>
+                                                    </div>
+                                                    <button class="btn btn-plus" aria-label="수량 증가"><i class="icon"></i><span class="hiding">증가</span></button>
+                                                </div>
+                                                <div class="pdprice">
+                                                    <ins aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                    <button class="btn-delete"><i class="icon"></i><span class="hiding">삭제</span></button>
+                                                </div>
+                                            </div>
+                                            <!--20200929 화요일 삭제버튼 추가-->
+                                            <button class="btn btn-close"><i class="icon xico"></i><span class="hiding">삭제</span></button>
+                                        </div>
+                                        <div class="pditem">
+                                            <div class="product-info">
+                                                <div class="thumb">
+                                                    <img src="//imagedev.hmall.com/p/img/pd/sample/img-pdthumb-sample.jpg" alt="폴로 랄프로렌 메쉬 폴로 셔츠 화이트">
+                                                </div>
+                                                <div class="figcaption">
+                                                    <div class="pdname" aria-label="제품명">[H몰인기] 참존 디에이지 레드-애디션 3종세트X4개+허니앰플30MLX2개+아이크림25MLX4개+에센스...</div>
+                                                    <div class="pdoption" aria-label="옵션/수량">
+                                                        <span class="option">L</span>
+                                                        <span class="count">그레이</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="quantity">
+                                                <div class="count">
+                                                    <button class="btn btn-minus" aria-label="수량 감소"><i class="icon"></i><span class="hiding">감소</span></button>
+                                                    <div class="inputbox">
+                                                        <label class="inplabel"><input type="number" name="" value="99" title="입력하세요"></label>
+                                                    </div>
+                                                    <button class="btn btn-plus" aria-label="수량 증가"><i class="icon"></i><span class="hiding">증가</span></button>
+                                                </div>
+                                                <div class="pdprice">
+                                                    <ins aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                    <button class="btn-delete"><i class="icon"></i><span class="hiding">삭제</span></button>
+                                                </div>
+                                            </div>
+                                            <!--20200929 화요일 삭제버튼 추가-->
+                                            <button class="btn btn-close"><i class="icon xico"></i><span class="hiding">삭제</span></button>
+                                        </div>
+                                        <!--//pditem-->
+                                    </div>
+                                    <!--//selprduct-list-->
+                                </div>
+                                <!-- //.option-scroll -->
+                                <!--total-->
+                                <div class="total-wrap">
+                                    <div class="total-price">
+                                        <!--20201006 화요일 tooltip 레이아웃 공통으로 변경 완료-->
+                                        <!-- [12/21]_수정('총 금액' -> '총 상품금액' 으로 텍스트변경) -->
+                                        <p class="btn-total"><span>총 상품금액</span><a href="#tooltipCont4" data-modules-tooltip><i class="icon que-mark"></i></a></p>
+                                        <!-- [12/17]_수정(최대 금액 999,999,999) -->
+                                        <ins><em>999,999,999</em><b>원</b></ins>
+                                        <!--20201006 화요일 tooltip 레이아웃 공통으로 변경 완료-->
+                                        <div class="tooltip-box" id="tooltipCont4">
+                                            <!-- [12/21]_수정(컨텐츠 마크업 변경) -->
+                                            <div class="thead">
+                                                <p class="tit">총 상품금액 안내</p>
+                                            </div>
+                                            <!-- [01/14]_수정(문구수정) -->
+                                            <p class="txt">선택하실 수 있는 할인혜택이 모두 적용된 금액입니다. 배송비가 포함이 되어 있지 않은 금액으로, 결제시 배송비가 추가될 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- [12/08]_수정(버튼케이스 추가 // 사용시 style="display:none" 뺴주세요) -->
+                                    <!--pick-method :  택배 받기 / 스토어픽 받기-->
+                                    <!-- [12/15]_수정(개발자요청 구조 변경) -->
+                                    <div class="pick-method">
+                                        <div class="radiobox">
+                                            <!-- [12/15]_수정(tms: input radio name 변경) -->
+                                            <label class="radlabel sm"><input type="radio" name="pickMethod_bottom" checked="" aria-checked="true"><i class="icon"></i><span>택배받기</span></label>
+                                            <label class="radlabel sm"><input type="radio" name="pickMethod_bottom"><i class="icon"></i><span>스토어픽 받기</span></label>
+                                        </div>
+                                    </div>
+                                    <!--//pick-method-->
+                                    <!--button-wrap : case01 택배받기, 스토어픽받기, 바로구매, 장바구니, 선물하기-->
+                                    <div class="button-wrap">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-default medium btn-buy"><span>바로구매</span></button>
+                                            <button class="btn btn-linelgray small btn-cart" data-modules-modal="target:#modalShopBasket;"><span>장바구니</span></button>
+                                            <button class="btn btn-linelgray small btn-gift" data-modules-modal="target:#modalGiftNoti;"><span>선물하기</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap : case01 택배받기, 스토어픽받기, 바로구매, 장바구니, 선물하기-->
+                                    <!--button-wrap : case02 택배받기, 스토어픽받기,스토어픽-->
+                                    <div class="button-wrap" style="display:none">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-default medium storepick" data-modules-modal="target:#modalStorePick;"><span>스토어픽</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap : case02 택배받기, 스토어픽받기,스토어픽-->
+                                    <!--button-wrap : case03 바로구매, 장바구니, 선물하기-->
+                                    <div class="button-wrap" style="display:none">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-default medium btn-buy"><span>바로구매</span></button>
+                                            <button class="btn btn-linelgray small btn-cart" data-modules-modal="target:#modalShopBasket;"><span>장바구니</span></button>
+                                            <button class="btn btn-linelgray small btn-gift" data-modules-modal="target:#modalGiftNoti;"><span>선물하기</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap : case03 바로구매, 장바구니, 선물하기-->
+                                    <!--button-wrap : case04  바로구매, 장바구니-->
+                                    <div class="button-wrap" style="display:none">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-default medium btn-buy"><span>바로구매</span></button>
+                                            <button class="btn btn-linelgray small btn-cart" data-modules-modal="target:#modalShopBasket;"><span>장바구니</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap : case04  바로구매, 장바구니-->
+                                    <!--button-wrap : case05  바로구매, 선물하기-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-default medium btn-buy"><span>바로구매</span></button>
+                                            <button class="btn btn-linelgray small btn-gift" data-modules-modal="target:#modalGiftNoti;"><span>선물하기</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap :case05  바로구매, 선물하기-->
+                                    <!--button-wrap : case06  예약구매, 장바구니-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-default medium btn-rebuy"><span>예약구매</span></button>
+                                            <button class="btn btn-linelgray small btn-cart" data-modules-modal="target:#modalShopBasket;"><span>장바구니</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap :case06  예약구매, 장바구니-->
+                                    <!--button-wrap : case07  선물하기-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--pick-method :  택배 받기 / 스토어픽 받기-->
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-default medium btn-gift" data-modules-modal="target:#modalGiftNoti;"><span>선물하기</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap :case07 선물하기-->
+                                    <!--button-wrap : case08  상담신청-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-default medium btn-consult"><span>샹댬신청</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap : case08  상담신청-->
+                                    <!--button-wrap : case09 알림톡-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-default medium btn-alarmtoc"><span>알림톡</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap : case09  얄림톡-->
+                                    <!--button-wrap : case10 품절되었습니다-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-disabled medium btn-end" disabled><span>품절되었습니다</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap : case10  품절되었습니다-->
+                                    <!--button-wrap : case11 품절되었습니다 , 입고알림-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-disabled medium btn-end" disabled><span>품절되었습니다</span></button>
+                                            <button class="btn btn-linelgray small btn-stock"><span>입고알림</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap : case11  품절되었습니다, 입고알림-->
+                                    <!--button-wrap : case12 앱전용상품입니다-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-disabled medium btn-app" disabled><span>앱 전용 상품입니다</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap :case12 앱전용상품입니다-->
+                                    <!--button-wrap : case13 모바일전용상품입니다-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-disabled medium btn-mobile" disabled><span>모바일 전용 상품입니다</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap :case13 모바일전용상품입니다-->
+                                    <!--button-wrap : case14  목표수량 미달-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-disabled medium" disabled><span>목표수량 미달</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap :case14  목표수량 미달-->
+                                    <!--button-wrap : case15  상품판매전-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-disabled medium" disabled><span>상품 판매 전</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap : case15  상품판매전-->
+                                    <!--button-wrap : case16  상품준비중-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-disabled medium" disabled><span>상품 준비중</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap :  case16  상품준비중-->
+                                    <!--button-wrap : case17  공동구매 종료-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-disabled medium" disabled><span>공동구매 종료</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap :  case17  공동구매 종료-->
+                                    <!--button-wrap : case18  방송중에만 구매가능-->
+                                    <div class="button-wrap" style="display:none;">
+                                        <!--버튼-->
+                                        <div class="btngroup">
+                                            <button class="btn btn-disabled medium" disabled><span>방송중에만 구매가능</span></button>
+                                        </div>
+                                        <!--//버튼-->
+                                    </div>
+                                    <!--//button-wrap :  case18  방송중에만 구매가능-->
+                                    <!--// [12/08] -->
+                                </div>
+                                <!--//total-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// [12/15] -->
+            </div>
+            <!-- //.content-body -->
+            
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.content -->
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+<!-- //.ui-modal -->
+<script>
+    $('#modalOptionDeal').modal().show();
+
+    $('.ui-tab').on("shown.hui.tab", function (e) {
+        var index = $(e.target).parent().index();
+        console.log(index);
+    });
+
+    function showIndex(index) {
+        var $indexTab = $('.ui-tab').children().eq(index).find('a');
+        $indexTab.tab('show');
+    }
+</script>
+</body>
+</html>

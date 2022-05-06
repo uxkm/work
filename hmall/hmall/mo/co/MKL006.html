@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- OpenGraph -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="//imagedev.hmall.com/m/img/co/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:url" content="https://hmall.com">
+<meta property="og:type" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. 볼거리 가득! 쓸 곳 많은 H.Point 혜택">
+<meta property="og:image" content="//imagedev.hmall.com/m/img/co/meta/hmall_meta.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="750">
+<!-- favicon -->
+<meta itemprop="image" content="//imagedev.hmall.com/m/img/co/favicon/favicon_128.png">
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/m/img/co/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="//imagedev.hmall.com/m/img/co/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//imagedev.hmall.com/m/img/co/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//imagedev.hmall.com/m/img/co/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//imagedev.hmall.com/m/img/co/favicon/favicon-16x16.png">
+<link rel="manifest" href="//imagedev.hmall.com/m/img/co/favicon/manifest.json">
+<title>주소검색</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/popup.css"><!-- 공통 popup/layer css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/jquery-ui.css"><!-- 공통 jQuery UI css -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-3.4.1.min.js"></script><!-- 공통 jQuery Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.easing.min.js"></script><!-- 공통 jQuery UI Effect -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-ui.1.12.1.min.js"></script><!-- 공통 jQuery UI js -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.touchFlow.js"></script><!-- 공통 UI에 사용하는 Touch Swipe -->
+<script src="//imagedev.hmall.com/m/js/co/ukDetect.min.js"></script><!-- 공통 UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/m/js/co/slick.min.js"></script><!-- 공통 Slick Slider Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/common.js"></script><!-- 공통 UI에 사용하는 js -->
+</head>
+<body>
+    
+    <!-- 레이어 팝업 - 주소검색 -->
+    <div class="popup-layerwrap fulllayer addr-search active" role="dialog" aria-label="주소 검색"> <!-- active 클래스 제어 : 레이어 팝업 노출 -->
+        <div class="layer">
+            <h2 class="large-title">주소 검색</h2>
+            <div class="layer-body">
+                <div class="addr-wrap">
+                    <div class="inputbox search selected" role="search"> <!-- 제어 클래스 selected : input에 focus, 검색어 입력시 클래스 추가 -->
+                        <label class="inplabel"><input type="text" name="" placeholder="주소를 입력해주세요" title="검색어 입력" value="경기도"></label>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                        <button class="btn btn-search"><i class="icon"></i><span class="hiding">검색</span></button>
+                    </div>
+
+                    <!-- 주소 검색 후 -->
+                    <div class="addr-result">
+                        <h3 class="hiding">주소 검색 결과 분류</h3>
+                        <div class="addr-filter">
+                            <div class="addr-sel">
+                                <div class="selectbox">
+                                    <label class="sellabel">
+                                        <select name="">
+                                            <option selected>시/도</option>
+                                            <option>전체</option>
+                                            <option>서울특별시</option>
+                                            <option>부산광역시</option>
+                                            <option>대구광역시</option>
+                                            <option>인천광역시</option>
+                                            <option>광주광역시</option>
+                                            <option>대전광역시</option>
+                                            <option>울산광역시</option>
+                                            <option>세종특별자치시</option>
+                                            <option>경기도</option>
+                                            <option>강원도</option>
+                                            <option>충청북도</option>
+                                            <option>충청남도</option>
+                                            <option>전라북도</option>
+                                            <option>전라남도</option>
+                                            <option>경상북도</option>
+                                            <option>경상남도</option>
+                                            <option>제주특별자치도</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="selectbox">
+                                    <label class="sellabel">
+                                        <select name="" disabled aria-disabled="true"> <!-- 시/도 선택후 활성화 -->
+                                            <option selected>시/군/구</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="addr-count"><em>351</em>건</div>
+                        </div>
+                        <!-- //.addr-filter -->
+    
+                        <!-- 검색 결과 있음 -->
+                        <div class="addr-list">
+                            <h3 class="hiding">주소 검색 결과 리스트</h3>
+                            <ul>
+                                <li>
+                                    <a href="javascript:;" role="button" class="addr-btn">
+                                        <span class="postcode">04758</span>
+                                        <dl>
+                                            <dt>도로명</dt>
+                                            <dd>경기도 이천시 마장면 억만리 51</dd>
+                                            <dt>지번</dt>
+                                            <dd>경기도 이천시 마장면 덕평리 101-1 SLX 물류센터</dd>
+                                        </dl>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" role="button" class="addr-btn">
+                                        <span class="postcode">04758</span>
+                                        <dl>
+                                            <dt>도로명</dt>
+                                            <dd>경기도 이천시 마장면 억만리 51</dd>
+                                            <dt>지번</dt>
+                                            <dd>경기도 이천시 마장면 덕평리 101-1 SLX 물류센터</dd>
+                                        </dl>
+                                    </a>
+                                </li>
+                            </ul>
+    
+                            <!-- 20201008 목요일 더보기형식 -> 페이징형식으로 변경 -->
+                            <div class="page-nav-area" id="pageArea">
+                                <button class="btn-prev">&lt;</button>
+                                <span><strong>1</strong>/36</span>
+                                <button class="btn-next">&gt;</button>
+                            </div>
+                        </div>
+                        <!-- //검색 결과 있음 -->
+
+                        <!-- 검색 결과 없음 -->
+                        <div class="no-data type-icon">
+                            <span class="bgcircle"><i class="icon nosearch"></i></span>
+                            <p class="middle-title">검색결과가 없습니다.</p>
+                            <p class="ctypo2">찾으시려는 주소에 잘못된 철자가 없는지, <br/>정확한 주소를 다시 한번 확인해 주세요.</p>
+                        </div>
+                    </div>
+                    <!-- //.addr-result -->
+
+                    <!-- 주소 검색 전 노출 / 주소 검색 후 결과 없을 경우 노출 -->
+                    <div class="addr-tip">
+                        <h3 class="minor-headings"><span class="tip-badge">TIP</span>검색방법</h3>
+                        <ul>
+                            <li>
+                                <strong>도로명 + 건물번호</strong>
+                                <span class="exam">(예: 판교역로 235, 올림픽로70길)</span>
+                            </li>
+                            <li>
+                                <strong>동/읍/면/리 + 번지</strong>
+                                <span class="exam">(예: 신천동 7-30, 수유동 567-02)</span>
+                            </li>
+                            <li>
+                                <strong>건물명, 아파트명</strong>
+                                <span class="exam">(예: 현대아파트, 주공)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- [11/02]_수정(TMS(MEC010-U0040) - 프리미엄 배송 유의사항 문구, 새벽배송 유의사항 문구 추가) -->
+                    <div class="delivery-caution-info">
+                        <p class="tit">프리미엄(당일) 배송 유의사항</p>
+                        <ul class="dotlist">
+                            <li>당일 00:00 ~ 13:00까지 주문하신 상품을 빠르게 받아보실 수 있습니다. (주문 후 3~5시간 내 배송)</li>
+                            <li>해당 매장에 상품 재고가 없을 경우, 취소 안내 연락드립니다.</li>
+                            <li>주말(토/일요일) 및 공휴일은 서비스가 불가합니다.</li>
+                            <li>서비스 가능 지역 : 서울9개구(강남구, 서구, 마포구, 서대문구, 서초구, 양천구, 영등포구, 용산구)</li>
+                        </ul>
+                    </div>
+                    <div class="delivery-caution-info">
+                        <p class="tit">새벽배송 유의사항</p>
+                        <ul class="dotlist">
+                            <li>새벽 배송 서비스는 서울 및 경기 일부 지역에 한해 제공됩니다.</li>
+                            <li>주문취소는 상품별 주문마감 시간전까지 가능합니다.<br>(Hmall 상품 : ~16시까지 마감)</li>
+                            <li>주문마감 시간 이후 주문취소가 어렵다는 점 유의해 주시기 바랍니다.</li>
+                            <li>주문마감 시간 이후의 주문 건은 다음 배송일에 순차적으로 새벽배송 됩니다.</li>
+                            <li>재판매 불가능 특성상 단순 변심으로 인한 교환이나 반품은 불가합니다.</li>
+                            <li>관공서, 학교, 회사, 시장, 백화점 등은 새벽출입에 제한이 있어 배송이 불가합니다.</li>
+                            <li>월요일 ~ 금요일 주문 시 다음날 새벽 배송이 가능합니다.<br>※ 토요일, 일요일 및 공휴일 주문 시 익일 새벽배송 불가</li>
+                            <li class="bold">금요일 16시 이후 주문 시 차주 화요일 새벽에 배송됩니다.</li>
+                        </ul>
+                    </div>
+                    <!--// [11/02] -->
+                </div>
+            </div>
+            <!-- //.layer-body -->
+            <button class="btn btn-close"><i class="icon"></i><span class="hiding">닫기</span></button>
+        </div>
+        <!-- //.layer -->
+    </div>
+    <!-- //.popup-layerwrap --> 
+
+</body>
+</html>

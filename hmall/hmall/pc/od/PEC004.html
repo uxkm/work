@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>주소검색</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/od/order.css">
+
+</head>
+<body>
+<div class="wrap wing-none order-main"><!-- wing banner 미노출 시 : wing-none 클래스 추가 -->
+    <main class="cmain main" role="main" id="mainContents"><!-- 메인페이지 'main' 클래스 추가 -->
+        <div class="container">
+            
+        </div>
+        <!-- //.container -->
+    </main>
+    <!-- //.cmain -->
+
+</div>
+<!-- //.wrap -->
+
+<div class="ui-modal" id="modalAdressSearch" tabindex="-1" role="dialog" aria-label="주소검색">
+    <div class="ui-modal-dialog adressearch" role="document">
+        <div class="content">
+            <p class="ui-title">주소 검색</p>
+            <!-- //.content-head -->
+            <div class="content-body">
+                <!--form-list-->
+                <div class="form-list">
+                    <div class="inputbox">
+                        <label class="inplabel icon-find"><input type="text" name="" value="" placeholder="주소를 입력해 주세요"></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>  
+                <!--//form-list-->
+                <!-- 특화배송유의사항안내메세지일 경우 
+                [12/30]_수정(시/도 , 시/군/구 영역 및 주소를 입력해주세요 영역 추가)
+                <div class="filter-wrap">
+                    <div class="custom-selectbox" data-modules-selectbox>
+                        <select>
+                            <option>시/도</option>
+                        </select>
+                    </div>
+                    <div class="custom-selectbox" data-modules-selectbox>
+                        <select>
+                            <option>시/군/구</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-list">
+                    <div class="inputbox">
+                        <label class="inplabel icon-find"><input type="text" name="" value="" placeholder="주소를 입력해 주세요"></label>
+                        <button class="btn btn-find"><i class="icon find"></i><span class="hiding">검색</span></button>
+                        <button class="btn ico-clearabled"><i class="icon"></i><span class="hiding">지우기</span></button>
+                    </div>
+                </div>  
+                // [12/30] 시/도 , 시/군/구 영역 및 주소를 입력해주세요 영역 추가 
+                <p class="ex-tip ctypo15">예 : 판교역로 235, 올림픽로70길</p>
+                <div class="adress-tip">
+                    <p class="ctypo15 bold">&lt;새벽배송 유의사항&gt;</p>
+                    <ul class="dotlist">
+                        <li>새벽 배송 서비스는 서울 및 경기 일부 지역에 한해 제공됩니다.</li>
+                        <li>주문취소는 상품별 주문마감 시간전까지 가능합니다. <br/> (Hmall 상품 : ~ 16시까지 마감)</li>
+                        <li>주문마감 시간 이후 주문취소가 어렵다는 점 유의해 주시기 바랍니다.</li>
+                        <li>주문마감 시간 이후의 주문 건은 다음 배송일에 순차적으로 새벽배송 됩니다.</li>
+                        <li>재판매 불가능 특성상 단순 변심으로 인한 교환이나 반품은 불가합니다.</li>
+                        <li>관공서, 학교, 회사, 시장, 백화점 등은 새벽출입에 제한이 있어 배송이 불가합니다.</li>
+                        <li>월요일 ~ 금요일 주문 시 다음날 새벽 배송이 가능합니다. <br/> ※ 토요일, 일요일 및 공휴일 주문 시 익일 새벽배송 불가</li>
+                        <li class="bold">금요일 16시 이후 주문 시 차주 화요일 새벽에 배송됩니다.</li>
+                    </ul>
+                </div>
+                <div class="adress-tip">
+                    <p class="ctypo15 bold">&lt;프리미엄(당일) 배송 유의사항&gt;</p>
+                    <ul class="dotlist">
+                        <li>당일 00:00 ~ 13:00까지 주문하신 상품을 빠르게 받아보실 수 있습니다. <br/> (주문 후 3~5 시간 내 배송)</li>
+                        <li>해당 매장에 상품 재고가 없을 경우, 취소 안내 연락 드립니다.</li>
+                        <li>주말(토/일요일) 및 공휴일은 서비스가 불가합니다.</li>
+                        <li>서비스 가능 지역: 서울 9개구(강남구, 서구, 마포구, 서대문구, 서초구, 양천구, 영등포구, 용산구)</li>
+                    </ul>
+                </div>
+                [12/31] 새벽배송 주소 검색결과
+                <div class="search-result-wrap">
+                    <div class="filter-wrap">
+                        <span class="list-count">총<em>996</em>건</span>
+                    </div>
+                    <ul class="ad-list">
+                        <li>
+                            <a href="javascript:;">
+                                <strong class="zipcode">04758</strong>
+                                <dl class="add-row">
+                                    <dt class="add-label">도로명</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 억만리 51</dd>
+                                    <dt class="add-label">지번</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 덕평리 101-1 SLX 물류센터두줄 표현 내용</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <strong class="zipcode">04758</strong>
+                                <dl class="add-row">
+                                    <dt class="add-label">도로명</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 억만리 51</dd>
+                                    <dt class="add-label">지번</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 덕평리 101-1 SLX 물류센터두줄 표현 내용</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <strong class="zipcode">04758</strong>
+                                <dl class="add-row">
+                                    <dt class="add-label">도로명</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 억만리 51</dd>
+                                    <dt class="add-label">지번</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 덕평리 101-1 SLX 물류센터두줄 표현 내용</dd>
+                                </dl>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="paging">
+                        <a href="javascript:;" class="page-first" aria-label="처음페이지 이동"><i class="icon"></i><span class="hiding">처음페이지 이동</span></a>
+                        <a href="javascript:;" class="page-prev" aria-label="이전페이지 이동"><i class="icon"></i><span class="hiding">이전페이지 이동</span></a>
+                        <a href="javascript:;"><span>1</span></a>
+                        <a href="javascript:;"><span>2</span></a>
+                        <strong aria-label="현재 선택페이지"><span>3</span></strong>
+                        <a href="javascript:;"><span>4</span></a>
+                        <a href="javascript:;"><span>6</span></a>
+                        <a href="javascript:;"><span>7</span></a>
+                        <a href="javascript:;"><span>8</span></a>
+                        <a href="javascript:;"><span>9</span></a>
+                        <a href="javascript:;"><span>9999</span></a>
+                        <a href="javascript:;" class="page-next" aria-label="다음페이지 이동"><i class="icon"></i><span class="hiding">다음페이지 이동</span></a>
+                        <a href="javascript:;" class="page-last" aria-label="마지막페이지 이동"><i class="icon"></i><span class="hiding">마지막페이지 이동</span></a>
+                    </div>
+                    [12/31] 새벽배송 주소 검색결과
+                </div>
+                //특화배송유의사항안내메세지-->
+                <!--address-tip-->
+                <div class="adress-tip">
+                    <p class="ctypo15 bold">TIP. 검색 방법</p>
+                    <ul class="dotlist search-tip">
+                        <li>
+                            도로명 + 건물번호
+                            <span>(예 : 판교역로 235, 올림픽로70길)</span>
+                        </li>
+                        <li>
+                            동/읍/면/리 + 번지
+                            <span>(예 : 신천동 70-30, 수유동 567-92)</span>
+                        </li>
+                        <li>
+                            건물명, 아파트명
+                            <span>(예 : 현대아파트, 주공아파트)</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--//address-tip-->
+                <!--검색결과-->
+                <div class="search-result-wrap">
+                    <!--filter-wrap-->
+                    <div class="filter-wrap">
+                        <div class="custom-selectbox sm" data-modules-selectbox>
+                            <select>
+                                <option>시/도</option>
+                            </select>
+                        </div>
+                        <div class="custom-selectbox sm" data-modules-selectbox>
+                            <select>
+                                <option>시/군/구</option>
+                            </select>
+                        </div>
+                        <span class="list-count">총<em>996</em>건</span>
+                    </div>
+                    <!--//filter-wrap-->
+                    <!--ad-list-->
+                    <ul class="ad-list">
+                        <li>
+                           <!--링크걸리는 케이스-->
+                            <a href="javascript:;">
+                                <strong class="zipcode">04758</strong>
+                                <dl class="add-row">
+                                    <dt class="add-label">도로명</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 억만리 51</dd>
+                                    <dt class="add-label">지번</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 덕평리 101-1 SLX 물류센터두줄 표현 내용</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <!--여러곳으로 배송일 경우 링크 영역 href-"" 빼야한다-->
+                            <a>
+                                <strong class="zipcode">04758</strong>
+                                <dl class="add-row">
+                                    <dt class="add-label">도로명</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 억만리 51</dd>
+                                    <dt class="add-label">지번</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 덕평리 101-1 SLX 물류센터두줄 표현 내용</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <strong class="zipcode">04758</strong>
+                                <dl class="add-row">
+                                    <dt class="add-label">도로명</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 억만리 51</dd>
+                                    <dt class="add-label">지번</dt>
+                                    <dd class="add-value">경기도 이천시 마장면 덕평리 101-1 SLX 물류센터두줄 표현 내용</dd>
+                                </dl>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--//ad-list-->
+                    <!-- [12/09]_수정(TMS : 페이징형식으로 변경 퍼블 마크업으로 변경 (ASIS 소스 NOPE)) -->
+                    <div class="paging">
+                        <a href="javascript:;" class="page-first" aria-label="처음페이지 이동"><i class="icon"></i><span class="hiding">처음페이지 이동</span></a>
+                        <a href="javascript:;" class="page-prev" aria-label="이전페이지 이동"><i class="icon"></i><span class="hiding">이전페이지 이동</span></a>
+                        <a href="javascript:;"><span>1</span></a>
+                        <a href="javascript:;"><span>2</span></a>
+                        <strong aria-label="현재 선택페이지"><span>3</span></strong>
+                        <a href="javascript:;"><span>4</span></a>
+                        <a href="javascript:;"><span>6</span></a>
+                        <a href="javascript:;"><span>7</span></a>
+                        <a href="javascript:;"><span>8</span></a>
+                        <a href="javascript:;"><span>9</span></a>
+                        <a href="javascript:;"><span>9999</span></a>
+                        <a href="javascript:;" class="page-next" aria-label="다음페이지 이동"><i class="icon"></i><span class="hiding">다음페이지 이동</span></a>
+                        <a href="javascript:;" class="page-last" aria-label="마지막페이지 이동"><i class="icon"></i><span class="hiding">마지막페이지 이동</span></a>
+                    </div>
+                    <!--// [12/09] -->
+                    <!-- [12/09]_수정(TMS : 페이징형식으로 변경 퍼블 마크업으로 변경 (ASIS 소스 NOPE)) -->
+                    <!-- 20201008 목요일 더보기형식 -> 페이징형식으로 변경 -->
+                    <!-- <div class="page-nav-area" id="pageArea">
+                        <button class="btn-prev">&lt;</button>
+                        <span><strong>1</strong>/36</span>
+                        <button class="btn-next">&gt;</button>
+                    </div> -->
+                    <!--// [12/09] -->
+                </div>
+                <!--//검색결과-->
+                <!--주소결과가없을경우
+                <div class="nodata">
+                    <span class="bgcircle"><i class="icon nodata-type10"></i></span>
+                    <p>검색 결과가 없습니다.</p>
+                    <span>찾으시려는 주소에 잘못된 철자가 없는지 <br/> 정확한 주소인지 다시 한번 확인해주세요.</span>
+                </div>
+                주소결과가없을경우-->
+            </div>
+            <!-- //.content-body -->
+            
+            <button class="btn btn-close" data-dismiss="modal"><i class="icon xico"></i><span class="hiding">레이어 닫기</span></button>
+        </div>
+        <!-- //.content -->
+    </div>
+    <!-- //.ui-modal-dialog -->
+</div>
+<!-- //.ui-modal -->
+<script>
+    $('#modalAdressSearch').modal().show();
+</script>
+</body>
+</html>

@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- OpenGraph -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="//imagedev.hmall.com/m/img/co/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:url" content="https://hmall.com">
+<meta property="og:type" content="현대Hmall-백화점,홈쇼핑">
+<meta property="og:description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. 볼거리 가득! 쓸 곳 많은 H.Point 혜택">
+<meta property="og:image" content="//imagedev.hmall.com/m/img/co/meta/hmall_meta.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="750">
+<!-- favicon -->
+<meta itemprop="image" content="//imagedev.hmall.com/m/img/co/favicon/favicon_128.png">
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/m/img/co/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//imagedev.hmall.com/m/img/co/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="//imagedev.hmall.com/m/img/co/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//imagedev.hmall.com/m/img/co/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//imagedev.hmall.com/m/img/co/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//imagedev.hmall.com/m/img/co/favicon/favicon-16x16.png">
+<link rel="manifest" href="//imagedev.hmall.com/m/img/co/favicon/manifest.json">
+<title>주문완료</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/popup.css"><!-- 공통 popup/layer css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/co/jquery-ui.css"><!-- 공통 jQuery UI css -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-3.4.1.min.js"></script><!-- 공통 jQuery Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.easing.min.js"></script><!-- 공통 jQuery UI Effect -->
+<script src="//imagedev.hmall.com/m/js/co/jquery-ui.1.12.1.min.js"></script><!-- 공통 jQuery UI js -->
+<script src="//imagedev.hmall.com/m/js/co/jquery.touchFlow.js"></script><!-- 공통 UI에 사용하는 Touch Swipe -->
+<script src="//imagedev.hmall.com/m/js/co/ukDetect.min.js"></script><!-- 공통 UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/m/js/co/slick.min.js"></script><!-- 공통 Slick Slider Plugin -->
+<script src="//imagedev.hmall.com/m/js/co/common.js"></script><!-- 공통 UI에 사용하는 js -->
+
+<!-- Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/m/css/od/order.css">
+<script src="//imagedev.hmall.com/m/js/od/order.js"></script>
+
+<script>
+    // demo script
+    $(function(){
+
+        //뒤로가기 demo
+        $(document).on('click', ".btn-back", function(){
+            //레이어팝업이 열려있는경우 history back 분기처리 뒤 해당 함수 실행
+            backStateLayerPopup();
+            return false;
+        });
+
+    });
+</script>
+
+</head>
+<body>
+<!-- 
+Contents 각페이지마다 해당되는 wrap에 class 추가 예: <div class="wrap orderwrap">
+-->
+<div class="layer-dim"></div>
+
+<div class="wrap orderwrap">
+    <div class="nav-skip"><a href="#cntWrap">본문 콘텐츠로 건너뛰기</a></div>
+
+    <!-- GNB 상단 -->
+    <header class="header gnb-history" role="banner">
+        <button class="btn btn-back"><i class="icon"></i><span class="hiding">뒤로가기</span></button>
+        <h1 class="hiding">현대Hmall</h1>
+        <h2 class="htitle"><span>주문완료</span></h2>
+        <button class="btn btn-search"><i class="icon"></i><span class="hiding">검색</span></button>
+        <a href="javascript:;" class="link-cart"><i class="icon"></i><span class="hiding">장바구니</span><em class="badge black sm">99+</em></a>
+    </header>
+    <!-- //.header -->
+
+    <!-- 하단 탭바 -->
+    <nav class="nav-tabbar fixed" role="navigation">
+        <ul class="tabbar">
+            <li class="menu-home"><a href="/hmall/mo/co/MBA001.html"><i class="icon"></i><span>홈</span></a></li>
+            <li class="menu-cate"><a href="javascript:;"><i class="icon"></i><span>카테고리</span></a></li>
+            <li class="menu-onair">
+                <!-- 
+                    제어 클래스 close (a태그에 추가 및 삭제) : 버튼 스타일 변경 
+                    버튼 텍스트 변경 : OnAir 열리기 전 'On Air' / OnAir 열린 후 'On Air 닫기'
+                -->
+                <a href="javascript:;"><i class="icon"></i><span class="hiding">On Air</span></a>
+                <!-- On Air 리스트 -->
+                <div class="onairwrap"> <!-- 제어 클래스 active : 생방중 상품 영역 노출 -->
+                    <h2 class="onair-tit major-headings">ON AIR<span class="live"><span class="hiding">생방송 중</span></span></h2>
+                    <div class="pdwrap pdlist onair-list">
+                        <div class="pdlist-wrap">
+                            <figure class="pdthumb">
+                                <a href="javascript:;">
+                                    <div class="thumb">
+                                        <img src="http://image.hyundaihmall.com/static/7/7/96/05/2105967705_0_170.jpg" alt="[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종"/>
+                                        <div class="time-count">
+                                            <span class="icon"></span>
+                                            <span class="countdown"><em>00</em>:<em>08</em>:<em>35</em></span>
+                                        </div>
+                                    </div>
+                                    <figcaption>
+                                        <div class="pdname" aria-label="제품명"><span class="tag tvshop">TV쇼핑</span>[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종</div>
+                                        <div class="pdprice">
+                                            <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                                <ins class="discount" aria-label="할인가"><em>95,050</em><b>원</b></ins>
+                                            </span>
+                                        </div>
+                                        <!-- [11/09]_수정(MO_GNB 2013 99개 구매중 UI 삭제) -->
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <figure class="pdthumb">
+                                <a href="javascript:;">
+                                    <div class="thumb">
+                                        <span class="pdonair">6/21(월) 23:45 방송</span><!-- [12/02]_수정(방송예정 추가) -->
+                                        <img src="http://image.hyundaihmall.com/static/7/7/96/05/2105967705_0_170.jpg" alt="[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종"/>
+                                        <div class="time-count">
+                                            <span class="icon"></span>
+                                            <span class="countdown"><em>00</em>:<em>08</em>:<em>35</em></span>
+                                        </div>
+                                    </div>
+                                    <figcaption>
+                                        <div class="pdname" aria-label="제품명"><span class="tag tvplus">TV+샵</span>[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종</div>
+                                        <div class="pdprice">
+                                            <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                                <ins class="discount" aria-label="할인가"><em>95,050</em><b>원</b></ins>
+                                            </span>
+                                        </div>
+                                        <!-- [11/09]_수정(MO_GNB 2013 99개 구매중 UI 삭제) -->
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <figure class="pdthumb">
+                                <a href="javascript:;">
+                                    <div class="thumb">
+                                        <img src="http://image.hyundaihmall.com/static/7/7/96/05/2105967705_0_170.jpg" alt="[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종"/>
+                                        <div class="time-count">
+                                            <span class="icon"></span>
+                                            <span class="countdown"><em>00</em>:<em>08</em>:<em>35</em></span>
+                                        </div>
+                                    </div>
+                                    <figcaption>
+                                        <div class="pdname" aria-label="제품명"><span class="tag shoplive">쇼핑라이브</span>[J by(제이바이)](TV홈쇼핑상품)나일론블렌드 썸머 팬츠2종</div>
+                                        <div class="pdprice">
+                                            <span class="rateprice" aria-label="할인율이 적용된 가격">
+                                                <ins class="discount" aria-label="할인가"><em>95,050</em><b>원</b></ins>
+                                            </span>
+                                        </div>
+                                        <!-- [11/09]_수정(MO_GNB 2013 99개 구매중 UI 삭제) -->
+                                    </figcaption>
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- //.pdlist-wrap -->
+                    </div>
+                    <!-- //.pdwrap -->
+                </div>
+                <!-- //.onairwrap -->
+            </li>
+            <li class="menu-mypage"><a href="/hmall/mo/mp/MHA001.html"><i class="icon"></i><span>마이페이지</span></a></li>
+            <!-- android - 최근본쇼핑 없을 때 -->
+            <!-- <li class="menu-recent none"><a href="javascript:;"><span class="img"><img src="//imagedev.hmall.com/m/img/co/sample/sample-recent-none.jpg"></span><span>최근본쇼핑</span></a></li> -->
+            <!-- android - 최근본쇼핑 있을 때 -->
+            <li class="menu-recent"><a href="javascript:;"><span class="img"><img src="//imagedev.hmall.com/m/img/co/sample/sample-recent.jpg" alt="401 하하 김종국의 제대로 튀겨낸 통등심+치즈 돈까스 세트"></span><span>최근본쇼핑</span></a></li>
+            <!-- iOS 화면에 보이는 뒤로가기 버튼 -->
+            <!-- <li class="menu-back"><a href="javascript:;"><i class="icon"></i><span>뒤로가기</span></a></li> -->
+        </ul>
+    </nav>
+    <!-- //.nav-tabbar -->
+
+    <!-- header, tabbar의 카테고리 메뉴 클릭시 열리는 UI - Drawer -->
+    <!-- 
+        * 회원등급 지정 클래스
+            - 로그인 전 / Default : 클래스 없음
+            - TOP CLASS 등급 : topclass-lv
+            - DIAMOND 등급 : diamond-lv
+            - PLATINUM 등급 : platinum-lv
+            - GOLD 등급 : gold-lv
+            - SILVER 등급 : silver-lv
+    -->
+    <div class="sidebar-area topclass-lv"> <!-- active 클래스 제어 : Drawer 열고 닫음 -->
+        <div class="sidebarcnt">
+            <button class="btn btn-close"><i class="icon"></i><span class="hiding">닫기</span></button>
+            <div class="sidebar-head">
+                <!-- 로그인 전 -->
+                <!-- <div class="before-login">
+                    <a href="javascript:;" class="link-login"><span>로그인해주세요</span></a>
+                </div> -->
+                <!-- //.before-login -->
+
+                <!-- 로그인 후 -->
+                <div class="after-login">
+                    <span class="user-name"><strong>홍길동</strong>님</span>
+                    <div class="rating">
+                        <!-- 회원등급별 클래스 변경 -->
+                        <span class="topclass-lv"><em>TOP CLASS</em>등급입니다</span>
+                        <!-- <span class="diamond-lv"><em>DIAMOND</em>등급입니다</span>
+                        <span class="platinum-lv"><em>PLATINUM</em>등급입니다</span>
+                        <span class="gold-lv"><em>GOLD</em>등급입니다</span>
+                        <span class="silver-lv"><em>SILVER</em>등급입니다</span> -->
+                    </div>
+                    <!-- //.rating -->
+                </div>
+                <!-- //.after-login -->
+
+                <!-- APP일 시 노출 -->
+                <div class="setting-app">
+                    <a href="javascript:;" class="btn btn-alarm"><i class="icon"></i><span class="hiding">알람</span></a>
+                    <a href="javascript:;" class="btn btn-set"><i class="icon"></i><span class="hiding">설정</span></a>
+                </div>
+                <!-- //.setting-app -->
+            </div>
+            <!-- //.sidebar-head -->
+
+            <ul class="quick-menu" role="navigation">
+                <li class="menu-mypage"><a href="/hmall/mo/mp/MHA001.html"><i class="icon icon-mypage"></i><span>마이페이지</span></a></li>
+                <li class="menu-coupon"><a href="javascript:;"><i class="icon icon-coupon"></i><span>쿠폰</span></a></li>
+                <li class="menu-point"><a href="javascript:;"><i class="icon icon-point"></i><span>포인트</span></a></li>
+                <li class="menu-delivery"><a href="javascript:;"><i class="icon icon-delivery"></i><span>주문배송</span><em class="badge sm">3</em></a></li>
+            </ul>
+            <!-- //.quick-menu -->
+
+            <div class="category-group" aria-label="카테고리">
+                <h2 class="category-tit">카테고리</h2>
+                <!-- 브랜드 검색 페이지로 이동 -->
+                <a href="/hmall/mo/pd/MBC002.html" class="link-brand"><span>브랜드 검색</span><i class="icon icon-search"></i></a>
+                <ul class="cate-menu">
+                    <li class="active"><a href="javascript:;" class="cate1"><i class="icon"></i><span>패션/의류/속옷</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">여성 브랜드의류</a></li>
+                                    <li><a href="javascript:;">여성 트렌드(소호)</a></li>
+                                    <li><a href="javascript:;">홈쇼핑 여성의류</a></li>
+                                    <li><a href="javascript:;">남성 브랜드</a></li>
+                                    <li><a href="javascript:;">남성 트렌드|캐주얼</a></li>
+                                    <li><a href="javascript:;">진|유니섹스캐주얼</a></li>
+                                    <li><a href="javascript:;">언더웨어</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">트렌드에비뉴</a></li>
+                                    <li><a href="javascript:;">BEANPOLE(빈폴)</a></li>
+                                    <li><a href="javascript:;">라코스테</a></li>
+                                    <li><a href="javascript:;">삼성물산 남성 外</a></li>
+                                    <li><a href="javascript:;">코오롱 패션 (KOLON)</a></li>
+                                    <li><a href="javascript:;">비비안 스페셜샵</a></li>
+                                    <li><a href="javascript:;">신영와코루</a></li>
+                                    <li><a href="javascript:;">S.I 빌리지</a></li>
+                                    <li><a href="javascript:;">COS</a></li>
+                                    <li><a href="javascript:;">&amp;Other Stories</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                            <div class="specialshop type-scroll" aria-label="패션/의류/속옷 스페셜샵">
+                                <h2 class="specialshop-tit">스페셜샵</h2>
+                                <ul class="specialshop-menu">
+                                    <li><a href="javascript:;"><span>쏙담마켓</span></a></li>
+                                    <li><a href="javascript:;"><span>브룩스브라더스</span></a></li>
+                                    <li><a href="javascript:;"><span>N마켓</span></a></li>
+                                    <li><a href="javascript:;"><span>헬레나&amp;크리스티</span></a></li>
+                                    <li><a href="javascript:;"><span>리바트</span></a></li>
+                                    <li><a href="javascript:;"><span>분크</span></a></li>
+                                    <li><a href="javascript:;"><span>한국조폐공사</span></a></li>
+                                    <li><a href="javascript:;"><span>밀라노스토리</span></a></li>
+                                    <li><a href="javascript:;"><span>H렌탈샵</span></a></li>
+                                    <li><a href="javascript:;"><span>마이클코어스</span></a></li>
+                                    <li><a href="javascript:;"><span>롱샴</span></a></li>
+                                    <li><a href="javascript:;"><span>웨스트엘름</span></a></li>
+                                    <li><a href="javascript:;"><span>풍산화동향행</span></a></li>
+                                    <li><a href="javascript:;"><span>매그파이</span></a></li>
+                                    <li><a href="javascript:;"><span>썜소나이트</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //.specialshop -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate2"><i class="icon"></i><span>잡화/제화</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">패션잡화</a></li>
+                                    <li><a href="javascript:;">스타일잡화</a></li>
+                                    <li><a href="javascript:;">패션슈즈|스니커즈</a></li>
+                                    <li><a href="javascript:;">디자이너슈즈</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">루즈앤라운지</a></li>
+                                    <li><a href="javascript:;">덱케</a></li>
+                                    <li><a href="javascript:;">LF패션잡화 (닥스/헤지스)</a></li>
+                                    <li><a href="javascript:;">마이클코어스</a></li>
+                                    <li><a href="javascript:;">S.I 빌리지</a></li>
+                                    <li><a href="javascript:;">SODA</a></li>
+                                    <li><a href="javascript:;">만다리나덕</a></li>
+                                    <li><a href="javascript:;">엘칸토</a></li>
+                                    <li><a href="javascript:;">슈마커</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate3"><i class="icon"></i><span>뷰티</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">화장품|미용</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate14"><i class="icon"></i><span>명품/보석/시계</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">수입명품</a></li>
+                                    <li><a href="javascript:;">주얼리|순금</a></li>
+                                    <li><a href="javascript:;">시계</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate5"><i class="icon"></i><span>스포츠/레저</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">골프|자동차|자전거용품</a></li>
+                                    <li><a href="javascript:;">캠핑|등산|낚시|구기</a></li>
+                                    <li><a href="javascript:;">수영|스키|헬스|요가</a></li>
+                                    <li><a href="javascript:;">스포츠의류│신발│가방</a></li>
+                                    <li><a href="javascript:;">등산|아웃도어</a></li>
+                                    <li><a href="javascript:;">골프웨어</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">데상트코리아관</a></li>
+                                    <li><a href="javascript:;">ABC마트 스페셜샵</a></li>
+                                    <li><a href="javascript:;">레스모아</a></li>
+                                    <li><a href="javascript:;">LF 스포츠관</a></li>
+                                    <li><a href="javascript:;">BEANPOLE(빈폴)</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate4"><i class="icon"></i><span>출산/유아동</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">출산l유아용품l생필품</a></li>
+                                    <li><a href="javascript:;">유모차l카시트l가구l매트</a></li>
+                                    <li><a href="javascript:;">유아동 의류|잡화</a></li>
+                                    <li><a href="javascript:;">완구|교육완구|도서</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">[뉴발란스키즈] 20S/S 신상 OPEN</a></li>
+                                    <li><a href="javascript:;">[빈폴키즈] 20SS NEW IN</a></li>
+                                    <li><a href="javascript:;">[데상트 영애슬릿]  베스트 티셔츠 모음전</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate6"><i class="icon"></i><span>주방/생활/건강</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">주방용품</a></li>
+                                    <li><a href="javascript:;">생활|욕실|수납</a></li>
+                                    <li><a href="javascript:;">건강|안마|실버</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">장기무이자 할부</a></li>
+                                    <li><a href="javascript:;">수입주방용품</a></li>
+                                    <li><a href="javascript:;">윌리엄스소노마</a></li>
+                                    <li><a href="javascript:;">H렌탈샵</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate15"><i class="icon"></i><span>식품</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">농산/반찬/견과/간식</a></li>
+                                    <li><a href="javascript:;">축산/육가공/김치/수산</a></li>
+                                    <li><a href="javascript:;">면/캔/소스/즉석식품</a></li>
+                                    <li><a href="javascript:;">커피/음료/간식/분유</a></li>
+                                    <li><a href="javascript:;">홍삼/건강식품</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">리빙 TV 플러스</a></li>
+                                    <li><a href="javascript:;">마트데이</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate7"><i class="icon"></i><span>가구/침구/시공</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">거실가구</a></li>
+                                    <li><a href="javascript:;">침실가구</a></li>
+                                    <li><a href="javascript:;">학생|주방|아동가구</a></li>
+                                    <li><a href="javascript:;">리모델링|시공가구</a></li>
+                                    <li><a href="javascript:;">침구</a></li>
+                                    <li><a href="javascript:;">커튼ㅣ카페트</a></li>
+                                    <li><a href="javascript:;">홈데코|인테리어</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">한샘가구 브랜드관</a></li>
+                                    <li><a href="javascript:;">한샘시공 브랜드관</a></li>
+                                    <li><a href="javascript:;">리바트(LIVART)</a></li>
+                                    <li><a href="javascript:;">포터리반</a></li>
+                                    <li><a href="javascript:;">포터리반 키즈</a></li>
+                                    <li><a href="javascript:;">웨스트엘름</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate8"><i class="icon"></i><span>가전/디지털</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">TV/냉장고/세탁기</a></li>
+                                    <li><a href="javascript:;">생활/이미용가전</a></li>
+                                    <li><a href="javascript:;">계절/건강/공기청정</a></li>
+                                    <li><a href="javascript:;">하이마트</a></li>
+                                    <li><a href="javascript:;">컴퓨터|게임</a></li>
+                                    <li><a href="javascript:;">카메라|캠코더</a></li>
+                                    <li><a href="javascript:;">디지털기기|휴대폰</a></li>
+                                    <li><a href="javascript:;">음향가전/AV기기</a></li>
+                                    <li><a href="javascript:;">주방가전</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">TV+ Digital Shop</a></li>
+                                    <li><a href="javascript:;">장기무이자 할부</a></li>
+                                    <li><a href="javascript:;">APPLE(애플)</a></li>
+                                    <li><a href="javascript:;">캐논 브랜드관</a></li>
+                                    <li><a href="javascript:;">삼성전자 브랜드샵</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate13"><i class="icon"></i><span>취미/반려동물</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">상품권|이용권|서비스</a></li>
+                                    <li><a href="javascript:;">문구|취미|악기</a></li>
+                                    <li><a href="javascript:;">반려동물(H PET SHOP)</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">바보사랑</a></li>
+                                    <li><a href="javascript:;">POOM by 아트박스</a></li>
+                                    <li><a href="javascript:;">1300K</a></li>
+                                    <li><a href="javascript:;">텐바이텐</a></li>
+                                    <li><a href="javascript:;">후추통</a></li>
+                                    <li><a href="javascript:;">KT 기프티쇼</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                    <li><a href="javascript:;" class="cate16"><i class="icon"></i><span>여행/보험/렌탈</span></a>
+                        <div class="depth depth2">
+                            <div class="depth-menu">
+                                <ul>
+                                    <li><a href="javascript:;">여행/숙박/항공</a></li>
+                                    <li><a href="javascript:;">Hmall 보험/상조</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">모두투어</a></li>
+                                    <li><a href="javascript:;">하나투어</a></li>
+                                    <li><a href="javascript:;">한진관광</a></li>
+                                    <li><a href="javascript:;">롯데제이티비</a></li>
+                                    <li><a href="javascript:;">H렌탈샵</a></li>
+                                </ul>
+                            </div>
+                            <!-- //.depth-menu -->
+                        </div>
+                        <!-- //.depth -->
+                    </li>
+                </ul>
+            </div>
+            <!-- //.category-menu -->
+
+            <div class="specialshop" aria-label="스페셜샵">
+                <h2 class="specialshop-tit">스페셜샵</h2>
+                <ul class="specialshop-menu"> <!-- active 클래스 제어 -->
+                    <li><a href="javascript:;"><span class="img"><img src="//imagedev.hmall.com/m/img/co/sample/sample-shop-nike.png" alt=""></span><span>나이키</span></a></li>
+                    <li><a href="javascript:;"><span class="img"><img src="//imagedev.hmall.com/m/img/co/sample/sample-shop-jaju.png" alt=""></span><span>JAJU</span></a></li>
+                    <li><a href="javascript:;"><span class="img"><img src="//imagedev.hmall.com/m/img/co/sample/sample-shop-allevo.png" alt=""></span><span>알레보</span></a></li>
+                    <li><a href="javascript:;"><span class="img"><img src="//imagedev.hmall.com/m/img/co/sample/sample-shop-laciento.png" alt=""></span><span>라씨엔토</span></a></li>
+                    <li><a href="javascript:;"><span class="img"><img src="//imagedev.hmall.com/m/img/co/sample/sample-shop-westelm.png" alt=""></span><span>웨스트엘름</span></a></li>
+                    <li><a href="javascript:;"><span class="img"><img src="//imagedev.hmall.com/m/img/co/sample/sample-shop-adidas.png" alt=""></span><span>아디다스</span></a></li>
+                    <li><a href="javascript:;"><span class="img"><img src="//imagedev.hmall.com/m/img/co/sample/sample-shop-milanostroy.png" alt=""></span><span>밀라노스토리</span></a></li>
+                    <li><a href="javascript:;"><span class="img"><img src="//imagedev.hmall.com/m/img/co/sample/sample-shop-tomford.png" alt=""></span><span>톰포드</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>H렌탈샵</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>마이클코어스</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>롱샴</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>웨스트엘름</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>풍산화동향행</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>매그파이</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>썜소나이트</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>주대복</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>폴로랄프로렌</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>H펫샵</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>만다리나덕</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>코치</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>S.I빌리지</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>스와로브스키</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>올림피아</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>윌리엄스소노마</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>현대아울렛</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>블루독</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>멀버리</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>ㄱㅊㄴ(괜찮네)</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>JAJU</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>&amp;Other Stories</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>오로타</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>루에브르</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>밧드야</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>그리팅</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>라씨엔토</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>포터리반키즈</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>제이바이</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>송지오옴므</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>피브레노</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>COS</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>포터리반</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>덱케</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>블랭크블랑</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>해외직구</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>한샘</span></a></li>
+                    <li><a href="javascript:;"><span class="img"></span><span>알레보</span></a></li>
+                </ul>
+                <div class="btngroup">
+                    <!-- [10/21] data-modules 적용 -->
+                    <button class="btn btn-viewmore" data-modules-customtoggle="parent:.specialshop;closeText:접기;"><span data-text>더보기</span><i class="icon arrow-down"></i></button>
+                </div>
+            </div>
+            <!-- //.specialshop -->
+
+            <div class="sidebar-btngroup">
+                <div class="btngroup btnlen1">
+                    <a href="javascript:;" class="btn btn-linegray"><span>고객센터</span></a>
+                </div>
+                <!-- //.btngroup -->
+            </div>
+            <!-- //.sidebar-btngroup -->
+        </div>
+    </div>
+    <!-- //.sidebar-area -->
+
+    <div class="recentwrap selected" aria-label="최근본쇼핑">
+        <div class="recentdim"></div>
+        <div class="recentcnt">
+            <div class="recentinner">
+                <div class="titlegroup">
+                    <div class="aligner">
+                        <div class="part"><h2 class="large-title">최근본쇼핑</h2></div>
+                        <div class="part">
+                            <div class="recent-edit">
+                                <button class="btn btn-linelgray xs btn-edit"><span>편집</span></button>
+                                <button class="btn btn-linelgray xs btn-editcancel"><span>편집취소</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.titlegroup -->
+                <button class="btn btn-close"><i class="icon"></i><span class="hiding">닫기</span></button>
+        
+                <div class="sortgroup tab-recent">
+                    <ul class="sort-menu" role="tablist">
+                        <li class="selected" role="presentation"><button role="tab" aria-selected="true" class="sort-total"><span>전체</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-product"><span>상품</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-search"><span>검색어</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-brand"><span>브랜드</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-categody"><span>카테고리</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-exhibition"><span>기획전</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-event"><span>이벤트</span></button></li>
+                    </ul>
+    
+                    <!-- 편집 시 분류 비활성화 - 각 button에 disabled 추가 -->
+                    <ul class="sort-menu" role="tablist">
+                        <li class="selected" role="presentation"><button role="tab" aria-selected="true" class="sort-total" disabled><span>전체</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-product" disabled><span>상품</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-search" disabled><span>검색어</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-brand" disabled><span>브랜드</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-categody" disabled><span>카테고리</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-exhibition" disabled><span>기획전</span></button></li>
+                        <li role="presentation"><button role="tab" aria-selected="false" class="sort-event" disabled><span>이벤트</span></button></li>
+                    </ul>
+                    <!-- //.sort-menu -->
+                    
+                    <div class="sortcnt" role="tabpanel" aria-label="전체" aria-selected="true">
+                        <div class="no-data type-large">
+                            <p><i class="icon exmark"></i><span>최근본쇼핑이 없습니다.</span></p>
+                        </div>
+                        <a href="javascript:;" class="link-best"><span>지금 BEST 상품을 만나보세요</span></a>
+                        <ul class="recent-list type-check">
+                            <!-- 상품인 경우 -->
+                            <li>
+                                <div class="recentcheck">
+                                    <div class="checkbox">
+                                        <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</span></label>
+                                    </div>
+                                </div>
+                                <div class="pdwrap pdlist">
+                                    <div class="pdlist-wrap">
+                                        <figure class="pdthumb">
+                                            <a href="javascript:;">
+                                                <div class="thumb">
+                                                    <img src="//imagedev.hmall.com/m/img/co/sample/sample-recent4.jpg" alt="">
+                                                </div>
+                                                <figcaption>
+                                                    <div class="pdname" aria-label="제품명">2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</div>
+                                                    <div class="pdprice">
+                                                        <span class="sale" aria-label="판매가"><em>95,050</em><b>원</b></span>
+                                                    </div>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+                                    </div>
+                                    <!-- //.pdlist-wrap -->
+                                </div>
+                                <!-- //.pdwrap -->
+                            </li>
+                            <!-- //상품인 경우 -->
+                            
+                            <!-- 검색어, 브랜드, 카테고리, 기획전, 이벤트인 경우 -->
+                            <li>
+                                <div class="recentcheck">
+                                    <div class="checkbox">
+                                        <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>남자양말</span></label>
+                                    </div>
+                                </div>
+                                <!-- 
+                                    검색어 : sort-search
+                                    브랜드 : sort-brand
+                                    카테고리 : sort-category
+                                    기획전 : sort-exhibition
+                                    이벤트 : sort-event
+                                -->
+                                <div class="sortwrap sort-search">
+                                    <a href="javascript:;">
+                                        <div class="sort-aligner">
+                                             <span class="sort-mark">검색어</span>
+                                             <div class="sort-name" aria-label="검색어명">남자양말</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <!-- //검색어, 브랜드, 카테고리, 기획전, 이벤트인 경우 -->
+                            <li>
+                                <div class="recentcheck">
+                                    <div class="checkbox">
+                                        <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>나이키</span></label>
+                                    </div>
+                                </div>
+                                <div class="sortwrap sort-brand">
+                                    <a href="javascript:;">
+                                        <div class="sort-aligner">
+                                            <span class="sort-mark">브랜드</span>
+                                            <div class="sort-name" aria-label="브랜드명">나이키</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="recentcheck">
+                                    <div class="checkbox">
+                                        <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>여성브랜드의류&gt;원피스</span></label>
+                                    </div>
+                                </div>
+                                <div class="sortwrap sort-category">
+                                    <a href="javascript:;">
+                                        <div class="sort-aligner">
+                                            <span class="sort-mark">카테고리</span>
+                                            <div class="sort-name" aria-label="기획전명">여성브랜드의류&gt;원피스</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="recentcheck">
+                                    <div class="checkbox">
+                                        <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>골든듀 x Hmall 최대 40% 할인</span></label>
+                                    </div>
+                                </div>
+                                <div class="sortwrap sort-exhibition">
+                                    <a href="javascript:;">
+                                        <div class="sort-aligner">
+                                            <span class="sort-mark">기획전</span>
+                                            <div class="sort-name" aria-label="기획전명">골든듀 x Hmall 최대 40% 할인</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="recentcheck">
+                                    <div class="checkbox">
+                                        <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>카카오페이 5천원 즉석 할인</span></label>
+                                    </div>
+                                </div>
+                                <div class="sortwrap sort-event">
+                                    <a href="javascript:;">
+                                        <div class="sort-aligner">
+                                            <span class="sort-mark">이벤트</span>
+                                            <div class="sort-name" aria-label="기획전명">카카오페이 5천원 즉석 할인</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="recentcheck">
+                                    <div class="checkbox">
+                                        <label class="chklabel"><input type="checkbox" name=""><i class="icon"></i><span>2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</span></label>
+                                    </div>
+                                </div>
+                                <div class="pdwrap pdlist">
+                                    <div class="pdlist-wrap">
+                                        <figure class="pdthumb">
+                                            <a href="javascript:;">
+                                                <div class="thumb">
+                                                    <img src="//imagedev.hmall.com/m/img/co/sample/sample-recent2.jpg" alt="">
+                                                </div>
+                                                <figcaption>
+                                                    <div class="pdname" aria-label="제품명">2020 S/S 가버(Gabor) 스퀘어 쥬얼 샌들 독일 프리미엄 슈즈 최신상</div>
+                                                    <div class="pdprice">
+                                                        <span class="sale" aria-label="판매가"><em>95,050</em><b>원</b></span>
+                                                    </div>
+                                                </figcaption>
+                                            </a>
+                                        </figure>
+                                    </div>
+                                    <!-- //.pdlist-wrap -->
+                                </div>
+                                <!-- //.pdwrap -->
+                            </li>
+                        </ul>
+                        <!-- //.recent-list -->
+                    </div>
+                    <!-- //.sortcnt -->
+                </div>
+                <!-- //.sortgroup -->
+
+                <div class="sort-delete">
+                    <div class="btngroup btnlen2">
+                        <button class="btn btn-default xl"><span>선택삭제</span></button>
+                        <button class="btn btn-default xl"><span>전체삭제</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- //.recentinner -->
+        </div>
+        <!-- //.recentcnt -->
+    </div>
+    <!-- //.recentwrap -->
+
+    <main class="cmain" role="main">
+        <div id="cntWrap" class="container" aria-label="주문완료 본문내용">
+            <h2 class="hiding">주문완료 본문내용</h2>
+
+            <!--모바일 웹일 경우 is-web 클래스 추가-->
+            <section class="ordercnt order-complete is-web">
+                <div class="order-complete-notice">
+                    <h2>모바일 사은품 신청 완료!</h2>
+                    <div class="sub-info-area mt10">
+                        <div class="area-content">
+                            <ol>
+                                <li>사은품 신청 완료 후 2~3주 이내 배송이 완료될 예정이며 배송비는 무료입니다.</li>
+                                <li>본인인증 완료 후 배송조회, 배송지 변경이 가능합니다.</li>
+                                <li>배송지 변경은 사은품 신청 후 0일 이후 혹은 주문진행후에는 불가합니다.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <span class="sub-notice txt-grey">배송사 : CJ대한통운</span>
+                    <span class="sub-notice txt-grey">송장번호 : 1234567890123456789</span>
+
+                    <div class="btn-wrap">
+                        <button class="btn-confirm">배송 조회</button>
+                        <button class="btn-white">배송지 변경</button>
+                    </div>
+
+
+                    <h2>
+                        주문이 완료되었습니다.<br/>
+                        첫 구매 감사 쿠폰을 확인해 주세요.
+                    </h2>
+                    <h2>
+                        선물을 보내셨습니다.
+                    </h2>
+                    <h2>
+                        상담원 결제가 접수되었습니다.
+                    </h2>
+
+                    <!-- [01/15]_수정(tms : 상담신청 누락 케이스건 추가) -->
+                    <h2>
+                        상담 신청이 완료되었습니다.
+                    </h2>
+                    <!--// [01/15] -->
+
+                    <span class="sub-notice txt-grey">
+                        <!-- [11/30]_수정(괄호 제거) -->
+                        주문번호 : 20200131-000001
+                    </span>
+                    
+                    <div class="btn-wrap">
+                        <button class="btn-white">쿠폰확인</button>
+                        <button class="btn-confirm">주문확인&변경</button>
+                    </div>
+                    <div class="btn-wrap">
+                        <!-- [11/30]_수정(btn-like class 추가 및 하트 문자 제거) -->
+                        <button class="btn-white btn-like"><i class="icon"></i>좋아요</button>
+                        <button class="btn-confirm">주문확인&변경</button>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="btn-confirm">주문확인&변경</button>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="btn-confirm">상담원 결제하기</button>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="btn-confirm">주문 확인</button>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="btn-white onair">생방송 이어보기</button>
+                    </div>
+                    <div class="sub-area txt-grey">
+                        <!-- [12/17]_수정(등급별 class 지정) -->
+                        <!--
+                            TOP CLASS class="level5"
+                            DIAMOND   class="level4"
+                            PLATINUM  class="level3"
+                            GOLD      class="level2"
+                            SILVER    class="level1"
+                        -->
+                        1월 Hmall에서 <span class="txt-orange">18건 & 50,000원</span> 이상 추가 구매 시, 2월 
+                        <span class="txt-orange level5">TOP CLASS</span>
+                        <span class="txt-orange level4">DIAMOND</span>
+                        <span class="txt-orange level3">PLATINUM</span>
+                        <span class="txt-orange level2">GOLD</span>
+                        <span class="txt-orange level1">SILVER</span> 등급으로 승급됩니다!
+                        <a href="javascript:;">등급혜택보기</a>
+                    </div>
+                </div>
+
+                <div class="order-info-area soldout-info">
+                    결제 완료 순서대로 배송이 진행되므로, 입금이 늦어지면 결제가 되었더라도 품절 및 재고부족으로 주문이 취소될 수 있습니다.
+                </div>
+
+                <div class="order-info-area">
+                    <div class="payment-info">
+                        <h2>결제 정보</h2>
+                        <div class="row-wrap payment-row">
+                            <span class="row-title">주문금액</span>
+                            <span class="row-value">
+                            <div class="sub-row-wrap">
+                                <span><strong>11,080,080</strong>원</span>
+                                <button class="btn-grey chg-payment">결제수단변경</button>
+                            </div>
+                        </span>
+                        </div>
+                        <div class="row-wrap payment-method">
+                            <span class="row-title">결제방법</span>
+                            <span class="row-value txt-wrap">
+                                <span><strong>1,080</strong>원 (네이버페이)</span>
+                                <span><strong>9,999</strong>원 (적립금)</span>
+                                <span><strong>9,999</strong>원 (적립금)</span>
+                                <span><strong>9,999</strong>원 (적립금)</span>
+                                <span><strong>9,999</strong>원<br/>(현대카드 무이자 3개월)</span>
+                                <!--복합결제-->
+                                <span class="payment-detail-area">
+                                    <p class="payment-notice txt-grey">
+                                        청구할인 예상금액 <strong>38,000원</strong><br/>
+                                        (체크카드 청구할인 제외)
+                                    </p>
+
+                                    <p class="payment-notice txt-grey mt10">
+                                        표시되는 청구할인 예상금액은 1인당 일 최대 청구 할인 한도에 따라 달라질 수 있습니다.<br/>
+                                        (이벤트안내 참고)
+                                    </p>
+
+                                    <p class="payment-notice mt10">19,900원(적립금)</p>
+                                    <p class="payment-notice txt-grey">비과세 2,500원 | 과세 2,000원</p>
+
+                                    <p class="payment-notice mt10">19,900원(상품권)</p>
+
+                                    <button class="btn-grey btn-voucher-guide btn-slpopup" data-sub-lpopup="popup-voucher-guide">상품권 결제안내</button>
+                                </span>
+                                <!--//복합결제-->
+                            </span>                            
+                        </div>
+            
+                        <!--무통장입금-->
+                        <div class="payment-detail-area">
+                            <div class="row-wrap">
+                                <span>KEB 하나은행 123456-78-9012345</span>
+                                <!-- [12/17]_수정(위키 410 - 복사하기 버튼 삭제) -->
+                                <!-- <a href="javascript:;">복사하기</a> -->
+                            </div>
+                            <p>예금주 : 홍길동</p>
+                            <p>입금기한 : 2020-01-18 까지</p>
+                            <div class="btn-wrap">
+                                <button class="btn-grey">공유하기</button>
+                                <button class="btn-grey">송금하기</button>
+                            </div>
+                        </div>
+                        <!--//무통장입금-->
+            
+                        <!--복합결제-->
+                        <div class="payment-detail-area">
+                            <p class="payment-notice txt-grey">
+                                청구할인 예상금액 38,000원<br/>
+                                (체크카드 청구할인 제외)
+                            </p>
+            
+                            <p class="payment-notice txt-grey mt10">
+                                표시되는 청구할인 예상금액은 1인당 일 최대 청구 할인 한도에 따라 달라질 수 있습니다.<br/>
+                                (이벤트안내 참고)
+                            </p>
+            
+                            <p class="payment-notice mt10">19,900원(적립금)</p>
+                            <p class="payment-notice txt-grey">비과세 2,500원 | 과세 2,000원</p>
+            
+                            <p class="payment-notice mt10">19,900원(상품권)</p>
+            
+                            <button class="btn-grey btn-voucher-guide">상품권 결제안내</button>
+                        </div>
+                        <!--//복합결제-->
+                    </div>
+                    
+                    <!-- [01/15]_수정(tms : 상담시청 누락 케이스 건 추가 > 주문금액 별도약정) -->
+                    <div class="order-info">
+                        <ul class="order-info-list">
+                            <li class="order-info-wrap">
+                                <div class="row-wrap">
+                                    <span class="row-title">주문금액</span>
+                                    <span class="row-value txt-wrap"><strong>별도약정</strong></span>
+                                </div>
+                             </li>
+                        </ul>            
+                    </div>
+                    <!--// [01/15] -->
+                    <!-- [01/15]_수정(tms : 상담신청 누락 케이스 건 추가 > 주문상품 , 배송지) -->
+                    <div class="order-info">
+                        <ul class="order-info-list">
+                            <li class="order-info-wrap">
+                                <div class="row-wrap">
+                                    <span class="row-title">주문상품</span>
+                                    <span class="row-value txt-wrap">(무)흥국화재 파워라이프 종합보험</span>
+                                </div>
+                                <div class="row-wrap">
+                                    <span class="row-title">받는 분</span>
+                                    <span class="row-value txt-wrap"><p><strong>홍길동</strong><em>010-1234-1234</em></p></span>
+                                </div>
+                            </li>
+                        </ul>            
+                    </div>
+                    <!--// [01/15] -->
+
+                    <div class="order-info">
+                        <ul class="order-info-list">
+                            <li class="order-info-wrap">
+                                <div class="row-wrap">
+                                    <span class="row-title">주문상품</span>
+                                    <span class="row-value txt-wrap">다이슨 무선청소기 V7 플러피(1건)</span>
+                                </div>
+                                <div class="row-wrap">
+                                    <span class="row-title">배송지</span>
+                                    <span class="row-value txt-wrap">
+                                        <p><span>[기본]</span> <strong>가나다</strong><em>010-1234-1234</em></p>
+                                        <p>서울특별시 강동구 올림픽로 70길 34 123층</p>
+                                    </span>
+                                </div>
+                                <div class="row-wrap">
+                                    <span class="row-title">주문자명</span>
+                                    <span class="row-value txt-wrap"><strong>라마바</strong></span>
+                                </div>
+                                <div class="row-wrap">
+                                    <span class="row-title">배송희망일</span>
+                                    <span class="row-value txt-wrap">2020-12-31</span>
+                                </div>
+                                <div class="row-wrap">
+                                    <span class="row-title">배송메모</span>
+                                    <span class="row-value txt-wrap">부재시 경비실에 맡겨주세요.</span>
+                                </div>
+                            </li>
+
+                            <li class="order-info-wrap">
+                                <div class="row-wrap">
+                                    <span class="row-title">주문상품</span>
+                                    <span class="row-value txt-wrap">다이슨 무선청소기 V7 플러피(1건)</span>
+                                </div>
+                                <div class="row-wrap">
+                                    <span class="row-title">배송지</span>
+                                    <span class="row-value txt-wrap">
+                                        <p><strong>가나다</strong><em>010-1234-1234</em></p>
+                                        <p>서울특별시 강동구 올림픽로 70길 34 123층</p>
+                                    </span>
+                                </div>
+                                <div class="row-wrap">
+                                    <span class="row-title">배송희망일</span>
+                                    <span class="row-value txt-wrap">2020-12-31</span>
+                                </div>
+                            </li>
+                        </ul>            
+                    </div>
+                    <div class="order-info mt10">
+                        <!--선물하기-->
+                        <div class="order-info-wrap">
+                            <div class="row-wrap">
+                                <span class="row-title">보내는 분</span>
+                                <span class="row-value txt-wrap"><p><strong>가나다</strong><em>010-1234-1234</em></p></span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">받는 분</span>
+                                <span class="row-value txt-wrap"><p><strong>가나다</strong><em>010-1234-1234</em></p></span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">메세지</span>
+                                <span class="row-value txt-wrap">생일축하해~ 올해 내 생일선물은 작고 반짝이는걸로 기대할게 ^^</span>
+                            </div>
+                        </div>
+                        <!--//선물하기-->
+                    </div>
+
+                    <div class="order-info mt10">
+                        <!--선물하기 배송지 입력-->
+                        <div class="order-info-wrap">
+                            <div class="row-wrap">
+                                <span class="row-title">보내신 분</span>
+                                <span class="row-value txt-wrap"><p>홍길동님이 보내신 메세지</p></span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">주문번호</span>
+                                <span class="row-value txt-wrap"><p>20180502381904</p></span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">상품명</span>
+                                <span class="row-value txt-wrap">[플라스틱아일랜드]완판 예감!2018 썸머 신상 원피스 4종 택1(랩스타일/플라워패턴/뷔스티에/롱기장)</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">속성</span>
+                                <span class="row-value txt-wrap">[선택] 하늘하늘 하늘색-M</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">배송지입력<br>기한</span>
+                                <span class="row-value txt-wrap">2018년 12년 28일</span>
+                            </div>
+                            <ul class="txt-grey">
+                                <li>배송지 입력 기한 내 배송지 입력이 되지 않은 경우 자동으로 취소/환불 처리됩니다.</li>
+                            </ul>
+                        </div>
+                        <!--//선물하기 배송지 입력-->
+                        <div class="btn-wrap mt10">
+                            <button class="btn-confirm">배송정보 입력하기</button>
+                        </div>
+                    </div>
+            
+                    <div class="order-info mt10">
+                        <!--스토어픽-->
+                        <div class="order-info-wrap">
+                            <div class="row-wrap">
+                                <span class="row-title">받는 분</span>
+                                <span class="row-value txt-wrap"><strong>가나다</strong> </span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">휴대폰번호</span>
+                                <span class="row-value txt-wrap"><em>010-1234-1234</em></span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">메세지</span>
+                                <span class="row-value txt-wrap">생일축하해~ 올해 내 생일선물은 작고 반짝이는걸로 기대할게 ^^</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">픽업장소</span>
+                                <span class="row-value txt-wrap">현대백화점 판교점 4층 GUESS</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">픽업일시</span>
+                                <span class="row-value txt-wrap">2020년 1월 31일 금요일</span>
+                            </div>
+                            <span class="order-notice marked">교환권은 매장승인후 받으시는 분께 발송됩니다.</span>
+                        </div>
+                        <!--//스토어픽-->
+                    </div>
+                    <div class="order-info mt10">
+                        <!--해외배송지-->
+                        <div class="order-info-wrap">
+                            <div class="row-wrap">
+                                <span class="row-title">주문상품</span>
+                                <span class="row-value txt-wrap">다이슨 무선청소기 V7 플러피(1건)</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">배송지</span>
+                                <span class="row-value txt-wrap">
+                                    <p><strong>Mike </strong><em>+82-000000000000</em></p>
+                                    <p>#Holmbury Dune 2 Lawrie dn-jark Road Sydenham London 6DN U.K</p>
+                                </span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">무게</span>
+                                <span class="row-value">19Kg</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">실측무게</span>
+                                <span class="row-value">미측정</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">해외배송비</span>
+                                <span class="row-value txt-wrap">
+                                    <p>999,999,999원(EMS)</p>
+                                    <p>배송비 미확정 상태<a class="btn-helper btn-slpopup" data-sub-lpopup="popup-shipping-notice" href="javascript:;">도움말</a></p>
+                                </span>
+                            </div>
+                        </div>
+                        <!--//해외배송지-->
+                    </div>
+                    <div class="order-info mt10">
+                        <!--무형상품-->
+                        <div class="order-info-wrap">
+                            <div class="row-wrap">
+                                <span class="row-title">주문상품</span>
+                                <span class="row-value txt-wrap">웰니스 정수기</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">주문자명</span>
+                                <span class="row-value"><strong>문자명</strong><em>010-1234-1234</em></span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">생년월일</span>
+                                <span class="row-value">1999-9-9</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">거주지역</span>
+                                <span class="row-value">서울특별시</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">남기실 말</span>
+                                <span class="row-value">전화 전에 문자주세요</span>
+                            </div>
+                        </div>
+                        <!--//해외배송지-->
+                    </div>
+                </div>
+                
+                <!--//H.Point 적립 안내-->
+                <div class="sub-info-area mt10">
+                    <div class="area-header">
+                        <span class="row-title">적립예정 H.Point</span>
+                        <span class="row-value">999,999P</span>
+                    </div>
+                    <div class="area-content">
+                        <ol>
+                            <li>H.Point는 현대백화점 그룹에서 사용 가능한 포인트 입니다.</li>
+                            <li>기본 유효기간은 2년입니다.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="sub-info-area mt10">
+                    <div class="area-header">
+                        <span class="row-title">받으실 추가 H.Point</span>
+                        <span class="row-value">999,999P</span>
+                    </div>
+                    <div class="area-content">
+                        <ol>
+                            <li>추가 H.Point는 최종결제금액에 따라 계산됩니다.</li>
+                            <li>상품발송 7일 후 자동으로 적립됩니다.</li>
+                            <li>H.Point는 현대백화점그룹 통합멤버십 H.Point 회원에 한하여 적립됩니다.</li>
+                        </ol>
+                    </div>
+                </div>
+                <!--//H.Point 적립 안내-->
+
+                <!--적립금 안내-->
+                <div class="sub-info-area mt10">
+                    <div class="area-header">
+                        <span class="row-title">받으실 적립금</span>
+                        <span class="row-value">999,999원</span>
+                    </div>
+                    <div class="area-content">
+                        <ol>
+                            <li>적립금은 최종 결제금액에 따라 계산됩니다.</li>
+                            <li>주문상태가 '상품발송' 으로 변경된 날부터 적립금을 90일 이내에 내려 받으셔야합니다.</li>
+                            <li>90일까지 적립금 받기를 하지 않으시면, 적립금이 자동소멸 됩니다.</li>
+                            <li>고객님께서 구매하신 상품의 상품평을 쓰시면 적립금을 드립니다.</li>
+                        </ol>
+                    </div>
+                </div>
+                <!--// 적립금 안내-->
+            
+                <div class="sub-info-area mt10">
+                    <div class="area-header">
+                        <span class="row-title">상품평 작성혜택</span>
+                    </div>
+                    <div class="area-content">
+                        <ol>
+                            <li>상품평 작성시 최대 <span class="txt-orange">250</span>원 적립 예정 <a class="btn-helper btn-slpopup" data-sub-lpopup="popup-review-benefit-guide" href="javascript:;">도움말</a></li>
+                            <li>(~MM/DD까지)상품평 작성 시 <span class="txt-orange">500</span>원 추가 적립 예정</li>
+                        </ol>
+                        <ul class="txt-grey">
+                            <li>구매일로부터 60일 이내 작성, 동일 상품 기준 1회로 제한</li>
+                            <li>동일 상품 기준 1회로 작성 제한</li>
+                            <li>상세 혜택은 상품평 작성 시 하단 안내 참고</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <a class="promotion-link link-arrow mt10">
+                    <strong>FOCUS DAY 가전!</strong> 최대 10만원 적립금
+                </a>
+                <a class="promotion-link link-arrow mt10">
+                    <strong>FOCUS DAY 가전!</strong> <span class="txt-grey">최대 10만원 적립금</span>
+                </a>
+            
+                <div class="promotion-area mt10">
+                    <h3>구매하신 상품과 연관된 추천상품</h3>
+                    <ul class="promotion-list vscroll">
+                        <li>
+                            <a href="http://m.hyundaihmall.com/front/pda/smItemDetailR.do?ItemCode=2101585166" class="pd17_item_wrap">
+                                <div class="img-area"><img src="https://imagessl.hyundaihmall.com/static/1/5/58/01/2101585166_0_300.jpg"></div>
+                                <div class="label-area">
+                                    <span class="main-label">[타미힐피거진] [여성] 오가닉 코튼 뱃지 티셔츠 T32A0TTO030WT1 100</span>
+                                    <span class="sub-label"><strong>55,800</strong>원</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://m.hyundaihmall.com/front/pda/smItemDetailR.do?ItemCode=2101585166" class="pd17_item_wrap">
+                                <div class="img-area"><img src="https://imagessl.hyundaihmall.com/static/1/5/58/01/2101585166_0_300.jpg"></div>
+                                <div class="label-area">
+                                    <span class="main-label">[타미힐피거진] [여성] 오가닉 코튼 뱃지 티셔츠 T32A0TTO030WT1 100</span>
+                                    <span class="sub-label"><strong>55,800</strong>원</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://m.hyundaihmall.com/front/pda/smItemDetailR.do?ItemCode=2101585166" class="pd17_item_wrap">
+                                <div class="img-area"><img src="https://imagessl.hyundaihmall.com/static/1/5/58/01/2101585166_0_300.jpg"></div>
+                                <div class="label-area">
+                                    <span class="main-label">[타미힐피거진] [여성] 오가닉 코튼 뱃지 티셔츠 T32A0TTO030WT1 100</span>
+                                    <span class="sub-label"><strong>55,800</strong>원</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://m.hyundaihmall.com/front/pda/smItemDetailR.do?ItemCode=2101585166" class="pd17_item_wrap">
+                                <div class="img-area"><img src="https://imagessl.hyundaihmall.com/static/1/5/58/01/2101585166_0_300.jpg"></div>
+                                <div class="label-area">
+                                    <span class="main-label">[타미힐피거진] [여성] 오가닉 코튼 뱃지 티셔츠 T32A0TTO030WT1 100</span>
+                                    <span class="sub-label"><strong>55,800</strong>원</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://m.hyundaihmall.com/front/pda/smItemDetailR.do?ItemCode=2101585166" class="pd17_item_wrap">
+                                <div class="img-area"><img src="https://imagessl.hyundaihmall.com/static/1/5/58/01/2101585166_0_300.jpg"></div>
+                                <div class="label-area">
+                                    <span class="main-label">[타미힐피거진] [여성] 오가닉 코튼 뱃지 티셔츠 T32A0TTO030WT1 100</span>
+                                    <span class="sub-label"><strong>55,800</strong>원</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div class="promotion-area mt10">
+                    <h3>눈길가는 기획전</h3>
+                    <!-- 추후 확인 후 다시 작업
+                    <div class="heslider" aria-label="Auto Current Count/Total Count">
+						<div class="sliderwrap" data-modules-slick="dots:false;autoplay:false;paging:false;slidesToShow:1;arrows:false;variableWidth: true;centerMode:true;initialSlide:1;">
+							<div class="items">
+								<div class="hotexhibit-wrap">
+									<a href="javascript:;">
+										<img src="//imagedev.hmall.com/m/img/dp/sample/img-hot-thumb01.png" alt="">
+										<div class="hotexhibit-txt">
+											<div class="txt-wrap">
+												<strong>현대백화점 지오다노 FW신상 입고</strong>
+												<p>신상/이월 득템타임~</p>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+
+							<div class="items">
+								<div class="hotexhibit-wrap">
+									<a href="javascript:;">
+										<img src="//imagedev.hmall.com/m/img/dp/sample/img-hot-thumb02.png" alt="">
+										<div class="hotexhibit-txt">
+											<div class="txt-wrap">
+												<strong>현대백화점 지오다노 FW신상 입고</strong>
+												<p>신상/이월 득템타임~</p>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+
+							<div class="items">
+								<div class="hotexhibit-wrap">
+									<a href="javascript:;">
+										<img src="//imagedev.hmall.com/m/img/dp/sample/img-hot-thumb01.png" alt="">
+										<div class="hotexhibit-txt">
+											<div class="txt-wrap">
+												<strong>현대백화점 지오다노 FW신상 입고</strong>
+												<p>신상/이월 득템타임~</p>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+                    <div class="btngroup btnlen1">
+                        <button class="btn btn-default btn-confirm"><span>쇼핑계속하기</span></button>
+                    </div>
+                    -->
+                    <ul class="promotion-list type-card">
+                        <li>
+                            <a href="javascript:;">
+                                <img src="https://imagessl.hyundaihmall.com//MH/MH002/20200406/132327/large_cos2.jpg" alt="">
+                                <div class="label-area">
+                                    <span class="main-label">COS New Arrivals</span>
+                                    <span class="sub-label">모던한 실루엣, 오래가는 스타일</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul> 
+                </div>
+
+                <div class="btn-wrap mt10">
+                    <button class="btn-confirm">쇼핑계속하기</button>
+                </div>
+                <!-- [12/16]_수정(위키 394 내용 - MO_주문결제_v1.36 141p LEVEL UP! 추천상품 추가) -->
+                
+                <div class="promotion-area mt10">
+                    <h3>LEVEL UP! 추천 상품</h3>
+                    <ul class="promotion-list vscroll">
+                        <li>
+                            <a href="http://m.hyundaihmall.com/front/pda/smItemDetailR.do?ItemCode=2101585166" class="pd17_item_wrap">
+                                <div class="img-area"><img src="https://imagessl.hyundaihmall.com/static/1/5/58/01/2101585166_0_300.jpg"></div>
+                                <div class="label-area">
+                                    <span class="main-label">[타미힐피거진] [여성] 오가닉 코튼 뱃지 티셔츠 T32A0TTO030WT1 100</span>
+                                    <span class="sub-label"><strong>55,800</strong>원</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://m.hyundaihmall.com/front/pda/smItemDetailR.do?ItemCode=2101585166" class="pd17_item_wrap">
+                                <div class="img-area"><img src="https://imagessl.hyundaihmall.com/static/1/5/58/01/2101585166_0_300.jpg"></div>
+                                <div class="label-area">
+                                    <span class="main-label">[타미힐피거진] [여성] 오가닉 코튼 뱃지 티셔츠 T32A0TTO030WT1 100</span>
+                                    <span class="sub-label"><strong>55,800</strong>원</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://m.hyundaihmall.com/front/pda/smItemDetailR.do?ItemCode=2101585166" class="pd17_item_wrap">
+                                <div class="img-area"><img src="https://imagessl.hyundaihmall.com/static/1/5/58/01/2101585166_0_300.jpg"></div>
+                                <div class="label-area">
+                                    <span class="main-label">[타미힐피거진] [여성] 오가닉 코튼 뱃지 티셔츠 T32A0TTO030WT1 100</span>
+                                    <span class="sub-label"><strong>55,800</strong>원</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://m.hyundaihmall.com/front/pda/smItemDetailR.do?ItemCode=2101585166" class="pd17_item_wrap">
+                                <div class="img-area"><img src="https://imagessl.hyundaihmall.com/static/1/5/58/01/2101585166_0_300.jpg"></div>
+                                <div class="label-area">
+                                    <span class="main-label">[타미힐피거진] [여성] 오가닉 코튼 뱃지 티셔츠 T32A0TTO030WT1 100</span>
+                                    <span class="sub-label"><strong>55,800</strong>원</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://m.hyundaihmall.com/front/pda/smItemDetailR.do?ItemCode=2101585166" class="pd17_item_wrap">
+                                <div class="img-area"><img src="https://imagessl.hyundaihmall.com/static/1/5/58/01/2101585166_0_300.jpg"></div>
+                                <div class="label-area">
+                                    <span class="main-label">[타미힐피거진] [여성] 오가닉 코튼 뱃지 티셔츠 T32A0TTO030WT1 100</span>
+                                    <span class="sub-label"><strong>55,800</strong>원</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- 주문완료 > 샤넬 멤버십 케이스 임시 버튼 -->
+                <button class="btn-white btn-slpopup" data-sub-lpopup="chanel-mem-popup">샤넬멤버십 팝업</button>
+                <!-- // 주문완료 > 샤넬 멤버십 케이스 임시 버튼 -->
+
+                <!-- 주문완료 > 아모레 뷰티포인트 -->
+                <div class="order2016_completetop amore">
+                    <span>아모레퍼시픽 상품 구매금액에 따라<br><span>최대 5% 뷰티포인트를 적립</span>해드립니다.</span>
+                    <sub>(배송완료 전까지 적립 신청 가능)</sub>
+        
+                    <span>뷰티포인트 적립신청이 완료되었습니다.</span>
+                    <sub>(배송완료 후 3일 이내 적립)</sub>
+                    <sub>(주문취소 및 반품시 적립불가 및 환원)</sub>
+        
+                    <button class="large_btn color2 layerpopup_btn type3 btn-slpopup" data-sub-lpopup="amore-popup">뷰티포인트 적립 신청</button>
+        
+                    <div class="completetop_guide">
+                        <p class="guide_point">뷰티포인트 탈퇴 후 재가입 등으로 인한 카드번호 확인 실패 고객님은 재인증을 진행해 주세요. <a href="javascript:;" class="small_btn layerpopup_btn type3" dg-data="popup4">재인증</a></p>
+                        <p class="guide_point">뷰티포인트 인증 및 적립 관련 문의 : 아모레 퍼시픽 고객센터 080-023-5454(내선 4번)</p>
+                        <p class="guide_point">뷰티포인트 인증 및 적립 관련 문의 : 아모레퍼시픽 고객센터 080-023-5454(내선 4번)</p>
+                        <p class="guide_point"><a href="javascript:;">아모레퍼시픽 뷰티포인트 홈페이지 바로가기</a></p>
+                    </div>
+                </div>
+                <!-- // 주문완료 > 아모레 뷰티포인트 -->
+
+                <!-- 주문완료 > 펫보험 -->
+                <div class="order-complete-notice pet">
+                    <h2>우리아이 건강보험,펫퍼민트</h2>
+                    <span class="sub-notice txt-grey">아래 입력 하신 번호로 가입 안내 알림톡이 전송됩니다.</span>
+                    <!-- 신청완료 -->
+                    <span class="sub-notice txt-grey">알림톡 신청이 완료되었습니다.</span>
+                    <!-- // 신청완료 -->
+
+                    <div class="input-shipping-info">
+                        <div class="row-wrap">
+                            <span class="row-title">이름</span>
+                            <span class="row-value">
+                                <input class="type-box" type="text">
+                            </span>
+                        </div>
+                        <div class="row-wrap">
+                            <span class="row-title">생년월일</span>
+                            <span class="row-value">
+                                <input class="type-box" type="date">
+                            </span>
+                        </div>
+                        <div class="row-wrap">
+                            <span class="row-title">연락처</span>
+                            <span class="row-value phone-number-area">
+                                <select class="phone-number-sect1">
+                                    <option>010</option>
+                                </select>
+                                <span>-</span>
+                                <input class="type-box phone-number-sect2" type="text">
+                            </span>
+                        </div>
+                        <div class="agreement-wrap">
+                            <input type="checkbox" id="insurance1-1"><label for="insurance1-1">개인정보 수집/이용 동의</label>
+                            <button class="btn-white btn-slpopup" data-sub-lpopup="">자세히</button>
+                        </div>
+                        <div class="agreement-wrap">
+                            <input type="checkbox" id="insurance1-2"><label for="insurance1-2">쇼핑정보 및 기타 마케팅 수신(선택)</label>
+                            <button class="btn-white btn-slpopup" data-sub-lpopup="">자세히</button>
+                        </div>
+                    </div>
+                    <div class="btn-wrap mt10">
+                        <button class="btn-confirm">배송정보 입력하기</button>
+                    </div>
+                </div>
+                <div class="order-info-area">
+                    <div class="order-info">
+                        <div class="order-info-wrap">
+                            <div class="row-wrap">
+                                <span class="row-title">주문 번호</span>
+                                <span class="row-value txt-wrap">202015632565</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">주문 금액</span>
+                                <span class="row-value txt-wrap">상담후 결정</span>
+                            </div>
+                            <div class="row-wrap">
+                                <span class="row-title">주문자명</span>
+                                <span class="row-value txt-wrap">이종욱</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 주문완료 > 펫보험 -->
+                
+            </section>
+            <!-- //.order -->
+
+            <!--서브 레이어 팝업-->
+            <div class="layer-popup order sub-popup" style="padding-top:45px;">
+                <!-- 상품권 결제 안내 팝업-->
+                <div class="popup-voucher-guide">
+                    <div class="popup-header">
+                        <h3>지류상품권 결제 안내</h3>
+                    </div>
+                    <div class="popup-content">
+                        <h4>사용가능한 상품권</h4>
+                        현대백화점, 삼성, 현대오일뱅크, 국민관광, GS칼텍스
+                        <div class="sub-area type-box">
+                            <h4>1. 등기우편 발송방식</h4>
+                            <ol>
+                                <li>해당 상품권을 선택하여 주문완료</li>
+                                <li>우편물에 상품권을 동봉하고,<br>
+                                    주문번호, 주문고객명, 환불계좌번호/예금주명이 기재된 메모와 함께 <span class="txt-orange">유가증권등기</span>로 발송<br>
+                                    <sub>05328 서울 강동구 올림픽로70길 34<br>현대홈쇼핑 9층 재경팀 상품권 담당자</sub>
+                                </li>
+                                <li>상품권이 정상접수된 후 주문 처리 완료</li>
+                            </ol>
+                        </div>
+
+                        <div class="sub-area type-box">
+                            <h4>2. 현대백화점 방문 후 전환(현대백화점 상품권만)</h4>
+                            <ol>
+                                <li>현대백화점 상품권 데스크 방문<br>(상품권, 신분증 지참)</li>
+                                <li>전환신청 및 등록(본인만 가능)</li>
+                                <li>신청/등록 후 익일 이후 전환금 부여</li>
+                            </ol>
+                        </div>
+
+                        <div class="sub-area">
+                            <h4>등기우편 발송방식 유의사항</h4>
+                            <ul class="type-dot">
+                                <li>유가+증권등기 발송시 주문고객과 동일한 이름으로 발송하셔야 합니다.</li>
+                                <li>서로 다른 상품권과 함께 사용하실 수 없습니다.</li>
+                                <li>현대백화점 상품권은 유가증권등기 수수료만큼 적립금로 돌려 드립니다. (기타 상품권은 유가증권등기 수수료를 고객이 부담하셔야 합니다.)</li>
+                                <li>상품권 금액의 60% 이상 결제하셔야 결제 잔액에 대해 환불이 가능합니다.</li>
+                                <li>유가증권등기로 보내지 않을 경우 발생하는 문제에 대해서는 책임 지지 않습니다.</li>
+                                <li>기프트 선불카드(신용카드)는 지류상품권이 아닙니다. 상기 주소로 보내셔도 결제가 불가능하니 유의하시기 바랍니다.</li>
+                            </ul>
+
+                            <h4>백화점 방문 후 전환 방식 유의사항</h4>
+                            <ul class="type-dot">
+                                <li>상품권으로 결제했을 경우, 반드시 1600-0000에서 예치금으로 재결제하시기 바랍니다.</li>
+                                <li>현금 환불은 전환금의 60% 이상 사용해야 하며, 잔액이 5만원 미만인 경우에만 현금으로 돌려드립니다.</li>
+                                <li>전환 한도는 ID 1개당 월 1천만원으로 제한됩니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <button class="btn-confirm confirm-close">확인</button>
+                    </div>
+                </div>
+                <!-- // 상품권 결제 안내 팝업-->
+
+                <!--해외 배송비 미확정 안내 팝업-->
+                <div class="popup-shipping-notice">
+                    <div class="popup-header">
+                        <h3>해외 배송비 미확정 안내</h3>
+                    </div>
+                    <div class="popup-content">
+                        <ul class="type-dot">
+                            <li>현재 해외배송비가 미확정 된 상태입니다.</li>
+                            <li>주문하신 상품이 물류센터에 도착하면 배송 국가에 따라 실측 무게와 부피를 측정하고 해외 배송비를 산정하여 e-mail과 SMS를 통해 해외 배송비 결제 안내가 발송됩니다.</li>
+                            <li>해외 배송비가 확정되면 PC Web &gt; 마이페이지에서 해외 배송비 결제가 가능합니다.</li>
+                        </ul>
+                    </div>
+                    <div class="popup-footer">
+                        <button class="btn-confirm confirm-close">확인</button>
+                    </div>
+                </div>
+                <!--//해외 배송비 미확정 안내 팝업-->
+
+                <!--상품평 작성 혜택 팝업-->
+                <div class="popup-review-benefit-guide dimpop">
+                    <a class="btn-popup-close" href="javascript:;">닫기</a>
+                    <div class="popup-header">
+                        <h3>상품평 작성 혜택</h3>
+                    </div>
+                    <div class="popup-content">
+                        <h4 class="level_header">고객등급대상</h4>
+                        <ul class="type-dot">
+                            <li><strong><span class="level2">GOLD</span>, <span class="level3">PLATINUM</span>, <span class="level4">DIAMOND</span></strong></li>
+                        </ul>
+
+                        <h4 class="level_header">텍스트 입력 시</h4>
+                        <ul class="type-dot">
+                            <!-- [12/17]_수정(문구 수정) -->
+                            <!-- <li>100자 이하 : 적립금 10원</li>
+                            <li>
+                                100자 초과
+                                <p><span class="level4">DIAMOND</span> : 적립금 200원</p>
+                                <p><span class="level3">PLATINUM</span>, <span class="level2">GOLD</span> : 적립금 100원</p>
+                            </li> -->
+                            <li>100자 이하 : H.Point 10P</li>
+                            <li>
+                                100자 초과
+                                <p><span class="level5">TOP CLASS</span>, <span class="level4">DIAMOND</span> : H.Point 200P</p>
+                                <p><span class="level3">PLATINUM</span>, <span class="level2">GOLD</span>, <span class="level1">SILVER</span> : H.Point 100P</p>
+                            </li>
+                        </ul>
+
+                        <h4 class="level_header">포토 첨부 시</h4>
+                        <ul class="type-dot">
+                            <li>적립금 50원 추가 지급</li>
+                        </ul>
+
+                        <h4 class="level_header">동영상 첨부 시</h4>
+                        <ul class="type-dot">
+                            <li>적립금 100원 추가 지급</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--//상품평 작성 혜택 팝업-->
+
+                <!-- 샤넬 멤버십 팝업 -->
+                <div class="chanel-mem-popup">
+                    <img src="//imagedev.hmall.com/m/img/od/bg-chanel-popup-m.png">
+                    <img class="txt-img" src="//imagedev.hmall.com/m/img/od/txt-chanel-popup-m.png">
+                    <p class="marginT10">※ 샤넬 멤버십 관련 문의 : 샤넬 고객센터(080-332-2700)</p>
+                    <p>
+                        샤넬 멤버십 가입을 위해 필요한 정보를<br>
+                        아래와 같이 샤넬코리아에 제공합니다.
+                    </p>
+                    <table>
+                        <tbody><tr>
+                            <th>제공 받는 자</th>
+                            <td class="highlight">샤넬 코리아 유한회사</td>
+                        </tr>
+                        <tr>
+                            <th>항목</th>
+                            <td>성명, 핸드폰번호, 생년월일, 성별, 주소, 이메일 주소, 샤넬 제품 아이템명 및 구매일시, 그 외 구매관련 정보</td>
+                        </tr>
+                        <tr>
+                            <th>목적</th>
+                            <td>샤넬 멤버십 가입 및 운영</td>
+                        </tr>
+                        <tr>
+                            <th>보유기간</th>
+                            <td class="highlight">샤넬 멤버십 가입하는 경우 멤버십 탈퇴시까지 (가입하지 않는 경우에는 샤넬 멤버십 가입 페이지에서 나가는 시점까지)</td>
+                        </tr>
+                    </tbody></table>
+                    <p>
+                        위 개인정보를 제공하는데 거부할 권리가 있습니다.<br>
+                        단, 동의 거부시 샤넬 멤버십 가입에  제한 받으실 수<br>
+                        있습니다.  동의시 샤넬 사이트로 이동합니다.
+                    </p>
+                    <button class="close-btn">닫기</button>
+                    <button>개인정보 제공 동의</button>
+                </div>
+                <!-- // 샤넬 멤버십 팝업 -->
+
+                <!-- 아모레 뷰티포인트 팝업 -->
+                <div class="popup_layer guide popup2016 renewal2016 amore-popup">
+                    <h3>아모레퍼시픽 뷰티포인트 적립신청</h3>
+                    <div class="guide_wrap">
+                        <span>뷰티포인트 적립을 위한 정보제공 동의 안내</span>
+                        <dl>
+                            <dd>
+                                <span>현대Hmall은 아모레퍼시픽 뷰티포인트 적립을 위해 고객님의 주문일자, 주문번호, 구매상품, 판매가격, 정보를 주식회사 아모레퍼시픽에 제공하며, 제공된 정보는 뷰티포인트가 적립된 이후에는 폐기됩니다.</span>
+                            </dd>
+                        </dl>
+                        <span class="type3 normal">
+                            <input type="checkbox" id="chk1" name="chk1"><label for="chk1">동의합니다</label>
+                        </span>
+                        <br>
+        
+        
+                        <input type="text" class="width100" placeholder="뷰티포인트 고객명을 입력해주세요." value="">
+        
+                        <input type="text" class="marginT10 width100 cardnum" max-length="16" placeholder="카드번호를 입력해주세요." value="">
+        
+                        <p class="guide_point marginT10">고객님의 이름과 함께 아모레퍼시픽 매장, 홈페이지, 쇼핑몰에서 받은 뷰티포인트 카드번호를 입력하세요.</p>
+                        <p class="guide_point">입력하신 고객명과 뷰티포인트 카드 등록 고객명이 일치할 경우에만 인증, 적립 가능합니다.</p>
+                        <p class="guide_point">배송완료 이전까지 적립 신청 가능합니다.</p>
+                        <p class="guide_point">카드 신규 발급 및 카드번호 조회는 아모레퍼시픽 뷰티포인트 홈페이지(<a href="javascript:;">www.beautypoint.co.kr</a>)에서 조회 가능합니다.</p>
+                        <p class="guide_point">뷰티포인트 인증 및 적립 관련 문의 : 아모레퍼시픽 고개센터 080-023-5454(내선4번)</p>
+                    </div>
+        
+                    <div class="layer_btn flexbox">
+                        <button class="large_btn color1 back">취소</button>
+                        <button class="large_btn color2 layerpopup_subbtn" dg-subdata="popup1">확인</button>
+                    </div>
+                </div>
+                <!-- // 아모레 뷰티포인트 팝업 -->
+            </div>
+            <!--//서브 레이어 팝업-->
+
+        </div>
+        <!-- //.container -->
+    </main>
+    <!-- //.cmain -->
+
+    <!-- 하단 푸터 -->
+    <footer class="footer" role="contentinfo">
+        <div class="family-site">
+            <h2 class="minor-headings">패밀리 사이트</h2>
+            <div class="selectbox">
+                <label class="sellabel">
+                    <select name="">
+                        <option selected>Family Site 선택</option>
+                        <option>현대백화점</option>
+                        <option>현대그린푸드</option>
+                        <option>한섬</option>
+                        <option>현대리바트</option>
+                        <option>현대H&amp;S</option>
+                        <option>현대HCN</option>
+                        <option>현대미디어</option>
+                        <option>현대렌탈케어</option>
+                        <option>현대드림투어</option>
+                        <option>에버다임</option>
+                        <option>씨엔에스푸드시스템</option>
+                        <option>현대캐터링시스템</option>
+                        <option>현대IT&amp;E</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <!-- //.family-site -->
+
+        <!-- 로그인 전 - 모바일웹 -->
+        <div class="btngroup btnlen2" role="group" aria-label="로그인/APP다운로드">
+            <a href="javascript:;" class="btn btn-login btn-linelgray"><span>로그인</span></a>
+            <a href="javascript:;" class="btn btn-appdown btn-linelgray"><span>APP다운로드</span></a>
+        </div>
+        <!-- //.btngroup -->
+
+        <!-- 로그인 후 - 모바일웹 -->
+        <!-- <div class="btngroup btnlen1" role="group" aria-label="APP다운로드">
+            <a href="javascript:;" class="btn btn-appdown btn-linelgray"><span>APP다운로드</span></a>
+        </div> -->
+        <!-- //.btngroup -->
+
+        <div class="footer-expand">
+            <!-- default 푸터 정보 닫힘 -->
+            <button class="footer-company" data-modules-dropdown aria-expanded="false"><span>(주)현대홈쇼핑</span><i class="icon"></i></button> <!-- active 클래스 : 푸터 정보 열릴 때 추가 -->
+            <div class="footer-info" role="region" aria-label="(주)현대홈쇼핑 회사 정보"> <!-- active 클래스 : 푸터 정보 footer-info 열릴 때 추가 -->
+                <p>대표이사 강찬석</p>
+                <address>서울특별시 강동구 올림픽로70길 34</address>
+                <ul class="len2">
+                    <li>고객센터 TEL : <a href="tel:1600-0000">1600-0000(유료)</a></li>
+                    <li>고객만족사업부 FAX : 02-2143-2731</li>
+                </ul>
+                <p>기타문의 : <a href="mailto:webmaster@hyundaihmall.com">webmaster@hyundaihmall.com</a></p>
+                <p class="mt15px">사업자등록번호 : 211-86-76540 </p>
+                <p>통신판매업 신고 : 제 25-3133호 부가통신 신고번호 : 3787</p>
+                <p>정보보호최고책임자 : 정보보호담당 오권호</p>
+                <p>청소년보호책임자 : Hmall사업부 홍성일</p>
+                <p>호스팅서비스 : (주)현대홈쇼핑</p>
+                <ul class="len2">
+                    <li>모바일전용문의 : <a href="tel:1600-0009">1600-0009(유료)</a></li>
+                    <li><a href="javascript:;" class="bold">회원탈퇴</a></li>
+                </ul>
+                
+                <ul class="footer-linkgroup">
+                    <li><a href="http://www.ehyundai.com/newPortal/ir/main.do" target="_blank" title="새 창" class="alink"><span>현대백화점그룹</span><i class="icon"></i></a></li>
+                    <li><a href="javascript:;" class="alink"><span>우리은행 구매안전 서비스</span><i class="icon"></i></a></li>
+                </ul>
+            </div>
+            <!-- //.footer-info -->
+        </div>
+        <!-- //.footer-expand -->
+
+        <ul class="fmenu">
+            <li><a href="/hmall/mo/co/MJA001.html">이용약관</a></li>
+            <li><a href="/hmall/mo/co/MJA001.html"><strong>개인정보 처리방침</strong></a></li>
+            <li><a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2118676540&apv_perm_no=">사업자정보확인</a></li>
+        </ul>
+        <!-- //.fmenu -->
+    </footer>
+    <!-- //.footer -->
+
+    <!-- 상품 상세일 경우에 보이는 디바이스별 하단 버튼 -->
+    <!-- 하단 버튼영역 - 상품상세 App - app의 경우는 class app 추가 -->
+    <div class="btngroup bgfixed btnlen2 app" style="display:none;">
+        <button class="btn btn-cart"><span>장바구니</span></button>
+        <button class="btn btn-purchase"><span>구매하기</span></button>
+    </div>
+    <!-- //.btngroup -->
+
+    <!-- 하단 버튼영역 - 상품상세 모바일 Web -->
+    <div class="btngroup bgfixed btnlen2" style="display:none;">
+        <button class="btn btn-applink"><span>앱으로 연결</span></button>
+        <button class="btn btn-purchase"><span>구매하기</span></button>
+    </div>
+    <!-- //.btngroup -->
+
+    <!-- 하단 버튼영역 유형 선물하기 버튼이 있을 경우 - 상품상세 App, 모바일 Web - app의 경우는 class app 추가 - 시안 확정안됨 -->
+    <div class="btngroup bgfixed btnlen3 app" style="display:none;">
+        <button class="btn btn-cart"><span>장바구니</span></button>
+        <button class="btn btn-present"><i class="icon"></i><span class="hiding">선물하기</span></button>
+        <button class="btn btn-purchase"><span>바로구매</span></button>
+    </div>
+    <!-- //.btngroup -->
+    <!-- //상품 상세일 경우에 보이는 디바이스별 하단 버튼 -->
+    
+    <!-- 플로팅 메뉴 -->
+    <div class="floating-menu">
+        <div class="floating-group">
+            <!-- 글씨크기 조정 : APP에서만 노출. 스크롤시 감춤 
+                크게, 작게 조정 불가 시 각 버튼에 disabled, aria-disabled="true" 추가
+            -->
+            <!-- <div class="font-resize">
+                <button class="btn btn-fontplus"><i class="icon"></i><span>크게</span></button>
+                <button class="btn btn-fontminus" aria-disabled="true" disabled><i class="icon"></i><span>작게</span></button>
+            </div> -->
+
+            <!-- 최근본 페이지가 있을 시 -->
+            <!-- <a href="javascript:;" class="btn btn-return"><i class="icon return"></i><span class="hiding">이전 페이지로 이동</span></a> -->
+        </div>
+
+        <!-- 상품상세에서 노출 --> <!-- 2020-07-15 위치변경 -->
+        <!-- <button type="button" class="btn-chatbot"><i class="icon"></i><span class="hiding">챗봇 상담하기</span></button> -->
+
+        <!-- 스크롤시 -->
+        <a href="#" class="btn btn-topmove"><i class="icon topmove"></i><span class="hiding">상단으로</span></a>
+    </div>
+    <!-- //floating-menu -->
+
+</div>
+<!-- //.wrap -->
+
+</body>
+</html>

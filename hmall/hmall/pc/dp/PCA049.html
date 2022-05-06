@@ -1,0 +1,2972 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="apple-mobile-web-app-capable" content=" yes">
+    <meta name="robots" content="index,follow">
+    <meta name="title" content="https://hmall.com">
+    <meta name="author" content="@Hmall">
+    <meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+    <meta name="keywords" content="">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+    <title>&OtherStories</title>
+    <!-- UI/UX Style -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+    <script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+    <script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+    <script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+    <script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+    <script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+    <script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+    <!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+    <link rel="stylesheet" type="text/css" href="http://www.hyundaihmall.com/hdstories/css/font.css">
+    <!-- As-Is Style -->
+    <link rel="stylesheet" type="text/css" href="http://www.hyundaihmall.com/hdstories/css/co_stories.css?ver=090216" />
+    <link rel="stylesheet" type="text/css" href="http://www.hyundaihmall.com/hdstories/css/stories_sis.css?ver=090216"/>
+    <link rel="stylesheet" type="text/css" href="http://www.hyundaihmall.com/hdstories/css/stories.custom.css?ver=090216"/>
+    <link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/dp/hdstories.css">
+
+    <!--[S] IE 11 미만인 경우 안내 표시 추가 -->
+    <!--<script src="http://www.hyundaihmall.com/hdstories/js/jquery-1.11.3.min.js"></script> -->
+    <script src="http://www.hyundaihmall.com/hdstories/js/jquery-migrate.min.js"></script>
+    <script>
+        var underIE11 = false;
+        if ($.browser.msie && $.browser.version < 11 ) underIE11 = true;
+    </script>
+<!--[E] IE 11 미만인 경우 안내 표시 추가 -->
+<script type="text/javascript">
+document.domain = "hyundaihmall.com";
+var locationHref = document.location.href;
+var imageServer = "http://image.hyundaihmall.com";
+var serverHost = "http://www.hyundaihmall.com";
+var serverHostForSSL = "https://www.hyundaihmall.com";
+
+var switch_serverHost;
+var contextPath = "/front";
+
+if (locationHref.indexOf("https") > -1) {
+	switch_serverHost = serverHostForSSL;
+
+} else if (locationHref.indexOf("http") > -1) {
+	switch_serverHost = serverHost;
+}
+
+var hd = hd || {};
+hd.CONTEXT_PATH = "/front";
+hd.ACTION_NAME = ".do";
+hd.DEVICE_NAME = "desktop";
+hd.SERVER_HOST = "http://www.hyundaihmall.com";
+hd.STATIC_SERVER = "http://www.hyundaihmall.com/cos";
+hd.HOST_HTTP  = "http://www.hyundaihmall.com";
+hd.HOST_HTTPS = "http://www.hyundaihmall.com";
+
+hd.IMAGE = {
+        /* hd.IMAGE.SERVER */
+        SERVER : "http://image.hyundaihmall.com",
+        /* hd.IMAGE.DIRECTORY */
+        DIRECTORY : "/static"
+    };
+hd.CONFIG_SSLYN = "Y";
+hd.SIS_SERVER = "http://sis-hm.hyundaihmall.com";  
+hd.WEB_SERVER = "http://www.hyundaihmall.com";
+
+function getAosItemImgSrc(slitmCd, iFName, itemIndex) {
+    var ITEM_SIZE = ["", "_280", "_376", "_568", "_848", "_1417"];
+
+    var imageFileName = iFName.split(".");
+
+    var imgSrc = "http://image.hyundaihmall.com"
+           + "/static"
+           + "/" +  slitmCd.substring(7, 8)
+           + "/" +  slitmCd.substring(6, 7)
+           + "/" +  slitmCd.substring(4, 6)
+           + "/" +  slitmCd.substring(2, 4);
+
+    for (var i = 0; i < imageFileName.length - 1; i++) {
+        imgSrc += "/" + imageFileName[i];
+    }
+
+    imgSrc += ITEM_SIZE[itemIndex] + "." + imageFileName[imageFileName.length - 1];
+
+    return imgSrc;
+}
+/**
+ * hmall 로그인 체크
+ */
+function isLogin() {
+    var result = 'false';
+
+    $.ajax({
+        type: "get"
+        ,url: "/front/cob/isLogin.do"
+        ,dataType: "json"
+        ,async: false
+        ,success : function(data) {
+            if (data.isLogin) {
+                result = 'true';
+            } else {
+                result = 'false';
+            }
+        }
+        ,error: function(data) {
+        }
+    });
+
+    return result;
+}
+
+/**
+ * 로그인 팝업 열기
+ * @param redirectUrl 로그인 성공 후 이동할 URL
+ */
+function openLoginPopup(redirectUrl) {
+    var link = serverHost + "/front/cob/loginPup.do";
+    if (!isEmpty(redirectUrl)) {
+        link += "?redirectUrl=" + encodeURIComponent(redirectUrl);
+    }
+    openPopup(link, "loginPup", 425, 500, "no", $(window).width(), $(window).height());
+}
+</script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/hd.common.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/modernizr-custom.min.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/jquery.js?ver=090112"></script>
+
+<link rel="stylesheet" href="http://www.hyundaihmall.com/hdstories/css/cc.css">
+
+<link rel="stylesheet" type="text/css" href="http://www.hyundaihmall.com/hdstories/css/dp.css?ver=12" />
+<!-- 스페셜브랜드 css 추가 -->
+<link rel="stylesheet" type="text/css" href="http://www.hyundaihmall.com/hdstories/css/sb.css?ver=12" />
+<!-- //스페셜브랜드 css 추가 -->
+<!-- footer css 추가 -->
+<link rel="stylesheet" type="text/css" href="http://www.hyundaihmall.com/hdstories/css/footer.css?ver=12" />
+<!-- //footer css 추가 -->
+</head>
+<body data-component="OPage" class="layout-inside null">
+
+<style>
+@media (min-width:768px) {
+    .sisFrame {
+        margin-left:0;
+        width:100%;
+    }
+
+}
+@media (min-width:1025px) {
+    .sisFrame {
+        margin-left:248px;
+        width:calc(100% - 302px);
+    }
+
+}
+.o-page-content {
+    min-height: 800px;
+}
+</style>
+
+<div id="sis_wrap" class="sub notgnb">
+    <!-- gnb -->
+    
+
+
+
+<script type="text/javascript" src="http://www.hyundaihmall.com/cos/js/referCodes.js"></script>
+
+
+
+<script  type="text/javascript">
+$(document).ready(function() {
+	//check ReferCode
+	if(isDirectVisit()){
+		$('.ic-onoff').removeClass('off');
+		$('.ic-onoff').addClass('on');
+	}
+});
+
+function isDirectVisit() {
+	var visitReferCode = getCookie('EHReferCode');
+	if(REFER_CODES.indexOf(visitReferCode) > -1) {
+		return true;
+	}
+	return false;
+}
+
+function getCookie(cookieName) {
+	var i, key, value;
+	var cookieList = document.cookie.split(";");
+	for(i = 0; i < cookieList.length; i++) {
+		key = cookieList[i].substr(0, cookieList[i].indexOf("="));
+		key = key.replace(" ","");
+		value = cookieList[i].substr(cookieList[i].indexOf("=")+1);
+		key = key.replace(/^s+|s+$/g,"");
+		if( key == cookieName) {
+			return unescape(value);
+		}
+	}
+}
+
+function dummy(){
+		// 와이즈로그 수집위해 빈 URL 호출
+		$.ajax({
+			type: "post"
+			, url: "/front/dpl/dummyLogParam.do?MainpageGroup=Menu&GroupbannerName=handsome"
+			, dataType: "json"
+			, success : function(data) {
+				window.open('http://www.thehandsome.com/handsome/?ref=thehyundai.com','_blank');
+			}
+			, error : function(e) {
+				window.open('http://www.thehandsome.com/handsome/?ref=thehyundai.com','_blank');
+			}
+
+		});
+	}
+function dummyGnb(){
+	// 와이즈로그 수집위해 빈 URL 호출
+	$.ajax({
+		type: "post"
+		, url: "/front/dpl/dummyLogParam.do?MainpageGroup=Fix&GroupbannerName=GNB_handsome"
+		, dataType: "json"
+		, success : function(data) {
+			window.open('http://www.thehandsome.com/handsome/?ref=thehyundai.com','_blank');
+		}
+		, error : function(e) {
+			window.open('http://www.thehandsome.com/handsome/?ref=thehyundai.com','_blank');
+		}
+
+	});
+}
+
+function goStoriesBasket() {
+	location.href = "https://www.hyundaihmall.com/front/odb/basktList.do?MainpageGroup=Util&GroupbannerName=Stories_Basket";
+}
+
+function openLoginTag(url, pathVal) {
+    try {
+        _trk_flashEnvView('_TRK_CP=' + pathVal);
+    } catch(e){}
+    
+    openLoginPopup(url);
+}
+
+function bizSpringTag(url, pathVal) {
+    try {
+        _trk_flashEnvView('_TRK_CP=' + pathVal);
+    } catch(e){}
+    
+    url = url.replace(/ /g,'');
+    if(url != "" && url != undefined) {
+        location.href = url;
+    }
+}
+
+$(document).ready(function() {
+    $(".stories-sis-hd-header").on("mousedown",function(e) {
+        $(".stories-sis-hd-header").addClass("active");
+        $('html, body').css('overflowY', 'hidden');
+    })
+
+    $("#header-top .inner").on("mousedown",function(e) {
+        if(e.offsetX<0){
+            $(this).parent().find('.stories-sis-hd-header').removeClass('active');
+            $('html, body').css('overflowY', 'auto');
+        }
+    })
+    $(".header-container .a-icon-menu").on("click",function(e) {
+    	showHideBreadcrumbDevice(!0);
+    });
+
+    showHideBreadcrumbDevice = function (show) {
+        setTimeout(function () {
+            $('.stories-sis-hd-header').css("display", show ? "none" : "block");/* hdmall pc 에서만 필요.*/
+        }, 150)
+    }
+})
+</script>
+
+<div id="skip-navigation">
+	<p><a href="#header-wrap">헤더영역 바로가기</a></p>
+	<p><a href="#header-gnb-area">GNB영역 바로가기</a></p>
+	<p><a href="#container">컨텐츠영역 바로가기</a></p>
+	<p><a href="#footer">푸터영역 바로가기</a></p>
+</div>
+<!-- //skip-navigation -->
+
+
+
+<!-- header -->
+<div id="header-wrap">
+<input type="hidden" name="redirectUrl" value="/front/dpa/aosMain.do?GnbGroup=AllCategory&Code=01" /> 
+
+	<h1 class="blind">헤더영역</h1>
+
+	<!-- header-top -->
+	<div id="header-top">
+	    <a href="#" class="stories-sis-hd-header"></a>
+		<div class="inner">
+			<div class="top-gnb">
+			    <div class="logo">
+                    <a href="http://www.hyundaihmall.com/Home.html"><span class="blind">Hyundaihmall</span></a>
+                </div>
+				<div class="left">
+					<ul>
+							<li><a href="http://http://www.hyundaihmall.com/CS/eva/directAccess.do">바로접속 <i class="ic-onoff off"></i></a></li>
+					</ul>
+				</div>
+				<div class="right">
+					<ul>
+						
+							
+								<li><a href="javascript:openLoginTag('/front/dpa/aosMain.do?GnbGroup=AllCategory&Code=01','^헤더^로그인');">로그인</a></li>
+								<li><a href="javascript:bizSpringTag('https://www.hyundaihmall.com/front/cua/hmallRegistMember.do','^헤더^마이페이지 레이어^회원가입');">회원가입</a></li>
+								<li></li>
+							
+							
+						
+						<li><a href="javascript:bizSpringTag('https://www.hyundaihmall.com/front/odb/basktList.do','^헤더^장바구니');">장바구니</a></li>
+						<li><a href="javascript:bizSpringTag('https://www.hyundaihmall.com/front/mpa/selectOrdDlvCrst.do','^헤더^마이페이지 레이어^주문/배송조회');">주문/배송</a></li>
+						<li>
+							<a href="https://www.hyundaihmall.com/front/mpf/selectMyPageMain.do" class="myshop-layer-show">마이페이지 <i class="ic-gnb toggle"></i></a>
+
+							<div class="myshop-info-layer no-login">
+								
+									
+										<h4>로그인하세요.</h4>
+									
+									
+								
+								<div class="cont">
+									<table>
+										<tbody>
+											<tr>
+												<th><a href="https://www.hyundaihmall.com/front/mpe/selectCopnList.do">쿠폰<i class="ic-gnb arrow"></i></a></th>
+												<td><a href="https://www.hyundaihmall.com/front/mpe/selectCopnList.do">0장 <i class="ic-gnb arrow"></i></a></td>
+											</tr>
+											<tr>
+												<th><a href="https://www.hyundaihmall.com/front/mpe/selectHPntTabPage.do">적립금<i class="ic-gnb arrow"></i></a></th>
+												<td><a href="https://www.hyundaihmall.com/front/mpe/selectHPntTabPage.do">0원 <i class="ic-gnb arrow"></i></a></td>
+											</tr>
+											<tr>
+												<th><a href="https://www.hyundaihmall.com/front/mpe/selectCdpstTabPage.do">예치금<i class="ic-gnb arrow"></i></a></th>
+												<td><a href="https://www.hyundaihmall.com/front/mpe/selectCdpstTabPage.do">0원 <i class="ic-gnb arrow"></i></a></td>
+											</tr>
+											<tr>
+												<th><a href="https://www.hyundaihmall.com/front/ccd/selectCnslOrdReqDtl.do">1:1 문의내역<i class="ic-gnb arrow"></i></a></th>
+												<td><a href="https://www.hyundaihmall.com/front/ccd/selectCnslOrdReqDtl.do">0건 <i class="ic-gnb arrow"></i></a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bottom-menu">
+									<a href="https://www.hyundaihmall.com/front/mpc/sltdItemList.do">찜 리스트 <i class="ic-gnb arrow"></i></a>
+								</div>
+							</div>
+						</li>
+						<li><a href="http://http://www.hyundaihmall.com/CS/eva/evntBnftPageDivide.do">이벤트</a></li>
+						<li><a href="http://http://www.hyundaihmall.com/front/dps/exhibition.do">기획전</a></li>
+						<li><a href="http://http://www.hyundaihmall.com/front/dpd/wkBestSell.do">Best100</a></li>
+						<li><a href="http://http://www.hyundaihmall.com/front/cca/main.do">고객센터</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="mid-gnb">
+				<div class="searcharea">
+					<input type="text" placeholder="" class="keyword"><i class="ic-gnb glass"></i>
+				</div>
+			</div>
+
+
+			<div class="etc-area"></div>
+
+		</div>
+	</div>
+	<!-- //header-top -->
+
+	<!-- gnb-area -->
+	<div id="header-gnb-area">
+		<h2 class="blind">GNB영역</h2>       
+	</div>
+	<!-- //gnb-area -->	
+	
+<!-- 프로모션 띠배너
+     usp 배너 여부가 Y 인 경우에만 닫기버튼이 노출된다.
+     usp 배너 여부가 Y 인 경우에는 밑줄 style 제외
+        닫기버튼 클릭시, 동일배너일 경우에는 다른 영역이라도 브라우저 닫기 전까지 노출되지 않는다. -->        
+        
+
+	 
+	
+	  
+	    
+	        
+	     
+	           
+		<div data-component="MCookieBar" class="m-cookie-bar is-disaster is-visible" style="background:#ffffff;  display:block;">
+	        <p class="a-paragraph">
+	            <a 
+	                
+	                
+	                    
+	                        style="color:#ff00ff;"
+	                    
+	                    
+	                                      
+	                >
+	                무료 배송 및 무료 반품 (일부 상품 제외)
+	            </a>
+	            
+	                <div class="close-click-area" onClick="setSectAdBnnrCookie('adBnnrPtcNoList','302')">
+	                    <span class="a-icon-close"></span>
+	                </div>
+	            
+	        </p>
+	    </div>
+	    
+		
+
+
+	<div id="search-popup-wrap" class="search-popup-wrap" style="display:none;">
+		<div class="cs-top-wrap">
+			<div class="cs-top">
+				<form name="formTopSearchPopup" id="formTopSearchPopup" method="get" action="http://http://www.hyundaihmall.com/front/dpo/hdSearch.do">
+					<input type="hidden" name="searchtype" id="js_searchtype">
+					<div class="cs-input-wrap">
+						<div class="cs-input">
+							<input type="text" id="cs-token-input" name="searchQuery" style="ime-mode:active" onfocus="return dq_setTextbox(0,event);" onmousedown="dq_setTextbox(1,event);" onkeydown="dq_setTextbox(1,event);">
+							<button type="button" class="submit"  onclick="javascript:goTopSearch();">검색</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="cs-autocomplete" id="cs-autocomplete" onmouseover="dq_setMouseon();" onmouseout="dq_setMouseoff();" ></div>
+			<div class="cs-body" id="cs-body"></div>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+
+<script type="text/javascript">
+function setSectAdBnnrCookie(name, value) {
+    var adBnnerList = getCookies(name);
+    
+    if (adBnnerList == undefined) {     
+        adBnnerList = value;
+        document.cookie = name + "=" + escape(encodeURIComponent(adBnnerList)) + "; path=/";
+    } else {
+        //특수문자 피하기 위해 알파벳l을 구분자로 사용(배너상세번호는 숫자)
+        var adBnnrArray = adBnnerList.split('l');
+        
+        if(adBnnrArray.indexOf(value) != -1) {
+        } else {                    
+            adBnnrArray.push(value);
+            adBnnerList = adBnnrArray.join('l');
+            document.cookie = name + "=" + escape(adBnnerList) + "; path=/";
+        }       
+    }
+}
+
+function getCookies(cookieName) {
+    var i, key, value;
+    var cookieList = document.cookie.split(";");
+    //console.log(cookieList);
+    for(i = 0; i < cookieList.length; i++) {
+        key = cookieList[i].substr(0, cookieList[i].indexOf("="));
+        key = key.replace(" ","");
+        value = cookieList[i].substr(cookieList[i].indexOf("=")+1);
+        key = key.replace(/^s+|s+$/g,"");
+        if( key == cookieName) {
+            return unescape(decodeURIComponent(value));
+        }
+    }
+}
+</script>
+
+    <!-- //gnb -->
+
+    
+    <div id="top_utile_warp" class="u-no-select">
+    
+
+
+
+
+
+
+<!-- header -->
+<div class="a-overlay js-a-overlay q-opacity-0" data-component="AOverlay"></div>
+<div data-component="MProductZoom" class="m-product-zoom">
+	<span class="a-icon-close js-close-icon"></span>
+	<div class="img-wrapper"></div>
+</div>
+
+<header data-component="OHeader" class="o-header u-clearfix">
+	<div class="header-container">
+		<!-- Gnb 유틸 -->
+		<a href="main/startpage.html" target="_self" class="a-link back-to-shop">Back<span class="desktop-text">&nbsp;to shop</span></a>
+		<div class="header-link-container">
+			<div class="left-side">
+				<a href="/front/coe/storeLocator.do" target="_self" class="a-link">매장위치</a>
+				<a href="/front/coe/help.do" target="_self" class="a-link">도움말</a>
+				<a href="#" target="_self" class="a-link open-lightbox" data-template="newsletter-signup" data-classes="is-medium no-centering">뉴스레터</a>
+			</div>
+			<div class="middle">
+				<label class="a-label js-a-label">무료 배송 및 무료 반품 (일부 상품 제외)</label>
+			</div>
+			<div class="right-side">
+				<div class="my-account">
+					<a href="#" target="_self" class="a-link open-lightbox" data-template="sign-in" data-classes="is-medium no-centering">로그인</a>
+				</div>
+				<div class="shipping-info">
+					<a href="#" target="_self" class="a-link open-lightbox" data-template="select-country">배송국가: 대한민국</a>
+				</div>
+			</div>
+		</div>
+		<!-- //Gnb 유틸 -->
+		<div class="header-search-logo-cart-container">
+			<span class="a-icon-menu"></span>
+			<span class="a-icon-search"></span>
+			<a href="../cart/cart.html" target="_self" class="a-link">
+				<div class="cart-icon">
+					<span class="a-icon-bag"></span>
+					<div class="items-in-bag">4</div>
+				</div>
+			</a>
+			<!-- Gnb logo - 건들지 말것 -->
+            <div class="header-logo">
+                <a href="/front/dpa/aosMain.do" target="_self" class="a-link">
+                    <div class="a-stories-logo">
+                        <!-- 로고 -->
+
+<svg width="184px" height="31px" viewBox="0 0 184 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch --> <title>WKD Logo dark</title> <desc>Created with Sketch.</desc> <defs> <polygon id="path-1" points="32.8035888 24.562947 32.8035888 0.629230704 0.857285311 0.629230704 0.857285311 24.562947"></polygon> <polygon id="path-3" points="0.000555795231 29.3333333 23.3198167 29.3333333 23.3198167 0.672640924 0.000555795231 0.672640924"></polygon> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Logo" transform="translate(-548.000000, -222.000000)"><g transform="translate(70.000000, 80.000000)" id="Group-2"><g transform="translate(467.000000, 134.000000)"><g id="WKD-Logo-dark" transform="translate(11.000000, 8.000000)"><g id="Page-1"> <path d="M51.3007477,1.65129412 C54.1501682,3.58298039 49.335215,7.24015686 49.5286729,9.94313725 C49.5011589,10.7472157 49.9860935,10.8084706 50.9808972,10.3520784 C54.2946168,9.40219608 59.1173084,6.74839216 61.5050093,5.97882353 C62.0673271,5.76227451 62.4095327,5.72862745 62.785271,5.9494902 C63.6184299,6.48611765 63.4223925,7.27552941 63.4051963,7.81819608 C63.3243738,8.92682353 60.8481121,13.7996078 60.3648972,14.6243922 C59.5248598,16.2083922 58.7209346,17.6647059 58.0743551,19.3625882 C57.7459065,20.3340392 58.1259439,20.5436863 58.8585047,19.9423529 C60.0158131,19.2512941 61.5153271,16.9607059 63.4309907,15.1774118 C64.2357757,14.4345882 65.0336822,13.4890196 66.1368224,12.6935686 C67.4798505,11.7203922 69.5029907,10.0190588 70.7239252,11.6988235 C71.1469533,12.276 70.7239252,14.1481569 70.1014206,15.393098 C69.0266542,18.0934902 67.6836262,20.1200784 67.3018692,23.4028235 C67.3018692,23.9118431 67.5065047,24.3294118 67.6165607,24.3923922 C68.655215,24.9945882 70.8520374,23.6383529 71.9973084,22.7393725 C72.6705421,22.2044706 75.1356262,19.9173333 75.5251215,19.4324706 C74.6369346,18.5360784 74.2044486,17.2747451 74.1167477,16.5129412 C73.8983551,14.5700392 75.2843738,12.5581176 76.5586168,11.5426667 C77.5955514,10.7178824 80.0374206,10.0785882 81.001271,11.7247059 C82.179215,13.7849412 79.4338318,17.3377255 78.2928598,18.8647843 C78.9686729,19.2176471 79.9686355,18.6680784 81.6564486,16.5500392 C84.9314766,11.9378039 86.6863551,12.4390588 86.548785,15.7606275 C86.3639252,18.649098 86.677757,18.9355294 88.5985794,15.4638431 C90.5933458,11.8523922 94.5192523,6.01419608 97.0522617,5.87356863 C98.2276262,5.80282353 98.545757,6.72941176 99.0367103,7.81301961 C99.6850093,9.22447059 98.1278879,10.3089412 97.3944673,8.81380392 C95.8192897,5.9494902 90.4402991,16.804549 88.5555888,20.9025882 C86.4456075,25.482902 84.2419065,25.3603922 84.3425047,21.2312941 C84.4001121,17.9865098 85.4671402,15.450902 82.2909907,19.4626667 C80.4552897,21.688549 78.2558879,22.0483137 76.8681495,21.0898039 C76.5319626,21.5323922 75.7400748,22.2881569 75.545757,22.4926275 C73.9903551,24.240549 72.335215,25.7563922 69.8305794,26.9832157 C68.8280374,27.459451 67.6165607,28.3342745 66.5890841,27.6992941 C65.830729,27.2420392 65.1196636,25.8780392 64.9777944,25.036 C64.4911402,21.9499608 66.7988785,18.4989804 67.3018692,15.7847843 C67.3758131,15.3801569 67.0705794,15.1627451 66.5426542,15.525098 C65.1506168,16.3628235 63.0561121,18.6767059 61.681271,20.3340392 C60.9633271,21.2036863 59.8980187,22.7747451 59.6718879,23.0792941 C58.8008972,24.2276078 57.6616449,25.086902 56.4811215,24.4096471 C55.6625794,23.9299608 55.016,21.7713725 55.2980187,20.5195294 C56.1234393,16.902902 59.2308037,12.7945098 60.1078131,9.81113725 C60.168,9.50141176 59.919514,9.4065098 59.7269159,9.46345098 C58.341757,9.81113725 56.9531589,10.5021961 55.5834766,11.1130196 C53.4373832,12.0585882 48.9603364,13.8513725 48.6413458,14.124 C48.3197757,14.4673725 46.7196636,21.9275294 46.1186542,26.2541961 C46.0163364,27.0539608 46.2588037,27.2377255 46.4918131,27.229098 C47.5063925,27.198902 48.350729,26.3094118 48.8975701,25.689098 C50.1090467,24.3130196 51.1236262,22.402902 52.1261682,20.7981961 C52.4993271,20.1683922 52.7951028,20.4177255 53.0186542,20.5997647 C54.0160374,21.4297255 53.5818318,22.6988235 52.7796262,23.9963922 C52.3522991,24.6934902 49.1598131,29.6214902 47.3980561,30.3945098 C46.5958505,30.7542745 45.696486,31.0553725 45.0963364,30.7223529 C44.1170093,30.1857255 43.5555514,28.0012549 43.8091963,26.217098 C44.3362617,22.609098 46.4350654,14.9289412 46.3060935,14.658902 C46.2269907,14.482902 43.6501308,15.8132549 42.9751776,13.7625098 C42.913271,13.5632157 42.7043364,13.4614118 42.4472523,13.6115294 C41.423215,14.2042353 40.8351028,15.0178039 40.466243,15.7796078 C38.6571963,19.6783529 37.6391776,26.1584314 33.5043364,27.6190588 C29.4597757,29.0382745 26.9637383,25.2844706 28.3600748,20.896549 C29.6248598,16.9736471 32.1191776,13.2526275 32.5748785,12.6047059 C33.9093084,10.6773333 36.1198879,7.79231373 37.3605981,9.70847059 C37.6125234,10.1398431 37.8274766,10.5168627 38.3141308,10.3978039 C39.1008598,10.2381961 39.9202617,10.1924706 40.2925607,10.4780392 C40.5943551,10.698902 40.871215,10.9163137 41.3905421,10.7748235 C42.0603364,10.5927843 42.6020187,10.2381961 43.124785,9.83011765 C45.1874766,8.23576471 48.6774579,3.98243137 49.8811963,2.2345098 C50.7384299,0.987843137 50.9576822,1.39333333 51.3007477,1.65129412 M46.2269907,9.34094118 C45.7988037,9.86290196 45.1057944,10.5927843 44.5288598,11.3071373 C43.9175327,12.0551373 44.4067664,12.5831373 45.0103551,12.7142745 C45.9518505,12.8833725 47.1745047,11.609098 47.3825794,10.2381961 C47.6620187,8.24007843 46.8950654,8.54980392 46.2269907,9.34094118 M77.7090467,13.602902 C75.7873645,14.6942745 75.7976822,16.3032941 76.9549907,17.6129412 C77.9669907,16.3628235 78.5456449,15.6812549 79.1879252,14.6425098 C79.8130093,13.6822745 79.4002991,12.6625098 77.7090467,13.602902 M37.1671402,13.1974118 C36.9814206,12.0637647 36.2540187,11.8584314 35.6297944,12.5676078 C33.971215,14.425098 31.3556636,18.4334118 31.0659065,21.692 C30.8948037,24.8349804 33.616972,24.338902 35.0004112,22.4296471 C36.0545421,20.9672941 37.8541308,17.3377255 38.6228037,15.6329412 C39.136972,14.5795294 37.4783925,14.5182745 37.1671402,13.1974118" id="Fill-1" fill="#221F20"></path><g id="Group-5" transform="translate(150.467290, 5.900400)"><mask id="mask-2" fill="white"><use xlink:href="#path-1"></use></mask><g id="Clip-4"></g><path d="M24.6255626,19.6011373 C25.1775626,17.9032549 27.006385,20.8098431 28.0888897,21.5716471 C29.2573757,22.3800392 32.2340486,21.3732157 28.9125907,15.9189412 C27.291843,13.2427059 25.9101234,11.0176863 25.2463477,11.0004314 C24.6436187,11.0004314 22.1733757,15.6368235 17.8760299,19.1870196 C16.4246654,20.3767451 14.2665346,21.3421569 12.9639178,20.3922745 C12.4076187,19.9876471 12.1599925,19.3897647 11.9063477,19.0981569 C11.4239925,19.3034902 6.44653458,21.7925098 4.87135701,22.3947059 C1.20855327,23.8009804 -0.557502804,19.4078824 2.21539439,16.2338431 C2.63928224,15.7558824 3.22223551,15.1278039 3.69255327,14.5480392 C5.35887103,12.4886667 7.03550654,10.4249804 7.90563738,7.4234902 C8.20141308,6.29588235 8.62444112,6.36662745 9.14376822,6.9472549 C9.32002991,7.1594902 9.80152523,7.63141176 9.86085234,7.70215686 C10.4936748,8.46568627 10.2563664,8.82976471 9.67513271,10.1092157 C8.96664673,11.6526667 7.75431028,13.3005098 7.23240374,14.0079608 C6.23588037,15.4047451 5.05879626,16.5383922 4.42597383,17.8325098 C3.80690841,19.1680392 4.12933832,19.7995686 4.97711402,19.818549 C5.82488972,19.8125098 10.8891888,17.2924314 11.182385,17.1604314 C11.1600299,16.3373725 11.3285533,15.1191765 11.4901981,14.6058431 C12.1634318,12.4791765 14.0472822,10.0445098 15.2140486,8.1352549 C16.1512449,6.578 17.6559178,3.73266667 19.7220486,4.29690196 C20.5302729,4.54623529 20.7821981,5.0285098 20.9103103,5.37447059 C21.0822729,5.88176471 21.2387589,6.41235294 21.0822729,7.25007843 C20.3161794,11.5491373 16.7995439,15.4323529 14.0318056,17.4330588 C14.6955813,18.6590196 16.8468336,16.9093725 17.516628,16.3692941 C18.5234692,15.5643529 19.4813009,14.4928235 20.286086,13.5903922 C25.6581981,7.55117647 24.347843,5.698 26.1792449,3.01745098 C29.1172262,-1.28678431 30.3974879,1.35321569 29.4121421,2.30223529 C27.1319178,4.48843137 26.1362542,8.11109804 28.1396187,10.8580784 C29.7870206,13.1331373 31.6373383,15.7817647 32.526385,18.4476471 C33.722385,22.0884314 30.856628,25.579098 27.7913944,24.2892941 C25.5257869,23.3342353 24.0426093,21.2653725 24.6255626,19.6011373 M17.7719925,8.27588235 C16.1882168,9.4647451 14.8735626,12.1936078 14.1960299,13.2573725 C14.0318056,13.5196471 13.4333757,14.6282745 13.5073196,15.9189412 C15.4178243,14.1399608 17.1159551,12.0150196 17.7840299,11.069451 C18.9181234,9.4474902 18.6576,7.52356863 17.7719925,8.27588235" id="Fill-3" fill="#221F20" mask="url(#mask-2)"></path></g><path d="M127.865297,13.4853961 C129.679503,13.2774745 132.344923,12.9763765 133.664736,12.7977882 C134.129895,12.7279059 135.083428,12.8832 135.714531,12.3983373 C136.201185,12.0549647 136.873559,11.8841412 137.580325,11.7814745 C138.962905,11.5977098 138.850269,13.0747294 141.51569,12.1628078 C142.913746,11.6779451 143.567204,11.7150431 145.10369,10.9592784 C146.432961,10.3001412 147.732138,9.09574902 148.87655,9.22429804 C149.455204,9.28555294 149.75012,9.64272941 150.027839,10.0326902 C150.468064,10.8945725 151.051877,11.0050039 151.440512,11.0671216 C153.238381,11.3104157 155.981185,10.0801412 157.191802,10.5451608 C158.235615,10.9592784 158.391241,13.6027294 156.902905,13.9124549 C156.093821,13.9219451 156.14025,12.9056314 154.862568,12.9151216 C152.367391,13.0152 150.868736,12.9634353 149.141372,14.1488471 C148.303054,14.8580235 147.826718,16.5403765 147.591129,17.2340235 C146.736475,19.6264157 145.951465,23.3802196 145.396026,26.0383373 C145.10369,27.4592784 143.926606,28.3185725 142.952437,27.6991216 C141.980849,27.0762196 141.92754,25.7562196 142.308437,24.2981804 C142.886232,22.1853176 145.980699,14.9839843 145.877521,13.8995137 C145.842269,13.5897882 145.251578,13.3723765 144.797596,13.4241412 C143.678979,13.5647686 142.587877,13.9495529 141.527727,14.3973176 C140.531204,14.8243765 140.001559,14.9468863 139.324026,16.3013961 C138.084176,18.8982588 137.662007,20.0034353 137.082493,21.2259451 C136.023204,23.4544157 135.478082,24.4612392 134.01812,26.0512784 C133.09726,27.0632784 131.451578,28.6852392 130.055241,27.274651 C126.447465,23.6312784 129.642531,20.9955922 132.078381,16.7284549 C132.782568,15.3523765 133.208176,15.2755922 131.628699,15.1556706 C129.524736,15.0176314 128.020923,15.0366118 126.136213,15.3463373 C123.840512,15.7846118 124.212811,15.4688471 123.374493,17.4790431 C122.682344,19.1148078 121.77868,21.1086118 121.660026,22.6650039 C121.378867,26.1660235 123.334942,25.4257882 124.866269,22.3457882 C125.787989,20.488298 125.867951,20.7505725 126.447465,21.250102 C127.447428,22.1335529 127.271166,22.8099451 125.64354,25.3196706 C124.941073,26.4041412 124.12769,27.4860235 122.907615,27.8863373 C121.895615,28.1908863 120.558606,28.4177882 119.673858,26.1401412 C118.872512,24.0393569 119.746082,20.3286902 120.648886,18.1088471 C120.934344,17.4307294 121.500961,16.0805333 121.445073,15.431749 C121.323839,13.9029647 116.332624,18.5212392 110.856475,24.6355137 C109.786867,25.8269647 108.43868,27.3885333 106.752587,28.3185725 C105.055316,29.2494745 103.867054,28.8137882 103.026157,27.7638275 C101.63412,25.8882196 104.57726,24.6450039 105.206643,24.1696314 C109.375877,21.3053176 109.755914,20.3692392 109.705185,19.1337882 C109.577073,15.530102 102.522307,13.624298 103.940998,7.5246902 C105.196325,2.18257255 113.558867,0.20774902 114.840849,0.0481411765 C118.058269,-0.347858824 122.539615,1.72186667 119.470082,6.05888627 C118.768475,7.05449412 114.533036,13.319749 113.609596,15.6051608 C112.919166,17.242651 114.025746,17.7318275 115.01883,16.9044549 C115.360176,16.6594353 120.884475,11.8211608 124.307391,8.18382745 C126.688213,5.64476863 129.380288,6.12014118 128.038979,8.53151373 C127.173148,10.0542588 126.70283,10.8755922 126.047652,11.9755922 C124.859391,13.9642196 124.573933,13.9443765 127.865297,13.4853961 M111.504774,15.2531608 C112.206381,15.7699451 112.185746,15.4878275 112.741185,14.650102 C114.273372,12.3508863 117.491652,5.78021961 117.913821,4.17206275 C118.88369,0.583043137 111.116138,3.15057255 109.86769,3.96327843 C105.906531,6.55151373 105.584101,10.4407686 111.504774,15.2531608 M131.408587,21.4114353 C130.746531,23.1645333 131.593447,23.6493961 132.169521,23.6623373 C133.266643,23.6994353 134.274344,22.6598275 135.041297,21.1232784 C135.759241,19.7394353 136.247615,18.6342588 136.883877,17.0554353 C137.287989,16.1935529 135.873596,16.2789647 135.327615,16.5274353 C133.813484,17.3418667 132.817821,18.0898667 131.408587,21.4114353" id="Fill-6" fill="#221F20"></path><path d="M161.13095,6.89100392 C161.853193,6.13696471 163.915024,4.85923922 164.122239,7.13084706 C164.21166,8.26018039 163.956295,8.70967059 163.449006,9.43006275 C162.117155,11.1892 159.569529,8.67429804 161.13095,6.89100392" id="Fill-8" fill="#221F20"></path><g id="Group-12" transform="translate(0.000000, 1.586675)"><mask id="mask-4" fill="white"><use xlink:href="#path-3"></use></mask><g id="Clip-11"></g><path d="M5.91456822,17.4341804 C6.9644,16.5628078 7.70899813,15.834651 7.70899813,15.706102 C7.69782056,15.4300235 7.19912897,13.8952 6.77610093,12.5752 C4.04103551,5.95276863 9.41486729,-2.26142745 14.4387551,1.71582745 C16.7869047,3.57159216 17.9992411,7.53331765 14.9082131,11.688298 C13.9761757,12.9272 10.9470542,15.9053961 10.9582318,16.0555137 C10.9995028,16.2806902 11.2342318,16.7413961 11.4930355,17.2167686 C11.7862318,17.6645333 12.1679888,18.3219451 12.4551664,18.2900235 C12.8051103,18.2382588 13.3295963,17.8060235 14.1575963,17.3263373 C15.4868673,16.5628078 15.7714654,16.3246902 16.031129,15.3032 C16.2091103,14.6199059 16.7585308,14.2446118 17.1781196,14.4232 C17.6974467,14.6958275 17.9545308,14.8373176 18.5366243,15.1806902 C19.4849981,15.7828863 18.9123626,17.0959843 18.4893346,17.4893961 C17.6974467,18.2512 16.5753907,18.7300235 15.1816336,19.3805333 C14.6889607,19.6315922 13.7638019,20.1017882 13.7638019,20.2217098 C13.7431664,20.3778667 15.0002131,21.9868863 16.2735963,23.6140235 C18.3251103,26.2324549 19.3414093,27.9122196 22.0584187,26.8217098 C22.434157,26.6767686 22.5958019,26.8363765 22.852886,27.135749 C22.9913159,27.2962196 23.1323252,27.4903373 23.2122879,27.6723765 C23.4521757,28.0623373 23.2501196,28.5963765 23.0024935,28.7551216 C18.965671,30.5375529 16.3802131,27.9173961 13.9177084,24.7476706 C12.2152785,22.5606118 11.7191664,21.7047686 11.536886,21.7047686 C11.3184935,21.7099451 7.53015701,24.4698667 5.68499813,25.6647686 C3.78911028,26.9019451 1.41774579,27.4333961 0.322343925,25.8424941 C-1.16255327,23.6623373 2.79946542,20.2406902 5.91456822,17.4341804 M6.66518505,22.0239843 C7.40720374,21.5572392 10.0571477,19.7817098 10.0571477,19.6410824 C10.0519888,19.5159843 8.89554019,17.8370824 8.82761495,17.8370824 C8.71325981,17.8465725 5.7752785,20.7272784 5.29980187,21.3182588 C3.91464299,22.7055529 3.88540935,23.7512 6.66518505,22.0239843 M9.72096075,4.31614118 C8.03916636,6.37033725 8.03916636,8.37104314 8.92477383,11.7003765 C9.38305421,13.3792784 9.57651215,13.9435137 9.80780187,13.9159059 C10.0846617,13.9435137 11.2634654,12.6511216 11.9530355,11.8228863 C13.7147925,9.60304314 14.8230916,7.93621961 14.2074654,5.07190588 C13.3889234,2.2619451 11.2402505,2.67951373 9.72096075,4.31614118" id="Fill-10" fill="#221F20" mask="url(#mask-4)"></path></g></g></g></g></g></g></g> </svg>
+                                <!-- //로고 -->
+                    </div>
+                </a>
+            </div>
+            <!-- //Gnb logo - 건들지 말것 -->
+			<span class="a-icon-totop"></span>
+		</div>
+	</div>
+</header>
+
+<div data-component="OLightbox" class="o-lightbox">
+	<div class="lightbox-header"></div>
+	<div class="lightbox-content js-content u-clearfix"></div>
+	<div class="m-button-icon a-icon-close js-close-button"></div>
+</div>
+<!-- //header -->
+    </div>
+
+    <!-- container area -->
+    <div id="container">
+        <!-- OPageContent -->
+        <div data-component="OPageContent" class="o-page-content">
+
+            
+            
+
+
+
+<!-- Gnb menu -->
+<div data-component="OMainMenu" class="o-main-menu">
+<span class="a-icon-close"></span>
+    <div class="menu-content">
+        <div class="ttl">무료 배송 및 무료 반품 (일부 상품 제외)</div>
+        <!-- 1depth menu -->
+        <div class="primary">
+            <!-- menu1 -->
+            
+            <!-- //menu1 -->
+            <!-- menu2 -->
+	            
+		            <div class="co-lab">
+		            	
+							<li class=""><a href=" http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=155557" style="color:#000000" target="_self" class="a-link">Leather is new classic</a></li>
+						
+		            </div>
+		        
+            <!-- //menu2 -->
+            <!-- menu3 -->
+            <ul class="categories">
+                
+                    <li data-category-id="Whatsnew" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127212" target="_self" class="a-link hover_name" data-name="Whats new">What's new</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Topsellers" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=136761" target="_self" class="a-link hover_name" data-name="Top sellers">Top sellers</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="여백의미" class="">
+						<a href="#" style="color:#ffffff" target="_self" class="a-link hover_name" data-name="여백의미">-</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Clothing" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127252" target="_self" class="a-link hover_name" data-name="Clothing">Clothing</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Shoes" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127279" target="_self" class="a-link hover_name" data-name="Shoes">Shoes</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Bags" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127342" target="_self" class="a-link hover_name" data-name="Bags">Bags</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Beauty" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127299" target="_self" class="a-link hover_name" data-name="Beauty">Beauty</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Jewellery" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127372" target="_self" class="a-link hover_name" data-name="Jewellery">Jewellery</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Accessories" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127356" target="_self" class="a-link hover_name" data-name="Accessories">Accessories</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Lingerie" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127328" target="_self" class="a-link hover_name" data-name="Lingerie">Lingerie</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Swimwear" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=134880" target="_self" class="a-link hover_name" data-name="Swimwear">Swimwear</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="." class="">
+						<a href="#" style="color:#ffffff" target="_self" class="a-link hover_name" data-name=".">.</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Lateststories" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=169354" target="_self" class="a-link hover_name" data-name="Latest stories">Latest stories</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="." class="">
+						<a href="#" style="color:#ffffff" target="_self" class="a-link hover_name" data-name=".">_</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+                    <li data-category-id="Promotion" class="">
+						<a href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=169406" style="color:#000000" target="_self" class="a-link hover_name" data-name="Promotion">Promotion</a>
+                        <span class="a-icon-arrowforward"></span>
+                    </li>
+                
+            </ul>
+            <!-- //menu3 -->
+            <!-- menu4 - mobile용 -->
+            <div class="direct-links">
+                <a href="../common/store-locator.html" target="_self" class="a-link">매장위치</a>
+                <a href="#" target="_self" class="a-link">도움말</a>
+                <a href="#" target="_self" class="a-link open-lightbox" data-template="newsletter-signup" data-classes="is-medium">뉴스레터</a>
+            </div>
+            <!-- //menu4 - mobile용 -->
+            <!-- menu5 - mobile용 -->
+            <div class="sign-in-section">
+                <a href="#" target="_self" class="a-link sign-in menu-link open-lightbox" data-template="sign-in" data-classes="is-medium no-centering">로그인</a>
+            </div>
+            <!-- //menu5 - mobile용 -->
+        </div>
+        <!-- //1depth menu -->
+        <!-- 2depth menu - PC용 -->
+        <div class="secondary">
+            
+                <div data-category-id="Whatsnew" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">What's new</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127212" style="color:#;" target="_self" class="a-link">모두 보기</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=149730" style="color:#;" target="_self" class="a-link">재입고 상품</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127213" style="color:#;" target="_self" class="a-link">의류</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127220" style="color:#;" target="_self" class="a-link">슈즈</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127217" style="color:#;" target="_self" class="a-link">백</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127219" style="color:#;" target="_self" class="a-link">뷰티</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=135876" style="color:#;" target="_self" class="a-link">스윔웨어</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127215" style="color:#;" target="_self" class="a-link">주얼리</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127216" style="color:#;" target="_self" class="a-link">액세서리</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127218" style="color:#;" target="_self" class="a-link">란제리</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=160807" style="color:#;" target="_self" class="a-link">스토리즈 클래식</a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Topsellers" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">Top sellers</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=136761" style="color:#;" target="_self" class="a-link">탑셀러 모두 보기</a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="여백의미" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category" style="color:#ffffff">-</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Clothing" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">Clothing</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127252" style="color:#;" target="_self" class="a-link">의류 모두 보기</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127251" style="color:#;" target="_self" class="a-link">신상품</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127253" style="color:#;" target="_self" class="a-link">드레스</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134825" style="color:#;" target="_self" class="a-link">블라우스 & 셔츠</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134864" style="color:#;" target="_self" class="a-link">탑 & 티셔츠</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127259" style="color:#;" target="_self" class="a-link">니트웨어</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134823" style="color:#;" target="_self" class="a-link">블레이저</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134814" style="color:#;" target="_self" class="a-link">재킷 & 코트</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134847" style="color:#;" target="_self" class="a-link">트라우저</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134839" style="color:#;" target="_self" class="a-link">진</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134858" style="color:#;" target="_self" class="a-link">스커트</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=139308" style="color:#;" target="_self" class="a-link">점프수트</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=136204" style="color:#;" target="_self" class="a-link">쇼츠</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=158616" style="color:#;" target="_self" class="a-link">액티브웨어</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=159392" style="color:#;" target="_self" class="a-link">지속가능 컬렉션</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=161529" style="color:#;" target="_self" class="a-link">프리미엄 컬렉션 </a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Shoes" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">Shoes</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127279" style="color:#;" target="_self" class="a-link">슈즈 모두 보기</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127278" style="color:#;" target="_self" class="a-link">신상품</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134873" style="color:#;" target="_self" class="a-link">부츠</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=139277" style="color:#;" target="_self" class="a-link">로퍼</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134881" style="color:#;" target="_self" class="a-link">플랫 슈즈</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127291" style="color:#;" target="_self" class="a-link">펌프스</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134888" style="color:#;" target="_self" class="a-link">샌들</a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Bags" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">Bags</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127342" style="color:#;" target="_self" class="a-link">백 모두 보기</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127341" style="color:#;" target="_self" class="a-link">신상품</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127343" style="color:#;" target="_self" class="a-link">숄더백</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127352" style="color:#;" target="_self" class="a-link">월렛</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127349" style="color:#;" target="_self" class="a-link">토트백</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127350" style="color:#;" target="_self" class="a-link">클러치</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127351" style="color:#;" target="_self" class="a-link">백팩</a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Beauty" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">Beauty</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127299" style="color:#;" target="_self" class="a-link">뷰티 모두 보기</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127298" style="color:#;" target="_self" class="a-link">신상품</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134893" style="color:#;" target="_self" class="a-link">메이크업</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127300" style="color:#;" target="_self" class="a-link">바디케어</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=145995" style="color:#;" target="_self" class="a-link">퍼퓸</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127322" style="color:#;" target="_self" class="a-link">브러쉬 & 툴</a></li>
+                            
+                            
+                        
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Jewellery" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">Jewellery</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127372" style="color:#;" target="_self" class="a-link">주얼리 모두 보기</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127371" style="color:#;" target="_self" class="a-link">신상품</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127373" style="color:#;" target="_self" class="a-link">이어링</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127375" style="color:#;" target="_self" class="a-link">링</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127374" style="color:#;" target="_self" class="a-link">네크리스</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127376" style="color:#;" target="_self" class="a-link">브레이슬릿</a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Accessories" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">Accessories</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127356" style="color:#;" target="_self" class="a-link">액세서리 모두 보기</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127355" style="color:#;" target="_self" class="a-link">신상품</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127368" style="color:#;" target="_self" class="a-link">선글라스</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127357" style="color:#;" target="_self" class="a-link">스카프</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=147529" style="color:#;" target="_self" class="a-link">삭스</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127364" style="color:#;" target="_self" class="a-link">벨트</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127358" style="color:#;" target="_self" class="a-link">모자</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=147470" style="color:#;" target="_self" class="a-link">헤어 액세서리</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127363" style="color:#;" target="_self" class="a-link">글러브</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134739" style="color:#;" target="_self" class="a-link">기타 액세서리</a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Lingerie" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">Lingerie</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=127328" style="color:#;" target="_self" class="a-link">란제리 모두 보기</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=151820" style="color:#;" target="_self" class="a-link">신상품</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127329" style="color:#;" target="_self" class="a-link">브라</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127330" style="color:#;" target="_self" class="a-link">보텀</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127331" style="color:#;" target="_self" class="a-link">바디</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127332" style="color:#;" target="_self" class="a-link">삭스</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="http://www.hyundaihmall.com/front/dpa/aosCtgrItemList.do?sectId=155253" style="color:#;" target="_self" class="a-link">스윔웨어</a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Swimwear" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">Swimwear</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134880" style="color:#;" target="_self" class="a-link">스윔웨어 모두 보기</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=134551" style="color:#;" target="_self" class="a-link">신상품</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127335" style="color:#;" target="_self" class="a-link">스윔수트</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=127336" style="color:#;" target="_self" class="a-link">비키니</a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="." class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category" style="color:#ffffff">.</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Lateststories" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category">Latest stories</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=169354" style="color:#;" target="_self" class="a-link">The fall shop</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=169791" style="color:#;" target="_self" class="a-link">Power romantic</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=169574" style="color:#;" target="_self" class="a-link">Transitional Jacket</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=169473" style="color:#;" target="_self" class="a-link">Transitional tendencies</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=169394" style="color:#;" target="_self" class="a-link">Athleisure luxe</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=168900" style="color:#;" target="_self" class="a-link">At the office</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=168623" style="color:#;" target="_self" class="a-link">Sneak peek</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=168462" style="color:#;" target="_self" class="a-link">In the city</a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="." class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category" style="color:#ffffff">_</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                    </ul>
+                </div>
+            
+                <div data-category-id="Promotion" class="subcategory-section">
+                    <div class="heading">
+                        <span class="a-icon-arrowback"></span>
+                        <span class="selected-category" style="color:#000000">Promotion</span>
+                    </div>
+
+                    <ul class="subcategories">
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=169406" style="color:#;" target="_self" class="a-link">프로모션 모두 보기</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=149242" style="color:#;" target="_self" class="a-link">의류</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=149243" style="color:#;" target="_self" class="a-link">슈즈</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=149244" style="color:#;" target="_self" class="a-link">뷰티</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=154203" style="color:#;" target="_self" class="a-link">백</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=154202" style="color:#;" target="_self" class="a-link">주얼리</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=149246" style="color:#;" target="_self" class="a-link">액세서리</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=149248" style="color:#;" target="_self" class="a-link">란제리</a></li>
+                            
+                            
+                        
+                            
+                                <li class=""><a  href="/front/dpa/aosCtgrItemList.do?sectId=149951" style="color:#;" target="_self" class="a-link">스윔웨어</a></li>
+                            
+                            
+                        
+                    </ul>
+                </div>
+            
+
+            <!-- 마이페이지 -->
+            <div class="my-account-section">
+                <div class="heading">
+                    <span class="a-icon-arrowback"></span>
+                    <a href="#" target="_self" class="a-link my-acount-title">마이페이지</a>
+                </div>
+                <ul>
+                    <li><a href="../my-account/my-details.html" target="_self" class="a-link">Details</a></li>
+                    <li><a href="../my-account/my-orders.html" target="_self" class="a-link">Orders</a></li>
+                    <li><a href="../my-account/saved-cards.html" target="_self" class="a-link">Saved cards</a></li>
+                    <li><a href="../my-account/addressbook.html" target="_self" class="a-link">Addresses</a></li>
+                </ul>
+            </div>
+            <!-- //마이페이지 -->
+        </div>
+        <!-- //2depth menu - PC용 -->
+        <!-- 배송지 - 모바일 -->
+        <div class="shipping-to">
+            <a href="#" target="_self" class="a-link open-lightbox" data-template="select-country">배송지: 대한민국</a>
+        </div>
+        <!-- 배송지 - 모바일 -->
+    </div>
+</div>
+<!-- //Gnb menu -->
+
+<script>
+	function GnbMenuClass(){
+		if ($('.o-main-menu .menu-content .primary').children().first().hasClass('ateliers')) {
+			$('.o-main-menu .menu-content').addClass('ly_ateliers');
+		} else if ($('.o-main-menu .menu-content .primary').children().first().hasClass('co-lab')) {
+			$('.o-main-menu .menu-content').removeClass('ly_ateliers');
+			$('.o-main-menu .menu-content').addClass('ly_co-lab');
+		} else if ($('.o-main-menu .menu-content .primary').children().first().hasClass('categories')) {
+			$('.o-main-menu .menu-content').removeClass('ly_co-lab');
+			$('.o-main-menu .menu-content').addClass('ly_categories');
+		}
+	}
+
+	$(document).ready(function(){
+		GnbMenuClass();
+	});
+</script>
+
+            <!-- //Gnb -->
+
+            <iframe id="sisFrame" class="sisFrame" src="http://sis-hm.hyundaihmall.com/sis/dpa/aosMain.thd?GnbGroup=AllCategory&Code=01" style="margin-top:-1px; min-height:100vh" width="100%" height="100vh" frameborder="no" scrolling="no" marginheight="0" marginwidth="0" onload="iframeAutoResize(this);"></iframe>
+            
+            <input type="hidden" id="parentServerHost" name="parentServerHost" value="http">
+            <input type="hidden" id="parentServerName" name="parentServerName" value="www.hyundaihmall.com">
+            <input type="hidden" id="parentServerPort" name="parentServerPort" value="80">
+
+            <script>
+	            function iframeAutoResize(h){
+	                if(h == null){
+	                       return false;
+	                   }
+	                   (h).height = "0px";
+	                   var iframeHeight = (h).contentWindow.document.body.scrollHeight;
+	                   (h).height = iframeHeight + 30;
+	            }
+	            
+	            $(window).on("load", function() {        
+	                var $family_site = $('#familySite');
+	                var $select_layer = $('#select_layer');
+
+	                $family_site.bind('mouseover', function(){
+	                    $select_layer.show();
+	                })
+	                $family_site.bind('mouseleave', function(){
+	                    $select_layer.hide();
+	                });
+	            })
+           </script>
+            
+        </div>
+        <!-- //OPageContent -->        
+        
+        
+
+
+
+<!-- 공통 스크립 -->
+<!-- Handlebars templates-->
+<script type="text/x-handlebars-template" id="empty"></script>
+<style>
+.a__label_li li{
+    line-height:17px;
+    font-size: 11px;
+    font-family: 'Courier New', 'SpoqaHanSans';
+    font-weight: normal !important;
+}
+.a-button.is-primary.popup-only {margin-top:10px;}
+</style>
+<!-- 로그인 팝업 -->
+<script type="text/x-handlebars-template" id="sign-in">
+            <!-- tab menu -->
+            <ul data-component="MTablist" class="m-tablist tabs-1-2" data-tablist-for="sign-in-registration-tabs">
+                <li data-toggle="#sign-in-form" class="u-no-select is-active">
+                <a href="#sign-in-form" target="_self" class="a-link">로그인</a>
+                </li>
+                <li data-toggle="#registration-form" class="u-no-select">
+                    <a href="#registration-form" target="_self" class="a-link">회원가입</a>
+                </li>
+            </ul>
+            <!-- //tab menu -->
+            <div data-content-for="sign-in-registration-tabs" class="tablist-content">
+                <!-- 로그인 tab -->
+                <div id="sign-in-form" class="content is-active">
+                    <div class="o-sign-in in-lightbox">
+                        <form data-component="OForm" class="o-form" action="../my-account/my-details.html">
+                            <div class="m-error js-m-error is-hidden">
+                                <label class="a-label js-a-label has-error"></label>
+                            </div>
+                            <div data-component="MInput" class="m-input" placeholder="">
+                            <label class="a-label js-a-label">이메일</label>
+                                <input placeholder="" class="a-input js-a-input" type="email" name="Email" required pattern="^.{6,150}$" data-validation-required-text="이메일 주소 입력" data-validation-pattern-text="유효한 이메일 주소를 입력하세요">
+                                <label class="a-label js-a-label" data-placeholder="이메일">이메일</label>
+                            </div>
+                            <div data-component="MInput" class="m-input no-description" placeholder="">
+                                <label class="a-label js-a-label">비밀번호</label>
+                                <input placeholder="" class="a-input js-a-input" type="password" required pattern="^[^ ]{6,25}$" data-validation-required-text="비밀번호 입력" data-validation-pattern-text="비밀번호는 6 - 25 자 사이 여야하며 공백을 포함 할 수 없습니다.">
+                                <label class="a-label js-a-label" data-placeholder="비밀번호">비밀번호</label>
+                            </div>
+                            <div class="link-holder">
+                                <a href="../common/forgot-password.html" target="_self" class="a-link forgot-password">비밀번호 찾기</a>
+                            </div>
+                            <button type="submit" class="a-button is-primary"><span>로그인</span></button>
+                        </form>
+                    </div>
+                </div>
+                <!-- //로그인 tab -->
+                <!-- 회원가입 tab -->
+                <div id="registration-form" class="content">
+                    <div class="o-registration empty-registration">
+                        <form data-component="OForm" class="o-form">
+                            <div class="o-registration-form">
+                                <div class="m-error js-m-error is-hidden">
+                                    <label class="a-label js-a-label has-error"></label>
+                                </div>
+                                <div class="e-mail-input">
+                                    <div data-component="MInput" class="m-input">
+                                        <label class="a-label js-a-label"></label>
+                                        <input class="a-input js-a-input" type="email" required pattern="^.{6,150}$" data-validation-required-text="이메일 주소 입력" data-validation-pattern-text="유효한 이메일 주소를 입력하세요">
+                                        <label class="a-label js-a-label" data-placeholder="이메일">이메일</label>
+                                    </div>
+                                </div>
+                                <div data-component="MInput" class="m-input password" placeholder="" id="password">
+                                    <label class="a-label js-a-label"></label>
+                                    <input placeholder="" class="a-input js-a-input" type="password" required pattern="^[^ ]{6,25}$" data-validation-required-text="비밀번호 입력" data-validation-pattern-text="비밀번호는 6 - 25 자 사이 여야하며 공백을 포함 할 수 없습니다.">
+                                    <label class="a-label js-a-label" data-placeholder="비밀번호 (최소 6자리)">비밀번호 (최소 6자리)</label>
+                                </div>
+                                <div data-component="MInput" class="m-input password-repeat" placeholder="" data-validation-match-field="password">
+                                    <label class="a-label js-a-label"></label>
+                                    <input placeholder="" class="a-input js-a-input" type="password" required data-validation-required-text="새로운 암호를 확인하십시오." data-validation-match-field-text="암호가 일치하지 않습니다.">
+                                    <label class="a-label js-a-label" data-placeholder="비밀번호 확인">비밀번호 확인</label>
+                                </div>
+                                <div class="country-section-wrapper u-clearfix">
+                                    <label class="a-label js-a-label country-section">Sweden </label>
+                                    <a href="#" target="_self" class="a-link open-lightbox" data-template="select-country">국가변경</a>
+                                </div>
+                                <div class="checkbox-input">
+                                    <div class="m-checkbox u-clearfix" id="newsletter">
+                                        <input type="checkbox" class="a-checkbox" id="connected_newsletter">
+                                        <label class="a-label js-a-label custom-box" for="connected_newsletter"></label>
+                                        <label class="a-label js-a-label" for="connected_newsletter">
+                                            <span class="newsLetterText">예, 16세 이상이며 뉴스레터구독을 신청합니다.</span>
+                                        </label>
+                                    </div>
+                                    <div class="m-checkbox u-clearfix" id="policies">
+                                        <input type="checkbox" class="a-checkbox" id="connected_policies" required data-validation-required-text="개인정보 보호정책에 동의해야합니다.">
+                                        <label class="a-label js-a-label custom-box" for="connected_policies"></label>
+                                        <label class="a-label js-a-label" for="connected_policies"><span class="policiesText">예,&nbsp;</span><a href="#" target="_self" class="a-link open-lightbox policiesLink" data-template="empty">개인정보 보호정책</a>에 동의합니다.</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="a-button is-primary">
+                                    <span>회원가입</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- //회원가입 tab -->
+            </div>
+</script>
+<!-- //로그인 팝업 -->
+<script type="text/x-handlebars-template" id="olapic-image">
+            <div class="o-olapic-image" data-template="olapic-gallery">
+                <div class="overlay"></div>
+                <div class="m-instagram-user u-clearfix">
+                    <img class="a-image" alt="user avatar">
+                    <label class="a-label js-a-label"></label>
+                </div>
+            </div>
+</script>   
+
+<script type="text/x-handlebars-template" id="newsletter-signup">
+        
+        
+
+        <div class="m-change-country-lightbox">
+            <div class="o-newsletter-signup">
+                <form id="NewsForm" data-component="OForm" class="o-form" action="http://sis-hm.hyundaihmall.com/sis/coe/subscribe.thd?mobileYn=N">
+                   
+                    
+                     
+                    <h2 class="a-heading-2">뉴스레터를 구독하시고<br>10% 할인 받으세요!</h2>
+                    <p class="a-paragraph detail-text">매주 새로운 스토리와 신상품 소식이 가득한<br>뉴스레터를 구독하시면, 첫 구매시 사용 가능한<br><span style='font-weight:900'>10% 할인 코드</span>를 보내드립니다.<br><br>- 우리의 파리, 로스앤젤레스,<br>그리고 스톡홀름 아틀리에로 부터</p>
+                    
+                   
+                    <!-- <div class="m-error js-m-error is-hidden">
+                        <label class="a-label js-a-label has-error"></label>
+                    </div> -->
+                    <div data-component="MInput" class="m-input email">
+                        <label class="a-label js-a-label"></label>
+                        <input name="Email" class="a-input js-a-input" type="email" required="required" pattern="^.{6,150}$" data-validation-required-text="이메일을 입력해주세요." data-validation-pattern-text="올바른 이메일을 입력해주세요."/>
+                        <label class="a-label js-a-label" data-placeholder="이메일">이메일</label>
+                    </div>
+                    <!--
+                    <div class="m-checkbox u-clearfix m-checkbox-age" id="age">
+                        <input type="checkbox" class="a-checkbox" id="connected_age" required="required" data-validation-required-text=""/>
+                        <label class="a-label js-a-label custom-box" for="connected_age"></label>
+                        <label class="a-label js-a-label" for="connected_age">저는 <a href="#" target="_self" class="a-link open-lightbox has-underline" data-template="privacy" data-classes="is-large">개인정보 처리방침</a>을 읽고 동의합니다.</label>
+                    </div>
+                    -->
+
+                    <!-- [SIS-H&M] @Description : H&M 샵인샵 인스턴스변경으로 Hmall에서 &OS 내용추가. @date:2019-10-25 @version : M2. @author : H&M 샵인샵 프로젝트팀 - 시작 -->                    
+                    <div data-component="MInput" class="m-input email">
+                        <ul class="a__label_li">
+                            <li class="js-a-label"></li>
+                            <li class="js-a-label">이전 받는자/항목/국가 | H&M/이메일/스웨덴</li>  
+                            <li class="js-a-label">이전 일시 및 방법 | 필요시 데이터베이스조회</li>                        
+                            <li class="js-a-label">이전 받는자 연락처 | 02-726-3613</li> 
+                            <li class="js-a-label">개인정보 이용목적 | 뉴스레터 발송(신상품/이벤트 정보 안내)</li> 
+                            <li class="js-a-label">개인정보 보유 및 이용기간 | 뉴스레터 수신거부시</li>      
+                            <li class=" js-a-label">정보관리 책임자 | Cenneth Cederholm</li>
+                            <li class=" js-a-label"><span style="visibility: hidden;">정보관리 책임자 |</span>(dataprotection.kr@hm.com)</li> 
+                            <li class="js-a-label"></li>
+                        </ul>                                  
+                    </div>                                                                     
+                    <!-- [SIS-H&M] @Description : H&M 샵인샵 인스턴스변경으로 Hmall에서 &OS 내용추가. @date:2019-10-25 @version : M2. @author : H&M 샵인샵 프로젝트팀 - 끝 -->
+
+                    <div class="m-checkbox u-clearfix m-checkbox-age" id="cusInfoAgr">
+                        <input type="checkbox" class="a-checkbox" id="connected_cusInfoAgr" required="required" data-validation-required-text="제3자 정보제공 동의에 체크하셔야 뉴스레터를 구독하실 수 있습니다.">
+                        <label class="a-label js-a-label custom-box" for="connected_cusInfoAgr" id="label_cusInfoAgr"></label>
+                        <label class="a-label js-a-label" for="connected_cusInfoAgr" id="cusInfoAgrLabel">
+                            개인정보
+                            <!-- [AOS] @Description : lightbox 전환시 data-anchor 속성이 있을 때 그 부분으로 scroll, 제3자정보제공동의 팝업 변경 @date:2017-11-02 @version : M2. @author : 최한비 -->
+                            <a href="#" target="_self" class="a-link open-lightbox has-underline private-policy bold" data-template="privacy-popup" data-anchor="#clause_12" data-classes="is-large">제3자(H&M) 정보제공 및 국외 이전</a>
+                            에 동의합니다.
+                        </label>
+                    </div>
+                    <p class="a-paragraph subscribe-agree">뉴스레터 구독(마케팅) 신청에 동의하신 것으로 간주합니다.</p>
+                    <button type="submit" class="a-button is-primary">
+                    <span>구독하기</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+</script>
+
+
+<!-- 개인정보처리방침 팝업 컨텐츠 -->
+<script type="text/x-handlebars-template" id="privacy-popup">
+            <div class="m-change-country-lightbox false">
+                <h1 class="popup_title">개인정보 처리방침</h1>
+                <div class="popup_cont">
+                    
+
+<style>
+.policy-style td{
+word-break:break-all;
+}
+</style>
+
+<!-- 20180115 Agreement-->
+<div class="policy-style-cont">
+	<div class="policy-style">
+		<article>
+			<p class="doc-info">
+				<span>㈜현대백화점이 운영하는 더현대닷컴, 코스스토어닷컴, 스토리즈닷컴, 기타 사이트 (이하 “온라인몰”라고 합니다)는 고객의 정보를 소중하게 생각하며, ‘정보통신망 이용 촉진 및 정보보호 등에 관한 법률’ 등 관련 법률을 준수하기 위하여 [개인정보 처리방침]을 제정하고 이를 준수하고 있습니다. [개인정보 처리방침]은 정부의 지침변경, 당사의 정책 수정변화 등의 이유로 변경 될 수 있습니다. 고객 여러분들께서는 온라인몰 방문시 수시로 확인하여 주시기 바랍니다.</span>
+			</p>
+			<div class="tos-box">
+				<h2 id="clause_1">제1조 총칙</h2>
+				<ol>
+					<li>1) 개인정보란 생존하는 개인에 관한 정보로서 당해 정보에 포함되어 있는 성명, 휴대전화번호, 본인확인값(CI : Connecting Information - 서비스 연계를 위해 본인확인기관에서 부여하는 개인식별정보) 등의 사항에 의하여 당해 개인을 식별할 수 있는 정보 (당해 정보만으로는 특정 개인을 식별할 수 없더라도 다른 정보와 용이하게 결합하여 식별할 수 있는 것을 포함)를 말합니다.</li>
+					<li>2) 주식회사 현대백화점(이하 '회사')는 고객의 개인정보보호를 매우 중요시하며, 『정보통신망 이용촉진 및 정보보호 등에 관한 법률』 및 『개인정보보호법』 등 개인정보보호 관련 법령을 준수하고 있습니다. 회사는 개인정보 처리방침을 통하여 고객께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.</li>
+					<li>3) 온라인몰은 개인정보 처리방침을 홈페이지 첫 화면에 공개함으로써 고객께서 언제나 용이하게 보실 수 있도록 조치하고 있습니다.</li>
+					<li>4) 온라인몰은 개인정보 처리방침의 지속적인 개선을 위하여 개인정보 처리방침을 개정하는데 필요한 절차를 정하고 있습니다. 그리고 개인정보 처리방침을 개정하는 경우 버전번호 등을 부여하여 개정된 사항을 고객께서 쉽게 알아볼 수 있도록 하고 있습니다.</li>
+				</ol>
+			</div>
+			<!-- table-wrap border-type--->
+
+			<div class="tos-box">
+				<h2 id="clause_2">제2조 개인정보의 수집항목과 이용목적</h2>
+				<p>온라인몰은 별도의 회원가입 절차 없이 대부분의 컨텐츠에 자유롭게 접근할 수 있습니다. 온라인몰의 서비스를 이용하시는 경우 다음의 정보를 고객의 동의를 받아 수집할 수 있으며 선택항목을 입력하시지 않았다 하여 서비스 이용에 제한은 없습니다.</p>
+				<ol>
+					<li>1.1) 회원가입 및 주문 등 필요시점에 수집하는 개인정보의 범위
+						<table class="table-wrap border-type">
+							<colgroup>
+								<col width="14%">
+								<col width="10%">
+								<col width="10%">
+								<col width="10%">
+								<col width="25%">
+								<col width="33%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" colspan="3">구분</th>
+									<th scope="col">수집방법</th>
+									<th scope="col">이용목적</th>
+									<th scope="col">수집항목</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th rowspan="14">온라인몰</th>
+									<td rowspan="6">회원</td>
+									<td rowspan="4">필수</td>
+									<td>가입</td>
+									<td>서비스 이용 및 상담</td>
+									<td>이메일, 성명, ID, 비밀번호, 생년월일, 휴대폰번호</td>
+								</tr>
+								<tr>
+									<td rowspan="3">구매 및 배송 등</td>
+									<td>구매 결제</td>
+									<td>결제정보(카드번호, 계좌번호, 휴대폰번호 등)</td>
+								</tr>
+								<tr>
+									<td rowspan="2">물품배송</td>
+									<td>배송정보(주문자or수취인 성명, 연락처, 배송지 주소)</td>
+								</tr>
+								<tr>
+                                    <td>추가연락처</td>
+                                </tr>
+								<tr>
+									<td rowspan="2">선택</td>
+									<td rowspan="2">기타</td>
+									<td>신규 서비스/상품 안내/마케팅</td>
+									<td>이메일, 휴대폰번호, 성별, 스페셜데이</td>
+								</tr>
+								<tr>
+									<td>현금영수증 발급, 앱설치 URL 전송</td>
+									<td>휴대폰번호</td>
+								</tr>
+								<tr>
+                                    <td rowspan="6">비회원</td>
+                                    <td rowspan="5">필수</td>
+                                    <td>비회원문의</td>
+                                    <td>비회원 문의사항 접수</td>
+                                    <td>성명, 이메일주소, 전화번호, 휴대폰번호</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">비회원주문</td>
+                                    <td>주문시 본인 여부 확인, 서비스 이용 및 상담</td>
+                                    <td>성명, 이메일, 연락처 </td>
+                                </tr>
+								<tr>
+                                    <td>본인 인증</td>
+                                    <td>[휴대폰 인증] 이름, 생년월일, 성별, 휴대폰번호, CI, DI, 통신사, 내/외국인 여부, [아이핀 인증] 이름, 생년월일, 성별, CI, DI</td>
+                                </tr>
+								<tr>
+									<td>주문 상품의 결제</td>
+									<td>결제정보(카드번호, 계좌번호, 휴대폰번호 등)</td>
+								</tr>
+								<tr>
+									<td rowspan="2'">물품배송</td>
+									<td>배송정보(수취인 성명, , 휴대폰번호, 배송지 주소)</td>
+								</tr>
+								<tr>
+									<td>선택</td>
+									<td>추가 연락처</td>
+								</tr>
+								<tr>
+									<td rowspan="2">통합멤버십 회원</td>
+									<td>필수</td>
+									<td rowspan="2">통합멤버십 통합가입</td>
+									<td>서비스 이용 및 상담</td>
+									<td>이름, 고객번호, 생년월일, 성별, 내/외국인구분, 통신사, 휴대폰번호, CI, DI, 통합ID, 통합PW, 이메일, 주소, 구매 및 결제정보</td>
+								</tr>
+								<tr>
+									<td>선택</td>
+									<td>신규 서비스/상품 안내/마케팅</td>
+									<td>필수 수집·이용에 동의한 정보, H.Point제휴사를 통해 수집되는 구매내역 중 선택적 수집·이용 목적에 필요한 최소한의 정보(서비스, 수량, 구매금액)</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+
+					<li>1.2) SNS계정 및 제3자 계정을 통한 간편 로그인 시 수집하는 개인정보의 범위
+						<table class="table-wrap border-type">
+							<colgroup>
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="16%">
+								<col width="25%">
+								<col width="35%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" colspan="3">구분</th>
+									<th scope="col">수집방법</th>
+									<th scope="col">이용목적</th>
+									<th scope="col">수집항목</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th rowspan="5">온라인몰</th>
+									<td rowspan="5">회원</td>
+									<td rowspan="5">필수</td>
+									<td>네이버 회원가입</td>
+									<td rowspan="5">기존 가입정보에 SNS 및 제3자 계정을 연계하여 간편로그인 서비스 제공</td>
+									<td>별명, 성명, 프로필사진, 성별, 생일, 연령대, 이메일</td>
+								</tr>
+								<tr>
+                                    <td>페이스북 회원가입</td>
+                                    <td>성명, 성별, 이메일, 주소, ID, 생일</td>
+                                </tr>
+                                <tr>
+                                    <td>카카오 회원가입</td>
+                                    <td>이메일, ID, 닉네임(성명)</td>
+                                </tr>
+								<tr>
+									<td>삼성패스 회원가입</td>
+									<td>성명, 생일, 이메일</td>
+								</tr>
+								<tr>
+									<td>구글플러스 회원가입</td>
+									<td>이메일</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+
+					<li>2) 서비스 이용과정에서 생성되는 정보
+						<table class="table-wrap border-type">
+							<colgroup>
+								<col width="15%">
+								<col width="25%">
+								<col width="35%">
+								<col width="25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">구분</th>
+									<th scope="col">이용 목적</th>
+									<th scope="col">수집 항목</th>
+									<th scope="col">보유 기간</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>필수</th>
+									<td>서비스 이용기록</td>
+									<td>IP Address, 쿠키, 방문일시, 서비스 이용기록, 모바일 기기정보(모바일 서비스 이용 시)</td>
+									<td rowspan="2">회원 탈퇴 시 또는 법정 보유 기간</td>
+								</tr>
+								<tr>
+									<th>선택</th>
+									<td>상담시 본인확인 성인인증 상품 열람</td>
+									<td>본인확인값(CI, DI), 나이, 연령대</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+					<li>3) 기타 법정 의무 수집 정보 등
+						<table class="table-wrap border-type">
+							<colgroup>
+								<col width="25%">
+								<col width="25%">
+								<col width="25%">
+								<col width="25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">관련 법률</th>
+									<th scope="col">이용 목적</th>
+									<th scope="col">수집 항목</th>
+									<th scope="col">보유 기간</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>통신비밀보호법</td>
+									<td>수사기관 제공 (법원 영장 등 정당한 절차의 경우에 제공)</td>
+									<td>로그기록, IP 등</td>
+									<td>3개월</td>
+								</tr>
+								<tr>
+									<td>전자상거래보호법</td>
+									<td>소비자 불만 또는 분쟁처리, 계약내용 확인</td>
+									<td>고객식별정보, 분쟁처리기록, 계약·철회 기록</td>
+									<td>3년/5년</td>
+								</tr>
+								<tr>
+									<td>국세기본법</td>
+									<td>국세 소멸시효 계산</td>
+									<td>국세 증빙자료</td>
+									<td>10년</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_3">제3조 쿠키에 의한 개인정보 수집</h2>
+				<ol>
+					<li>1) 온라인몰은 고객에 대한 정보를 저장하고 수시로 찾아내는 '쿠키(cookie)'를 사용합니다. 쿠키는 웹사이트가 고객의 컴퓨터 브라우저(넷스케이프, 인터넷 익스플로러 등)로 전송하는 소량의 정보입니다. 고객께서 웹사이트에 접속을 하면 온라인몰의 고객의 브라우저에 있는 쿠키의 내용을 읽고, 고객의 추가정보를 고객의 컴퓨터에서 찾아 접속에 따른 성명 등의 추가 입력 없이 컴퓨터는 서비스를 제공할 수 있습니다. 쿠키는 고객의 컴퓨터는 식별하지만 고객을 개인적으로 식별하지는 않습니다. 또한 고객께서는 쿠키에 대한 선택권이 있습니다. 웹브라우저 상단의 도구 &gt; 인터넷옵션 탭(option tab)에서 모든 쿠키를 다 받아들이거나, 쿠키가 설치될 때 통지를 보내도록 하거나, 아니면 모든 쿠키를 거부할 수 있는 선택권을 가질 수 있습니다.</li>
+					<li>2) 온라인몰의 쿠키(cookie) 운용 - 온라인몰은 이용자의 편의를 위하여 쿠키를 운영합니다. 온라인몰이 쿠키를 통해 수집하는 정보는 온라인몰 회원 ID에 한하며, 그 외의 다른 정보는 수집하지 않습니다. 온라인몰이 쿠키(cookie)를 통해 수집한 회원 ID는 다음의 목적을 위해 사용됩니다.
+						<ul>
+							<li>1. 개인의 관심 분야에 따라 차별화된 정보를 제공</li>
+							<li>2. 회원과 비회원의 접속빈도 또는 머문 시간 등을 분석하여 이용자의 취향과 관심분야를 파악하여 타겟(target) 마케팅에 활용</li>
+							<li>3. 쇼핑한 품목들에 대한 정보와 관심 있게 둘러 품목들에 대한 자취를 추적하여 다음번 쇼핑 때 개인 맞춤 서비스를 제공</li>
+							<li>4. 회원들의 습관을 분석하여 서비스 개편 등의 척도</li>
+							<li>5. 게시판 글 등록</li>
+							<li>쿠키는 브라우저의 종료 시나 로그아웃 시 만료됩니다.</li>
+						</ul>
+					</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_4">제4조 제3자에 대한 제공</h2>
+				<ol>
+					<li>1) 온라인몰은 고객의 개인정보를 제2조 「개인정보의 수집항목 및 이용목적」에서 고지한 범위내에서 사용하며, 동 범위를 초과하여 이용하거나 타인 또는 타기업·기관에 제공하지 않습니다. 특히 다음의 경우는 주의를 기울여 개인정보를 이용 및 제공할 것입니다.
+						<ul>
+							<li>1. 제휴 관계 : 온라인몰은 제3자에게 개인정보가 제공되거나 공유될 시에는 전자우편 및 서면 등을 통하여 사전동의를 구할 것입니다.</li>
+							<li>2. 매각, 인수합병 등 : 서비스제공자의 권리와 의무가 완전 승계, 이전되는 경우 반드시 사전에 정당한 사유와 절차에 대해 상세하게 고지할 것이며 고객의 개인정보에 대한 동의 철회의 선택권을 부여합니다.</li>
+						</ul>
+					</li>
+					<li>2) 고지 및 동의방법은 온라인 홈페이지 초기화면의 공지사항을 통해 지체없이 고지하고 필요한 경우에 이메일 등을 이용하여 1회 이상 개별적으로 고지합니다.</li>
+					<li>3) 다음은 예외로 합니다.
+						<ul>
+							<li>1. 관계법령에 의하여 수사상의 목적으로 관계기관으로부터의 요구가 있을 경우</li>
+							<li>2. 통계작성, 학술연구나 시장조사를 위하여 특정 개인을 식별할 수 없는 형태로 광고주, 협력사나 연구단체 등에 제공하는 경우</li>
+							<li>3. 기타 관계법령에서 정한 절차에 따른 요청이 있는 경우</li>
+							<li>4. 그러나 예외 사항에서도 관계법령에 의하거나 수사기관의 요청에 의해 정보를 제공한 경우에는 이를 당사자에게 고지하는 것을 원칙으로 운영하고 있습니다.</li>
+						</ul>
+						법률상의 근거에 의해 부득이하게 고지를 하지 못할 수도 있습니다. 본래의 수집목적 및 이용목적에 반하여 무분별하게 정보가 제공되지 않도록 최대한 노력하겠습니다.
+					</li>
+					<li>4) 고객이 H.Point 통합회원 가입시 온라인몰은 서비스 제공을 위하여 고객의 동의를 얻은 후 개인정보를 다음의 제휴사에게 제공하거나 제휴사와 공유할 수 있으며, 그 기간은 고객의 정보제공 동의기간 내로 제한됩니다.
+						<table class="table-wrap border-type">
+							<colgroup>
+								<col width="25%">
+								<col width="25%">
+								<col width="25%">
+								<col width="25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">제공 받는 자</th>
+									<th scope="col">제공하는 항목</th>
+									<th scope="col">이용 목적</th>
+									<th scope="col">보유 기간</th>
+								</tr>
+							</thead>
+							<tbody>
+                                <tr>
+                                    <td>㈜현대백화점, ㈜현대홈쇼핑, ㈜한섬, ㈜현대에이치엔에스, ㈜현대렌탈케어, ㈜현대IT&amp;E, ㈜현대드림투어, ㈜현대리바트, ㈜현대HCN, ㈜현대백화점면세점, ㈜현대지엔에프, ㈜한섬글로벌</td>
+                                    <td>-이름, 생년월일, 성별, 휴대폰번호, CI, 고객번호, 이메일, 회원상태, 통합 ID, 통합 PW, 주소<br>-서비스중 발생정보: H.Point 카드번호, 거래일시, 구매정보, 결제정보, 전여포인트, 제휴사포인트<br>-최초 가입정보 및 이후 변경정보 포함</td>
+                                    <td>포인트 적립/사용에 대한 승인 및 정산, 기타 H.Point 멤버십 관련 서비스 제공, 고객 응대(문의, 컴플레인 처리 등)</td>
+                                    <td rowspan="8">탈퇴 신청 후, 탈퇴 확정시까지</td>
+                                </tr>
+                                <tr>
+                                    <td>교보문고</td>
+                                    <td>성명, H.Point 카드번호, 포인트 사용/적립 내역</td>
+                                    <td>포인트의 적립/사용에 대한 승인 및 정산, H.Point멤버십 관련 제휴 업무의 수행</td>
+                                </tr>
+                                <tr>
+                                    <td>국민카드(제휴신용카드 가입 시)</td>
+                                    <td>성명, CI, 고객번호, 회원상태, H.Point 카드번호, 잔여 포인트</td>
+                                    <td>제휴신용카드 포인트 적립/사용에 대한 승인 및 정산, H.Point 관련 제휴 업무</td>
+                                </tr>
+                                <tr>
+                                    <td>하나카드</td>
+                                    <td>CI, 전환포인트</td>
+                                    <td rowspan="5">포인트 전환</td>
+                                </tr>
+                                <tr>
+                                    <td>현대오일뱅크</td>
+                                    <td>CI, 전환포인트</td>
+                                </tr>
+                                <tr>
+                                    <td>국민카드</td>
+                                    <td>CI, 전환포인트</td>
+                                </tr>
+                                <tr>
+                                    <td>신한카드</td>
+                                    <td>CI, 전환포인트</td>
+                                </tr>
+                                <tr>
+                                    <td>대한항공</td>
+                                    <td>CI, 전환포인트, 스카이패스 번호</td>
+                                </tr>
+                                <tr>
+                                    <td>㈜현대홈쇼핑, ㈜한섬, ㈜현대에이치엔에스, ㈜현대렌탈케어, ㈜현대IT&amp;E, ㈜현대드림투어, ㈜현대리바트, ㈜현대HCN, ㈜현대백화점면세점, ㈜현대지엔에프, ㈜한섬글로벌</td>
+                                    <td>휴대폰번호, 이메일</td>
+                                    <td>H.Point 이벤트 제공, 클럽가입 및 상태에 대한 서비스 제공, 각정 신상품/서비스 홍보 및 판매권유 소개, 판촉행사 안내, 통신 판매, 여행 업무, 이용 권유 등 마케팅활동 시장조시 및 상품개발 연구</td>
+                                    <td rowspan="2">회원 탈퇴시 또는 동의 철회 시까지</td>
+                                </tr>
+                                <tr>
+                                    <td>국민카드</td>
+                                    <td>CI, 성명, 생년월일, 휴대폰번호</td>
+                                    <td>제휴카드 상품 안내 및 정보제공 동의/해지 관리</td>
+                                </tr>
+                                <tr>
+                                    <td>비엠더블유코리아(주), (주) 모토라드서울, (주)모토라드대구비엠더블유모터사이클, (주)호켄하임모토라드, 비엠더블유모토라드대전(주), (주)모토라드전주, (주)모토라드인천, (주)케이제이모터라드, 코오롱글로벌(주), (주)동성모터스</td>
+                                    <td>이름, 휴대폰번호, 주소</td>
+                                    <td>오토바이 계약 진행 관련 상담 및 서비스 업무 수행</td>
+                                    <td>계약 체결 시 1년, 미체결 시 즉시 파기</td>
+                                </tr>
+                            </tbody>
+						</table>
+					</li>
+				</ol>
+			</div>
+
+
+			<div class="tos-box">
+				<h2 id="clause_5">제5조 개인정보의 열람·정정</h2>
+				<ol>
+					<li>1) 고객께서는 언제든지 등록되어 있는 고객의 개인정보를 열람하거나 정정하실 수 있습니다. 개인정보 열람 및 정정을 하고자 할 경우에는 온라인몰 홈페이지의 『회원정보변경』항목을 클릭하여 직접 열람 또는 정정하거나, 개인정보 보호책임자 및 담당자에게 서면, 전화 또는 이메일로 연락하시면 지체 없이 조치하겠습니다.</li>
+					<li>2) 고객께서 개인정보의 오류에 대한 정정을 요청한 경우, 정정을 완료하기 전까지 당해 개인 정보를 이용 또는 제공하지 않습니다.</li>
+					<li>3) 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체 없이 통지하여 정정하도록 조치하겠습니다.</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_6">제6조 개인정보 수집, 이용, 제공에 대한 동의철회</h2>
+				<ol>
+					<li>1) 회원가입 등을 통해 개인정보의 수집, 이용, 제공에 대해 고객께서 동의하신 내용을 고객께서는 언제든지 철회하실 수 있습니다. 동의철회는 홈페이지 첫 화면의 『마이현대』의 『회원정보변경』 또는 『회원탈퇴』를 클릭하시거나 개인정보 보호책임자에게 서면, 전화, 이메일 등으로 연락하시면 즉시 개인정보의 삭제 등 필요한 조치를 하겠습니다. 동의 철회를 하고 개인정보를 파기하는 등의 조치를 취한 경우에는 그 사실을 고객께 지체 없이 통지하도록 하겠습니다.</li>
+					<li>2) 온라인몰은 개인정보의 수집에 대한 동의철회(회원탈퇴)를 개인정보를 수집하는 방법보다 쉽게 할 수 있도록 필요한 조치를 취하겠습니다.</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_7">제7조 개인정보의 보유·이용기간 및 파기</h2>
+				<ol>
+					<li>1) 고객의 개인정보는 회원탈퇴 등 수집 및 이용목적이 달성되거나 동의철회 요청이 있는 경우 지체없이 파기됩니다.단, 「전자상거래 등에서의 소비자보호에 관한 법률」 등 관련법령의 규정에 의하여 다음과 같이 거래 관련 권리 의무 관계의 확인 등을 이유로 일정기간 보유하여야 할 필요가 있을 경우에는 일정기간 보유합니다.
+						<ul>
+							<li>1. 「전자상거래 등에서의 소비자보호에 관한 법률」 제6조
+								<ul>
+									<li>- 계약 또는 청약철회 등에 관한 기록 : 5년</li>
+									<li>- 대금결제 및 재화 등의 공급에 관한 기록 : 5년</li>
+									<li>- 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년</li>
+								</ul>
+							</li>
+							<li>2.「통신비밀보호법 제15조의2」
+								<ul>
+									<li>- 인터넷 로그기록자료, 접속지 추적자료 : 3개월</li>
+								</ul>
+							</li>
+							<li>3. 기타 관련 법령 등</li>
+						</ul>
+					</li>
+					<li>2) 다만 아이디, 본인확인값, 이메일주소 등 최소한의 식별을 위한 개인정보는 서비스 이용 혼란 및 부정사용 방지를 위해 회원탈퇴 및 철회요청 이후에도 3개월간 보유할 수 있습니다</li>
+					<li>3) 온라인몰의 개인정보 파기방법은 다음과 같습니다.
+						<ul>
+							<li>1. 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기</li>
+							<li>2. 전자적 파일형태로 저장된 개인정보는 재생할 수 없는 기술적 방법을 사용, 삭제</li>
+						</ul>
+					</li>
+					<li>4) 온라인몰은 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제29조 제2항에 따라 휴면회원(최근 12개월 동안 서비스를 이용하지 아니한 회원)에 대해 회원자격 상실에 대한 안내문을 통지하고, 안내문에서 정한 기한 내에 답변이 없을 경우 회원자격을 상실시킬 수 있습니다. 이 경우, 휴면회원의 개인정보는 다른 회원의 개인정보와 분리하여 별도로 저장·관리되며, 분리 저장된 개인정보는 법정보관기간 경과 후 파기하고 있습니다.</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_8">제8조 개인정보보호를 위한 기술 및 관리적 대책</h2>
+				<ol>
+					<li>1) 기술적 대책 - 온라인몰은 고객의 개인정보를 처리함에 있어 개인정보가 분실, 도난, 유출, 변조 또는 훼손되지 않도록 안전성 확보를 위하여 다음과 같은 기술적 대책을 강구하고 있습니다.
+						<ul>
+							<li>1. 고객의 개인정보는 비밀번호에 의해 보호되며 파일 및 전송데이터를 암호화하거나 파일 잠금기능(Lock)을 사용하여 중요한 데이터는 별도의 보안기능을 통해 보호되고 있습니다.</li>
+							<li>2. 온라인몰은 백신프로그램을 이용하여 컴퓨터 바이러스에 의한 피해를 방지하기 위한 조치를 취하고 있습니다. 백신프로그램은 주기적으로 업데이트되며 갑작스런 바이러스가 출현할 경우 백신이 나오는 즉시 이를 제공함으로써 개인정보가 침해되는 것을 방지하고 있습니다.</li>
+							<li>3. 온라인몰은 암호알고리즘을 이용하여 네트워크 상의 개인정보를 안전하게 전송할 수 있는 보안장치(SSL 또는 SET)를 채택하고 있습니다.</li>
+							<li>4. 해킹 등 외부침입에 대비하여 침입차단시스템 및 취약점 분석시스템 등을 이용하여 보안에 만전을 기하고 있습니다.</li>
+						</ul>
+					</li>
+					<li>2) 관리적 대책 - 온라인몰은 고객의 개인정보에 대한 접근권한을 최소한의 인원으로 제한하고 있습니다. 그 최소한의 인원에 해당하는 자는 다음과 같습니다.
+						<ul>
+							<li>
+								<ul>
+									<li>- 이용자를 직접 상대로 하여 마케팅 업무를 수행하는 자.</li>
+									<li>- 개인정보 보호책임자 및 담당자 등 개인정보보호업무를 수행하는 자.</li>
+									<li>- 기타 업무상 개인정보의 처리가 불가피한 자.</li>
+								</ul>
+							</li>
+							<li>1. 개인정보를 처리하는 직원을 대상으로 새로운 보안 기술 습득 및 개인정보 보호 의무 등에 관해 정기적인 사내 교육 및 외부 위탁교육을 실시하고 있습니다.</li>
+							<li>2. 입사 시 개인정보 관련 취급자의 보안서약서를 통하여 사람에 의한 정보유출을 사전에 방지하고 개인정보보호정책에 대한 이행사항 및 직원의 준수여부를 감사하기 위한 내부절차를 마련하고 있습니다.</li>
+							<li>3. 개인정보 관련 취급자의 업무 인수인계는 보안이 유지된 상태에서 철저하게 이뤄지고 있으며 입사 및 퇴사 후 개인정보 사고에 대한 책임을 명확화하고 있습니다.</li>
+							<li>4. 개인정보와 일반 데이터를 혼합하여 보관하지 않고 별도로 분리하여 보관하고 있습니다.</li>
+							<li>5. 전산실 및 자료 보관실 등을 특별 보호구역으로 설정하여 출입을 통제하고 있습니다.</li>
+							<li>6. 그 외 내부 관리자의 실수나 기술관리 상의 사고로 인해 개인정보의 상실, 유출, 변조, 훼손이 유발될 경우 온라인몰은 즉각 고객께 사실을 알리고 적절한 대책과 보상을 강구할 것입니다.</li>
+						 </ul>
+					</li>
+					<li>3) 기타 보호대책
+						<ul>
+							<li>1. 개인정보 유출 등 통지·신고제도
+								<p>온라인몰은 개인정보의 분실, 도난, 유출 사고 발생 사실을 안 때에는 지체없이 이용자에게 해당 내용을 알리고, 방송통신위원회 또는 한국인터넷진흥원에 신고합니다. 또한 온라인몰의 대응조치, 이용자가 취할 수 있는 조치, 이용자 상담창구 등도 함께 통지/신고합니다.</p>
+							</li>
+							<li>2. 개인정보 유효기간 제도
+								<p>온라인몰은 장기간 서비스 미이용자의 개인정보보호를 위하여 휴면회원(최근 12개월 동안 서비스를 이용하지 아니한 회원)의 개인정보를 다른 이용자의 정보와 분리하여 저장, 관리합니다. 온라인몰은 휴면회원의 개인정보 분리 저장 및 관리 1개월 전에 해당 이용자에게 회원자격 상실에 대한 안내문을 통지하며, 안내문에서 정한 기한 내에 답변이 없을 경우 회원자격을 상실시킬 수 있습니다.</p>
+							</li>
+							<li>3. 개인정보 이용내역 통지 제도
+								<p>온라인몰은 이용자의 개인정보 자기결정권을 보장하기 위해 개인정보 이용내역을 해당 이용자에게 주기적으로(연 1회 이상) 통지합니다. 통지하는 개인정보 이용내역은 다음과 같습니다.</p>
+								<ul>
+									<li>- 개인정보 수집·이용목적 및 수집한 개인정보의 항목</li>
+									<li>- 개인정보를 제공받은 자, 그 제공 목적 및 제공한 개인정보의 항목</li>
+									<li>- 개인정보 처리위탁을 받은 자 및 그 처리위탁을 하는 업무의 내용</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_9">제9조 링크 사이트</h2>
+				<p>온라인몰은 고객께 다른 회사의 웹사이트 또는 자료에 대한 링크를 제공할 수 있습니다. 이 경우 온라인몰은 외부사이트 및 자료에 대한 아무런 통제권이 없으므로 그로부터 제공받는 서비스나 자료의 유용성에 대해 책임질 수 없으며 보증할 수 없습니다. 온라인몰이 포함하고 있는 링크를 클릭(click)하여 타 사이트(site)의 페이지로 옮겨갈 경우 해당 사이트의 개인정보보호정책은 온라인몰과 무관하므로 새로 방문한 사이트의 정책을 검토해 보시기 바랍니다.</p>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_10">제10조 게시물</h2>
+				<ol>
+					<li>1) 온라인몰은 고객의 게시물을 소중하게 생각하며 변조, 훼손, 삭제되지 않도록 최선을 다하여 보호합니다. 그러나 다음의 경우는 그렇지 아니합니다.
+						<ul>
+							<li>1. 타인을 비방할 목적으로 허위 사실을 유포하여 타인의 명예를 훼손하는 글</li>
+							<li>2. 동의 없는 타인의 신상공개 온라인몰의 저작권, 제 3자의 저작권 등 권리를 침해하는 내용, 기타 게시판 주제와 다른 내용의 게시물</li>
+							<li>3. 온라인몰은 바람직한 게시판 문화를 활성화하기 위하여 동의 없는 타인의 신상 공개 시 특정부분을 삭제하거나 기호 등으로 수정하여 게시할 수 있습니다.</li>
+							<li>4. 다른 주제의 게시판으로 이동 가능한 내용일 경우 해당 게시물에 이동 경로를 밝혀 오해가 없도록 하고 있습니다.</li>
+							<li>5. 그 외의 경우 명시적 또는 개별적인 경고 후 삭제 조치할 수 있습니다.</li>
+						</ul>
+					</li>
+					<li>2) 근본적으로 게시물에 관련된 제반 권리와 책임은 작성자 개인에게 있습니다. 또 게시물을 통해 자발적으로 공개된 정보는 보호받기 어려우므로 정보 공개 전에 심사 숙고하시기 바랍니다.</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_11">제11조 개인정보의 위탁처리</h2>
+				<table class="table-wrap border-type">
+					<colgroup>
+						<col width="20%">
+						<col width="40%">
+						<col width="40%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">위탁업무내용</th>
+							<th scope="col">수탁자</th>
+							<th scope="col">위탁되는 개인정보 항목</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>사이트 운영</td>
+							<td>현대홈쇼핑</td>
+							<td>성명, 주소, 연락처, 고객번호, 아이디 등</td>
+						</tr>
+						<tr>
+							<td>고객상담업무</td>
+							<td>H-MAN</td>
+							<td>성명, 주소, 연락처, 결제정보(신용카드, 휴대폰번호) 등</td>
+						</tr>
+						<tr>
+							<td>주문 상품의 배송</td>
+							<td>우체국, 현대택배, CJ대한통운, 한진택배, 현대글로비스, KGB택배, 로젠택배, 옐로우캡, 일양택배, KG로지스택배, 경동택배, 한서호남택배, 천일택배, 합동택배, 대신택배, 건영택배, GTX로지스, 한의사랑택배, CVSNET</td>
+							<td>성명(마스킹), 주소, 연락처(안심번호)</td>
+						</tr>
+						<tr>
+							<td>본인확인</td>
+							<td>드림시큐리티, 서울신용평가정보</td>
+							<td>생년월일, I-Pin번호, 휴대폰번호, 마이핀번호 등</td>
+						</tr>
+						<tr>
+							<td>결제정보</td>
+							<td>KICC, KSNET, KG이니시스, KG모빌리언스, LG U+, KRP</td>
+							<td>결제정보(신용카드, 휴대폰번호) 등</td>
+						</tr>
+						<tr>
+							<td>전산 시스템 구축 및 유지</td>
+							<td>현대IT&E</td>
+							<td>성명, 주소, 연락처, 고객번호, 아이디 등</td>
+						</tr>
+						<tr>
+							<td rowspan="2">SMS, MMS 발송</td>
+							<td>LG U+, HCN</td>
+							<td>성명, 휴대폰번호</td>
+						</tr>
+						<tr>
+							<td>(주)쿠프마케팅</td>
+							<td>휴대폰번호</td>
+						</tr>
+						<tr>
+							<td>주문 상품의 배송 등</td>
+							<td>그외 협력사 <a href="http://www.thehyundai.com/static/html/supplier0000.pdf">(협력사 보기)</a></td>
+							<td>성명(마스킹), 주소, 연락처(안심번호)</td>
+						</tr>
+						<tr>
+							<td>근거리 배송</td>
+							<td>현대홈쇼핑 재위탁(현대글로비스)</td>
+							<td>성명, 주소, 연락처</td>
+						</tr>
+						<tr>
+							<td>기프티콘 발송</td>
+							<td>SK Planet(SK 플래닛)</td>
+							<td>휴대폰번호</td>
+						</tr>
+						<tr>
+							<td>렌탈 주문상품 고객상담</td>
+							<td>(주)현대렌탈케어</td>
+							<td>성명, 연락처(안심번호)</td>
+						</tr>
+						<tr>
+							<td>광고 대행 업무<br>(COS, &amp;Other Stories)</td>
+							<td>(주)애드이피션시, Facebook, instagram</td>
+							<td>이메일주소(암호화, 사용후파기)</td>
+						</tr>
+						<tr>
+                            <td>안심번호 제공</td>
+                            <td>세종텔레콤</td>
+                            <td>수취인 휴대번호, 수취인 유선전화번호, 안심번호</td>
+                        </tr>
+                        <tr>
+                            <td rowspan=2>광고 대행 업무(더현대닷컴)</td>
+                            <td>Facebook, instagram</td>
+                            <td>구매 상품 정보</td>
+                        </tr>
+                        <tr>
+                            <td>크리테오</td>
+                            <td>관심/구매 상품정보, 이용매체정보</td>
+                        </tr>
+					</tbody>
+				</table>
+				<p>* 공유하는 정보는 당해 목적을 달성하기 위하여 필요한 최소한의 정보에 국한됩니다.</p>
+				<p>* 직송 등 일부 배송형태에 따라, 전자상거래소비자보호법 제 21조에 의거 협력사에 배송정보가 제공 됩니다.</p>
+				<ol>
+					<li>1. 개인정보의 처리를 위탁하는 경우에는 위탁계약 등을 통하여 서비스제공자의 개인정보보호 관련 지시엄수, 개인정보에 관한 비밀유지, 제3자 제공의 금지 및 사고시의 책임부담, 위탁기간, 처리 종료 후의 개인정보의 반환 또는 파기 등을 명확히 규정하고 당해 계약내용을 서면 또는 전자적으로 보관하겠습니다.</li>
+				</ol>
+			</div>
+			<div class="tos-box">
+				<h2 id="clause_12">제12조 개인정보 국외이전</h2>
+				<ol>
+					<li>1) 고객이 다음과 같은 브랜드에서 물품 구매 또는 마케팅 수신 동의를 한 경우 온라인몰은 상품 배송, 마케팅, 신상품/이벤트 정보 안내를 아래의 국외 사업자에게 위탁하고 있으며, 위탁받은 업체가 개인정보 관련 법령에 따라 개인정보를 안전하게 처리하도록 필요한 사항을 규정하고 관리/감독을 하고 있습니다.
+						<table class="table-wrap border-type">
+							<colgroup>
+								<col width="*">
+								<col width="*">
+								<col width="*">
+								<col width="*">
+								<col width="*">
+								<col width="*">
+							</colgroup>
+							<thead>
+								<tr>
+                                    <th scope="col">이전받는 자</th>
+                                    <th scope="col">이전되는 항목</th>
+                                    <th scope="col">이전되는 국가</th>
+                                    <th scope="col">이전일시 및 방법</th>
+                                    <th scope="col">이용 목적 및 처리기간</th>
+                                    <th scope="col">정보관리책임자 및 연락처</th>
+                                </tr>
+							</thead>
+							<tbody>
+								<tr>
+                                    <td>H&amp;M</td>
+                                    <td>성명, 주소, 연락처(안심번호) 이름, 아이디, 이메일, 휴대폰정보, 성별</td>
+                                    <td>스웨덴</td>
+                                    <td>주문 후 즉시, 데이터베이스 연동 당사 시스템을 통해 이전</td>
+                                    <td>- 상품 배송 더현대닷컴 회원 대상 마케팅, 신상품/이벤트 정보 안내<br><br>- 1년간 회원탈퇴시 또는 동의 철회시</td>
+                                    <td>Cenneth Cederholm<br><br>dataprotection.kr@hm.com</td>
+                                </tr>
+                                <tr>
+                                    <td>Montblanc Simplo GmbH &amp; Richemont International<br><br>SA &amp;Richemont Asia Pacific Ltd</td>
+                                    <td>성명, 주소 연락처</td>
+                                    <td>스위스, 독일, 홍콩, 영국, 인도</td>
+                                    <td>몽블랑 서버를 통해 이전</td>
+                                    <td>- 상품 배송, A/S 제고<br><br>- 2년간</td>
+                                    <td>김혜선<br><br>sunny.kim@richemont.com</td>
+                                </tr>
+                                <tr>
+                                    <td>(주)트렌드아레나</td>
+                                    <td>성명, 주소, 전화번호, 개인통관고유번호, 이메일</td>
+                                    <td>이탈리아, 독일</td>
+                                    <td>구매내역 시스템 연동 전달</td>
+                                    <td>- 상품 배송, 통관 업무 처리 및 A/S 제공<br><br>- 2년</td>
+                                    <td>차수현<br><br>soohyun.cha@trendarenagroup.com</td>
+                                </tr>
+							</tbody>
+						</table>
+					</li>
+					<li>2) 또한 고객이 H&amp;M으로부터 뉴스레터 수신을 받고자 하는 경우 온라인몰은 고객에게 동의 획득 후 아래 정보를 H&amp;M에게 제공하고 있습니다.
+						<table class="table-wrap border-type">
+							<colgroup>
+								<col width="20%">
+								<col width="40%">
+								<col width="40%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">이전 받는 자</th>
+									<th scope="col">항목</th>
+									<th scope="col">내용</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan="6">H&amp;M</td>
+									<td>이전되는 개인정보 항목</td>
+									<td>이메일, 성별</td>
+								</tr>
+								<tr>
+									<td>이전되는 국가</td>
+									<td>스웨덴</td>
+								</tr>
+								<tr>
+									<td>이전 일시 및 방법</td>
+									<td>필요 시 데이터베이스 조회</td>
+								</tr>
+								<tr>
+									<td>이전 받는 자 연락처</td>
+									<td>02-726-3613</td>
+								</tr>
+								<tr>
+									<td>개인정보 이용 목적</td>
+									<td>뉴스레터 발송(신상품/이벤트 정보 안내)</td>
+								</tr>
+								<tr>
+									<td>개인정보 보유 및 이용 기간</td>
+									<td>회원탈퇴 또는 동의철회 시</td>
+								</tr>
+							</tbody>
+						</table>
+						<p><a href="http://www2.hm.com/ko_kr/customer-service/legal-and-privacy/privacy-link.html" target="_blank">H&amp;M사의 개인정보 보호 정책</a>은 다음과 같습니다. </p>
+						<p>* 공유하는 정보는 당해 목적을 달성하기 위하여 필요한 최소한의 정보에 국한됩니다.</p>
+					</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_13">제13조 이용자 및 법정대리인의 권리와 의무</h2>
+				<ol>
+					<li>1) 고객의 개인정보를 최신의 상태로 정확하게 입력하여 불의의 사고를 예방해 주시기 바랍니다. 이용자가 입력한 부정확한 정보로 인해 발생하는 사고의 책임은 이용자 자신에게 있으며 타인 정보의 도용 등 허위정보를 입력할 경우 회원자격이 상실될 수 있습니다.</li>
+					<li>2) 고객께서는 개인정보를 보호받을 권리와 함께 스스로를 보호하고 타인의 정보를 침해하지 않을 의무도 가지고 있습니다. 비밀번호를 포함한 고객의 개인정보가 유출되지 않도록 조심하시고 게시물을 포함한 타인의 개인정보를 훼손하지 않도록 유의해 주십시오. 만약 이 같은 책임을 다하지 못하고 타인의 정보 및 존엄성을 훼손할 시에는 『정보통신망 이용촉진 및 정보보호 등에 관한 법률』등에 의해 처벌받을 수 있습니다.</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_14">제14조 의견수렴 및 불만처리</h2>
+				<ol>
+					<li>1) 온라인몰은 고객의 의견을 소중하게 생각하며, 고객께서는 의문사항으로부터 언제나 성실한 답변을 받을 권리가 있습니다.</li>
+					<li>2) 온라인몰은 고객과의 원활환 의사소통을 위해 민원처리센터를 운영하고 있으며 연락처는 다음과 같습니다.
+						<dl class="center-info">
+							<dt>[ 민원처리센터 ]</dt>
+							<dd>- 전자우편 : customerservice@thehyundai.com</dd>
+							<dd>- 전화번호 : 1800-2233</dd>
+							<dd>- 팩스번호 : 02-2143-2849</dd>
+							<dd>- 주 소 : 134-020 서울특별시 강동구 올림픽로70길 34</dd>
+						</dl>
+					</li>
+					<li>3) 전화상담은 09:00 ~ 21:00 입니다. 영업 외 시간에는 고객의 의견 게시판이나 전자우편을 이용해주시기 바랍니다.</li>
+					<li>4) 전자우편이나 팩스 및 우편을 이용한 상담은 접수 후 영업일 기준 24시간 내에 성실하게 답변 드리겠습니다. 기타 개인정보에 관한 상담이 필요한 경우에는 개인정보침해신고센터, 대검찰청 인터넷범죄수사센터, 경찰청 사이버범죄수사대 등으로 문의하실 수 있습니다.
+						<dl class="center-info">
+							<dt>[ 개인정보침해신고센터 ]</dt>
+							<dd>- 전화 : 국번없이 118</dd>
+							<dd>- URL : privacy.kisa.or.kr</dd>
+							<dt>[ 대검찰청 사이버수사과 ]</dt>
+							<dd>- 전화 : 국번없이 1301</dd>
+							<dd>- URL : www.spo.go.kr</dd>
+							<dt>[ 경찰청 사이버안전국 ]</dt>
+							<dd>- 전화 : 국번없이 182</dd>
+							<dd>- URL : cyberbureau.police.go.kr</dd>
+						</dl>
+					</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_15">제15조 개인정보보호 담당부서</h2>
+				<p>온라인몰은 고객께서 좋은 정보를 안전하게 이용할 수 있도록 최선을 다하고 있습니다. 개인정보를 보호하는데 있어 고객께 고지한 사항들에 반하는 사고가 발생할 시에 개인정보 보호책임자가 모든 책임을 집니다. 그러나 기술적인 보완조치를 했음에도 불구하고, 해킹 등 기본적인 네트워크상의 위험성에 의해 발생하는 예기치 못한 사고로 인한 정보의 훼손 및 방문자가 작성한 게시물에 의한 각종 분쟁에 관해서는 책임이 없습니다. 고객의 개인정보를 처리하는 책임자 및 담당자는 다음과 같으며 개인정보 관련 문의사항에 신속하고 성실하게 답변해드리고 있습니다.</p>
+				<dl class="cpo" style='font-size:11px;'>
+					<dt>[ 개인정보보호 책임자 ]</dt>
+					<dd>성명 : 장근혁</dd>
+					<dd>소속부서 : 회원운영 관리담당</dd>
+					<dd>직위 : 상무</dd>
+					<dd>전자우편 : privacyofficer@thehyundai.com</dd>
+					<dd>전화번호 : 02-2225-2231</dd>
+					<dt>[ 개인정보보호 담당자 ]</dt>
+					<dd>성명 : 김석홍</dd>
+					<dd>소속부서 : 개인정보보안</dd>
+					<dd>직위 : 차장</dd>
+					<dd>전자우편 : privacyofficer@thehyundai.com</dd>
+					<dd>전화번호 : 02-2225-2231</dd>
+				</dl>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_16">제16조 아동의 개인정보보호</h2>
+				<p>온라인몰은 온라인 환경에서 어린이의 개인정보를 보호하는 것 역시 중요한 일이라고 생각하고 있습니다. 온라인몰은 법정대리인의 동의가 필요한 만 14세 미만 아동의 회원가입은 받고 있지 않습니다.</p>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_17">제17조 광고성 정보 전송</h2>
+				<ol>
+					<li>1) 온라인몰은 고객의 명시적인 수신거부의사에 반하여 영리목적의 광고성 정보를 전송하지 않습니다.</li>
+					<li>2) 온라인몰은 고객께서 뉴스레터 등 전자우편 전송에 대한 동의를 한 경우 전자우편의 제목란 및 본문란에 다음 사항과 같이 고객께서 쉽게 알아 볼 수 있도록 조치합니다.
+						<ul>
+							<li>1. 전자우편의 제목란 : (광고)라는 문구를 제목란에 표시하지 않을 수 있으며 전자우편 본문란의 주요 내용을 표시합니다.</li>
+							<li>2. 전자우편의 본문란
+								<ul>
+									<li>- 고객께서 수신 거부의 의사표시를 할 수 있는 전송자의 명칭, 전자우편주소, 전화번호 및 주소를 명시합니다.</li>
+									<li>- 고객께서 수신 거부의 의사를 쉽게 표시할 수 있는 방법을 한글 및 영문으로 각각 명시합니다.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>3) 온라인몰은 상품정보 안내 등 온라인 마케팅을 위해 광고성 정보를 전자우편 등으로 전송하는 경우 전자우편의 제목란 및 본문란에 다음 사항과 같이 고객께서 쉽게 알아 볼 수 있도록 조치합니다.
+						<ul>
+							<li>1. 전자우편의 제목란 : (광고) 라는 문구를 제목란의 처음에 빈칸없이 한글로 표시하고 이어서 전자우편 본문란의 주요 내용을 표시합니다.</li>
+							<li>2. 전자우편의 본문란 :
+								<ul>
+									<li>- 고객께서 수신 거부의 의사표시를 할 수 있는 전송자의 명칭, 전자우편주소, 전화번호 및 주소를 명시합니다.</li>
+									<li>- 고객께서 수신 거부의 의사를 쉽게 표시할 수 있는 방법을 한글 및 영문으로 각각 명시합니다.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>4) 다음과 같이 청소년에게 유해한 정보를 전송하는 경우 "(광고)" 문구를 표시합니다.
+						<ul>
+							<li>1. 본문 란에 다음 각 항목에 해당하는 것이 부호, 문자, 영상 또는 음향의 형태로 표현된 경우(해당 전자우편의 본문 란에는 직접 표현되어있지 아니하더라도 수신자가 내용을 쉽게 확인할 수 있도록 기술적 조치가 되어 있는 경우를 포함)에는 해당 전자우편의 제목 란에 "(광고)" 문구를 표시합니다.
+								<ul>
+									<li>- 청소년(19세미만의 자를 말한다. 이하 같다)에게 성적인 욕구를 자극하는 선정적인 것이거나 음란한 것</li>
+									<li>- 청소년에게 포악성이나 범죄의 충동을 일으킬 수 있는 것</li>
+									<li>- 성폭력을 포함한 각종 형태의 폭력행사와 약물의 남용을 자극하거나 미화하는 것.</li>
+									<li>- 청소년보호법에 의하여 청소년 유해매체물로 결정,고시된 것</li>
+								</ul>
+							</li>
+							<li>2. 영리목적의 광고성 전자우편 본문란에서 제4항 각항목에 해당하는 내용을 다룬 인터넷 홈페이지를 알리는 경우에는 해당 전자우편의 제목란에 "(광고)" 문구를 표시합니다.</li>
+						</ul>
+					</li>
+					<li>5) 팩스, 휴대폰 문자전송 등 전자우편이외의 전자적 전송매체를 통해 영리목적의 광고성 정보를 전송하는 경우에는 전송내용 처음에 "(광고)"라는 문구를 표기하고 전송내용 중에 전송자의 명칭, 연락처, 수신거부 방법 등을 명시하도록 조치합니다.</li>
+				</ol>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_17">제18조 고지의 의무</h2>
+				<p>현 개인정보 처리방침은 정부의 정책 또는 보안기술의 변경에 따라 내용의 추가, 삭제 및 수정이 있을 시에는 지체없이 홈페이지의 '공지'란을 통해 고지할 것입니다.</p>
+			</div>
+
+			<div class="tos-box">
+				<h2 id="clause_18">제19조 청소년 보호정책</h2>
+				<p>온라인몰은 각종 불건전한 청소년 유해정보로부터 청소년을 보호하기 위해 정보통신망이용 및 정보보호 등에 관한 법률, 청소년보호법, 전자상거래 등에서의 소비자 보호에 관한 법률 등 관계 법률에 근거하여 만 19세 미만의 청소년들이 유해정보에 접근할 수 없도록 청소년보호정책을 시행하여 청소년에게 유익한 환경을 조성하기 위해 노력하고 있습니다.</p>
+				<ol>
+					<li>1) 청소년 보호장치<br>온라인몰은 성인인증 장치운영 및 청소년 유해매체물의 표시를 적용하여 청소년에 대한 유해정보의 접근가능성 및 노출을 사전에 예방하고 있으며 청소년유해상품(유해매체물, 유해약물, 유해물건등)의 구매도 엄격히 금지하고 있습니다.</li>
+					<li>2) 유해정보로 인한 피해상담 및 고충처리<br>온라인몰은 청소년 유해정보와 유해상품의 유통으로 인한 피해상담 및 고충처리를 위해 다음과 같이 청소년 보호 책임자 및 담당자를 지정하고 있습니다.
+						<dl class="cpo">
+							<dt>[ 청소년보호 책임자 ]</dt>
+							<dd>성명 : 장근혁</dd>
+							<dd>소속부서 : 회원운영 관리담당</dd>
+							<dd>직위 : 상무</dd>
+							<dd>전자우편 : privacyofficer@thehyundai.com</dd>
+							<dd>전화번호 : 02-2225-2231</dd>
+							<dt>[ 청소년보호 담당자 ]</dt>
+							<dd>성명 : 김석홍</dd>
+							<dd>소속부서 : 개인정보보안</dd>
+							<dd>직위 : 차장</dd>
+							<dd>전자우편 : privacyofficer@thehyundai.com</dd>
+							<dd>전화번호 : 02-2225-2231</dd>
+						</dl>
+					</li>
+				</ol>
+			</div>
+		</article>
+	</div>
+</div>
+<!-- //20180115 Agreement-->
+                </div>
+            </div>
+</script>
+<!-- //개인정보처리방침 팝업 컨텐츠 -->
+
+
+<script type="text/x-handlebars-template" id="olapic-gallery">
+            <div data-component="OOlapicStyleSlider" class="o-olapic-slider" data-template="olapic-slide"></div>
+</script>
+
+<script type="text/x-handlebars-template" id="olapic-style-slide">
+            {{#each media}}
+            <div class="o-olapic-slide" data-component="OOlapicStyleSlide">
+                <div class="olapic-big-image"><img class="a-image" src="{{images.normal}}"></div>
+                <div class="olapic-info">
+                    <div class="m-instagram-user big u-clearfix">
+                        <a href="{{original_source}}" target="_self" class="a-link no-styling">
+                            <img class="a-image" src="{{uploader.avatar_url}}" alt="user avatar">
+                        </a>
+                        <div class="user-info">
+                            <a href="{{original_source}}" target="_self" class="a-link">{{uploader.username}}</a>
+                            <label class="a-label js-a-label">{{uploader.name}}</label>
+                        </div>
+                    </div>
+                    <div class="olapic-slider">
+                        {{#each stream }}
+                        <div class="slide">
+                            <div class="o-product">
+                                <a href="../product/product-detail.html" target="_self" class="a-link">
+                                    <div class="product-image">
+                                        <img class="a-image" src="http://www.monki.com/Content/ProductContent/{{tag_based_key}}/{{tag_based_key}}_6_0.jpg">
+                                    </div>
+                                    <div class="description">
+                                        <div class="product-title">
+                                            <label class="a-label js-a-label">{{name}}</label>
+                                        </div>
+                                        <div class="product-colours">컬러 ({{product_info.color}})</div>
+                                        <div class="m-product-price">
+                                            <label class="a-label js-a-label">{{product_info.price}}</label>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <a class="a-button is-primary" href="{{shop_button_url}}">Shop this</a>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div class="olapic-icon"></div>
+                    <div class="olapic-share">
+                        <div class="o-share-custom">
+                            <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;u=http://www2.hm.com/en_gb/life/culture/at-home/the-h-m-home-hot-list-2016-05-b3.html" target="_blank" class="a-link">
+                                <span class="a-icon-social-facebook"></span>
+                            </a>
+                            <a href="http://pinterest.com/pin/create/button/?url=http://www2.hm.com/en_gb/life/culture/at-home/the-h-m-home-hot-list-2016-05-b3.html&amp;media=p[images][0]" target="_blank" class="a-link">
+                                <span class="a-icon-social-pinterest"></span>
+                            </a>
+                            <a href="https://twitter.com/home?status=http://www2.hm.com/en_gb/life/culture/at-home/the-h-m-home-hot-list-2016-05-b3.html" target="_blank" class="a-link">
+                                <span class="a-icon-social-twitter"></span>
+                            </a>
+                            <a href="http://www.tumblr.com/share?v=3&amp;u=http://www2.hm.com/en_gb/life/culture/at-home/the-h-m-home-hot-list-2016-05-b3.html&amp;t=[TITLE]" target="_blank" class="a-link">
+                                <span class="a-icon-social-tumblr"></span>
+                            </a>
+                            <a href="https://plus.google.com/share?url=http://www2.hm.com/en_gb/life/culture/at-home/the-h-m-home-hot-list-2016-05-b3.html" target="_blank" class="a-link">
+                                <span class="a-icon-social-google-plus"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+            {{/each}}
+</script>
+
+<script type="text/x-handlebars-template" id="search-suggestion-content">
+            {{#each content}}
+            {{#if this.suggestion}}<li><a href="{{this.url}}" class="a-link">{{this.suggestion}}</a></li>
+            {{else}}<span>{{this.error}}</span>
+            {{/if}}
+            {{/each}}
+</script>
+
+<script type="text/x-handlebars-template" id="o-quick-buy">
+            <div data-component="OQuickBuy" class="o-quick-buy">
+                <div class="m-product-image">
+                    <div class="cross"></div>
+                    <img src="{{itemImgUrl}}" alt="Product" onError="this.src='https://imagessl.hyundaihmall.com/hnm/pc/images/hdstories/term/missing-product-image.png';">
+                </div>
+                <div data-component="OProductInformation" class="o-product-information">
+                    <form data-component="OForm" class="o-form add-to-cart details-section" action="/someURL" method="POST">
+                        <div class="overlay"></div>
+                        <label class="a-label js-a-label product-label">DESIGNED IN LOS ANGELES</label>
+                        <label class="a-label js-a-label product-name">{{slitmNm}}</label>
+                        <div class="m-product-price">
+                            {{sellPrcInfo}}
+                        </div>
+                        <div data-component="MDropdown" class="m-dropdown is-filled pdp-dropdown">
+                            <span id="quick-choiced-color-chip" class="color-chip" style="{{defHexClrVal}}"></span>
+                            <label class="a-label js-a-label placeholder">{{defClrNm}}</label>
+                            <span class="a-icon-close"></span>
+                            <input name="selectSize" class="js-input">
+                            <!-- [AOS] @Description : 퀵샵 옵션수량에 따른 화살표 표시 여부 설정. @date:2017-09-15 @version : M2. @author : 정병준 – 시작 -->
+                            <span id="quick-color-arrow-down" class="a-icon-arrow-down-small"></span>
+                            <!-- [AOS] @Description : 퀵샵 옵션수량에 따른 화살표 표시 여부 설정. @date:2017-09-15 @version : M2. @author : 정병준 – 끝 -->
+                            <ul class="list-wrapper">
+                                <li>
+                                    <ul class="options">
+                                        {{optColorList}}
+                                    </ul>
+                                    <ul class="bottom-option">
+                                        <li>Cancel</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div data-component="MDropdown" class="m-dropdown size-dropdown pdp-dropdown">
+                            <label id="quick-selected-size" class="a-label js-a-label q-font-helvetica-bold temporary placeholder">사이즈 선택</label>
+                            <span class="a-icon-close"></span>
+                            <input name="selectSize" value="Select size" class="js-input">
+                            <!-- [AOS] @Description : 퀵샵 옵션수량에 따른 화살표 표시 여부 설정. @date:2017-09-15 @version : M2. @author : 정병준 – 시작 -->
+                            <span id="quick-size-arrow-down" class="a-icon-arrow-down-small"></span>
+                            <!-- [AOS] @Description : 퀵샵 옵션수량에 따른 화살표 표시 여부 설정. @date:2017-09-15 @version : M2. @author : 정병준 – 끝 -->
+                            <ul class="list-wrapper">
+                                <li id="quick-opt-size">
+                                    {{optSizeList}}
+                                    <ul class="bottom-option">
+                                        <li>Cancel</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="quick-add-to-bag" type="submit" class="a-button is-primary add-to-bag is-disabled" data-btn-position="quickShop"><span>장바구니 담기</span></button>
+                        <span class="size-error-message">사이즈를 선택하세요.</span>
+                        <p class="a-paragraph free-text">무료배송</p>
+                        <a href="{{itemPtcUrl}}" class="a-link view-more">상품상세 보러가기</a>
+                    </form>
+                </div>
+            </div>
+</script>
+
+<!-- 국가 선택 팝업 -->
+<script type="text/html" id="select-country">
+            <div class="m-change-country-lightbox false">
+                <h2 class="a-heading-2">국가 선택</h2>
+                <p class="a-paragraph">쇼핑백이 선택한 국가로 이동되지 않습니다.</p>
+                <a class="a-button is-primary" href="../common/country-selector.html">계속</a>
+                <button class="a-button is-secondary js-close-button">
+                    <span>취소</span>
+                </button>
+            </div>
+</script>
+<!-- //국가 선택 팝업 -->
+
+<script type="text/html" id="select-country-checkout">
+            <div class="m-change-country-lightbox is-checkout">
+                <h2 class="a-heading-2">국가변경</h2>
+                <p class="a-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dictum dui, ac tincidunt ligula. Suspendisse potenti. Etiam ac lorem in ipsum dictum venenatis quis eu purus. Sed viverra lectus nec felis maximus ultricies. Phasellus tincidunt interdum nunc eu hendrerit. Aenean malesuada</p>
+                <a class="a-button is-primary" href="../common/country-selector.html">선택한 주소로 계속하기</a>
+                <button class="a-button is-secondary js-close-button">
+                    <span>false</span>
+                </button>
+            </div>
+</script>
+
+<!-- 개인정보 이용현황 팝업-->
+<script type="text/x-handlebars-template" id="privacy">
+			<div class="m-change-country-lightbox false">
+				<h1 class="popup_title">개인정보 이용현황</h1>
+				<div class="popup_cont">
+					<div class="collect-privacy-wrap">
+						<div class="collect-privacy">
+							<h2 class="title">개인정보의 수집 및 이용</h2>
+							<span class="txt_info">더현대에 제공하여 주신 개인정보의 쓰임새와 항목에 대해 확인하실 수 있습니다.</span>
+							<div class="terms-contents">
+								<div class="tos-box">
+									<p>더현대닷컴은 별도의 회원가입 절차 없이 대부분의 컨텐츠에 자유롭게 접근할 수 있습니다. 더현대닷컴의 서비스를 이용하시는 경우 다음의 정보를 고객의 동의를 받아 수집할 수 있으며 선택항목을 입력하시지 않았다 하여 서비스 이용에 제한은 없습니다.</p>
+
+									<p>회원가입 및 주문 등 필요시점에 수집하는 개인정보의 범위</p>
+									<table class="table-wrap border-type">
+										<colgroup>
+											<col width="14%">
+											<col width="10%">
+											<col width="10%">
+											<col width="25%">
+											<col width="33%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" colspan="2">구분</th>
+												<th scope="col">수집방법</th>
+												<th scope="col">이용목적</th>
+												<th scope="col">수집항목</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th rowspan="8">더현대닷컴/모바일</th>
+												<td rowspan="3">필수</td>
+												<td>가입</td>
+												<td>서비스 이용 및 상담</td>
+												<td>이메일, 성명, ID, 비밀번호, 생년월일, 휴대폰번호</td>
+											</tr>
+											<tr>
+												<td rowspan="2">구매 및 배송 등</td>
+												<td>구매 결제</td>
+												<td>결제정보(카드번호, 계좌번호, 휴대폰번호 등)</td>
+											</tr>
+											<tr>
+												<td>물품배송</td>
+												<td>배송정보(주문자∙수취인 성명, 연락처, 배송지 주소)</td>
+											</tr>
+											<tr>
+												<td rowspan="2">선택</td>
+												<td rowspan="2">기타</td>
+												<td>신규 서비스/상품 안내</td>
+												<td>이메일, 휴대폰번호, 성별, 스페셜데이</td>
+											</tr>
+											<tr>
+												<td>현금영수증 발급, 앱설치 URL 전송</td>
+												<td>휴대폰번호</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<div class="collect-privacy">
+							<h2 class="title">개인정보의 취급위탁</h2>
+							<span class="txt_info">서비스 제공을 위해 위탁계약에 따라 개인정보를 위탁받은 수탁 업체 및 업무 목적을 확인 하실 수 있습니다.</span>
+							<div class="terms-contents">
+								<div class="tos-box">
+									<table class="table-wrap border-type">
+										<colgroup>
+											<col width="20%">
+											<col width="40%">
+											<col width="40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">위탁업무내용</th>
+												<th scope="col">수탁자</th>
+												<th scope="col">위탁되는 개인정보 항목</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>사이트 운영</td>
+												<td>현대홉쇼핑</td>
+												<td>성명, 주소, 연락처, 고객번호, 아이디 등</td>
+											</tr>
+
+											<tr>
+												<td>고객 상담 업무</td>
+												<td>동양 EMS, H-MAN, 유니에스, HRB</td>
+												<td>성명, 주소, 연락처 결제정보(신용카드, 휴대폰번호) 등</td>
+											</tr>
+											<tr>
+												<td>주문 상품의 배송</td>
+												<td>현대택배, CJ대한통운, 한진택배, 코리아물류 등 택배사</td>
+												<td>성명(마스킹), 주소, 연락처(안심번호)</td>
+											</tr>
+											<tr>
+												<td>본인확인</td>
+												<td>드림시큐리티, 서울신용평가정보</td>
+												<td>생년월일, I-Pin번호, 휴대폰번호, 마이핀번호 등</td>
+											</tr>
+											<tr>
+												<td>결제 정보</td>
+												<td>KICC, KSNET, KG이니시스, KG모빌리언스, LG U+, KRP</td>
+												<td>결제정보(신용카드, 휴대폰번호) 등</td>
+											</tr>
+											<tr>
+												<td>전산 시스템 구축 및 유지</td>
+												<td>현대그린푸드</td>
+												<td>성명, 주소, 연락처, 고객번호, 아이디 등</td>
+											</tr>
+											<tr>
+												<td>SMS, MMS 발송</td>
+												<td>현대그린푸드(LG CNS, LG U+), 다우기술</td>
+												<td>휴대폰번호</td>
+											</tr>
+											<tr>
+												<td>주문 상품의 배송 등</td>
+												<td>그외 협력사 <a href="http://www.hyundaihmall.com/static/html/supplier0000.pdf">(협력사 보기)</a></td>
+												<td>성명(마스킹), 주소, 연락처(안심번호)</td>
+											</tr>
+										</tbody>
+									</table>
+									<p>* 공유하는 정보는 당해 목적을 달성하기 위하여 필요한 최소한의 정보에 국한됩니다.</p>
+									<p>* 직송 등 일부 배송형태에 따라, 전자상거래소비자보호법 제 21조에 의거 협력사에 배송정보가 제공 됩니다.</p>
+									<ol>
+										<li>1. 개인정보의 처리를 위탁하는 경우에는 위탁계약 등을 통하여 서비스제공자의 개인정보보호 관련 지시엄수, 개인정보에 관한 비밀유지, 제3자 제공의 금지 및 사고시의 책임부담, 위탁기간, 처리 종료 후의 개인정보의 반환 또는 파기 등을 명확히 규정하고 당해 계약내용을 서면 또는 전자적으로 보관하겠습니다.</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						<p class="txt_info">더현대에는 정보통신망법 제 30조의 2에 따르면 대통령령으로 정하는 기준에 해당하는 정보통신서비스 제공자는수집한 이용자 개인정보의 이용내역을 1년에 최소 1회이상 이용자에게 통지하고 있습니다.</p>
+					</div>
+				</div>
+			</div>
+		</script>
+<!-- // 개인정보 이용현황 팝업-->
+
+<!-- 첫방문 -->
+<script type="text/x-handlebars-template" data-template="newsletter-signup" data-once-showing="newsletter-signup" data-classes="is-medium" class="open-on-pageload"></script>
+<!-- //첫방문 -->
+
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/frontend.min.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/snippets.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/patternlib.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/prism.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/controllers.min.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/jquery.cookie.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/jquery.form.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/jquery-ui.min.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/stories.custom.js?ver=090112"></script>
+<script type="text/javascript" src="http://www.hyundaihmall.com/hdstories/js/osCommon.js?ver=090112"></script>
+<script type="text/javascript">
+    // [S] 뉴스레터 스크립트
+
+
+    $(document).on("submit","#NewsForm", function(e) {
+        e.preventDefault();
+        submitNewsletter($("#NewsForm"));
+    });
+
+    $(document).on("submit","#resubscribeNewsletter", function(e) {
+        e.preventDefault();
+        submitNewsletter($("#resubscribeNewsletter"));
+    });
+
+    function submitNewsletter(form) {
+    	formDiv = form.closest("div")
+  		modal = $("div.o-lightbox").find(".lightbox-content");
+
+   		$.ajax({
+     	     type:"POST"
+     	    ,url: form.attr("action")
+     	    ,data: form.serialize()
+     	    ,success:function(data){
+     	     	modal.append($(data).find(".content-section> div")), formDiv.hide();
+     	    }
+     	    ,beforeSend:function(){
+     	  		$("button[type='submit']").attr('disabled','disabled');
+     	    }
+     	    ,complete:function(){
+     	  		$("button[type='submit']").removeAttr('disabled');
+
+     	  		$('.o-lightbox').css('height', '');
+
+   			 	if (($('.o-lightbox').height() % 2) == 1) {
+               		$('.o-lightbox').css('height', ($('.o-lightbox').height() + 1));
+                }
+     	    }
+     	    ,error:function(e){}
+    		});
+ 	}
+
+  	$(document).on("click","#newModal",function(e){
+  		$("input[name='Email']").val(""),
+  		$("label.has-error").val(""),
+  		$(".m-error.js-m-error").addClass("is-hidden"),
+  		$(".a-label.js-a-label span").remove(),
+  		$(".m-input.email").removeClass("has-error"),
+  		$(".m-checkbox-age").removeClass("has-error"),
+  		$("input#connected_age").prop("checked",false),
+   		$(".o-newsletter-subscription-email-error").remove(),
+   		$(".o-newsletter-signup").show();
+
+  		$('.o-lightbox').css('height', '');
+
+		if (($('.o-lightbox').height() % 2) == 1) {
+       		$('.o-lightbox').css('height', ($('.o-lightbox').height() + 1));
+        }
+
+   	});
+    // [E] 뉴스레터 스크립트
+
+    var sectKey1Depth = "";
+    var sectNm1Depth = "";
+    var hasSelected = false;
+    var locationArray = new Array();
+    
+
+    for(var i=0; i<locationArray.length; i++) {
+        var locationObj = locationArray[i];
+
+        if (locationObj.sectDpth == '5' && locationObj.sectTmplId == 'aos/lyot/disp/atelier') {
+            $('.ateliers a').each(function(i){
+                if (locationObj.sectNm == $(this).text()) {
+                    $(this).css("border-bottom", "1px " + $(this).css('color') + " solid");
+                }
+            });
+        } else if (locationObj.sectDpth == '5' && (locationObj.sectTmplId == 'aos/lyot/disp/colab/archive' || locationObj.sectTmplId == 'aos/lyot/disp/colab/page')) {
+            $('.co-lab a').each(function(i){
+                if (locationObj.sectNm == $(this).text()) {
+                    $(this).css("border-bottom", "1px " + $(this).css('color') + " solid");
+                }
+            });
+        } else if ((locationObj.sectDpth == '5' || locationObj.sectDpth == '6') && (locationObj.sectTmplId == 'aos/item/ctgr/list' || locationObj.sectTmplId == 'aos/ctgr/basic')) {
+            // 1Depth 선택 표시
+            if (locationObj.sectDpth == '5') {
+                $('.categories a').each(function(i){
+                    if (locationObj.sectNm == $(this).text()) {
+                        sectKey1Depth = $(this).parent().attr('data-category-id');
+                        $(this).css("border-bottom", "1px " + $(this).css('color') + " solid");
+                        return false;
+                    }
+                });
+            // 2Depth 선택 표시
+            } else if (locationObj.sectDpth == '6') {
+                $('.secondary div').each(function(i){
+                    if (sectKey1Depth == $(this).attr('data-category-id')) {
+                        $(this).find('.subcategories a').each(function(i){
+                            if (locationObj.sectNm == $(this).text()) {
+                                $(this).css("border-bottom", "1px " + $(this).css('color') + " solid");
+                                return false;
+                            }
+                        });
+
+                        return false;
+                    }
+                });
+            }
+         // Selected 선택 표시
+        } else if (hasSelected && locationObj.sectDpth == '7') {
+            $('.secondary div').each(function(i){
+                if (sectKey1Depth == $(this).attr('data-category-id')) {
+                    $(this).find('.curated-subcategories a').each(function(i){
+                        if (locationObj.sectNm == $(this).text()) {
+                            $(this).css("border-bottom", "1px " + $(this).css('color') + " solid");
+                            return false;
+                        }
+                    });
+
+                    return false;
+                }
+            });
+        }
+    }
+</script>
+<!-- //공통스크립트 -->
+
+    </div>
+    
+
+
+
+<!-- 푸터 영역 시작 -->
+<footer class="footer" style="min-width:1380px;">
+    <div class="link-area">
+        <div class="link-area-in">
+            <h2 class="hiding">푸터메뉴</h2>
+            <div class="short-menu">
+                <ul>
+                    <li><a href="javascript:;">현대백화점그룹</a></li>
+                    <li><a href="javascript:;">현대백화점소개</a></li>
+                    <li><a href="javascript:;">현대홈쇼핑소개</a></li>
+                    <li><a href="javascript:;">윤리경영</a></li>
+                    <li><a href="javascript:;">IR</a></li>
+                    <li><a href="javascript:;">채용안내</a></li>
+                    <li><a href="javascript:;">신규입점</a></li>
+                    <li><a href="javascript:;">마케팅/제휴안내/광고</a></li>
+                </ul>
+            </div>
+            <!-- // .short-menu -->
+            <!-- 클래스 on 추가시 노출-->
+            <div class="family-site">
+                <div class="select-label" data-toggle-target='family-site' data-auto-close='true'>Famliy Site</div>
+                <div class="select-layer">
+                    <h3 class="group">쇼핑몰 Site</h3>
+                    <ul>
+                        <li><a href="javascript:;">더현대닷컴</a></li>
+                        <li><a href="javascript:;">현대백화점 DUTY FREE</a></li>
+                        <li><a href="javascript:;">e수퍼마켓</a></li>
+                        <li><a href="javascript:;">더한섬</a></li>
+                        <li><a href="javascript:;">현대리바트몰</a></li>
+                        <li><a href="javascript:;">현대렌탈케어</a></li>
+                        <li><a href="javascript:;">H패션몰</a></li>
+                        <li><a href="javascript:;">VR STATION</a></li>
+                    </ul>
+                    <h3 class="group">관계사 Site</h3>
+                    <ul>
+                        <li><a href="javascript:;">현대백화점 그룹</a></li>
+                        <li><a href="javascript:;">현대백화점</a></li>
+                        <li><a href="javascript:;">현대그린푸드</a></li>
+                        <li><a href="javascript:;">한섬</a></li>
+                        <li><a href="javascript:;">현대리바트</a></li>
+                        <li><a href="javascript:;">현대H&amp;S</a></li>
+                        <li><a href="javascript:;">현대HCN</a></li>
+                        <li><a href="javascript:;">현대미디어</a></li>
+                        <li><a href="javascript:;">현대렌탈케어</a></li>
+                        <li><a href="javascript:;">현대드림투어</a></li>
+                        <li><a href="javascript:;">에버다임</a></li>
+                        <li><a href="javascript:;">씨엔에스푸드시스템</a></li>
+                        <li><a href="javascript:;">현대캐터링시스템</a></li>
+                        <li><a href="javascript:;">현대IT&amp;E</a></li>
+                    </ul>
+                </div>
+                <!-- // .select-layer -->
+            </div>
+            <!-- // .family-site -->
+        </div>
+        <!-- // .link-area-in -->
+    </div>
+    <!-- // .link-area -->
+
+    <div class="footer-contents">
+        <div class="footer-logo"><img src="//imagedev.hmall.com/p/img/co/footer-logo.jpg" alt="HYUNDAI"></div>
+        <div class="info-area">
+            <div class="policy-link-list">
+                <ul>
+                    <li><a href="javascript:;">이용약관</a></li>
+                    <li><a href="javascript:;"><strong>개인정보 처리방침</strong></a></li>
+                    <li><a href="javascript:;">사업자정보확인</a></li>
+                    <li><a href="javascript:;">공정거래</a></li>
+                    <li><a href="javascript:;">자율준수</a></li>
+                </ul>
+            </div>
+            <!-- // .policy-link-list -->
+
+            <!-- on 클래스 추가 시 노출 -->
+            <div class="footer-info on">
+                <button class="btn-footer" data-toggle-target='footer-info'><strong>(주)현대홈쇼핑</strong></button>
+                <div class="footer-info-box">
+                    <div class="hmall-info">
+                        <div class="list-contents">
+                            <p><span>대표이사 : 강찬석</span><span>주소 : 서울특별시 강동구 올림픽로70길 34 (주)현대홈쇼핑</span></p>
+                            <p><span>고객센터 TEL : 1600-0000(유료)</span><span>고객만족사업부 FAX : 02-2143-2731</span></p>
+                            <p>
+                                <span>
+                                    기타문의 :
+                                    <a href="mailto:webmaster@hyundaihmall.com">webmaster@hyundaihmall.com</a>
+                                </span>
+                                <span>사업자등록번호: 211-86-76540</span>
+                            </p>
+                            <p><span>통신판매업 신고 : 제 25-3133호</span><span>부가통신 신고번호 : 3787</span></p>
+                            <p><span>정보보호최고책임자 : 정보보호담당 오권호</span><span>청소년보호책임자 : Hmall사업부 홍성일</span></p>
+                            <p><span>호스팅서비스 : (주)현대홈쇼핑</span></p>
+                        </div>
+                    </div>
+                    <!-- // .hamall-info -->
+
+                    <div class="service-info-wrap">
+                        <p class="safe-info">
+                            우리은행 구매안전 서비스
+                            <a href="javascript:;">가입사실 확인</a>
+                            고객님은 안전거래를 위해 현금 결제 시 저희 쇼핑몰에서 가입한 우리은행의 구매안전 서비스를 이용하실 수 있습니다.
+                        </p>
+                        <div class="cs-link">
+                            <a href="javascript:;">ARS 안내</a>
+                            <a href="javascript:;">카톡 주문 안내</a>
+                        </div>
+                    </div>
+                    <!-- // .service-info -->
+                </div>
+                <!-- // .foonter-info-box -->
+            </div>
+            <!-- // .footer-info -->
+
+        </div>
+        <!-- // .info-area -->
+    </div>
+    <!-- // .footer-contents-->
+</footer>
+<!-- // 푸터 영역 끝 -->
+    
+    <!-- //container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

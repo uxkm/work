@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>고객센터  1:1상담 게시판상담신청</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/cc/customer.css">
+</head>
+<body id="popWin">   <!--20200826 수요일 추가 윈도우 팝업은 body에 popWin 아이디값 설정해주셔야 합니다. -->      
+    <!--윈도우팝업(새창으로열기) 1:1 상담신청 : PJC004-001 상담할 상품을 선택하세요 클릭 시 윈도우 팝업 // 20200825 script 요청드림-->  <!--pc 공통 스크립트 잡은 후 윈도우 팝업 변경 가능성 있음-->
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:482px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win wd600 cus-consult product-select"> <!--20200828 금요일 pc레이아웃 공통작업 wd880 클래스 추가-->
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">주문 상품 선택</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <div class="content"> 
+                        <!--order-select-->
+                        <div class="order-select">
+                            <!--order-item-->
+                            <div class="order-item">
+                                <p class="info"><em class="date">2020-05-22</em> [주문번호 <em class="product-num">1234567890</em>]</p>
+                                <ul>
+                                    <li>
+                                        <div class="radiobox">
+                                            <label class="radlabel"><input type="radio" name="orderI" checked="" aria-checked="true"><i class="icon"></i></label>
+                                        </div>
+                                        <div class="pdwrap pdlist pdconsult">
+                                            <div class="pdlist-wrap">
+                                                <figure class="pdthumb">
+                                                    <!--20200828 금요일 디자인 사이즈 변경으로 인한 이미지 수정-->
+                                                    <div class="thumb">
+                                                        <img src="//imagedev.hmall.com/p/img/cc/order-item-sample.jpg" alt="[빈폴레이디스] 네이비 스트라이프">
+                                                    </div>
+                                                    <!--20200828 금요일 내용변경으로 인한 수정-->
+                                                    <figcaption>
+                                                        <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                        <div class="pdoption" aria-label="옵션/수량">
+                                                            <span class="color">블랙</span>
+                                                            <span class="option-num">66</span>
+                                                            <span class="count"><em class="count-num">1</em>개</span>
+                                                        </div>
+                                                        <div class="pdprice">
+                                                            <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--//order-item-->
+                            <!--order-item-->
+                            <div class="order-item">
+                                <p class="info"><em class="date">2020-05-22</em> [주문번호 <em class="product-num">1234567890</em>]</p>
+                                <ul>
+                                    <li>
+                                        <div class="radiobox">
+                                            <label class="radlabel"><input type="radio" name="order2" aria-checked="false"><i class="icon"></i></label>
+                                        </div>
+                                        <div class="pdwrap pdlist pdconsult">
+                                            <div class="pdlist-wrap">
+                                                <figure class="pdthumb">
+                                                    <div class="thumb">
+                                                        <img src="//imagedev.hmall.com/p/img/cc/order-item-sample.jpg" alt="[빈폴레이디스] 네이비 스트라이프">
+                                                    </div>
+                                                    <figcaption>
+                                                        <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                        <div class="pdoption" aria-label="옵션/수량">
+                                                            <span class="color">블랙</span>
+                                                            <span class="option-num">66</span>
+                                                            <span class="count"><em class="count-num">1</em>개</span>
+                                                        </div>
+                                                        <div class="pdprice">
+                                                            <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                        </div>
+                                                        <p class="pddate" aria-label="배송예정일">배송예정일 : 2020.06.30</p><!--20200929 배송예정일 추가-->
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                            <!--20200929 추가구성품 마크업 추가-->
+                                            <div class="add-freebox">
+                                                <dl>
+                                                    <dt>추가 구성품</dt>
+                                                    <dd class="sumwrap">
+                                                        <span>총 <em class="num">2</em>개</span>
+                                                        <span>합계: <em class="sum-price">266,000</em>원</span>
+                                                    </dd>
+                                                    <dd>
+                                                        <p>각인서비스 / 각인진행 (1개 / 5,000원)</p>
+                                                        <p>그라폰 파버카스텔 수성심 / 흑색 (1개 / 6,400원)</p>
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>필수 사은품</dt>
+                                                    <dd>
+                                                        <p>[사은품] 북케이스 + 매직차트</p>
+                                                        <p>[증정기간] 2020.04.17 ~ 2020.12.31</p>
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>선택 사은품</dt>
+                                                    <dd>
+                                                        <p>[사은품] 북케이스 + 매직차트</p>
+                                                        <p>[증정기간] 2020.04.17 ~ 2020.12.31</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <!--//20200929 추가구성품 마크업 추가-->
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="radiobox">
+                                            <label class="radlabel"><input type="radio" name="order2"><i class="icon"></i></label>
+                                        </div>
+                                        <div class="pdwrap pdlist pdconsult">
+                                            <div class="pdlist-wrap">
+                                                <figure class="pdthumb">
+                                                    <div class="thumb">
+                                                        <img src="//imagedev.hmall.com/p/img/cc/order-item-sample.jpg" alt="[동원] 고추참지 200g X 3개">
+                                                    </div>
+                                                    <figcaption>
+                                                        <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                        <div class="pdoption" aria-label="옵션/수량">
+                                                            <span class="color">블랙</span>
+                                                            <span class="option-num">66</span>
+                                                            <span class="count"><em class="count-num">1</em>개</span>
+                                                        </div>
+                                                        <div class="pdprice">
+                                                            <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="radiobox">
+                                            <label class="radlabel"><input type="radio" name="order2"><i class="icon"></i></label>
+                                        </div>
+                                        <div class="pdwrap pdlist pdconsult">
+                                            <div class="pdlist-wrap">
+                                                <figure class="pdthumb">
+                                                    <div class="thumb">
+                                                        <img src="//imagedev.hmall.com/p/img/cc/order-item-sample.jpg" alt="[동원] 고추참지 200g X 3개">
+                                                    </div>
+                                                    <figcaption>
+                                                        <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                        <div class="pdoption" aria-label="옵션/수량">
+                                                            <span class="color">블랙</span>
+                                                            <span class="option-num">66</span>
+                                                            <span class="count"><em class="count-num">1</em>개</span>
+                                                        </div>
+                                                        <div class="pdprice">
+                                                            <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="radiobox">
+                                            <label class="radlabel"><input type="radio" name="order2"><i class="icon"></i></label>
+                                        </div>
+                                        <div class="pdwrap pdlist pdconsult">
+                                            <div class="pdlist-wrap">
+                                                <figure class="pdthumb">
+                                                    <div class="thumb">
+                                                        <img src="//imagedev.hmall.com/p/img/cc/order-item-sample.jpg" alt="[동원] 고추참지 200g X 3개">
+                                                    </div>
+                                                    <figcaption>
+                                                        <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                        <div class="pdoption" aria-label="옵션/수량">
+                                                            <span class="color">블랙</span>
+                                                            <span class="option-num">66</span>
+                                                            <span class="count"><em class="count-num">1</em>개</span>
+                                                        </div>
+                                                        <div class="pdprice">
+                                                            <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--//order-item-->
+                            <div class="order-item">
+                                <p class="info"><em class="date">2020-05-22</em> [주문번호 <em class="product-num">1234567890</em>]</p>
+                                <ul>
+                                    <li>
+                                        <div class="radiobox">
+                                            <label class="radlabel"><input type="radio" name="order2" aria-checked="false"><i class="icon"></i></label>
+                                        </div>
+                                        <div class="pdwrap pdlist pdconsult">
+                                            <div class="pdlist-wrap">
+                                                <figure class="pdthumb">
+                                                    <div class="thumb">
+                                                        <img src="//imagedev.hmall.com/p/img/cc/order-item-sample.jpg" alt="[빈폴레이디스] 네이비 스트라이프">
+                                                    </div>
+                                                    <figcaption>
+                                                        <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                        <div class="pdoption" aria-label="옵션/수량">
+                                                            <span class="color">블랙</span>
+                                                            <span class="option-num">66</span>
+                                                            <span class="count"><em class="count-num">1</em>개</span>
+                                                        </div>
+                                                        <div class="pdprice">
+                                                            <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="radiobox">
+                                            <label class="radlabel"><input type="radio" name="order2"><i class="icon"></i></label>
+                                        </div>
+                                        <div class="pdwrap pdlist pdconsult">
+                                            <div class="pdlist-wrap">
+                                                <figure class="pdthumb">
+                                                    <div class="thumb">
+                                                        <img src="//imagedev.hmall.com/p/img/cc/order-item-sample.jpg" alt="[동원] 고추참지 200g X 3개">
+                                                    </div>
+                                                    <figcaption>
+                                                        <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                        <div class="pdoption" aria-label="옵션/수량">
+                                                            <span class="color">블랙</span>
+                                                            <span class="option-num">66</span>
+                                                            <span class="count"><em class="count-num">1</em>개</span>
+                                                        </div>
+                                                        <div class="pdprice">
+                                                            <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="radiobox">
+                                            <label class="radlabel"><input type="radio" name="order2"><i class="icon"></i></label>
+                                        </div>
+                                        <div class="pdwrap pdlist pdconsult">
+                                            <div class="pdlist-wrap">
+                                                <figure class="pdthumb">
+                                                    <div class="thumb">
+                                                        <img src="//imagedev.hmall.com/p/img/cc/order-item-sample.jpg" alt="[동원] 고추참지 200g X 3개">
+                                                    </div>
+                                                    <figcaption>
+                                                        <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                        <div class="pdoption" aria-label="옵션/수량">
+                                                            <span class="color">블랙</span>
+                                                            <span class="option-num">66</span>
+                                                            <span class="count"><em class="count-num">1</em>개</span>
+                                                        </div>
+                                                        <div class="pdprice">
+                                                            <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="radiobox">
+                                            <label class="radlabel"><input type="radio" name="order2"><i class="icon"></i></label>
+                                        </div>
+                                        <div class="pdwrap pdlist pdconsult">
+                                            <div class="pdlist-wrap">
+                                                <figure class="pdthumb">
+                                                    <div class="thumb">
+                                                        <img src="//imagedev.hmall.com/p/img/cc/order-item-sample.jpg" alt="[동원] 고추참지 200g X 3개">
+                                                    </div>
+                                                    <figcaption>
+                                                        <div class="pdname" aria-label="제품명">[빈폴레이디스] 네이비 스트라이프 [빈폴레이디스] 네이비 스트라이프</div>
+                                                        <div class="pdoption" aria-label="옵션/수량">
+                                                            <span class="color">블랙</span>
+                                                            <span class="option-num">66</span>
+                                                            <span class="count"><em class="count-num">1</em>개</span>
+                                                        </div>
+                                                        <div class="pdprice">
+                                                            <ins class="normal" aria-label="가격"><em>27,000</em><b>원</b></ins>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--//order-item-->
+                        </div>
+                        <!--//order-select-->
+
+                        <!-- [12/15]_수정(위키 381 내용 페이징 추가) -->
+                        <div class="paging">
+                            <a href="javascript:;" class="page-first" aria-label="처음페이지 이동"><i class="icon"></i><span class="hiding">처음페이지 이동</span></a>
+                            <a href="javascript:;" class="page-prev" aria-label="이전페이지 이동"><i class="icon"></i><span class="hiding">이전페이지 이동</span></a>
+                            <a href="javascript:;"><span>1</span></a>
+                            <a href="javascript:;"><span>2</span></a>
+                            <strong aria-label="현재 선택페이지"><span>3</span></strong>
+                            <a href="javascript:;"><span>4</span></a>
+                            <a href="javascript:;"><span>6</span></a>
+                            <a href="javascript:;"><span>7</span></a>
+                            <a href="javascript:;"><span>8</span></a>
+                            <a href="javascript:;"><span>9</span></a>
+                            <a href="javascript:;"><span>9999</span></a>
+                            <a href="javascript:;" class="page-next" aria-label="다음페이지 이동"><i class="icon"></i><span class="hiding">다음페이지 이동</span></a>
+                            <a href="javascript:;" class="page-last" aria-label="마지막페이지 이동"><i class="icon"></i><span class="hiding">마지막페이지 이동</span></a>
+                        </div>
+
+                        <div class="btngroup">
+                            <!-- 20200828 금요일 취소버튼 클릭 시 닫힘 -->
+                            <button class="btn btn-linelgray medium" data-dismiss="window"><span>취소</span></button>
+                            <button class="btn btn-default medium"><span>확인</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+    <!--//윈도우팝업 1:1 상담신청-->
+</body>
+</html>

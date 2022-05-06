@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" conte nt="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>비밀번호/은행계좌 관리화면</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/od/order.css">
+
+</head>
+<body id="popWin">         
+    <!--popup-win : 윈도우 팝업일 경우 // width:929px , min-height:482px, height:800px (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win hmallpay-wrap">
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <!-- [11/20]_수정(이미지 경로 변경) -->
+                <strong class="pop-title"><img src="//imagedev.hmall.com/p/img/od/easypay/logo-hmallpay.png" alt="Hmall Pay"></strong>
+                <!-- <strong class="pop-title"><img src="http://image.hyundaihmall.com/hmall/od/easypay/logo-hmallpay.png" alt="Hmall Pay"></strong> -->
+                <!--pop-content-->
+                <div class="pop-content">
+                    <div class="content">
+                        <div class="hmallpay-manage-content">
+                            <h3 class="title">Hmall Pay 설정</h3>
+                    
+                            <div class="hmallpay-butn-wrap _manage">
+                                <a href="#" class="def-set">비밀번호 변경</a>
+                                <a href="#" class="def-set">비밀번호 초기화</a>
+                            </div>
+                    
+                            <h3 class="title">Hmall Pay 계좌관리</h3>
+                            <ul class="bank-account-list">
+                                <li class="bank-account b_code_004">
+                                    <span>국민은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_088">
+                                    <span>신한은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_081">
+                                    <span>KEB하나은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_020">
+                                    <span>우리은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_011">
+                                    <span>NH농협</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_003">
+                                    <span>IBK기업은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_027">
+                                    <span>씨티은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_023">
+                                    <span>SC제일은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_007">
+                                    <span>수협</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_045">
+                                    <span>새마을금고</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_071">
+                                    <span>우체국</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_048">
+                                    <span>신용협동조합</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_032">
+                                    <span>부산은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_039">
+                                    <span>경남은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_031">
+                                    <span>대구은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_034">
+                                    <span>광주은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_037">
+                                    <span>전북은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_002">
+                                    <span>산업은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                                <li class="bank-account b_code_035">
+                                    <span>제주은행</span>
+                                    <em>1234********456</em>
+                                    <button class="del-account"></button>
+                                </li>
+                            </ul>
+                    
+                            <a href="#" class="bank-new-account">╋ <strong>신규등록</strong></a>
+                        </div>
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+</body>
+</html>

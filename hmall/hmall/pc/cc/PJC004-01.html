@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta name="title" content="https://hmall.com">
+<meta name="author" content="@Hmall">
+<meta name="description" content="백화점, 브랜드, 홈쇼핑까지- 당신의 모든 취향을 읽다. Korean Online Shopping Mall, Worldwide Shipping available, Hyundai Department Store Group in Korea. 韩国现代百货店的线上购物网站正品保障, 海外配送.">
+<meta name="keywords" content="">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="//imagedev.hmall.com/p/img/co/favicon/favicon.ico">
+<title>고객센터  1:1상담 게시판상담신청</title>
+<!-- UI/UX Style -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/common.css"><!-- 공통 css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/layout.css"><!-- 공통 Layout css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/popup.css"><!-- 공통 Popup css -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/co/jquery-ui.css"><!-- jQuery UI css -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-3.4.1.min.js"></script><!-- jQuery Plugin -->
+<script src="//imagedev.hmall.com/p/js/co/jquery.easing.min.js"></script><!-- jQuery UI Effect -->
+<script src="//imagedev.hmall.com/p/js/co/jquery-ui.1.12.1.min.js"></script><!-- jQuery UI js -->
+<script src="//imagedev.hmall.com/p/js/co/ukDetect.min.js"></script><!-- UI에 사용하는 Detect -->
+<script src="//imagedev.hmall.com/p/js/co/slick.min.js"></script><!-- 공통 Slide 플러그인 -->
+<script src="//imagedev.hmall.com/p/js/co/common.js"></script><!-- UI에 사용하는 기본 js  -->
+
+<!-- Main Contents css = Contents css부분은 각페이지마다 다르게 해당되는 css가 호출 됨(폴더 구조별)  -->
+<link rel="stylesheet" type="text/css" href="//imagedev.hmall.com/p/css/cc/customer.css">
+</head>
+<body id="popWin">   <!--20200826 수요일 추가 윈도우 팝업은 body에 popWin 아이디값 설정해주셔야 합니다. -->    
+    <!--윈도우팝업(새창으로열기) 1:1 상담신청 : PIA017-01 LNB 1:1상담신청 클릭 시 윈도우 팝업 // 20200825 script 요청드림-->  <!--pc 공통 스크립트 잡은 후 윈도우 팝업 변경 가능성 있음-->
+    <!--popup-win : 윈도우 팝업일 경우 // width:649px , min-height:482px, height:575px  (높이값은 popup-win 뒤의 클래스마다 변경) -->
+    <div class="popup-win wd600 cus-consult"> <!--20200828 금요일 pc레이아웃 공통작업 wd600 클래스 추가-->
+        <!--pop-wrap-->
+        <div class="pop-wrap" tabindex="0">
+            <!--pop-content-wrap-->
+            <div class="pop-content-wrap">
+                <strong class="pop-title">1:1 상담신청</strong>
+                <!--pop-content-->
+                <div class="pop-content">
+                    <p class="desc">
+                        당일 16시 이후 접수 건은 익일 오전 9시 이후 답변 가능 (단, 주말 공휴일 제외)
+                        <button class="btn btn-linelgray small30"><span>1:1 상담내역 보기</span></button> <!--마이페이지 1:1상담으로 이동-->
+                    </p>
+                    <div class="content"> 
+                        <div class="consult-wrap">
+                            <!--상담유형선택-->
+                            <div class="custom-selectbox" data-modules-selectbox="">
+                                <select>
+                                    <option>상담 유형선택</option>
+                                    <option selected="">취소신청</option>
+                                    <option>반품신청</option>
+                                    <option>배송/회수문의</option>
+                                    <option>결제/환불문의</option>
+                                    <option>교환신청</option>
+                                    <option>AS신청</option>
+                                    <option>시스템오류</option>
+                                    <option>서비스문의</option>
+                                </select>
+                            </div>
+                            <!--//상담유형선택-->
+                            <!--상담유형선택-->
+                            <div class="custom-selectbox" data-modules-selectbox="">
+                                <select>
+                                    <option>상담 사유 선택</option>
+                                    <option>변심</option>
+                                    <option>유사상품 구입</option>
+                                    <option>결제변경</option>
+                                    <option>단품변경</option>
+                                    <option>가격변경</option>
+                                    <option>베송지연</option>
+                                    <option>기타문의</option>
+                                </select>
+                            </div> 
+                            <!--//상담유형선택-->
+                            <!--product-wrap-->
+                            <div class="product-wrap delete">  <!--20200928 월요일 링크 추가-->
+                                <a href="//imagedev.hmall.com/hmall/pc/cc/PJC004-01-01.html" data-modules-winpopup="name:PJC004-01-01;width:929;height:738;">
+                                    <p><i class="icon"></i>상담할 상품을 선택해주세요.</p>
+                                </a>
+                            </div>
+                            <!--//product-wrap-->
+                        </div>
+                        <div class="btngroup">
+                            <!-- 20200828 금요일 취소버튼 클릭 시 닫힘 -->
+                            <button class="btn btn-linelgray medium" data-dismiss="window"><span>취소</span></button>
+                            <!--default disabled
+                            <button class="btn btn-linelgray medium" disabled=""><span>확인</span></button>
+                            -->
+                            <!--20200827 금요일 윈도우 팝업안에서 버튼 클릭 시 새창 윈도우로 뜸. (페이지고유 name값 추가)-->
+                            <button class="btn btn-default medium" data-modules-winpopup="href:PJC002.html;name:PJC002;width:649;height:356;"><span>확인</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!--//pop-content-->
+            </div>
+            <!--//pop-content-wrap-->
+        </div>
+        <!--//pop-wrap-->
+    </div>
+    <!--popup-win-->
+    <!--//윈도우팝업 1:1 상담신청-->
+</body>
+</html>
