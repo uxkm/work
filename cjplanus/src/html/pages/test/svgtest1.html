@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>svg clip path test</title>
+	
+	<style>
+		.clipimg{
+			width:auto;
+			height:100%;
+			opacity: 1;
+			transition: all 0.5s ease 0.2s;
+		}
+
+		
+		.iebox #image-wrapper {
+			position: relative;
+		}
+
+		.iebox .svg-background,
+		.iebox .svg-image {
+			clip-path: url(#clip-triangle);
+		}
+
+		.iebox .svg-image {
+			-webkit-transition: all 0.5s ease 0.2s;
+			-moz-transition: all 0.5s ease 0.2s;
+			opacity: 1;
+			transition: all 0.5s ease 0.2s;
+			width:auto;
+			height:100%;
+		}
+
+		.iebox svg.clip-svg {
+			position: absolute;
+			width: 519px;
+			height: 531px;
+		}
+
+		.iebox #svg {
+			left: 0px;
+			top: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="iebox">
+		<div id="image-wrapper">
+			<svg id="svg" class="clip-svg">
+				<rect class='svg-background' width="519" height="531" fill="#f9f9f9" />
+				<image id="img1" class='svg-image' width="519" height="531" xlink:href="images/01.ent-sample01.jpg" />
+			</svg>
+		</div>
+		<svg id="svg-defs" width="519" height="531">
+			<defs>
+				<clipPath id="clip-triangle">
+					<g stroke="null" id="svg1">
+						<path stroke="null" id="svg0" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118"/>
+					</g>
+				</clipPath>
+			</defs>
+		</svg>
+	</div>
+
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg1">
+					<path stroke="null" id="svg1-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath1">
+					<use xlink:href="#svg1-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath1)">
+					<image class="clipimg" xlink:href="images/01.ent-sample01.jpg" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg2">
+					<path stroke="null" id="svg2-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath2">
+					<use xlink:href="#svg2-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath2)">
+					<image class="clipimg" xlink:href="images/01.ent-sample01.jpg" x="-85px" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg3">
+					<path stroke="null" id="svg3-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath3">
+					<use xlink:href="#svg3-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath3)">
+					<image class="clipimg" xlink:href="images/01.ent-sample02.jpg" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg4">
+					<path stroke="null" id="svg4-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath4">
+					<use xlink:href="#svg4-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath4)">
+					<image class="clipimg" xlink:href="images/01.ent-sample02.jpg" x="-160px" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg5">
+					<path stroke="null" id="svg5-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath5">
+					<use xlink:href="#svg5-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath5)">
+					<image class="clipimg" xlink:href="images/01.ent-sample03.png" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg6">
+					<path stroke="null" id="svg6-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath6">
+					<use xlink:href="#svg6-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath6)">
+					<image class="clipimg" xlink:href="images/01.ent-sample03.png" x="-100px" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg7">
+					<path stroke="null" id="svg7-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath7">
+					<use xlink:href="#svg7-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath7)">
+					<image class="clipimg" xlink:href="images/02.sport-sample01.jpg" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg8">
+					<path stroke="null" id="svg8-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath8">
+					<use xlink:href="#svg8-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath8)">
+					<image class="clipimg" xlink:href="images/02.sport-sample01.jpg" x="-180px" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg9">
+					<path stroke="null" id="svg9-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath9">
+					<use xlink:href="#svg9-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath9)">
+					<image class="clipimg" xlink:href="images/03.traffic-sample01.jpg" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg10">
+					<path stroke="null" id="svg10-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath10">
+					<use xlink:href="#svg10-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath10)">
+					<image class="clipimg" xlink:href="images/03.traffic-sample01.jpg" x="-180px" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg11">
+					<path stroke="null" id="svg11-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath11">
+					<use xlink:href="#svg11-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath11)">
+					<image class="clipimg" xlink:href="images/04.bill-sample01.png" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg12">
+					<path stroke="null" id="svg12-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath12">
+					<use xlink:href="#svg12-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath12)">
+					<image class="clipimg" xlink:href="images/04.bill-sample01.png" x="-50px" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg13">
+					<path stroke="null" id="svg13-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath13">
+					<use xlink:href="#svg13-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath13)">
+					<image class="clipimg" xlink:href="images/04.bill-sample02.png" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg14">
+					<path stroke="null" id="svg14-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath14">
+					<use xlink:href="#svg14-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath14)">
+					<image class="clipimg" xlink:href="images/04.bill-sample02.png" x="-150px" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg15">
+					<path stroke="null" id="svg15-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath15">
+					<use xlink:href="#svg15-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath15)">
+					<image class="clipimg" xlink:href="images/04.bill-sample03.jpg" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg16">
+					<path stroke="null" id="svg16-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath16">
+					<use xlink:href="#svg16-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath16)">
+					<image class="clipimg" xlink:href="images/04.bill-sample03.jpg" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg17">
+					<path stroke="null" id="svg17-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath17">
+					<use xlink:href="#svg17-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath17)">
+					<image class="clipimg" xlink:href="images/04.bill-sample04.png" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg18">
+					<path stroke="null" id="svg18-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath18">
+					<use xlink:href="#svg18-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath18)">
+					<image class="clipimg" xlink:href="images/04.bill-sample04.png" x="-120px" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg19">
+					<path stroke="null" id="svg19-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath19">
+					<use xlink:href="#svg19-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath19)">
+					<image class="clipimg" xlink:href="images/img_sample.jpg" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg20">
+					<path stroke="null" id="svg20-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath20">
+					<use xlink:href="#svg20-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath20)">
+					<image class="clipimg" xlink:href="images/img_sample.jpg" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg21">
+					<path stroke="null" id="svg21-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath21">
+					<use xlink:href="#svg21-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath21)">
+					<image class="clipimg" xlink:href="images/img_sample1.png" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg22">
+					<path stroke="null" id="svg22-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath22">
+					<use xlink:href="#svg22-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath22)">
+					<image class="clipimg" xlink:href="images/img_sample1.png" x="-100px" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="svgbox">
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg23">
+					<path stroke="null" id="svg23-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath23">
+					<use xlink:href="#svg23-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath23)">
+					<image class="clipimg" xlink:href="images/img_sample2.jpg" x="0" y="0" />
+				</g>
+			</g>
+		</svg>
+		<svg width="519" height="531" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+			<g>
+				<title>집행사례 이미지</title>
+				<g stroke="null" id="svg24">
+					<path stroke="null" id="svg24-1" fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" class="st0"/>
+				</g>
+				<clipPath id="clipPath24">
+					<use xlink:href="#svg24-1" />
+				</clipPath>
+				<g clip-path="url(#clipPath24)">
+					<image class="clipimg" xlink:href="images/img_sample2.jpg" x="-200px" y="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+</body>
+</html>

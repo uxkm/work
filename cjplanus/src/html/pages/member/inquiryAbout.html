@@ -1,0 +1,313 @@
+{% set pageData = { pageDep1Name: '청약문의', pageName: '청약문의', pageDesc: '상품에 대해 궁금하신 사항은 언제든지 문의해주세요. 담당 영업사원이 확인 후 연락 드리겠습니다', pageActive: '0-1' } %} 
+{% extends "_layout/_baseLayout.html" %} 
+
+{% block jscnt %} 
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script><!-- UI/UX Style -->
+{% endblock %}
+
+{% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_inqabout">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_submy.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        
+        <script>
+          $(function(){
+            // tabNavSet();
+            var $h2Btn = $('.choicegroup > .h2 > .accbtn');
+            var $ukAcc = $('.uk_acc');
+            var $ukAccItem = $ukAcc.find('.accitem');
+            $h2Btn.on('click', function(){
+              $('.choicegroup').toggleClass('open');
+              $('.choicegroup').hasClass('open') ? $('.choicegroup').find('.sr-only').text('접기') : $('.choicegroup').find('.sr-only').text('펼치기');
+            });
+            $ukAccItem.each(function(i, e){
+              $(e).find('.accbtn').on('click', function() {
+                $(e).toggleClass('is-open');
+              });
+            });
+          })
+        </script>
+        <div class="inqabout_wrap">
+
+          <div class="choicegroup" aria-label="상품선택">
+            <h2 class="h2">
+              <strong><i class="ico-chknoti"></i>상품선택</strong>
+              <button type="button" class="accbtn arrow"><i class="arr"></i><span class="sr-only">펼치기</span></button>
+            </h2>
+            <!-- //.acc_tit -->
+            <div class="cntgroup" aria-label="상품선택 내용">
+
+              <div class="uk_tabnav">
+                <div class="tabnav touchflow-x">
+                  <ul class="tablist">
+                    <li class="item active"><a href="#"><span>Entertainment</span></a></li>
+                    <li class="item"><a href="#"><span>Sports</span></a></li>
+                    <li class="item"><a href="#"><span>Traffic</span></a></li>
+                    <li class="item"><a href="#"><span>Billboard</span></a></li>
+                    <li class="item"><a href="#"><span>관심매체</span></a></li>
+                  </ul>
+                </div> 
+                <!-- //.tabnav -->
+              </div>
+              <!-- //.uk_tabnav -->
+              
+              <!-- [0528]검색 영역 삭제 -->
+              <!-- <div class="group trans">
+                <label class="uk_label">
+                  <input type="text" name="" placeholder="검색어를 입력해주세요" class="inp">
+                </label>
+                <button class="ibtn_find"><i class="ico-find"></i><span class="sr-only">검색</span></button>
+              </div> -->
+
+              <div class="uk_acc">
+
+                <!--  
+                  활성화 상태 accitem에 class is-open 추가  <div class="accitem is-open">
+                 -->
+                <div class="accitem">
+                  <div class="acc_tit">
+                    <label class="uk_label">
+                      <input type="checkbox" name=""><i class="ico-check"></i><span class="text">Starfield 고양</span>
+                    </label>
+                    <button type="button" class="accbtn arrow"><i class="arr"></i><span class="sr-only">펼치기</span></button>
+                  </div>
+                  <!-- //.acc_tit -->
+
+                  <div class="acc_cnt">
+                    <article class="carditem">
+                      <figure class="figure">
+                        <label class="uk_label">
+                          <input type="checkbox" name="">
+                          <i class="ico-check"></i>
+                          <span class="sr-only">선택</span>
+                        </label>
+                        <div class="img">
+                          <img src="/images/sample/img_sample2.jpg" width="1440" height="811" alt="">
+                        </div>
+                        <figcaption class="caption">
+                          <strong>상암 미디어시티역 북측 통행료 상암 미디어시티역 북측 통행료</strong>
+                          <p><span>Entertainment</span><span>집행비용: 100만원</span><span>광고기간: 12개월</span></p>
+                        </figcaption>
+                      </figure>
+                    </article>
+                  </div>
+                  <!-- //.acc_cnt -->
+                </div>
+                <!-- //.accitem -->
+
+                <div class="accitem">
+                  <div class="acc_tit">
+                    <label class="uk_label">
+                      <input type="checkbox" name=""><i class="ico-check"></i><span class="text">Starfield 하남</span>
+                    </label>
+                    <button type="button" class="accbtn arrow"><i class="arr"></i><span class="sr-only">펼치기</span></button>
+                  </div>
+                  <!-- //.acc_tit -->
+
+                  <div class="acc_cnt">
+                    <article class="carditem">
+                      <figure class="figure">
+                        <label class="uk_label">
+                          <input type="checkbox" name="">
+                          <i class="ico-check"></i>
+                          <span class="sr-only">선택</span>
+                        </label>
+                        <div class="img">
+                          <img src="/images/sample/img_sample2.jpg" width="1440" height="811" alt="">
+                        </div>
+                        <figcaption class="caption">
+                          <strong>상암 미디어시티역 북측 통행료</strong>
+                          <p><span>Entertainment</span><span>집행비용: 100만원</span><span>광고기간: 12개월</span></p>
+                        </figcaption>
+                      </figure>
+                    </article>
+                  </div>
+                  <!-- //.acc_cnt -->
+                </div>
+                <!-- //.accitem -->
+
+                <div class="accitem">
+                  <div class="acc_tit">
+                    <label class="uk_label">
+                      <input type="checkbox" name=""><i class="ico-check"></i><span class="text">Starfield 코엑스몰</span>
+                    </label>
+                    <button type="button" class="accbtn arrow"><i class="arr"></i><span class="sr-only">펼치기</span></button>
+                  </div>
+                  <!-- //.acc_tit -->
+
+                  <div class="acc_cnt">
+                    <article class="carditem">
+                      <figure class="figure">
+                        <label class="uk_label">
+                          <input type="checkbox" name="">
+                          <i class="ico-check"></i>
+                          <span class="sr-only">선택</span>
+                        </label>
+                        <div class="img">
+                          <img src="/images/sample/img_sample2.jpg" width="1440" height="811" alt="">
+                        </div>
+                        <figcaption class="caption">
+                          <strong>상암 미디어시티역 북측 통행료</strong>
+                          <p><span>Entertainment</span><span>집행비용: 100만원</span><span>광고기간: 12개월</span></p>
+                        </figcaption>
+                      </figure>
+                    </article>
+                  </div>
+                  <!-- //.acc_cnt -->
+                </div>
+                <!-- //.accitem -->
+
+              </div>
+              <!-- //.uk_acc -->
+
+            </div>
+            <!-- //.cntgroup -->
+          </div>
+          <!-- //.choicegroup -->
+
+
+          <div class="inqgroup" aria-label="청약문의">
+            <h2 class="h2">
+              <strong><i class="ico-chknoti"></i>청약문의</strong>
+            </h2>
+            <!-- //.tit -->
+
+            <div class="uk_table">
+              <div class="tbody">
+                <div class="tr">
+                  <strong class="th">문의상품</strong>
+                  <div class="td">와이드컬러, 미디어스크린, M-LIVE</div>
+                </div>
+                <!-- //.tr -->
+                <div class="tr">
+                  <strong class="th">예상집행 기간</strong>
+                  <div class="td">
+                    <div class="group date">
+                      <label class="uk_label datetype">
+                        <input type="date" name="" placeholder="" class="inp" title="시작일자">
+                      </label>
+                      <i class="dot">~</i>
+                      <label class="uk_label datetype">
+                        <input type="date" name="" placeholder="" class="inp" title="종료일자">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- //.tr -->
+								<!-- http://tests-anciens.ljouhet.net/webshims/demos/webforms/3-webforms-widgets.html -->
+								<!-- cdn for modernizr, if you haven't included it already -->
+								<script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+								<!-- polyfiller file to detect and load polyfills -->
+								<script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+								<script>
+									webshims.setOptions('waitReady', false);
+									webshims.setOptions('forms-ext', {types: 'date'});
+									webshims.polyfill('forms forms-ext');
+								</script>
+                <!-- jquery ui 사용시 -->
+                <!-- <div class="tr">
+                  <strong class="th">예상집행 기간</strong>
+                  <div class="td">
+                    <div class="group date">
+                      <label class="uk_label">
+                        <input type="text" name="" placeholder="" class="inp datepicker" title="시작일자">
+                      </label>
+                      <i class="dot">~</i>
+                      <label class="uk_label">
+                        <input type="text" name="" placeholder="" class="inp datepicker" title="종료일자">
+                      </label>
+                    </div>
+                    <script> 
+                      $(document).ready(function(){ 
+                        $('.datepicker').datepicker({
+                          dateFormat: 'yy-mm-dd',
+                          closeText: "닫기", 
+                          currentText: "오늘", 
+                          prevText: '이전 달', 
+                          nextText: '다음 달', 
+                          monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'], 
+                          monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'], 
+                          dayNames: ['일', '월', '화', '수', '목', '금', '토'], 
+                          dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'], 
+                          dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], 
+                          weekHeader: "주", 
+                          yearSuffix: '년' 
+                        }); 
+                      }); 
+                    </script>
+                  </div>
+                </div> -->
+                <!-- //.tr -->
+                <div class="tr wide">
+                  <div class="td">
+                    <label class="uk_label">
+                      <span class="sr-only">내용입력</span>
+                      <textarea name="" id="" cols="170" rows="10" placeholder="궁금하신 내용을 적어주세요" class="textarea"></textarea>
+                    </label>
+                  </div>
+                </div>
+                <!-- //.tr -->
+              </div>
+              <!-- //.tbody -->
+            </div>
+            <!-- //.uk_table -->
+
+          </div>
+          <!-- //.inqgroup -->
+          
+          <div class="btngroup">
+            <button class="btn_default"><span>등록</span></button>
+          </div>
+
+        </div>
+        <!-- //.inqabout_wrap -->
+
+        
+        <button onclick="uk.ukmodal.open('ukmodalAlert', this);">[확인용] Alert 개발시 [확인용] 버튼 삭제</button>
+        <div id="ukmodalAlert" class="ukmodal_wrap alert" role="alertdialog">
+          <div class="ukmodal">
+            <div class="ukmodal_head">
+              <h2>메시지</h2>
+            </div>
+            <div class="ukmodal_body">
+              <div class="ukmodal_cont">
+                <!-- 
+                  [등록]
+                  case1 청약문의가 접수되었습니다.
+                  case2 예상집행기간 or 문의내용을 입력해주세요.
+                -->
+                <p class="text">청약문의가 접수되었습니다.</p>
+                <p class="text">예상집행기간을 입력해주세요.</p>
+                <p class="text">문의내용을 입력해주세요.</p>
+              </div>
+            </div>
+            <div class="ukmodal_foot">
+              <div class="btngroup">
+                <button type="button" class="btn_default" onclick="uk.ukmodal.close('ukmodalAlert')"><span>확인</span></button>
+              </div>
+            </div>
+            <button type="button" class="ibtn_close" onclick="uk.ukmodal.close('ukmodalAlert')"><span class="sr_only">팝업 닫기</span></button>
+          </div>
+          <div class="dimmer" onclick="uk.ukmodal.close('ukmodalAlert')"></div>
+        </div>
+        <!-- //.ukmodal_wrap -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

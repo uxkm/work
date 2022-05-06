@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>상단 탑 베너 오늘하루 그만보기 예제</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="topbn.css">
+</head>
+<body>
+	<div class="wrap">
+		<script>
+			/* 상단 공지 레이어 팝업 */
+			function setCookie( name, value, expirehours ) {
+				var todayDate = new Date();
+				todayDate.setHours( todayDate.getHours() + expirehours );
+				document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+			}
+			function topBnCloseWin() {
+				document.getElementById('topBanner').style.display = "none";
+				document.getElementById('topBnOpen').style.display = "block";
+			}
+			function topBnOpenWin() {
+				document.getElementById('topBanner').style.display = "block";
+				document.getElementById('topBnOpen').style.display = "none";
+			}
+			function todayCloseWin() {
+				setCookie( "ncookie", "done" , 24 );
+				document.getElementById('topBanner').style.display = "none";
+				document.getElementById('topBnOpen').style.display = "block";
+			}
+			/* //상단 공지 레이어 팝업 */
+		</script>
+				
+		<!-- 상단 공지 레이어 팝업 -->
+		<div id="topBanner" class="topbanner">
+			<div class="topbnwrap">
+				<div class="topbncnt">
+					banner
+				</div>
+				<!-- //.topbncnt -->
+				<div class="topbncontrol">
+					<a href="javascript:;" class="topbncloseday" onclick="todayCloseWin();">사이트 접속 시 오늘하루 숨기기</a>
+					<button class="topbnclose" onclick="topBnCloseWin();">배너 닫기</button>
+				</div>
+				<!-- //.topbncontrol -->
+			</div>
+			<!-- //.topbnwrap -->
+		</div>
+		<!-- //.topbanner -->
+		<div class="wrapopen"><button id="topBnOpen" class="topbnopen" onclick="topBnOpenWin();">배너 열기</button></div>
+		<script>
+			cookiedata = document.cookie;
+			if ( cookiedata.indexOf("ncookie=done") < 0 ){
+				document.getElementById('topBanner').style.display = "block";
+				document.getElementById('topBnOpen').style.display = "none";
+			} else {
+				document.getElementById('topBanner').style.display = "none";
+				document.getElementById('topBnOpen').style.display = "block";
+			}
+		</script>
+	</div>
+	
+	
+	<script src="jquery-3.4.1.min.js"></script>
+	
+</body>
+</html>

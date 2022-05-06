@@ -1,0 +1,26 @@
+
+<!-- Start : Member 서브메뉴 -->
+<ul class="breadcrumb">
+  <li>홈</li>
+  {%if pageData.pageActive == '0' %}
+  <li><strong>{{ pageData.pageDep1Name }}</strong></li>
+  {% elif pageData.pageActive == '2' %}
+  <li>{{ pageData.pageDep1Name }}</li>
+  <li><strong>{{ pageData.pageName }}</strong></li>
+  {%- else -%}
+  <li><strong>{{ pageData.pageName }}</strong></li>
+  {% endif %}
+</ul>
+<div class="cnt_submenu member">
+  <nav class="navsub">
+    <ul>
+      <li{%if pageData.pageActive == '1' %} class="active"{% endif %}>
+        <a href="login.html">로그인</a>
+      <li{%if pageData.pageActive == '2' %} class="active"{% endif %}>
+        <a href="join.html">회원가입</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- //.cnt_submenu -->
+<!-- End : Member 서브메뉴 -->

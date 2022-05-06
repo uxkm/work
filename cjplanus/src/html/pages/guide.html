@@ -1,0 +1,18 @@
+{% set pageData = { pageName: 'UI/UX 가이드' } %} {%- extends "_layout/_guideLayout.html" -%} {% block guide %}
+<div class="uk_guide">
+  {% include "parts/_guidetoc.html" %}
+
+  <div class="uk_main">
+    <h1 class="uk_title">
+      <img src="{{ set.imgurl }}/base/cj_logo.png" width="52" height="45" alt="" />
+      PLANUS UI/UX 가이드
+    </h1>
+    <div class="uk_container">
+      {% include "parts/_guidehistory.html" %} {% include "parts/_guideset.html" %} {% include "parts/_guidefile.html" %} {% include "parts/_guidestyle.html" %}
+    </div>
+    <!-- //.uk_container -->
+  </div>
+  <!-- //.uk_main -->
+</div>
+<!-- //.uk_guide -->
+{% endblock %}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>svg clip path test</title>
+	
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.photo_rectangle_inverse {
+			width: 519px;
+			height: 531px;
+			clip-path: url(#shape);
+			position: relative;
+			transform: translateZ(1px);
+			visibility: visible;
+		}
+		.photo_rectangle_inverse1 {
+			width: 170px;
+			height: 160px;
+			clip-path: url(#shape1);
+			position: relative;
+			transform: translateZ(1px)
+		}
+
+		.image-container{
+			width: 124px;
+			height: 124px;
+			background-size: 100%;
+			background-image: url(http://imgur.com/jMQ5vHg);
+			-webkit-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
+			-moz-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
+			-ms-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
+			-o-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
+			}
+			#wrap-image{
+				mask: url("http://i.imgur.com/9Xo9L4Z.png");
+			}
+	</style>
+</head>
+<body>
+	<div class="image-container">
+		<img class="wrap-image" src="http://i.imgur.com/jMQ5vHg.png" id="wrap-image">
+	</div>
+	<svg width="360" height="233" version="1.2">
+    <defs>
+			<mask id="svgmask2">
+				<image width="100%" height="100%" xlink:href="http://s12.postimg.org/pzhdxcxb1/squirrel.png" />
+			</mask>
+    </defs>
+		<image mask="url(#svgmask2)" width="100%" height="100%" xlink:href="images/01.ent-sample01.jpg" />
+	</svg>
+	<hr>
+	<svg height="100%" width="100%">
+		<defs>
+			<clipPath id="shape">
+				<path fill="#F9A12B" d="m356.07741,38.91459c-150.91711,-58.21835 -303.88629,-50.59451 -343.23431,19.38573c-39.72656,70.53063 15.93844,236.27761 122.44707,373.40464c106.4887,137.02511 258.64104,131.25628 343.79216,-20.09919c83.79635,-150.90701 27.49381,-314.6563 -123.00491,-372.69118" />
+			</clipPath>
+		</defs>
+		<image width="519px" height="531px" xlink:href='images/01.ent-sample01.jpg' class='photo_rectangle_inverse'/>
+		<!-- <image transform="translate(519,0)" width="519px" height="531px" xlink:href='images/01.ent-sample01.jpg' class='photo_rectangle_inverse' /> -->
+	</svg>
+	<svg height="100%" width="100%" >
+		<defs>
+			<clipPath id="shape1">
+				<path d="M10,70 Q0,80 10,90 L70,150 Q80,160 90,150 L150,90 Q160,80 150,70 L90,10 Q80,0 70,10z" />
+			</clipPath>
+		</defs>
+		<image height="160px" width="170px" xlink:href='http://i.imgur.com/DXaH323.jpg'; class='photo_rectangle_inverse1'/>
+		<!-- <image transform="translate(170,0)" height="160px" width="170px" xlink:href='http://i.imgur.com/DXaH323.jpg' class='photo_rectangle_inverse1' /> -->
+	</svg> 
+ 
+</body>
+</html>

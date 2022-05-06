@@ -1,0 +1,45 @@
+{% set pageData = { pageDep1Name: '', pageName: '비밀번호 변경', pageDesc: '', pageActive: '1-7' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pwtemp">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_submem.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="logingroup">
+          <div class="column">
+            <div class="col_in">
+              <div class="infogroup">
+                <p class="pwinfo"><em>홍 길동</em>님<br />비밀번호가 변경되었습니다.</p>
+              </div>
+
+              <div class="field_footer">
+                <p class="text">파워캐스트 모든 서비스를 정상적으로 이용하실 수 있습니다.</p>
+                <div class="btngroup">
+                  <a href="/" class="btn_default"><span>서비스 이용하기</span></a>
+                </div>
+              </div>
+            </div>
+            <!-- //.col_in -->
+          </div>
+          <!-- //.column -->
+        </div>
+        <!-- //.logingroup -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

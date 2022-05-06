@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="title" content="우리카드">
+    <meta name="keywords" content="우리카드, 신규카드, 카드혜택, 카드신청">
+    <meta name="copyright" content="COPYRIGHTS WOORICARD. ALL RIGHTS RESERVED.">
+    <title>마이 데이터 서비스 인증</title>
+    <link rel="Shortcut Icon" href="../img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/m.newfonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newreset.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newcommon.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newmd.page.css">
+    <!-- JS -->
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery/jquery-ui.min.js"></script>
+    <script src="../js/jquery/jquery.ui.touch-punch.min.js"></script>
+    <script src="../js/jquery/jquery.mailtip.js"></script>
+    <script src="../js/uiux/ukDetect-1.0.0.min.js"></script>
+    <script src="../js/uiux/m.newmd.js"></script>
+  </head>
+  <body>
+    <div class="ukwrap">
+      <header class="uk_header">
+        <h1 class="tit_h1">전송요구</h1>
+        <button type="button" class="ibtn_close"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </header>
+      <div class="ukmain">
+        <div class="cbody">
+          <h2 class="tit_h2_1">우리카드 전자금융 전송 요구 선택</h2>
+          <div class="text_wrap">
+            <p class="text">선택 된 신용정보에 대해 전송항목을 선택하세요.</p>
+          </div>
+          <script>
+            // UI 확인용 JS 개발 상황에 맞추어 수정
+            $(document).ready(function(){
+              var _checkAll = $('#chkItemAll');
+              var _checkAllText = $('.check_all label > span');
+              var _checkItem = $('.check_item .inpchk');
+              $(document).on('click', '#chkItemAll',function(){
+                if( $('#chkItemAll').is(':checked') ){
+                  _checkItem.prop('checked',true);
+                  _checkAllText.text('전체해제');
+                } else {
+                  _checkItem.prop('checked',false);
+                  _checkAllText.text('전체선택');
+                }
+              });
+            })
+          </script>
+          <div class="acc_checkwrap">
+            <h3 class="tit_h3">전자금융 정보</h3>
+            <div class="check_all">
+              <input type="checkbox" name="chk" id="chkItemAll">
+              <label for="chkItemAll">[<span>전체선택</span>]</label>
+            </div>
+            <ul class="checklist">
+              <li class="check_item">
+                <input type="checkbox" name="chk" id="chkItem1" class="inpchk">
+                <label for="chkItem1"><strong class="name">전자지급수단 목록 조회</strong></label>
+                <button type="button" class="btn_acc"><i class="icon"></i><span class="sr-only">상세내용 보기</span></button>
+                <div class="acc_cnt">
+                  <div class="cnt_in">
+                    <p>거래유형</p>
+                    <p>권면명</p>
+                    <p>거래일시</p>
+                    <p>거래금액</p>
+                    <p>거래 후 잔액</p>
+                    <p>기관코드</p>
+                  </div>
+                </div>
+              </li>
+              <li class="check_item">
+                <input type="checkbox" name="chk" id="chkItem2" class="inpchk">
+                <label for="chkItem2"><strong class="name">전자지급수단 잔액정보 조회</strong></label>
+                <button type="button" class="btn_acc"><i class="icon"></i><span class="sr-only">상세내용 보기</span></button>
+                <div class="acc_cnt">
+                  <div class="cnt_in">
+                    <p>거래유형</p>
+                    <p>권면명</p>
+                    <p>거래일시</p>
+                    <p>거래금액</p>
+                    <p>거래 후 잔액</p>
+                    <p>기관코드</p>
+                  </div>
+                </div>
+              </li>
+              <li class="check_item">
+                <input type="checkbox" name="chk" id="chkItem3" class="inpchk">
+                <label for="chkItem3"><strong class="name">전자지급수단 자동충전정보 조회</strong></label>
+                <button type="button" class="btn_acc"><i class="icon"></i><span class="sr-only">상세내용 보기</span></button>
+                <div class="acc_cnt">
+                  <div class="cnt_in">
+                    <p>거래유형</p>
+                    <p>권면명</p>
+                    <p>거래일시</p>
+                    <p>거래금액</p>
+                    <p>거래 후 잔액</p>
+                    <p>기관코드</p>
+                  </div>
+                </div>
+              </li>
+              <li class="check_item">
+                <input type="checkbox" name="chk" id="chkItem4" class="inpchk">
+                <label for="chkItem4"><strong class="name">선불 거래내역 조회</strong></label>
+                <button type="button" class="btn_acc"><i class="icon"></i><span class="sr-only">상세내용 보기</span></button>
+                <div class="acc_cnt">
+                  <div class="cnt_in">
+                    <p>거래유형</p>
+                    <p>권면명</p>
+                    <p>거래일시</p>
+                    <p>거래금액</p>
+                    <p>거래 후 잔액</p>
+                    <p>기관코드</p>
+                  </div>
+                </div>
+              </li>
+              <li class="check_item">
+                <input type="checkbox" name="chk" id="chkItem5" class="inpchk">
+                <label for="chkItem5"><strong class="name">결제내역 조회</strong></label>
+                <button type="button" class="btn_acc"><i class="icon"></i><span class="sr-only">상세내용 보기</span></button>
+                <div class="acc_cnt">
+                  <div class="cnt_in">
+                    <p>거래유형</p>
+                    <p>권면명</p>
+                    <p>거래일시</p>
+                    <p>거래금액</p>
+                    <p>거래 후 잔액</p>
+                    <p>기관코드</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <button type="button" class="btn_next blue"><span>다음</span></button>
+          </div>
+          <!-- //acc_checkwrap -->
+        </div>
+        <!-- //.cbody -->
+      </div>
+      <!-- //.ukmain -->
+    </div>
+    <!-- //.ukwrap -->
+  </body>
+</html>

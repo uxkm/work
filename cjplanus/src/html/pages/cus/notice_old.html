@@ -1,0 +1,168 @@
+{% set pageData = { pageDep1Name: '고객센터', pageName: '공지사항', pageDesc: '', pageActive: '1' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_cusnotice">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subcus.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+
+        <div class="searchgp">
+					<div class="tcount">
+						<span>총<em>16</em>개의 공지글이 있습니다.</span>
+					</div>
+					<div class="field find_medium" data-medium="inpfield">
+						<label class="uk_label">
+							<input type="text" name="" placeholder="입력해주세요" class="inp">
+						</label>
+						<button class="ibtn_find black"><i class="ico-find"></i><span class="sr-only">검색</span></button>
+					</div>
+				</div>
+				<!-- //.searchgp -->
+
+				<div class="ntcgroup">
+
+					<!-- 검색결과 또는 데이터가 없을 경우 -->
+					<div class="nodata" style="display:none">
+						죄송합니다. 찾으시는 검색결과가 없습니다.
+						<!-- 데이터 정보가 없습니다. -->
+					</div>
+					<!-- //.nodata -->
+
+					<!-- START : 검색결과 또는 데이터가 있을 경우 -->
+					<div class="ntclist">
+            <div class="uk_table listtbl">
+              <div class="thead">
+                <div class="tr">
+                  <div class="th num">번호</div>
+                  <div class="th state">진행상태</div>
+                  <div class="th date">접수일</div>
+                  <div class="th company">거래처구분</div>
+                  <div class="th accname">거래처명</div>
+                  <div class="th name">담당자</div>
+                  <div class="th pdnum">문의번호</div>
+                  <div class="th pdclass">계약번호</div>
+                  <div class="th pdmedia">문의상품</div>
+                </div>
+              </div>
+              
+              <!-- 검색결과 또는 데이터가 없을 경우 -->
+              <div class="nodata" style="display:none">
+                죄송합니다. 찾으시는 검색결과가 없습니다.
+                <!-- 데이터 정보가 없습니다. -->
+              </div>
+              <!-- //.nodata -->
+  
+              <!-- START : 검색결과 또는 데이터가 있을 경우 -->
+              <div class="tbody">
+                <!-- 링크 영역은 class tr 에 click 이벤트 제공 -->
+                <div class="tr">
+                  <a href="cusmngView.html">
+                    <div class="td num"><span>9999</span></div>
+                    <div class="td state"><span>청약접수</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>-</span></div>
+                    <div class="td pdclass"><span>-</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <span>국내선 2층 JDC면세점 입구 프로모션 존</span>
+                          <!-- <span>미디어전광판</span> -->
+                        </p>
+                        <span class="etc">외 10</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+              </div>
+              <!-- //.tbody -->
+            </div>
+						<div class="ntc_cell">
+							<a href="noticeView.html">
+								<!-- 신규등록 글은 nct_tit에 class new 추가 -->
+								<strong class="ntc_tit new"><span>홈페이지 오픈 테스트 중입니다.</span></strong>
+								<p class="ntc_cnt">안녕하세요. CJ파워캐스트 PLANUS입니다. 지금은 홈페이지 오픈 테스트중입니다. 상품은 추후 업데이트 예정입니다. 빨리 홈페이지 작업 오픈될수 있도록 최선을 다하겠습니다. 감사합니다 빨리 홈페이지 작업 오픈될수 있도록 최선을 다하겠습니다. 감사합니다 감사합니다 빨리 홈페이지 작업 오픈될수 있도록 최선을 다하겠습니다. 감사합니다</p>
+							</a>
+						</div>
+						<div class="ntc_cell">
+							<a href="noticeView.html">
+								<strong class="ntc_tit"><span>설날연휴 휴무 안내입니다.설날연휴 휴무 안내입니다.설날연휴 휴무 안내입니다.설날연휴 휴무 안내입니다.설날연휴 휴무 안내입니다.</span></strong>
+								<p class="ntc_cnt">2월  1일 ~ 2월 9일까지 설 연휴 휴무입니다. 즐거운 설연휴 보내세요.</p>
+							</a>
+						</div>
+						<div class="ntc_cell">
+							<a href="noticeView.html">
+								<strong class="ntc_tit"><span>방문 및 출장 스케쥴 요청 참고 부탁드립니다.</span></strong>
+								<p class="ntc_cnt">출장 및 A/S 등의 건으로 영업사원 요청하실경우 방문요청 시스템을참고하시거나 해당 영업사원에게 전화문의 꼭 부탁 드립니다.</p>
+							</a>
+						</div>
+						<div class="ntc_cell">
+							<a href="noticeView.html">
+								<strong class="ntc_tit"><span>설날연휴 휴무 안내입니다.</span></strong>
+								<p class="ntc_cnt">2월 1일 ~ 2월 9일까지 설 연휴 휴무입니다. 즐거운 설연휴 보내세요.</p>
+							</a>
+						</div>
+						<div class="ntc_cell">
+							<a href="noticeView.html">
+								<strong class="ntc_tit"><span>방문 및 출장 스케쥴 요청 참고 부탁드립니다.</span></strong>
+								<p class="ntc_cnt">출장 및 A/S 등의 건으로 영업사원 요청하실경우 방문요청 시스템을참고하시거나 해당 영업사원에게 전화문의 꼭 부탁 드립니다.</p>
+							</a>
+						</div>
+						<div class="ntc_cell">
+							<a href="noticeView.html">
+								<strong class="ntc_tit"><span>방문 및 출장 스케쥴 요청 참고 부탁드립니다.</span></strong>
+								<p class="ntc_cnt">출장 및 A/S 등의 건으로 영업사원 요청하실경우 방문요청 시스템을참고하시거나 해당 영업사원에게 전화문의 꼭 부탁 드립니다.</p>
+							</a>
+						</div>
+						<div class="ntc_cell">
+							<a href="noticeView.html">
+								<strong class="ntc_tit"><span>설날연휴 휴무 안내입니다.</span></strong>
+								<p class="ntc_cnt">2월 1일 ~ 2월 9일까지 설 연휴 휴무입니다. 즐거운 설연휴 보내세요.</p>
+							</a>
+						</div>
+						<div class="ntc_cell">
+							<a href="noticeView.html">
+								<strong class="ntc_tit"><span>방문 및 출장 스케쥴 요청 참고 부탁드립니다.</span></strong>
+								<p class="ntc_cnt">출장 및 A/S 등의 건으로 영업사원 요청하실경우 방문요청 시스템을참고하시거나 해당 영업사원에게 전화문의 꼭 부탁 드립니다.</p>
+							</a>
+						</div>
+					</div>
+					<!-- //.ntclist -->
+					<!-- END : 검색결과 또는 데이터가 있을 경우 -->
+
+					<div class="paging">
+            <span class="number"><b class="current">1</b><i class="total">3</i></span>
+            <div class="btngroup">
+              <button class="ibtn_prev arrow"><i class="arrow-l"></i><span class="sr-only">이전 페이지</span></button>
+              <button class="ibtn_next arrow"><i class="arrow-r"></i><span class="sr-only">다음 페이지</span></button>
+            </div>
+          </div>
+
+				</div>
+				<!-- //.ntcgroup -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

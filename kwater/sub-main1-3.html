@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>K water</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="format-detection" content="telephone=no, email=no, address=no">
+	<meta name="apple-mobile-web-app-capable" content=" yes">
+	<meta name="robots" content="index,follow">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- css -->
+	<link href="css/datatables.min.css" rel="stylesheet" />
+	<link href="css/chosen.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+
+	<!-- js (제이쿼리는 둘중에 하나만 선택) -->
+	<script type="text/javascript" src="js/jquery.1.12.1.min.js"></script><!--// 구글 제이쿼리 //-->
+	<script src="js/datatables.min.js"></script>
+	<script src="js/ukDetect.min.js"></script>
+	<script type="text/javascript" src="assets/chosen/chosen.jquery.min.js"></script>
+	<script src="js/ui.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+	<header class="uk_header">
+		<h1><a href="/"><img src="images/logo.png" alt="K water"></a></h1>
+		<nav class="uk_nav">
+			<h2>공업</h2>
+			<ul>
+				<li>
+					<a href="#"><i>실시간현황</i></a>
+					<div class="sub_menu">
+						<ul>
+							<li class="on"><a href="#">서브메뉴 1</a></li>
+							<li><a href="#">서브메뉴 2</a></li>
+							<li><a href="#">서브메뉴 3</a></li>
+							<li><a href="#">서브메뉴 4</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#"><i>스마트 미터링</i></a></li>
+				<li><a href="#"><i>현황 분석</i></a></li>
+				<li class="on"><a href="#"><i>수용가 관리</i></a></li>
+				<li><a href="#"><i>데이터 품질 관리</i></a></li>
+				<li><a href="#"><i>시스템관리</i></a></li>
+			</ul>
+		</nav>
+		<aside class="utill">
+			<p class="user">본사관리자</p>
+			<div class="button_box">
+				<button type="button" class="setting"><i>세팅</i></button>
+				<a href="#" class="home"><i>홈으로</i></a>
+				<a href="#" class="logout"><i>로그아웃</i></a>
+			</div>
+		</aside>
+	</header>
+	<!-- uk_header -->
+
+
+	<section class="uk_container sub_container white_container">
+		<article class="title_content">
+			<h2>수용가 관리</h2>
+			<div class="list_sort">
+				<div class="radio_box">
+					<label class="radio_inp">
+						<input type="radio" name="hdm_choice" />
+						<i>IoT</i>
+					</label>
+					<label class="radio_inp">
+						<input type="radio" name="hdm_choice" />
+						<i>TM</i>
+					</label>
+				</div>
+				<div class="select_box">
+					<label class="select_inp">
+						<i>지사</i>
+						<select class="custom-select light-select h-40">
+							<option value="">전체1</option>
+							<option value="">전체2</option>
+						</select>
+					</label>
+					<label class="select_inp">
+						<i>계통</i>
+						<select class="custom-select light-select h-40">
+							<option value="">전체1</option>
+							<option value="">전체2</option>
+						</select>
+					</label>
+					<label class="select_inp">
+						<i>구간</i>
+						<select class="custom-select light-select h-40">
+							<option value="">전체1</option>
+							<option value="">전체2</option>
+						</select>
+					</label>
+					<label class="select_inp">
+						<i>수용가번호</i>
+						<select class="custom-select light-select h-40">
+							<option value="">전체1</option>
+							<option value="">전체2</option>
+						</select>
+					</label>
+					<label class="select_inp">
+						<i>수용가명</i>
+						<select class="custom-select light-select h-40">
+							<option value="">전체1</option>
+							<option value="">전체2</option>
+						</select>
+					</label>
+					<label class="select_inp">
+						<i>관심수용가</i>
+						<select class="custom-select light-select h-40">
+							<option value="">전체1</option>
+							<option value="">전체2</option>
+						</select>
+					</label>
+				</div>
+				<button type="button" class="icon_btn search_btn"><i>조회</i></button>
+			</div>
+		</article>
+		<!-- //유량조회 -->
+
+		<article class="title_content">
+			<h2>수용가 목록</h2>
+			<div class="right_button">
+				<button type="button" class="text_btn"><i>관심 수용가 등록/해지</i></button>
+				<button type="button" class="text_btn" data-toggle="modal" data-target="#modalLayer"><i>수용가 등록</i></button>
+				<button type="button" class="text_btn"><i>위치보기</i></button>
+				<button type="button" class="icon_btn excel_btn"><i>Excel 다운로드</i></button>
+			</div>
+
+			<div class="content_inner">
+				<div class="uktbl data_tbl tbl_fixed" style="height:510px">
+				</div>
+			</div>
+		</article>
+		<!-- //시간별 사용량 -->
+	</section>
+	<!-- uk_container -->
+
+</div>
+<!-- Modal --> 
+<div class="modal fade" id="modalLayer" tabindex="-1" role="dialog" aria-hidden="true"> 
+	<div class="modal-dialog modal-dialog-centered" role="document"> 
+		<div class="modal-content"> 
+			<div class="modal-header"> 
+				<h2 class="modal-title" id="exampleModalLabel">수용가 정보 등록</h2> 
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
+					<span aria-hidden="true">&times;</span> 
+				</button> 
+			</div> 
+			<div class="modal-body">
+				<table class="table">
+					<tbody>
+					  <tr>
+						<th>수용가번호</th>
+						<td>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" placeholder="수용가 번호를 입력하세요.">
+								<div class="input-group-append">
+									<button class="btn btn-outline-secondary" type="button">중복확인</button>
+								</div>
+							</div>
+						</td>
+						<th>미터번호</th>
+						<td>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" placeholder="수용가 번호를 입력하세요.">
+								<div class="input-group-append">
+									<button class="btn btn-outline-secondary" type="button">중복확인</button>
+								</div>
+							</div>
+						</td>
+					  </tr>
+					  <tr>
+						<th>수용가명</th>
+						<td>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" placeholder="입력">
+							</div>
+						</td>
+						<th>지시부번호</th>
+						<td>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" placeholder="">
+								<div class="input-group-append">
+									<button class="btn btn-outline-secondary" type="button">중복확인</button>
+								</div>
+							</div>
+						</td>
+					  </tr>
+					</tbody>
+				</table>
+			</div> 
+			<div class="modal-footer"> 
+				<button type="button" class="btn btn-primary">저장</button> 
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button> 
+			</div> 
+		</div> 
+	</div>
+</div>
+
+<script>
+	$("#dTable").DataTable({
+		// 표시 건수기능 숨기기
+		lengthChange: false,
+		// 검색 기능 숨기기
+		searching: false,
+		// 정렬 기능 숨기기
+		ordering: false,
+		// 정보 표시 숨기기
+		info: false,
+		// 페이징 기능 숨기기
+		paging: false,
+		// 가로 스크롤바를 표시
+		// 설정 값은 true 또는 false
+		scrollX: true,
+
+		// 세로 스크롤바를 표시
+		// 설정 값은 px단위
+		scrollY: 472,
+
+		// 열 넓이 설정
+		/* columnDefs: [
+			// 2번째 항목 넓이를 100px로 설정
+			{ targets: 1, width: 100 }
+		] */
+		responsive: true
+	});
+
+	$('.custom-select').chosen({search_contains:true});
+</script>
+</body>
+</html>

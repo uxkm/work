@@ -1,0 +1,25 @@
+{% block webfont %}
+<!-- webfont -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script> -->
+<script type="text/javascript">
+  WebFontConfig = {
+    custom: {
+      families: ['Noto Sans KR', 'Roboto', 'Open Sans', 'Nanum Gothic'],
+      // urls: ['https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700&family=Open+Sans:wght@300;400;600;700;800&display=swap&subset=cyrillic,greek,korean,latin-ext,vietnamese']
+    }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+    '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" crossorigin href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700&family=Open+Sans:wght@300;400;600;700;800&Nanum+Gothic:wght@800&display=swap&subset=cyrillic,greek,korean,latin-ext,vietnamese">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="{{set.baseurl}}{{set.cssurl}}/fonts.min.css">
+{% endblock %}

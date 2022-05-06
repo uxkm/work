@@ -1,0 +1,271 @@
+{% set pageData = { pageDep1Name: '마이플래너스', pageName: '회원정보수정', pageDesc: '', pageActive: '4' } %} 
+{% extends "_layout/_baseLayout.html" %} 
+
+{% block jscnt %} 
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+{% endblock %}
+
+{% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_joinedit">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_submy.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        
+        <div class="joingroup">
+
+					<div class="frmgroup frmedit">
+						<p class="frm_subject"><span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>항목은 필수 입력항목입니다.꼭 기입해 주세요 </p>
+            <!-- 
+              결과메시지 구분
+              성공시  : class="susmsg"
+              실패시  : class="errmsg"
+              <p class="errmsg">기업을 선택해 주세요</p>
+            -->
+            <!-- [수정 0615] 전체 UI 수정 일반/고객관리 구분 -->
+            <!-- START : 일반 회원정보수정 -->
+						<div class="frmsection">
+							<div class="fieldset">
+								<strong class="thtit">
+									아이디
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="입력해주세요" value="abc123" class="inp" disabled>
+									</label>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									기업 구분
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="입력해주세요" value="광고주" class="inp" disabled>
+									</label>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									기업명
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="입력해주세요" value="파워캐스트" class="inp" disabled>
+									</label>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									이름
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="입력해주세요" value="홍길동" class="inp">
+									</label>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+              <div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									전화번호
+								</strong>
+								<div class="field tel">
+                  <label class="uk_label">
+										<input type="text" name="" placeholder="" class="inp" value="010" title="전화번호 첫번째 자리">
+									</label>
+                  <i class="ico-dot">-</i>
+									<label class="uk_label">
+										<input type="text" name="" placeholder="" class="inp" value="1234" title="전화번호 가운데 자리">
+									</label>
+                  <i class="ico-dot">-</i>
+									<label class="uk_label">
+										<input type="text" name="" placeholder="" class="inp" value="5678" title="전화번호 마지막 자리">
+									</label>
+									<p class="errmsg">숫자 형식이 아닙니다.</p>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+              
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									이메일 주소
+								</strong>
+								<div class="field email">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="이메일 아이디 입력" class="inp" disabled>
+									</label>
+                  <i class="ico-dot">@</i>
+									<label class="uk_label">
+										<input type="text" name="" placeholder="직접입력" class="inp" disabled>
+									</label>
+                  <div class="uk_select">
+										<label class="sr-only">내용선택</label>
+										<select id="localArea" disabled>
+											<option value="">선택</option>
+											<option value="">cj.net</option>
+										</select> 
+									</div>
+                  <button class="btn_thingray medium"><span>이메일 수정</span></button>
+                  <!-- <button class="btn_thingray medium"><span>취소</span></button> -->
+                  <!-- <button class="btn_thingray medium"><span>인증</span></button> -->
+                  <!-- <button class="btn_white medium"><span>재전송</span></button> -->
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									업종선택
+								</strong>
+								<div class="field choice">
+                  <div class="uk_select">
+										<label class="sr-only">대분류 선택</label>
+										<select id="largeChoice">
+											<option value="">대분류 선택</option>
+											<option value="">가구 내 고용활동 및 달리 분류되지 않은 자가 소비 생산활동</option>
+										</select> 
+									</div>
+                  <div class="uk_select">
+										<label class="sr-only">중분류 선택</label>
+										<select id="mediumChoice">
+											<option value="">중분류 선택</option>
+										</select> 
+									</div>
+                  <div class="uk_select">
+										<label class="sr-only">소분류 선택</label>
+										<select id="smallChoice">
+											<option value="">소분류 선택</option>
+										</select> 
+									</div>
+                </div>
+							</div>
+							<!-- //.fieldset -->
+
+						</div>
+						<!-- //.frmsection -->
+            <!-- END : 일반 회원정보수정 -->
+
+            <!-- START : 고객관리 회원정보수정 -->
+						<div class="frmsection">
+							<div class="fieldset">
+								<strong class="thtit">
+									아이디
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="입력해주세요" value="abc123" class="inp" disabled>
+									</label>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									기업 구분
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="입력해주세요" value="광고주" class="inp" disabled>
+									</label>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									기업명
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="입력해주세요" value="파워캐스트" class="inp" disabled>
+									</label>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									이름
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="입력해주세요" value="홍길동" class="inp" disabled>
+									</label>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+              
+							<div class="fieldset">
+								<strong class="thtit">
+									이메일 주소
+								</strong>
+								<div class="field email">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="이메일 아이디 입력" value="addd@cj.net" class="inp" disabled>
+									</label>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+              
+              <div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									전화번호
+								</strong>
+								<div class="field tel">
+                  <label class="uk_label">
+										<input type="text" name="" placeholder="" class="inp" value="010" title="전화번호 첫번째 자리">
+									</label>
+                  <i class="ico-dot">-</i>
+									<label class="uk_label">
+										<input type="text" name="" placeholder="" class="inp" value="1234" title="전화번호 가운데 자리">
+									</label>
+                  <i class="ico-dot">-</i>
+									<label class="uk_label">
+										<input type="text" name="" placeholder="" class="inp" value="5678" title="전화번호 마지막 자리">
+									</label>
+									<p class="errmsg">숫자 형식이 아닙니다.</p>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+						</div>
+						<!-- //.frmsection -->
+            <!-- END : 고객관리 회원정보수정 -->
+					
+					<div class="btngroup editbtn">
+						<button class="btn_gray"><span>회원탈퇴</span></button>
+						<button class="btn_default"><span>수정</span></button>
+					</div>
+        </div>
+				<!-- //.joingroup -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

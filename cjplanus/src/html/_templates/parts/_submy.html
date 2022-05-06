@@ -1,0 +1,33 @@
+<!-- Start : Member 서브메뉴 -->
+<ul class="breadcrumb">
+  <li>홈</li>
+  {%if pageData.pageActive == '1' %}
+  <li><strong>{{ pageData.pageDep1Name }}</strong></li>
+  {%elseif pageData.pageActive == '0' %}
+  <li><strong>{{ pageData.pageDep1Name }}</strong></li>
+  {%elseif pageData.pageActive == '0-1' %}
+  <li><strong>{{ pageData.pageDep1Name }}</strong></li>
+  {%- else -%}
+  <li>{{ pageData.pageDep1Name }}</li>
+  <li><strong>{{ pageData.pageName }}</strong></li>
+  {% endif %}
+</ul>
+<div class="cnt_submenu my">
+  <nav class="navsub">
+    <ul>
+      <li{%if pageData.pageActive == '1' %} class="active"{% endif %}>
+        <a href="mypage.html">마이플래너스</a>
+      <!-- <li{%if pageData.pageActive == '2' %} class="active"{% endif %}>
+        <a href="subongoing.html">진행중인 청약</a>
+      <li{%if pageData.pageActive == '3' %} class="active"{% endif %}>
+        <a href="interest.html">관심매체</a> -->
+      <li{%if pageData.pageActive == '4' %} class="active"{% endif %}>
+        <a href="joinInputEdit.html">회원정보수정</a>
+      <li{%if pageData.pageActive == '5' %} class="active"{% endif %}>
+        <a href="pwchange.html">비밀번호변경</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- //.cnt_submenu -->
+<!-- End : Member 서브메뉴 -->

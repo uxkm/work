@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="title" content="우리카드">
+    <meta name="keywords" content="우리카드, 신규카드, 카드혜택, 카드신청">
+    <meta name="copyright" content="COPYRIGHTS WOORICARD. ALL RIGHTS RESERVED.">
+    <title>마이 데이터 서비스 인증</title>
+    <link rel="Shortcut Icon" href="../img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/m.newfonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newreset.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newcommon.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newmd.page.css">
+    <!-- JS -->
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery/jquery-ui.min.js"></script>
+    <script src="../js/jquery/jquery.ui.touch-punch.min.js"></script>
+    <script src="../js/jquery/jquery.mailtip.js"></script>
+    <script src="../js/uiux/ukDetect-1.0.0.min.js"></script>
+    <script src="../js/uiux/m.newmd.js"></script>
+  </head>
+  <body>
+    <div class="ukwrap">
+      <header class="uk_header">
+        <h1 class="tit_h1">인증</h1>
+        <button type="button" class="ibtn_close"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </header>
+      <div class="ukmain">
+        <div class="cbody">
+
+          <!-- UI 확인용 개발시 삭제 -->
+          <button class="btn_default test" data-modal-button="alert1_modal"><span>정상적으로 인증번호를 전송 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert2_modal"><span>인증 불일치 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert3_modal"><span>생년월일이 올바르지 않습니다 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert4_modal"><span>휴대폰 인증번호 전송요청 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert5_modal"><span>휴대폰번호 입력 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert6_modal"><span>성명 입력 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert7_modal"><span>개인정보이용및제공동의 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert8_modal"><span>카드번호 확인 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert9_modal"><span>비밀번호 오류 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert10_modal"><span>대출번호 확인 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert11_modal"><span>생년월일 확인 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert11_modal"><span>생년월일 확인 Alert</span></button>
+          <button class="btn_default test" data-modal-button="alert12_modal"><span>비밀번호 5회 오류 회원 Alert</span></button>
+        </div>
+      </div>
+      <!-- //.ukmain -->
+
+      <!-- 인증 버튼이 있는 경우만 사용 -->
+      <div class="foot_btngroup">
+        <button type="button" class="btn_certi"><span>인증</span></button>
+        <button type="button" class="btn_cancel"><span>취소</span></button>
+      </div>
+      <!-- //.foot_btngroup -->
+    </div>
+    <!-- //.ukwrap -->
+    <!-- Alert -->
+    <div class="modal_wrap" data-modal-layer="alert1_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">정상적으로 인증번호를 전송하였습니다.<br>인증번호를 입력하시고 인증 버튼을 클릭하세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+
+    <div class="modal_wrap" data-modal-layer="alert2_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">인증 불일치 (휴대전화번호의 명의자 주민등록번호가 요청한 주민등록번호와 일치하지 않음)</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+
+    <div class="modal_wrap" data-modal-layer="alert3_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">생년월일이 올바르지 않습니다. 다시 시도해주세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+
+    <div class="modal_wrap" data-modal-layer="alert4_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">휴대폰 인증번호 전송요청을 완료 하시기 바랍니다.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+
+    <div class="modal_wrap" data-modal-layer="alert5_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">휴대폰번호를 입력해주세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+
+    <div class="modal_wrap" data-modal-layer="alert6_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">성명을 입력해주세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+
+    <div class="modal_wrap" data-modal-layer="alert7_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">개인정보이용및제공동의에 동의하세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+    <div class="modal_wrap" data-modal-layer="alert8_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">카드번호를 확인해주세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+    <div class="modal_wrap" data-modal-layer="alert9_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">비밀번호 오류<br><span>(<em>1</em>/5)</span></p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+
+    <div class="modal_wrap" data-modal-layer="alert10_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">대출번호를 확인해주세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+
+    <div class="modal_wrap" data-modal-layer="alert11_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">생년월일을 확인해주세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+    
+    <div class="modal_wrap" data-modal-layer="alert12_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">비밀번호 5회 오류 회원입니다. 비밀번호 오류 해제 후 거래하시기 바랍니다.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+
+    <script>
+      // 선택시 나오는 UI 호출 스크립트 개발 상황에 맞게 커스텀 하여 사용
+      $(document).ready(function(){
+        var modal_wrap = 'modal_wrap';
+        var modal_button = 'data-modal-button';
+        var modal_layer = 'data-modal-layer';
+        var modal_dim = 'data-modal-dim';
+        var modal_active = 'modal_active';
+        var modal_hover = false;
+        $('['+modal_button+']').on('click', function(){
+          var _target = $(this).attr(modal_button);
+          $('['+modal_layer+'="'+_target+'"]').addClass(modal_active);
+          $('html').addClass('scl_lock');
+          // return false;
+        });
+
+        $('[data-modal-close]').on('click', function(){
+          if( $(this).parents('.'+modal_wrap).is('.'+modal_active) ){
+            $('html').removeClass('scl_lock');
+            $(this).parents('.'+modal_wrap).removeClass(modal_active);
+            modal_hover = false;
+          }
+          return false;
+        });
+
+        $('.'+modal_wrap).on('click', function(e){
+          if( $(this).has(e.target).length === 0 && $(this).attr(modal_dim) !== 'false' ){
+            $(this).removeClass(modal_active);
+            $('html').removeClass('scl_lock');
+          }
+        });
+      })
+    </script>
+  </body>
+</html>

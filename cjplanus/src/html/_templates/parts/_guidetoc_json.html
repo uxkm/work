@@ -1,0 +1,89 @@
+<div class="uk_toc">
+  <p class="h3">Page List <!-- (<em></em>page) --></p>
+  <p class="curr">
+    <span class="ok">완료:<em></em></span> / 
+    <span class="tbd">대기:<em></em></span> / 
+    <span class="ing">진행중:<em></em></span>
+  </p>
+  <script>
+    $(function(){
+      var len = $('.uk_toc > ul').find('li').length;
+      var tbdLen = $('.uk_toc .flag_tbd').length;
+      var ingLen = $('.uk_toc .flag_ing').length;
+      var okLen = $('.uk_toc .flag_ok').length;
+      var totalLen = tbdLen + ingLen + okLen;
+      var totalP = okLen / len;
+      $('.uk_toc > .h3 > em').text(len);
+      $('.uk_toc .curr .ok > em').text(okLen);
+      $('.uk_toc .curr .tbd > em').text(tbdLen);
+      $('.uk_toc .curr .ing > em').text(ingLen);
+      $('.uk_toc .curr .total > em').text(totalLen);
+      console.log(totalP);
+    })
+  </script>
+  <ul>
+    {%- for val in ukTocList %}
+    {%- if val.children %}
+    <li>
+      <a href="/{{ val.path }}/{{ val.path_title }}/{{ val.url | replace(" ", "- ") | lower }}.html" target="_blank" title="새 창 열림">
+        {{ val.url_name }}
+        {%- if val.flag_tbd %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- elif val.flag_ing %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- elif val.flag_ok or val.flag_edit  %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        <small class="flag {{ val.flag }}">{{ val.flag_edit }}</small>
+        {%- elif val.flag_ok or val.flag_edit or val.flag_pcmo  %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        <small class="flag {{ val.flag }}">{{ val.flag_pcmo }}</small>
+        {%- else %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- endif %}
+      </a>
+      <ul>
+        {%- for val in val.children %}
+        <li>
+          <a href="/{{ val.path }}/{{ val.path_title }}/{{ val.url | replace(" ", "- ") | lower }}.html" target="_blank" title="새 창 열림">
+            {{ val.url_name }}
+            {%- if val.flag_tbd %}
+            <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+            {%- elif val.flag_ing %}
+            <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+            {%- elif val.flag_ok or val.flag_edit  %}
+            <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+            <small class="flag {{ val.flag }}">{{ val.flag_edit }}</small>
+            {%- elif val.flag_ok or val.flag_edit or val.flag_pcmo  %}
+            <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+            <small class="flag {{ val.flag }}">{{ val.flag_pcmo }}</small>
+            {%- else %}
+            <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+            {%- endif %}
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- else %}
+    <li>
+      <a href="/{{ val.path }}/{{ val.path_title }}/{{ val.url | replace(" ", "- ") | lower }}.html" target="_blank" title="새 창 열림">
+        {{ val.url_name }} 
+        {%- if val.flag_tbd %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- elif val.flag_ing %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- elif val.flag_ok or val.flag_edit  %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        <small class="flag {{ val.flag }}">{{ val.flag_edit }}</small>
+        {%- elif val.flag_ok or val.flag_pcmo  %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        <small class="flag {{ val.flag }}">{{ val.flag_pcmo }}</small>
+        {%- else %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- endif %}
+      </a>
+    </li>
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+</div>

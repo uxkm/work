@@ -1,0 +1,62 @@
+{% set pageData = { pageDep1Name: '', pageName: '비밀번호 찾기', pageDesc: '', pageActive: '1-3' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pwfind">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_submem.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="logingroup">
+          <div class="column">
+            <div class="col_in">
+              <p class="text">비밀번호가 기억나지 않으세요?</p>
+              <div class="field">
+                <label class="uk_label">
+                  <input type="text" name="" placeholder="아이디" class="inp" />
+                </label>
+              </div>
+              <div class="field">
+                <label class="uk_label">
+                  <input type="text" name="" placeholder="회원가입 메일주소" class="inp" />
+                </label>
+              </div>
+
+              <!-- [0525] 문서기준으로 링크부분 추가 -->
+              <p class="link f_end">
+                <a href="join.html">회원가입</a>
+                <a href="idfind.html">아이디 찾기</a>
+              </p>
+              <!-- //[0525] 문서기준으로 링크부분 추가 -->
+
+              <div class="field_footer">
+                <p class="text">회원가입시 가입한 전화번호 기입하시고 찾기 클릭해주세요</p>
+                <div class="btngroup between">
+                  <a href="login.html" class="btn_gray"><span>취소</span></a>
+                  <!-- 정확한 정보 입력시 비밀번호확인 페이지 이동  -->
+                  <a href="pwfindComplate.html" class="btn_default"><span>비밀번호 찾기</span></a>
+                </div>
+              </div>
+            </div>
+            <!-- //.col_in -->
+          </div>
+          <!-- //.column -->
+        </div>
+        <!-- //.logingroup -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

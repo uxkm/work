@@ -1,0 +1,190 @@
+{% set pageData = { pageDep1Name: '고객센터', pageName: '공지사항', pageDesc: '', pageActive: '1' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_cusnotice">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subcus.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+
+        <div class="searchgp">
+					<div class="tcount">
+						<span>총<em>16</em>개의 공지글이 있습니다.</span>
+					</div>
+					<div class="field find_medium" data-medium="inpfield">
+						<label class="uk_label">
+							<input type="text" name="" placeholder="입력해주세요" class="inp">
+						</label>
+						<button class="ibtn_find black"><i class="ico-find"></i><span class="sr-only">검색</span></button>
+					</div>
+				</div>
+				<!-- //.searchgp -->
+
+				<div class="ntcgroup">
+
+          <div class="uk_table listtbl">
+            <div class="thead">
+              <div class="tr">
+                <div class="th num">번호</div>
+                <div class="th title">제목</div>
+                <div class="th date">등록일</div>
+                <div class="th hits">조회수</div>
+              </div>
+            </div>
+            
+            <!-- 검색결과 또는 데이터가 없을 경우 -->
+            <div class="nodata" style="display:none">
+              죄송합니다. 찾으시는 검색결과가 없습니다.
+              <!-- 데이터 정보가 없습니다. -->
+            </div>
+            <!-- //.nodata -->
+
+            <!-- START : 검색결과 또는 데이터가 있을 경우 -->
+            <div class="tbody">
+              <!-- 링크 영역은 class tr 에 click 이벤트 제공 -->
+              <div class="tr">
+                <a href="noticeView.html">
+                  <div class="td num"><span>9999</span></div>
+                  <div class="td title">
+                    <div class="text">
+                      <p>홈페이지 오픈 테스트 중입니다.홈페이지 오픈 테스트 중입니다.홈페이지 오픈 테스트 중입니다.홈페이지 오픈 테스트 중입니다.홈페이지 오픈 테스트 중입니다.홈페이지 오픈 테스트 중입니다.홈페이지 오픈 테스트 중입니다.홈페이지 오픈 테스트 중입니다.홈페이지 오픈 테스트 중입니다.</p>
+                      <span class="new">new</span>
+                    </div>
+                  </div>
+                  <div class="td date"><span>2021-01-15</span></div>
+                  <div class="td hits"><span>99999</span></div>
+                </a>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <a href="noticeView.html">
+                  <div class="td num"><span>9</span></div>
+                  <div class="td title">
+                    <div class="text">
+                      <p>홈페이지 오픈 테스트 중입니다.</p>
+                      <!-- <span class="new">new</span> -->
+                    </div>
+                  </div>
+                  <div class="td date"><span>2021-01-15</span></div>
+                  <div class="td hits"><span>99999</span></div>
+                </a>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <a href="noticeView.html">
+                  <div class="td num"><span>8</span></div>
+                  <div class="td title">
+                    <div class="text">
+                      <p>홈페이지 오픈 테스트 중입니다.</p>
+                      <!-- <span class="new">new</span> -->
+                    </div>
+                  </div>
+                  <div class="td date"><span>2021-01-15</span></div>
+                  <div class="td hits"><span>99999</span></div>
+                </a>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <a href="noticeView.html">
+                  <div class="td num"><span>7</span></div>
+                  <div class="td title">
+                    <div class="text">
+                      <p>홈페이지 오픈 테스트 중입니다.</p>
+                      <!-- <span class="new">new</span> -->
+                    </div>
+                  </div>
+                  <div class="td date"><span>2021-01-15</span></div>
+                  <div class="td hits"><span>99999</span></div>
+                </a>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <a href="noticeView.html">
+                  <div class="td num"><span>6</span></div>
+                  <div class="td title">
+                    <div class="text">
+                      <p>홈페이지 오픈 테스트 중입니다.</p>
+                      <!-- <span class="new">new</span> -->
+                    </div>
+                  </div>
+                  <div class="td date"><span>2021-01-15</span></div>
+                  <div class="td hits"><span>99999</span></div>
+                </a>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <a href="noticeView.html">
+                  <div class="td num"><span>5</span></div>
+                  <div class="td title">
+                    <div class="text">
+                      <p>홈페이지 오픈 테스트 중입니다.</p>
+                      <!-- <span class="new">new</span> -->
+                    </div>
+                  </div>
+                  <div class="td date"><span>2021-01-15</span></div>
+                  <div class="td hits"><span>99999</span></div>
+                </a>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <a href="noticeView.html">
+                  <div class="td num"><span>4</span></div>
+                  <div class="td title">
+                    <div class="text">
+                      <p>홈페이지 오픈 테스트 중입니다.</p>
+                      <!-- <span class="new">new</span> -->
+                    </div>
+                  </div>
+                  <div class="td date"><span>2021-01-15</span></div>
+                  <div class="td hits"><span>99999</span></div>
+                </a>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <a href="noticeView.html">
+                  <div class="td num"><span>3</span></div>
+                  <div class="td title">
+                    <div class="text">
+                      <p>홈페이지 오픈 테스트 중입니다.</p>
+                      <!-- <span class="new">new</span> -->
+                    </div>
+                  </div>
+                  <div class="td date"><span>2021-01-15</span></div>
+                  <div class="td hits"><span>99999</span></div>
+                </a>
+              </div>
+              <!-- //.tr -->
+            </div>
+            <!-- //.tbody -->
+          </div>
+          <!-- //.uk_table -->
+
+					<div class="paging">
+            <span class="number"><b class="current">1</b><i class="total">3</i></span>
+            <div class="btngroup">
+              <button class="ibtn_prev arrow"><i class="arrow-l"></i><span class="sr-only">이전 페이지</span></button>
+              <button class="ibtn_next arrow"><i class="arrow-r"></i><span class="sr-only">다음 페이지</span></button>
+            </div>
+          </div>
+
+				</div>
+				<!-- //.ntcgroup -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

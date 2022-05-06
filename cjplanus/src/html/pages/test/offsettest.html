@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>상단 스크롤 고정</title>
+    <style>
+    /*리셋코드*/
+body,input,textarea,select,button,table{font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,sans-serif; font-size:12px; color:#333}
+body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,form,fieldset,input,table,tr,th,td{margin:0;padding:0}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:100%}
+ul,ol{list-style:none}
+fieldset,img{border:0; vertical-align:top;}
+address{font-style:normal}
+li,dd{text-align:justify; line-height:1.5em}
+.hidden{position:absolute; top:0; left:-1000%; width:1px; height:1px; overflow:hidden}
+table{border-collapse:collapse}
+
+
+/*상단CSS*/
+#wrap{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    position:relative;
+}
+.header {
+    width:100%;
+    height:200px;
+    background: #f00;
+}
+.menu{
+    width:100%;
+    height:50px;
+    background: #0f0;
+    position:absolute;  /* 스크롤 메뉴 고정 핸들을 위함 */
+    top:200px;
+    left:0;
+}
+.content{
+    margin-top:50px;   /*메뉴영역 높이만큼 마진값*/
+    background:#ccc;
+}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type=text/javascript>
+$(document).ready(function(){
+
+    var nav = $('.menu');
+    var navoffset = $('.menu').offset();  
+    /* offset을 이용하여 .menu(메뉴영역)의 위치값을 알아내어 navoffset에 넣어둔다 */
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() >= navoffset.top) {  /* 화면 스크롤 값이 메뉴영역의 top보다 값이 커지면 */
+            nav.css('position','fixed').css('top',0); /* 화면 위쪽에 고정시킨다. */
+        }else {
+            nav.css('position','absolute').css('top',200); /* 처음 메뉴영역의 top 값으로 돌리기 */
+        }
+    });
+});
+</script>
+</head>
+<body>
+<div id="wrap">
+    <div class="header">
+        헤더영역입니다.
+    </div>
+    <div class="menu">
+        메뉴 영역입니다.
+    </div> 
+    <div class="content">
+        컨텐츠 영역입니다.
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>컨텐트 영역입니다.
+        <!-- http://ddogun.com -->
+    </div>
+</div>
+</body>
+</html>

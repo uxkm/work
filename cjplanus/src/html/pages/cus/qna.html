@@ -1,0 +1,216 @@
+{% set pageData = { pageDep1Name: '고객센터', pageName: '자주찾는질문', pageDesc: '', pageActive: '2' } %}
+{% extends "_layout/_baseLayout.html" %}
+
+{% block jscnt %} 
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script><!-- UI/UX Style -->
+{% endblock %}
+
+{% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_cusqna">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subcus.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+
+        <div class="searchgp">
+					<div class="tcount">
+						<span>총<em>16</em>개의 공지글이 있습니다.</span>
+					</div>
+					<div class="field">
+						<div class="uk_select trans arrow">
+							<label class="sr-only">선택</label>
+							<select id="selChoice">
+								<option value="">전체</option>
+							</select>
+						</div>
+						<div class="field find_medium" data-medium="inpfield">
+							<label class="uk_label">
+								<input type="text" name="" placeholder="입력해주세요" class="inp">
+							</label>
+							<button class="ibtn_find black"><i class="ico-find"></i><span class="sr-only">검색</span></button>
+						</div>
+					</div>
+				</div>
+				<!-- //.searchgp -->
+
+				<div class="qnawrap">
+					<!-- 검색결과 또는 데이터가 없을 경우 -->
+					<div class="nodata" style="display:none">
+						죄송합니다. 찾으시는 검색결과가 없습니다.
+						<!-- 데이터 정보가 없습니다. -->
+					</div>
+					<!-- //.nodata -->
+
+					<!-- START : 검색결과 또는 데이터가 있을 경우 -->
+					<ul class="qnalist" data-toggle>
+						<li class="open">
+							<div class="que" tabindex="0">
+								<span class="q"><i class="sr-only">질문</i></span>
+								<p><span>광고청약은 어떻게 신청할 수 있나요?</span></p>
+							</div>
+							<div class="ans">
+								<span class="a"><i class="sr-only">답변</i></span>
+								<div class="anscnt">
+									무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.<br>
+									입금 완료 후 고객센터로 사업자등록증 사본과 이메일 주소를 보내주세요.<br>
+									신청 후 다음 달 10일 전에 일괄 발급되며, 현금영수증과 중복 발급은 불가합니다
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="que" tabindex="0">
+								<span class="q"><i class="sr-only">질문</i></span>
+								<p><span>미디어 광고 규격 및 사이즈 가이드자료가 따로 있나요?</span></p>
+							</div>
+							<div class="ans">
+								<span class="a"><i class="sr-only">답변</i></span>
+								<div class="anscnt">
+									무통장입금 결제 시 세금계산서 발행이 가능합니다.<br>
+									입금 완료 후 고객센터로 사업자등록증 사본과 이메일 주소를 보내주세요.<br>
+									신청 후 다음 달 10일 전에 일괄 발급되며, 현금영수증과 중복 발급은 불가합니다
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="que" tabindex="0">
+								<span class="q"><i class="sr-only">질문</i></span>
+								<p><span>광고청약은 어떻게 신청할 수 있나요?</span></p>
+							</div>
+							<div class="ans">
+								<span class="a"><i class="sr-only">답변</i></span>
+								<div class="anscnt">
+									무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.<br>
+									입금 완료 후 고객센터로 사업자등록증 사본과 이메일 주소를 보내주세요.<br>
+									신청 후 다음 달 10일 전에 일괄 발급되며, 현금영수증과 중복 발급은 불가합니다
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="que" tabindex="0">
+								<span class="q"><i class="sr-only">질문</i></span>
+								<p><span>미디어 광고 규격 및 사이즈 가이드자료가 따로 있나요?</span></p>
+							</div>
+							<div class="ans">
+								<span class="a"><i class="sr-only">답변</i></span>
+								<div class="anscnt">
+									무통장입금 결제 시 세금계산서 발행이 가능합니다.<br>
+									입금 완료 후 고객센터로 사업자등록증 사본과 이메일 주소를 보내주세요.<br>
+									신청 후 다음 달 10일 전에 일괄 발급되며, 현금영수증과 중복 발급은 불가합니다
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="que" tabindex="0">
+								<span class="q"><i class="sr-only">질문</i></span>
+								<p><span>미디어 광고 규격 및 사이즈 가이드자료가 따로 있나요?</span></p>
+							</div>
+							<div class="ans">
+								<span class="a"><i class="sr-only">답변</i></span>
+								<div class="anscnt">
+									무통장입금 결제 시 세금계산서 발행이 가능합니다.<br>
+									입금 완료 후 고객센터로 사업자등록증 사본과 이메일 주소를 보내주세요.<br>
+									신청 후 다음 달 10일 전에 일괄 발급되며, 현금영수증과 중복 발급은 불가합니다
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="que" tabindex="0">
+								<span class="q"><i class="sr-only">질문</i></span>
+								<p><span>미디어 광고 규격 및 사이즈 가이드자료가 따로 있나요?</span></p>
+							</div>
+							<div class="ans">
+								<span class="a"><i class="sr-only">답변</i></span>
+								<div class="anscnt">
+									무통장입금 결제 시 세금계산서 발행이 가능합니다.<br>
+									입금 완료 후 고객센터로 사업자등록증 사본과 이메일 주소를 보내주세요.<br>
+									신청 후 다음 달 10일 전에 일괄 발급되며, 현금영수증과 중복 발급은 불가합니다
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="que" tabindex="0">
+								<span class="q"><i class="sr-only">질문</i></span>
+								<p><span>광고청약은 어떻게 신청할 수 있나요?</span></p>
+							</div>
+							<div class="ans">
+								<span class="a"><i class="sr-only">답변</i></span>
+								<div class="anscnt">
+									무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.무통장입금 결제 시 세금계산서 발행이 가능합니다.<br>
+									입금 완료 후 고객센터로 사업자등록증 사본과 이메일 주소를 보내주세요.<br>
+									신청 후 다음 달 10일 전에 일괄 발급되며, 현금영수증과 중복 발급은 불가합니다
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="que" tabindex="0">
+								<span class="q"><i class="sr-only">질문</i></span>
+								<p><span>미디어 광고 규격 및 사이즈 가이드자료가 따로 있나요?</span></p>
+							</div>
+							<div class="ans">
+								<span class="a"><i class="sr-only">답변</i></span>
+								<div class="anscnt">
+									무통장입금 결제 시 세금계산서 발행이 가능합니다.<br>
+									입금 완료 후 고객센터로 사업자등록증 사본과 이메일 주소를 보내주세요.<br>
+									신청 후 다음 달 10일 전에 일괄 발급되며, 현금영수증과 중복 발급은 불가합니다
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="que" tabindex="0">
+								<span class="q"><i class="sr-only">질문</i></span>
+								<p><span>미디어 광고 규격 및 사이즈 가이드자료가 따로 있나요?</span></p>
+							</div>
+							<div class="ans">
+								<span class="a"><i class="sr-only">답변</i></span>
+								<div class="anscnt">
+									무통장입금 결제 시 세금계산서 발행이 가능합니다.<br>
+									입금 완료 후 고객센터로 사업자등록증 사본과 이메일 주소를 보내주세요.<br>
+									신청 후 다음 달 10일 전에 일괄 발급되며, 현금영수증과 중복 발급은 불가합니다
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="que" tabindex="0">
+								<span class="q"><i class="sr-only">질문</i></span>
+								<p><span>미디어 광고 규격 및 사이즈 가이드자료가 따로 있나요?</span></p>
+							</div>
+							<div class="ans">
+								<span class="a"><i class="sr-only">답변</i></span>
+								<div class="anscnt">
+									무통장입금 결제 시 세금계산서 발행이 가능합니다.<br>
+									입금 완료 후 고객센터로 사업자등록증 사본과 이메일 주소를 보내주세요.<br>
+									신청 후 다음 달 10일 전에 일괄 발급되며, 현금영수증과 중복 발급은 불가합니다
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!-- END : 검색결과 또는 데이터가 있을 경우 -->
+					
+					<div class="paging">
+            <span class="number"><b class="current">1</b><i class="total">3</i></span>
+            <div class="btngroup">
+              <button class="ibtn_prev arrow"><i class="arrow-l"></i><span class="sr-only">이전 페이지</span></button>
+              <button class="ibtn_next arrow"><i class="arrow-r"></i><span class="sr-only">다음 페이지</span></button>
+            </div>
+          </div>
+				</div>
+				<!-- //.qnawrap -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

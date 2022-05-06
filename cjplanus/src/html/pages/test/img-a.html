@@ -1,0 +1,441 @@
+{% set pageData = { pageDep1Name: '상품소개', pageName: '상품소개', pageDesc: '', pageActive: '0' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pdetm">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subproduct.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1 sr-only" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="pdhead">
+          <p class="sub_description"><strong>주요 스팟!</strong> 집중노출 고객을 위한</p>
+          <p class="sub_title"><strong>PLANUS 상품</strong>소개</p>
+        </div>
+        <!-- //.pdhead -->
+
+        <!-- 상품소개에서만 사용하는 라이브러리 호출 -->
+        <script src="{{set.baseurl}}{{set.jsurl}}/lib/flickity.pkgd.min.js"></script>
+        <script src="{{set.baseurl}}{{set.jsurl}}/lib/fullscreen.min.js"></script>
+        <script>
+          $(function(){
+            $('.pdnav > a').on('click', function(i, e){
+              // 메뉴 활성화 class active 추가 제어
+              $(this).addClass('active').siblings().removeClass('active');
+              // 콘텐츠 좌측 메뉴 타이틀 메뉴에서 active된 값을 가져옴
+              $('.pdtitle').find('span').text( $('.pdnav>a.active>span').text() );
+              return false;
+            })
+          })
+        </script>
+        <div class="pdsubnav">
+          <nav class="pdnav">
+            <a href="#" class="active"><span>Entertainment</span></a>
+            <a href="#"><span>Sports</span></a>
+            <a href="#"><span>Traffic</span></a>
+            <a href="#"><span>Billboard</span></a>
+          </nav>
+        </div>
+        <!-- //.pdsubnav -->
+<style>
+.pdbody {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+  .pdlist {
+    min-width:330px;
+    height: auto;
+    margin-right: auto;
+    padding: 45px 40px;
+    background-color: #25277f;
+    color: $white;
+    box-shadow: 0 9px 13px rgba(0, 0, 0, 0.1);
+    .pdtitle {
+      margin-bottom: 25px;
+      padding-bottom: 34px;
+      font-size: 2.625rem;
+      font-weight: $light;
+      span {
+        position: relative;
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -28px;
+          width: 100%;
+          height: 5px;
+          background-color: #16bfb8;
+        }
+      }
+    }
+    ul {
+      margin: 0;
+    }
+    li {
+      position: relative;
+      padding-left: 18px;
+      font-weight: $bold;
+      line-height: 32px;
+      cursor: pointer;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 10px;
+        height: 1px;
+        background-color: $white;
+      }
+      span {
+        position: relative;
+        &:after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          transition: width 0.3s;
+          width: 0;
+          height: 2px;
+          background-color: #16bfb8;
+        }
+      }
+      &.active {
+        span {
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .pdimg {
+    flex: 1;
+    width: auto;
+    height: auto;
+  }
+  .pdimglist {
+    position: relative;
+    width: 100%;
+    margin:0;
+    padding-bottom:59.57%;
+    padding-right:35.5%;
+    figure {
+      position: absolute;
+      height: auto;
+      box-shadow: 0 9px 13px rgba(0, 0, 0, 0.1);
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s;
+        opacity: 0;
+      }
+      &.active,
+      &:hover {
+        .btnview {
+          z-index: 1;
+        }
+        &:before {
+          z-index: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+        }
+      }
+    }
+    figcaption {
+      display: none;
+    }
+    .img {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .btnview {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      transition: z-index 0.3s;
+      [class^="ibtn_"] {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 34px;
+        border: 1px solid $white;
+        color: $white;
+        font-size: 0.875rem;
+        opacity: 0.6;
+        &:last-child {
+          margin-top: 10px;
+        }
+        .ico-find {
+          width: 14px;
+          height: 14px;
+          margin-right: 5px;
+          background-image: url($baseUrl_icon+"ico_find_w_s.png");
+        }
+        .ico-arr {
+          width: 20px;
+          height: 13px;
+          margin-left: 5px;
+          background-image: url($baseUrl_icon+"ico_arr_right_w_sm.png");
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    &.item1 {
+      figure {
+        top:0;
+        left:0;
+        width: 100%;
+        height:100%;
+      }
+    }
+    &.item2 {
+      figure {
+        &:nth-child(1) {
+          top:0;
+          left:0;
+          width: 64.2%;
+          height:100%;
+        }
+        &:nth-child(2) {
+          top:0;
+          right:0;
+          width: 35%;
+          height:100%;
+        }
+      }
+    }
+    &.item3 {
+      figure {
+        &:nth-child(1) {
+          top:0;
+          left:0;
+          width: 64.2%;
+          height:62.2%;
+        }
+        &:nth-child(2) {
+          top:0;
+          right:0;
+          width: 35%;
+          height:100%;
+        }
+        &:nth-child(3){
+          bottom:0;
+          left:0;
+          width: 64.2%;
+          height:36.5%;
+        }
+      }
+    }
+    &.item4 {
+      figure {
+        &:nth-child(1) {
+          top:0;
+          left:0;
+          width: 64.2%;
+          height:62.2%;
+        }
+        &:nth-child(2) {
+          top:0;
+          right:0;
+          width: 35%;
+          height:49.5%;
+        }
+        &:nth-child(3){
+          bottom:0;
+          left:0;
+          width: 64.2%;
+          height:36.5%;
+        }
+        &:nth-child(4) {
+          bottom:0;
+          right:0;
+          width: 35%;
+          height:49.5%;
+        }
+      }
+    }
+    &.item5 {
+      figure {
+        &:nth-child(1) {
+          top:0;
+          left:0;
+          width: 64.2%;
+          height:62.2%;
+        }
+        &:nth-child(2) {
+          top:0;
+          right:0;
+          width: 35%;
+          height:49.5%;
+        }
+        &:nth-child(3),
+        &:nth-child(4){
+          bottom:0;
+          width: calc((65.5% / 2) - 1%);
+          height:36.5%;
+        }
+        &:nth-child(3) {
+          left:0;
+        }
+        &:nth-child(4) {
+          right:35.8%;
+        }
+        &:nth-child(5) {
+          bottom:0;
+          right:0;
+          width: 35%;
+          height:49.5%;
+        }
+      }
+    }
+  }
+}
+        </style>
+        <div class="pdbody">
+          <div class="pdlist"></div>
+          <div class="pdimg">
+            <div class="pdimglist">
+              <figure>
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+                </div>
+                <div class="btnview">
+                  <a href="javasrcipt:;" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></a>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+                <figcaption>CGV SCREEN & LOBBY</figcaption>
+              </figure>
+              <figure>
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample02.png" width="1134" height="643" alt="" />
+                </div>
+                <div class="btnview">
+                  <a href="javasrcipt:;" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></a>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+                <figcaption>STARFIELD SHOPPING MALL</figcaption>
+              </figure>
+              <figure>
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample01.png" width="1103" height="829" alt="" />
+                </div>
+                <div class="btnview">
+                  <a href="javasrcipt:;" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></a>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+                <figcaption>IFC MALL</figcaption>
+              </figure>
+              <figure>
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample01.jpg" width="2386" height="1592" alt="" />
+                </div>
+                <div class="btnview">
+                  <a href="javasrcipt:;" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></a>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+                <figcaption>PARADISE CITY</figcaption>
+              </figure>
+              <figure>
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample02.jpg" width="2214" height="1592" alt="" />
+                </div>
+                <div class="btnview">
+                  <a href="javasrcipt:;" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></a>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+                <figcaption>OLIVE YOUNG</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!-- //.pdimg -->
+        </div>
+        <!-- //.pdbody -->
+
+        <div class="pdfoot sdwrap">
+          <h2 class="h2"><span>엔터테인먼트 만을 위한</span><strong><span>추천패키지 <em>상품</em></span></strong></h2>
+          <div class="total_text">총<em>2</em>상품</div>
+          <div class="sdlist carousel" data-flickity='{ "groupCells": true }'>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+          </div>
+          <div class="paging">
+            <span class="number"><b class="current">1</b><i class="total">3</i></span>
+            <div class="btngroup">
+              <button class="ibtn_prev arrow"><i class="arrow-l"></i><span class="sr-only">이전 페이지</span></button>
+              <button class="ibtn_next arrow"><i class="arrow-r"></i><span class="sr-only">다음 페이지</span></button>
+            </div>
+          </div>
+        </div>
+        <!-- //.pdfoot -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

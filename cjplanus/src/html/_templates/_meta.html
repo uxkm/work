@@ -1,0 +1,48 @@
+{% set default_title = 'PLANUS' %}
+
+<meta charset="UTF-8">
+<!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"> -->
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, width=device-width">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="apple-mobile-web-app-capable" content=" yes">
+<meta name="robots" content="index,follow">
+<meta http-equiv="imagetoolbar" content="no">
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1"> -->
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<!-- opengraph -->
+<meta name="title" content="{{ meta.title }}">
+<meta name="description" content="{{ meta.description }}">
+<meta property="og:title" content="{{meta.title}}">
+<meta property="og:url" content="{{ path.absolute }}"><!-- property="og:url" content="접속한 페이지 경로 설정" -->
+<meta property="og:type" content="{{ meta.ogtype }}">
+<meta property="og:description" content="{{ meta.title }}">
+<!-- <meta property="og:image" content="/assets/images/share_img.jpg"> -->
+<meta property="og:image" content="{{ meta.ogimage }}">
+
+{% if pageData.mainPage === true -%}
+<title>{{ default_title }}</title>
+{%- else -%}
+<title>{{ pageData.pageName }} | {{ default_title }}</title>
+{%- endif %}
+
+<!-- icon -->
+<link rel="apple-touch-icon" sizes="57x57" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/apple-touch-icon-57x57.png"> 
+<link rel="apple-touch-icon" sizes="60x60" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/assets/images/icon/apple-touch-icon-60x60.png"> 
+<link rel="apple-touch-icon" sizes="72x72" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/apple-touch-icon-72x72.png"> 
+<link rel="apple-touch-icon" sizes="76x76" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/apple-touch-icon-76x76.png"> 
+<link rel="apple-touch-icon" sizes="114x114" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/apple-touch-icon-114x114.png"> 
+<link rel="apple-touch-icon" sizes="120x120" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/apple-touch-icon-120x120.png"> 
+<link rel="apple-touch-icon" sizes="144x144" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/apple-touch-icon-144x144.png"> 
+<link rel="apple-touch-icon" sizes="152x152" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/apple-touch-icon-152x152.png"> 
+<link rel="apple-touch-icon" sizes="180x180" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/apple-touch-icon-180x180.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/favicon-16x16.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="192x192" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/android-chrome-192x192.png"> 
+<link rel="shortcut icon" type="image/x-icon" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/favicon.ico">
+<link rel="manifest" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/site.webmanifest">
+<link rel="mask-icon" href="{{ set.baseurl }}{{ set.imgurl }}/favicon/safari-pinned-tab.svg" color="#5bbad5"> 
+<meta name="msapplication-TileColor" content="#da532c"> 
+<meta name="msapplication-TileImage" content="{{ set.baseurl }}{{ set.imgurl }}/favicon/android-icon-144x144.png"> 
+<meta name="theme-color" content="#ffffff">

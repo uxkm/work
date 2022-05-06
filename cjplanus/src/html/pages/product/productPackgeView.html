@@ -1,0 +1,206 @@
+{% set pageData = { pageDep1Name: '상품안내', pageName: '상품상세', pageDesc: '', pageActive: '0' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pdview">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subproduct.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1 sr-only" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="pdview_packgehead">
+          <p class="pdview_title"><strong>노스 와이드 스크린</strong></p>
+          
+          <script>
+            $(function(){
+              $('.pdview_mediabody, .pdview_packgehead').find('.linkgroup .btn_white').on('click', function(){
+                $(this).toggleClass('checked');
+                return false;
+              })
+            })
+          </script>
+          <div class="linkgroup">
+            <a href="#" class="btn_white medium"><i class="ico-heart"></i><span>관심상품</span></a>
+            <a href="#" class="btn_default medium"><i class="ico-pen"></i><span>청약문의</span></a>
+          </div>
+        </div>
+        <!-- pdview_packgehead -->
+
+        <div class="packge_benefits">
+          <div class="tblwrap">
+            <table>
+              <thead>
+                <tr>
+                  <th><span>번호</span></th>
+                  <th><span>매체</span></th>
+                  <th><span>상품</span></th>
+                  <th><span>광고기간</span></th>
+                  <th><span>정단가</span></th>
+                  <th><span>패키지단가</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th><div><span>1</span></div></th>
+                  <td><div><span>서울외곽순환 고속국도</span></div></td>
+                  <td class="tleft"><div><span>국내선 2층 JDC면세점 입구 프로모션 존</span></div></td>
+                  <td rowspan="4"><div><span>12개월</span></div></td>
+                  <td rowspan="4"><div><span>3,000만원</span></div></td>
+                  <td rowspan="4"><div><span>2,000만원</span><span>(33%)</span></div></td>
+                </tr>
+                <tr>
+                  <th><div><span>2</span></div></th>
+                  <td><div><span>제주공항</span></div></td>
+                  <td class="tleft"><div><span>국내선 1층 국내/국제선 경계 상단 LCD 1/2구좌</span></div></td>
+                </tr>
+                <tr>
+                  <th><div><span>3</span></div></th>
+                  <td><div><span>제주공항</span></div></td>
+                  <td class="tleft"><div><span>국내선 2층 JDC 면세점 전면 기둥 LCD 1/2구좌</span></div></td>
+                </tr>
+                <tr>
+                  <th><div><span>4</span></div></th>
+                  <td><div><span>제주공항</span></div></td>
+                  <td class="tleft"><div><span>국내선 3층 출발장 우측 LCD 1/2구좌</span></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- //.tblwrap -->
+        </div>
+        <!-- //.packge_benefits -->
+
+        <div class="pdview_packgebody">
+
+          <div id="packge1" class="packge_contents">
+            <h2 class="packge_title">
+              <span><strong><em>패키지</em> <b>구성 1</b></strong></span>
+              <sub><span>스타필드 고양</span><span>미디어스크린</span></sub>
+            </h2>
+            <p class="view_description"><span>투수의 견제와 주자의 주루 플레이로 치열한 신경전이 돋보이는 장면에서 노출되는 미디어! 내야 전면을 사용하여 임팩트 있는 노출 가능</span></p>
+            <div class="packge_info">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+              </div>
+              <div class="pdinfo">
+                <h3>미디어 정보</h3>
+                <div class="uk_table">
+                  <div class="tbody">
+                    <div class="tr">
+                      <strong class="th">위치</strong>
+                      <div class="td">자기부상열차-플라자 연결통로 벽면</div>
+                    </div>
+                    <!-- //.tr -->
+                    <div class="tr">
+                      <strong class="th">사이즈(M)</strong>
+                      <div class="td">5.3 X 2.6</div>
+                    </div>
+                    <!-- //.tr -->
+                    <div class="tr">
+                      <strong class="th">광고비용</strong>
+                      <div class="td">300만원/월</div>
+                    </div>
+                    <!-- //.tr -->
+                    <div class="tr">
+                      <strong class="th">운영시간</strong>
+                      <div class="td">상시운영</div>
+                    </div>
+                    <!-- //.tr -->
+                    <div class="tr">
+                      <strong class="th">기기수(면수)</strong>
+                      <div class="td">1기(1면/기)</div>
+                    </div>
+                    <!-- //.tr -->
+                    <div class="tr">
+                      <strong class="th">일 노출횟수</strong>
+                      <div class="td">100회 20초 소재기준</div>
+                    </div>
+                    <!-- //.tr -->
+                  </div>
+                  <!-- //.tbody -->
+                </div>
+                <!-- //.uk_table -->
+                <p class="etcmark">* 추후 상품을 변동될 수 있습니다</p>
+              </div>
+            </div>
+            <!-- //.packge_info -->
+          </div>
+          <!-- //.packge_contents -->
+
+          <div id="packge2" class="packge_contents">
+            <h2 class="packge_title">
+              <span><strong><em>패키지</em> <b>구성 2</b></strong></span>
+              <sub><span>NC다이노스 야구장</span><span>미디어스크린</span></sub>
+            </h2>
+            <!-- <p class="view_description"><span>투수의 견제와 주자의 주루 플레이로 치열한 신경전이 돋보이는 장면에서 노출되는 미디어! 내야 전면을 사용하여 임팩트 있는 노출 가능</span></p> -->
+            <div class="packge_info">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+              </div>
+              <div class="pdinfo">
+                <h3>미디어 정보</h3>
+                <div class="uk_table">
+                  <div class="tbody">
+                    <div class="tr">
+                      <strong class="th">위치</strong>
+                      <div class="td">자기부상열차-플라자 연결통로 벽면</div>
+                    </div>
+                    <!-- //.tr -->
+                    <div class="tr">
+                      <strong class="th">사이즈(M)</strong>
+                      <div class="td">5.3 X 2.6</div>
+                    </div>
+                    <!-- //.tr -->
+                    <div class="tr">
+                      <strong class="th">광고비용</strong>
+                      <div class="td">300만원/월</div>
+                    </div>
+                    <!-- //.tr -->
+                    <div class="tr">
+                      <strong class="th">운영시간</strong>
+                      <div class="td">상시운영</div>
+                    </div>
+                    <!-- //.tr -->
+                    <div class="tr">
+                      <strong class="th">기기수(면수)</strong>
+                      <div class="td">1기(1면/기)</div>
+                    </div>
+                    <!-- //.tr -->
+                    <div class="tr">
+                      <strong class="th">일 노출횟수</strong>
+                      <div class="td">100회 20초 소재기준</div>
+                    </div>
+                    <!-- //.tr -->
+                  </div>
+                  <!-- //.tbody -->
+                </div>
+                <!-- //.uk_table -->
+                <p class="etcmark">* 추후 상품을 변동될 수 있습니다</p>
+              </div>
+            </div>
+            <!-- //.packge_info -->
+          </div>
+          <!-- //.packge_contents -->
+
+          <div class="btngroup tright">
+            <a href="productView.html" class="btn_white medium"><span>목록</span></a>
+          </div>
+          <!-- //.btngroup -->
+        </div>
+        <!-- pdview_packgebody -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

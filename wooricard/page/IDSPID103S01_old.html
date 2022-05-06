@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="title" content="우리카드">
+    <meta name="keywords" content="우리카드, 신규카드, 카드혜택, 카드신청">
+    <meta name="copyright" content="COPYRIGHTS WOORICARD. ALL RIGHTS RESERVED.">
+    <title>마이 데이터 서비스 인증</title>
+    <link rel="Shortcut Icon" href="../img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/m.newfonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newreset.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newcommon.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newmd.page.css">
+    <!-- JS -->
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery/jquery-ui.min.js"></script>
+    <script src="../js/jquery/jquery.ui.touch-punch.min.js"></script>
+    <script src="../js/jquery/jquery.mailtip.js"></script>
+    <script src="../js/uiux/ukDetect-1.0.0.min.js"></script>
+    <script src="../js/uiux/m.newmd.js"></script>
+  </head>
+  <body>
+    <div class="ukwrap">
+      <header class="uk_header">
+        <h1 class="tit_h1">
+          <img src="../img/common/ci_color.png" alt="우리카드 로고">
+          <strong><span>마이데이터</span> 개별인증</strong>
+        </h1>
+        <!-- <h1 class="tit_h1">인증</h1> -->
+        <button type="button" class="ibtn_close"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </header>
+      <div class="ukmain">
+        <div class="cbody">
+          <dl class="text_boxwrap">
+            <dt>개별 본인인증</dt>
+            <dd>개인신용정보 전송 요구를 위해 다중 인증이 필요 합니다.</dd>
+          </dl>
+          <div class="msg_text">
+            <p>우리카드에 가입된<br>아이디와 비밀번호를 입력 후<br>SMS 인증을 진행하세요.</p>
+          </div>
+          <section class="section">
+            <h2 class="tit_h2 logo">우리카드</h2>
+            <div class="inpgp">
+              <label for="inpID" class="sr-only">아이디</label>
+              <input type="text" name="" id="inpID" placeholder="아이디">
+              <button class="clear ibtn_close"><i class="icon"></i><span class="sr-only">삭제</span></button>
+            </div>
+            <!-- <div class="inpgp">
+              <label for="inpPW" class="sr-only">비밀번호</label>
+              <input type="password" name="" id="inpPW" placeholder="비밀번호">
+              <button class="clear ibtn_close"><i class="icon"></i><span class="sr-only">삭제</span></button>
+            </div> -->
+            <div class="inpgp">
+              <label for="userPwd" class="sr-only">비밀번호</label>
+                <input type="password" class="ipt btm_line notDel uiAct" placeholder="비밀번호" name="userPwd" id="userPwd" onclick="mtk.onKeyboard(this);" data-tk-kbdtype="qwerty" readonly="readonly" maxlength="10" autocomplete="off">
+              <button class="clear ibtn_close"><i class="icon"></i><span class="sr-only">삭제</span></button>
+            </div>
+
+            <div class="inpgp">
+              <label for="userDate" class="sr-only">생년월일</label>
+                <input type="number" class="ipt" placeholder="생년월일 6자리('-'없이 숫자만 입력)" name="userDate" id="userDate">
+              <button class="clear ibtn_close"><i class="icon"></i><span class="sr-only">삭제</span></button>
+            </div>
+            <button class="btn_base blue"><span>인증</span></button>
+            <p class="etcmark">우리카드 회원정보에 기재된 휴대폰 번호로 SMS가 발송됩니다.</p>
+          </section>
+        </div>
+
+      </div>
+      <!-- //.ukmain -->
+    </div>
+    <!-- //.ukwrap -->
+
+    
+
+    <script>
+      // 선택시 나오는 UI 호출 스크립트 개발 상황에 맞게 커스텀 하여 사용
+      $(document).ready(function(){
+        var modal_wrap = 'modal_wrap';
+        var modal_button = 'data-modal-button';
+        var modal_layer = 'data-modal-layer';
+        var modal_dim = 'data-modal-dim';
+        var modal_active = 'modal_active';
+        var modal_hover = false;
+        $('['+modal_button+']').on('click', function(){
+          var _target = $(this).attr(modal_button);
+          $('['+modal_layer+'="'+_target+'"]').addClass(modal_active);
+          $('html').addClass('scl_lock');
+          // return false;
+        });
+
+        $('[data-modal-close]').on('click', function(){
+          if( $(this).parents('.'+modal_wrap).is('.'+modal_active) ){
+            $('html').removeClass('scl_lock');
+            $(this).parents('.'+modal_wrap).removeClass(modal_active);
+            modal_hover = false;
+          }
+          return false;
+        });
+
+        $('.'+modal_wrap).on('click', function(e){
+          if( $(this).has(e.target).length === 0 && $(this).attr(modal_dim) !== 'false' ){
+            $(this).removeClass(modal_active);
+            $('html').removeClass('scl_lock');
+          }
+        });
+      })
+    </script>
+
+
+  </body>
+</html>

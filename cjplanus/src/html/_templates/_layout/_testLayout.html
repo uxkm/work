@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  {% include('_meta.html') %}
+  {% include '_webfont.html' %}
+  {% include '_headcss.html' -%}
+  <link rel="stylesheet" href="{{set.baseurl}}{{set.cssurl}}/main.min.css" />
+  {% include '_headjs.html' %}
+  <script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/test.js"></script>
+</head>
+<body>
+  <div class="ukwrap">
+    {% include "parts/_header.html" %}
+
+    <main class="ukmain">
+      <!-- Start : Main Contents Page -->
+      {% block mainpage -%} {%- endblock %}
+      <!-- End : Main Contents Page -->
+    </main>
+    <!-- //.ukmain -->
+
+    {%- include "parts/_footer.html" %}
+
+  </div>
+  <!-- //.ukwrap -->
+  
+</body>
+</html>

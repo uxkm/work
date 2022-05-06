@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, viewport-fit=cover">
+  <title>Sticky Test</title>
+  <style>
+    *,*:before,*:after{margin:0;padding:0;box-sizing:border-box;}
+    html,body{height:100%;}
+    body{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+    a{text-decoration: none;}
+    .uktabs,
+    .uk_section{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position:relative;
+      height:100vh;
+      padding:0 2em;
+      background:#eee;
+      text-align:center;
+    }
+    .uktabs h1,
+    .uk_section h1{
+      margin:0;
+      font-size:2rem;
+      letter-spacing:1rem;
+    }
+    .uktabs h2,
+    .uk_section h2{
+      margin:0;
+      font-size:2rem;
+      letter-spacing:0.3rem;
+      opacity: 0.6;
+    }
+    .uktabs_nav{
+      display:flex;
+      flex-direction: row;
+      position:absolute;
+      bottom:0;
+      z-index:10;
+      width:100%;
+      height:70px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      background:#fff;
+    }
+    .uktabs_nav.top{
+      position:fixed;
+      top:0;
+    }
+    .linktab{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex:1;
+      transition:all .5s ease;
+      color:#000;
+      font-size:0.8rem;
+      letter-spacing: 0.1rem;
+    }
+    .linktab:hover{
+      transition:all 0.5s ease;
+      background:rgba(102, 177, 241, 0.8);
+      color:white;
+    }
+    .tab_sline{
+      position:absolute;
+      bottom:0;
+      width:0;
+      height:6px;
+      background:#66b1f1;
+      transition:left 0.3s ease;
+    }
+    @media (min-width:800px){
+      .uktabs h1,
+      .uk_section h1{
+        font-size:3rem;
+      }
+      .uktabs h2,
+      .uk_section h2{
+        font-size:1rem;
+      }
+      .linktab{
+        font-size:1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="uktabs">
+    <h1>STICKY SLIDER NAV</h1>
+    <h2>Sliding Content with sticky tab nav</h2>
+    <nav class="uktabs_nav">
+      <a href="#tabES6" class="linktab">ES6</a>
+      <a href="#tabFlexBox" class="linktab">FlexBox</a>
+      <a href="#tabReact" class="linktab">React</a>
+      <a href="#tabAngular" class="linktab">Angular</a>
+      <a href="#tabOther" class="linktab">Other</a>
+      <span class="tab_sline"></span>
+    </nav>
+  </section>
+  <main class="ukmain">
+    <section id="tabES6" class="uk_section">
+      <h1>ES6</h1>
+      <h2>somthing about es6</h2>
+    </section>
+    <section id="tabFlexBox" class="uk_section">
+      <h1>Flexbox</h1>
+      <h2>somthing about flexbox</h2>
+    </section>
+    <section id="tabReact" class="uk_section">
+      <h1>React</h1>
+      <h2>somthing about react</h2>
+    </section>
+    <section id="tabAngular" class="uk_section">
+      <h1>Angular</h1>
+      <h2>somthing about angular</h2>
+    </section>
+    <section id="tabOther" class="uk_section">
+      <h1>Other</h1>
+      <h2>somthing about other</h2>
+    </section>
+  </main>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script>
+    class StickyNavigation {
+      constructor() {
+        this.currentId = null;
+        this.currentTab = null;
+        this.tabNavHeight = 70;
+        let self = this;
+        $('.linktab').on('click', function() {
+          self.onTabClick(event, $(this));
+        });
+        $(window).scroll(() => { this.onScroll(); });
+        $(window).resize(() => { this.onResize(); });
+      }
+
+      onTabClick(event, element) {
+        event.preventDefault();
+        let scrollTop = $(element.attr('href')).offset().top - this.tabNavHeight + 1;
+        $('html, body').animate({ scrollTop: scrollTop }, 600);
+      }
+
+      onScroll() {
+        this.checkTabNavPosition();
+        this.findCurrentTabSelector();
+      }
+
+      onResize() {
+        if(this.currentId) {
+          this.setSliderCss();
+        }
+      }
+
+      checkTabNavPosition() {
+        // let offset = $('.linktab').offset().top + $('.linktab').height() - this.tabNavHeight;
+        let offset = $('.uktabs_nav').offset().top;
+        if($(window).scrollTop() > offset) {
+          $('.uktabs_nav').addClass('top');
+        } else {
+          $('.uktabs_nav').removeClass('top');
+        }
+      }
+
+      findCurrentTabSelector(element) {
+        let newCurrentId;
+        let newCurrentTab;
+        let self = this;
+        $('.linktab').each(function() {
+          let id = $(this).attr('href');
+          let offsetTop = $(id).offset().top - self.tabNavHeight;
+          let offsetBottom = $(id).offset().top + $(id).height() - self.tabNavHeight;
+          if($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
+            newCurrentId = id;
+            newCurrentTab = $(this);
+          }
+        });
+        if(this.currentId != newCurrentId || this.currentId === null){
+          this.currentId = newCurrentId;
+          this.currentTab = newCurrentTab;
+          this.setSliderCss();
+        }
+      }
+
+      setSliderCss() {
+        let width = 0;
+        let left = 0;
+        if(this.currentTab) {
+          left = this.currentTab.offset().left;
+          width = this.currentTab.css('width');
+        }
+        $('.tab_sline').css({
+          'left': left,
+          'width': width
+        });
+      }
+    }
+    new StickyNavigation();
+  </script>
+</body>
+</html>

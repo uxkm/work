@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>#태그 추출 (정규식)</title>
+
+<script src="jquery-3.4.1.min.js"></script>
+
+
+
+</head>
+<body>
+
+<textarea cols="33" rows="5" id="txt">
+하하하 블라블라 #잡담, #태그, #추출 #흠냐리#이어짐
+  #abcd
+</textarea>
+<br />
+<button id="getTag">해쉬태그뽑기</button>
+<br /><br />
+추출된 태그:
+<div id="tags"></div>
+
+<script type="text/javascript">
+//<![CDATA[ 
+
+$("#getTag").on("click", function() {
+  var txt = $("#txt").val();
+  var tags = [];
+  txt = txt.replace(/#[^#\s,;]+/gm, function(tag) {
+    tags.push(tag);
+  });
+  $("#tags").html(tags.join('<br />'));
+});
+
+//]]>  
+</script>
+
+</body>
+</html>

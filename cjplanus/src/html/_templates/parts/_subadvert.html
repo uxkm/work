@@ -1,0 +1,23 @@
+<!-- Start : Member 서브메뉴 -->
+<ul class="breadcrumb">
+  <li>홈</li>
+  {%if pageData.pageActive == '1' %}
+  <li><strong>{{ pageData.pageDep1Name }}</strong></li>
+  {%- else -%}
+  <li>{{ pageData.pageDep1Name }}</li>
+  <li><strong>{{ pageData.pageName }}</strong></li>
+  {% endif %}
+</ul>
+<div class="cnt_submenu advert">
+  <nav class="navsub">
+    <ul>
+      <li{%if pageData.pageActive == '1' %} class="active"{% endif %}>
+        <a href="index.html">맞춤상품</a>
+      <li{%if pageData.pageActive == '2' %} class="active"{% endif %}>
+        <a href="pdrecom.html">추천상품</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- //.cnt_submenu -->
+<!-- End : Member 서브메뉴 -->

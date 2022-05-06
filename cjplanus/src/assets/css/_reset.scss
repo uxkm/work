@@ -1,0 +1,402 @@
+@charset "UTF-8";
+/* reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+address,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: top;
+  letter-spacing: -0.02em;
+  white-space: normal;
+  word-break: break-all;
+	word-wrap: break-word;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: none;
+  -webkit-overflow-scrolling: touch;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  min-width: 320px;
+  color: $base-color;
+  @include fsize(1);
+  line-height: 1.5;
+  font-family: $font-set;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (max-width: $screen-xxxxs) {
+  body {
+    overflow: auto;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+ol,
+ul {
+  list-style: none;
+}
+i,
+em,
+address,
+optgroup,
+var,
+ins,
+dfn,
+cite,
+caption {
+  font-style: normal;
+}
+blockquote,
+q {
+  quotes: none;
+  &:before,
+  &:after {
+    content: "";
+  }
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  vertical-align: top;
+  -webkit-tap-highlight-color: transparent;
+  &:hover,
+  &:active,
+  &:focus {
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    vertical-align: top;
+  }
+}
+iframe {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  vertical-align: top;
+  // aspect-ratio: attr(width) / attr(height);
+}
+[tabindex],
+[class^="btn_"],
+[class^="ibtn_"]{
+	outline:0;
+}
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: $font-kr;
+  vertical-align: top;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+fieldset {
+  border: 0;
+}
+textarea{
+	resize: none;
+}
+textarea,
+input,
+select {
+  color: $base-color;
+  font-family: $font-noto;
+  vertical-align: top;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &::placeholder {
+    color: $color-6;
+    opacity: 1;
+  }
+}
+select::-ms-expand {
+  display: none;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+/* 아이폰 가로모드 텍스트 크기 조정 */
+/* 아이폰 라운드, 안쪽 그림자 제거 */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="submit"],
+textarea {
+  -webkit-border-radius: 0;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="submit"],
+textarea,
+select {
+  border-radius: 0;
+}
+input[type="text"]::-ms-clear,
+input[type="password"]::-ms-clear,
+input[type="email"]::-ms-clear,
+input[type="tel"]::-ms-clear,
+input[type="number"]::-ms-clear {
+  display: none;
+} //ie에서 x버튼 삭제
+//input = range
+input[type="range"] {
+  width: 100%;
+  height: 30px;
+  padding: 0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+
+  $silver: #ddd;
+  $gray: #666;
+  &::-webkit-slider-runnable-track {
+    height: 6px;
+    background: $silver;
+    border: none;
+    border-radius: 100px;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:focus::-webkit-slider-runnable-track {
+    background: $silver;
+  }
+
+  &::-moz-range-track {
+    height: 6px;
+    background: $silver;
+    border: none;
+    border-radius: 100px;
+  }
+  &:-moz-focusring {
+    outline: 1px solid white;
+    outline-offset: -1px;
+  }
+
+  &::-ms-track {
+    height: 6px;
+    background: transparent;
+    border-color: transparent;
+    border-width: 0 0;
+    color: transparent;
+  }
+  &::-ms-fill-lower,
+  &:focus::-ms-fill-lower {
+    background: #aaa;
+    border-radius: 10px;
+  }
+  &::-ms-fill-upper,
+  &:focus::-ms-fill-upper {
+    background: $silver;
+    border-radius: 10px;
+  }
+
+  &::-webkit-slider-thumb {
+    width: 30px;
+    height: 30px;
+    margin-top: -12px;
+    background: $white;
+    border: 2px solid $gray;
+    border-radius: 100%;
+    -webkit-appearance: none;
+  }
+  &::-moz-range-thumb {
+    width: 26px;
+    height: 26px;
+    margin-top: -10px;
+    background: $white;
+    border: 2px solid $gray;
+    border-radius: 100%;
+  }
+  &::-ms-thumb {
+    width: 26px;
+    height: 26px;
+    margin-top: 0;
+    background: $white;
+    border: 2px solid $gray;
+    border-radius: 100%;
+  }
+}
+/* WebKit Scrollbar Style */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+*::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+// input focus시 placeholder 감추기
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: transparent;
+  transition: all 0.3s;
+}
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: transparent;
+  transition: all 0.3s;
+}
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: transparent;
+  transition: all 0.3s;
+}
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: transparent;
+  transition: all 0.3s;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;box-sizing:border-box;}
+		.horizonScroll {overflow-x: auto; margin:0 auto; padding: 0 3px;box-sizing: border-box;background: powderblue; }
+		.horizonScroll__wrapper {overflow: hidden;font-size: 0; white-space:nowrap;}
+		.horizonScroll__item {display: inline-block; width: auto;text-decoration: none;}
+		.horizonScroll__itemText {
+				display: block; 
+				position: relative; 
+				margin: 0 5px; 
+				height: 47px; 
+				padding: 16px 5px 8px 5px; 
+				box-sizing: border-box; 
+				text-align: center; 
+				white-space: nowrap; 
+				font-size: 1rem; 
+				line-height: 1em; 
+				color: #333; }
+		.on .horizonScroll__itemText { color: #1b64bc; font-weight: bold; letter-spacing:-.026em;}
+		.on .horizonScroll__itemText:after { content: ''; display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: #1b64bc; }
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		$(function(){
+
+			var $scrItem = $('.horizonScroll__item');
+			var scrIWidth = 0;
+			for (var i=0; i<$scrItem.length; i++) {
+				scrIWidth += $scrItem.eq(i).outerWidth();
+			}
+			$('.horizonScroll__wrapper').css('width',scrIWidth)
+			$scrItem.click(function(){
+				var target = $(this); 
+				$scrItem.removeClass('on')
+				target.addClass('on');
+				muCenter(target);
+			})
+			function muCenter(target){
+				var box = $('.horizonScroll');
+				var boxItem = box.find('.horizonScroll__item');
+				var boxHarf = box.width()/2;
+				var pos;
+				var listWidth=0;
+				var targetLeft = 0;
+	
+				boxItem.each(function(){ listWidth += $(this).outerWidth(); })    
+				
+				for (var i=0; i<target.index(); i++) targetLeft += boxItem.eq(i).outerWidth(); // 선택요소 까지 길이
+				
+				var selectTargetPos = (targetLeft + target.outerWidth()/2);
+				if (selectTargetPos <= boxHarf) { // left
+					pos = 0;
+				}else if (listWidth - selectTargetPos <= boxHarf) { //right : target 절반 이후 영역이 boxHarf 보다 작을경우 right 정렬
+					pos = listWidth-box.width();
+				}else {
+					pos = selectTargetPos - boxHarf; // 중앙정렬
+				}
+				
+				setTimeout(function(){
+					box.animate({scrollLeft:pos},300)
+				}, 200);
+			}
+		})
+	</script>
+</head>
+<body>
+	<div class="horizonScroll" style="max-width:100%">
+		<div class="horizonScroll__wrapper">
+			<a href="#" class="horizonScroll__item"><span class="horizonScroll__itemText">포도</span></a>
+			<a href="#" class="horizonScroll__item"><span class="horizonScroll__itemText">블루베리</span></a>
+			<a href="#" class="horizonScroll__item"><span class="horizonScroll__itemText">딸기</span></a>
+			<a href="#" class="horizonScroll__item"><span class="horizonScroll__itemText">자두수박</span></a>
+			<a href="#" class="horizonScroll__item"><span class="horizonScroll__itemText">바나나</span></a>
+			<a href="#" class="horizonScroll__item"><span class="horizonScroll__itemText">망고스틴레드</span></a>
+			<a href="#" class="horizonScroll__item"><span class="horizonScroll__itemText">사과</span></a>
+			<a href="#" class="horizonScroll__item"><span class="horizonScroll__itemText">천도복숭아</span></a>
+			<a href="#" class="horizonScroll__item"><span class="horizonScroll__itemText">수박</span></a>
+			<a href="#" class="horizonScroll__item"><span class="horizonScroll__itemText">용과</span></a>
+		</div>
+	</div>
+</body>
+</html>

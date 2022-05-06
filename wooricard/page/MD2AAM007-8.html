@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="title" content="우리카드">
+    <meta name="keywords" content="우리카드, 신규카드, 카드혜택, 카드신청">
+    <meta name="copyright" content="COPYRIGHTS WOORICARD. ALL RIGHTS RESERVED.">
+    <title>마이 데이터 서비스 인증</title>
+    <link rel="Shortcut Icon" href="../img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/m.newfonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newreset.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newcommon.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newmd.page.css">
+    <!-- JS -->
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery/jquery-ui.min.js"></script>
+    <script src="../js/jquery/jquery.ui.touch-punch.min.js"></script>
+    <script src="../js/jquery/jquery.mailtip.js"></script>
+    <script src="../js/uiux/ukDetect-1.0.0.min.js"></script>
+    <script src="../js/uiux/m.newmd.js"></script>
+  </head>
+  <body>
+    <div class="ukwrap">
+      <header class="uk_header">
+        <h1 class="tit_h1">인증</h1>
+        <button type="button" class="ibtn_close"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </header>
+      <div class="ukmain">
+        <div class="cbody">
+          <div class="tabgroup">
+            <div class="tabmenu">
+              <ul class="tab">
+                <li class="on"><button class="btn_tab"><span>카드번호 인증</span></button></li>
+                <li><button class="btn_tab"><span>대출번호 인증</span></button></li>
+              </ul>
+            </div>
+            <!-- //.tabmenu -->
+
+            <div class="tabcnt" aria-label="카드번호 인증 내용">
+              <div class="textbox">
+                <p>소유하신 우리카드 번호를 통해 추가 인증을 진행합니다.</p>
+              </div>
+              <section class="section">
+                <h2 class="tit_h2">카드번호</h2>
+                <!-- <div class="inpnumgp col4">
+                  <div class="inpgp">
+                    <label for="inpNum1" class="sr-only">카드번호 첫번째 4자리 입력</label>
+                    <input type="text" name="" id="inpNum1" placeholder="" value="1234">
+                  </div>
+                  <div class="dotline"></div>
+                  <div class="inpgp">
+                    <label for="inpNum2" class="sr-only">카드번호 두번째 4자리 입력</label>
+                    <input type="text" name="" id="inpNum2" placeholder="" value="****">
+                  </div>
+                  <div class="dotline"></div>
+                  <div class="inpgp">
+                    <label for="inpNum3" class="sr-only">카드번호 세번째 4자리 입력</label>
+                    <input type="text" name="" id="inpNum3" placeholder="" value="****">
+                  </div>
+                  <div class="dotline"></div>
+                  <div class="inpgp">
+                    <label for="inpNum4" class="sr-only">카드번호 네번째 4자리 입력</label>
+                    <input type="text" name="" id="inpNum4" placeholder="" value="*234">
+                  </div>
+                </div> -->
+                <!-- TO-BE 형식  -->
+                <div class="inpnumgp col4">
+                  <div class="inpgp">
+                    <label for="inpNum1" class="sr-only">카드번호 첫번째 4자리 입력</label>
+                    <input type="text" name="inpNum1" id="inpNum1" placeholder="" maxlength="4" value="5387">
+                  </div>
+                  <div class="dotline"></div>
+                  <div class="inpgp">
+                    <label for="inpNum2" class="sr-only">카드번호 두번째 4자리 입력</label>
+                    <input type="password" name="inpNum2" id="inpNum2" placeholder="****" maxlength="4" onclick="mtk.onKeyboard(this);" data-tk-kbdtype="number" autocomplete="off">
+                  </div>
+                  <div class="dotline"></div>
+                  <div class="inpgp">
+                    <label for="inpNum3" class="sr-only">카드번호 세번째 4자리 입력</label>
+                    <input type="password" name="inpNum3" id="inpNum3" placeholder="****" maxlength="4" onclick="mtk.onKeyboard(this);" data-tk-kbdtype="number" autocomplete="off">
+                  </div>
+                  <div class="dotline"></div>
+                  <div class="inpgp">
+                    <label for="inpNum4" class="sr-only">카드번호 네번째 4자리 입력</label>
+                    <input type="text" name="inpNum4" id="inpNum4" placeholder="" maxlength="4" value="9658">
+                  </div>
+                </div>
+                <!-- AS-IS 형식 -->
+                <div class="inpnumgp col4 setCard">
+                  <input type="tel" class="inp wrcNumberOnly" id="giftCdNo16_01" name="giftCdNo16_01" maxlength="4" title="기프트카드번호 첫번째 4자리">
+                  <span class="dotline"></span>
+                  <div class="keypad">
+                   <button type="button" class="btnKeypad" aria-label="기프트카드번호 두번째 4자리" id="giftCdNo16_02Dis">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                   </button>
+                   <input type="password" id="giftCdNo16_02" name="giftCdNo16_02" class="ipt wrcNumberOnly" maxlength="4" title="기프트카드번호 두번째 4자리 입력" data-tk-bottom="true" data-tk-kbdType="number" readonly="readonly" style="display:none;">
+                  </div>
+                  <span class="dotline"></span>
+                  <div class="keypad">
+                   <button type="button" class="btnKeypad" aria-label="기프트카드번호 세번째 4자리" id="giftCdNo16_03Dis">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                   </button>
+                   <input type="password" id="giftCdNo16_03" name="giftCdNo16_03" class="ipt wrcNumberOnly" maxlength="4" title="기프트카드번호 세번째 4자리 입력" data-tk-bottom="true" data-tk-kbdType="number" readonly="readonly" style="display:none;">
+                  </div>
+                  <span class="dotline"></span>
+                  <input type="tel" class="inp wrcNumberOnly" id="giftCdNo16_04" name="giftCdNo16_04" maxlength="4" title="기프트카드번호 마지막 4자리">
+                 </div>
+              </section>
+
+              <section class="section cardfield">
+                <h2 class="tit_h2">유효기간 <small>카드유효기간 순서대로 입력</small></h2>
+                <div class="inpgp">
+                  <label for="inpCard1" class="sr-only">월</label>
+                  <input type="number" name="" id="inpCard1" placeholder="월">
+                  <div class="dot">/</div>
+                  <label for="inpCard2" class="sr-only">년</label>
+                  <input type="number" name="" id="inpCard2" placeholder="년">
+                </div>
+              </section>
+
+              <section class="section">
+                <h2 class="tit_h2">비밀번호 4자리</h2>
+                <!-- <div class="inpgp">
+                  <label for="inpPW2" class="sr-only">비밀번호</label>
+                  <input type="password" name="" id="inpPW2" placeholder="숫자 2자리 입력" maxlength="2">
+                  <button class="clear ibtn_close"><i class="icon"></i><span class="sr-only">삭제</span></button>
+                </div> -->
+                <!-- TO-BE -->
+                <div class="inpgp">
+                  <label for="inpPW2" class="sr-only">비밀번호</label>
+                  <input type="password" name="inpPW2" id="inpPW2" placeholder="숫자 4자리 입력" maxlength="4" onclick="mtk.onKeyboard(this);" data-tk-kbdtype="number" autocomplete="off">
+                  <button class="clear ibtn_close"><i class="icon"></i><span class="sr-only">삭제</span></button>
+                </div>
+
+                <!-- AS-IS -->
+                <div class="inpgp keypad tleft">
+                  <button type="button" class="btnKeypad" aria-label="비밀번호 보안키패드" id="giftCdCvcNo3Dis">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                  </button>
+                  <input type="password" id="giftCdCvcNo3" name="giftCdCvcNo3" class="ipt wrcNumberOnly" maxlength="4" title="비밀번호 입력" data-tk-bottom="true" data-tk-kbdType="number" npkencrypt="on" readonly="readonly" style="display:none;">
+                 </div>
+              </section>
+            </div>
+            <!-- //.tabcnt -->
+
+            <div class="tabcnt" aria-label="대출번호 인증 내용" style="display:none">
+              <div class="textbox">
+                <p>실행중인 대출 번호를 통해 추가 인증을 진행합니다.</p>
+              </div>
+              <section class="section">
+                <h2 class="tit_h2">대출번호</h2>
+                <div class="inpgp">
+                  <div class="inpgp">
+                    <label for="inpNum2-1" class="sr-only">대출번호 입력</label>
+                    <input type="number" name="" id="inpNum2-1" placeholder="" value="123456789">
+                  </div>
+                </div>
+              </section>
+
+              <section class="section">
+                <h2 class="tit_h2">생년월일</h2>
+                <div class="inpgp">
+                  <label for="inpAge2" class="sr-only">생년월일 입력</label>
+                  <input type="password" name="" id="inpAge2" placeholder="숫자 8자리 입력 (예: 19801230)" maxlength="8">
+                  <button class="clear ibtn_close"><i class="icon"></i><span class="sr-only">삭제</span></button>
+                </div>
+              </section>
+            </div>
+            <!-- //.tabcnt -->
+          </div>
+          <!-- //.tabgroup -->
+        
+      
+          <!-- UI 확인용 개발시 삭제 -->
+          <button class="btn_default test" data-modal-button="alert8_modal"><span>[확인용] alert1</span></button>
+          <button class="btn_default test" data-modal-button="alert9_modal"><span>[확인용] alert2</span></button>
+        </div>
+
+        
+
+        <!-- 인증 버튼이 있는 경우만 사용 -->
+        <div class="foot_btngroup">
+          <button type="button" class="btn_certi"><span>인증</span></button>
+          <button type="button" class="btn_cancel"><span>취소</span></button>
+        </div>
+        <!-- //.foot_btngroup -->
+      </div>
+      <!-- //.ukmain -->
+    </div>
+    <!-- //.ukwrap -->
+
+    
+    <!-- Alert -->
+    <div class="modal_wrap" data-modal-layer="alert8_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">카드번호를 확인해주세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+    <div class="modal_wrap" data-modal-layer="alert9_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">비밀번호 오류<br><span>(<em>1</em>/5)</span></p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+    <script>
+      // 선택시 나오는 UI 호출 스크립트 개발 상황에 맞게 커스텀 하여 사용
+      $(document).ready(function(){
+        var modal_wrap = 'modal_wrap';
+        var modal_button = 'data-modal-button';
+        var modal_layer = 'data-modal-layer';
+        var modal_dim = 'data-modal-dim';
+        var modal_active = 'modal_active';
+        var modal_hover = false;
+        $('['+modal_button+']').on('click', function(){
+          var _target = $(this).attr(modal_button);
+          $('['+modal_layer+'="'+_target+'"]').addClass(modal_active);
+          $('html').addClass('scl_lock');
+          // return false;
+        });
+
+        $('[data-modal-close]').on('click', function(){
+          if( $(this).parents('.'+modal_wrap).is('.'+modal_active) ){
+            $('html').removeClass('scl_lock');
+            $(this).parents('.'+modal_wrap).removeClass(modal_active);
+            modal_hover = false;
+          }
+          return false;
+        });
+
+        $('.'+modal_wrap).on('click', function(e){
+          if( $(this).has(e.target).length === 0 && $(this).attr(modal_dim) !== 'false' ){
+            $(this).removeClass(modal_active);
+            $('html').removeClass('scl_lock');
+          }
+        });
+      })
+    </script>
+  </body>
+</html>

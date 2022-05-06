@@ -1,0 +1,12 @@
+<!-- Start : 고객지원 서브메뉴 -->
+<ul class="breadcrumb">
+  <li>홈</li>
+  {%if pageData.pageActive == '1' %}
+  <li><strong>{{ pageData.pageDep1Name }}</strong></li>
+  {%- else -%}
+  <li>{{ pageData.pageDep1Name }}</li>
+  <li><strong>{{ pageData.pageName }}</strong></li>
+  {% endif %}
+</ul>
+<!-- //.cnt_submenu -->
+<!-- End : 고객지원 서브메뉴 -->

@@ -1,0 +1,153 @@
+<!-- Start : Header -->
+<div class="headerwrap">
+  <!-- Start : PC용 상단 영역 -->
+  <div class="header">
+    <p class="top_logo">
+      <a href="/"><img src="{{set.baseurl}}{{set.imgurl}}/base/logo_planus.png" width="183" height="33" alt="PLANUS 로고"/></a>
+    </p>
+    <!-- Mobile Web용 버튼 -->
+    <button class="ibtn_back arrow-long" onclick="javascript:history.back(-1);"><i class="arrow-long-l"></i><span class="sr-only">뒤로가기</span></button>
+    <div class="util_info">
+      <div class="util_top">
+        <!-- 로그인 전 -->
+        <!-- <a href="/pages/member/login.html">로그인</a>
+        <a href="/pages/member/join.html">회원가입</a> -->
+        <!-- //로그인 전 -->
+
+        <!-- 로그인 후 -->
+        
+        <span><em>홍길동</em>님 반갑습니다</span>
+        <a href="#">로그아웃</a>
+				<a href="/pages/member/mypage.html">마이페이지</a>
+        
+        <!-- //로그인 후 -->
+
+        <a href="/pages/cus/notice.html">고객센터</a>
+      </div>
+      <!-- //.util_top -->
+      <div class="util_menu">
+        <a href="/pages/member/mypage.html" class="ibtn_my"><i class="ico-my"></i><span class="sr_only">마이플래너스</span></a>
+        <a href="/pages/member/interest.html" class="ibtn_cart"><i class="ico-cart"></i><span class="badge">0</span><span class="sr_only">관심상품</span></a>
+        <button class="ibtn_allmenu" aria-controls="topbar" aria-expanded="false">
+          <i class="ico-bugger"><span></span></i><span class="sr_only">전체메뉴</span>
+        </button>
+      </div>
+      <!-- //.util_menu -->
+    </div>
+    <!-- //.util_info -->
+
+    <nav class="navtop">
+      <ul class="gnb">
+        {%- for navLink in nav_data %}
+        <li>
+          <a href="{{ navLink.href }}">{{ navLink.name }}</a>
+          {%- if navLink.depth2 %}
+          <ul class="depth2">
+            {%- for nav_depth2 in navLink.depth2 %}
+            <li>
+              <a href="{{ nav_depth2.href }}">
+                {{ nav_depth2.name }}
+              </a>
+            </li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <!-- //.navtop -->
+  </div>
+  <!-- //.header -->
+</div>
+<!-- //.headerwrap -->
+<!-- //END : Header -->
+
+<!-- Start : All Menu -->
+<!-- 로그인 후 class="allmenu_wrap loginon"  -->
+<div id="allMenu" class="allmenu_wrap">
+  <div class="allmenu_in">
+    <div class="all_head">
+      <a href="/" class="home"><i class="ico-home"></i><span class="sr-only">홈</span><img src="{{set.baseurl}}{{set.imgurl}}/base/logo_planus.png" width="183" height="33" alt="PLANUS 로고"/></a>
+      <!-- 로그인 전 -->
+      <p class="txt_info">
+        <span><em>PLANUS</em></span> 를<br />방문해주셔서 감사합니다.
+      </p>
+      <p class="login_util">
+        <a href="/pages/member/login.html"><i class="ico-power"></i><span>로그인</span></a>
+        <a href="/pages/member/join.html"><i class="ico-myinfo"></i><span>회원가입</span></a>
+        <a href="/pages/cus/notice.html">고객센터</a>
+      </p>
+
+      <!-- 로그인 후 allmenu_wrap class loginon 추가 -->
+      <!-- <p class="txt_info">
+				<span><em>홍 길동</em>님</span><br>반갑습니다.
+			</p>
+			<ul>
+				<li><span>청약중인 상품</span> <span><em>3</em>건</span></li>
+				<li><span>관심매체</span> <span><em>12</em>관심</span></li>
+			</ul>
+			<p class="login_util">
+				<a href="#"><i class="ico-power"></i><span>로그아웃</span></a>
+				<a href="/pages/member/mypage.html"><i class="ico-myinfo"></i><span>마이페이지</span></a>
+				<a href="/pages/cus/notice.html">고객센터</a>
+			</p> -->
+    </div>
+    <!-- //.all_head -->
+
+    <!-- pcweb에서만 보인는 영역 -->
+    <div class="subtext">
+      <div class="subtext_in">
+        <p class="title">
+          <strong><em>전체메뉴</em> 서비스</strong><span>플래너스 모든 메뉴를 편리하게 이용하실수 있습니다.</span>
+        </p>
+      </div>
+    </div>
+    <!-- //pcweb에서만 보인는 영역 -->
+
+    
+    <!-- [문구 변경 및 삭제 또는 메뉴위치 이동] 210622  -->
+    <div class="all_body">
+      <ul class="gnb">
+        <li class="depth1"><a href="/pages/biz/">플래너스소개</a>
+          <ul class="depth2">
+            <li><a href="/pages/biz/">플래너스 소개</a></li>
+          </ul>
+        </li>
+        <li class="depth1"><a href="/pages/execution/">집행사례</a>
+          <ul class="depth2">
+            <li><a href="/pages/product/">K-POP 스퀘어</a></li>
+            <li><a href="/pages/product/">CGV SCREEN</a></li>
+            <li><a href="/pages/product/">HIGHWAY BILLBOARD</a></li>
+          </ul>
+        </li>
+        <li class="depth1">
+          <a href="/pages/product/">상품안내</a>
+          <ul class="depth2">
+            <li><a href="/pages/product/">엔터테인먼트</a></li>
+            <li><a href="/pages/product/">스포츠</a></li>
+            <li><a href="/pages/product/">트래픽</a></li>
+            <li><a href="/pages/product/">빌보드</a></li>
+          </ul>
+        </li>
+        <li class="depth1">
+          <a href="/pages/advert/">상품추천</a>
+          <ul class="depth2">
+            <li><a href="/pages/advert/">맞춤상품</a></li>
+            <li><a href="/pages/advert/pdrecom.html">추천상품</a></li>
+          </ul>
+        </li>
+        <li class="depth1">
+          <a href="/pages/cus/notice.html">고객센터</a>
+          <ul class="depth2">
+            <li><a href="/pages/cus/notice.html">공지사항</a></li>
+            <li><a href="/pages/cus/qna.html">자주찾는 질문</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button class="ibtn_close"><span class="sr_only">메뉴 닫기</span></button>
+</div>
+<!-- //.allmenu_wrap -->
+<!-- End : All Menu -->

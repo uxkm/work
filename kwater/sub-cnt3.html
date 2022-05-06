@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>K water</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="format-detection" content="telephone=no, email=no, address=no">
+	<meta name="apple-mobile-web-app-capable" content=" yes">
+	<meta name="robots" content="index,follow">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- css -->
+	<link href="css/datatables.min.css" rel="stylesheet" />
+	<link href="css/chosen.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+
+	<!-- js (제이쿼리는 둘중에 하나만 선택) -->
+	<script type="text/javascript" src="js/jquery.1.12.1.min.js"></script><!--// 구글 제이쿼리 //-->
+	<script src="js/datatables.min.js"></script>
+	<script src="js/ukDetect.min.js"></script>
+	<script type="text/javascript" src="assets/chosen/chosen.jquery.min.js"></script>
+	<script src="js/ui.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+	<header class="left_header">
+		<h1><a href="/"><img src="images/logo.png" alt="K water"></a></h1>
+		<nav class="uk_nav">
+			<h2>사회안전망</h2>
+			<ul>
+				<li><a href="#"><i class="icon icon_home"></i>Dashboard</a></li>
+				<li><a href="#"><i class="icon icon_map"></i>지도현황</a></li>
+				<li class="depth2">
+					<a href="#"><i class="icon icon_info"></i>기본정보</a>
+					<ul class="depth2_menu">
+						<li class="on"><a href="#">어르신정보</a></li>
+						<li><a href="#">담당자정보</a></li>
+					</ul>
+				</li>
+				<li class="depth2 on">
+					<a href="#"><i class="icon icon_folder"></i>운영현황</a>
+					<ul class="depth2_menu">
+						<li class="on"><a href="#">일일검침현황</a></li>
+						<li><a href="#">일별검침현황</a></li>
+						<li><a href="#">문자현황</a></li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="icon icon_setting"></i>환경설정</a></li>
+			</ul>
+		</nav>
+		<aside class="utill">
+			<p class="user">최고관리자</p>
+		</aside>
+
+		<button type="button" class="left_close"><i>메뉴 숨기기</i></button>
+	</header>
+	<!-- uk_header -->
+
+
+	<section class="uk_search left_search">
+		<div class="radio_box">
+			<label class="select_inp">
+				<select class="custom-select">
+					<option value="">전체지사1</option>
+					<option value="">전체지사2</option>
+				</select>
+			</label>
+			<label class="select_inp">
+				<select class="custom-select">
+					<option value="">전체계통1</option>
+					<option value="">전체계통2</option>
+				</select>
+			</label>
+			<label class="select_inp">
+				<select class="custom-select">
+					<option value="">전체구간1</option>
+					<option value="">전체구간2</option>
+				</select>
+			</label>
+			<label class="select_inp">
+				<select class="custom-select">
+					<option value="">수용가명1</option>
+					<option value="">수용가명2</option>
+				</select>
+			</label>
+		</div>
+		<div class="text_search">
+			<label class="text_inp">
+				<input type="text" placeholder="검색어 입력" />
+			</label>
+			<button type="button" class="search_btn">검색하기</button>
+		</div>
+	</section>
+
+
+	<section class="uk_container left_container lftcol2">
+		<article class="content_box lft">
+			<div class="content_inner lft">
+				<h2>총 가구수(전일비)</h2>
+				<div class="cntbox center">
+					<strong>2572</strong>
+				</div>
+			</div>
+			<div class="content_inner rgt">
+				<h2>일별사용량</h2>
+				<div class="cntbox cht-text">
+					<div class="chartbox circle_chart">
+						<img src="images/img-chart-circle.png" width="120" alt="">
+					</div>
+					<div class="iottm">
+						<p><em>IoT</em><strong>2572</strong></p>
+						<p><em>TM</em><strong>572</strong></p>
+					</div>
+				</div>
+			</div>
+			<div class="content_inner lft">
+				<h2>알림</h2>
+				<div class="cntbox">
+					<div class="senstotal">
+						<span class="good"><strong>2572</strong><em>좋음</em></span>
+						<span class="bad"><strong>95</strong><em>나쁨</em></span>
+					</div>
+				</div>
+			</div>
+			<div class="content_inner rgt">
+				<h2>알림현황</h2>
+				<div class="cntbox btinfo">
+					<figure>
+						<p><img src="images/bettry1.png" alt=""><span>572</span></p>
+						<p><img src="images/bettry2.png" alt=""><span>25</span></p>
+						<p><img src="images/bettry3.png" alt=""><span>10</span></p>
+						<figcaption>계측기</figcaption>
+					</figure>
+					<figure>
+						<p><img src="images/bettry1.png" alt=""><span>572</span></p>
+						<p><img src="images/bettry2.png" alt=""><span>25</span></p>
+						<p><img src="images/bettry3.png" alt=""><span>10</span></p>
+						<figcaption>지시부</figcaption>
+					</figure>
+				</div>
+			</div>
+			<div class="content_inner lft">
+				<h2>통신횟수</h2>
+				<div class="cntbox">
+					<div class="senstotal">
+						<span class="good"><strong>2572</strong><em>정상</em></span>
+						<span class="bad"><strong>95</strong><em>두절</em></span>
+					</div>
+				</div>
+			</div>
+			<div class="content_inner rgt">
+				<h2>통신률</h2>
+				<div class="cntbox crchart">
+					<div class="chartbox circle_chart lft">
+						<img src="images/img-chart-circle1.png" width="120" alt="">
+					</div>
+					<div class="chartbox circle_chart rgt">
+						<img src="images/img-chart-circle1.png" width="120" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="content_inner lft">
+				<h2>수집횟수</h2>
+				<div class="cntbox">
+					<div class="senstotal">
+						<span class="good"><strong>2572</strong><em>성공</em></span>
+						<span class="bad"><strong>95</strong><em>누락</em></span>
+					</div>
+				</div>
+			</div>
+			<div class="content_inner rgt">
+				<h2>수집률</h2>
+				<div class="cntbox crchart">
+					<div class="chartbox circle_chart lft">
+						<img src="images/img-chart-circle1.png" width="120" alt="">
+					</div>
+					<div class="chartbox circle_chart rgt">
+						<img src="images/img-chart-circle1.png" width="120" alt="">
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<article class="content_box rgt maparea">
+			<div class="content_inner">
+				<div class="mapbox">
+					<img src="images/map.png" alt="">
+				</div>
+				<dl class="legend">
+					<dt>범례</dt>
+					<dd>
+						<p>
+							<img src="images/tm.png" alt="">
+							<span>TM</span>
+						</p>
+						<p>
+							<img src="images/iot.png" alt="">
+							<span>IoT</span>
+						</p>
+					</dd>
+				</dl>
+			</div>
+		</article>
+	</section>
+	<!-- uk_container -->
+
+</div>
+
+
+<script>
+	$('.custom-select').chosen({search_contains:true});
+</script>
+</body>
+</html>

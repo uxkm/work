@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>올라가다 고정되는 메뉴 예제</title>
+
+<script src="jquery-3.4.1.min.js"></script>
+
+<style type="text/css">
+body {
+  margin: 0;
+}
+#wrap {
+  padding-top: 100px;
+  height: 2000px;
+}
+.gnb {
+  height: 40px;
+  width: 100%;
+}
+#actualGNB {
+  position: absolute;
+  background: skyblue;
+}
+</style>
+
+</head>
+<body>
+
+<div id="wrap">
+  0000
+  <div class="gnb" id="actualGNB">
+    gnb3
+  </div>
+  <div class="gnb"></div>
+
+  1111
+  <br />2222
+  <br />3333
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[ 
+
+$(function () {
+
+  var $gnb = $(".gnb").first();
+  var gnbTop = $gnb.offset().top;
+
+  function fixGNB() {
+    var winTop = $(window).scrollTop();
+    $gnb.css({
+      'position': (winTop > gnbTop) ? 'fixed' : 'absolute',
+      'top': (winTop > gnbTop) ? '0px' : ''
+    });
+  }
+  
+  fixGNB();
+  
+  $(window).scroll(function () {
+    fixGNB();
+  });  
+
+});
+
+//]]>  
+</script>
+
+</body>
+</html>

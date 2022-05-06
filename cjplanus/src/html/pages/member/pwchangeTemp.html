@@ -1,0 +1,96 @@
+{% set pageData = { pageDep1Name: '', pageName: '비밀번호 변경', pageDesc: '', pageActive: '1-6' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pwtemp">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_submem.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="logingroup">
+          <div class="column">
+            <div class="col_in mxsize">
+              <p class="text">임시 비밀번호를 사용 중입니다.<br /><span>비밀번호를 변경 후 이용하시기 바랍니다.</span></p>
+              <div class="field">
+                <label class="uk_label">
+                  <input type="password" name="" placeholder="비밀번호 입력" class="inp" />
+                </label>
+                <p class="textmsg">영문/숫자/특수문자(~’!@#$%^()_-={}[]│;;<>,.?/) 조합, 8~16자, 공백 불가능</p>
+              </div>
+              <div class="field">
+                <label class="uk_label">
+                  <input type="password" name="" placeholder="비밀번호 입력" class="inp" />
+                </label>
+                <p class="errmsg">비밀번호 입력 조건을 다시 한번 확인해 주세요</p>
+              </div>
+              <!-- 
+                [비밀번호확인]
+                1) 비밀번호확인 입력 > 다음 입력 시 체크
+                2) 입력결과
+                Case1) default/비밀번호/비밀번호확인 공백 > 비밀번호를 입력해주세요.
+                Case2) O > 비밀번호가 일치합니다.
+                Case3) X > 비밀번호가 일치하지 않습니다.
+                Case4) 문자오류/부합 > 비밀번호 입력조건을 확인해주세요.
+
+                -->
+              <!-- 
+                  [버튼-비밀번호변경]
+                  1) 비밀번호변경 값 확인 > alert
+                  Case1) O > 비밀번호가 변경되었습니다. -> 변경완료 페이지로 이동
+                  Case2) X > 입력결과 X > alert > 다시 한번 확인해 주세요. (확인)
+                -->
+              <div class="field_footer">
+                <div class="btngroup">
+                  <a href="pwchangeTempComplate.html" class="btn_default"><span>비밀번호 변경</span></a>
+                </div>
+              </div>
+
+              <button onclick="uk.ukmodal.open('ukmodalAlert', this);">[확인용] Alert(비밀번호변경 값이 잘못 입력 했을 경우) 개발시 [확인용] 버튼 삭제</button>
+            </div>
+            <!-- //.col_in -->
+          </div>
+          <!-- //.column -->
+        </div>
+        <!-- //.logingroup -->
+
+        <!-- Alert -->
+        <div id="ukmodalAlert" class="ukmodal_wrap alert" role="alertdialog">
+          <div class="ukmodal">
+            <div class="ukmodal_head">
+              <h2>메시지</h2>
+            </div>
+            <div class="ukmodal_body">
+              <div class="ukmodal_cont">
+                <!-- 
+                  Case2) X > 입력결과 X > alert > 다시 한번 확인해 주세요. (확인)
+                -->
+                <p class="text">다시 한번 확인해 주세요.</p>
+              </div>
+            </div>
+            <div class="ukmodal_foot">
+              <div class="btngroup">
+                <button type="button" class="btn_default" onclick="uk.ukmodal.close('ukmodalAlert')"><span>확인</span></button>
+              </div>
+            </div>
+            <button type="button" class="ibtn_close" onclick="uk.ukmodal.close('ukmodalAlert')"><span class="sr_only">팝업 닫기</span></button>
+          </div>
+          <div class="dimmer" onclick="uk.ukmodal.close('ukmodalAlert')"></div>
+        </div>
+        <!-- //.ukmodal_wrap -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

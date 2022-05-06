@@ -1,0 +1,19 @@
+{% set pageData = { pageName: 'Test Page' } %}
+{% extends "_layout/_baseLayout.html" %}
+
+{% block css -%}
+{{ super() }}
+<link rel="stylesheet" href="{{ set.baseurl }}{{ set.cssurl }}/page.min.css">
+<link rel="stylesheet" href="{{set.baseurl}}{{set.cssurl}}/gd.min.css" />
+{%- endblock %}
+
+{% block js -%}
+{{ super() }}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ui.utility.js"></script>
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ui.common.js"></script>
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ui.pub.js"></script>
+{%- endblock %}
+
+{% block content %}
+
+{% endblock %}

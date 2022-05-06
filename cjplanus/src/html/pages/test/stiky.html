@@ -1,0 +1,228 @@
+{% set pageData = { pageName: 'spy Page' } %}
+{% extends "_layout/_baseLayout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/librarys.min.js"></script>
+<script type="text/javascript">
+var ui = {
+	init: function(){
+		if ($('.spyscroll-link').length) { ui.spyscroll.init() }
+		if ($('.tab-nav.sticky-scroll').length){ ui.stickyScroll.init() }
+	},
+	spyscroll: {
+		eleButton: '.spyscroll-link',
+		eleSection: '.spyscroll-sec',
+		gapTop:50,
+		init: function () {
+			this.event();
+			this.checked();
+		},
+		event: function () {
+			var _this = this;
+			$(this.eleButton).on('click', function () {
+				_this.active($(this).attr('href'));
+				_this.selected($(this).parent().index());
+				return false;
+			});
+			$(window).on('scroll', function () {
+				_this.checked();
+			})
+		},
+		active: function (id) {
+			var _this = this;
+			objTop = $(id).offset().top,
+				baseTop = $('.header').height(),
+				scrTop = objTop - baseTop - this.gapTop;
+			TweenMax.to($('html, body'), 0.3, { scrollTop: scrTop });
+		},
+		checked: function () {
+			var _this = this;
+			$(this.eleSection).each(function (i) {
+				var activeTop = $(this).outerHeight() * 0.25;
+				var baseTop = $('.header').height() + _this.gapTop;
+				if ($(window).scrollTop() + baseTop + activeTop > $(this).offset().top) {
+					_this.selected(i);
+				}
+				else if ($(document).height() == $(window).scrollTop() + $(window).height()) {
+					_this.selected($(this.eleSection).length - 1);
+				}
+			})
+		},
+		selected: function (i) {
+			$(this.eleButton).parent().eq(i).addClass('is-selected').siblings().removeClass('is-selected');
+		},
+	},
+	
+	stickyScroll: {
+		eleModule: '.sticky-scroll',
+		eleWrapper: '.sticky-scroll-area',
+		init: function(){
+			this.action();
+			this.event();
+		},
+		event: function(){
+			$(window).on('scroll', function(){
+				ui.stickyScroll.action();
+			})
+		},
+		action: function(){
+			var _this = this;
+			$(this.eleModule).each(function(){
+				var objTop = $(this).closest(_this.eleWrapper).offset().top;
+				var scrTop = $(window).scrollTop();
+				if (scrTop >= objTop){ $(this).addClass('is-fixed') }
+				else { $(this).removeClass('is-fixed') }
+			})
+		}
+	},
+}
+$(document).ready(function(){
+	ui.init();
+})
+</script>
+<!-- Header -->
+<header class="header sticky">
+	<div class="header-inner in-sec">
+		<div class="header-logo">
+			<a href="#" class="logo">Sticky</a>
+		</div>
+		<div class="header-gnb">
+			<nav class="gnb">
+				<div class="node1-wrap">
+					<ul class="node1-list">
+						<li class="node1-item">
+							<a href="#section01" class="node1-link spyscroll-link">Menu1</a>
+						</li>
+						<li class="node1-item">
+							<a href="#section02" class="node1-link spyscroll-link">Menu2</a>
+						</li>
+						<li class="node1-item">
+							<a href="#section03" class="node1-link spyscroll-link">Menu3</a>
+						</li>
+						<li class="node1-item">
+							<a href="#section04" class="node1-link spyscroll-link">Menu4</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</header>
+<!-- //Header -->
+
+<!-- Container -->
+<div class="container">
+	<!-- Content -->
+	<div id="content" class="content">
+		<div class="content-header"></div>
+		<div class="content-body">
+			<section id="section01" class="section in-sec spyscroll-sec">
+				<div class="section-inner">
+					<div class="section-head">
+						section-head
+					</div>
+					<div class="section-body">
+						section-body
+					</div>
+				</div>
+			</section>
+			<section id="section02" class="section in-sec spyscroll-sec">
+				<div class="section-inner">
+					<div class="section-head">
+						section-head 2
+					</div>
+					<div class="section-body">
+						<div class="tab-wrap sticky-scroll-area">
+							<div class="tab-nav demo1 sticky-scroll">
+								<ul class="tab-list" role="tablist">
+									<li class="tab" role="tab" aria-selected="true" class="is-selected"><a href="#tabContent01-1" class="btn">탭제목1</a></li>
+									<li class="tab" role="tab" aria-selected="false"><a href="#tabContent01-2" class="btn">탭제목2</a></li>
+									<li class="tab" role="tab" aria-selected="false"><a href="#tabContent01-3" class="btn">탭제목2</a></li>
+									<li class="tab" role="tab" aria-selected="false"><a href="#tabContent01-4" class="btn">탭제목2</a></li>
+								</ul>
+							</div>
+							<div class="sticky-scroll-after"></div>
+							<div class="tab-body in-sec">
+								<section class="section">
+									<div class="section-inner">
+										<div class="section-head">
+											section-head
+										</div>
+										<div class="section-body">
+											section-body
+										</div>
+									</div>
+								</section>
+								<section class="section">
+									<div class="section-inner">
+										<div class="section-head">
+											section-head
+										</div>
+										<div class="section-body">
+											section-body
+										</div>
+									</div>
+								</section>
+								<section class="section">
+									<div class="section-inner">
+										<div class="section-head">
+											section-head
+										</div>
+										<div class="section-body">
+											section-body
+										</div>
+									</div>
+								</section>
+								<section class="section">
+									<div class="section-inner">
+										<div class="section-head">
+											section-head
+										</div>
+										<div class="section-body">
+											section-body
+										</div>
+									</div>
+								</section>
+								<section class="section">
+									<div class="section-inner">
+										<div class="section-head">
+											section-head
+										</div>
+										<div class="section-body">
+											section-body
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="section03" class="section in-sec spyscroll-sec">
+				<div class="section-inner">
+					<div class="section-head">
+						section-head 3
+					</div>
+					<div class="section-body">
+						section-body 3
+					</div>
+				</div>
+			</section>
+			<section id="section04" class="section in-sec spyscroll-sec">
+				<div class="section-inner">
+					<div class="section-head">
+						section-head 4
+					</div>
+					<div class="section-body">
+						section-body 4
+					</div>
+				</div>
+			</section>
+			
+		</div>
+	</div>
+	<!-- //Content -->
+</div>
+	<!-- //Container -->
+{% endblock %}

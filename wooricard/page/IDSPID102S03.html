@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="title" content="우리카드">
+    <meta name="keywords" content="우리카드, 신규카드, 카드혜택, 카드신청">
+    <meta name="copyright" content="COPYRIGHTS WOORICARD. ALL RIGHTS RESERVED.">
+    <title>마이 데이터 서비스 인증</title>
+    <link rel="Shortcut Icon" href="../img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/m.newfonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newreset.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newcommon.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newmd.page.css">
+    <!-- JS -->
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery/jquery-ui.min.js"></script>
+    <script src="../js/jquery/jquery.ui.touch-punch.min.js"></script>
+    <script src="../js/jquery/jquery.mailtip.js"></script>
+    <script src="../js/uiux/ukDetect-1.0.0.min.js"></script>
+    <script src="../js/uiux/m.newmd.js"></script>
+  </head>
+  <body>
+    <div class="ukwrap">
+      <header class="uk_header">
+        <h1 class="tit_h1">
+          <img src="../img/common/ci_color.png" alt="우리카드 로고">
+          <strong><span>마이데이터</span> 개별인증</strong>
+        </h1>
+        <button type="button" class="ibtn_close"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </header>
+      <div class="ukmain">
+        <div class="stepgroup">
+          <p class="steptext"><span>휴대폰 본인인증+</span><span>카드/대출번호 인증</span></p>
+          <!-- 
+            현재단계 class current
+           -->
+          <div class="step">
+            <span>1<i class="sr-only">단계</i></span>
+            <span class="current" title="현재진행단계">2<i class="sr-only">단계</i></span>
+            <span>3<i class="sr-only">단계</i></span>
+            <span>4<i class="sr-only">단계</i></span>
+            <span>5<i class="sr-only">단계</i></span>
+          </div>
+        </div>
+        <!-- //.stepgroup -->
+        
+        <div class="cbody">
+          <div class="tabgroup">
+            <div class="tabmenu">
+              <ul class="tab">
+                <li><button class="btn_tab"><span>카드번호 인증</span></button></li>
+                <li class="on"><button class="btn_tab"><span>대출번호 인증</span></button></li>
+              </ul>
+            </div>
+            <!-- //.tabmenu -->
+            
+            <div class="tabcnt" aria-label="카드번호 인증 내용" style="display:none">
+              <div class="textbox">
+                <p>소유하신 우리카드 번호를 통해 추가 인증을 진행합니다.</p>
+              </div>
+              <section class="section">
+                <h2 class="tit_h2">카드번호</h2>
+                <div class="inpnumgp col4">
+                  <div class="inpgp">
+                    <label for="inpNum1" class="sr-only">카드번호 첫번째 4자리 입력</label>
+                    <input type="text" name="" id="inpNum1" placeholder="" value="1234">
+                  </div>
+                  <div class="dotline"></div>
+                  <div class="inpgp">
+                    <label for="inpNum2" class="sr-only">카드번호 두번째 4자리 입력</label>
+                    <input type="text" name="" id="inpNum2" placeholder="" value="****">
+                  </div>
+                  <div class="dotline"></div>
+                  <div class="inpgp">
+                    <label for="inpNum3" class="sr-only">카드번호 세번째 4자리 입력</label>
+                    <input type="text" name="" id="inpNum3" placeholder="" value="****">
+                  </div>
+                  <div class="dotline"></div>
+                  <div class="inpgp">
+                    <label for="inpNum4" class="sr-only">카드번호 네번째 4자리 입력</label>
+                    <input type="text" name="" id="inpNum4" placeholder="" value="*234">
+                  </div>
+                </div>
+              </section>
+
+              <section class="section cardfield">
+                <h2 class="tit_h2">유효기간 <small>카드유효기간 순서대로 입력</small></h2>
+                <div class="inpgp">
+                  <label for="inpCard1" class="sr-only">월</label>
+                  <input type="text" name="" id="inpCard1" placeholder="월">
+                  <div class="dot">/</div>
+                  <label for="inpCard2" class="sr-only">년</label>
+                  <input type="text" name="" id="inpCard2" placeholder="년">
+                </div>
+              </section>
+
+              <section class="section">
+                <h2 class="tit_h2">비밀번호 앞 2자리</h2>
+                <div class="inpgp">
+                  <label for="inpPW2" class="sr-only">비밀번호</label>
+                  <input type="password" name="" id="inpPW2" placeholder="숫자 2자리 입력" maxlength="2">
+                  <button class="clear ibtn_close"><i class="icon"></i><span class="sr-only">삭제</span></button>
+                </div>
+              </section>
+            </div>
+            <!-- //.tabcnt -->
+
+            <div class="tabcnt" aria-label="대출번호 인증 내용">
+              <div class="textbox">
+                <p>실행중인 대출 번호를 통해 추가 인증을 진행합니다.</p>
+              </div>
+              <section class="section">
+                <h2 class="tit_h2">대출번호</h2>
+                <div class="inpgp">
+                  <div class="inpgp">
+                    <label for="inpNum2-1" class="sr-only">대출번호 입력</label>
+                    <input type="number" name="" id="inpNum2-1" placeholder="" value="123456789">
+                  </div>
+                </div>
+              </section>
+
+              <section class="section">
+                <h2 class="tit_h2">생년월일</h2>
+                <div class="inpgp">
+                  <label for="inpAge2" class="sr-only">생년월일 입력</label>
+                  <input type="number" name="" id="inpAge2" placeholder="숫자 8자리 입력 (예: 19801230)" maxlength="8">
+                  <button class="clear ibtn_close"><i class="icon"></i><span class="sr-only">삭제</span></button>
+                </div>
+              </section>
+            </div>
+            <!-- //.tabcnt -->
+          </div>
+          <!-- //.tabgroup -->
+        
+      
+          <!-- UI 확인용 개발시 삭제 -->
+          <button class="btn_default test" data-modal-button="alert10_modal"><span>[확인용] alert1</span></button>
+          <button class="btn_default test" data-modal-button="alert11_modal"><span>[확인용] alert2</span></button>
+        </div>
+
+        
+      </div>
+      <!-- //.ukmain -->
+      
+      <!-- 하단버튼 -->
+      <div class="foot_btngroup">
+        <button type="button" class="btn_certi"><span>인증</span></button>
+        <button type="button" class="btn_cancel"><span>이전</span></button>
+      </div>
+      <!-- //.foot_btngroup -->
+
+    </div>
+    <!-- //.ukwrap -->
+    
+    <!-- Alert -->
+    <div class="modal_wrap" data-modal-layer="alert10_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">대출번호를 확인해주세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+    <div class="modal_wrap" data-modal-layer="alert11_modal">
+      <div class="modal_inner">
+        <div class="modal_content flex">
+          <p class="text">생년월일을 확인해주세요.</p>
+        </div>
+        <div class="modal_footer">
+          <button type="button" class="btn_basic_line" data-modal-close="true"><span>확인</span></button>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+    <script>
+      // 선택시 나오는 UI 호출 스크립트 개발 상황에 맞게 커스텀 하여 사용
+      $(document).ready(function(){
+        var modal_wrap = 'modal_wrap';
+        var modal_button = 'data-modal-button';
+        var modal_layer = 'data-modal-layer';
+        var modal_dim = 'data-modal-dim';
+        var modal_active = 'modal_active';
+        var modal_hover = false;
+        $('['+modal_button+']').on('click', function(){
+          var _target = $(this).attr(modal_button);
+          $('['+modal_layer+'="'+_target+'"]').addClass(modal_active);
+          $('html').addClass('scl_lock');
+          // return false;
+        });
+
+        $('[data-modal-close]').on('click', function(){
+          if( $(this).parents('.'+modal_wrap).is('.'+modal_active) ){
+            $('html').removeClass('scl_lock');
+            $(this).parents('.'+modal_wrap).removeClass(modal_active);
+            modal_hover = false;
+          }
+          return false;
+        });
+
+        $('.'+modal_wrap).on('click', function(e){
+          if( $(this).has(e.target).length === 0 && $(this).attr(modal_dim) !== 'false' ){
+            $(this).removeClass(modal_active);
+            $('html').removeClass('scl_lock');
+          }
+        });
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+{% set pageData = { pageDep1Name: '상품안내', pageName: '상품안내', pageDesc: '', pageActive: '0' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pdlist">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subproduct.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1 sr-only" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+
+        <div class="pdhead">
+          <p class="sub_description"><strong>주요 스팟!</strong> 집중노출 고객을 위한</p>
+          <!-- [문구수정] 210622 소개->안내 -->
+          <p class="sub_title"><strong>PLANUS 상품</strong>안내</p>
+        </div>
+        <!-- //.pdhead -->
+
+        <div class="pdsubnav">
+          <nav class="pdnav">
+            <a href="#" class="active"><span>Entertainment</span></a>
+            <a href="#"><span>Sports</span></a>
+            <a href="#"><span>Traffic</span></a>
+            <a href="#"><span>Billboard</span></a>
+          </nav>
+        </div>
+        <!-- //.pdsubnav -->
+        <script>
+          $(function() {
+            $(".pdnav > a").on("click", function(i, e) {
+              // 메뉴 활성화 class active 추가 제어
+              $(this).addClass("active").siblings().removeClass("active");
+              // 콘텐츠 좌측 메뉴 타이틀 메뉴에서 active된 값을 가져옴
+              $(".pdtitle").find("span").text($(".pdnav>a.active>span").text());
+              return false;
+            });
+            pdImgList();
+            pdSliderFunc();
+          });
+        </script>
+
+        <div class="pdbody">
+          <div class="pdlist"></div>
+          <div class="pdimg ukscroll">
+            <!-- 최대 10개 까지 노출되면 5개 이상부터는 스크롤 발생  -->
+            <div class="pdimglist">
+              <figure class="grid-item">
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/1.png" alt="" />
+                </div>
+                <figcaption>CGV SCREEN & LOBBY</figcaption>
+                <div class="btnview">
+                  <button type="button" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></button>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+              </figure>
+              <figure class="grid-item">
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/10.png" alt="" />
+                </div>
+                <figcaption>STARFIELD SHOPPING MALL</figcaption>
+                <div class="btnview">
+                  <button type="button" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></button>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+              </figure>
+              <figure class="grid-item">
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/3.png" alt="" />
+                </div>
+                <figcaption>IFC MALL</figcaption>
+                <div class="btnview">
+                  <button type="button" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></button>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+              </figure>
+              <figure class="grid-item">
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/4.png" alt="" />
+                </div>
+                <figcaption>PARADISE CITY</figcaption>
+                <div class="btnview">
+                  <button type="button" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></button>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+              </figure>
+              <figure class="grid-item">
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/5.png" alt="" />
+                </div>
+                <figcaption>PARADISE CITY</figcaption>
+                <div class="btnview">
+                  <button type="button" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></button>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+              </figure>
+              <!-- <figure class="grid-item">
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/6.png" alt="" />
+                </div>
+                <figcaption>CGV SCREEN & LOBBY</figcaption>
+                <div class="btnview">
+                  <button type="button" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></button>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+              </figure>
+              <figure class="grid-item">
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/10.png" alt="" />
+                </div>
+                <figcaption>STARFIELD SHOPPING MALL</figcaption>
+                <div class="btnview">
+                  <button type="button" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></button>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+              </figure>
+              <figure class="grid-item">
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/11.png" alt="" />
+                </div>
+                <figcaption>IFC MALL</figcaption>
+                <div class="btnview">
+                  <button type="button" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></button>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+              </figure>
+              <figure class="grid-item">
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/9.png" alt="" />
+                </div>
+                <figcaption>STARFIELD SHOPPING MALL</figcaption>
+                <div class="btnview">
+                  <button type="button" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></button>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+              </figure>
+              <figure class="grid-item">
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/8.png" alt="" />
+                </div>
+                <figcaption>IFC MALL</figcaption>
+                <div class="btnview">
+                  <button type="button" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></button>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+              </figure> -->
+            </div>
+          </div>
+          <!-- //.pdimg -->
+        </div>
+        <!-- //.pdbody -->
+
+      </section>
+
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

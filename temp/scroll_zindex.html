@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>스크롤에 따라 덮히는 레이어</title>
+
+<script src="jquery-3.4.1.min.js"></script>
+
+<style type="text/css">
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font: 12px arial;
+  word-break: break-all;
+}
+.panel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 5;
+}
+.panel-inner {
+  width: 100%;
+  height: 100%;
+}
+.panel-fixed {
+  z-index: 1;
+}
+.panel-fixed .panel-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+#d1 {
+  height: 400px;
+  background-color: yellow;
+}
+#d2 {
+  height: 300px;
+  background-color: green;
+}
+#d3 {
+  height: 600px;
+  background-color: blue;
+}
+#d4 {
+  height: 500px;
+  background-color: grey;
+}
+#d5 {
+  height: 200px;
+  background-color: pink;
+}
+</style>
+
+</head>
+<body>
+
+<div id="d1" class="panel">
+  <div class="panel-inner">
+    하하하하하하하하하하하하하하하하하
+    <br />하하하하하하하하하하하하하하하하하하하하하하
+    <br />하하하하하하하하하하하하하
+    <br />하하하
+    <br />하하하하하하하하하하하하하하하
+    <br />하하하하하
+  </div>
+</div>
+<div id="d2" class="panel skip">
+  <div class="panel-inner">바바바바바바바바바바바바바바바바바바바바바바바
+    <br />바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바
+    <br />바바바바바바바바바바바바바바바바
+    <br />바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바
+    <br />바바바바바
+    <br />바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바</div>
+</div>
+<div id="d3" class="panel">
+  <div class="panel-inner"> 하하하하하하하하하하하하하하하하하
+    <br />하하하하하하하하하하하하하하하하하하하하하하
+    <br />하하하하하하하하하하하하하
+    <br />하하하
+    <br />하하하하하하하하하하하하하하하
+    <br />하하하하하</div>
+</div>
+<div id="d4" class="panel">
+  <div class="panel-inner">바바바바바바바바바바바바바바바바바바바바바바바
+    <br />바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바
+    <br />바바바바바바바바바바바바바바바바
+    <br />바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바
+    <br />바바바바바
+    <br />바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바바</div>
+</div>
+<div id="d5" class="panel">
+  <div class="panel-inner"> 하하하하하하하하하하하하하하하하하
+    <br />하하하하하하하하하하하하하하하하하하하하하하
+    <br />하하하하하하하하하하하하하
+    <br />하하하
+    <br />하하하하하하하하하하하하하하하
+    <br />하하하하하</div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[ 
+
+$(function () {
+  var panels = $('.panel'),
+    panelsY = [];
+
+  $.each(panels, function (i, el) {
+    panelsY.push(panels.eq(i).offset().top);
+  });
+
+  $(window).on('scroll', function () {
+    updateWindow();
+  });
+
+  function updateWindow() {
+    var y = $(window).scrollTop();
+    for (i = 0, l = panels.length; i < l; i++) {
+      if ((i === l - 1) || (y >= panelsY[i] && y <= panelsY[i + 1])) {
+        break;
+      }
+    };
+    panels.not(':eq(' + i + ')').removeClass('panel-fixed');
+    panels.eq(i).not('.skip').addClass('panel-fixed');
+  };
+});
+
+//]]>  
+</script>
+
+</body>
+</html>

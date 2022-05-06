@@ -1,0 +1,329 @@
+<div class="uk_toc">
+  <p class="h3">
+    Page List
+    <!-- (<em></em>page) -->
+  </p>
+  <p class="curr">
+    <span class="ok">완료:<em></em></span> | <span class="edit">추가/수정:<em></em></span><br />
+    <span class="tbd">대기:<em></em></span> |
+    <span class="ing">진행중:<em></em></span>
+  </p>
+  <script>
+    $(function() {
+      var len = $(".uk_toc > ul").find("li").length;
+      var tbdLen = $(".uk_toc .flag_tbd").length;
+      var ingLen = $(".uk_toc .flag_ing").length;
+      var okLen = $(".uk_toc .flag_ok").length;
+      var editLen = $(".uk_toc .flag_edit").length;
+      var totalLen = tbdLen + ingLen + okLen;
+      var totalP = okLen / len;
+      $(".uk_toc > .h3 > em").text(len);
+      $(".uk_toc .curr .ok > em").text(okLen);
+      $(".uk_toc .curr .edit > em").text(editLen);
+      $(".uk_toc .curr .tbd > em").text(tbdLen);
+      $(".uk_toc .curr .ing > em").text(ingLen);
+      $(".uk_toc .curr .total > em").text(totalLen);
+      console.log(totalP);
+    });
+  </script>
+  <ul>
+    <li>
+      <a href="/pages/main/index.html" target="_blank" title="새 창 열림">
+        MAIN
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/login.html" target="_blank" title="새 창 열림">
+        로그인
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/join.html" target="_blank" title="새 창 열림">
+        회원가입
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/joininput.html" target="_blank" title="새 창 열림">
+        회원가입 정보입력
+        <small class="flag flag_ok">완료</small>
+        <small class="flag flag_edit">수정0525/0528</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/joincomplate.html" target="_blank" title="새 창 열림">
+        회원가입 완료
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/idfind.html" target="_blank" title="새 창 열림">
+        아이디 찾기
+        <small class="flag flag_ok">완료</small>
+        <small class="flag flag_edit">수정0525</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/idfindcomplate.html" target="_blank" title="새 창 열림">
+        아이디 찾기 완료
+        <small class="flag flag_ok">완료</small>
+        <small class="flag flag_edit">수정0525</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/pwinfo.html" target="_blank" title="새 창 열림">
+        비밀번호 (3개월 이상)
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/pwfind.html" target="_blank" title="새 창 열림">
+        비밀번호 찾기
+        <small class="flag flag_ok">완료</small>
+        <small class="flag flag_edit">수정0525</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/pwfindcomplate.html" target="_blank" title="새 창 열림">
+        비밀번호 찾기 완료
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/pwchangetemp.html" target="_blank" title="새 창 열림">
+        임시비밀번호 변경 찾기
+        <small class="flag flag_ok">완료</small>
+        <small class="flag flag_edit">추가0525</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/pwchangetempcomplate.html" target="_blank" title="새 창 열림">
+        임시비밀번호 변경 완료
+        <small class="flag flag_ok">완료</small>
+        <small class="flag flag_edit">추가0525</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/pwemail.html" target="_blank" title="새 창 열림">
+        비밀번호 발송
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/mailplanus.html" target="_blank" title="새 창 열림">
+        플래너스 가입 인증 메일
+        <small class="flag flag_ok">완료</small>
+        <small class="flag flag_edit">추가0525</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/mailpwplanus.html" target="_blank" title="새 창 열림">
+        플래너스 임시 비밀번호 안내 메일
+        <small class="flag flag_ok">완료</small>
+        <small class="flag flag_edit">추가0525</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/confirmmail.html" target="_blank" title="새 창 열림">
+        인증 메일 전송
+        <small class="flag flag_ok">완료</small>
+        <small class="flag flag_edit">추가0528</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/member/mypage.html" target="_blank" title="새 창 열림">
+        마이페이지
+        <!-- <small class="flag flag_ing">진행중</small> -->
+      </a>
+      <ul>
+        <li>
+          <a href="/pages/member/mypage.html" target="_blank" title="새 창 열림">
+            마이페이지(진행중인청약/관심매체)
+            <small class="flag flag_ok">완료</small>
+          </a>
+        </li>
+        <!-- <li>
+					<a href="/pages/member/subongoing.html" target="_blank" title="새 창 열림">
+            진행중인 청약
+            <small class="flag flag_ok">완료</small>
+          </a>
+        </li> -->
+        <li>
+          <a href="/pages/member/subongoingview.html" target="_blank" title="새 창 열림">
+            청약상세정보
+            <small class="flag flag_ok">완료</small>
+            <small class="flag flag_edit">수정0528</small>
+            <small class="flag flag_edit">수정0615</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/member/interest.html" target="_blank" title="새 창 열림">
+            관심매체
+            <small class="flag flag_ok">완료</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/member/inquiryabout.html" target="_blank" title="새 창 열림">
+            청약문의
+            <small class="flag flag_ok">완료</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/member/joininputedit.html" target="_blank" title="새 창 열림">
+            회원정보수정
+            <small class="flag flag_ok">완료</small>
+            <small class="flag flag_edit">수정0615</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/member/pwchange.html" target="_blank" title="새 창 열림">
+            비밀번호변경
+            <small class="flag flag_ok">완료</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/member/cusmng.html" target="_blank" title="새 창 열림">
+            고객관리(영업)
+            <small class="flag flag_ok">완료</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/member/cusmngView.html" target="_blank" title="새 창 열림">
+            고객관리(영업) 상세정보
+            <small class="flag flag_ok">완료</small>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="/pages/biz/index.html" target="_blank" title="새 창 열림">
+        플래너스소개
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/product/" target="_blank" title="새 창 열림">
+        상품소개
+      </a>
+      <ul>
+        <li>
+          <a href="/pages/product/" target="_blank" title="새 창 열림">
+            Entertainment/Sports/Traffic/Billboard
+            <small class="flag flag_ok">완료</small>
+            <small class="flag flag_edit">메뉴(탭)</small>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="/pages/product/sports.html" target="_blank" title="새 창 열림">
+            Sports
+            <small class="flag flag_ing">진행중</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/product/traffic.html" target="_blank" title="새 창 열림">
+            Traffic
+            <small class="flag flag_ing">진행중</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/product/billboard.html" target="_blank" title="새 창 열림">
+            Billboard
+            <small class="flag flag_ing">진행중</small>
+          </a>
+        </li> -->
+        <li>
+          <a href="/pages/product/productView.html" target="_blank" title="새 창 열림">
+            상품상세
+            <small class="flag flag_ok">완료 </small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/product/productMediaView.html" target="_blank" title="새 창 열림">
+            일반 상품상세
+            <small class="flag flag_ok">완료 </small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/product/productPackgeView.html" target="_blank" title="새 창 열림">
+            패키지 상품상세
+            <small class="flag flag_ok">완료 </small>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="/pages/execution/index.html" target="_blank" title="새 창 열림">
+        집행사례
+        <small class="flag flag_ok">완료 </small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/advert/index.html" target="_blank" title="새 창 열림">
+        광고청약
+        <!-- <small class="flag flag_tbd">작업대기</small> -->
+      </a>
+      <ul>
+        <li>
+          <a href="/pages/advert/index.html" target="_blank" title="새 창 열림">
+            광고청약
+            <small class="flag flag_ok">완료</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/advert/pdrecom.html" target="_blank" title="새 창 열림">
+            상품추천
+            <small class="flag flag_ok">완료</small>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="/pages/cus/notice.html" target="_blank" title="새 창 열림">
+        고객센터
+        <!-- <small class="flag flag_tbd">작업대기</small> -->
+      </a>
+      <ul>
+        <li>
+          <a href="/pages/cus/notice.html" target="_blank" title="새 창 열림">
+            공지사항
+            <small class="flag flag_ok">완료</small>
+            <small class="flag flag_edit">수정 0622</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/cus/noticeView.html" target="_blank" title="새 창 열림">
+            공지사항 상세
+            <small class="flag flag_ok">완료</small>
+            <small class="flag flag_edit">수정 0622</small>
+          </a>
+        </li>
+        <li>
+          <a href="/pages/cus/qna.html" target="_blank" title="새 창 열림">
+            자주찾는질문
+            <small class="flag flag_ok">완료</small>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="/pages/etc/legalnoti.html" target="_blank" title="새 창 열림">
+        법적고지
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/etc/emailnoti.html" target="_blank" title="새 창 열림">
+        이메일 무단수집거부
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+    <li>
+      <a href="/pages/etc/404.html" target="_blank" title="새 창 열림">
+        404에러
+        <small class="flag flag_ok">완료</small>
+      </a>
+    </li>
+  </ul>
+</div>

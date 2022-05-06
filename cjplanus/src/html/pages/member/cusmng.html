@@ -1,0 +1,414 @@
+{% set pageData = { pageDep1Name: '마이플래너스', pageName: '고객관리', pageDesc: '', pageActive: '1' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_my">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subcusmng.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        
+				<script>
+					$(function(){
+						$('.stepmenu').each(function(i, e){
+							var $menuBtn = $(e).find('.menuitem');
+							$menuBtn.on('click', function(){
+								var idx = $(this).index();
+								$menuBtn.eq(idx).addClass('active').siblings().removeClass('active');
+								return false;
+							})
+						})
+						$('.subongoing > .state > a').on('click', function(){
+							$('.stepmenu > .menuitem').removeClass('active');
+							return false;
+						})
+					})
+				</script>
+				<div class="myhead cusmnghead">
+					<div class="mystate">
+						<div class="statgp subongoing" aria-label="진행중인 청약">
+							<div class="state">
+								<a href="#" title="전체목록">
+									<!-- <p class="text">최근 한달이내 목록만 표시</p> -->
+                  <!-- [문구수정] 210622 -> 진행중인 청약 -> 접수중인 청약 -->
+									<h2>접수중인 청약</h2>
+									<div class="tcount"><em>22</em><span>건</span></div>
+								</a>
+							</div>
+							<nav class="stepmenu">
+								<a href="#" class="menuitem">
+									<span>청약접수</span>
+									<span class="tcount"><em>1</em>건</span>
+								</a>
+								<a href="#" class="menuitem">
+									<span>제안</span>
+									<span class="tcount"><em>1</em>건</span>
+								</a>
+								<a href="#" class="menuitem">
+									<span>청약완료</span>
+									<span class="tcount"><em>1</em>건</span>
+								</a>
+							</nav>
+							<!-- //.stepmenu -->
+						</div>
+						<!-- //.statgp -->
+					</div>
+					<!-- //.mystate -->
+				</div>
+				<!-- //.myhead -->
+        
+				<div class="chead" data-chead="bbstop">
+          <div class="field" data-large>
+            <div class="uk_select round arrow" data-rsize>
+              <label class="sr-only" for="yearSel">내용선택</label>
+              <select id="yearSel">
+                <option value="">최근6개월</option>
+                <option value="">2020년</option>
+                <option value="">2021년</option>
+                <option value="">2019년</option>
+              </select>
+						</div>
+            <div class="group">
+              <label class="uk_label">
+                <input type="text" name="" placeholder="검색어를 입력해주세요" class="inp">
+              </label>
+              <button class="ibtn_find"><i class="ico-find"></i><span class="sr-only">검색</span></button>
+            </div>
+          </div>
+        </div>
+				<!-- //.chead -->
+
+				<div class="cbody">
+
+          <div class="receipt" aria-label="청약접수내역">
+            <!-- <h2>청약접수내역</h2> -->
+            <!-- [수정] 10622 ->  문구변경 및 건수 추가로 인한 UI 변경 -->
+            <div class="searchgp type2">
+              <div class="tcount">
+                <strong>청약접수 내역</strong>
+                <span>총<em>16</em>개 상품</span>
+              </div>
+            </div>
+            <!-- //.searchgp -->
+  
+            <div class="uk_table listtbl">
+              <div class="thead">
+                <div class="tr">
+                  <div class="th num">번호</div>
+                  <div class="th state">진행상태</div>
+                  <div class="th date">접수일</div>
+                  <div class="th company">거래처구분</div>
+                  <div class="th accname">거래처명</div>
+                  <div class="th name">담당자</div>
+                  <div class="th pdnum">문의번호</div>
+                  <div class="th pdclass">계약번호</div>
+                  <div class="th pdmedia">문의상품</div>
+                </div>
+              </div>
+              
+              <!-- 검색결과 또는 데이터가 없을 경우 -->
+              <div class="nodata" style="display:none">
+                죄송합니다. 찾으시는 검색결과가 없습니다.
+                <!-- 데이터 정보가 없습니다. -->
+              </div>
+              <!-- //.nodata -->
+  
+              <!-- START : 검색결과 또는 데이터가 있을 경우 -->
+              <div class="tbody">
+                <!-- 링크 영역은 class tr 에 click 이벤트 제공 -->
+                <div class="tr">
+                  <a href="cusmngView.html">
+                    <div class="td num"><span>9999</span></div>
+                    <div class="td state"><span>청약접수</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>-</span></div>
+                    <div class="td pdclass"><span>-</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <span>국내선 2층 JDC면세점 입구 프로모션 존</span>
+                          <!-- <span>미디어전광판</span> -->
+                        </p>
+                        <span class="etc">외 10</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+
+                <div class="tr">
+                  <a href="cusmngView.html">
+                    <div class="td num"><span>9</span></div>
+                    <div class="td state"><span>제안</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>-</span></div>
+                    <div class="td pdclass"><span>-</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <!-- <span>국내선 2층 JDC면세점 입구 프로모션 존</span> -->
+                          <span>미디어전광판</span>
+                        </p>
+                        <span class="etc">외 3</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+
+                <div class="tr">
+                  <a href="cusmngView.html">
+                    <div class="td num"><span>8</span></div>
+                    <div class="td state"><span>청약접수</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>1234567890</span></div>
+                    <div class="td pdclass"><span>C123789453</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <!-- <span>국내선 2층 JDC면세점 입구 프로모션 존</span> -->
+                          <span>미디어전광판</span>
+                        </p>
+                        <span class="etc">외 3</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+
+                <div class="tr">
+                  <a href="cusmngView.html">
+                    <div class="td num"><span>7</span></div>
+                    <div class="td state"><span>청약접수</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>1234567890</span></div>
+                    <div class="td pdclass"><span>C123789453</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <!-- <span>국내선 2층 JDC면세점 입구 프로모션 존</span> -->
+                          <span>미디어전광판</span>
+                        </p>
+                        <span class="etc">외 3</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+
+                <div class="tr">
+                  <a href="cusmngView.html">
+                    <div class="td num"><span>6</span></div>
+                    <div class="td state"><span>청약접수</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>1234567890</span></div>
+                    <div class="td pdclass"><span>C123789453</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <!-- <span>국내선 2층 JDC면세점 입구 프로모션 존</span> -->
+                          <span>미디어전광판</span>
+                        </p>
+                        <span class="etc">외 3</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+
+                <div class="tr">
+                  <a href="cusmngView.html">
+                    <div class="td num"><span>5</span></div>
+                    <div class="td state"><span>청약접수</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>1234567890</span></div>
+                    <div class="td pdclass"><span>C123789453</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <!-- <span>국내선 2층 JDC면세점 입구 프로모션 존</span> -->
+                          <span>미디어전광판</span>
+                        </p>
+                        <span class="etc">외 3</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+
+                <div class="tr">
+                  <a href="cusmngView.html">
+                    <div class="td num"><span>4</span></div>
+                    <div class="td state"><span>청약접수</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>1234567890</span></div>
+                    <div class="td pdclass"><span>C123789453</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <!-- <span>국내선 2층 JDC면세점 입구 프로모션 존</span> -->
+                          <span>미디어전광판</span>
+                        </p>
+                        <span class="etc">외 3</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+
+                <div class="tr">
+                  <a href="cusmngView.html">
+                    <div class="td num"><span>3</span></div>
+                    <div class="td state"><span>청약접수</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>1234567890</span></div>
+                    <div class="td pdclass"><span>C123789453</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <!-- <span>국내선 2층 JDC면세점 입구 프로모션 존</span> -->
+                          <span>미디어전광판</span>
+                        </p>
+                        <span class="etc">외 3</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+
+                <div class="tr">
+                  <a href="cusmngView.html">
+                    <div class="td num"><span>2</span></div>
+                    <div class="td state"><span>청약접수</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>1234567890</span></div>
+                    <div class="td pdclass"><span>C123789453</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <!-- <span>국내선 2층 JDC면세점 입구 프로모션 존</span> -->
+                          <span>미디어전광판</span>
+                        </p>
+                        <span class="etc">외 3</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+
+                <div class="tr">
+                  <a href="cusmng.html">
+                    <div class="td num"><span>1</span></div>
+                    <div class="td state"><span>청약완료</span></div>
+                    <div class="td date"><span>2021-01-15</span></div>
+                    <div class="td company"><span>광고주</span></div>
+                    <div class="td accname"><span>엘지전자</span></div>
+                    <div class="td name"><span>아무개</span></div>
+                    <div class="td pdnum"><span>1234567890</span></div>
+                    <div class="td pdclass"><span>C123789453</span></div>
+                    <div class="td pdmedia">
+                      <!-- 기본 최대 2개는 노출 2개이상이면 "외 n"으로 처리 -->
+                      <div class="text">
+                        <p>
+                          <span>Entertainment</span>
+                          <span>스타필드위례</span>
+                          <!-- <span>국내선 2층 JDC면세점 입구 프로모션 존</span> -->
+                          <span>미디어전광판</span>
+                        </p>
+                        <span class="etc">외 3</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <!-- //.tr -->
+              </div>
+              <!-- //.tbody -->
+              <!-- END : 검색결과 또는 데이터가 있을 경우 -->
+            </div>
+            <!-- //.uk_table -->
+  
+            <div class="paging">
+              <span class="number"><b class="current">1</b><i class="total">3</i></span>
+              <div class="btngroup">
+                <button class="ibtn_prev arrow"><i class="arrow-l"></i><span class="sr-only">이전 페이지</span></button>
+                <button class="ibtn_next arrow"><i class="arrow-r"></i><span class="sr-only">다음 페이지</span></button>
+              </div>
+            </div>
+            
+          </div>
+          <!-- //.receipt -->
+
+				</div>
+				<!-- //.cbody -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

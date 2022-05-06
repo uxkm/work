@@ -1,0 +1,448 @@
+{% set pageData = { pageDep1Name: '상품소개', pageName: '상품상세', pageDesc: '', pageActive: '0' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pdview">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subproduct.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1 sr-only" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+
+				<div class="pdview_head">
+					<div class="pdsubnav">
+						<nav class="pdnav">
+							<a href="#" class="active"><span>Entertainment</span></a>
+							<a href="#"><span>Sports</span></a>
+							<a href="#"><span>Traffic</span></a>
+							<a href="#"><span>Billboard</span></a>
+						</nav>
+						<nav class="pdnav_depth">
+							<a href="#" class="active"><span>Entertainment</span></a>
+							<a href="#"><span>Sports</span></a>
+							<a href="#"><span>Traffic</span></a>
+							<a href="#"><span>Billboard</span></a>
+						</nav>
+					</div>
+					<!-- //.pdsubnav -->
+					<script>
+						$(function() {
+							$(".pdnav > a").on("click", function(i, e) {
+								// 메뉴 활성화 class active 추가 제어
+								$(this).addClass("active").siblings().removeClass("active");
+								// 콘텐츠 좌측 메뉴 타이틀 메뉴에서 active된 값을 가져옴
+								$(".pdtitle").find("span").text($(".pdnav>a.active>span").text());
+								return false;
+							});
+						});
+					</script>
+				</div>
+				<!-- pdview_head -->
+				
+				<div class="pdview_body">
+					
+					<script>
+						$(function(){
+							$('.pdimgwide').touchSlider({
+								controls: false,
+								paging: false,
+								btn_prev: $('.pdimgwide').next().find('.prev'),
+								btn_next: $('.pdimgwide').next().find('.next'),
+								initComplete: function(e) {
+									var _this = this;
+									var paging = '';
+									var len = Math.ceil(this._len / this._view);
+							
+									for(var i = 1; i <= len; i++) {
+										paging += '<button type="button" class="page">page' + i + '</button>';
+									}
+							
+									$(this).next().find('.paging').html(paging).find('.page').on('click', function(e) {
+										_this.go_page($(this).index());
+									});
+								},
+								counter: function(e) {
+									$(this).next().find('.page').removeClass('on').eq(e.current-1).addClass('on');
+									$(this).next().find('.slider_counter').html('<span class="number"><b class="current">' + e.current + '</b><i class="total">' + e.total + '</i></span>');
+								}
+							});
+
+							$('.thumbslider').touchSlider({
+								view: 3,
+								gap: 0,
+								controls: false,
+								paging: false,
+								btn_prev: $('.thumbslider').next().find('.prev'),
+								btn_next: $('.thumbslider').next().find('.next'),
+								initComplete: function(e) {
+									var _this = this;
+									var paging = '';
+									var len = Math.ceil(this._len / this._view);
+							
+									for(var i = 1; i <= len; i++) {
+										paging += '<button type="button" class="page">page' + i + '</button>';
+									}
+							
+									$(this).next().find('.paging').html(paging).find('.page').on('click', function(e) {
+										_this.go_page($(this).index());
+									});
+								},
+								counter: function(e) {
+									$(this).next().find('.page').removeClass('on').eq(e.current-1).addClass('on');
+									$(this).next().find('.slider_counter').html('<span class="number"><b class="current">' + e.current + '</b><i class="total">' + e.total + '</i></span>');
+								}
+							});
+
+							/* $('.pdimgfull').touchSlider({
+								roll: true,
+								view: 5,
+								gap: 20,
+								sidePage: true,
+								breakpoints: {
+									1024: {
+										view: 3,
+										gap: 15
+									},
+									768: {
+										view: 2,
+										gap: 10
+									},
+									640: {
+										view: 1,
+										gap: 5
+									}
+								}
+							}); */
+							
+							$('.pdimgfull .pdimglist').slick({
+								infinite: true,
+								centerMode: true,
+								centerPadding: '0px',
+								slidesToShow: 3,
+  							slidesToScroll: 3,
+								responsive: [
+									{
+										breakpoint: 768,
+										settings: {
+											arrows: false,
+											centerMode: true,
+											centerPadding: '0px',
+											slidesToShow: 3
+										}
+									},
+									{
+										breakpoint: 480,
+										settings: {
+											arrows: false,
+											centerMode: true,
+											centerPadding: '0px',
+											slidesToShow: 1
+										}
+									}
+								]
+							});
+							/* $('.pdimgfull .pdimglist').slick({
+								infinite: true,
+								centerMode: true,
+								centerPadding: '0px',
+								slidesToShow: 3,
+  							slidesToScroll: 3,
+								responsive: [
+									{
+										breakpoint: 768,
+										settings: {
+											arrows: false,
+											centerMode: true,
+											centerPadding: '0px',
+											slidesToShow: 3
+										}
+									},
+									{
+										breakpoint: 480,
+										settings: {
+											arrows: false,
+											centerMode: true,
+											centerPadding: '0px',
+											slidesToShow: 1
+										}
+									}
+								]
+							}); */
+						})
+					</script>
+					<p class="view_subcaption"><span>외국관광객비중 40%에 달하는<br>부산의 대표적인 쇼핑명소</span></p>
+					<div class="wideslider">
+						<div class="pdimgwide">
+							<div class="pdimglist">
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+									</div>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample02.png" width="1134" height="643" alt="" />
+									</div>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample01.png" width="1103" height="829" alt="" />
+									</div>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample01.jpg" width="2386" height="1592" alt="" />
+									</div>
+								</figure>
+							</div>
+						</div>
+						<div class="slider_controls">
+							<button type="button" class="ibtn prev"><span class="sr-only">이전</span></button>
+							<button type="button" class="ibtn next"><span class="sr-only">다음</span></button>
+							<div class="paging"></div>
+							<div class="slider_counter"></div>
+						</div>
+					</div>
+					<div class="view_description"><span>소비문화의 트렌드를 주도하는 2030 여성타깃 Live 미디어<br>H&B store 시장 선도하는 매장점유율 80%의 압도적 NO.1 올리브영</span></div>
+					
+					<div class="countgroup">
+						<div class="uk_countwrap">
+							<div class="uk_count">
+								<p class="tit">18년 월 평균 방문객</p>
+								<p class="count"><em>8978</em><i>명</i></p>
+							</div>
+							<div class="uk_count">
+								<p class="tit">2030<br>방문객비중</p>
+								<p class="count"><em>55.5</em><i>%</i></p>
+							</div>
+							<div class="uk_count">
+								<p class="tit">방문객 평균<br>체류시간</p>
+								<p class="count"><em>5.5</em><i>시간</i></p>
+							</div>
+							<div class="uk_count">
+								<p class="tit">명절연휴 목적지 검색</p>
+								<p class="count"><em>1</em><i>위</i></p>
+							</div>
+						</div>
+						<p class="etcmark">* H&B Store 부문│올리브영 자료, 17년 기준</p>
+					</div>
+					<!-- //.countgroup -->
+
+				</div>
+				<!-- //.pdview_body -->
+
+				<div id="mediaSection" class="section media">
+					<h2>올리브영 미디어 상품</h2>
+					<div class="paging media_control">
+						<div class="btngroup">
+							<button type="button" class="ibtn_prev prev arrow"><i class="arrow-l"></i><span class="sr-only">이전</span></button>
+							<button type="button" class="ibtn_next next arrow"><i class="arrow-r"></i><span class="sr-only">다음</span></button>
+						</div>
+						<div class="slider_counter">총<em></em>상품</div>
+					</div>
+					<div class="fullslider">
+						<div class="pdimgfull">
+							<div class="pdimglist">
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+									</div>
+									<figcaption><a href="#"><span>CGV SCREEN & LOBBY</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample02.png" width="1134" height="643" alt="" />
+									</div>
+									<figcaption><a href="#"><span>STARFIELD SHOPPING MALL</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample01.png" width="1103" height="829" alt="" />
+									</div>
+									<figcaption><a href="#"><span>IFC MALL</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample01.jpg" width="2386" height="1592" alt="" />
+									</div>
+									<figcaption><a href="#"><span>PARADISE CITY</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample02.jpg" width="2214" height="1592" alt="" />
+									</div>
+									<figcaption><a href="#"><span>OLIVE YOUNG</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+									</div>
+									<figcaption><a href="#"><span>CGV SCREEN & LOBBY</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample02.png" width="1134" height="643" alt="" />
+									</div>
+									<figcaption><a href="#"><span>STARFIELD SHOPPING MALL</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample01.png" width="1103" height="829" alt="" />
+									</div>
+									<figcaption><a href="#"><span>IFC MALL</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample01.jpg" width="2386" height="1592" alt="" />
+									</div>
+									<figcaption><a href="#"><span>PARADISE CITY</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample02.jpg" width="2214" height="1592" alt="" />
+									</div>
+									<figcaption><a href="#"><span>OLIVE YOUNG</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+									</div>
+									<figcaption><a href="#"><span>CGV SCREEN & LOBBY</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample02.png" width="1134" height="643" alt="" />
+									</div>
+									<figcaption><a href="#"><span>STARFIELD SHOPPING MALL</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample01.png" width="1103" height="829" alt="" />
+									</div>
+									<figcaption><a href="#"><span>IFC MALL</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample01.jpg" width="2386" height="1592" alt="" />
+									</div>
+									<figcaption><a href="#"><span>PARADISE CITY</span></a></figcaption>
+								</figure>
+								<figure class="grid-item">
+									<div class="img">
+										<img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample02.jpg" width="2214" height="1592" alt="" />
+									</div>
+									<figcaption><a href="#"><span>OLIVE YOUNG</span></a></figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+					<!-- //.fullslider -->
+					<div class="textwrap">
+						<p class="text_subcaption">
+							<span>플래너스 특급 노하우!</span><strong>자신있게 <em>추천</em>하는 3이유!</strong>
+						</p>
+						<ul class="text_list">
+							<li>
+								<strong>유리한 지리적 접근성<br>최고의 베스트 접근성</strong>
+								<p>인천공항에서 도보 10분<br>서울에서 35분 거리</p>
+							</li>
+							<li>
+								<strong>프리미엄 타깃</strong>
+								<p>글로벌최고 수준의 시설로<br>구매력을 갖춘 <br>프리미엄 미디어 타깃</p>
+							</li>
+							<li>
+								<strong>외국인 이용객</strong>
+								<p>연 261만명이 카지노 이용 <br>연간 방문객의 25%수준</p>
+							</li>
+						</ul>
+					</div>
+					<!-- //.textwrap -->
+				</div>
+				<!-- //.media_section -->
+
+				<div id="packgeSection" class="section packge">
+					<div class="thumbwrap">
+						<h2 class="h2">
+							<span>엔터테인먼트 만을 위한</span><strong><span>추천패키지 <em>상품</em></span></strong>
+						</h2>
+						<div class="total_text">총<em>0</em>상품</div>
+						<div class="thumbslider fr">
+							<div class="thumblist">
+								<figure class="figure">
+									<a href="#">
+										<div class="img">
+											<img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+										</div>
+										<figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+									</a>
+								</figure>
+								<figure class="figure">
+									<a href="#">
+										<div class="img">
+											<img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+										</div>
+										<figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+									</a>
+								</figure>
+								<figure class="figure">
+									<a href="#">
+										<div class="img">
+											<img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+										</div>
+										<figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+									</a>
+								</figure>
+								<figure class="figure">
+									<a href="#">
+										<div class="img">
+											<img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+										</div>
+										<figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+									</a>
+								</figure>
+								<figure class="figure">
+									<a href="#">
+										<div class="img">
+											<img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+										</div>
+										<figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+									</a>
+								</figure>
+								<figure class="figure">
+									<a href="#">
+										<div class="img">
+											<img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+										</div>
+										<figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+									</a>
+								</figure>
+							</div>
+						</div>
+						<div class="paging fr">
+							<div class="slider_counter"></div>
+							<div class="btngroup">
+								<button type="button" class="ibtn_prev prev arrow"><i class="arrow-l"></i><span class="sr-only">이전</span></button>
+								<button type="button" class="ibtn_next next arrow"><i class="arrow-r"></i><span class="sr-only">다음</span></button>
+							</div>
+						</div>
+					</div>
+					<!-- //.pdthumbwrap -->
+				</div>
+				<!-- //.packge_section -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

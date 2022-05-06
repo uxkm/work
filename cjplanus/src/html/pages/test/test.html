@@ -1,0 +1,184 @@
+{% set pageData = { pageName: 'Test Page' } %}
+{% extends "_layout/_baseLayout.html" %}
+
+{% block css -%}
+{{ super() }}
+<link rel="stylesheet" href="{{ set.baseurl }}{{ set.cssurl }}/page.min.css">
+{%- endblock %}
+
+{% block js -%}
+{{ super() }}
+<script src="{{ set.baseurl }}{{ set.jsurl }}/plugin/slick.min.js"></script>
+{%- endblock %}
+
+{% block content %}
+<div style="padding:50px">
+  <h2>{{ pageData.pageName }} Page.1</h2>
+  <!-- Let's load this in-viewport image normally -->
+  <img src="/assets/images/share_img.jpg" alt="..."/>
+
+  <!-- Let's lazy-load the rest of these images -->
+  <img data-src="/assets/images/icon/android-chrome-192x192.png" loading="lazy" alt=".." class="lazyload"/>
+  <img data-src="/assets/images/icon/mstile-150x150.png" loading="lazy" alt=".." class="lazyload"/>
+  <img data-src="/assets/images/icon/apple-touch-icon-180x180.png" loading="lazy" alt=".." class="lazyload"/>
+  <script>
+    if ('loading' in HTMLImageElement.prototype) {
+      const images = document.querySelectorAll("img.lazyload");  
+      images.forEach(img => {
+        img.src = img.dataset.src;
+      });
+    } else {
+      let script = document.createElement("script");
+      script.async = true;
+      script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
+      document.body.appendChild(script);
+    }
+  </script>
+  <hr>
+  <nav class="nav_header">
+    <ul class="gnb">
+      {%- for navLink in nav_data %}
+      <li>
+        <a href="{{ navLink.href }}" target="_blank">{{ navLink.name }}</a>
+        {%- if navLink.depth2 %}
+        <ul>
+          {%- for nav_depth2 in navLink.depth2 %}
+          <li>
+            <a href="{{ nav_depth2.href }}" target="_blank">
+              {{ nav_depth2.name }}
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </nav>
+  <!-- navigation 부분을 추가-->
+  <!-- {% include "parts/_nav.html" %} -->
+
+  {%- for image in testImages %}
+  <div class="gallery_item">
+    <img src="{{image.src}}" alt="{{image.alt}}">
+  </div>
+  {%- endfor %}
+   
+  <hr>
+
+  <!-- test -->
+  <ul class="nav-menu" id="primary-menu">
+    {%- for item in testNavItems %}
+      <li class="menu-item menu-item-{{ item.menu_item }}{% if page_title == item.menu_item %} menu-item-current{% endif %}">
+        <a href="../{{ item.menu_item | lower | replace(" ", "") }}/">{{ item.menu_item }}</a>
+      </li>
+    {%- endfor %}
+  </ul> 
+  
+  <hr>
+
+  <ul class="gnb">
+    {%- for val in testMenu %}
+    {%- if val.children %}
+    <li class="dropdown nav-item show-dropdown-on-collapse">
+      <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#1" role="button">
+        <span class="navbar-text-truncate">{{ val.title }}</span>
+      </a>
+      <ul aria-labelledby="" class="dropdown-menu">
+        {%- for val in val.children %}
+        <li>
+          <a class="nav-link" href="/pages/{{ val.name | replace(" ", "- ") | lower }}.html">
+            {{ val.title }}
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- else %}
+    <li class="nav-item">
+      <a class="nav-link" href="/pages/{{ val.name | replace(" ", "- ") | lower }}.html">
+        <span class="navbar-text-truncate">{{ val.title }}</span>
+      </a>
+    </li>
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+  
+  <hr>
+  {%- set items = [1,2,3,4,5,6] -%}
+  {%- set dash = joiner("-") -%}
+  {%- for item in items | batch(2) %}
+    {{ dash() }} 
+    {%- for items in item %}
+        {{ items }}
+    {%- endfor %}
+  {%- endfor %}
+
+  {%- set scores = {
+    Maths: 88,
+    English: 92,
+    Science: 94
+  } -%}
+  <br>
+  {%- for subject, score in scores %}
+    You scored {{ score }} in {{ subject }}<br>
+    {%- if Maths %}
+      {{ scores.Maths }}
+    {%- elif English %}
+      {{ scores.English }}
+    {%- else %}
+      {{ scores.Science }}
+    {%- endif %}
+  {%- endfor %}
+
+  <hr>
+
+  <ul>
+    {%- for val in ukTocList %}
+    {%- if val.children %}
+    <li>
+      <a href="/{{ val.path }}/{{ val.path_title }}/{{ val.url | replace(" ", "- ") | lower }}.html" target="_blank" title="새 창 열림">
+        {{ val.url_name }}
+        {%- if val.flag_tbd %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- elif val.flag_ing %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- else %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- endif %}
+      </a>
+      <ul>
+        {%- for val in val.children %}
+        <li>
+          <a href="/{{ val.path }}/{{ val.path_title }}/{{ val.url | replace(" ", "- ") | lower }}.html" target="_blank" title="새 창 열림">
+            {{ val.url_name }}
+            {%- if val.flag_tbd %}
+            <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+            {%- elif val.flag_ing %}
+            <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+            {%- else %}
+            <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+            {%- endif %}
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- else %}
+    <li>
+      <a href="/{{ val.path }}/{{ val.path_title }}/{{ val.url | replace(" ", "- ") | lower }}.html" target="_blank" title="새 창 열림">
+        {{ val.url_name }} 
+        {%- if val.flag_tbd %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- elif val.flag_ing %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- else %}
+        <small class="flag {{ val.flag }}">{{ val.flag_state }}</small>
+        {%- endif %}
+      </a>
+    </li>
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,153 @@
+{% set pageData = { pageDep1Name: '상품소개', pageName: 'Entertainment', pageDesc: '', pageActive: '1' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pdetm">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subproduct.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1 sr-only" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="pdhead">
+          <p class="sub_description"><strong>주요 스팟!</strong> 집중노출 고객을 위한</p>
+          <p class="sub_title"><strong>PLANUS 상품</strong>소개</p>
+        </div>
+        <!-- //.pdhead -->
+
+        <div class="pdsubnav">
+          <nav class="pdnav">
+            <a href="entertainment.html" class="active"><span>Entertainment</span></a>
+            <a href="sports.html"><span>Sports</span></a>
+            <a href="traffic.html"><span>Traffic</span></a>
+            <a href="billboard.html"><span>Billboard</span></a>
+          </nav>
+        </div>
+        <!-- //.pdsubnav -->
+
+        <div class="pdbody">
+          <div class="pdlist"></div>
+          <div class="pdimg">
+            <div class="pdimglist">
+              <figure>
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+                </div>
+                <div class="btnview">
+                  <a href="javasrcipt:;" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></a>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+                <figcaption>CGV SCREEN & LOBBY</figcaption>
+              </figure>
+              <figure>
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample02.png" width="1134" height="643" alt="" />
+                </div>
+                <div class="btnview">
+                  <a href="javasrcipt:;" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></a>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+                <figcaption>STARFIELD SHOPPING MALL</figcaption>
+              </figure>
+              <figure>
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample01.png" width="1103" height="829" alt="" />
+                </div>
+                <div class="btnview">
+                  <a href="javasrcipt:;" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></a>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+                <figcaption>IFC MALL</figcaption>
+              </figure>
+              <figure>
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample01.jpg" width="2386" height="1592" alt="" />
+                </div>
+                <div class="btnview">
+                  <a href="javasrcipt:;" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></a>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+                <figcaption>PARADISE CITY</figcaption>
+              </figure>
+              <figure>
+                <div class="img">
+                  <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample02.jpg" width="2214" height="1592" alt="" />
+                </div>
+                <div class="btnview">
+                  <a href="javasrcipt:;" class="ibtn_zoom"><i class="ico-find"></i><span>크게보기</span></a>
+                  <a href="productView.html" class="ibtn_view"><span>자세히보기</span><i class="ico-arr"></i></a>
+                </div>
+                <figcaption>OLIVE YOUNG</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!-- //.pdimg -->
+        </div>
+        <!-- //.pdbody -->
+
+        <div class="pdfoot sdwrap">
+          <h2 class="h2"><span>엔터테인먼트 만을 위한</span><strong><span>추천패키지 <em>상품</em></span></strong></h2>
+          <div class="total_text">총<em>2</em>상품</div>
+          <script src="{{set.baseurl}}{{set.jsurl}}/lib/flickity.pkgd.min.js"></script>
+          <div class="sdlist carousel" data-flickity='{ "groupCells": true }'>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+              </div>
+              <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+            </figure>
+          </div>
+          <div class="paging">
+            <span class="number"><b class="current">1</b><i class="total">3</i></span>
+            <div class="btngroup">
+              <button class="ibtn_prev arrow"><i class="arrow-l"></i><span class="sr-only">이전 페이지</span></button>
+              <button class="ibtn_next arrow"><i class="arrow-r"></i><span class="sr-only">다음 페이지</span></button>
+            </div>
+          </div>
+        </div>
+        <!-- //.pdfoot -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

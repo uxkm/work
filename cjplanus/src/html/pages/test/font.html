@@ -1,0 +1,76 @@
+{% set pageData = { pageName: 'Test Page' } %}
+{% extends "_layout/_baseLayout.html" %}
+
+{% block css -%}
+{{ super() }}
+<link rel="stylesheet" href="{{ set.baseurl }}{{ set.cssurl }}/page.min.css">
+<link rel="stylesheet" href="{{set.baseurl}}{{set.cssurl}}/gd.min.css" />
+{%- endblock %}
+
+{% block js -%}
+{{ super() }}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ui.utility.js"></script>
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ui.common.js"></script>
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ui.pub.js"></script>
+{%- endblock %}
+
+{% block content %}
+
+<script>
+	$(function(){
+		var setFontsize = function(){
+			var $eleNum, $eleFont, $eleSize, valNum;
+			function init(){
+				$eleNum = $('.js-fontsize-set');
+				$eleFont = $('.js-fontsize');
+				$eleSize = $eleFont.find('.js-size');
+				valNum = $eleNum.val();
+			}
+			function event(){
+				$eleNum.on('change', function(){
+					valNum = $(this).val();
+					action();
+				})
+			}
+			function action(){
+				$eleFont.css('font-size', valNum+'px');
+				$eleSize.text(valNum+'px');
+			}
+			init();
+			event();
+			action();
+		}
+		setFontsize();
+	})
+</script>
+<div class="content-body">
+	<!-- Section -->
+	<section class="g-section in-sec">
+		<div class="g-section-head">
+			<h2 class="g-h2">
+				폰트사이즈&nbsp;&nbsp;
+				<input type="number" name="" id="" value="20" placeholder="" title="" class="js-fontsize-set" style="width:60px; text-align:center; border:1px solid #ddd; font-size:20px">
+			</h2>
+		</div>
+		<div class="g-section-body">
+			<div class="js-fontsize" style="line-height:1.6; margin-right:20px;">
+				<p style="font-weight:100"><span class="js-size"></span> - 200 NotoSans Thin</p>
+				<p style="font-weight:100">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 가나다라마바사아자차카타파하</p>
+				<br>
+				<p style="font-weight:300"><span class="js-size"></span> - 300 NotoSans Light</p>
+				<p style="font-weight:300">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 가나다라마바사아자차카타파하</p>
+				<br>
+				<p style="font-weight:400"><span class="js-size"></span> - 400 NotoSans Reguler</p>
+				<p style="font-weight:400">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 가나다라마바사아자차카타파하</p>
+				<br>
+				<p style="font-weight:500"><span class="js-size"></span> - 500 NotoSans Medium</p>
+				<p style="font-weight:500">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 가나다라마바사아자차카타파하</p>
+				<br>
+				<p style="font-weight:700"><span class="js-size"></span> - 700 NotoSans Bold</p>
+				<p style="font-weight:700">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 가나다라마바사아자차카타파하</p>
+			</div>
+		</div>
+	</section>
+	<!-- //Section -->
+</div>
+{% endblock %}

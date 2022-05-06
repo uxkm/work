@@ -1,0 +1,117 @@
+<!-- 
+  각 페이지 마다 class 부여 
+  ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 
+  <div class="cntwrap p_login">
+-->
+<div class="cntwrap p_login">
+  <div class="chead_out">
+    <div class="chead_in">
+      <!-- 서브 페이지 경로 -->
+      <ul class="breadcrumb">
+        <li><a href="/">홈</a></li>
+        <li>
+          <a href="login.html"><strong>로그인</strong></a>
+        </li>
+      </ul>
+
+      <!-- Start : Sub Menu Include -->
+      <div class="cnt_submenu member">
+        <nav class="navsub">
+          <ul>
+            <li class="active">
+              <a href="login.html">로그인</a>
+            </li>
+            <li>
+              <a href="join.html">회원가입</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- //.cnt_submenu -->
+      <!-- End : Sub Menu Include -->
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>로그인</strong><sub></sub></h1>
+      <section class="csection">
+        <div class="logingroup col2">
+          <div class="column txtcol">
+            <div class="col_in">
+              <p class="text_large">전문가와 함께하는<br />옥외광고 마케팅!<br /><b>지금 시작해볼까요?</b></p>
+              <p class="text_small">자신있게 추천합니다!<br />차별화된 콘텐츠플랫폼과 공간 가치를 창조!</p>
+            </div>
+            <!-- //.col_in -->
+          </div>
+          <!-- //.column -->
+          <div class="column">
+            <div class="col_in">
+              <p class="text">환영합니다!</p>
+              <div class="field_login">
+                <label class="uk_label">
+                  <input type="text" name="" placeholder="아이디" class="inp" />
+                </label>
+              </div>
+              <div class="field_login">
+                <label class="uk_label">
+                  <input type="password" name="" placeholder="비밀번호" class="inp" />
+                </label>
+              </div>
+              <p class="link">
+                <a href="idfind.html">아이디 찾기</a>
+                <a href="pwfind.html">비밀번호 찾기</a>
+              </p>
+              <div class="btngroup">
+                <button type="submit" class="btn_default xlarge"><span>로그인</span></button>
+                <a href="join.html" class="btn_white xlarge font_light"><span>회원가입</span></a>
+              </div>
+            </div>
+            <!-- //.col_in -->
+          </div>
+          <!-- //.column -->
+        </div>
+        <!-- //.logingroup -->
+
+        <!-- 
+          로그인 버튼 클릭시 공통  Alert
+          1) [로그인] 결과
+          Case1) O > 로그인 직전 경로 페이지(일반회원과 영업관리 회원페이지 식별)
+          - 차이: 고객지원><고객관리
+          Case2) X > 아이디/비밀번호 불일치 > alert > 아이디 또는 비밀번호가 일치하지 않습니다. [확인] > 현페이지
+          Case3) X > 입력값 공백 > alert > ‘아이디or비밀번호(입력하지 않은 값)’를 입력해 주세요.
+          Case4) 5회 이상 로그인 오류 시 > alert > ‘해당 아이디로 5회 이상 로그인 실패입니다. 비밀번호 재설정 후 로그인하시기 바랍니다. ‘ (확인)
+          = 이 후 로그인 시도일 때 동일(비밀번호 재설정 전까지)
+        -->
+        <div id="ukmodalAlert" class="ukmodal_wrap alert" role="alertdialog">
+          <div class="ukmodal">
+            <div class="ukmodal_head">
+              <h2>메시지</h2>
+            </div>
+            <div class="ukmodal_body">
+              <div class="ukmodal_cont">
+                <p class="text">아이디 또는 비밀번호가 일치하지 않습니다.</p>
+                <p class="text">아이디를 입력해 주세요.</p>
+                <p class="text">비밀번호를 입력해 주세요.</p>
+                <p class="text">해당 아이디로 5회 이상 로그인 실패입니다.<br />비밀번호 재설정 후 로그인하시기 바랍니다.</p>
+              </div>
+            </div>
+            <div class="ukmodal_foot">
+              <div class="btngroup">
+                <button type="button" class="btn_default" onclick="uk.ukmodal.close('ukmodalAlert')"><span>확인</span></button>
+              </div>
+            </div>
+            <button type="button" class="ibtn_close" onclick="uk.ukmodal.close('ukmodalAlert')"><span class="sr_only">팝업 닫기</span></button>
+          </div>
+          <div class="dimmer" onclick="uk.ukmodal.close('ukmodalAlert')"></div>
+        </div>
+        <!-- //.ukmodal_wrap -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->

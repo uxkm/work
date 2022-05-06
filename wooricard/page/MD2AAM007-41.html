@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="title" content="우리카드">
+    <meta name="keywords" content="우리카드, 신규카드, 카드혜택, 카드신청">
+    <meta name="copyright" content="COPYRIGHTS WOORICARD. ALL RIGHTS RESERVED.">
+    <title>마이 데이터 서비스 인증</title>
+    <link rel="Shortcut Icon" href="../img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/m.newfonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newreset.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newcommon.css">
+    <link rel="stylesheet" type="text/css" href="../css/m.newmd.page.css">
+    <!-- JS -->
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery/jquery-ui.min.js"></script>
+    <script src="../js/jquery/jquery.ui.touch-punch.min.js"></script>
+    <script src="../js/jquery/jquery.mailtip.js"></script>
+    <script src="../js/uiux/ukDetect-1.0.0.min.js"></script>
+    <script src="../js/uiux/m.newmd.js"></script>
+  </head>
+  <body>
+    <div class="ukwrap">
+      <header class="uk_header">
+        <h1 class="tit_h1">인증</h1>
+        <button type="button" class="ibtn_close"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </header>
+      <div class="ukmain">
+        <div class="cbody">
+          <h2 class="tit_h2_1">우리카드 할부/리스 전송 요구 선택</h2>
+          <section class="section" aria-label="개인 신용정보 보유 기간">
+            <h3 class="tit_h3">개인 신용정보 보유 기간</h3>
+            <div class="dategroup col2">
+              <div class="dategp">
+                <label for="dateStart" class="sr-only">시작날짜</label>
+                <input type="date" name="" id="dateStart" max="2018.01.01" value="2018.01.01" placeholder="시작날짜" required aria-required="true">
+              </div>
+              <div class="dotline"></div>
+              <div class="dategp">
+                <label for="dateEnd" class="sr-only">종료날짜</label>
+                <input type="date" name="" id="dateEnd" max="2018.02.01" value="2018.02.01" placeholder="종료날짜" required aria-required="true">
+              </div>
+            </div>
+            <p class="etcmark">전송 요구 종료시점보다 길게 설정 가능</p>
+          </section>
+
+          <section class="section" aria-label="정기전송 요구 여부 및 주기">
+            <h3 class="tit_h3">정기전송 요구 여부 및 주기</h3>
+            <div class="radiogp default">
+              <span class="rad">
+                <input type="radio" name="rdo1" id="rdo1_1" checked>
+                <label for="rdo1_1">요구</label>
+              </span>
+            </div>
+            <div class="btnselgp">
+              <button class="btn_select" data-modal-button="monthselcet_modal"><span>매월</span></button>
+            </div>
+            <div class="radiogp default">
+              <span class="rad">
+                <input type="radio" name="rdo1" id="rdo1_2">
+                <label for="rdo1_2">미요구</label>
+              </span>
+            </div>
+          </section>
+
+          <section class="section" aria-label="전송 요구 종료시점">
+            <h3 class="tit_h3">전송 요구 종료시점</h3>
+            <div class="dategroup">
+              <div class="dategp">
+                <label for="dateEndPoint" class="sr-only">종료날짜</label>
+                <input type="date" name="" id="dateEndPoint" max="2018.01.01" value="2018.01.01" placeholder="종료시점" required aria-required="true">
+              </div>
+            </div>
+            <p class="etcmark">최대 1년 설정 가능</p>
+          </section>
+
+          <section class="section" aria-label="전송 요구 목적">
+            <h3 class="tit_h3">전송 요구 목적</h3>
+            <div class="btnselgp">
+              <button class="btn_select" data-modal-button="choiceselcet_modal"><span>선택</span></button>
+            </div>
+            <div class="txtareabox">
+              <label for="txtSubject" class="sr-only">내용입력</label>
+              <textarea id="txtSubject" cols="75" rows="7"></textarea>
+            </div>
+          </section>
+          
+          <button type="button" class="btn_next blue"><span>다음</span></button>
+        </div>
+      </div>
+      <!-- //.ukmain -->
+    </div>
+    <!-- //.ukwrap -->
+    <!-- 정기전송 요구 여부 및 주기 선택시 나오는 UI -->
+    <div class="modal_wrap bottom" data-modal-layer="monthselcet_modal">
+      <div class="modal_inner">
+        <div class="modal_content">
+          <!-- 선택된 아이템 -->
+          <ul class="tellist">
+            <li class="checked">매주</li>
+            <li>매월</li>
+            <li>매년</li>
+          </ul>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+    <!-- 전송 요구 목적 선택시 나오는 UI -->
+    <div class="modal_wrap bottom" data-modal-layer="choiceselcet_modal">
+      <div class="modal_inner">
+        <div class="modal_content">
+          <!-- 선택된 아이템 -->
+          <ul class="tellist">
+            <li class="checked">선택</li>
+            <li>선택</li>
+            <li>선택</li>
+            <li>선택</li>
+          </ul>
+        </div>
+		    <button type="button" class="modal_close" data-modal-close="true"><i class="icon"></i><span class="sr-only">닫기</span></button>
+      </div>
+      <!-- //.modal_inner -->
+    </div>
+    <!-- //.modal_wrap -->
+    <script>
+      // 선택시 나오는 UI 호출 스크립트 개발 상황에 맞게 커스텀 하여 사용
+      $(document).ready(function(){
+        var modal_wrap = 'modal_wrap';
+        var modal_button = 'data-modal-button';
+        var modal_layer = 'data-modal-layer';
+        var modal_dim = 'data-modal-dim';
+        var modal_active = 'modal_active';
+        var modal_hover = false;
+        $('['+modal_button+']').on('click', function(){
+          var _target = $(this).attr(modal_button);
+          $('['+modal_layer+'="'+_target+'"]').addClass(modal_active);
+          $('html').addClass('scl_lock');
+          // return false;
+        });
+
+        $('[data-modal-close]').on('click', function(){
+          if( $(this).parents('.'+modal_wrap).is('.'+modal_active) ){
+            $('html').removeClass('scl_lock');
+            $(this).parents('.'+modal_wrap).removeClass(modal_active);
+            modal_hover = false;
+          }
+          return false;
+        });
+
+        $('.'+modal_wrap).on('click', function(e){
+          if( $(this).has(e.target).length === 0 && $(this).attr(modal_dim) !== 'false' ){
+            $(this).removeClass(modal_active);
+            $('html').removeClass('scl_lock');
+          }
+        });
+      })
+    </script>
+  </body>
+</html>

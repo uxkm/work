@@ -1,0 +1,451 @@
+{% set pageData = { pageDep1Name: '상품추천', pageName: '추천상품', pageDesc: '', pageActive: '2' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pdrecom">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subadvert.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+
+      <section class="csection">
+        <script>
+          $(function() {
+            $('.field_group').find('.ibtn_toggle').on('click', function(){
+              $(this).toggleClass('active');
+              $('.detail_group').toggleClass('active');
+            })
+          });
+        </script>
+        <!-- [수정 0712] - 검색 키워드 위치 변경 및 정렬 맞춤 -->
+        <div class="adver_chead type2">
+          <div class="searcharea">
+            <div class="field_group">
+              <div class="field">
+                <strong>성별</strong>
+                <div class="uk_select arrow">
+                  <label class="sr-only">성별선택</label>
+                  <select id="choiceDep1">
+                    <option value="">성별</option>
+                    <option value="">연령</option>
+                    <option value="">추천업종</option>
+                    <option value="">지역</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <strong>연령</strong>
+                <div class="uk_select arrow">
+                  <label class="sr-only">연령 선택</label>
+                  <select id="cityArea">
+                    <option value="">전체</option>
+                  </select>
+                </div>
+                <i class="ico-dot">~</i>
+                <div class="uk_select arrow">
+                  <label class="sr-only">연령 선택</label>
+                  <select id="cityArea">
+                    <option value="">전체</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <strong>지역</strong>
+                <!-- 
+                  Meulti Select 클릭시 옵션 활성화 class active 추가
+                  <div class="uk_select multi_select arrow active">
+
+                  옵션 다중 선택 class checked
+                  <li class="checked">
+                 -->
+                 <script>
+                  //  ui 확인용 멀티 셀렉트 스크립트 개발적용시 개발 구조에 맞추어 수정 후 작업 진행
+                  $(function(){
+                    $('.multi_select').find('.sel_text').on('click', function(){
+                      $(this).parent().toggleClass('active');
+                    })
+                    $('.multi_select .sel_list').find('li').on('click', function(){
+                      $(this).toggleClass('checked');
+                    })
+                  })
+                 </script>
+                <div class="uk_select multi_select arrow">
+                  <span class="sel_text">지역선택</span>
+                  <ul class="sel_list">
+                    <li class="checked"><span>서울특별시</span></li>
+                    <li><span>서울특별시</span></li>
+                    <li class="checked"><span>부산광역시</span></li>
+                    <li><span>대구광역시</span></li>
+                    <li><span>광주광역시</span></li>
+                    <li><span>대전광역시</span></li>
+                    <li><span>울산광역시</span></li>
+                    <li><span>세종특별자치시</span></li>
+                    <li><span>경기도</span></li>
+                    <li><span>강원도</span></li>
+                    <li><span>충청북도</span></li>
+                    <li><span>충청남도</span></li>
+                    <li><span>전라북도</span></li>
+                    <li><span>전라남도</span></li>
+                    <li><span>경상북도</span></li>
+                    <li><span>경상남도</span></li>
+                    <li><span>제주도</span></li>
+                  </ul>
+                  <i class="arr"></i>
+
+                  <!-- 
+                  기본 셀렉트 삭제
+                  <label class="sr-only">도시 선택</label>
+                  <select id="cityArea">
+                    <option value="">서울특별시</option>
+                    <option value="">부산광역시</option>
+                    <option value="">대구광역시</option>
+                    <option value="">인천광역시</option>
+                    <option value="">광주광역시</option>
+                    <option value="">대전광역시</option>
+                    <option value="">울산광역시</option>
+                    <option value="">세종특별자치시</option>
+                    <option value="">경기도</option>
+                    <option value="">강원도</option>
+                    <option value="">충청북도</option>
+                    <option value="">충청남도</option>
+                    <option value="">전라북도</option>
+                    <option value="">전라남도</option>
+                    <option value="">경상북도</option>
+                    <option value="">경상남도</option>
+                    <option value="">제주도</option>
+                  </select> -->
+                </div>
+              </div>
+              <div class="btngroup">
+                <button type="button" class="ibtn_find black"><i class="ico-find"></i><span class="sr-only">검색</span></button>
+                <button class="ibtn_toggle active"><span class="sr-only">추가검색 조건</span><i class="icon"></i></button>
+              </div>
+            </div>
+            <!-- //.field_group -->
+            <div class="field_group detail_group">
+              <div class="field">
+                <strong>추천업종</strong>
+                <div class="uk_select arrow">
+                  <label class="sr-only">1차업종선택</label>
+                  <select id="choiceDep1">
+                    <option value="">대분류선택</option>
+                    <option value="0103">농업, 임업 및 어업</option>
+                    <option value="0508">광업</option>
+                    <option value="1034">제조업</option>
+                    <option value="35">전기, 가스, 증기 및 공기 조절 공급업</option>
+                    <option value="3639">수도, 하수 및 폐기물 처리, 원료 재생업</option>
+                    <option value="4142">건설업</option>
+                    <option value="4547">도매 및 소매업</option>
+                    <option value="4952">운수 및 창고업</option>
+                    <option value="5556">숙박 및 음식점업</option>
+                    <option value="5863">정보통신업</option>
+                    <option value="6466">금융 및 보험업</option>
+                    <option value="68">부동산업</option>
+                    <option value="7073">전문, 과학 및 기술 서비스업</option>
+                    <option value="7476">사업시설 관리, 사업 지원 및 임대 서비스업</option>
+                    <option value="84">공공 행정, 국방 및 사회보장 행정</option>
+                    <option value="85">교육 서비스업</option>
+                    <option value="8687">보건업 및 사회복지 서비스업</option>
+                    <option value="9091">예술, 스포츠 및 여가관련 서비스업</option>
+                    <option value="9496">협회 및 단체, 수리 및 기타 개인 서비스업</option>
+                    <option value="9798">가구 내 고용활동 및 달리 분류되지 않은 자가 소비 생산활동</option>
+                    <option value="99">국제 및 외국기관</option>
+                  </select>
+                </div>
+                <div class="uk_select arrow">
+                  <label class="sr-only">2차업종선택</label>
+                  <select id="choiceDep2">
+                    <option value="">중분류선택</option>
+                    <option value="74">사업시설 관리 및 조경 서비스업</option>
+                    <option value="75">사업 지원 서비스업</option>
+                    <option value="76">임대업; 부동산 제외</option>
+                  </select>
+                </div>
+                <div class="uk_select arrow">
+                  <label class="sr-only">3차업종선택</label>
+                  <select id="choiceDep3">
+                    <option value="">자동차 판매업</option>
+                    <option value="">자동차 판매업측정</option>
+                    <option value="">시험</option>
+                    <option value="">항해</option>
+                    <option value="">제어 및 기타 정밀 기기 제조업</option>
+                    <option value="">광학 기기 제외</option>
+                  </select>
+                </div>
+              </div>
+              <!-- 위치변경 -->
+              <!-- <div class="field">
+                <strong>지역</strong>
+                <div class="uk_select arrow">
+                  <label class="sr-only">도시 선택</label>
+                  <select id="cityArea">
+                    <option value="">서울특별시</option>
+                    <option value="">부산광역시</option>
+                    <option value="">대구광역시</option>
+                    <option value="">인천광역시</option>
+                    <option value="">광주광역시</option>
+                    <option value="">대전광역시</option>
+                    <option value="">울산광역시</option>
+                    <option value="">세종특별자치시</option>
+                    <option value="">경기도</option>
+                    <option value="">강원도</option>
+                    <option value="">충청북도</option>
+                    <option value="">충청남도</option>
+                    <option value="">전라북도</option>
+                    <option value="">전라남도</option>
+                    <option value="">경상북도</option>
+                    <option value="">경상남도</option>
+                    <option value="">제주도</option>
+                  </select>
+                </div>
+                <div class="uk_select arrow">
+                  <label class="sr-only">지역구 선택</label>
+                  <select id="guArea">
+                    <option value="">마포구</option>
+                  </select>
+                </div>
+              </div> -->
+            </div>
+            <!-- //.field_group -->
+          </div>
+          <!-- //.searcharea -->
+        </div>
+        <!-- //.adver_chead -->
+
+        <div class="adver_cbody">
+          <div class="searchgp">
+            <div class="tcount">
+              <span>총<em>16</em>개</span>
+            </div>
+            <div class="uk_select trans arrow">
+              <label class="sr-only" for="stepChoice">내용선택</label>
+              <select id="stepChoice">
+                <option value="">월단가 높은순</option>
+                <option value="">월단가 낮은순</option>
+              </select>
+            </div>
+          </div>
+          <!-- //.searchgp -->
+
+          <!-- 검색결과 또는 데이터가 있을 경우 -->
+          <div class="thumb_cardlist">
+            <figure class="figure">
+              <div class="img">
+                <a href="#" title="해당상품 상세 페이지 이동"><img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt=""/></a>
+              </div>
+              <figcaption class="caption">
+                <strong>Starfield & Starfield City 고양</strong>
+                <span>와이드컬러 2번홀</span>
+                <label class="uk_heart">
+                  <input type="checkbox" checked />
+                  <i class="ico-heart"></i>
+                  <span class="sr-only">관심등록 저장</span>
+                </label>
+              </figcaption>
+
+              <div class="infotext">
+                <p><span class="tit">구분</span><strong class="cnt">Entertainment</strong></p>
+                <p><span class="tit">사이즈</span><strong class="cnt">5.30m × 2.6m</strong></p>
+                <p><span class="tit">월단가</span><strong class="cnt">300만원/기</strong></p>
+                <p><span class="tit">수량</span><strong class="cnt">2개</strong></p>
+              </div>
+              <a href="#" class="btn_white" title="청양문의 페이지 이동"><span>청약문의</span></a>
+            </figure>
+
+            <figure class="figure">
+              <div class="img">
+                <a href="#" title="해당상품 상세 페이지 이동"><img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt=""/></a>
+              </div>
+              <figcaption class="caption">
+                <strong>Starfield & Starfield City 고양</strong>
+                <span>와이드컬러 2번홀</span>
+                <label class="uk_heart">
+                  <input type="checkbox" checked />
+                  <i class="ico-heart"></i>
+                  <span class="sr-only">관심등록 저장</span>
+                </label>
+              </figcaption>
+
+              <div class="infotext">
+                <p><span class="tit">구분</span><strong class="cnt">Entertainment</strong></p>
+                <p><span class="tit">사이즈</span><strong class="cnt">5.30m × 2.6m</strong></p>
+                <p><span class="tit">월단가</span><strong class="cnt">300만원/기</strong></p>
+                <p><span class="tit">수량</span><strong class="cnt">2개</strong></p>
+              </div>
+              <a href="#" class="btn_white" title="청양문의 페이지 이동"><span>청약문의</span></a>
+            </figure>
+
+            <figure class="figure">
+              <div class="img">
+                <a href="#" title="해당상품 상세 페이지 이동"><img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt=""/></a>
+              </div>
+              <figcaption class="caption">
+                <strong>Starfield & Starfield City 고양</strong>
+                <span>와이드컬러 2번홀</span>
+                <label class="uk_heart">
+                  <input type="checkbox" checked />
+                  <i class="ico-heart"></i>
+                  <span class="sr-only">관심등록 저장</span>
+                </label>
+              </figcaption>
+
+              <div class="infotext">
+                <p><span class="tit">구분</span><strong class="cnt">Entertainment</strong></p>
+                <p><span class="tit">사이즈</span><strong class="cnt">5.30m × 2.6m</strong></p>
+                <p><span class="tit">월단가</span><strong class="cnt">300만원/기</strong></p>
+                <p><span class="tit">수량</span><strong class="cnt">2개</strong></p>
+              </div>
+              <a href="#" class="btn_white" title="청양문의 페이지 이동"><span>청약문의</span></a>
+            </figure>
+
+            <figure class="figure">
+              <div class="img">
+                <a href="#" title="해당상품 상세 페이지 이동"><img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt=""/></a>
+              </div>
+              <figcaption class="caption">
+                <strong>Starfield & Starfield City 고양</strong>
+                <span>와이드컬러 2번홀</span>
+                <label class="uk_heart">
+                  <input type="checkbox" checked />
+                  <i class="ico-heart"></i>
+                  <span class="sr-only">관심등록 저장</span>
+                </label>
+              </figcaption>
+
+              <div class="infotext">
+                <p><span class="tit">구분</span><strong class="cnt">Entertainment</strong></p>
+                <p><span class="tit">사이즈</span><strong class="cnt">5.30m × 2.6m</strong></p>
+                <p><span class="tit">월단가</span><strong class="cnt">300만원/기</strong></p>
+                <p><span class="tit">수량</span><strong class="cnt">2개</strong></p>
+              </div>
+              <a href="#" class="btn_white" title="청양문의 페이지 이동"><span>청약문의</span></a>
+            </figure>
+
+            <figure class="figure">
+              <div class="img">
+                <a href="#" title="해당상품 상세 페이지 이동"><img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt=""/></a>
+              </div>
+              <figcaption class="caption">
+                <strong>Starfield & Starfield City 고양</strong>
+                <span>와이드컬러 2번홀</span>
+                <label class="uk_heart">
+                  <input type="checkbox" checked />
+                  <i class="ico-heart"></i>
+                  <span class="sr-only">관심등록 저장</span>
+                </label>
+              </figcaption>
+
+              <div class="infotext">
+                <p><span class="tit">구분</span><strong class="cnt">Entertainment</strong></p>
+                <p><span class="tit">사이즈</span><strong class="cnt">5.30m × 2.6m</strong></p>
+                <p><span class="tit">월단가</span><strong class="cnt">300만원/기</strong></p>
+                <p><span class="tit">수량</span><strong class="cnt">2개</strong></p>
+              </div>
+              <a href="#" class="btn_white" title="청양문의 페이지 이동"><span>청약문의</span></a>
+            </figure>
+
+            <figure class="figure">
+              <div class="img">
+                <a href="#" title="해당상품 상세 페이지 이동"><img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt=""/></a>
+              </div>
+              <figcaption class="caption">
+                <strong>Starfield & Starfield City 고양</strong>
+                <span>와이드컬러 2번홀</span>
+                <label class="uk_heart">
+                  <input type="checkbox" checked />
+                  <i class="ico-heart"></i>
+                  <span class="sr-only">관심등록 저장</span>
+                </label>
+              </figcaption>
+
+              <div class="infotext">
+                <p><span class="tit">구분</span><strong class="cnt">Entertainment</strong></p>
+                <p><span class="tit">사이즈</span><strong class="cnt">5.30m × 2.6m</strong></p>
+                <p><span class="tit">월단가</span><strong class="cnt">300만원/기</strong></p>
+                <p><span class="tit">수량</span><strong class="cnt">2개</strong></p>
+              </div>
+              <a href="#" class="btn_white" title="청양문의 페이지 이동"><span>청약문의</span></a>
+            </figure>
+
+            <figure class="figure">
+              <div class="img">
+                <a href="#" title="해당상품 상세 페이지 이동"><img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt=""/></a>
+              </div>
+              <figcaption class="caption">
+                <strong>Starfield & Starfield City 고양</strong>
+                <span>와이드컬러 2번홀</span>
+                <label class="uk_heart">
+                  <input type="checkbox" checked />
+                  <i class="ico-heart"></i>
+                  <span class="sr-only">관심등록 저장</span>
+                </label>
+              </figcaption>
+
+              <div class="infotext">
+                <p><span class="tit">구분</span><strong class="cnt">Entertainment</strong></p>
+                <p><span class="tit">사이즈</span><strong class="cnt">5.30m × 2.6m</strong></p>
+                <p><span class="tit">월단가</span><strong class="cnt">300만원/기</strong></p>
+                <p><span class="tit">수량</span><strong class="cnt">2개</strong></p>
+              </div>
+              <a href="#" class="btn_white" title="청양문의 페이지 이동"><span>청약문의</span></a>
+            </figure>
+
+            <figure class="figure">
+              <div class="img">
+                <a href="#" title="해당상품 상세 페이지 이동"><img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt=""/></a>
+              </div>
+              <figcaption class="caption">
+                <strong>Starfield & Starfield City 고양</strong>
+                <span>와이드컬러 2번홀</span>
+                <label class="uk_heart">
+                  <input type="checkbox" checked />
+                  <i class="ico-heart"></i>
+                  <span class="sr-only">관심등록 저장</span>
+                </label>
+              </figcaption>
+
+              <div class="infotext">
+                <p><span class="tit">구분</span><strong class="cnt">Entertainment</strong></p>
+                <p><span class="tit">사이즈</span><strong class="cnt">5.30m × 2.6m</strong></p>
+                <p><span class="tit">월단가</span><strong class="cnt">300만원/기</strong></p>
+                <p><span class="tit">수량</span><strong class="cnt">2개</strong></p>
+              </div>
+              <a href="#" class="btn_white" title="청양문의 페이지 이동"><span>청약문의</span></a>
+            </figure>
+          </div>
+          <!-- //.thumb_cardlist -->
+
+          <!-- 검색결과 또는 데이터가 없을 경우 -->
+          <div class="nodata" style="display:none">
+            죄송합니다. 찾으시는 검색결과가 없습니다.
+            <!-- 데이터 정보가 없습니다. -->
+          </div>
+
+          <!-- 페이지 로딩시 사용 class hide 추가시 숨김 -->
+          <div class="ploading hide"><span class="dot1"></span><span class="dot2"></span><span class="dot3"></span></div>
+
+          <div class="paging">
+            <span class="number"><b class="current">1</b><i class="total">3</i></span>
+            <div class="btngroup">
+              <button class="ibtn_prev arrow"><i class="arrow-l"></i><span class="sr-only">이전 페이지</span></button>
+              <button class="ibtn_next arrow"><i class="arrow-r"></i><span class="sr-only">다음 페이지</span></button>
+            </div>
+          </div>
+        </div>
+        <!-- //.adver_cbody -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

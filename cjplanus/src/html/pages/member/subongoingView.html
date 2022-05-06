@@ -1,0 +1,316 @@
+{% set pageData = { pageDep1Name: '마이플래너스', pageName: '청약상세정보', pageDesc: '', pageActive: '1' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_myview">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_submy.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="cardlist" data-cardview>
+          <article class="carditem">
+            <p class="itemtop">
+              <strong class="number">2021-04-01-C123456789</strong>
+              <span class="flag_state">문의접수</span>
+            </p>
+
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample1.png" width="149" height="86" alt="" />
+              </div>
+              <figcaption class="caption">
+                <strong>상암 미디어시티역 북측 통행료</strong>
+                <p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+              </figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample1.png" width="149" height="86" alt="" />
+              </div>
+              <figcaption class="caption">
+                <strong>상암 미디어시티역 북측 통행료</strong>
+                <p>
+                  센트럴아트리움1F│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워) 센트럴아트리움1F│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)센트럴아트리움1F│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워) 센트럴아트리움1F│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)
+                </p>
+              </figcaption>
+            </figure>
+          </article>
+        </div>
+        <!-- //.cardlist -->
+
+        <!-- Start : [추가] 210622 접수내용 추가 -->
+        <div class="section" aria-label="접수내용">
+          <h2>접수내용</h2>
+          <div class="uk_table">
+            <div class="tbody">
+              <div class="tr">
+                <strong class="th">
+                  예상집행 기간
+                </strong>
+                <div class="td">
+                  2021-05-01 ~ 2021-07-31
+                </div>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <strong class="th">
+                  문의내용
+                </strong>
+                <div class="td">
+                  파노라마 스크린 견격을 자세히 받고 싶은 ~ 문의 남깁니다.
+                </div>
+              </div>
+              <!-- //.tr -->
+            </div>
+            <!-- //.tbody -->
+          </div>
+          <!-- //.uk_table -->
+
+          <div class="btngroup tcenter">
+            <button class="btn_gray medium"><span>수정</span></button>
+          </div>
+          <!-- End : [추가] 210622 접수내용 추가 -->
+        </div>
+        <!-- //.section -->
+
+        <div class="section" aria-label="담당자정보">
+          <h2>담당자정보</h2>
+          <div class="uk_table">
+            <div class="tbody">
+              <div class="tr">
+                <strong class="th">
+                  <!-- [삭제] 210622 필수항목 삭제 -->
+                  <!-- <span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span> -->
+                  담당자
+                </strong>
+                <div class="td">
+                  홍길동님
+                </div>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <strong class="th">
+                  연락처
+                </strong>
+                <div class="td">
+                  02-0980-0900
+                </div>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <strong class="th">
+                  이메일
+                </strong>
+                <div class="td">
+                  abc90@naver.com
+                </div>
+              </div>
+              <!-- //.tr -->
+            </div>
+            <!-- //.tbody -->
+          </div>
+          <!-- //.uk_table -->
+        </div>
+        <!-- //.section -->
+
+        <div class="section" aria-label="등록된 제안서">
+          <h2>등록된 제안서</h2>
+          <div class="uk_table type2">
+            <div class="tbody">
+              <div class="tr">
+                <div class="td">
+                  <p class="text">제안서1</p>
+                </div>
+                <div class="td down">
+                  <p class="text">CJP_mediakit_2021_FinaCJP_mediakit_2021_FinaCJP_mediakit_2021_FinaCJP_mediakit_2021_Fina.pdf</p>
+                  <button class="btn_white small"><span>다운로드</span><i class="ico-download"></i></button>
+                </div>
+                <div class="td name">
+                  <p class="text">네이버담당자</p>
+                  <p class="date">2021.05.24</p>
+                </div>
+                <div class="td btngroup">
+                  <!-- 
+                    [제안서상태값]
+                    1) 조정요청: 사용자(광고주/광고대행사)가 반려한 제안서
+                    2) 버튼-조정요청&승인: 사용자가 확인 후 제안서에 대한 판단여부 버튼
+                    3) 버튼-승인 > 아래 청약완료 노출
+                   -->
+                  <span>조정요청</span>
+                </div>
+              </div>
+              <!-- //.tr -->
+
+              <div class="tr">
+                <div class="td">
+                  <p class="text">제안서2</p>
+                </div>
+                <div class="td down">
+                  <p class="text">CJP_mediakit_2021_Fina.pdf</p>
+                  <button class="btn_white small"><span>다운로드</span><i class="ico-download"></i></button>
+                </div>
+                <div class="td name">
+                  <p class="text">네이버담당자</p>
+                  <p class="date">2021.05.24</p>
+                </div>
+                <div class="td btngroup">
+                  <!-- 
+                    [제안서상태값]
+                    1) 조정요청: 사용자(광고주/광고대행사)가 반려한 제안서
+                    2) 버튼-조정요청&승인: 사용자가 확인 후 제안서에 대한 판단여부 버튼
+                    3) 버튼-승인 > 아래 청약완료 노출
+                   -->
+                  <button class="btn_white small"><span>조정요청</span></button>
+                  <button class="btn_white small"><span>승인</span></button>
+                </div>
+              </div>
+              <!-- //.tr -->
+
+              <div class="tr">
+                <div class="td">
+                  <p class="text">제안서3</p>
+                </div>
+                <div class="td down">
+                  <p class="text">CJP_mediakit_2021_Fina.pdf</p>
+                  <button class="btn_white small"><span>다운로드</span><i class="ico-download"></i></button>
+                </div>
+                <div class="td name">
+                  <p class="text">네이버담당자</p>
+                  <p class="date">2021.05.24</p>
+                </div>
+                <div class="td btngroup">
+                  <!-- 
+                    [제안서상태값]
+                    1) 조정요청: 사용자(광고주/광고대행사)가 반려한 제안서
+                    2) 버튼-조정요청&승인: 사용자가 확인 후 제안서에 대한 판단여부 버튼
+                    3) 버튼-승인 > 아래 청약완료 노출
+                   -->
+                  <button class="btn_white small"><span>조정요청</span></button>
+                  <button class="btn_white small"><span>승인</span></button>
+                </div>
+              </div>
+              <!-- //.tr -->
+            </div>
+            <!-- //.tbody -->
+          </div>
+          <!-- //.uk_table -->
+        </div>
+        <!-- //.section -->
+
+        
+        
+        <div class="section" aria-label="계약내용">
+          <h2>계약내용</h2>
+          <div class="uk_table cell2">
+            <div class="tbody">
+              <div class="tr">
+                <strong class="th">
+                  계약번호
+                </strong>
+                <div class="td">
+                  123456676
+                </div>
+                <strong class="th">
+                  계약명
+                </strong>
+                <div class="td">
+                  스타필드 고양 미디어
+                </div>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <strong class="th">
+                  계약기간
+                </strong>
+                <div class="td">
+                  2021.06.01 ~ 2022.05.31
+                </div>
+                <strong class="th">
+                  계약금액
+                </strong>
+                <div class="td">
+                  1,500만원
+                </div>
+              </div>
+              <!-- //.tr -->
+            </div>
+            <!-- //.tbody -->
+          </div>
+          <!-- //.uk_table -->
+        </div>
+        <!-- //.section -->
+
+        <!-- 
+          [버튼-진행상태목록]
+          >청약진행상태목록 페이지 이동
+          [버튼-청약철회]
+          > 청약철회 > alert – 진행중인 청약을 철회하시겠습니까? (네)(아니요)
+          case1) 네 > alert – 청약이 철회되었습니다. (확인) > 마이페이지 이동
+          Case2) 아니요 > 현재페이지 유지
+         -->
+        <div class="btnarea between">
+          <button class="btn_gray small"><span>청약철회</span></button>
+          <a href="mypage.html" class="btn_white small"><span>진행상태 목록</span></a>
+        </div>
+        <!-- //.btnarea -->
+
+        <!-- 
+          [청약완료]
+          1) 광고주가 [승인]을 눌렀을 때 노출
+         -->
+        <!-- [문구 추가] 210622 ->실행된 후 취소 할 수 없습니다. -->
+        <p class="text_foot">계약 진행을 위해 아래 [청약완료]를 실행해 주세요.<br><span>실행된 후 취소 할 수 없습니다.</span></p>
+        <div class="btngroup">
+          <!-- <button class="btn_gray"><span>취소</span></button> -->
+          <button class="btn_default"><span>청약완료</span></button>
+        </div>
+        <!-- //.btngroup -->
+
+        <div class="accgp">
+          <div class="acc">
+            <p class="acc_tit"><i class="ico-exmark"></i><span class="sr-only">안내사항</span><strong>진행상태 안내</strong></p>
+            <div class="acc_cont">
+              <div class="step type1">
+                <ul class="steplist">
+                  <li>
+                    <div class="circle"><span>문의·접수</span></div>
+                    <p>광고주/대행사 상품에 <br />대해 문의접수</p>
+                  </li>
+                  <li>
+                    <div class="circle"><span>담당자확인</span></div>
+                    <p>담당 영업사원 배정 <br />및 정보기입</p>
+                  </li>
+                  <li>
+                    <div class="circle"><span>제 안</span></div>
+                    <p>담당자로부터 광고주/대행사에<br />유/무선으로 제안-광고주/<br />대행사로부터 제안조정요청</p>
+                  </li>
+                  <li>
+                    <div class="circle"><span>승인·완료</span></div>
+                    <p>집행 완료 및 개시</p>
+                  </li>
+                </ul>
+              </div>
+              <!-- //.step -->
+            </div>
+            <!-- //.acc_cont -->
+          </div>
+          <!-- //.acc -->
+        </div>
+        <!-- //.accgp -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

@@ -1,0 +1,59 @@
+{% set pageData = { pageDep1Name: '고객센터', pageName: '공지사항', pageDesc: '', pageActive: '1' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_cusnotice">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subcus.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+
+				<div class="uk_table viewtbl">
+					<p class="ntc_tit">홈페이지 오픈 테스트 중입니다.</p>
+					<div class="tbody">
+						<div class="tr">
+							<!-- <strong class="th">작성자</strong>
+							<div class="td">관리자</div> -->
+							<strong class="th">등록일</strong>
+							<div class="td">2021-06-22</div>
+							<strong class="th">조회수</strong>
+							<div class="td">12회</div>
+						</div>
+						<!-- //.tr -->
+						<div class="tr subject">
+							<div class="td">
+								<p>안녕하세요. CJ파워캐스트 PLANUS입니다.</p>
+								<p>지금은 홈페이지 오픈테스트중입니다. 상품은 추후 업데이트 예정입니다.지금은 홈페이지 오픈테스트중입니다.</p>
+                상품은 추후 업데이트 예정입니다.지금은 홈페이지 오픈테스트중입니다. 상품은 추후 업데이트 예정입니다.지금은 홈페이지 오픈테스트중입니다. 상품은 추후 업데이트 예정입니다.지금은 홈페이지 오픈테스트중입니다. 상품은 추후 업데이트 예정입니다.지금은 홈페이지 오픈테스트중입니다. 상품은 추후 업데이트 예정입니다. <br>
+								빨리 홈페이지 작업 오픈될수 있도록 최선을 다하겠습니다.<br>
+								감사합니다
+                <p><img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" alt=""></p>
+							</div>
+						</div>
+						<!-- //.tr -->
+					</div>
+					<!-- //.tbody -->
+				</div>
+				<!-- //.uk_table -->
+
+				<div class="btngroup tright">
+					<a href="notice.html" class="btn_gray"><span>목록</span></a>
+				</div>
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

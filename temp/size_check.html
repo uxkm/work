@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>이미지 넓이/높이 미리 읽기 (html5)</title>
+
+<script src="jquery-3.4.1.min.js"></script>
+
+
+
+</head>
+<body>
+
+<input type="file" id="file" />
+<br /><br />
+
+<input type="file" id="file2" /><button id="checkBtn">size check!</button>
+
+<script type="text/javascript">
+//<![CDATA[ 
+
+var _URL = window.URL || window.webkitURL;
+$("#file").change(function (e) {
+  var image, file;
+  if ((file = this.files[0])) {
+    image = new Image();
+    image.onload = function () {
+      alert("넓이: " + this.width + "px, 높이: " + this.height + 'px');
+    };
+    image.src = _URL.createObjectURL(file);
+  }
+});
+
+$("#checkBtn").on("click", function (e) {
+  var image, file;
+  if ((file = $("#file2")[0].files[0])) {
+    image = new Image();
+    image.onload = function () {
+      alert("넓이: " + this.width + "px, 높이: " + this.height + 'px');
+    };
+    image.src = _URL.createObjectURL(file);
+  } else {
+  	alert('먼저 파일을 선택하세요!');
+  }
+});
+
+//]]>  
+</script>
+
+</body>
+</html>

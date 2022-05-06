@@ -1,0 +1,251 @@
+{% set pageData = { pageDep1Name: '마이플래너스', pageName: '마이플래너스', pageDesc: '', pageActive: '1' } %} 
+{% extends "_layout/_baseLayout.html" %} 
+
+{% block jscnt %} 
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script><!-- UI/UX Style -->
+{% endblock %}
+
+{% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_my">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_submy.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        
+				<script>
+					$(function(){
+						$('.stepmenu').each(function(i, e){
+							var $menuBtn = $(e).find('.menuitem');
+							$menuBtn.on('click', function(){
+								var idx = $(this).index();
+								$menuBtn.eq(idx).addClass('active').siblings().removeClass('active');
+								$('.searchgp > .tcount > strong').text( $menuBtn.eq(idx).find('>span:first-child').text() );
+								$('.searchgp > .tcount > span > em').text( $menuBtn.eq(idx).find('>.tcount > em').text() );
+								return false;
+							})
+						})
+						$('.subongoing > .state > a').on('click', function(){
+							$('.searchgp > .tcount > strong').text( $(this).attr('title') );
+							$('.searchgp > .tcount > span > em').text( $(this).find('>.tcount > em').text() );
+							$('.stepmenu > .menuitem').removeClass('active');
+							return false;
+						})
+					})
+				</script>
+				<div class="myhead">
+					<nav class="mymenu">
+						<ul>
+							<li><a href="mypage.html"><span>진행중인 청약</span></a></li>
+							<li><a href="interest.html"><span>관심매체</span></a></li>
+						</ul>
+					</nav>
+					<div class="mystate">
+						<div class="statgp subongoing" aria-label="진행중인 청약">
+							<div class="state">
+								<a href="#" title="전체목록">
+                  <!-- [삭제] 210622 ->최근 한달이내 목록만 표시 삭제 -->
+									<!-- <p class="text">최근 한달이내 목록만 표시</p> -->
+									<h2>진행중인 청약</h2>
+									<div class="tcount"><em>22</em><span>건</span></div>
+								</a>
+							</div>
+							<nav class="stepmenu">
+								<a href="#" class="menuitem">
+									<span>문의·접수</span>
+									<span class="tcount"><em>0</em>건</span>
+								</a>
+								<a href="#" class="menuitem">
+									<span>담당자확인</span>
+									<span class="tcount"><em>999</em>건</span>
+								</a>
+								<a href="#" class="menuitem">
+									<span>제 안</span>
+									<span class="tcount"><em>0</em>건</span>
+								</a>
+								<a href="#" class="menuitem">
+									<span>승인·완료</span>
+									<span class="tcount"><em>0</em>건</span>
+								</a>
+							</nav>
+							<!-- //.stepmenu -->
+						</div>
+						<!-- //.statgp -->
+
+						<div class="statgp interest" aria-label="관심매체">
+							<div class="state">
+								<p class="text">내가 클릭한 <i class="ico-heart"></i></p>
+								<h2>관심매체</h2>
+								<div class="tcount"><em>03</em><span>건</span></div>
+								<a href="interest.html" class="btn_white mideum"><span>목록 바로가기</span></a>
+							</div>
+						</div>
+						<!-- //.statgp -->
+					</div>
+					<!-- //.mystate -->
+				</div>
+				<!-- //.myhead -->
+
+				<!-- cbody Contents -->
+				<div class="mycbody">
+	
+					<!-- 검색결과 또는 데이터가 있을 경우 -->
+					<div class="searchgp">
+						<div class="tcount">
+              <!-- [문구 추가] 210622 -->
+              <em>진행중인 청약</em>
+							<strong>전체목록</strong>
+							<span>총<em>22</em>건</span>
+						</div>
+            <!-- [추가] 210622 -->
+            <div class="uk_select trans arrow">
+              <label class="sr-only" for="stepChoice">내용선택</label>
+              <select id="stepChoice">
+                <option value="">한달 이내</option>
+                <option value="">3개월 이내</option>
+                <option value="">1년 이내</option>
+                <option value="">3년 이내</option>
+              </select>
+            </div>
+					</div>
+					<!-- //.searchgp -->
+
+					<div class="cardlist">
+
+						<article class="carditem">
+							<p class="itemtop">
+								<strong class="number">2021-04-01-C123456789</strong>
+								<!-- 
+									상태값]
+									1) 문의접수: 청약문의 페이지에서 문의접수를 한 상태, 담당자 확인 전
+									2) 담당자 확인: 담당자 배정이 되었을 때
+									3) 제안: 담당자(영업관리)가 제안서를 등록하였을 때
+									4) 승인/완료: 담당자(영업관리)가 등록한 제안서에 대해 사용자(광고주or광고대행사)가 승인 후, 청약완료를 했을 때
+									-->
+								<span class="flag_state">문의접수</span>
+							</p>
+
+							<a href="subongoingView.html">
+								<figure class="figure">
+									<div class="img">
+										<img src="/images/sample/img_sample1.png" width="199" height="137" alt="">
+									</div>
+									<figcaption class="caption">
+										<strong>상암 미디어시티역 북측 통행료 all</strong>
+										<p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+									</figcaption>
+								</figure>
+							</a>
+						</article>
+
+						<article class="carditem">
+							<p class="itemtop">
+								<strong class="number">2021-04-01-C123456789</strong>
+								<span class="flag_state">담당자 확인</span>
+							</p>
+
+							<a href="subongoingView.html">
+								<figure class="figure">
+									<div class="img">
+										<img src="/images/sample/img_sample1.png" width="199" height="137" alt="">
+									</div>
+									<figcaption class="caption">
+										<strong>상암 미디어시티역 북측 통행료</strong>
+										<p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+									</figcaption>
+								</figure>
+							</a>
+
+							<a href="subongoingView.html">
+								<figure class="figure">
+									<div class="img">
+										<img src="/images/sample/img_sample1.png" width="199" height="137" alt="">
+									</div>
+									<figcaption class="caption">
+										<strong>상암 미디어시티역 북측 통행료</strong>
+										<p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+									</figcaption>
+								</figure>
+							</a>
+						</article>
+
+						<article class="carditem">
+							<p class="itemtop">
+								<strong class="number">2021-04-01-C123456789</strong>
+								<span class="flag_state">제안</span>
+							</p>
+
+							<a href="subongoingView.html">
+								<figure class="figure">
+									<div class="img">
+										<img src="/images/sample/img_sample1.png" width="199" height="137" alt="">
+									</div>
+									<figcaption class="caption">
+										<strong>상암 미디어시티역 북측 통행료</strong>
+										<p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+									</figcaption>
+								</figure>
+							</a>
+						</article>
+
+						<article class="carditem">
+							<p class="itemtop">
+								<strong class="number">2021-04-01-C123456789</strong>
+								<span class="flag_state">승인/완료</span>
+							</p>
+
+							<a href="subongoingView.html">
+								<figure class="figure">
+									<div class="img">
+										<img src="/images/sample/img_sample1.png" width="199" height="137" alt="">
+									</div>
+									<figcaption class="caption">
+										<strong>상암 미디어시티역 북측 통행료</strong>
+										<p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+									</figcaption>
+								</figure>
+							</a>
+						</article>
+
+					</div>
+					<!-- //.cardlist -->
+
+					<!-- paging -->
+					<div class="paging">
+						<span class="number"><b class="current">1</b><i class="total">3</i></span>
+						<div class="btngroup">
+							<button class="ibtn_prev arrow"><i class="arrow-l"></i><span class="sr-only">이전 페이지</span></button>
+							<button class="ibtn_next arrow"><i class="arrow-r"></i><span class="sr-only">다음 페이지</span></button>
+						</div>
+					</div>
+
+					<!-- 검색결과 또는 데이터가 없을 경우 -->
+					<div class="nodata" style="display:none">
+						죄송합니다. 찾으시는 검색결과가 없습니다.
+						<!-- 데이터 정보가 없습니다. -->
+					</div>
+					<!-- //.nodata -->
+
+					
+					<!-- 페이지 로딩시 사용 class hide 추가시 숨김 -->
+					<div class="ploading hide"><span class="dot1"></span><span class="dot2"></span><span class="dot3"></span></div>
+	
+				</div>
+				<!-- //.mycbody -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

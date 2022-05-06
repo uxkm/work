@@ -1,0 +1,631 @@
+@charset "UTF-8";
+// url
+$baseUrl: "";
+$baseUrl_font: $baseUrl + "/fonts/";
+$baseUrl_img: $baseUrl + "/images/";
+$baseUrl_icon: $baseUrl_img + "icon/";
+$baseUrl_page: $baseUrl_img + "page/";
+
+$uk: "uk_";
+$icon: "ico-";
+$btn: "btn_";
+$ibtn: "ibtn_";
+$tbtn: "tbtn_";
+
+// color
+$base-color: #333;
+$color-f9: #f9f9f9;
+$color-f5: #f5f5f5;
+$color-6: #666;
+$color-40: #404040;
+$color-41: #414141;
+$color-4: #444;
+$color-a: #aaa;
+$color-tit: #262628;
+
+// color border
+$color-bdr: #e3e3e6;
+
+// footer color
+$color-fgnb: #444;
+$color-copy: #aaa;
+$color-tel: #586089;
+
+$blue: #0c35c3;
+$blue-hover: #0b31b2;
+$skyBlue: #379ad6;
+$darkBlue: #25277f;
+
+$red: #e31b23;
+$orange: #f8971d;
+$darkOrange: #dc8216;
+$green: #00986b;
+$navy: #081121;
+$white: #fff;
+$black: #000;
+$yellow: #fff000;
+$yellow2: #decd11;
+$purple: #b72df8;
+$link: fade(darken($blue, 30%), 75%);
+
+$dark-gray: rgba($black, 0.8);
+$gray: rgba($black, 0.6);
+$light-gray: rgba($black, 0.4);
+$lighter-gray: rgba($black, 0.2);
+$accent: #4285f4;
+$primary: #2f313a;
+$secondary: #f4b142;
+
+// Duration
+$duration: 0.5s;
+
+// Font Weights
+$thin: 100;
+$light: 300;
+$regular: 400;
+$semibold: 500;
+$bold: 700;
+$ultra: 800;
+
+// Settings
+$gutters: 24px;
+
+// Base Font
+$base-background: #d18b49;
+$base-font-weight: $regular;
+$base-line-height: 1.5;
+// font-family
+$font-set: Roboto, "Open Sans", "Noto Sans KR", sans-serif, -apple-system, "droid sans fallback", "Apple SD Gothic Neo", AppleGothic, "Malgun Gothic", Dotum, Tahoma, Verdana, Arial;
+$font-def: "Noto Sans KR", "Open Sans", sans-serif, -apple-system, "droid sans fallback", "Apple SD Gothic Neo", AppleGothic, "Malgun Gothic", Dotum, Tahoma, Verdana, Arial;
+$font-noto: "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", AppleGothic, Dotum, Arial, sans-serif;
+$font-mg: "Malgun Gothic", "Apple SD Gothic Neo", AppleGothic, Dotum, Arial, Verdana, sans-serif;
+$font-mont-mg: "Montserrat", "Malgun Gothic", "Apple SD Gothic Neo", AppleGothic, Dotum, Arial, Verdana, sans-serif;
+$font-mont-noto: "Montserrat", "Noto Sans KR", "Apple SD Gothic Neo", AppleGothic, Dotum, Arial, Verdana, sans-serif;
+$font-kr: "Noto Sans KR", Roboto, "Open Sans", sans-serif;
+$font-en: Roboto, "Open Sans", "Noto Sans KR", sans-serif;
+$cjonly: "CJONLYONENEWbodyLight", "돋움", Dotum, "굴림", Gulim, Tahoma, Verdana, "Apple SD Gothic Neo", AppleGothic, sans-serif;
+$cjonly-r: "CJONLYONENEWbodyRegular";
+$cjonly-tit-m: "CJONLYONENEWtitleMedium";
+$cjonly-tit-b: "CJONLYONENEWtitleBold";
+
+// media size
+$screen-xxxxs: 320px;
+$screen-xxxs: 340px;
+$screen-xxs: 360px;
+$screen-xs: 540px;
+$screen-sm: 620px;
+$screen-sm-min: 768px;
+$screen-sm-max: 767px;
+$screen-md-min: 992px;
+$screen-md-max: 993px;
+$screen-lg-min: 1200px;
+$screen-lg-max: 1201px;
+$screen-max-max: 1301px;
+$max-xx-size: 1500px;
+$max-size: 1219px;
+$mo-size: 1060px;
+$sm-size: 680px;
+$ss-size: 610px;
+
+// Margin Center
+@mixin marginAuto {
+  margin: 0 auto;
+}
+
+// fontsize
+@mixin fsize($sizeValue: 1.6) {
+  font-size: $sizeValue + rem;
+}
+
+// Trans Delay
+@mixin nth-trans-delay($delay_items: 7, $delay_time: 0.2s) {
+  @for $ti from 1 through $delay_items {
+    &:nth-child(#{$ti}) {
+      transition-delay: $delay_time * $ti;
+    }
+  }
+}
+
+// Elevation @include elevation(3);
+@mixin elevation($level) {
+  @if $level == 1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  } @else if $level == 2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  } @else if $level == 3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  } @else if $level == 4 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  } @else if $level == 5 {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    overflow: hidden;
+    display: block;
+    clear: both;
+    width: 0;
+    height: 0;
+  }
+}
+
+// None [고대비 모드가 비활성화 중일 때: Edge 브라우저에서 해당 속성이 제외되었습니다.]
+// Active [고대비 모드의 옵션과 관련 없이 고대비 모드가 활성화 중일 때]
+// white-on-black [고대비 모드가 검은 바탕 위 흰 글씨 옵션으로 활성화 중일 때]
+// black-on-white [고대비 모드에서 흰 바탕에 검은 글씨 옵션으로 활성화 중일 때]
+@mixin ie-only() {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+/* IE10+ */
+@mixin ie-gte10() {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+/* IE6,7,9,10 */
+@mixin ie-lte6-10() {
+  @media screen and (min-width: 640px), screen\9 {
+    @content;
+  }
+}
+
+/* IE6,7 */
+@mixin ie-lte6-7() {
+  @media screen\9 {
+    @content;
+  }
+}
+
+/* IE8 */
+@mixin ie-only8() {
+  @media \0screen {
+    @content;
+  }
+}
+
+/* IE6,7,8 */
+@mixin ie-lte7-8() {
+  @media screen\9 {
+    @content;
+  }
+}
+
+/* IE9,10 */
+@mixin ie-lte9-10() {
+  @media screen and (min-width: 0\0) {
+    @content;
+  }
+}
+
+// text ellipsis
+@mixin ellipsis($lineClamp: "", $lineH: "", $gap: "") {
+  @if $lineClamp != "" {
+    display: -webkit-box;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lineClamp;
+    max-height: (($lineClamp * $lineH) - $gap) + px;
+    line-height: ($lineH) + px;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      height: ($lineClamp * $lineH) + px;
+      margin-right: -1px;
+      padding-right: 5px;
+      /* &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -($gap) + px;
+        right: 0;
+        width: 20px;
+        height: ($lineH) + px;
+        background-color: #f9f9f9;
+      }
+      &:after {
+        content: "...";
+        position: absolute;
+        right: 0;
+        bottom: -4px;
+      } */
+    }
+  } @else {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@mixin respondTo($media) {
+  @if $media == mobile {
+    @media (max-width: $breakpoints-mobile+"px") {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media (max-width: $breakpoints-tablet+"px") {
+      @content;
+    }
+  } @else {
+    @media (max-width: $media+"px") {
+      @content;
+    }
+  }
+}
+@mixin respondToMinMax($minSize, $maxSize) {
+  @media (min-width: $minSize+"px") and (max-width: $maxSize +"px") {
+    @content;
+  }
+}
+
+@mixin cssIcon($icon, $txt_position: "none", $direction: "up", $padding: 0, $width: 0, $height: 0) {
+  @if $icon == delete {
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      @content;
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    @if ($txt_position == "left" or $txt_position == "right") {
+      &:before {
+        width: $width;
+        transform: translate(0, -50%) rotate(-45deg);
+      }
+      &:after {
+        width: $width;
+        transform: translate(0, -50%) rotate(45deg);
+      }
+    }
+  } @else if $icon == plus {
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      @content;
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+    @if ($txt_position == "left" or $txt_position == "right") {
+      &:before {
+        width: $width;
+        transform: translate(0, -50%);
+      }
+      &:after {
+        width: $width;
+        transform: translate(0, -50%) rotate(90deg);
+      }
+    }
+  } @else if $icon == minus {
+    &:before {
+      content: "";
+      display: block;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      @content;
+    }
+  } @else if $icon == linearrow {
+    //$size:floor($width/$sqrt_2 - 2*$hegith);
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      transition: all 0.2s ease;
+      width: round($width/1.41421356237 - 2 * $height);
+      height: $height;
+      @content;
+    }
+    @if $direction == "up" {
+      &:before {
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%) rotate(45deg);
+      }
+      &:after {
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%) rotate(-45deg);
+      }
+    } @else if $direction == "down" {
+      &:before {
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%) rotate(-45deg);
+      }
+      &:after {
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%) rotate(45deg);
+      }
+    } @else if $direction == "left" {
+      &:before {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, round(($width/1.41421356237 - 2 * $height)/2)) rotate(-45deg);
+      }
+      &:after {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -round(($width/1.41421356237 - 2 * $height)/2)) rotate(45deg);
+      }
+    } @else if $direction == "right" {
+      &:before {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, round(($width/1.41421356237 - 2 * $height)/2)) rotate(45deg);
+      }
+      &:after {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -round(($width/1.41421356237 - 2 * $height)/2)) rotate(-45deg);
+      }
+    }
+  } @else {
+    @media (max-width: $icon+"px") {
+      @content;
+    }
+  }
+
+  @if $txt_position == "left" {
+    width: auto;
+    padding-left: round($padding + $width);
+    &:before,
+    &:after {
+      left: 0;
+    }
+  } @else if $txt_position == "right" {
+    width: auto;
+    padding-right: round($padding + $width);
+    &:before,
+    &:after {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+$sqrt_2: 1.41421356237;
+@mixin cssIcon2($icon, $size: 20px, $thick: 2px, $color: $text_color01, $icosize: 100%, $display: inline-block, $position: relative, $direction: "up", $interval: 8px, $align: middle, $width: auto, $height: auto) {
+  @if $icon == plus {
+    position: $position;
+    display: $display;
+    vertical-align: $align;
+    width: $size;
+    height: $size;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: $icosize;
+      height: $thick;
+      background-color: $color;
+    }
+    &:before {
+      transform: translate(-50%, -50%);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  } @else if $icon == close {
+    position: $position;
+    display: $display;
+    vertical-align: $align;
+    width: $size;
+    height: $size;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: $icosize;
+      height: $thick;
+      background-color: $color;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  } @else if $icon == arrow {
+    display: $display;
+    vertical-align: $align;
+    width: $size;
+    height: $size;
+    &:before {
+      content: "";
+      display: block;
+      @if ($direction == "up") {
+        border-bottom: $size solid $color;
+        border-left: round($size/2) solid transparent;
+        border-right: round($size/2) solid transparent;
+      } @else if ($direction == "down") {
+        border-top: $size solid $color;
+        border-left: round($size/2) solid transparent;
+        border-right: round($size/2) solid transparent;
+      } @else if ($direction == "left") {
+        border-top: round($size/2) solid transparent;
+        border-bottom: round($size/2) solid transparent;
+        border-right: $size solid $color;
+      } @else if ($direction == "right") {
+        border-top: round($size/2) solid transparent;
+        border-bottom: round($size/2) solid transparent;
+        border-left: $size solid $color;
+      }
+    }
+  } @else if $icon == linearrow {
+    position: $position;
+    display: $display;
+    vertical-align: $align;
+    width: $width;
+    height: $height;
+    $size: floor($width/$sqrt_2 - 2 * $thick);
+    $rate: 2 * $height/$width;
+    $margin-top: round($rate * $size/(2 * $sqrt_2));
+    @if ($direction == "up" or $direction == "down") {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $size;
+        height: $size;
+        @if ($rate == 1) {
+          transform: translate(-50%, -50%) rotate(45deg);
+        } @else {
+          transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+        }
+        @if ($direction == "up") {
+          margin-top: $margin-top;
+          border-top: $thick solid $color;
+          border-left: $thick solid $color;
+        } @else if ($direction == "down") {
+          margin-top: -$margin-top;
+          border-right: $thick solid $color;
+          border-bottom: $thick solid $color;
+        }
+      }
+    } @else if ($direction == "left" or $direction == "right") {
+      $size: floor($height/$sqrt_2 - 2 * $thick);
+      $rate: 2 * $width/$height;
+      $margin-left: round($rate * $size/(2 * $sqrt_2));
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $size;
+        height: $size;
+        @if ($rate == 1) {
+          transform: translate(-50%, -50%) rotate(45deg);
+        } @else {
+          transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+        }
+        @if ($direction == "left") {
+          margin-left: $margin-left;
+          border-left: $thick solid $color;
+          border-bottom: $thick solid $color;
+        } @else if ($direction == "right") {
+          margin-left: -$margin-left;
+          border-top: $thick solid $color;
+          border-right: $thick solid $color;
+        }
+      }
+    }
+  } @else if $icon == longarrow {
+    position: $position;
+    display: $display;
+    vertical-align: $align;
+    width: $width;
+    height: $height;
+    &:before {
+      content: "";
+      position: absolute;
+      border-top: $thick solid $color;
+      border-left: $thick solid $color;
+      @if ($direction == "up" or $direction == "down") {
+        $size: round($width/$sqrt_2 - $thick);
+        left: 50%;
+        width: $size;
+        height: $size;
+        @if ($direction == "up") {
+          top: round($width/2);
+          transform: translate(-50%, -50%) rotate(45deg);
+        } @else if ($direction == "down") {
+          bottom: round($width/2);
+          transform: translate(-50%, 50%) rotate(-135deg);
+        }
+      } @else if ($direction == "left" or $direction == "right") {
+        $size: round($height/$sqrt_2 - $thick);
+        top: 50%;
+        width: $size;
+        height: $size;
+        @if ($direction == "left") {
+          left: round($height/2);
+          transform: translate(-50%, -50%) rotate(-45deg);
+        } @else if ($direction == "right") {
+          right: round($height/2);
+          transform: translate(50%, -50%) rotate(135deg);
+        }
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      background-color: $color;
+      @if ($direction == "up" or $direction == "down") {
+        @if ($direction == "up") {
+          top: round($thick/$sqrt_2);
+        } @else if ($direction == "down") {
+          bottom: round($thick/$sqrt_2);
+        }
+        left: 50%;
+        width: $thick;
+        height: $height - round($thick/$sqrt_2);
+        transform: translate(-50%, 0);
+      } @else if ($direction == "left" or $direction == "right") {
+        top: 50%;
+        @if ($direction == "left") {
+          left: round($thick/$sqrt_2);
+        } @else if ($direction == "right") {
+          right: round($thick/$sqrt_2);
+        }
+        width: $width - round($thick/$sqrt_2);
+        height: $thick;
+        transform: translate(0, -50%);
+      }
+    }
+  } @else {
+  }
+}
+
+$devices: (
+  mobile: 320px,
+  tablet: 768px,
+  desktop: 1280px,
+);
+
+@mixin background($url, $x, $y, $width, $height) {
+  background-image: url($url);
+  background-position: ($x) ($y);
+  background-size: $width $height;
+}
+
+@mixin mq($device) {
+  @if map-has-key($devices, $device) {
+    $device-width: map-get($devices, $device);
+    @media screen and (min-width: #{$device-width}) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$device}.';
+  }
+}
+
+@mixin inline-block-box($vertical-align: top) {
+  display: inline-block;
+  vertical-align: $vertical-align;
+}

@@ -1,0 +1,104 @@
+{% set pageData = { pageDep1Name: '상품안내', pageName: '상품상세', pageDesc: '', pageActive: '0' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pdview">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subproduct.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1 sr-only" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="pdview_mediahead">
+          <p class="pdview_title"><strong>노스 와이드 스크린</strong></p>
+        </div>
+        <!-- pdview_mediahead -->
+
+        <div class="pdview_mediabody">
+          <div class="view_top">
+            <p class="view_subcaption">
+              <span>엔터테인먼트</span>
+              <strong><em>Starfield</em> <b>삼성동 코엑스몰삼성동</b></strong>
+            </p>
+            
+            <script>
+              $(function(){
+                $('.pdview_mediabody, .pdview_packgehead').find('.linkgroup .btn_white').on('click', function(){
+                  $(this).toggleClass('checked');
+                  return false;
+                })
+              })
+            </script>
+            <div class="linkgroup">
+              <a href="#" class="btn_white medium"><i class="ico-heart"></i><span>관심상품</span></a>
+              <a href="#" class="btn_default medium"><i class="ico-pen"></i><span>청약문의</span></a>
+            </div>
+          </div>
+          <p class="view_description"><span>주차장에서 B1로 올라가기 위한 E/C 탑승 동선 상에 위치해 자가차량 이용 고객에게 노출되는 조명 미디어</span></p>
+          <div class="view_imgwrap">
+            <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+          </div>
+          <div class="section pdinfo">
+            <h2>상품정보</h2>
+            <div class="pd_textgroup">
+              <!-- 노출 개수 최대 6 -->
+              <ul class="ul_txtlist">
+                <li>
+                  <strong>위치</strong>
+                  <p><span>자기부상열차-플라자 연결통로 벽면</span></p>
+                </li>
+                <li>
+                  <strong>사이즈(M)</strong>
+                  <p><span>5.3 X 2.6</span></p>
+                </li>
+                <li>
+                  <strong>광고비용</strong>
+                  <p><span>300만원/월</span></p>
+                </li>
+                <li>
+                  <strong>운영시간</strong>
+                  <p><span>상시운영</span></p>
+                </li>
+                <li>
+                  <strong>기기수(면수)</strong>
+                  <p><span>1기(1면/기)</span></p>
+                </li>
+                <li>
+                  <strong>일 노출횟수</strong>
+                  <p><span>100회 20초 소재기준</span></p>
+                </li>
+              </ul>
+              <p class="etcmark">* 추후 상품을 변동될 수 있습니다</p>
+            </div>
+          </div>
+          <!-- //.pdinfo -->
+
+          <div class="section mapinfo">
+            <h2>위치정보</h2>
+            <div class="maparea">
+              <!-- 지도 api 영역 -->
+            </div>
+            <!-- //.maparea -->
+          </div>
+          <!-- //.mapinfo -->
+          <div class="btngroup tright">
+            <a href="productView.html" class="btn_white medium"><span>목록</span></a>
+          </div>
+          <!-- //.btngroup -->
+        </div>
+        <!-- pdview_mediabody -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

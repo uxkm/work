@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	button {
+		overflow: visible;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		border:1px solid #000;
+	}
+	.mobile-menu {
+		/* position: absolute;
+		top: 20px;
+		left: 33px; */
+		position:relative;
+		z-index: 500;
+		width: 40px;
+		height: 40px;
+		outline: none;
+	}
+	.mobile-menu span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 26px;
+		height: 2px;
+		margin: -2px 0 0 -13px;
+		background-color: #000;
+		text-indent: -999em;
+	}
+	.mobile-menu:before, 
+	.mobile-menu:after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 26px;
+		height: 2px;
+		margin-left: -13px;
+		background-color: #000;
+	}
+	.mobile-menu:before {
+		margin-top: -9px;
+	}
+	.mobile-menu:after {
+		margin-top: 5px;
+	}
+	.mobile-menu.on span {
+		display: none;
+	}
+	.mobile-menu.on:before {
+		transform: rotate(-45deg);
+	}
+	.mobile-menu.on:before, 
+	.mobile-menu.on:after {
+		margin-top: -2px;
+	}
+	.mobile-menu.on:after {
+		transform: rotate(45deg);
+	}
+	</style>
+</head>
+<body>
+	<button type="button" class="mobile-menu"><span>메뉴</span></button>
+	<button type="button" class="mobile-menu on"><span>메뉴</span></button>
+</body>
+</html>

@@ -1,0 +1,242 @@
+{% set pageData = { pageDep1Name: '마이플래너스', pageName: '진행중인 청약', pageDesc: '', pageActive: '2' } %} 
+{% extends "_layout/_baseLayout.html" %} 
+
+{% block jscnt %} 
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script><!-- UI/UX Style -->
+{% endblock %}
+
+{% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_mygoing">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_submy.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        
+        <div class="chead" data-chead="bbstop">
+          <div class="field" data-large>
+            <div class="uk_select round" data-rsize>
+              <label class="sr-only">내용선택</label>
+              <select id="yearSel">
+                <option value="">최근6개월</option>
+                <option value="">2020년</option>
+                <option value="">2021년</option>
+                <option value="">2019년</option>
+              </select>
+            </div>
+            <div class="group">
+              <label class="uk_label">
+                <input type="text" name="" placeholder="검색어를 입력해주세요" class="inp" />
+              </label>
+              <button class="ibtn_find"><i class="ico-find"></i><span class="sr-only">검색</span></button>
+            </div>
+          </div>
+
+          <div class="uk_tabnav">
+            <div class="tabnav touchflow-x">
+							<ul class="tablist">
+								<li class="item active" data-tab="subongoingDataList1"><a href="#"><span>전체목록<em>10</em></span></a></li>
+								<li class="item" data-tab="subongoingDataList2"><a href="#"><span>01. 문의접수<em>2</em></span></a></li>
+								<li class="item" data-tab="subongoingDataList3"><a href="#"><span>02. 담당자확인<em>5</em></span></a></li>
+								<li class="item" data-tab="subongoingDataList4"><a href="#"><span>03. 제안<em>1</em></span></a></li>
+								<li class="item" data-tab="subongoingDataList5"><a href="#"><span>04. 승인완료<em>2</em></span></a></li>
+							</ul>
+						</div>
+						<!-- //.tabnav -->
+          </div>
+          <!-- //.uk_tabnav -->
+					
+					<script>
+						$(function(){
+							tabNavSet();
+							$('.tablist').each(function(i, e){
+								var $liBtn = $(e).find('li');
+								$liBtn.on('click', function(){
+									var idx = $(this).index();
+									var ipos = $(this).prev().width();
+									$liBtn.eq(idx).addClass('active').siblings().removeClass('active');
+									$(".touchflow-x").data("touchFlow").posX(-ipos);
+                  // 탭 클릭시 상단으로 이동하려면 추가
+									$('html, body').animate({scrollTop:250}, '300');
+
+									var activeTab = $(this).attr('data-tab');
+									$.ajax({
+										type : 'GET',
+										url : activeTab + ".html",
+										dataType : "html",
+										success : function(data) {
+											$('.cardlist').html(data);
+										},
+										beforeSend : function(){
+											$('.ploading').removeClass('hide');
+										},
+										complete : function(){
+											$('.ploading').addClass('hide');
+										},
+										error : function() { 
+											alert('데이터를 불러오지 못했습니다.');
+										}
+									});
+
+									return false;
+								})
+								$liBtn.eq(1).on('click', function(){
+									$(".touchflow-x").data("touchFlow").posX("first");
+								})
+								$liBtn.eq(3).on('click', function(){
+									$(".touchflow-x").data("touchFlow").posX("last");
+								})
+								$liBtn.eq(4).on('click', function(){
+									$(".touchflow-x").data("touchFlow").posX("last");
+								})
+							})
+
+						})
+					</script>
+        </div>
+        <!-- chead -->
+        <div class="cbody">
+					<!-- 페이지 로딩 -->
+					<div class="ploading hide"><span class="dot1"></span><span class="dot2"></span><span class="dot3"></span></div>
+
+          <!-- 검색결과 또는 데이터가 없을 경우 -->
+          <div class="nodata">
+            죄송합니다. 찾으시는 검색결과가 없습니다.
+            <!-- 데이터 정보가 없습니다. -->
+          </div>
+          <!-- //.nodata -->
+
+          <!-- 검색결과 또는 데이터가 있을 경우 -->
+          <!-- tabnav Contents -->
+          <div class="tabnav_cont">
+            <div class="cardlist">
+							<!-- 탭 버튼 클릭시 데이터 호출 -->
+
+							<article class="carditem">
+								<p class="itemtop">
+									<strong class="number">2021-04-01-C123456789</strong>
+									<!-- 
+										상태값]
+										1) 문의접수: 청약문의 페이지에서 문의접수를 한 상태, 담당자 확인 전
+										2) 담당자 확인: 담당자 배정이 되었을 때
+										3) 제안: 담당자(영업관리)가 제안서를 등록하였을 때
+										4) 승인/완료: 담당자(영업관리)가 등록한 제안서에 대해 사용자(광고주or광고대행사)가 승인 후, 청약완료를 했을 때
+										-->
+									<span class="flag_state">문의접수</span>
+								</p>
+
+								<a href="subongoingView.html">
+									<figure class="figure">
+										<div class="img">
+											<img src="/images/sample/img_sample1.png" width="199" height="137" alt="">
+										</div>
+										<figcaption class="caption">
+											<strong>상암 미디어시티역 북측 통행료 all</strong>
+											<p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+										</figcaption>
+									</figure>
+								</a>
+							</article>
+
+							<article class="carditem">
+								<p class="itemtop">
+									<strong class="number">2021-04-01-C123456789</strong>
+									<span class="flag_state">담당자 확인</span>
+								</p>
+
+								<a href="subongoingView.html">
+									<figure class="figure">
+										<div class="img">
+											<img src="/images/sample/img_sample1.png" width="199" height="137" alt="">
+										</div>
+										<figcaption class="caption">
+											<strong>상암 미디어시티역 북측 통행료</strong>
+                      <p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+										</figcaption>
+									</figure>
+								</a>
+
+								<a href="subongoingView.html">
+									<figure class="figure">
+										<div class="img">
+											<img src="/images/sample/img_sample1.png" width="199" height="137" alt="">
+										</div>
+										<figcaption class="caption">
+											<strong>상암 미디어시티역 북측 통행료</strong>
+                      <p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+										</figcaption>
+									</figure>
+								</a>
+							</article>
+
+							<article class="carditem">
+								<p class="itemtop">
+									<strong class="number">2021-04-01-C123456789</strong>
+									<span class="flag_state">제안</span>
+								</p>
+
+								<a href="subongoingView.html">
+									<figure class="figure">
+										<div class="img">
+											<img src="/images/sample/img_sample1.png" width="199" height="137" alt="">
+										</div>
+										<figcaption class="caption">
+											<strong>상암 미디어시티역 북측 통행료</strong>
+                      <p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+										</figcaption>
+									</figure>
+								</a>
+							</article>
+
+							<article class="carditem">
+								<p class="itemtop">
+									<strong class="number">2021-04-01-C123456789</strong>
+									<span class="flag_state">승인/완료</span>
+								</p>
+
+								<a href="subongoingView.html">
+									<figure class="figure">
+										<div class="img">
+											<img src="/images/sample/img_sample1.png" width="199" height="137" alt="">
+										</div>
+										<figcaption class="caption">
+											<strong>상암 미디어시티역 북측 통행료</strong>
+                      <p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+										</figcaption>
+									</figure>
+								</a>
+							</article>
+
+            </div>
+            <!-- //.cardlist -->
+
+            <!-- paging -->
+            <div class="paging">
+              <span class="number"><b class="current">1</b><i class="total">3</i></span>
+              <div class="btngroup">
+                <button class="ibtn_prev arrow"><i class="arrow-l"></i><span class="sr-only">이전 페이지</span></button>
+                <button class="ibtn_next arrow"><i class="arrow-r"></i><span class="sr-only">다음 페이지</span></button>
+              </div>
+            </div>
+          </div>
+          <!-- //tabnav Contents -->
+
+        </div>
+        <!-- //.cbody -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

@@ -1,0 +1,331 @@
+{% set pageData = { pageDep1Name: '마이플래너스', pageName: '청약고객상세', pageDesc: '', pageActive: '1' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_cusmngview">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subcusmng.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="cardlist" data-cardview>
+          <article class="carditem">
+            <p class="itemtop">
+              <strong class="number">2021-04-01-C123456789</strong>
+              <span class="flag_state">제안</span>
+            </p>
+
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample1.png" width="149" height="86" alt="" />
+              </div>
+              <figcaption class="caption">
+                <strong>상암 미디어시티역 북측 통행료</strong>
+                <p><span>센트럴아트리움1F</span><span>2,000만원/구좌</span><span>W8.0×H16.0(m)</span><span>패키지(파노라마스크린&미디워타워)</span></p>
+              </figcaption>
+            </figure>
+            <figure class="figure">
+              <div class="img">
+                <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample1.png" width="149" height="86" alt="" />
+              </div>
+              <figcaption class="caption">
+                <strong>상암 미디어시티역 북측 통행료</strong>
+                <p>
+                  센트럴아트리움1F│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워) 센트럴아트리움1F│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)센트럴아트리움1F│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워) 센트럴아트리움1F│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)│2,000만원/구좌│W8.0×H16.0(m)│패키지(파노라마스크린&미디워타워)
+                </p>
+              </figcaption>
+            </figure>
+          </article>
+        </div>
+        <!-- //.cardlist -->
+
+        <div class="section" aria-label="접수내용">
+          <h2>접수내용</h2>
+          <div class="uk_table">
+            <div class="tbody">
+              <div class="tr">
+                <strong class="th">
+                  예상집행 기간
+                </strong>
+                <div class="td">
+                  2021-05-01 ~ 2021-07-31
+                </div>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <strong class="th">
+                  문의내용
+                </strong>
+                <div class="td">
+                  파노라마 스크린 견적을 자세히 받고 싶은 ~ 문의 남깁니다. 파노라마 스크린 견적을 자세히 받고 싶은 ~ 문의 남깁니다.
+                </div>
+              </div>
+              <!-- //.tr -->
+            </div>
+            <!-- //.tbody -->
+          </div>
+          <!-- //.uk_table -->
+        </div>
+        <!-- //.section -->
+
+        <!-- [문구수정] 210622 접수내용 -> 거래처정보 -->
+        <div class="section" aria-label="거래처 정보">
+          <h2>거래처 정보</h2>
+          <div class="uk_table">
+            <div class="tbody">
+              <div class="tr">
+                <strong class="th">
+                  거래처 구분
+                </strong>
+                <div class="td">
+                  광고주
+                </div>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <strong class="th">
+                  거래처명
+                </strong>
+                <div class="td">
+                  삼성전자
+                </div>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <strong class="th">
+                  담당자
+                </strong>
+                <div class="td">
+                  홍길동
+                </div>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <strong class="th">
+                  연락처
+                </strong>
+                <div class="td">
+                  010-1234-5678
+                </div>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <strong class="th">
+                  이메일
+                </strong>
+                <div class="td">
+                  qwer1234@asdf.com
+                </div>
+              </div>
+              <!-- //.tr -->
+            </div>
+            <!-- //.tbody -->
+          </div>
+          <!-- //.uk_table -->
+        </div>
+        <!-- //.section -->
+
+        <div class="section" aria-label="제안서 등록">
+          <h2>제안서 등록</h2>
+          <div class="uk_table type3">
+            <!-- [버튼추가] 210622 -> 버튼추가로 인한 ui 수정 -->
+            <div class="btngroup abs">
+              <button class="btn_gray small"><span>추가등록+</span></button>
+              <button class="btn_gray small"><span>삭제-</span></button>
+            </div>
+
+            <!-- 제안서가 없을 경우 -->
+            <div class="nodata" style="display:none;">
+              등록된 제안서가 없습니다.
+            </div>
+            <!-- //.nodata -->
+
+            <!-- 제안서가 있을 경우 -->
+            <div class="tbody">
+              <div class="tr">
+                <div class="td">
+                  <p class="text">제안서1 <span>2021.04.05</span></p>
+                </div>
+                <div class="td down">
+                  <p class="text">CJP_mediakit_2021_Fina.pdf</p>
+                  <button class="btn_white small"><span>다운로드</span><i class="ico-download"></i></button>
+                </div>
+                <div class="td btngroup">
+                  <!-- <button class="btn_white small"><span>조정요청</span></button> -->
+                </div>
+                <div class="td stategroup">
+                  <span>조정요청</span>
+                </div>
+              </div>
+              <!-- //.tr -->
+
+              <div class="tr">
+                <div class="td">
+                  <p class="text">제안서2 <span>2021.04.05</span></p>
+                </div>
+                <div class="td down">
+                  <script>
+                    // 파일첨부
+                    $(function(){
+                      $('.filewrap').each(function(i, e){
+                        $(e).find('.inp_file').change(function(){
+                          var idx = $(this).val();
+                          $(e).find('.upload_text').text(idx);
+                        });
+                      });
+                    })
+                  </script>
+                  <div class="filewrap">
+                    <span class="upload_text"></span>
+                    <label class="uk_file">
+                      <input type="file" class="inp_file" title="파일찾기">
+                      <span class="btn_gray small fileup">파일첨부</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="td btngroup">
+                  <!-- <button class="btn_white small"><span>조정요청</span></button> -->
+                </div>
+                <div class="td stategroup">
+                  <span>-</span>
+                </div>
+              </div>
+              <!-- //.tr -->
+
+              <div class="tr">
+                <div class="td">
+                  <p class="text">제안서2 <span>2021.04.05</span></p>
+                </div>
+                <div class="td down">
+                  <p class="text">CJP_mediakit_2021_FinaCJP_mediakit_2021_FinaCJP_mediakit_2021_FinaCJP_mediakit_2021_Fina.pdf</p>
+                  <button class="ibtn_close"><span class="sr-only">삭제</span></button>
+                </div>
+                <div class="td btngroup">
+                  <!-- <button class="btn_white small"><span>승인요청</span></button> -->
+                </div>
+                <div class="td stategroup">
+                  <span>-</span>
+                </div>
+              </div>
+              <!-- //.tr -->
+
+              <div class="tr">
+                <div class="td">
+                  <p class="text">제안서2 <span>2021.04.05</span></p>
+                </div>
+                <div class="td down">
+                  <p class="text">CJP_mediakit_2021_Fina.pdf</p>
+                  <button class="btn_white small"><span>다운로드</span><i class="ico-download"></i></button>
+                </div>
+                <div class="td btngroup">
+                  <button class="btn_white small"><span>승인요청</span></button>
+                </div>
+                <div class="td stategroup">
+                  <span>-</span>
+                </div>
+              </div>
+              <!-- //.tr -->
+
+              <div class="tr">
+                <div class="td">
+                  <p class="text">제안서2 <span>2021.04.05</span></p>
+                </div>
+                <div class="td down">
+                  <p class="text">CJP_mediakit_2021_Fina.pdf</p>
+                  <button class="btn_white small"><span>다운로드</span><i class="ico-download"></i></button>
+                </div>
+                <div class="td btngroup">
+                  <button class="btn_white small"><span>승인요청취소</span></button>
+                </div>
+                <div class="td stategroup">
+                  <span>승인대기</span>
+                </div>
+              </div>
+              <!-- //.tr -->
+
+              <div class="tr">
+                <div class="td">
+                  <p class="text">제안서2 <span>2021.04.05</span></p>
+                </div>
+                <div class="td down">
+                  <p class="text">CJP_mediakit_2021_Fina.pdf</p>
+                  <button class="btn_white small"><span>다운로드</span><i class="ico-download"></i></button>
+                </div>
+                <div class="td btngroup">
+                  <!-- <button class="btn_white small"><span>승인취소</span></button> -->
+                </div>
+                <div class="td stategroup">
+                  <span>승인/쳥약완료</span>
+                </div>
+              </div>
+              <!-- //.tr -->
+            </div>
+            <!-- //.tbody -->
+          </div>
+          <!-- //.uk_table -->
+        </div>
+        <!-- //.section -->
+
+        
+        <div class="section" aria-label="계약내용">
+          <h2>계약내용</h2>
+          <div class="uk_table cell2">
+            <div class="tbody">
+              <div class="tr">
+                <strong class="th">
+                  계약번호
+                </strong>
+                <div class="td">
+                  123456676
+                </div>
+                <strong class="th">
+                  계약명
+                </strong>
+                <div class="td">
+                  스타필드 고양 미디어
+                </div>
+              </div>
+              <!-- //.tr -->
+              <div class="tr">
+                <strong class="th">
+                  계약기간
+                </strong>
+                <div class="td">
+                  2021.06.01 ~ 2022.05.31
+                </div>
+                <strong class="th">
+                  계약금액
+                </strong>
+                <div class="td">
+                  1,500만원
+                </div>
+              </div>
+              <!-- //.tr -->
+            </div>
+            <!-- //.tbody -->
+          </div>
+          <!-- //.uk_table -->
+        </div>
+        <!-- //.section -->
+
+        <div class="btnarea tright">
+          <a href="cusmng.html".html" class="btn_white small"><span>진행상태 목록</span></a>
+        </div>
+        <!-- //.btnarea -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

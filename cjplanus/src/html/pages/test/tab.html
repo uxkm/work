@@ -1,0 +1,258 @@
+{% set pageData = { pageName: 'Test Page' } %}
+{% extends "_layout/_baseLayout.html" %}
+
+{% block css -%}
+{{ super() }}
+<link rel="stylesheet" href="{{ set.baseurl }}{{ set.cssurl }}/page.min.css">
+<link rel="stylesheet" href="{{set.baseurl}}{{set.cssurl}}/gd.min.css" />
+{%- endblock %}
+
+{% block js -%}
+{{ super() }}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ui.utility.js"></script>
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ui.common.js"></script>
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ui.pub.js"></script>
+{%- endblock %}
+
+{% block content %}
+<!-- 
+	https://yubylab.tistory.com/entry/jQuery-jQuery-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94
+	https://www.sema.or.kr/front/main/main.do#secondPage
+	<script>
+		$(document).ready(function(e) {
+			/* a요소를 클릭 했을 시 */
+			$('a').click(function(){
+				/* iframe 요소의 src 속성값을 a 요소의 data-url 속성값으로 변경 */ 
+				$('#iframe').attr('src',$(this).attr('data-url'));
+			})
+		});
+	</script>
+
+	<a  data-url="https://css-tricks.com/sticky-smooth-active-nav/">네이버</a>
+	<a data-url="https://kimyang-sun.tistory.com/89">다음</a>
+	<a  data-url="https://webclub.tistory.com/304">네이트</a>
+	<iframe id="iframe" width="1024" height="500" src="https://uxkm.github.io"></iframe>
+
+
+
+
+
+
+ -->
+
+
+ <!-- <script>
+$(function(){
+	$.datepicker.setDefaults({
+		closeText:'닫기',
+		prevText:'이전달',
+		nextText:'다음달',
+		currentText:'오늘',
+		monthNames:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		monthNamesShort:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		dayNames:['일','월','화','수','목','금','토'],
+		dayNamesShort:['일','월','화','수','목','금','토'],
+		dayNamesMin:['일','월','화','수','목','금','토'],
+		weekHeader:'Wk',
+		dateFormat:'yy-mm-dd',
+		showMonthAfterYear:true,
+		showButtonPanel:true,
+		changeMonth : true,
+		changeYear : true,
+		labelYear:'년도 선택',
+		labelMonth:'월 선택',
+		tableSummary:'월화수목금토일 순으로 나타내며 일자별 날짜를 선택합니다.',
+		tableCaption:'달력',
+		firstDay:0,
+		isRTL:false,
+		showMonthAfterYear:true,
+		changeMonth : true,
+		changeYear : true,
+		yearSuffix:'',
+		goToCurrent:true
+	});
+	//오늘 선택 커스텀
+	$.datepicker._gotoToday = function(id){
+		$('.ui-datepicker-current-day').click();
+		$(id).datepicker().datepicker("setDate", new Date()).datepicker();
+		$('[data-handler="hide"]').click();
+		
+		var inst = this._getInst($(id)[0]);
+		var date = new Date();
+		this._selectDay(id, date.getMonth(), date.getFullYear(), inst.dpDiv.find('td.ui-datepicker-today'));
+	};
+	$.fn.callDatePicker = function(opts){
+		return this.each(function(i){
+			var $el = $(this), prev_sel = '';
+			$el.datepicker({
+			}).on('change', function(){
+				if(!checkDate($(this).val())){
+					showMsg('날짜 입력이 잘못 되었습니다.');
+					$(this).val(prev_sel);
+					return false;
+				}
+				var $from_date = $('#from_date')
+				, $to_date = $('#to_date')
+				, this_id = $(this).prop('id');
+				
+				if(this_id == 'to_date'){
+					if($from_date.length > 0 && !isEmpty($from_date.val())){
+						if($from_date.val().replace(/-/gi,'') > $(this).val().replace(/-/gi,'')){
+							showMsg('조회기간 종료일이 시작일 보다 빠릅니다.');
+							$(this).val(prev_sel);
+							return false;
+						}
+					}
+				}
+				if(this_id == 'from_date'){
+					if($to_date.length > 0 && !isEmpty($to_date.val())){
+						if($to_date.val().replace(/-/gi,'') < $(this).val().replace(/-/gi,'')){
+							showMsg('조회기간 시작일이 종료일 보다 빠릅니다.');
+							$(this).val(prev_sel);
+							return false;
+						}
+					}
+				}
+			}).on('click', function(){
+				prev_sel = $(this).val();
+			});
+		});
+	};
+	
+	$('.caltype input').callDatePicker({});
+	$('.btn-calendar').on('click', function(){
+		$(this).prev().click();
+	});
+	
+	var nav_title = '회원서비스 &gt; 부동산정보   | 과학기술공제회 퇴직연금';
+	nav_title = isEmpty(nav_title) ? '과학기술인공제회 퇴직연금':nav_title;
+	nav_title = nav_title.replace(/&gt;/gi, '>');
+	top.document.title = nav_title;
+});
+</script> -->
+
+
+<!-- 세션 처리 -->
+<!-- <script>
+	var jsLogoutTimer = function(){
+		var _self = this;
+		this.timer = null;
+		this.limit = 0;
+		this.ui_type = ('false' == 'true') ? 'mobile':'web';
+		this.is_login = false;
+		this.init = function(opts){
+			_self.limit = 1000 * 60 * (opts.limit || 30);
+			document.onmousemove = function(){
+				_self.reset();
+			};
+			if(_self.checkSession()){
+				_self.start();
+			}
+		};
+		this.start = function(){
+			_self.timer = window.setTimeout(_self.showAltPop, _self.limit);
+		};
+		this.reset = function(){
+			window.clearTimeout(_self.timer);
+			_self.start();
+		};
+		this.checkSession = function(){
+			return !isEmpty('10000970') ? true:false;
+		};
+		this.showAltPop = function(){
+			if(!_self.checkSession()){
+				return false;
+			}
+			
+			callAjaxObj({
+				url 	: "/login/autoLogout.json",
+				data	: {},
+				success	: function(data){
+					if(data.result == 'error' || data.returnCode != '0'){
+						showMsg(data.message);
+						return;
+					}
+					
+					var msg = '<dl class="autologout">';
+					msg += '<dt>자동 로그아웃 알림</dt>';
+					msg += '<dd>';
+					msg += '로그인 후 자동로그아웃 설정시간 동안<br>';
+					msg += '화면 이동이 없어 <strong> 자동으로 로그아웃</strong> 되었습니다.<br>';
+					
+					msg += '서비스를 계속 이용하시려면 다시 ';
+					if(_self.ui_type == 'mobile'){
+					msg += '<a href="/login.do">로그인</a>';
+					}else{
+					msg += '<a href="javascript:openHp(\'/login.do\', true);">로그인</a>';
+					}
+					msg += '해주시기 바랍니다.<br>';
+					msg += '자세한 안내나 문의사항이 계시면<br>';
+					msg += '당사 <strong>퇴직연금전용시스템 (1588-5577)</strong>을 <br>';
+					msg += '이용해 주시기 바랍니다.';
+					msg += '</dd>';
+					
+					var opts = {
+						type:'alert'
+						, ui_type: _self.ui_type
+						, msg:msg
+						, target:null
+						, align:''
+						, ly_title:'자동 로그아웃 알림'
+					};
+					showLayerMsg(opts)
+					.then(function(_result){
+						if(!_result) return false;
+						
+						if(parent.frames.length > 0){
+							openHp('/login.do', true);
+						}else{
+							location.href = '/login.do';
+						}
+					});
+				}
+			});
+		};
+	};
+	
+	var timer = new jsLogoutTimer();
+	timer.init({limit:30});
+</script> -->
+<!-- 
+<script>
+$(document).ready(function(){
+	$('[data-link]').on('click', function(){
+		var link_type = $(this).data('link'), link_url = '', link_style = '';
+		switch (link_type) {
+			case 'guide'://가이드
+				link_style = "'resizable=yes','width=600,height=800'";
+				link_url = '/download/sema_system_guide_web.pdf';
+			break;
+			case 'cert'://인증
+				link_url = 'https://www.miraeassetdaewoo.com/frame.jsp?secure=Y&url=/hku/hku2001/t01.do';
+				break;
+			case 'signup'://회원가입
+				//link_url = 'https://www.miraeassetdaewoo.com/frame.jsp?secure=Y&url=/hku/hku3001/a01.do';
+				link_url = 'https://www.miraeassetdaewoo.com/frame.jsp?secure=Y&url=/hku/hku3013/r01.do';
+				break;
+			case 'findidpw'://ID, PW 찾기
+				link_url = 'https://www.miraeassetdaewoo.com/frame.jsp?secure=Y&url=/hku/hku3014/u01.do';
+				break;
+			case 'sema_contents':
+				link_url = 'https://www.sema.or.kr/front/contents.do?menu_id=A1010101';
+				break;
+			case 'sema_refen':
+				link_url = 'https://www.sema.or.kr/front/refenRoom.do?s_board_id=B0000015';
+				break;
+			case 'sema':
+				link_url = 'https://www.sema.or.kr';
+				break;
+			default:
+				link_url = 'https://www.miraeassetdaewoo.com/frame.jsp?secure=Y&url=/hku/hku2001/c02.do';
+				break;
+		}
+		window.open(link_url, link_type, link_style);
+	});
+});
+</script>
+ -->
+{% endblock %}

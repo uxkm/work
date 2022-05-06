@@ -1,0 +1,80 @@
+{% set pageData = { pageDep1Name: '플래너스 소개', pageName: '플래너스 소개', pageDesc: '', pageActive: '1' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_bizintro">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subbiz.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="text_group">
+					<!-- <p class="large_text"><em>플래너스는</em><strong>AI기반 옥외광고</strong> <span><b>추천<br>솔루션</b>입니다.</span></p>
+					<p class="small_text">빅데이터와 AI엔진을 활용하여 옥외광고 집행을 원하는 광고주를 돕는 <strong>옥외광고</strong> 추천솔루션</p> -->
+          <p class="logo_text">
+            <span>AI기반 맞춤형 미디어 솔루션</span>
+            <strong><img src="{{set.baseurl}}{{set.imgurl}}/base/logo_text.png" width="405" height="73" alt="PLANUS"></strong>
+          </p>
+          <p class="small_text">빅데이터와 AI엔진을 기반으로 미디어, 타깃 특성, 유동인구 등 다양한 데이터를 매칭·분석하여<br>브랜드를 위한 최적의 미디어를 추천해주는 미디어 플래닝 솔루션입니다.</p>
+					<div class="img_aitext">
+            <div class="ai">Ai<span></span></div>
+            <div class="circle1">맞춤형</div>
+            <div class="circle2">#OHH</div>
+            <div class="circle3">#데이터<br>솔루션</div>
+            <div class="circle4">#빅데이터</div>
+            <div class="circle5">#미디어플래닝</div>
+            <div class="circle6">#인공지능</div>
+            <div class="circle7">#타깃팅</div>
+            <div class="circle8">#유동인구</div>
+            <div class="circle9">추천</div>
+            <div class="circle10">#소비통계</div>
+            <div class="circle11">#연결</div>
+            <div class="circle12">#인구특성</div>
+            <div class="empty"></div>
+					</div>
+					<div class="img_ai">
+						<img src="{{set.baseurl}}{{set.imgurl}}/page/img_ai_vertical.png" width="520" height="1208" alt="AI기반 옥외광고 추천 솔루션">
+					</div>
+				</div>
+				<!-- <h2 class="h2">플래너스 <strong>광고집행</strong>순서</h2>
+				<p class="sub_text">광고 플래닝시 활용할 수 있는<br>빅데이터 분석정보와 추천 정보를 제공합니다.</p>
+				<div class="img_aiplanus_text">
+					<img src="{{set.baseurl}}{{set.imgurl}}/page/img_ai_planus_pc.png" width="778" height="674" alt="플래너스 광고집행순서">
+				</div>
+				<div class="img_aiplanus">
+					<img src="{{set.baseurl}}{{set.imgurl}}/page/img_ai_planus.png" width="585" height="574" alt="플래너스 광고집행순서">
+				</div> -->
+				<h2 class="h2">맞춤 <strong>광고</strong>타깃</h2>
+				<p class="sub_text">광고주 맞춤형 미디어 플래닝과 광고 청약 및 집행, <br>나아가 효과 분석 리포트까지 원스톱 솔루션을 제공합니다.</p>
+				<div class="img_aiplanus_target">
+          <ul>
+            <li>
+              <div class="imgb"><img src="{{set.baseurl}}{{set.imgurl}}/page/img_ai_step1.png" width="364" height="447" alt="Ai 추천 미디어 솔루션"></div>
+              <p>통신사 / 카드사 / 오픈 API 등<br>빅데이터 & AI 기반 미디어 스팟 분석</p>
+            </li>
+            <li>
+              <div class="imgb"><img src="{{set.baseurl}}{{set.imgurl}}/page/img_ai_step2.png" width="362" height="438" alt="LIFE STYLE 소비통계/관심사, PLACE 지역특성, TARGET 유동인구특성"></div>
+              <p>지역, 예산, 타깃에 따른 최적화된<br>광고주 맞춤형 미디어 추천</p>
+            </li>
+            <li>
+              <div class="imgb"><img src="{{set.baseurl}}{{set.imgurl}}/page/img_ai_step3.png" width="362" height="438" alt="집행 결과 및 효과 분석 리포팅"></div>
+              <p>브랜드 광고 청약 및 집행<br>광고주 맞춤형 효과 리포트 제공</p>
+            </li>
+          </ul>
+				</div>
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

@@ -1,0 +1,436 @@
+{% set pageData = { pageDep1Name: '회원가입', pageName: '정보입력', pageDesc: '', pageActive: '2' } %} 
+{% extends "_layout/_baseLayout.html" %} 
+
+{% block jscnt %} 
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+{% endblock %}
+
+{% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_join">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_submem.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        
+        <div class="joingroup">
+          <!-- [삭제 0630] 문구삭제 -->
+          <!-- <p class="text">회원가입  및 정보를 입력하는 단계입니다.</p> -->
+					<div class="stepgroup_join">
+						<ul>
+							<li><span>01.약관동의</span></li>
+							<li class="active" title="현재페이지"><span>02.정보입력</span></li>
+							<li><span>03.가입완료</span></li>
+						</ul>
+					</div>
+					<!-- //.stepgroup_join -->
+
+					<div class="frmgroup">
+						<p class="frm_subject"><span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>항목은 필수 입력항목입니다.꼭 기입해 주세요</p>
+						<div class="frmsection">
+
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									기업구분
+								</strong>
+								<div class="field">
+									<div class="uk_select">
+										<label class="sr-only">내용선택</label>
+										<select id="localArea">
+											<option value="">선택해주세요</option>
+											<option value="">기업1</option>
+										</select> 
+									</div>
+                  <!-- 
+                    결과메시지 구분
+                    성공시  : class="susmsg"
+                    실패시  : class="errmsg"
+                   -->
+                  <p class="errmsg">기업을 선택해 주세요</p>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+                  <!-- [수정0528] 문구수정 회사 > 기업명 -->
+                  기업명
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="입력해주세요" class="inp inpfind" onclick="uk.ukmodal.open('companySearch', this);">
+									</label>
+                  <p class="errmsg">회사를 선택해 주세요.</p>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									아이디
+								</strong>
+								<div class="field" data-small="inpfield">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="아이디 입력" class="inp">
+									</label>
+									<button class="btn_thingray medium" onclick="uk.ukmodal.open('ukmodalAlert', this);"><span>중복확인</span></button>
+                  <!-- 
+                    Case1) default > (안내문구)영문소문자/숫자 4~16자리 <p class="textmsg">
+                    Case2) O > 사용 가능한 아이디입니다. <p class="susmsg">
+                    Case3) X > 이미 사용중인 아이디입니다. <p class="errmsg">
+                    Case4) 문자오류/부합 > 영문소문자/숫자 4~16자리 확인해주세요. <p class="errmsg">
+                    Case5) 공백 > 아이디를 입력해주세요. <p class="errmsg">
+                   -->
+									<p class="textmsg">영문소문자/숫자 4~16자리</p>
+									<!-- <p class="susmsg">사용 가능한 아이디입니다.</p>
+									<p class="errmsg">이미 사용중인 아이디입니다.</p> -->
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									비밀번호
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="password" name="" placeholder="비밀번호 입력" class="inp">
+									</label>
+									<p class="textmsg">영문/숫자/특수문자(~’!@#$%^()_-={}[]│;;<>,.?/) 조합, 8~16자, 공백 불가능</p>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									비밀번호 확인
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="password" name="" placeholder="비밀번호 입력" class="inp">
+									</label>
+									<p class="errmsg">비밀번호 입력 조건을 다시 한번 확인해 주세요</p>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+                  <!-- [수정0528] 문구수정 담당자명 > 이름 -->
+									이름
+								</strong>
+								<div class="field">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="담당자명 입력" class="inp">
+									</label>
+									<p class="errmsg">담당자명을 입력해 주세요.</p>
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									전화번호
+								</strong>
+								<div class="field tel">
+                  <div class="uk_select">
+										<label class="sr-only">통신사 선택</label>
+										<select id="localArea">
+											<option value="">선택</option>
+											<option value="">010</option>
+										</select> 
+									</div>
+                  <i class="ico-dot">-</i>
+									<label class="uk_label">
+										<input type="text" name="" placeholder="" class="inp" title="전화번호 가운데 자리">
+									</label>
+                  <i class="ico-dot">-</i>
+									<label class="uk_label">
+										<input type="text" name="" placeholder="" class="inp" title="전화번호 마지막 자리">
+									</label>
+                  <!-- 
+                     Case1) default > (안내문구)-없이 입력해주세요. ex)01012345678 <p class="textmsg">
+                      Case2) 공백 > 전화번호를 입력해 주세요. <p class="errmsg">
+                      Case3) 문자오류/부합 > 숫자형식이 아닙니다.  <p class="errmsg">
+                   -->
+									<p class="textmsg">-없이 입력해주세요. ex)01012345678</p>
+									<!-- <p class="errmsg">숫자 형식이 아닙니다.</p> -->
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									이메일 주소
+								</strong>
+								<div class="field email">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="이메일 아이디 입력" class="inp">
+									</label>
+                  <i class="ico-dot">@</i>
+									<label class="uk_label">
+										<input type="text" name="" placeholder="직접입력" class="inp">
+									</label>
+                  <div class="uk_select">
+										<label class="sr-only">내용선택</label>
+										<select id="localArea">
+											<option value="">선택</option>
+											<option value="">cj.net</option>
+										</select> 
+									</div>
+                  <button class="btn_thingray medium"><span>중복확인</span></button>
+									<p class="errmsg">이메일 형식이 올바르지 않습니다.</p>
+                  <!-- [수정0528] 문구수정 이메일인증 버튼 삭제 -->
+                  <!-- <button class="btn_thingray medium" onclick="uk.ukmodal.open('ukmodalAlert', this);"><span>이메일 인증</span></button> -->
+                  <!-- 
+                    ) [이메일 인증] > alert
+                    Case1) O > 입력하신 이메일로 인증번호를 전송하였습니다. [확인]
+                    Case2) 문자오류/부합 > 이메일 형식이 올바르지 않습니다. [확인]
+                    3) 재전송 > alert > 재전송하였습니다. [확인]
+                   -->
+								</div>
+							</div>
+							<!-- //.fieldset -->
+
+              <!-- [05.25] 기획문서 변경에 따른 업종선택 추가 -->
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									업종선택
+								</strong>
+								<div class="field choice">
+                  <div class="uk_select">
+										<label class="sr-only">대분류 선택</label>
+										<select id="largeChoice">
+											<option value="">대분류 선택</option>
+										</select> 
+									</div>
+                  <div class="uk_select">
+										<label class="sr-only">중분류 선택</label>
+										<select id="mediumChoice">
+											<option value="">중분류 선택</option>
+										</select> 
+									</div>
+                  <div class="uk_select">
+										<label class="sr-only">소분류 선택</label>
+										<select id="smallChoice">
+											<option value="">소분류 선택</option>
+										</select> 
+									</div>
+									<p class="errmsg">업종을 선택해 주세요.</p>
+                </div>
+							</div>
+							<!-- //.fieldset -->
+              <!-- //[05.25] 기획문서 변경에 따른 업종선택 추가 -->
+
+              <!-- [06.30] 기획문서 변경에 따른 선호지역 추가 -->
+							<div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									선호지역
+								</strong>
+								<div class="field choice">
+                  <div class="uk_select">
+										<label class="sr-only">선호지역 선택</label>
+										<select id="preferenceArea1">
+											<option value="">선택</option>
+										</select> 
+									</div>
+                  <div class="uk_select">
+										<label class="sr-only">선호지역 선택결과</label>
+										<select id="preferenceArea2">
+											<option value="">선택</option>
+										</select> 
+									</div>
+									<p class="errmsg">선호지역을 선택해 주세요.</p>
+                </div>
+							</div>
+							<!-- //.fieldset -->
+              <!-- //[06.30] 기획문서 변경에 따른 선호지역 추가 -->
+
+							<!-- [05.25] 기획문서 변경에 따른 이메일 인증 필드 제거 -->
+              <!-- <div class="fieldset">
+								<strong class="thtit">
+									<span class="essmark"><i>*</i><b class="sr-only">필수항목</b></span>
+									이메일 인증
+								</strong>
+								<div class="field" data-small="inpfield">
+									<label class="uk_label">
+										<input type="text" name="" placeholder="입력해주세요" class="inp">
+									</label>
+                  <button class="btn_thingray medium"><span>확인</span></button>
+                  
+                    Case1) O > 인증되었습니다. <p class="susmsg">
+                    Case2) X > 일치하지 않습니다. <p class="errmsg">
+                  
+									<p class="susmsg">인증되었습니다.</p>
+									<p class="errmsg">일치하지 않습니다.</p>
+								</div>
+							</div> -->
+							<!-- //.fieldset -->
+              <!-- //[05.25] 기획문서 변경에 따른 이메일 인증 필드 제거 -->
+
+						</div>
+						<!-- //.frmsection -->
+
+						<p class="agree_check">
+							<label class="uk_label">
+								<input type="checkbox" name="">
+								<span>정보/이벤트 SMS 수신에 동의합니다.</span>
+								<i class="ico-check"></i>
+							</label>
+						</p>
+					</div>
+					<!-- //.frmgroup -->
+					
+          <!-- [삭제 0630] 문구 삭제 -->
+					<!-- <p class="text_bottom">회원가입을 진행하시겠습니까?</p> -->
+					<div class="btngroup">
+						<a href="join.html" class="btn_gray"><span>취소</span></a>
+						<a href="joinComplate.html" class="btn_default"><span>확인</span></a>
+            <!-- 
+              Case2) 이메일 X > 해당 이메일 주소는 이미 가입된 이메일입니다. [확인] 추가
+             -->
+					</div>
+        </div>
+				<!-- //.joingroup -->
+        <!-- 
+            click 시 open uk.ukmodal.open('modal ID', this) 
+            click 시 close uk.ukmodal.close('modal ID')
+          -->
+        <button onclick="uk.ukmodal.open('ukmodalAlert', this);">[확인용] Alert(모든 체크가 확인 되지 않을 때) 개발시 [확인용] 버튼 삭제</button>
+        <!-- 확인버튼 클릭시 동의체크 X > 모든 체크가 확인 되지 않을 때  -->
+        <div id="ukmodalAlert" class="ukmodal_wrap alert" role="alertdialog">
+          <div class="ukmodal">
+            <div class="ukmodal_head">
+              <h2>메시지</h2>
+            </div>
+            <div class="ukmodal_body">
+              <div class="ukmodal_cont">
+                <!-- 
+                  [이메일 인증] > alert
+                  Case1) O > 입력하신 이메일로 인증번호를 전송하였습니다. [확인]
+                  Case2) 문자오류/부합 > 이메일 형식이 올바르지 않습니다. [확인]
+                  3) 재전송 > alert > 재전송하였습니다. [확인]
+                -->
+                <p class="text">이메일 인증을 해주세요.</p>
+                <p class="text">입력하신 이메일로 인증번호를 전송하였습니다.</p>
+                <p class="text">이메일 형식이 올바르지 않습니다.</p>
+                <p class="text">재전송하였습니다.</p>
+                <p class="text">해당 이메일 주소는 이미 가입된 이메일입니다.</p>
+                <!-- 
+                  Case1) default > (안내문구)영문소문자/숫자 4~16자리
+                  Case2) O > 사용 가능한 아이디입니다.
+                  Case3) X > 이미 사용중인 아이디입니다.
+                  Case4) 문자오류/부합 > 영문소문자/숫자 4~16자리 확인해주세요.
+                  Case5) 공백 > 아이디를 입력해주세요.
+                 -->
+                <p class="text">사용 가능한 아이디입니다.</p>
+              </div>
+            </div>
+            <div class="ukmodal_foot">
+              <div class="btngroup">
+                <button type="button" class="btn_default" onclick="uk.ukmodal.close('ukmodalAlert')"><span>확인</span></button>
+              </div>
+            </div>
+            <button type="button" class="ibtn_close" onclick="uk.ukmodal.close('ukmodalAlert')"><span class="sr_only">팝업 닫기</span></button>
+          </div>
+          <div class="dimmer" onclick="uk.ukmodal.close('ukmodalAlert')"></div>
+        </div>
+        <!-- //.ukmodal_wrap -->
+
+
+        <!-- 회사명 검색 Modal Popup  -->
+        <div id="companySearch" class="ukmodal_wrap searchpop" role="alertdialog">
+          <div class="ukmodal">
+            <div class="ukmodal_head">
+              <h2>회사명 검색</h2>
+            </div>
+            <div class="ukmodal_body">
+              <div class="field find_medium" data-medium="inpfield">
+                <label class="uk_label">
+                  <input type="text" name="" placeholder="검색어를 입력해주세요" class="inp">
+                </label>
+                <button class="ibtn_find black"><i class="ico-find"></i><span class="sr-only">검색</span></button>
+              </div>
+              <div class="ukmodal_cont">
+                <!-- 검색 전 default/검색결과  -->
+                <p class="nodata" style="display:none">검색 결과가 없습니다</p>
+
+                <!-- 검색어에 대한 검색 결과 데이터가 없을 경우 -->
+                <!-- [05.25] 검색결과 없을 경우 문구 추가 -->
+                <!-- <p class="nodata" style="display:none">
+                  <em>"이케아 파라솔"</em>에 대한 검색 결과가 없습니다.<br>
+                  검색이 되지 않는다면, <span class="flag">등록요청</span>해주시기 바랍니다.
+                </p> -->
+
+                <!-- 검색 결과가 있을 경우 -->
+                <div class="resultarea" style="display:block">
+                  <p><span>검색결과 <b>4</b>건</span> <span>아래목록을 선택해주세요</span></p>
+                  <div class="listarea">
+                    <ul>
+                      <li><a href="javascript:;">유한테크널로지</a></li>
+                      <li><a href="javascript:;">CJ ENM</a></li>
+                      <li><a href="javascript:;">CJ파워캐스트</a></li>
+                      <li><a href="javascript:;">애플코리아 한국지사점</a></li>
+                      <li><a href="javascript:;">네이버 중국국제법인재단</a></li>
+                      <li><a href="javascript:;">유한테크널로지</a></li>
+                      <li><a href="javascript:;">CJ ENM</a></li>
+                      <li><a href="javascript:;">CJ파워캐스트</a></li>
+                      <li><a href="javascript:;">애플코리아 한국지사점</a></li>
+                      <li><a href="javascript:;">네이버 중국국제법인재단</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ukmodal_foot">
+              
+              <!-- [05.24] 개발요청 해당부분 삭제로 인한 상단 검색결과 리스트 높이 수정  -->
+              <!-- [05.28] 기획부분 수정(ver1.4) 추가로 인한 높이 수정 문구수정  -->
+              <h2>회사명 직접입력<sub>검색 결과가 없거나, 사전 등록이 되지 않은 경우 직접 입력 부탁 드립니다.</sub></h2>
+              <div class="field">
+                <label class="uk_label">
+                  <input type="text" name="" placeholder="회사명을 입력해주세요" class="inp">
+                </label>
+               <!-- <label class="uk_label">
+                  <input type="text" name="" placeholder="대표자명을 입력해주세요" class="inp">
+                </label> -->
+              </div>
+              <!-- [05.28] 기획부분 수정(ver1.4) 추가로 인한 높이 수정  -->
+              <!-- //[05.24] 개발요청 해당부분 삭제로 인한 상단 검색결과 리스트 높이 수정  -->
+
+              <div class="btngroup">
+                <button type="button" class="btn_default" onclick="uk.ukmodal.open('ukmodalAlert', this);"><span>확인</span></button>
+              </div>
+            </div>
+            <button type="button" class="ibtn_close" onclick="uk.ukmodal.close('companySearch')"><span class="sr_only">팝업 닫기</span></button>
+          </div>
+          <div class="dimmer" onclick="uk.ukmodal.close('companySearch')"></div>
+        </div>
+        <!-- //.ukmodal_wrap -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

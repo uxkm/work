@@ -1,0 +1,35 @@
+<div id = "">
+	<div class="section scroll">...</div>
+	<div class="section scroll">...</div>
+	<div class="section ">...</div>
+	<div class="section scroll">...</div>
+	<div class="section scroll">...</div>
+	<div class="section ">...</div>
+</div>
+* HTML 영역 안에 있는 박스들 중 스크롤 시 효과가 나타났으면 하는 DIV 태그에 지정한 클래스 추가하여 마크업.
+
+(예시 마크업에선 scroll 이라 지정)
+
+
+
+$(window).ready(function(){
+
+// 원하는 컨텐츠의 offsettop 값을 배열 안에 넣기
+var scrollArray = [];
+var scrollContent = document.querySelectorAll('.scroll');
+	for(var i = 0; i<scrollContent.length; i++){
+		var mypos = scrollContent[i].offsetTop;
+		scrollArray.push(mypos)
+	}
+
+// 스크롤 할 때마다 해당 컨텐츠에 on 이라는 지정한 클래스 값 넣기
+$(window).scroll(function(){
+	var thispos = $(this).scrollTop();
+		for(var pos = 0; pos<scrollArray.length; pos++){
+		if(thispos>scrollArray[pos]){
+			$('#don_cp .scroll').eq(pos).addClass('on');
+		}
+	}
+});
+
+});

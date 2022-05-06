@@ -1,0 +1,185 @@
+{% set pageData = { pageDep1Name: '회원가입', pageName: '약관동의', pageDesc: '', pageActive: '2' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_join">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_submem.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+        <div class="joingroup">
+          <p class="text">회원가입 약관동의 및 본인인증단계입니다.</p>
+          <div class="stepgroup_join">
+            <ul>
+              <li class="active" title="현재페이지"><span>01.약관동의</span></li>
+              <li><span>02.정보입력</span></li>
+              <li><span>03.가입완료</span></li>
+            </ul>
+          </div>
+          <!-- //.join_stepgroup -->
+
+          <div class="agrgroup">
+            <label class="uk_label">
+              <span>이용약관 동의(필수)</span>
+              <input type="checkbox" name="" />
+              <i class="ico-check"></i>
+            </label>
+            <div class="txtarea inner">
+              제 1조(목적)<br />
+              본 약관은 이용고객(이하 '회원')이 파워캐스트(이하 '회사') 서비스의 이용과 관련하여 파워캐스트와 상호 준수하여야 할 사항을 정함을 목적으로 한다.
+              <br /><br />
+              제 2조 (용어의 정의)<br />
+              본 약관에서 사용하는 용어의 정의는 다음 각 호와 같다. 제 1조(목적)<br />
+              본 약관은 이용고객(이하 '회원')이 파워캐스트(이하 '회사') 서비스의 이용과 관련하여 파워캐스트와 상호 준수하여야 할 사항을 정함을 목적으로 한다.
+              <br /><br />
+              제 2조 (용어의 정의)<br />
+              본 약관에서 사용하는 용어의 정의는 다음 각 호와 같다. 제 1조(목적)<br />
+              본 약관은 이용고객(이하 '회원')이 파워캐스트(이하 '회사') 서비스의 이용과 관련하여 파워캐스트와 상호 준수하여야 할 사항을 정함을 목적으로 한다.
+              <br /><br />
+              제 2조 (용어의 정의)<br />
+              본 약관에서 사용하는 용어의 정의는 다음 각 호와 같다. 제 1조(목적)<br />
+              본 약관은 이용고객(이하 '회원')이 파워캐스트(이하 '회사') 서비스의 이용과 관련하여 파워캐스트와 상호 준수하여야 할 사항을 정함을 목적으로 한다.
+              <br /><br />
+              제 2조 (용어의 정의)<br />
+              본 약관에서 사용하는 용어의 정의는 다음 각 호와 같다. 제 1조(목적)<br />
+              본 약관은 이용고객(이하 '회원')이 파워캐스트(이하 '회사') 서비스의 이용과 관련하여 파워캐스트와 상호 준수하여야 할 사항을 정함을 목적으로 한다.
+              <br /><br />
+              제 2조 (용어의 정의)<br />
+              본 약관에서 사용하는 용어의 정의는 다음 각 호와 같다. 제 1조(목적)<br />
+              본 약관은 이용고객(이하 '회원')이 파워캐스트(이하 '회사') 서비스의 이용과 관련하여 파워캐스트와 상호 준수하여야 할 사항을 정함을 목적으로 한다.
+              <br /><br />
+              제 2조 (용어의 정의)<br />
+              본 약관에서 사용하는 용어의 정의는 다음 각 호와 같다. 제 1조(목적)<br />
+              본 약관은 이용고객(이하 '회원')이 파워캐스트(이하 '회사') 서비스의 이용과 관련하여 파워캐스트와 상호 준수하여야 할 사항을 정함을 목적으로 한다.
+              <br /><br />
+              제 2조 (용어의 정의)<br />
+              본 약관에서 사용하는 용어의 정의는 다음 각 호와 같다. 제 1조(목적)<br />
+              본 약관은 이용고객(이하 '회원')이 파워캐스트(이하 '회사') 서비스의 이용과 관련하여 파워캐스트와 상호 준수하여야 할 사항을 정함을 목적으로 한다.
+              <br /><br />
+              제 2조 (용어의 정의)<br />
+              본 약관에서 사용하는 용어의 정의는 다음 각 호와 같다.
+            </div>
+            <!-- //.txtarea -->
+          </div>
+          <!-- //.agrgroup -->
+
+          <div class="agrgroup">
+            <label class="uk_label">
+              <input type="checkbox" name="" />
+              <span>개인정보수집 및 이용동의(필수)</span>
+              <i class="ico-check"></i>
+            </label>
+            <div class="txtarea">
+              「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 및 「개인정보 보호법」에 따라 이 서비스에 회원 가입을 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
+              <br /><br />
+              1. 수집하는 개인정보의 항목 회원이 되시는 법인 또는 기업께서 서비스를 이용하실 수 있도록 하기 위하여 최소한의 대표자 또는 담당자(이하 “이용자”라고 합니다)의 개인정보를 수집합니다.
+            </div>
+            <!-- //.txtarea -->
+          </div>
+          <!-- //.agrgroup -->
+
+          <div class="agrgroup">
+            <label class="uk_label">
+              <input type="checkbox" name="" />
+              <span>개인정보 취급위탁에 대한 안내 (필수)</span>
+              <i class="ico-check"></i>
+            </label>
+            <div class="txtarea">
+              위치정보 이용약관에 동의하시면, 위치를 활용한 광고 정보 수신 등을 포함하는 파워캐스트 위치기반 서비스를 이용할 수 있습니다.
+              <br /><br />
+              제 1 조 (목적)<br />
+              이 약관은 파워캐스트(이하 “회사”)가 제공하는 위치정보사업 또는 위치기반서비스사업과 관련하여 회사와 개인위치정보주체와의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
+            </div>
+            <!-- //.txtarea -->
+          </div>
+          <!-- //.agrgroup -->
+          <p class="agree_all">
+            <span>※ 홈페이지 이용약관, 개인정보 수집 및 이용 동의에 대한 안내에 거부하실 경우 회원가입이 제한됩니다.</span>
+            <label class="uk_label">
+              <input type="checkbox" name="" />
+              <span>전체동의</span>
+              <i class="ico-check"></i>
+            </label>
+          </p>
+          <!-- [삭제 0630] 텍스트 삭제 -->
+          <!-- <p class="text_bottom">회원가입을 진행하시겠습니까?</p> -->
+          <div class="btngroup">
+            <!-- 
+              alert > 취소하시겠습니까? [네][아니요]
+              Case1) [네] > 메인
+              Casw2) [아니요] > 현재화면 유지
+            -->
+            <button class="btn_gray" onclick="uk.ukmodal.open('ukmodalAlert', this);"><span>취소</span></button>
+            <a href="joinInput.html" class="btn_default"><span>확인</span></a>
+          </div>
+
+          <!-- 
+            modal open uk.ukmodal.open('modal ID', this) 
+            modal close uk.ukmodal.close('modal ID')
+          -->
+          <button onclick="uk.ukmodal.open('ukmodalAlert2', this);">[확인용] Alert(모든 체크가 확인 되지 않을 때) 개발시 [확인용] 버튼 삭제</button>
+
+          <!-- Modal Alert 취소버튼을 클릭했을 경우 나오는 메시지 -->
+          <div id="ukmodalAlert" class="ukmodal_wrap alert" role="alertdialog">
+            <div class="ukmodal">
+              <div class="ukmodal_head">
+                <h2>메시지</h2>
+              </div>
+              <div class="ukmodal_body">
+                <div class="ukmodal_cont">
+                  <p class="text">취소하시겠습니까?</p>
+                </div>
+              </div>
+              <div class="ukmodal_foot">
+                <div class="btngroup">
+                  <a href="/" class="btn_gray"><span>네</span></a>
+                  <button type="button" class="btn_default" onclick="uk.ukmodal.close('ukmodalAlert')"><span>아니오</span></button>
+                </div>
+              </div>
+              <button type="button" class="ibtn_close" onclick="uk.ukmodal.close('ukmodalAlert')"><span class="sr_only">팝업 닫기</span></button>
+            </div>
+            <div class="dimmer" onclick="uk.ukmodal.close('ukmodalAlert')"></div>
+          </div>
+          <!-- //.ukmodal_wrap -->
+
+          <!-- 
+            확인버튼 클릭시 동의체크 X > 모든 체크가 확인 되지 않을 때 
+          -->
+          <div id="ukmodalAlert2" class="ukmodal_wrap alert" role="alertdialog">
+            <div class="ukmodal">
+              <div class="ukmodal_head">
+                <h2>메시지</h2>
+              </div>
+              <div class="ukmodal_body">
+                <div class="ukmodal_cont">
+                  <p class="text">회원가입을 위해 약관 동의를 해주시기 바랍니다</p>
+                </div>
+              </div>
+              <div class="ukmodal_foot">
+                <div class="btngroup">
+                  <button type="button" class="btn_default" onclick="uk.ukmodal.close('ukmodalAlert2')"><span>확인</span></button>
+                </div>
+              </div>
+              <button type="button" class="ibtn_close" onclick="uk.ukmodal.close('ukmodalAlert2')"><span class="sr_only">팝업 닫기</span></button>
+            </div>
+            <div class="dimmer" onclick="uk.ukmodal.close('ukmodalAlert2')"></div>
+          </div>
+          <!-- //.ukmodal_wrap -->
+        </div>
+        <!-- //.joingroup -->
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}

@@ -1,0 +1,399 @@
+{% set pageData = { pageDep1Name: '상품안내', pageName: '상품상세', pageDesc: '', pageActive: '0' } %} {% extends "_layout/_baseLayout.html" %} {% block jscnt %}
+<script type="text/javascript" src="{{set.baseurl}}{{set.jsurl}}/common/ukstyle.js"></script>
+<!-- UI/UX Style -->
+{% endblock %} {% block content %}
+<!-- 각 페이지 마다 class 부여 ex)p_login p_ : 페이지의 시작, login : 해당 페이지 구분 -->
+<div class="cntwrap p_pdview">
+  <div class="chead_out">
+    <div class="chead_in">
+      {% include "parts/_subproduct.html" %}
+    </div>
+    <!-- //.chead_in -->
+  </div>
+  <!-- //.chead_out -->
+
+  <div class="cbody_out">
+    <div class="cbody_in">
+      <h1 id="cTitle" class="h1 sr-only" tabindex="0"><strong>{{ pageData.pageName }}</strong><sub>{{ pageData.pageDesc }}</sub></h1>
+      <section class="csection">
+
+        <!-- dep2 가운데 정렬 -->
+				<div class="pdview_head">
+					<div class="pdsubnav">
+						<nav class="depnav">
+              <ul class="depmenu">
+                <li class="dep1 active">
+                  <a href="#"><span>Entertainment</span></a>
+                  <ul class="dep dep2">
+                    <li><a href="#"><span>영화관 스크린 & 로비</span></a></li>
+                    <li><a href="#"><span>스파필드 쇼핑몰</span></a></li>
+                    <li><a href="#"><span>파라다이스 시티</span></a></li>
+                    <li class="active"><a href="#"><span>올리브 영</span></a></li>
+                  </ul>
+                </li>
+                <li class="dep1">
+                  <a href="#"><span>Sports</span></a>
+                  <ul class="dep dep2">
+                    <li><a href="#"><span>2영화관 스크린 & 로비</span></a></li>
+                    <li><a href="#"><span>스파필드 쇼핑몰</span></a></li>
+                    <li><a href="#"><span>파라다이스 시티</span></a></li>
+                    <li><a href="#"><span>올리브 영</span></a></li>
+                  </ul>
+                </li>
+                <li class="dep1">
+                  <a href="#"><span>Traffic</span></a>
+                  <ul class="dep dep2">
+                    <li><a href="#"><span>3영화관 스크린 & 로비</span></a></li>
+                    <li><a href="#"><span>스파필드 쇼핑몰</span></a></li>
+                    <li><a href="#"><span>파라다이스 시티</span></a></li>
+                    <li><a href="#"><span>올리브 영</span></a></li>
+                  </ul>
+                </li>
+                <li class="dep1">
+                  <a href="#"><span>Billboard</span></a>
+                  <ul class="dep dep2">
+                    <li><a href="#"><span>4영화관 스크린 & 로비</span></a></li>
+                    <li><a href="#"><span>스파필드 쇼핑몰</span></a></li>
+                    <li><a href="#"><span>파라다이스 시티</span></a></li>
+                    <li><a href="#"><span>올리브 영</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+						</nav>
+					</div>
+					<!-- //.pdsubnav -->
+				</div>
+				<!-- pdview_head -->
+				
+        <script>
+          $(function() {
+            var $depNav = $('.depnav');
+            $depNav.find('.dep1').each(function(i, e){
+              $(e).on('mouseover', function(){
+                // click시 현재 depqh1 메뉴 활성화 class active 추가 형제 요소 클릭시 서브메뉴 class active 제거
+                $(e).addClass('active').siblings().removeClass('active');
+                return false;
+              });
+              $(e).find('.dep2 > li').on('click', function(){
+                $(this).addClass('active').siblings().removeClass('active');
+                return false;
+              });
+            });
+            // depth3 menu 개수에 따른 설정
+            $('.dep3_nav').find('.link-item').on('click', function(){
+              $(this).addClass('active').siblings().removeClass('active');
+            })
+
+            // 메뉴가 1개일 때 전체 영역 삭제
+            if($('.dep3_nav').find('.link-item').length <= 1){
+              $('.pd_depthnav').addClass('hide');
+              $('.pdviewwrap').addClass('len1');
+            } else {
+              $('.pd_depthnav').removeClass('hide');
+              $('.pdviewwrap').removeClass('len1');
+              if($('.dep3_nav').find('.link-item').length > 10){
+                $('.pd_depthnav').removeClass('setslide');
+                $('.dep3_nav').not('.slick-initialized').slick( depOpt(true) );
+              } else {
+                $('.dep3_nav').filter('.slick-initialized').slick('unslick');
+                $('.pd_depthnav').addClass('setslide');
+              }
+            }
+            
+            $('.depth_controls').find('.ibtn_prev').on('click', function(){
+              $('.dep3_nav').slick('slickPrev');
+            })
+            $('.depth_controls').find('.ibtn_next').on('click', function(){
+              $('.dep3_nav').slick('slickNext');
+            })
+          });
+          $(window).on('load resize', function(){
+            // view contents에 사용하는 슬라이드 2가지 호출
+            pdViewMediaSet() // 미디어 상품
+            pdViewThumbSet() // 추천 패키지 상품
+          }).trigger("load resize");
+        </script>
+        <!-- START : 상단 메뉴 클릭시 호출되는 영역 -->
+        <div class="pdviewwrap">
+          <p class="pdview_title"><strong>Olive Young Media</strong></p>
+          <div class="pd_depthnav">
+            <div class="depth_controls">
+              <button class="ibtn_prev"><i class="icon"></i><span class="sr-only">이전</span></button>
+              <button class="ibtn_next"><i class="icon"></i><span class="sr-only">다음</span></button>
+            </div>
+            <div class="dep_wrap">
+              <div class="dep3_nav">
+                <a href="javascript:;" class="link-item active"><span>1COEX</span></a>
+                <a href="javascript:;" class="link-item"><span>2HANAM</span></a>
+                <a href="javascript:;" class="link-item"><span>3GOYANG</span></a>
+                <a href="javascript:;" class="link-item"><span>4ANSEONG</span></a>
+                <a href="javascript:;" class="link-item"><span>5WIRYE</span></a>
+                <a href="javascript:;" class="link-item"><span>6BUCHEON</span></a>
+                <a href="javascript:;" class="link-item"><span>7서안고속도로 톨게이트IC 및 게이트</span></a>
+                <a href="javascript:;" class="link-item"><span>8경부고속도로</span></a>
+                <a href="javascript:;" class="link-item"><span>9서안고속도로 톨게이트IC 및 게이트</span></a>
+                <a href="javascript:;" class="link-item"><span>10경부고속도로</span></a>
+                <a href="javascript:;" class="link-item"><span>11서해안 고속도로</span></a>
+              </div>
+            </div>
+          </div>
+          <!-- //.pd_depthnav -->
+
+          <div id="defaultSection" class="section default">
+            <p class="view_subcaption"><span>외국관광객비중 40%에 달하는 부산의 대표적인 쇼핑명소 외국관광객비중 40%에 달하는 부산의 대표적인 쇼핑명소외국관광객비중 40%에 달하는 부산의 대표적인 쇼핑명소외국관광객비중 40%에 달하는 부산의 대표적인 쇼핑명소</span></p>
+            <div class="wideslider">
+              
+              <div class="skiplink">
+                <a href="#mediaSection" class="medialink"><span>미디어 상품 목록</span></a>
+                <a href="#packgeSection" class="packgelink"><span>패키지 상품 목록</span></a>
+              </div>
+              <div class="pdimgwide">
+                <div class="pdimglist">
+                  <figure class="grid-item">
+                    <div class="img">
+                      <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+                    </div>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="view_description"><span>소비문화의 트렌드를 주도하는 2030 여성타깃 Live 미디어 H&B store 시장 선도하는 매장점유율 80%의 압도적 NO.1 올리브영 소비문화의 트렌드를 주도하는 2030 여성타깃 Live 미디어 H&B store 시장 선도하는 매장점유율 80%의 압도적 NO.1 올리브영</span></div>
+            
+            <div class="countgroup">
+              <div class="uk_countwrap">
+                <div class="uk_count">
+                  <p class="tit">18년 월 평균 방문객</p>
+                  <p class="count"><em>8978명</em></p>
+                </div>
+                <div class="uk_count">
+                  <p class="tit">2030 방문객비중</p>
+                  <p class="count"><em>55.5%</em></p>
+                </div>
+                <div class="uk_count">
+                  <p class="tit">방문객 평균 체류시간</p>
+                  <p class="count"><em>5.5시간</em></p>
+                </div>
+                <div class="uk_count">
+                  <p class="tit">명절연휴 목적지 검색</p>
+                  <p class="count"><em>1위</em></p>
+                </div>
+              </div>
+              <p class="etcmark">* H&B Store 부문│올리브영 자료, 17년 기준</p>
+            </div>
+            <!-- //.countgroup -->
+            
+            <div class="countgroup">
+              <div class="uk_countwrap">
+                <div class="uk_count">
+                  <p class="tit">부산역 연간 이용객 수</p>
+                  <p class="count"><em>8,978만명</em></p>
+                  <p class="subtxt"><em>[한국철도공사, 19년 기준]</em></p>
+                </div>
+                <div class="uk_count">
+                  <p class="tit">부산역 고속철도 이용객 수</p>
+                  <p class="count"><em>1,808만명</em></p>
+                  <p class="subtxt"><em>[한국철도공사, 19년 기준]</em></p>
+                </div>
+                <div class="uk_count">
+                  <p class="tit">수도권-부산역 이용객 수</p>
+                  <p class="count"><em>1,216만명</em></p>
+                  <p class="subtxt"><em>[한국철도공사, 19년 기준]</em></p>
+                </div>
+                <div class="uk_count">
+                  <p class="tit">지하철 부산역 이용객 수</p>
+                  <p class="count"><em>1,716만명</em></p>
+                  <p class="subtxt"><em>[한국철도공사, 19년 기준]</em></p>
+                </div>
+              </div>
+              <p class="etcmark">* H&B Store 부문│올리브영 자료, 17년 기준</p>
+            </div>
+            <!-- //.countgroup -->
+
+          </div>
+          <!-- //.pdview_body -->
+
+          <div id="mediaSection" class="section media">
+            <h2>올리브영 미디어 상품</h2>
+            <div class="paging media_control">
+              <div class="btngroup">
+                <button type="button" class="ibtn_prev prev arrow"><i class="arrow-l"></i><span class="sr-only">이전</span></button>
+                <button type="button" class="ibtn_next next arrow"><i class="arrow-r"></i><span class="sr-only">다음</span></button>
+              </div>
+              <div class="slider_counter">총<em>0</em>상품</div>
+            </div>
+            <div class="fullslider">
+              <div class="pdimgfull">
+                <div class="pdimglist">
+                  <figure class="grid-item">
+                    <div class="img">
+                      <img src="{{set.baseurl}}{{set.imgurl}}/sample/01.ent-sample03.png" width="1080" height="720" alt="" />
+                    </div>
+                    <figcaption><a href="productMediaView.html"><span>스타필드 고양시</span></a></figcaption>
+                  </figure>
+                  <figure class="grid-item">
+                    <div class="img">
+                      <!-- <img src="{{set.baseurl}}{{set.imgurl}}/sample/04.bill-sample02.png" width="1134" height="643" alt="" /> -->
+                    </div>
+                    <figcaption><a href="productMediaView.html"><span>STARFIELD SHOPPING MALL</span></a></figcaption>
+                  </figure>
+                  <figure class="grid-item empty">
+                    <div class="img"></div>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <!-- //.fullslider -->
+            <div class="textwrap">
+              <p class="text_subcaption">
+                <span>플래너스 특급 노하우!</span><strong>자신있게 <em>추천</em>하는 3이유!</strong>
+              </p>
+              <ul class="text_list">
+                <li>
+                  <strong>유리한 지리적 접근성 최고의 베스트 접근성 유리한 지리적 접근성 최고의 베스트 접근성</strong>
+                  <p><span>인천공항에서 도보 10분 서울에서 35분 거리</span></p>
+                </li>
+                <li>
+                  <strong>프리미엄 타깃</strong>
+                  <p><span>글로벌최고 수준의 시설로 구매력을 갖춘 프리미엄 미디어 타깃 글로벌최고 수준의 시설로 구매력을 갖춘 프리미엄 미디어 타깃</span></p>
+                </li>
+                <li>
+                  <strong>외국인 이용객</strong>
+                  <p><span>연 261만명이 카지노 이용 연간 방문객의 25%수준</span></p>
+                </li>
+              </ul>
+            </div>
+            <!-- //.textwrap -->
+          </div>
+          <!-- //.media_section -->
+
+          <div id="packgeSection" class="section packge">
+            <div class="thumbwrap">
+              <h2 class="h2">
+                <strong><span>추천패키지 <em>상품</em></span></strong>
+              </h2>
+              <div class="total_text">총<em>0</em>상품</div>
+              <div class="thumbslider fr">
+                <div class="thumblist">
+                  <figure class="figure">
+                    <a href="productPackgeView.html">
+                      <div class="img">
+                        <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+                      </div>
+                      <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+                    </a>
+                  </figure>
+                  <figure class="figure">
+                    <a href="productPackgeView.html">
+                      <div class="img">
+                        <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+                      </div>
+                      <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+                    </a>
+                  </figure>
+                  <figure class="figure">
+                    <a href="productPackgeView.html">
+                      <div class="img">
+                        <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+                      </div>
+                      <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+                    </a>
+                  </figure>
+                  <figure class="figure">
+                    <a href="productPackgeView.html">
+                      <div class="img">
+                        <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+                      </div>
+                      <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+                    </a>
+                  </figure>
+                  <figure class="figure">
+                    <a href="productPackgeView.html">
+                      <div class="img">
+                        <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+                      </div>
+                      <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+                    </a>
+                  </figure>
+                  <figure class="figure">
+                    <a href="productPackgeView.html">
+                      <div class="img">
+                        <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+                      </div>
+                      <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+                    </a>
+                  </figure>
+                  <figure class="figure">
+                    <a href="productPackgeView.html">
+                      <div class="img">
+                        <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+                      </div>
+                      <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="paging fr">
+                <div class="slider_counter">
+                  <span class="number"><b class="current">1</b><i class="total">3</i></span>
+                </div>
+                <div class="btngroup">
+                  <button type="button" class="ibtn_prev prev arrow"><i class="arrow-l"></i><span class="sr-only">이전</span></button>
+                  <button type="button" class="ibtn_next next arrow"><i class="arrow-r"></i><span class="sr-only">다음</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //.pdthumbwrap -->
+
+            <div class="thumbwrap">
+              <h2 class="h2">
+                <span>엔터테인먼트 만을 위한</span><strong><span>추천패키지 <em>상품</em></span></strong>
+              </h2>
+              <div class="total_text">총<em>0</em>상품</div>
+              <div class="thumbslider fr">
+                <div class="thumblist">
+                  <figure class="figure">
+                    <a href="productPackgeView.html">
+                      <div class="img">
+                        <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" />
+                      </div>
+                      <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+                    </a>
+                  </figure>
+                  <figure class="figure">
+                    <a href="productPackgeView.html">
+                      <div class="img">
+                        <!-- <img src="{{set.baseurl}}{{set.imgurl}}/sample/img_sample2.jpg" width="1440" height="811" alt="" /> -->
+                      </div>
+                      <figcaption class="caption">2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG2021년 가을 부산PKG</figcaption>
+                    </a>
+                  </figure>
+                  <figure class="figure empty">
+                    <div class="img"></div>
+                  </figure>
+                </div>
+              </div>
+              <div class="paging fr">
+                <div class="slider_counter">
+                  <span class="number"><b class="current">1</b><i class="total">3</i></span>
+                </div>
+                <div class="btngroup">
+                  <button type="button" class="ibtn_prev prev arrow"><i class="arrow-l"></i><span class="sr-only">이전</span></button>
+                  <button type="button" class="ibtn_next next arrow"><i class="arrow-r"></i><span class="sr-only">다음</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //.pdthumbwrap -->
+          </div>
+          <!-- //.packge_section -->
+        </div>
+        <!-- //.pdviewwrap -->
+        <!-- END : 상단 메뉴 클릭시 호출되는 영역 -->
+
+      </section>
+    </div>
+    <!-- //.cbody_in -->
+  </div>
+  <!-- //.cbody_out -->
+</div>
+<!-- //.cntwrap -->
+{% endblock %}
