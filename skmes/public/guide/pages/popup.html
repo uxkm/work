@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/logo_32x32.png">
+    <title>팝업(모달) | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <!-- <link rel="stylesheet" href="../../css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../css/uiFrame.min.css">
+
+    <link rel="stylesheet" href="../../css/uiStyleGuide.min.css">
+
+    <script src="../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../assets/js/popper/popper.js"></script>
+    <script src="../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../assets/js/moment/moment.min.js"></script>
+    <script src="../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../js/uiux.js"></script>
+    <style>
+        .testbtn{margin-top:2px;}
+        .sitemap_list .depth_group{width:50%;}
+        .sitemap_list .depth_group:nth-child(2n) ~ .depth_group{margin-top:20px;}
+        .sitemap_list .depth2>strong {
+            color: #C00020;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .sitemap_list .depth2:before{display:none;}
+        .sitemap_list .depth3:before{position:relative;top:-2px;}
+        .sitemap_list .depth3 > p{display:inline-block;width:calc(100% - 20px);}
+    </style>
+</head>
+<body>
+<div id="ukgPage" class="ukg_pagewrap">
+    <div class="sitemap_list">
+        <div class="depth_group" role="application" aria-label="공통팝업">
+            <p class="depth1">공통팝업</p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <button id="btnUserPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(사용자)</span></button>
+                    <button id="btnDeptPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(부서)</span></button>
+                    <button id="btnCustomerPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(고객)</span></button>
+                    <button id="btnCorpPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(공급업체)</span></button>
+                </li>
+                <li class="depth2">
+                    <button id="btnEquipmentPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(설비마스터)</span></button>
+                    <button id="btnMaterialPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(자재마스터)</span></button>
+                    <button id="btnAlarmHistoryPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(알림이력)</span></button>
+                </li>
+                <li class="depth2">
+                    <button id="btnGlAccountPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(G/L계정)</span></button>
+                    <button id="btnCostCenterPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(고스트센터)</span></button>
+                    <button id="btnInternalOrderPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(내부오더)</span></button>
+                    <button id="btnApprovalPopup" class="btn testbtn"><i class="icon"></i><span>공통팝업(결재)</span></button>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group" role="application" aria-label="생산준비">
+            <p class="depth1">생산준비</p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <strong>원부원료관리</strong>
+                    <ul class="dep_sublist">
+                        <li class="depth3">
+                            <p>원부원료 구매요청</p>
+                            <button id="btnPopupRequest" class="btn testbtn"><i class="icon"></i><span>구매요청 팝업</span></button>
+                        </li>
+                        <li class="depth3">
+                            <p>원부원료입고</p>
+                            <button id="btnPopupOrder" class="btn testbtn"><i class="icon"></i><span>구매오더조회 팝업</span></button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group" role="application" aria-label="공정운영">
+            <p class="depth1">공정운영</p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <strong>원료투입관리</strong>
+                    <ul class="dep_sublist">
+                        <li class="depth3">
+                            <p>PDA 불출/소분/투입현황</p>
+                            <button id="btnIssueAdd" class="btn testbtn"><i class="icon"></i><span>불출현황 이력추가 팝업</span></button>
+                            <button id="btnDivideAdd" class="btn testbtn"><i class="icon"></i><span>소분현황 이력추가 팝업</span></button>
+                            <button id="btnInputAdd" class="btn testbtn"><i class="icon"></i><span>투입현황 이력추가 팝업</span></button>
+                            <button id="btnBaseInfomationAdd" class="btn testbtn"><i class="icon"></i><span>원부원료추가 팝업</span></button>
+                        </li>
+                        <li class="depth3">
+                            <p>제품소포장관리(유화)</p>
+                            <button id="btnSmallPop1" class="btn testbtn"><i class="icon"></i><span>소포장 제품구분 팝업</span></button>
+                            <button id="btnSmallPop2" class="btn testbtn"><i class="icon"></i><span>소포장 정상품 실적 추가 입력(유화) 팝업</span></button>
+                            <button id="btnSmallPop3" class="btn testbtn"><i class="icon"></i><span>소포장 재생품 실적 추가 입력(유화) 팝업</span></button>
+                        </li>
+                        <li class="depth3">
+                            <p>Re-Melting관리(유화)</p>
+                            <button id="btnAddRePop" class="btn testbtn"><i class="icon"></i><span>Re-Melting 제품구분 실적추가 팝업</span></button>
+                            <button id="btnPopup2" class="btn testbtn"><i class="icon"></i><span>Re-Melting 정상품 실적 추가 입력(유화) 팝업</span></button>
+                            <button id="btnPopup3" class="btn testbtn"><i class="icon"></i><span>Re-Melting 재생품 실적 추가 입력(유화) 팝업</span></button>
+                            <button id="btnAddPerformance" class="btn testbtn"><i class="icon"></i><span>재투입 실적 추가 입력(수지) 팝업</span></button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group" role="application" aria-label="생산실적">
+            <p class="depth1">생산실적</p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <strong>일마감관리</strong>
+                    <ul class="dep_sublist">
+                        <li class="depth3">
+                            <p>공통</p>
+                            <button id="btnModalCancelDesc" class="btn testbtn"><i class="icon"></i><span>취소사유 팝업</span></button>
+                        </li>
+                        <li class="depth3">
+                            <p>유틸리티 사용실적</p>
+                            <button id="btnModalCalc" class="btn testbtn"><i class="icon"></i><span>유틸리티 사용량 계산 팝업</span></button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- START : 공통팝업(사용자) -->
+<div id="dialogUserPopup" class="mercury-modal" title="사용자 정보 조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <form id="searchForm" class="search-form">
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th>사번</th>
+                                <td>
+                                    <label class="inplab">
+                                        <input id="txt_userId" name="userId" type="text" class="form-control form-control-sm">
+                                    </label>
+                                </td>
+                                <th>이름</th>
+                                <td>
+                                    <label class="inplab">
+                                        <input id="txt_userName" name="userName" type="text" class="form-control form-control-sm">
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="btn_search" class="btn btn-sm ukfind btn-outline-secondary"><i class="icon"></i><span>조회</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp">
+                <div id="userGridDiv" class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>사용자정보목록</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">8</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="grd_user">
+                            <button id="btnChoice" class="btn btn-sm ukchoice btn-outline-secondary"><i class="icon"></i><span>선택</span></button>
+                        </div>
+                    </div>
+                    <div class="mercury-grid" data-title="사용자정보목록"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnUserPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(사용자) -->
+
+<!-- START : 공통팝업(부서) -->
+<div id="dialogDeptPopup" class="mercury-modal" title="부서 정보 조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <form id="searchForm" class="search-form">
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th>부서코드</th>
+                                <td>
+                                    <label class="inplab">
+                                        <input id="txt_deptCode" name="deptCode" type="text" class="form-control form-control-sm">
+                                    </label>
+                                </td>
+                                <th>부서명</th>
+                                <td>
+                                    <label class="inplab">
+                                        <input id="txt_deptName" name="deptName" type="text" class="form-control form-control-sm">
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="btn_search" class="btn btn-sm ukfind btn-outline-secondary"><i class="icon"></i><span>조회</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp">
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>부서정보목록</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="grd_dept">
+                            <button id="btnChoice" class="btn btn-sm ukchoice btn-outline-secondary"><i class="icon"></i><span>선택</span></button>
+                        </div>
+                    </div>
+                    <div class="mercury-grid bottom-grid" data-title="부서정보목록"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnDeptPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(부서) -->
+
+<!-- START : 공통팝업(고객) -->
+<div id="dialogCustomerPopup" class="mercury-modal" title="고객 정보 조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <form id="searchForm" class="search-form">
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th>고객번호</th>
+                                <td>
+                                    <label class="inplab">
+                                        <input id="txt_customerCode" name="customerCode" type="text" class="form-control form-control-sm">
+                                    </label>
+                                </td>
+                                <th>고객명</th>
+                                <td>
+                                    <label class="inplab">
+                                        <input id="txt_customerName" name="customerName" type="text" class="form-control form-control-sm">
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="btn_search" class="btn btn-sm ukfind btn-outline-secondary"><i class="icon"></i><span>조회</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp">
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>고객정보목록</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">5662</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="grd_customer">
+                            <button id="btnChoice" class="btn btn-sm ukchoice btn-outline-secondary"><i class="icon"></i><span>선택</span></button>
+                        </div>
+                    </div>
+                    <div class="mercury-grid" data-title="고객정보목록"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnCustomerPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(고객) -->
+
+<!-- START : 공통팝업(공급업체) -->
+<div id="dialogCorpPopup" class="mercury-modal" title="공급업체 정보 조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnCorpPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(공급업체) -->
+
+<!-- START : 공통팝업(설비마스터) -->
+<div id="dialogEquipmentPopup" class="mercury-modal" title="설비마스터 정보 조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <form id="searchForm" class="search-form">
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th>설비코드</th>
+                                <td>
+                                    <label class="inplab">
+                                        <input id="txt_equipmentCode" name="equipmentCode" type="text" class="form-control form-control-sm">
+                                    </label>
+                                </td>
+                                <th>설비명</th>
+                                <td>
+                                    <label class="inplab">
+                                        <input id="txt_equipmentName" name="equipmentName" type="text" class="form-control form-control-sm">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>기능위치</th>
+                                <td>
+                                    <label class="inplab">
+                                        <input id="txt_flCode" name="flCode" type="text" class="form-control form-control-sm">
+                                    </label>
+                                </td>
+                                <th>설비 Tag</th>
+                                <td>
+                                    <label class="inplab">
+                                        <input id="txt_tagNo" name="tagNo" type="text" class="form-control form-control-sm">
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="btn_search" class="btn btn-sm ukfind btn-outline-secondary"><i class="icon"></i><span>조회</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp">
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>부서정보목록</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">167</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="grd_equipment">
+                            <button id="btnChoice" class="btn btn-sm ukchoice btn-outline-secondary"><i class="icon"></i><span>선택</span></button>
+                        </div>
+                    </div>
+                    <div class="mercury-grid" data-title="부서정보목록"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnEquipmentPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(설비마스터) -->
+
+<!-- START : 공통팝업(자재마스터) -->
+<div id="dialogMaterialPopup" class="mercury-modal" title="자재마스터 정보 조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <form id="searchForm" class="search-form">
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th>공장</th>
+                                <td>
+                                    <div class="field">
+                                        <div class="multiple_select">
+                                            <div class="select_text"><span>선택해주세요.</span></div>
+                                            <div class="select_wrap">
+                                                <ul class="select_list">
+                                                    <li class="select_option">
+                                                        <label class="chkrad">
+                                                            <input type="checkbox" name="chkAll">
+                                                            <span>전체</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="select_option">
+                                                        <label class="chkrad">
+                                                            <input type="checkbox" name="chkA">
+                                                            <span>선택1</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="select_option">
+                                                        <label class="chkrad">
+                                                            <input type="checkbox" name="chkB">
+                                                            <span>선택2</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <div class="btngroup">
+                                                    <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+                                                    <button class="btn xsm xclose"><span>닫기</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.multiple_select -->
+                                    </div>
+                                </td>
+                                <th>MES 자재유형</th>
+                                <td>
+                                    <div class="field">
+                                        <div class="multiple_select">
+                                            <div class="select_text"><span>선택해주세요.</span></div>
+                                            <div class="select_wrap">
+                                                <ul class="select_list">
+                                                    <li class="select_option">
+                                                        <label class="chkrad">
+                                                            <input type="checkbox" name="chkAll">
+                                                            <span>전체</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="select_option">
+                                                        <label class="chkrad">
+                                                            <input type="checkbox" name="chkA">
+                                                            <span>선택1</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="select_option">
+                                                        <label class="chkrad">
+                                                            <input type="checkbox" name="chkB">
+                                                            <span>선택2</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <div class="btngroup">
+                                                    <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+                                                    <button class="btn xsm xclose"><span>닫기</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.multiple_select -->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>자재코드</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="inplab">
+                                            <input id="txt_materialCode" name="materialCode" type="text" class="form-control form-control-sm">
+                                        </label>
+                                    </div>
+                                </td>
+                                <th>자재명</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="inplab">
+                                            <input id="txt_materialName" name="materialName" type="text" class="form-control form-control-sm">
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="btn_search" class="btn btn-sm ukfind"><i class="icon"></i><span>조회</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp">
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>자재마스터목록</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">21607</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="grd_material">
+                            <button id="btn_confirm" class="btn btn-sm ukchoice"><i class="icon"></i><span>선택</span></button>
+                        </div>
+                    </div>
+                    <div class="mercury-grid" data-title="자재마스터목록"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnMaterialPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(자재마스터) -->
+
+<!-- START : 공통팝업(알림이력) -->
+<div id="dialogAlarmHistoryPopup" class="mercury-modal" title="알림이력 정보 조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <form id="searchForm" class="search-form">
+                    <table class="tbl main-group">
+                        <tbody>
+                            <tr>
+                                <th>부서코드</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="inplab">
+                                            <input id="txt_userId" name="userId" type="text" class="form-control form-control-sm">
+                                        </label>
+                                    </div>
+                                </td>
+                                <th>부서명</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="inplab">
+                                            <input id="txt_userName" name="userName" type="text" class="form-control form-control-sm">
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="btn_search" class="btn btn-sm ukfind"><i class="icon"></i><span>조회</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp">
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>부서정보목록</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="grd_dept"></div>
+                    </div>
+                    <div class="mercury-grid" data-title="부서정보목록"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnAlarmHistoryPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(알림이력) -->
+
+<!-- START : 공통팝업(G/L계정) -->
+<div id="dialogGlAccountPopup" class="mercury-modal" title="G/L계정 조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <form id="searchForm" class="search-form">
+                    <table class="tbl main-group">
+                        <tbody>
+                            <tr>
+                                <th>G/L 계정번호</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="inplab">
+                                            <input type="text" name="glAccountCode" id="txt_glAccountCode" placeholder="부분일치검색">
+                                        </label>
+                                    </div>
+                                </td>
+                                <th>G/L 계정명</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="inplab">
+                                            <input type="text" name="glAccountName" id="txt_glAccountName" placeholder="부분일치검색">
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="btnSearch" class="btn btn-sm ukfind btn-sm btn-primary"><i class="icon"></i><span>조회</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp">
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>G/L계정 조회 목록</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">4</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="glAccountGrid">
+                            <button id="btnChoice" class="btn btn-sm ukchoice"><i class="icon"></i><span>선택</span></button>
+                            <button id="btnConfirm" class="btn btn-sm ukconfirm"><i class="icon"></i><span>ERP정보수신</span></button>
+                        </div>
+                    </div>
+                    <div class="mercury-grid" data-title="G/L계정 조회 목록"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnGlAccountPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(G/L계정) -->
+
+<!-- START : 공통팝업(코스트센터) -->
+<div id="dialogCostCenterPopup" class="mercury-modal" title="코스트센터 조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <form id="searchForm" class="search-form">
+                    <table class="tbl main-group">
+                        <tbody>
+                            <tr>
+                                <th>코스트센터</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="inplab">
+                                            <input type="text" name="costCenter" id="txt_costCenter" placeholder="부분일치검색">
+                                        </label>
+                                    </div>
+                                </td>
+                                <th>코스트센터내역</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="inplab">
+                                            <input type="text" name="costCenterName" id="txt_costCenterName" placeholder="부분일치검색">
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="btnSearch" class="btn btn-sm ukfind btn-sm btn-primary"><i class="icon"></i><span>조회</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp">
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>코스트센터 조회 목록</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="costCenterGrid">
+                            <button id="btnChoice" class="btn btn-sm ukchoice"><i class="icon"></i><span>선택</span></button>
+                            <button id="btnConfirm" class="btn btn-sm ukconfirm"><i class="icon"></i><span>ERP정보수신</span></button>
+                        </div>
+                    </div>
+                    <div class="mercury-grid" data-title="코스트센터 조회 목록"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnCostCenterPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(코스트센터) -->
+
+<!-- START : 공통팝업(내부오더) -->
+<div id="dialogInternalOrderPopup" class="mercury-modal" title="내부오더 조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <form id="searchForm" class="search-form">
+                    <table class="tbl main-group">
+                        <tbody>
+                            <tr>
+                                <th>공장</th>
+                                <td>
+                                    <div class="field">
+                                        <div class="multiple_select">
+                                            <div class="select_text"><span>선택해주세요.</span></div>
+                                            <div class="select_wrap">
+                                                <ul class="select_list">
+                                                    <li class="select_option">
+                                                        <label class="chkrad">
+                                                            <input type="checkbox" name="chkAll">
+                                                            <span>전체</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="select_option">
+                                                        <label class="chkrad">
+                                                            <input type="checkbox" name="chkA">
+                                                            <span>선택1</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="select_option">
+                                                        <label class="chkrad">
+                                                            <input type="checkbox" name="chkB">
+                                                            <span>선택2</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <div class="btngroup">
+                                                    <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+                                                    <button class="btn xsm xclose"><span>닫기</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.multiple_select -->
+                                    </div>
+                                </td>
+                                <th>오더유형</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="selectlab">
+                                            <select id="searchConditionType" name="conditionType" class="form-control form-control-sm">
+                                                <option value="100">내부오더: 개발</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>오더번호</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="inplab">
+                                            <input type="text" name="orderNo" id="txt_orderNo" placeholder="부분일치검색">
+                                        </label>
+                                    </div>
+                                </td>
+                                <th>오더내용</th>
+                                <td>
+                                    <div class="field">
+                                        <label class="inplab">
+                                            <input type="text" name="orderName" id="txt_orderName" placeholder="부분일치검색">
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="btnSearch" class="btn btn-sm ukfind btn-sm btn-primary"><i class="icon"></i><span>조회</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp">
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>내부오더 조회 목록</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="internalOrderGrid">
+                            <button id="btnChoice" class="btn btn-sm ukchoice"><i class="icon"></i><span>선택</span></button>
+                            <button id="btnConfirm" class="btn btn-sm ukconfirm"><i class="icon"></i><span>ERP정보수신</span></button>
+                        </div>
+                    </div>
+                    <div class="mercury-grid" data-title="내부오더 조회 목록"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnInternalOrderPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(내부오더) -->
+
+<!-- START : 공통팝업(결재) -->
+<div id="dialogApprovalPopup" class="mercury-modal" title="결재 관리" style="display:none">
+    <div class="modal_chead f-dircol">
+        <div class="mctop tright">
+            <button class="btn uktext" id="createBtn"><i class="icon"></i><span>기안</span></button>
+            <button class="btn uktext" id="withdrawBtn"><i class="icon"></i><span>회수</span></button>
+            <button class="btn uktext" id="returnBtn"><i class="icon"></i><span>반려</span></button>
+            <button class="btn uktext" id="approvalBtn"><i class="icon"></i><span>결재</span></button>
+        </div>
+        <div class="chead_search">
+            <div class="tblwrap wauto">
+                <table class="tbl col6">
+                    <tbody>
+                        <tr>
+                            <th>기안자</th>
+                            <td>
+                                <label class="inplab"><input type="text" name="" id="txt_txtUserName" value="" size="10px" readonly=""></label>
+                            </td>
+                            <th>사번</th>
+                            <td>
+                                <label class="inplab"><input type="text" name="" id="txt_txtUserId" value="" size="10px" readonly=""></label>
+                            </td>
+                            <th>직위</th>
+                            <td>
+                                <label class="inplab"><input type="text" name="" id="txt_txtWorkPositionName" value="" size="10px" readonly=""></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>기안 부서</th>
+                            <td>
+                                <label class="inplab"><input type="text" name="" id="txt_txtDeptName" value="" size="20px" readonly=""></label>
+                            </td>
+                            <th>기안 일자</th>
+                            <td>
+                                <label class="inplab"><input type="text" name="" id="txt_txtCreateDt" value="" size="10px" readonly=""></label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody">
+        <div class="framewrap" style="height:auto">
+            <div class="framegp">
+                <div class="div-title">
+                    <div class="tit_group">
+                        <div class="htit"><i class="icon"></i><span>결재 제목</span></div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="inplab" style="width:100%">
+                        <input type="text" id="txtApprTitle" maxlength="1000" size="100%" placeholder="결재 제목 입력하여 주세요." value="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="framewrap">
+            <div class="framegp">
+                <!-- 그리드 영역 시작 -->
+                <div id="approvalGrdZone" class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>결재자</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">3</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="approvalGrd">
+                            <div class="btngroup">
+                                <button class="btn ukup" id="upRowBtn"><i class="icon"></i><span>위</span></button>
+                                <button class="btn ukdw" id="downRowBtn"><i class="icon"></i><span>아래</span></button>
+                                <button class="btn ukadd" id="addRowBtn"><i class="icon"></i><span>추가</span></button>
+                                <button class="btn ukdel" id="deleteRowBtn"><i class="icon"></i><span>삭제</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mercury-grid" data-title="결재자"></div>
+                </div>
+                <!-- End : 그리드 영역  -->
+            </div>
+        </div>
+        <div class="framewrap" style="margin-top:0">
+            <div class="framegp">
+                <div class="div-title">
+                    <div class="tit_group">
+                        <div class="htit"><i class="icon"></i><span>결재/반려 내용</span></div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="textalab">
+                        <textarea id="approvalContentId" placeholder="결재/반려 내용 입력하여 주세요." rows="2"></textarea>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnApprovalPopupClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공통팝업(결재) -->
+
+
+<!-- START : 생산준비>원부원료관리>원부원료입고(구매오더조회 팝업) -->
+<div id="dialogPopupOrder" class="mercury-modal" title="구매오더조회" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <table class="tbl col6">
+                    <tbody>
+                        <tr>
+                            <th>공장</th>
+                            <td>
+                                <div class="field">
+                                    <label class="selectlab">
+                                        <select name="" id="">
+                                            <option value="">CHDM공장</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </td>
+                            <th>원부원료</th>
+                            <td>
+                                <div id="divMultCombo01"></div>
+                                <!-- <div class="field">
+                                    <label class="selectlab">
+                                        <select name="" id="">
+                                            <option value="">C-100, Blue Toner</option>
+                                        </select>
+                                    </label>
+                                </div> -->
+                            </td>
+                            <th>공급업체</th>
+                            <td>
+                                <div class="field_search" id="commonPopupForm1">
+                                    <div class="inpgroup">
+                                        <label class="inplab">
+                                            <input type="text" class="form-control form-control-sm" id="txt_corpCode1" name="corpCode1" value="" />
+                                        </label>
+                                        <button class="btn ukfind btn-primary btn-set-class" role="c" id="btn_corpCode1"><i class="icon"></i></button>
+                                    </div>
+                                    <div class="inpgroup">
+                                        <label class="inplab">
+                                            <input type="text" class="form-control form-control-sm" id="txt_corpName1" name="corpName1" value=""  readonly="readonly"/>
+                                        </label>
+                                        <button class="btn ukrefresh btn-outline-secondary btn-set-class" role="c" id="btn_corpInit1"><i class="icon"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="field chkfield">
+                                    <label class="chkrad">
+                                        <input type="radio" name="mrad" id="" checked>
+                                        <span>구매오더일</span>
+                                    </label>
+                                    <label class="chkrad ml20">
+                                        <input type="radio" name="mrad" id="">
+                                        <span>납품예정일</span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td colspan="2">
+                                <div class="field">
+                                    <div class="input-group">
+                                        <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="fromDate2" name="fromDate2" data-from="fromDate2">
+                                        <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="toDate2" name="toDate2" data-to="toDate2">
+                                        <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td colspan="2">
+                                <div class="field">
+                                    <label class="chkrad">
+                                        <input type="checkbox" name="" id="">
+                                        <span>남품완료 포함</span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="btnModalFind"  class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody hfixed">
+        <div class="framewrap">
+            <div class="framegp">
+                <!-- START : 그리드 영역 -->
+                <div id="realGridZoneSample" class="article">
+                    <!-- START : realGrid 영역 -->
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>구매오더 목록</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end">
+                            <div class="btngroup">
+                                <button id="btnChoice" class="btn ukchoice"><i class="icon"></i><span>선택</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="realGridSample" class="mercury-grid"></div>
+                    <!-- <l:grid gridId="realGridSample" title="구매오더 목록" buttonPosition="TOP">
+                        <l:button btnId="btnModalChoice"  clazz="ukchoice"  role="R" text="선택"/>
+                    </l:grid> -->
+                </div>
+                <!-- END : 그리드 영역 -->
+            </div>
+            <!-- //.framegp -->
+        </div>
+        <!-- //.framewrap -->
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnPopupOrderClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 생산준비>원부원료관리>원부원료입고(구매오더조회 팝업) -->
+
+<!-- START : 생산준비>원부원료관리>원부원료 구매요청(구매요청 팝업) -->
+<div id="dialogPopupRequest" class="mercury-modal1" title="구매요청" style="display:none">
+    <div class="modal_cbody ntop">
+        <div class="div-title">
+            <div class="top_group grid-button-group f-end">
+                <l:button btnId="btnModalSave"  clazz="uksave"  role="R" text="임시저장"/>
+                <l:button btnId="btnModalConfirm"  clazz="ukconfirm"  role="R" text="구매요청"/>
+                <l:button btnId="btnModalCancel"  clazz="ukcancel"  role="R" text="요청취소"/>
+            </div>
+        </div>
+        <div class="tblwrap">
+            <table class="tbl type1" id="popTable">
+                <colgroup>
+                    <col style="width:100px" />
+                    <col style="width:250px" />
+                    <col style="width:100px" />
+                    <col style="width:250px" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>자재코드</th>
+                        <td class="tcenter">
+                            <div class="field">
+                                <span class="unit" id="pMaterialCode">3000153</span>
+                            </div>
+                        </td>
+                        <th>자재명</th>
+                        <td class="tcenter">
+                            <div class="field">
+                                <span class="unit" id="pMaterialName">S100</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>자재그룹</th>
+                        <td class="tcenter">
+                            <div class="field">
+                                <span class="unit" id="pMaterialGroupName">첨가제[3050]</span>
+                            </div>
+                        </td>
+                        <th>구매그룹</th>
+                        <td class="tcenter">
+                            <div class="field">
+                                <span class="unit" id="pPurchaseGroupName">원료구매[100]</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>단위</th>
+                        <td class="tcenter">
+                            <div class="field">
+                                <span class="unit" id="pQtyUnit">㎏</span>
+                            </div>
+                        </td>
+                        <th>안전재고</th>
+                        <td class="tcenter">
+                            <div class="field">
+                                <span class="unit" id="pSafetyQty">400</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>구매요청량</th>
+                        <td class="tcenter">
+                            <div class="field">
+                                <label class="inplab tright w100">
+                                    <input type="text" name="reqQty" id="pReqQty" value="" />
+                                </label>
+                            </div>
+                        </td>
+                        <th>납품요청일</th>
+                        <td>
+                            <div class="field">
+                                <div class="input-group mwauto">
+                                    <input type="text" class="date-picker form-control form-control-sm" data-week="false"  id="pDeliveryDt"  name="deliveryDt" readonly="readonly">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>구매요청자</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <span class="unit" id="pCreNm">이재복</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>희망공급업체</th>
+                        <td colspan="3">
+                            <div class="field_search" id="commonPopupForm1">
+                                <div class="inpgroup">
+                                    <label class="inplab">
+                                        <input type="text" class="form-control form-control-sm" id="recommandVendorCode" name="recommandVendorCode" value="" />
+                                    </label>
+                                    <l:button clazz="ukfind btn-primary btn-set-class" role="c" btnId="btn_recommandVendorCode" imgsrc="/images/magnifying-glass.png"/>
+                                </div>
+                                <div class="inpgroup">
+                                    <label class="inplab">
+                                        <input type="text" class="form-control form-control-sm" id="recommandVendorCodeName" name="recommandVendorCodeName" value=""  readonly="readonly"/>
+                                    </label>
+                                    <l:button clazz="ukrefresh btn-outline-secondary btn-set-class" role="c" btnId="btn_corpInit" imgsrc="/images/refresh.png"/>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>고정공급업체</th>
+                        <td colspan="3">
+                            <div class="field_search" id="commonPopupForm2">
+                                <div class="inpgroup">
+                                    <label class="inplab">
+                                        <input type="text" class="form-control form-control-sm" id="fixedVendorCode" name="fixedVendorCode" value="" />
+                                    </label>
+                                    <l:button clazz="ukfind btn-primary btn-set-class" role="c" btnId="btn_fixedVendorCode" imgsrc="/images/magnifying-glass.png"/>
+                                </div>
+                                <div class="inpgroup">
+                                    <label class="inplab">
+                                        <input type="text" class="form-control form-control-sm" id="fixedVendorCodeName" name="fixedVendorCodeName" value=""  readonly="readonly"/>
+                                    </label>
+                                    <l:button clazz="ukrefresh btn-outline-secondary btn-set-class" role="c" btnId="btn_corpInit2" imgsrc="/images/refresh.png"/>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>직납업체</th>
+                        <td colspan="3">
+                            <div class="field_search" id="commonPopupForm3">
+                                <div class="inpgroup">
+                                    <label class="inplab">
+                                        <input type="text" class="form-control form-control-sm" id="directDeliveryVendorCode" name="directDeliveryVendorCode" value="" />
+                                    </label>
+                                    <l:button clazz="ukfind btn-primary btn-set-class" role="c" btnId="btn_directDeliveryVendorCode" imgsrc="/images/magnifying-glass.png"/>
+                                </div>
+                                <div class="inpgroup">
+                                    <label class="inplab">
+                                        <input type="text" class="form-control form-control-sm" id="directDeliveryVendorCodeName" name="directDeliveryVendorCodeName" value=""  readonly="readonly"/>
+                                    </label>
+                                    <l:button clazz="ukrefresh btn-outline-secondary btn-set-class" role="c" btnId="btn_corpInit3" imgsrc="/images/refresh.png"/>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>MES요청번호</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <span class="unit" id="pReqNo">REQ21111701</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>구매요청번호</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <span class="unit" id="pErpPrNo">1000235987</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>처리상태</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <span class="unit" id="pErpFlag">변경가능</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>메일발송</th>
+                        <td class="tcenter">
+                            <div class="field">
+                                <span class="unit" id="pAlarmSendYn">Y</span>
+                            </div>
+                        </td>
+                        <th>메일발송일시</th>
+                        <td class="tcenter">
+                            <div class="field">
+                                <span class="unit" id="pAlarmSeq">10000235987</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+</div>
+<!-- END : 생산준비>원부원료관리>원부원료 구매요청(구매요청 팝업) -->
+
+<!-- START : 공정운영>원료투입관리>PDA 불출/소분/투입현황(불출현황 이력추가 팝업) -->
+<div id="issuePopup" class="mercury-modal" title="원부원료 불출" style="display:none">
+    <div class="modal_cbody">
+        <div class="tblwrap">
+            <table class="tbl type1">
+                <colgroup>
+                    <col style="width:80px">
+                    <col style="width:120px">
+                    <col style="width:80px">
+                    <col style="width:120px">
+                    <col style="width:80px">
+                    <col style="width:300px">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>원부원료</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select id="disbursementOfIssueByPlantCodeList" name="disbursementOfIssueByPlantCodeList">
+                                        <option value="">100627</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th>단위</th>
+                        <td class="tcenter">
+                            <div class="field">
+                                <span id="unitOfIssue" class="unit"></span>
+                            </div>
+                        </td>
+                        <th>가용재고</th>
+                        <td class="tright">
+                            <div id="availabilityStockOfIssue" class="field">0</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>불출량</th>
+                        <td class="tright">
+                            <div class="field">
+                                <input type="text" class="form-control form-control-sm" id="amountOfIssue" name="amountOfIssue">
+                            </div>
+                        </td>
+                        <th>불출일자</th>
+                        <td>
+                            <div class="field">
+                                <div class="input-group">
+                                    <input type="text" class="date-picker form-control form-control-sm" data-week="false" id="dateOfIssue" name="dateOfIssue">
+                                </div>
+                            </div>
+                        </td>
+                        <th>Lot No</th>
+                        <td>
+                            <div class="field_search" id="commonPopupForm">
+                                <div class="inpgroup">
+                                    <label class="inplab">
+                                        <input type="text" class="form-control form-control-sm" id="userIdOfIssue" name="userIdOfIssue" value="" />
+                                    </label>
+                                    <button class="btn ukfind btn-primary btn-set-class"><i class="icon"></i></button>
+                                </div>
+                                <div class="inpgroup">
+                                    <label class="inplab">
+                                        <input type="text" class="form-control form-control-sm" id="userNameOfIssue" name="userNameOfIssue" value=""  readonly="readonly"/>
+                                    </label>
+                                    <button class="btn ukrefresh btn-outline-secondary btn-set-class"><i class="icon"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnIssueSave" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+        <button id="btnIssueClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공정운영>원료투입관리>PDA 불출/소분/투입현황(불출현황 이력추가 팝업) -->
+
+<!-- START : 공정운영>원료투입관리>PDA 불출/소분/투입현황(소분현황 이력추가 팝업) -->
+<div id="dividePopup" class="mercury-modal" title="원부원료 소분" style="display:none">
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp" style="width:59.5%">
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>소분정보</span></div>
+                        </div>
+                    </div>
+                    <div class="tblwrap pad0">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width:80px">
+                                <col style="width:150px">
+                                <col style="width:80px">
+                                <col style="width:150px">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>원부원료</th>
+                                    <td>
+                                        <div class="field">
+                                            <label class="selectlab">
+                                                <select id="disbursementOfDivideByPlantCodeList" name="disbursementOfDivideByPlantCodeList">
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <th>단위</th>
+                                    <td class="tcenter">
+                                        <div id="unitOfDivide" class="field"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>소분일자</th>
+                                    <td>
+                                        <div class="field">
+                                            <div class="input-group">
+                                                <input type="text" class="date-picker form-control form-control-sm" data-week="false"  id="divideDate" name="divideDate">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <th>소분가능수량</th>
+                                    <td class="tright">
+                                        <div id="availableQtyOfDivide" class="field"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>소분량</th>
+                                    <td colspan="3">
+                                        <div class="field wauto">
+                                            <label class="inplab tright">
+                                                <input type="text" name="amountOfDivide" id="amountOfDivide" value="" class="w80"><span id="unitOfDivideSpan">(㎏) x</span>
+                                            </label>
+                                            <label class="inplab tright">
+                                                <input type="text" name="eaOfDivide" id="eaOfDivide" value="" class="w80"><span>EA</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="bottom_group">
+                            <div class="btngroup f-end">
+                                <button id="btnDividePopupAdd" class="btn ukconfirm"><i class="icon"></i><span>적용</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.article -->
+            </div>
+            <!-- //.framegp -->
+
+            <div class="framegp" style="width:39.5%">
+                <!-- START : 그리드 영역 -->
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>소분데이터</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end">
+                            <div class="btngroup f-end">
+                                <button id="btnDividePopupSave" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="dividePopupGrid" class="mercury-grid"></div>
+                    <!-- <l:grid gridId="dividePopupGrid" title="소분데이터" height="380" buttonPosition="TOP"></l:grid> -->
+                </div>
+                <!-- END : 그리드 영역 -->
+                <!-- //.article -->
+            </div>
+            <!-- //.framegp -->
+        </div>
+        <!-- //.framewrap -->
+    </div>
+    <!-- //.modal_cbody -->
+    <div class="modal_cfoot">
+        <button id="btnDivideClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공정운영>원료투입관리>PDA 불출/소분/투입현황(소분현황 이력추가 팝업) -->
+
+<!-- START : 공정운영>원료투입관리>PDA 불출/소분/투입현황(투입현황 이력추가 팝업) -->
+<div id="inputPopup" class="mercury-modal" title="원부원료 투입" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <table class="tbl">
+                    <tr>
+                        <th>원부원료</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select id="disbursementOfInputByPlantCodeList" name="disbursementOfInputByPlantCodeList">
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <button id="btnInputSearch" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody hfixed">
+        <div class="framewrap">
+            <div class="framegp">
+                <!-- START : 그리드 영역 -->
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>원부원료</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end">
+                            <div class="field_group">
+                                <div class="field">
+                                    <strong>투입일자</strong>
+                                    <div class="input-group">
+                                        <input type="text" class="date-picker form-control form-control-sm hasDatepicker" data-week="false" id="workDate2" name="workDate2">
+                                        <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <strong>제조라인</strong>
+                                    <label class="selectlab">
+                                        <select name="manufacturingOfInput" id="manufacturingOfInput">
+                                            <option value="">C-100</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="btngroup f-end">
+                                <button id="btnInputPopupCheckedAllSave" class="btn ukconfirm"><i class="icon"></i><span>일괄적용</span></button>
+                                <button id="btnInputPopupCheckedSave" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="inputPopupGrid" class="mercury-grid"></div>
+                    <!-- <l:grid gridId="inputPopupGrid" title="원부원료" buttonPosition="TOP"></l:grid> -->
+                </div>
+                <!-- END : 그리드 영역 -->
+            </div>
+            <!-- //.framegp -->
+        </div>
+        <!-- //.framewrap -->
+    </div>
+    <!-- //.modal_cbody -->
+    <div class="modal_cfoot">
+        <button id="btnInputClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공정운영>원료투입관리>PDA 불출/소분/투입현황(투입현황 이력추가 팝업) -->
+
+<!-- START : 공정운영>원료투입관리>PDA 불출/소분/투입현황(PDA 기준정보 원부원료추가 팝업) -->
+<div id="materialPopup" class="mercury-modal" title="원부원료 추가" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <table class="tbl">
+                    <tbody>
+                        <tr>
+                            <th>공장</th>
+                            <td>
+                                <div class="field">
+                                    <div class="multiple_select">
+                                        <div class="select_text"><span>선택해주세요.</span></div>
+                                        <div class="select_wrap">
+                                            <ul class="select_list">
+                                                <li class="select_option">
+                                                    <label class="chkrad">
+                                                        <input type="checkbox" name="chkAll">
+                                                        <span>전체</span>
+                                                    </label>
+                                                </li>
+                                                <li class="select_option">
+                                                    <label class="chkrad">
+                                                        <input type="checkbox" name="chkA">
+                                                        <span>선택1</span>
+                                                    </label>
+                                                </li>
+                                                <li class="select_option">
+                                                    <label class="chkrad">
+                                                        <input type="checkbox" name="chkB">
+                                                        <span>선택2</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                            <div class="btngroup">
+                                                <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+                                                <button class="btn xsm xclose"><span>닫기</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- //.multiple_select -->
+                                </div>
+                            </td>
+                            <th>MES 자재유형</th>
+                            <td class="tcenter">
+                                <div class="field">
+                                    <label class="selectlab">
+                                        <select id="disbursementOfMaterialByPlantCodeList" name="disbursementOfInputByPlantCodeList">
+                                        </select>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>자재코드</th>
+                            <td class="tright">
+                                <div class="field">
+                                    <input id="materialPopupMaterialCode" name="materialPopupMaterialCode" type="text" class="form-control form-control-sm">
+                                </div>
+                            </td>
+                            <th>자재명</th>
+                            <td>
+                                <div class="field">
+                                    <div class="input-group">
+                                        <input id="materialPopupMaterialName" name="materialPopupMaterialName" type="text" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="btnSearchMaterialPopup" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal_cbody">
+        <div class="framewrap">
+            <div class="framegp">
+                <!-- START : 그리드 영역 -->
+                <div class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>원부원료</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end">
+                            <div class="btngroup f-end">
+                                <button id="btnMaterialPopupSave" class="btn ukchoice"><i class="icon"></i><span>선택</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="materialPopupGrid" class="mercury-grid"></div>
+                    <!-- <l:grid gridId="materialPopupGrid" title="원부원료" buttonPosition="TOP"></l:grid> -->
+                </div>
+                <!-- END : 그리드 영역 -->
+            </div>
+            <!-- //.framegp -->
+        </div>
+        <!-- //.framewrap -->
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnMaterialClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- END : 공정운영>원료투입관리>PDA 불출/소분/투입현황(PDA 기준정보 원부원료추가 팝업) -->
+
+<!-- START : 공정운영>원료투입관리>제품소포장관리(소포장 제품구분 팝업) -->
+<!-- END : 공정운영>원료투입관리>제품소포장관리(소포장 제품구분 팝업) -->
+
+<!-- START : 공정운영>원료투입관리>제품소포장관리(소포장 정상품 실적 추가 입력 팝업) -->
+<!-- END : 공정운영>원료투입관리>제품소포장관리(소포장 정상품 실적 추가 입력 팝업) -->
+
+<!-- START : 공정운영>원료투입관리>제품소포장관리(소포장 재생품 실적 추가 입력 팝업) -->
+<!-- END : 공정운영>원료투입관리>제품소포장관리(소포장 재생품 실적 추가 입력 팝업) -->
+
+
+<!-- START : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 제품구분 팝업) -->
+<div id="dialogPopup1" class="mercury-modal" title="Re-Melting 제품구분" style="display:none">
+    <div class="modal_cbody ntop">
+        <div class="group tcenter">
+            <label class="chkrad">
+                <input type="radio" name="rad1" id="" checked="selected" value="0"/>
+                <span>정상품</span>
+            </label>
+            <label class="chkrad">
+                <input type="radio" name="rad1" id="" value="1"/>
+                <span>재생품</span>
+            </label>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnConfirm1" class="btn ukconfirm"><i class="icon"></i><span>확인</span></button>
+        <button id="btnCancel1" class="btn ukcancel"><i class="icon"></i><span>취소</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 제품구분 팝업) -->
+
+<!-- START : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 정상품 실적 추가 입력(유화) 팝업) -->
+<div id="dialogPopup2" class="mercury-modal" title="Re-Melting 정상품 실적 추가 입력(유화)" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <table class="tbl">
+                    <tbody>
+                        <tr>
+                            <th>공장/저장위치</th>
+                            <td>
+                                <div class="field">
+                                    <label class="selectlab">
+                                        <select id="cbo_plant2" name="plantCode" class="form-control form-control-sm" disabled>
+                                            <option value="">유화공장</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="field">
+                                    <label class="selectlab">
+                                        <select id="cbo_storageLocation" name="storageLocation" class="form-control form-control-sm">
+                                            <option value="">완제품 창고</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </td>
+                            <th>제품</th>
+                            <td>
+                                <div id="divMultCombo01"></div>
+                                <label class="inplab">
+                                    <input type="text" name="" id="" value="" readonly="readonly" />
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>입고일자</th>
+                            <td colspan="2">
+                                <div class="field">
+                                    <div class="input-group">
+                                        <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="fromDate2" name="fromDate2" data-from="fromDate2">
+                                        <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="toDate2" name="toDate2" data-to="toDate2">
+                                        <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                            <th>배치번호</th>
+                            <td>
+                                <div class="field">
+                                    <label class="inplab">
+                                        <input type="text" name="" id="" value="" placeholder="부분일치검색" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="btnModalFind" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody hfixed">
+        <div class="framewrap">
+            <div class="framegp" style="width:calc(100% - 310px)">
+                <!-- START : 그리드 영역 -->
+                <div id="realGridModalZone1" class="article">
+                    <div class="div-title hfixed">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>Re-Melting 대상 제품 선택</span></div>
+                        </div>
+                    </div>
+                    <div id="remeltingProductListGrid" class="mercury-grid"></div>
+                    <!-- <l:grid gridId="remeltingProductListGrid" title="Re-Melting 대상 제품 선택" buttonPosition="TOP"></l:grid> -->
+                </div>
+                <!-- END : 그리드 영역 -->
+            </div>
+            <!-- //.framegp -->
+            <div class="framegp" style="width:300px">
+                <div class="article">
+                    <div class="div-title hfixed">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>Re-Melting 정보 입력</span></div>
+                        </div>
+                    </div>
+                    <div class="tblwrap">
+                        <table class="tbl type1">
+                            <colgroup>
+                                <col style="width:80px" />
+                                <col style="width:120px" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>투입일자</th>
+                                    <td>
+                                        <div class="field">
+                                            <div class="input-group">
+                                                <input type="text" class="date-picker form-control form-control-sm hasDatepicker" data-week="false" id="workDate2" name="workDate2">
+                                                <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>제조라인</th>
+                                    <td>
+                                        <div class="field">
+                                            <label class="selectlab">
+                                                <select id="lineCode" name="lineCode" class="form-control form-control-sm">
+                                                    <option value="">CP-1</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bottom_group f-end">
+                        <button id="btnSave" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- //.framegp -->
+        </div>
+        <!-- //.framewrap -->
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnClose2" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 정상품 실적 추가 입력(유화) 팝업) -->
+
+<!-- START : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 재생품 실적 추가 입력(유화) 팝업) -->
+<div id="dialogPopup3" class="mercury-modal" title="Re-Melting 재생품 실적 추가 입력(유화)" style="display:none">
+    <div class="modal_cbody ntop">
+        <div class="tblwrap">
+            <table class="tbl type1">
+                <colgroup>
+                    <col style="width:80px" />
+                    <col style="width:300px" />
+                    <col style="width:80px" />
+                    <col style="width:300px" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>자재</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="recycleMaterial">
+                                        <option value="">DMT 재생(Re-melting용)</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th>단위</th>
+                        <td>
+                            <div class="field">
+                                <span class="unit" id="recycleMaterialUnit">㎏</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>재투입일자</th>
+                        <td>
+                            <div class="field">
+                                <div class="input-group">
+                                    <input type="text" class="date-picker form-control form-control-sm hasDatepicker" data-week="false" id="workDate3" name="workDate3">
+                                    <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                        <th>재투입량</th>
+                        <td>
+                            <div class="field">
+                                <label class="inplab tright w80">
+                                    <input type="text" name="" id="inputQty" value="1,000" />
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnSave3" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+        <button id="btnClose3" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 재생품 실적 추가 입력(유화) 팝업) -->
+
+<!-- START : 공정운영>원료투입관리>제품재투입관리(수지)(재투입 실적 추가 입력(수지) 팝업) -->
+<div id="dialogReinsertPopup" class="mercury-modal" title="재투입 실적 추가 입력(수지)" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <table class="tbl">
+                    <tbody>
+                        <tr>
+                            <th>공장/저장위치</th>
+                            <td>
+                                <div class="field">
+                                    <label class="selectlab">
+                                        <select id="" name="">
+                                            <option value="">수지공장</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="field">
+                                    <label class="selectlab">
+                                        <select id="" name="">
+                                            <option value="">제품창고1</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </td>
+                            <th>제품</th>
+                            <td>
+                                <label class="inplab">
+                                    <input type="text" name="" id="" value="" readonly="readonly" />
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>입고일자</th>
+                            <td colspan="2">
+                                <div class="field">
+                                    <div class="input-group">
+                                        <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="fromDate2" name="fromDate2" data-from="fromDate2">
+                                        <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="toDate2" name="toDate2" data-to="toDate2">
+                                        <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                            <th>배치번호</th>
+                            <td>
+                                <div class="field">
+                                    <label class="inplab">
+                                        <input type="text" name="" id="" value="" placeholder="부분일치검색" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="btnModalFind1" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody hfixed">
+        <div class="framewrap">
+            <div class="framegp" style="width:calc(100% - 310px)">
+                <!-- START : 그리드 영역 -->
+                <div class="article">
+                    <div class="div-title hfixed">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>재투입 제품 선택</span></div>
+                        </div>
+                    </div>
+                    <div id="reInputSelectGoodsPopupGrid" class="mercury-grid"></div>
+                    <!-- <l:grid gridId="reInputSelectGoodsPopupGrid" title="재투입 제품 선택" buttonPosition="TOP"></l:grid> -->
+                </div>
+                <!-- END : 그리드 영역 -->
+            </div>
+            <!-- //.framegp -->
+            <div class="framegp" style="width:300px">
+                <div class="article">
+                    <div class="div-title hfixed">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>재투입 정보 입력</span></div>
+                        </div>
+                    </div>
+                    <div class="tblwrap">
+                        <table class="tbl type1">
+                            <colgroup>
+                                <col style="width:80px" />
+                                <col style="width:120px" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>투입일자</th>
+                                    <td>
+                                        <div class="field">
+                                            <div class="input-group">
+                                                <input type="text" class="date-picker form-control form-control-sm hasDatepicker" data-week="false" id="workDate2" name="workDate2">
+                                                <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>제조라인</th>
+                                    <td>
+                                        <div class="field">
+                                            <label class="selectlab">
+                                                <select id="lineCode" name="lineCode" class="form-control form-control-sm">
+                                                    <option value="">전체</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bottom_group f-end">
+                        <button id="btnSave" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- //.framegp -->
+        </div>
+        <!-- //.framewrap -->
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnClose2" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 공정운영>원료투입관리>제품재투입관리(수지)(재투입 실적 추가 입력(수지) 팝업) -->
+
+<!-- START : 생산실적>일마감관리>유틸리티 사용실적(유틸리티 사용량 계산 팝업) -->
+<div id="dialogCalcPopup1" class="mercury-modal" title="유틸리티 사용량 계산" style="display:none">
+    <div class="modal_cbody">
+        <div class="div-title">
+            <div class="tit_group">
+                <div class="htit"><i class="icon"></i><span>유틸리티 사용량 집계 기준</span></div>
+            </div>
+        </div>
+        <div class="tblwrap">
+            <table class="tbl type1">
+                <colgroup>
+                    <col style="width:80px">
+                    <col style="width:120px">
+                    <col style="width:80px">
+                    <col style="width:120px">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>자재</th>
+                        <td>
+                            <div class="field">
+                                <span class="unit">질소 [420011]</span>
+                            </div>
+                        </td>
+                        <th>단위</th>
+                        <td>
+                            <div class="field">
+                                <span class="unit">NM3</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>사용량기준</th>
+                        <td>
+                            <div class="field">
+                                <span class="unit"></span>
+                            </div>
+                        </td>
+                        <th>DR연계여부</th>
+                        <td>
+                            <div class="field">
+                                <span class="unit"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RTIS 계산식</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <span class="unit"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>태그계산함수</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <span class="unit"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>집계로직 설명</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <span class="unit"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>DR Stream</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <span class="unit"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="framewrap">
+            <div class="framegp">
+                <!-- START : 그리드 영역 -->
+                <div id="realGridModalZone1" class="article">
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div id="realGridModal1_title" class="htit"><i class="icon"></i><span id="realGridModal1_titleTxt">RTIS 데이터 확인</span></div>
+                            <div class="countbox"><span class="txt">총</span><strong id="realGridModal1_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end" data-grid-id="realGridModal1">
+                            <button id="btnSave" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                            <button id="btnClose" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+                        </div>
+                    </div>
+                    <div id="realGridModal1" class="mercury-grid" data-title="RTIS 데이터 확인"></div>
+                </div>
+                <!-- END : 그리드 영역 -->
+            </div>
+            <!-- //.framegp -->
+        </div>
+        <!-- //.framewrap -->
+    </div>
+    <!-- //.modal_cbody -->
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 생산실적>일마감관리>유틸리티 사용실적(유틸리티 사용량 계산 팝업) -->
+
+<!-- START : 생산실적>일마감관리(취소사유 팝업 공통) -->
+<div id="dialogCancelDescPopup" class="mercury-modal" title="취소사유" style="display:none">
+    <div class="modal_cbody">
+        <div class="tblwrap">
+            <table class="tbl type1">
+                <colgroup>
+                    <col style="width:80px" />
+                    <col style="width:120px" />
+                    <col style="width:80px" />
+                    <col style="width:120px" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>취소사유</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <label class="inplab">
+                                    <input type="text" id="txt_cancelReasonDesc" name="cancelReasonDesc" required >
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+    <div class="modal_cfoot">
+        <button id="btn_popConfirm" class="btn ukconfirm"><i class="icon"></i><span>확인</span></button>
+        <button id="btn_popCancel" class="btn ukcancel"><i class="icon"></i><span>취소</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+<!-- END : 생산실적>일마감관리(취소사유 팝업 공통) -->
+
+
+<!-- Batch Job 로그 조회 메시지 팝업 -->
+<!--
+<div id="testPop" class="mercury-modal" title="상세" style="display:none">
+    <div class="modal_cbody">
+        <form id="infoForm">
+            <div class="tblwrap pad6">
+                <table class="tbl">
+                    <colgroup>
+                        <col style="width:110px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>Seq</th>
+                            <td><span>39448</span></td>
+                        </tr>
+                        <tr>
+                            <th>시작시간</th>
+                            <td><span class="startTime">2022-3-31 07:30:00</span></td>
+                        </tr>
+                        <tr>
+                            <th>종료시간</th>
+                            <td><span class="endTime">2022-3-31 07:30:00</span></td>
+                        </tr>
+                        <tr>
+                            <th>실행시간</th>
+                            <td><span class="executeTime">00:00:00:63</span></td>
+                        </tr>
+                        <tr>
+                            <th>상태</th>
+                            <td><span class="statusName"></span></td>
+                        </tr>
+                        <tr>
+                            <th>에러번호</th>
+                            <td><span class="errorNo"></span></td>
+                        </tr>
+                        <tr>
+                            <th>메시지</th>
+                            <td>
+                                <label class="textalab">
+                                    <textarea class="resultMsg" rows="23" style="height:420px"></textarea>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#testPop").dialog({
+            autoOpen: true,
+            modal: true,
+            width: 1000,
+            height: 700,
+            resizable: true,
+            title: "상세",
+            draggable:true,
+            dialogClass: "uk_modal"
+        });
+    })
+</script>
+-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        // 공통 팝업 옵션
+        $(".mercury-modal").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 700,
+            height: 500,
+            resizable: true,
+            // title: "사용자 정보 조회",
+            draggable:true,
+            dialogClass: "uk_modal"
+        });
+
+        // 공통 팝업 닫기
+        $(document).on('click', '.ukclose', function(){
+            $(".mercury-modal").dialog('close');
+        })
+
+        /* START : 공통팝업(사용자) 호출 */
+        $("#dialogUserPopup").dialog({width: 800, height: 600});
+        $(document).on('click', '#btnUserPopup', function(){
+            $("#dialogUserPopup").dialog('open', {title:'사용자 정보 조회'});
+        })
+        /* END : 공통팝업(사용자) 호출 */
+
+        /* START : 공통팝업(부서) 호출 */
+        $(document).on('click', '#btnDeptPopup', function(){
+            $("#dialogDeptPopup").dialog('open', {title:'부서 정보 조회'});
+        })
+        /* END : 공통팝업(부서) 호출 */
+
+        /* START : 공통팝업(고객) 호출 */
+        $(document).on('click', '#btnCustomerPopup', function(){
+            $("#dialogCustomerPopup").dialog('open', {title:'고객 정보 조회'});
+        })
+        /* END : 공통팝업(고객) 호출 */
+
+        /* START : 공통팝업(공급업체) 호출 */
+        $(document).on('click', '#btnCorpPopup', function(){
+            $("#dialogCorpPopup").dialog('open', {title:'공급업체 정보 조회'});
+        })
+        /* END : 공통팝업(공급업체) 호출 */
+
+        /* START : 공통팝업(설비마스터) 호출 */
+        $(document).on('click', '#btnEquipmentPopup', function(){
+            $("#dialogEquipmentPopup").dialog('open', {title:'설비마스터 정보 조회'});
+        })
+        /* END : 공통팝업(설비마스터) 호출 */
+
+        /* START : 공통팝업(자재마스터) 호출 */
+        $(document).on('click', '#btnMaterialPopup', function(){
+            $("#dialogMaterialPopup").dialog('open', {title:'자재마스터 정보 조회'});
+        })
+        /* END : 공통팝업(자재마스터) 호출 */
+
+        /* START : 공통팝업(알림이력) 호출 */
+        $(document).on('click', '#btnAlarmHistoryPopup', function(){
+            $("#dialogAlarmHistoryPopup").dialog('open', {title:'알림이력 정보 조회'});
+        })
+        /* END : 공통팝업(알림이력) 호출 */
+
+        /* START : 공통팝업(G/L계정)) 호출 */
+        $(document).on('click', '#btnGlAccountPopup', function(){
+            $("#dialogGlAccountPopup").dialog('open', {title:'G/L계정 조회'});
+        })
+        /* END : 공통팝업(G/L계정) 호출 */
+
+        /* START : 공통팝업(코스트센터)) 호출 */
+        $(document).on('click', '#btnCostCenterPopup', function(){
+            $("#dialogCostCenterPopup").dialog('open', {title:'코스트센터 조회'});
+        })
+        /* END : 공통팝업(코스트센터) 호출 */
+
+        /* START : 공통팝업(내부오더))) 호출 */
+        $(document).on('click', '#btnInternalOrderPopup', function(){
+            $("#dialogInternalOrderPopup").dialog('open', {title:'내부오더 조회'});
+        })
+        /* END : 공통팝업(내부오더) 호출 */
+
+        /* START : 공통팝업(결재 관리))) 호출 */
+        $("#dialogApprovalPopup").dialog({width: 800, height: 700});
+        $(document).on('click', '#btnApprovalPopup', function(){
+            $("#dialogApprovalPopup").dialog('open', {title:'결제 관리'});
+        })
+        /* END : 공통팝업(결재 관리) 호출 */
+
+
+
+        /* START : 생산준비>원부원료관리>원부원료입고(구매오더조회 팝업) 호출 */
+        $("#dialogPopupOrder").dialog({width: 1080, height: 700, resizable: false});
+        $(document).on('click', '#btnPopupOrder', function(){
+            $("#dialogPopupOrder").dialog('open',{title:'구매오더조회'});
+        })
+        /* END : 생산준비>원부원료관리>원부원료입고(구매오더조회 팝업) 호출 */
+
+        /* START : 공정운영>원료투입관리>PDA 불출/소분/투입현황(불출현황 이력추가 팝업) 호출 */
+        $("#issuePopup").dialog({width: 1080, height: 320, resizable: false});
+        $(document).on('click', '#btnIssueAdd', function(){
+            $("#issuePopup").dialog('open',{title:'원부원료 불출'});
+        })
+        /* END : 공정운영>원료투입관리>PDA 불출/소분/투입현황(불출현황 이력추가 팝업) 호출 */
+
+        /* START : 공정운영>원료투입관리>PDA 불출/소분/투입현황(소분현황 이력추가 팝업) 호출 */
+        $("#dividePopup").dialog({width: 1080, height: 600, resizable: false});
+        $(document).on('click', '#btnDivideAdd', function(){
+            $("#dividePopup").dialog('open',{title:'원부원료 소분'});
+        })
+        /* END : 공정운영>원료투입관리>PDA 불출/소분/투입현황(소분현황 이력추가 팝업) 호출 */
+
+        /* START : 공정운영>원료투입관리>PDA 불출/소분/투입현황(투입현황 이력추가 팝업) 호출 */
+        $("#inputPopup").dialog({width: 1080, height: 600, resizable: false});
+        $(document).on('click', '#btnInputAdd', function(){
+            $("#inputPopup").dialog('open',{title:'원부원료 투입'});
+        })
+        /* END : 공정운영>원료투입관리>PDA 불출/소분/투입현황(투입현황 이력추가 팝업) 호출 */
+
+        /* START : 공정운영>원료투입관리>PDA 불출/소분/투입현황(PDA 기준정보 원부원료추가 팝업) 호출 */
+        $("#materialPopup").dialog({width: 850, height: 600, resizable: false});
+        $(document).on('click', '#btnBaseInfomationAdd', function(){
+            $("#materialPopup").dialog('open',{title:'원부원료 추가'});
+        })
+        /* END : 공정운영>원료투입관리>PDA 불출/소분/투입현황(PDA 기준정보 원부원료추가 팝업) 호출 */
+
+        /* START : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 제품구분 팝업) 호출 */
+        $("#dialogPopup1").dialog({width: 400, height: 240, resizable: false});
+        $(document).on('click', '#btnAddRePop', function(){
+            $("#dialogPopup1").dialog('open',{title:'Re-Melting 제품구분'});
+        })
+        /* END : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 제품구분 팝업) 호출 */
+
+        /* START : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 정상품 실적 추가 입력(유화) 팝업) 호출 */
+        $("#dialogPopup2").dialog({width: 1080, height: 700, resizable: false});
+        $(document).on('click', '#btnPopup2', function(){
+            $("#dialogPopup2").dialog('open',{title:'Re-Melting 정상품 실적 추가 입력(유화)'});
+        })
+        /* END : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 정상품 실적 추가 입력(유화) 팝업) 호출 */
+
+        /* START : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 재생품 실적 추가 입력(유화) 팝업 호출 */
+        $("#dialogPopup3").dialog({width: 900, height: 240, resizable: false});
+        $(document).on('click', '#btnPopup3', function(){
+            $("#dialogPopup3").dialog('open',{title:'Re-Melting 재생품 실적 추가 입력(유화)'});
+        })
+        /* END : 공정운영>원료투입관리>Re-Melting관리(유화)(Re-Melting 재생품 실적 추가 입력(유화) 팝업) 호출 */
+
+        /* START : 공정운영>원료투입관리>제품재투입관리(수지)(재투입 실적 추가 입력(수지) 팝업 호출 */
+        $("#dialogReinsertPopup").dialog({width: 1080, height: 800, resizable: false});
+        $(document).on('click', '#btnAddPerformance', function(){
+            $("#dialogReinsertPopup").dialog('open',{title:'재투입 실적 추가 입력(수지)'});
+        })
+        /* END : 공정운영>원료투입관리>제품재투입관리(수지)(재투입 실적 추가 입력(수지) 팝업) 호출 */
+
+        /* START : 생산실적>일마감관리>유틸리티 사용실적(유틸리티 사용량 계산 팝업 호출 */
+        $("#dialogCalcPopup1").dialog({width: 800, height: 600, resizable: false});
+        $(document).on('click', '#btnModalCalc', function(){
+            $("#dialogCalcPopup1").dialog('open',{title:'유틸리티 사용량 계산'});
+        })
+        /* END : 생산실적>일마감관리>유틸리티 사용실적(유틸리티 사용량 계산 팝업 호출 */
+
+        /* START : 생산실적>일마감관리(취소사유 팝업 공통 호출 */
+        $("#dialogCancelDescPopup").dialog({width: 800, height: 240, resizable: false});
+        $(document).on('click', '#btnModalCancelDesc', function(){
+            $("#dialogCancelDescPopup").dialog('open',{title:'유틸리티 사용량 계산'});
+        })
+        /* END : 생산실적>일마감관리(취소사유 팝업 공통 호출 */
+    });
+</script>
+</body>
+</html>

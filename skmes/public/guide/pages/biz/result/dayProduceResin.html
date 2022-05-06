@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>생산입고 관리(수지) | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+    
+<!-- START : 상단 타이틀 및 검색 영역 -->
+<div class="chead">
+    <h1 class="h1"><i class="icon"></i>생산입고 관리(수지)</h1>
+    <div class="history_nav"><span>홈</span><span>생산실적</span><span>일마감관리</span><strong>생산입고 관리(수지)</strong></div>
+    <!-- START : 검색 항목 영역 시작 -->
+    <div class="chead_search">
+        <!-- START : 조회영역 접었을 때 -->
+        <div class="find_location">
+            <strong>검색조건:</strong>
+            <div class="find_field">
+                <dl>
+                    <dt>공장</dt>
+                    <dd>유화공장</dd>
+                </dl>
+                <dl>
+                    <dt>마감일자</dt>
+                    <dd>2022-02-01</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- END : 조회영역 접었을 때 -->
+        <div class="tblwrap">
+            <table class="tbl col6">
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>공장</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select id="" name="">
+                                        <option value="">유화공장</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th><i class="ess">*</i>마감일자</th>
+                        <td>
+                            <div class="field">
+								<div class="input-group">
+									<input type="text" class="date-picker form-control form-control-sm hasDatepicker" data-week="false" id="workDate" name="workDate">
+                                    <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+								</div>
+							</div>
+                        </td>
+                        <td colspan="2">
+                            <button id="btnPrev" class="btn ukprev"><i class="icon"></i><span>이전</span></button>
+                            <button id="btnNext" class="btn uknext"><i class="icon"></i><span>이후</span></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btn_search" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+        </div>
+    </div>
+    <button id="btn_openClose" class="ibtn"><i class="icon"></i><span class="sr-only">펼치기/접기</span></button>
+    <!-- END : 검색 항목 영역 -->
+</div>
+<!-- END : 상단 타이틀 및 검색 영역 -->
+<script>
+    $(function(){
+        $('.chead').each(function(i, e){
+            $(e).find('.ibtn').on('click', function(){
+                $(e).toggleClass('is-close');
+            })
+        })
+        $('.multiple_select').each(function(i, e){
+            $(e).find('.select_text').on('click', function(){
+                $(e).addClass('selected');
+            })
+            $(e).find('.xclose').on('click', function(){
+                $(e).removeClass('selected');
+            })
+        })
+    })
+</script>
+
+<!-- START : 본문내용 -->
+<div class="cbody">
+    <div id="layoutTabs" class="mercury-tabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tab-1">생산입고</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-2">일별현황</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane mercury-tab active show">
+                <div class="framewrap">
+                    <div class="div-title hfixed" data-top="titarea">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>생산입고실적(수지)</span></div>
+                        </div>
+                        <div class="top_group grid-button-group f-end">
+                            <div id="div_closeInf1_1" class="field_text type1">
+                                <p><strong>확정여부 :&nbsp;</strong><span id="spn_confirmYn1_1" class="confirmYn">N</span></p>
+                                <p><strong>확정일시 :&nbsp;</strong><span id="spn_confirmDtPrt1_1" class="confirmDtPrt"></span></p>
+                            </div>
+                            <div class="btngroup">
+                                <button id="btn_confirm1_1" class="btn ukconfirm"><i class="icon"></i><span>확정</span></button>
+                                <button id="btn_cancel1_1" class="btn ukcancel"><i class="icon"></i><span>확정취소</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="framegp" style="width:450px">
+                        <!-- START : 그리드 영역 -->
+                        <div id="grdZone1_1" class="article subtit">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="grd1_1_title" class="htit"><i class="icon"></i><span id="grd1_1_titleTxt">생산량 집계 자료</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="grd1_1_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="grd1_1">
+                                    <button id="btn_reCalc1_1" class="btn ukdata"><i class="icon"></i><span>자료재집계</span></button>
+                                </div>
+                            </div>
+                            <div id="grd1_1" class="mercury-grid" data-title="생산량 집계 자료"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+                    </div>
+                    <div class="framegp" style="width:calc(100% - 460px)">
+                        <!-- START : 그리드 영역 -->
+                        <div id="grdZone1_2" class="article subtit">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="grd1_2_title" class="htit"><i class="icon"></i><span id="grd1_2_titleTxt">Grade Mapping</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="grd1_2_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="grd1_2">
+                                    <div id="div_closeInf1_2" class="field_text type2">
+                                        <p><strong>제조라인 :</strong><span id="spn_lineName1_2" class="lineName"></span></p>
+                                    </div>
+                                    <div class="btngroup">
+                                        <button id="btn_save1_2" class="btn uksave"><i class="icon"></i><span>Mapping 저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="grd1_2" class="mercury-grid" data-title="Grade Mapping"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : 그리드 영역 -->
+                        <div id="grdZone1_3" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="grd1_3_title" class="htit"><i class="icon"></i><span id="grd1_3_titleTxt">생산입고 실적</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="grd1_3_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="grd1_3">
+                                    <div class="btngroup">
+                                        <button id="btn_add1_3" class="btn ukadd"><i class="icon"></i><span>제품추가</span></button>
+                                        <button id="btn_save1_3" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="grd1_3" class="mercury-grid" data-title="생산입고 실적"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+    
+            <div id="tab-2" class="tab-pane mercury-tab">
+                <div class="framewrap single">
+                    <div class="framegp">
+                        <!-- START : 그리드 영역 -->
+                        <div id="grdZone2_1" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="grd2_1_title" class="htit"><i class="icon"></i><span id="grd2_1_titleTxt">일별현황</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="grd2_1_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="grd2_1"></div>
+                            </div>
+                            <div id="grd2_1" class="mercury-grid" data-title="일별현황"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+        </div>
+        <!-- //.tab-content -->
+    </div>
+    <!-- //.mercury-tabs -->
+</div>
+<!-- END : 본문내용 cbody -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+    });
+</script>
+</body>
+</html>

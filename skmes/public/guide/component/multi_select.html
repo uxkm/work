@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/logo_32x32.png">
+	<title>멀티 셀렉트 | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <!-- <link rel="stylesheet" href="../../css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../css/uiFrame.min.css">
+
+    <script src="../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../assets/js/popper/popper.js"></script>
+    <script src="../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../assets/js/moment/moment.min.js"></script>
+    <script src="../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../js/uiux.js"></script>
+</head>
+<body>
+    <!-- 
+        multiple_select class selected 추가 하면 option이 펼쳐짐
+    -->
+    <script>
+        //  확인용 UI
+        $(function(){
+            $('.multiple_select').each(function(i, e){
+                $(e).find('.select_text').on('click', function(){
+                    $(e).addClass('selected');
+                })
+                $(e).find('.xclose').on('click', function(){
+                    $(e).removeClass('selected');
+                })
+            })
+        })
+    </script>
+    <div class="cbody">
+        <div class="framewrap">
+            <div class="framegp col3">
+                <div class="div-title hfixed" data-top="titarea">
+                    <div class="tit_group">
+                        <div class="htit"><i class="icon"></i><span>멀티 셀렉트 기본</span></div>
+                    </div>
+                </div>
+                <div class="multiple_select" style="width:200px;">
+                    <div class="select_text"><span>선택1, 선택1, 선택1, 선택1, 선택1, 선택1, 선택1, 선택1, 선택1</span></div>
+                    <div class="select_wrap">
+                        <ul class="select_list">
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkAll">
+                                    <span>전체</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkA">
+                                    <span>선택1</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkB">
+                                    <span>선택2</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkC">
+                                    <span>선택3</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkD">
+                                    <span>선택4</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkE">
+                                    <span>선택5</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="btngroup" style="width:100%">
+                            <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+                            <button class="btn xsm xclose"><span>닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.multiple_select -->
+            </div>
+            <div class="framegp col3">
+                <div class="div-title hfixed" data-top="titarea">
+                    <div class="tit_group">
+                        <div class="htit"><i class="icon"></i><span>멀티 셀렉트 선택</span></div>
+                    </div>
+                </div>
+                <div class="multiple_select selected" style="width:200px;">
+                    <div class="select_text"><span>선택해주세요.</span></div>
+                    <div class="select_wrap">
+                        <ul class="select_list">
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkAll">
+                                    <span>전체</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkA">
+                                    <span>선택1</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkB">
+                                    <span>선택2선택2선택2선택2선택2선택2선택2선택2선택2선택2선택2선택2선택2선택2선택2선택2</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkC">
+                                    <span>선택3</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkD">
+                                    <span>선택4</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkE">
+                                    <span>선택5</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="btngroup" style="width:100%">
+                            <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+                            <button class="btn xsm xclose"><span>닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.multiple_select -->
+            </div>
+            <div class="framegp col3">
+                <div class="div-title hfixed" data-top="titarea">
+                    <div class="tit_group">
+                        <div class="htit"><i class="icon"></i><span>멀티 셀렉트 비활성화</span></div>
+                    </div>
+                </div>
+                <div class="multiple_select" style="width:200px;">
+                    <div class="disabled_text"><span>선택해주세요.</span></div>
+                    <div class="select_wrap">
+                        <ul class="select_list">
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkAll">
+                                    <span>전체</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkA">
+                                    <span>선택1</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkB">
+                                    <span>선택2</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkC">
+                                    <span>선택3</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkD">
+                                    <span>선택4</span>
+                                </label>
+                            </li>
+                            <li class="select_option">
+                                <label class="chkrad">
+                                    <input type="checkbox" name="chkE">
+                                    <span>선택5</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="btngroup" style="width:100%">
+                            <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+                            <button class="btn xsm xclose"><span>닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.multiple_select -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

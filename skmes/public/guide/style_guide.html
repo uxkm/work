@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/logo_32x32.png">
+<title>UI/UX Style Guide | SK 케미칼 MES</title>
+
+<link rel="stylesheet" href="../css/fonts.css">
+<!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="../assets/css/jquery-ui/jquery-ui.min.css">
+
+<link rel="stylesheet" href="../css/uiReset.css">
+<link rel="stylesheet" href="../css/uiComponent.min.css">
+<link rel="stylesheet" href="../css/uiFrame.min.css">
+
+<link rel="stylesheet" href="../css/uiStyleGuide.min.css">
+
+<script src="../assets/js/jquery/jquery-3.2.1.min.js"></script>
+<script src="../assets/js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/js/popper/popper.js"></script>
+<script src="../assets/js/bootstrap4/bootstrap.min.js"></script>
+<script src="../assets/js/moment/moment.min.js"></script>
+<script src="../assets/js/jquery/jquery.number.min.js"></script>
+<script src="../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+<script src="../assets/js/jquery-ui/yearpicker.js"></script>
+<script src="../js/uiux.js"></script>
+</head>
+<body class="ukguide_body">
+    <div class="ukguide">
+        <aside class="ukguide_toc">
+            <p class="ukguide_logo"><img src="../images/skc_logo.png" alt="SK 케미칼"></p>
+            <nav class="ukguide_nav">
+                <ul class="uk_snb">
+                    <li><a href="#">DEFAULT SETTING</a></li>
+                    <li><a href="#">COLOR PALETTE</a></li>
+                    <li><a href="#">TYPOGRAPHY</a></li>
+                    <li><a href="#">BUTTONS</a></li>
+                    <li><a href="#">FORM ELEMENTS</a></li>
+                    <li><a href="#">LOADING INDICATORS</a></li>
+                    <li><a href="#">TABLE</a></li>
+                    <li><a href="#">TAB MENU</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="ukguide_main">
+            <h1 class="ukg_h1">Style Guide</h1>
+            <section class="uksec" id="ukSec1" aria-label="DEFAULT SETTING">
+                <h2 class="ukg_h2">DEFAULT SETTING</h2>
+                <article class="ukatc">
+                    <dl class="dl_tbl">
+                        <dt>문서타입</dt>
+                        <dd>
+                            <p>html5</p>
+                        </dd>
+                    </dl>
+                    <dl class="dl_tbl">
+                        <dt>폴더구조</dt>
+                        <dd>
+                            <p>font : 웹폰트(나눔고딕) 경로 [/fonts]</p>
+                            <p>css : UI/UX Style 경로 [/css]</p>
+                            <p>images : 이미지 경로 [/images]</p>
+                            <p>js : javascript 경로 [/js]</p>
+                            <p>lib : 라이브러리 [/assets]</p>
+                        </dd>
+                    </dl>
+                    <dl class="dl_tbl">
+                        <dt>font</dt>
+                        <dd>
+                            <p>나눔고딕(NanumGothic)</p>
+                            <!-- <p>아이콘 폰트(font-awesome)</p> -->
+                        </dd>
+                    </dl>
+                    <dl class="dl_tbl">
+                        <dt>css</dt>
+                        <dd>
+                            <p>나눔고딕 폰트(fonts.css)</p>
+                            <!-- <p>아이콘 폰트(font-awesome.min.css)</p> -->
+                            <p>제이쿼리 ui(jquery-ui.min.css)</p>
+                            <p>기본 초기화(uiReset.min.css)</p>
+                            <p>레이아웃(uiLayout.min.css)</p>
+                            <p>공통 컴포넌트(uiComponent.min.css)</p>
+                            <p>콘텐츠(uiFrame.min.css)</p>
+                        </dd>
+                        <dd>
+                            <p>css 작업 방식 : scss (sass로 작업 후 css 압축버전으로 배포)</p>
+                            <p>css 기본 : .css (압축하지 않은 기본 css)</p>
+                            <p>css 압축형식 : .min.css (압축파일의 실제 배포된 css)</p>
+                        </dd>
+                    </dl>
+                    <dl class="dl_tbl">
+                        <dt>images</dt>
+                        <dd>
+                            <p>logo, icon 및 콘텐츠에 사용되는 그래픽 이미지</p>
+                        </dd>
+                    </dl>
+                    <dl class="dl_tbl">
+                        <dt>js</dt>
+                        <dd>
+                            <p>제이쿼리 라이브러리(jquery-3.2.1.min.js)</p>
+                            <p>제이쿼리 UI 라이브러리(jquery-ui.min.js)</p>
+                            <p>ui 관련 custom style(uiux.js)</p>
+                        </dd>
+                    </dl>
+                    <dl class="dl_tbl">
+                        <dt>브라우저 호환성</dt>
+                        <dd>
+                            <p>Edge, Chrome, Opera, Firefox</p>
+                        </dd>
+                    </dl>
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>기본 레이아웃(프레임 구조)</p>
+                    <div class="codewrap">
+                        <button type="button" class="btn btn_code"><span>코드 펼치기</span></button>
+                        <textarea class="editor" disabled>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo_32x32.png">
+    <title>SK 케미칼 MES</title>
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/uiReset.min.css">
+    <link rel="stylesheet" href="/css/uiComponent.min.css">
+    <link rel="stylesheet" href="/css/uiLayout.min.css">
+    <script src="/assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/customScrollBar/jquery.scrollbar.js"></script>
+    <script src="/js/uiux.js"></script>
+</head>
+<body>
+    <header class="ukheader">
+        <nav class="nav_header">
+            <div class="header_ci"><a href="/"><img src="/images/skc_logo_gnblogo.png" alt="SK 케미칼"></a></div>
+            <ul class="gnb">
+                <li><a href="#">생산계획</a></li>
+                <li><a href="#">실적관리</a></li>
+                <li><a href="#">재고관리</a></li>
+                <li><a href="#">품질관리</a></li>
+                <li><a href="#">출하관리</a></li>
+                <li><a href="#">Report</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">로그관리</a></li>
+                <li><a href="#">기준정보</a></li>
+                <li class="on"><a href="#">시스템공통</a></li>
+            </ul>
+        </nav>
+        <div class="header_set">
+            <ul class="tnb">
+                <li>
+                    <a href="#" class="user"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span>시스템 관리자</span></a>
+                </li>
+                <li>
+                    <a href="#" class="sitemap"><i class="fa fa-bars" aria-hidden="true"></i><span class="sr-only">사이트 맵</span></a>
+                </li>
+                <li>
+                    <a href="#" class="signout"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="sr-only">로그아웃</span></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- //.ukheader -->
+
+    <div class="ukbody">
+        <div class="ukside" id="resizAble">
+            <div class="side_search">
+                <label for="inpTextField" class="sr-only">검색어입력</label>
+                <input type="text" name="" id="inpTextField" class="inp" placeholder="내용을 입력해주세요">
+                <button type="button" class="btn_find"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">검색</span></button>
+                <div class="find_result">
+                    <!-- 검색 결과가 없을 경우 -->
+                    <div class="non_result" style="display:none">
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <p>해당 검색결과가 없습니다.<br>내용을 입력해주세요</p>
+                    </div>
+                    <!-- 검색 결과가 있을 경우 -->
+                    <ul class="result_list">
+                        <li>
+                            <a href="#" title="시스템 공통 > 코드 관리 > 공통코드 관리">
+                                <strong>공통코드 관리</strong>
+                                <p>시스템 공통 > 코드 관리 > 공통코드 관리</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="side_tab">
+                <li class="on"><a href="#"><i class="fa fa-bars" aria-hidden="true"></i><span>메뉴</span></a></li>
+                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i><span>즐겨찾기</span></a></li>
+            </ul>
+            <div class="scrollwrap">
+                <nav class="nav_side on" data-menu="sidemenu">
+                    <ul class="snb">
+                        <li class="depth dep2"><a href="#">코드 관리</a>
+                            <ul class="depth dep3">
+                                <li class="dep_item">
+                                    <a href="pages/frame.html">공통코드 관리</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span치></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/frame.html">상세코드 관리</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/frame.html">업무 공통코드 관리</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="nav_side" data-menu="favorite">
+                    <ul class="snb">
+                        <li class="depth dep_item">
+                            <a href="pages/frame.html">사용자별 권한(Role)관리</a>
+                            <button type="button" class="btn_fav checked"><i class="fa fa-star" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="side_select">
+                <label for="selChoiceLink" class="sr-only">관련기관 사이트 바로가기</label>
+                <select name="" id="selChoiceLink">
+                    <option value="">관련기관 사이트1</option>
+                    <option value="">관련기관 사이트2</option>
+                    <option value="">관련기관 사이트3</option>
+                </select>
+            </div>
+        </div>
+        <!-- //.ukside -->
+
+        <div class="ukmain" id="ukMain">
+            <button class="btn_sidetoggle"><i class="icon"></i><span class="sr-only">접기/펼치기</span></button>
+            <div class="mditab" id="mdiTab">
+                <div class="mditab_area" id="mdiTabArea">
+                    <nav class="nav_tabmenu">
+                        <ul class="mdi_tabmenu">
+                        </ul>
+                    </nav>
+                    <!-- MDI Contentxt Menu -->
+                    <ul class="mdi_contextmenu">
+                        <li><a href="#">탭 닫기</a></li>
+                        <li><a href="#">모든 탭 닫기</a></li>
+                        <li><a href="#">선택된 탭 제외 모두 닫기</a></li>
+                    </ul>
+                </div>
+                <div class="mdi_control">
+                    <button type="button" class="btn btn_prev prev_next" data-action="prev_move"><i class="icon"></i><span class="sr-only">이전</span></button>
+                    <button type="button" class="btn btn_all" data-action="all_tab"><i class="fa fa-bars" aria-hidden="true"></i><span class="sr-only">전체보기</span></button>
+                    <button type="button" class="btn btn_next prev_next" data-action="next_move"><i class="icon"></i><span class="sr-only">다음</span></button>
+                    <!-- All MDI TabMenu -->
+                    <div class="all_mditab">
+                        <ul class="all_mditabmenu">
+                            <li><a href="#"><span>탭메뉴1</span></a></li>
+                        </ul>
+                        <button type="button" class="all_tab_close"><i>닫기</i></button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- //.mditab -->
+            
+            <div class="csection">
+                콘텐츠 아이프레임 영역
+            </div>
+            <!-- //.csection -->
+        </div>
+        <!-- //.ukmain -->
+    </div>
+    <!-- //.ukbody -->
+    <!-- Loading -->
+    <div class="loading_wrap">
+        <div class="loading"></div>
+    </div>
+</body>
+</html>
+                        </textarea>
+                    </div>
+                </article>
+            </section>
+            <section class="uksec" id="ukSec2" aria-label="COLOR PALETT">
+                <h2 class="ukg_h2">COLOR PALETTE</h2>
+                <article class="ukatc rowcol">
+                    <div class="primary_color">
+                        <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Primary</p>
+                        <div class="ukg_colorset" style="background-color:#c00020;color:#fff">
+                            <strong>red</strong>
+                            <p>HEX:#c00020 / RGB(192,0,32)</p>
+                        </div>
+                        <div class="ukg_colorset" style="background-color:#e95d1f;color:#fff">
+                            <strong>orange</strong>
+                            <p>HEX:#e95d1f / RGB(233,93,31)</p>
+                        </div>
+                    </div>
+
+                    <div class="gray_color">
+                        <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Gray Scale</p>
+                        <div class="graybox">
+                            <div class="ukg_colorset" style="background-color:#151515">
+                                <strong style="color:#fff;">black</strong>
+                                <p style="color:#fff;">HEX:#151515 / RGB(21,21,21)</p>
+                            </div>
+                            <div class="ukg_colorset" style="background-color:#333">
+                                <strong style="color:#fff;">color-3</strong>
+                                <p style="color:#fff;">HEX:#333333 / RGB(21,21,21)</p>
+                            </div>
+                            <div class="ukg_colorset" style="background-color:#666">
+                                <strong style="color:#fff;">color-6</strong>
+                                <p style="color:#fff;">HEX:#666666 / RGB(21,21,21)</p>
+                            </div>
+                            <div class="ukg_colorset" style="background-color:#8f8f8f">
+                                <strong style="color:#fff;">color-8f</strong>
+                                <p style="color:#fff;">HEX:#8f8f8f / RGB(21,21,21)</p>
+                            </div>
+                            <div class="ukg_colorset" style="background-color:#afafaf">
+                                <strong style="color:#151515;">color-af</strong>
+                                <p style="color:#151515;">HEX:#afafaf / RGB(21,21,21)</p>
+                            </div>
+                            <div class="ukg_colorset" style="background-color:#c1c1c1">
+                                <strong style="color:#151515;">color-c1</strong>
+                                <p style="color:#151515;">HEX:#c1c1c1 / RGB(21,21,21)</p>
+                            </div>
+                            <div class="ukg_colorset" style="background-color:#d1d1d1">
+                                <strong style="color:#151515;">color-d1</strong>
+                                <p style="color:#151515;">HEX:#d1d1d1 / RGB(21,21,21)</p>
+                            </div>
+                            <div class="ukg_colorset" style="background-color:#dbdbdb">
+                                <strong style="color:#151515;">color-db</strong>
+                                <p style="color:#151515;">HEX:#dbdbdb / RGB(21,21,21)</p>
+                            </div>
+                            <div class="ukg_colorset" style="background-color:#e5e5e5">
+                                <strong style="color:#151515;">color-e5</strong>
+                                <p style="color:#151515;">HEX:#e5e5e5 / RGB(21,21,21)</p>
+                            </div>
+                        </div> 
+                    </div>
+                </article>
+            </section>
+            <section class="uksec" id="ukSec3" aria-label="TYPOGRAPHY">
+                <h2 class="ukg_h2">TYPOGRAPHY</h2>
+                <article class="ukatc">
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>전체 기본 폰트</p>
+                    <div class="ukg_typo">
+                        <p>폰트 서체 (font-family:"Nanum Gothic")</p>
+                        <p>폰트 굵기 (font-weight: 400;)</p>
+                        <p>행 간격 (line-height: 1.25;)</p>
+                        <p>자간 간격 (letter-spacing: -0.02em;)</p>
+                    </div>
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Title</p>
+                    <div class="ukg_typo">
+                        <p class="h1">화면명 대타이틀 (color:#151515, font-size:16px, font-weight:800, line-height:1.25)</p>
+                        <p class="htit"><i class="icon"></i>콘텐츠 타이틀 (color:#151515, font-size:14px, font-weight:700, line-height:1.25)</p>
+                        <p class="subtit">유형정보 소타이틀 (color:#151515, font-size:13px, font-weight:700, line-height:1.25)</p>
+                    </div>
+                </article>
+            </section>
+            <section class="uksec" id="ukSec4" aria-label="BUTTONS">
+                <h2 class="ukg_h2">BUTTONS</h2>
+                <article class="ukatc btnsetgroup">
+                    <div class="btngroup f-start-ml">
+                        <button type="button" class="btn"><span>Default Button</span></button>
+                        <button type="button" class="btn" disabled><span>Default Disabled Button</span></button>
+                        
+                        <button class="btn ukfind uktext"><i class="icon"></i><span>조회</span></button>
+                        <button class="btn ukfind uktext" disabled><i class="icon"></i><span>조회</span></button>
+
+                        <button class="btn ukadd"><i class="icon"></i><span>추가</span></button>
+                        <button class="btn ukadd" disabled><i class="icon"></i><span>추가</span></button>
+
+                        <button class="btn ukdel"><i class="icon"></i><span>삭제</span></button>
+                        <button class="btn ukdel" disabled><i class="icon"></i><span>삭제</span></button>
+
+                        <button class="btn ukcancel"><i class="icon"></i><span>취소</span></button>
+                        <button class="btn ukcancel" disabled><i class="icon"></i><span>취소</span></button>
+
+                        <button class="btn ukmodify"><i class="icon"></i><span>수정</span></button>
+                        <button class="btn ukmodify" disabled><i class="icon"></i><span>수정</span></button>
+
+                        <button class="btn ukprint"><i class="icon"></i><span>인쇄</span></button>
+                        <button class="btn ukprint" disabled><i class="icon"></i><span>인쇄</span></button>
+
+                        <button class="btn ukexcel"><i class="icon"></i><span>엑셀다운로드</span></button>
+                        <button class="btn ukexcel" disabled><i class="icon"></i><span>엑셀다운로드</span></button>
+
+                        <button class="btn ukrefresh uktext"><i class="icon"></i><span>초기화</span></button>
+                        <button class="btn ukrefresh uktext" disabled><i class="icon"></i><span>초기화</span></button>
+
+                        <button class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                        <button class="btn uksave" disabled><i class="icon"></i><span>저장</span></button>
+
+                        <button class="btn ukfind uktext ukblack"><i class="icon"></i><span>조회</span></button>
+                        <button class="btn ukfind uktext ukblack" disabled><i class="icon"></i><span>조회</span></button>
+
+                        <button class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+                        <button class="btn ukfind" disabled><i class="icon"></i><span>조회</span></button>
+
+                        <button class="btn ukrefresh"><i class="icon"></i><span>초기화</span></button>
+                        <button class="btn ukrefresh" disabled><i class="icon"></i><span>초기화</span></button>
+
+                        <button class="btn ukdata"><i class="icon"></i><span>집계 or 재집계</span></button>
+                        <button class="btn ukdata" disabled><i class="icon"></i><span>집계 or 재집계</span></button>
+
+                        <button class="btn ukcreate"><i class="icon"></i><span>생성</span></button>
+                        <button class="btn ukcreate" disabled><i class="icon"></i><span>생성</span></button>
+
+                        <button class="btn ukconfirm"><i class="icon"></i><span>확정</span></button>
+                        <button class="btn ukconfirm" disabled><i class="icon"></i><span>확정</span></button>
+
+                        <button class="btn ukfix"><i class="icon"></i><span>적용</span></button>
+                        <button class="btn ukfix" disabled><i class="icon"></i><span>적용</span></button>
+
+                        <button class="btn uksend"><i class="icon"></i><span>전송</span></button>
+                        <button class="btn uksend" disabled><i class="icon"></i><span>전송</span></button>
+
+                        <button class="btn ukresend"><i class="icon"></i><span>재전송</span></button>
+                        <button class="btn ukresend" disabled><i class="icon"></i><span>재전송</span></button>
+
+                        <button class="btn ukload"><i class="icon"></i><span>불러오기</span></button>
+                        <button class="btn ukload" disabled><i class="icon"></i><span>불러오기</span></button>
+
+                        <button class="btn ukpub"><i class="icon"></i><span>라벨발행</span></button>
+                        <button class="btn ukpub" disabled><i class="icon"></i><span>라벨발행</span></button>
+
+                        <button class="btn ukdetail"><i class="icon"></i><span>상세</span></button>
+                        <button class="btn ukdetail" disabled><i class="icon"></i><span>상세</span></button>
+                        
+                        <button class="btn ukpdf"><i class="icon"></i><span>PDF</span></button>
+                        <button class="btn ukpdf" disabled><i class="icon"></i><span>PDF</span></button>
+                        
+                        <button class="btn ukdoc"><i class="icon"></i><span>업로드 양식</span></button>
+                        <button class="btn ukdoc" disabled><i class="icon"></i><span>업로드 양식</span></button>
+                        
+                        <button class="btn ukupload"><i class="icon"></i><span>업로드</span></button>
+                        <button class="btn ukupload" disabled><i class="icon"></i><span>업로드</span></button>
+
+                        <button class="btn ukdown"><i class="icon"></i><span>다운로드</span></button>
+                        <button class="btn ukdown" disabled><i class="icon"></i><span>다운로드</span></button>
+                        
+                        <button class="btn ukcall"><i class="icon"></i><span>호출</span></button>
+                        <button class="btn ukcall" disabled><i class="icon"></i><span>호출</span></button>
+                        
+                        <button class="btn ukset"><i class="icon"></i><span>수동Batch</span></button>
+                        <button class="btn ukset" disabled><i class="icon"></i><span>수동Batch</span></button>
+                        
+                        <button class="btn uknew"><i class="icon"></i><span>신규</span></button>
+                        <button class="btn uknew" disabled><i class="icon"></i><span>신규</span></button>
+                        
+                        <button class="btn ukchoice"><i class="icon"></i><span>선택</span></button>
+                        <button class="btn ukchoice" disabled><i class="icon"></i><span>선택</span></button>
+                    </div>
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<button type="button" class="btn"><span>Default Button</span></button>
+<button type="button" class="btn" disabled><span>Default Disabled Button</span></button>
+
+<button class="btn ukfind uktext"><i class="icon"></i><span>조회</span></button>
+<button class="btn ukfind uktext" disabled><i class="icon"></i><span>조회</span></button>
+
+<button class="btn ukadd"><i class="icon"></i><span>추가</span></button>
+<button class="btn ukadd" disabled><i class="icon"></i><span>추가</span></button>
+
+<button class="btn ukdel"><i class="icon"></i><span>삭제</span></button>
+<button class="btn ukdel" disabled><i class="icon"></i><span>삭제</span></button>
+
+<button class="btn ukcancel"><i class="icon"></i><span>취소</span></button>
+<button class="btn ukcancel" disabled><i class="icon"></i><span>취소</span></button>
+
+<button class="btn ukmodify"><i class="icon"></i><span>수정</span></button>
+<button class="btn ukmodify" disabled><i class="icon"></i><span>수정</span></button>
+
+<button class="btn ukprint"><i class="icon"></i><span>인쇄</span></button>
+<button class="btn ukprint" disabled><i class="icon"></i><span>인쇄</span></button>
+
+<button class="btn ukexcel"><i class="icon"></i><span>엑셀다운로드</span></button>
+<button class="btn ukexcel" disabled><i class="icon"></i><span>엑셀다운로드</span></button>
+
+<button class="btn ukrefresh uktext"><i class="icon"></i><span>초기화</span></button>
+<button class="btn ukrefresh uktext" disabled><i class="icon"></i><span>초기화</span></button>
+
+<button class="btn uksave"><i class="icon"></i><span>저장</span></button>
+<button class="btn uksave" disabled><i class="icon"></i><span>저장</span></button>
+
+<button class="btn ukfind uktext ukblack"><i class="icon"></i><span>조회</span></button>
+<button class="btn ukfind uktext ukblack" disabled><i class="icon"></i><span>조회</span></button>
+
+<button class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+<button class="btn ukfind" disabled><i class="icon"></i><span>조회</span></button>
+
+<button class="btn ukrefresh"><i class="icon"></i><span>초기화</span></button>
+<button class="btn ukrefresh" disabled><i class="icon"></i><span>초기화</span></button>
+
+<button class="btn ukdata"><i class="icon"></i><span>집계 or 재집계</span></button>
+<button class="btn ukdata" disabled><i class="icon"></i><span>집계 or 재집계</span></button>
+
+<button class="btn ukcreate"><i class="icon"></i><span>생성</span></button>
+<button class="btn ukcreate" disabled><i class="icon"></i><span>생성</span></button>
+
+<button class="btn ukconfirm"><i class="icon"></i><span>확정</span></button>
+<button class="btn ukconfirm" disabled><i class="icon"></i><span>확정</span></button>
+
+<button class="btn ukfix"><i class="icon"></i><span>적용</span></button>
+<button class="btn ukfix" disabled><i class="icon"></i><span>적용</span></button>
+
+<button class="btn uksend"><i class="icon"></i><span>전송</span></button>
+<button class="btn uksend" disabled><i class="icon"></i><span>전송</span></button>
+
+<button class="btn ukresend"><i class="icon"></i><span>재전송</span></button>
+<button class="btn ukresend" disabled><i class="icon"></i><span>재전송</span></button>
+
+<button class="btn ukload"><i class="icon"></i><span>불러오기</span></button>
+<button class="btn ukload" disabled><i class="icon"></i><span>불러오기</span></button>
+
+<button class="btn ukpub"><i class="icon"></i><span>라벨발행</span></button>
+<button class="btn ukpub" disabled><i class="icon"></i><span>라벨발행</span></button>
+
+<button class="btn ukdetail"><i class="icon"></i><span>상세</span></button>
+<button class="btn ukdetail" disabled><i class="icon"></i><span>상세</span></button>
+
+<button class="btn ukpdf"><i class="icon"></i><span>PDF</span></button>
+<button class="btn ukpdf" disabled><i class="icon"></i><span>PDF</span></button>
+
+<button class="btn ukdoc"><i class="icon"></i><span>업로드 양식</span></button>
+<button class="btn ukdoc" disabled><i class="icon"></i><span>업로드 양식</span></button>
+
+<button class="btn ukupload"><i class="icon"></i><span>업로드</span></button>
+<button class="btn ukupload" disabled><i class="icon"></i><span>업로드</span></button>
+
+<button class="btn ukdown"><i class="icon"></i><span>다운로드</span></button>
+<button class="btn ukdown" disabled><i class="icon"></i><span>다운로드</span></button>
+
+<button class="btn ukcall"><i class="icon"></i><span>호출</span></button>
+<button class="btn ukcall" disabled><i class="icon"></i><span>호출</span></button>
+
+<button class="btn ukset"><i class="icon"></i><span>수동Batch</span></button>
+<button class="btn ukset" disabled><i class="icon"></i><span>수동Batch</span></button>
+
+<button class="btn uknew"><i class="icon"></i><span>신규</span></button>
+<button class="btn uknew" disabled><i class="icon"></i><span>신규</span></button>
+
+<button class="btn ukchoice"><i class="icon"></i><span>선택</span></button>
+<button class="btn ukchoice" disabled><i class="icon"></i><span>선택</span></button>
+                        </textarea>
+                    </div>
+                </article>
+            </section>
+            <section class="uksec" id="ukSec5" aria-label="FORM ELEMENTS">
+                <h2 class="ukg_h2">FORM ELEMENTS</h2>
+                <article class="ukatc">
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>CheckBox Single</p>
+                    <div class="ukg_checkbox">
+                        <div class="field">
+                            <p class="tit_text">default</p>
+                            <label class="chkrad">
+                                <input type="checkbox" name="chk-1-1">
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked</p>
+                            <label class="chkrad">
+                                <input type="checkbox" name="chk-1-2" checked>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">default disabled</p>
+                            <label class="chkrad">
+                                <input type="checkbox" name="chk-1-3" disabled>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked disabled</p>
+                            <label class="chkrad">
+                                <input type="checkbox" name="chk-1-4" checked disabled>
+                            </label>
+                        </div>
+                    </div>
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>CheckBox + Text</p>
+                    <div class="ukg_checkbox">
+                        <div class="field">
+                            <p class="tit_text">default</p>
+                            <label class="chkrad">
+                                <input type="checkbox" name="chk-2-1">
+                                <span>텍스트 Checkbox</span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked</p>
+                            <label class="chkrad">
+                                <input type="checkbox" name="chk-2-2" checked>
+                                <span>텍스트 Checkbox</span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">default disabled</p>
+                            <label class="chkrad">
+                                <input type="checkbox" name="chk-2-3" disabled>
+                                <span>텍스트 Checkbox</span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked disabled</p>
+                            <label class="chkrad">
+                                <input type="checkbox" name="chk-2-4" checked disabled>
+                                <span>텍스트 Checkbox</span>
+                            </label>
+                        </div>
+                    </div>
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Text + CheckBox</p>
+                    <div class="ukg_checkbox">
+                        <div class="field">
+                            <p class="tit_text">default</p>
+                            <label class="chkrad">
+                                <span>텍스트 Checkbox</span>
+                                <input type="checkbox" name="chk-3-1">
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked</p>
+                            <label class="chkrad">
+                                <span>텍스트 Checkbox</span>
+                                <input type="checkbox" name="chk-3-2" checked>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">default disabled</p>
+                            <label class="chkrad">
+                                <span>텍스트 Checkbox</span>
+                                <input type="checkbox" name="chk-3-3" disabled>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked disabled</p>
+                            <label class="chkrad">
+                                <span>텍스트 Checkbox</span>
+                                <input type="checkbox" name="chk-3-4" checked disabled>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<label class="chkrad">
+    <input type="checkbox" name="chk-1-1">
+</label>
+<label class="chkrad">
+    <input type="checkbox" name="chk-2-1">
+    <span>텍스트 Checkbox</span>
+</label>
+<label class="chkrad">
+    <span>텍스트 Checkbox</span>
+    <input type="checkbox" name="chk-3-1">
+</label>
+                        </textarea>
+                    </div>
+
+                    <hr>
+
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Radio Single</p>
+                    <div class="ukg_radio">
+                        <div class="field">
+                            <p class="tit_text">default</p>
+                            <label class="chkrad">
+                                <input type="radio" name="rad-1-1">
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked</p>
+                            <label class="chkrad">
+                                <input type="radio" name="rad-1-1" checked>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">default disabled</p>
+                            <label class="chkrad">
+                                <input type="radio" name="rad-1-1" disabled>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked disabled</p>
+                            <label class="chkrad">
+                                <input type="radio" name="rad-1-1" checked disabled>
+                            </label>
+                        </div>
+                    </div>
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Radio + Text</p>
+                    <div class="ukg_radio">
+                        <div class="field">
+                            <p class="tit_text">default</p>
+                            <label class="chkrad">
+                                <input type="radio" name="rad-2-1">
+                                <span>텍스트 Radio</span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked</p>
+                            <label class="chkrad">
+                                <input type="radio" name="rad-2-1" checked>
+                                <span>텍스트 Radio</span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">default disabled</p>
+                            <label class="chkrad">
+                                <input type="radio" name="rad-2-1" disabled>
+                                <span>텍스트 Radio</span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked disabled</p>
+                            <label class="chkrad">
+                                <input type="radio" name="rad-2-1" checked disabled>
+                                <span>텍스트 Radio</span>
+                            </label>
+                        </div>
+                    </div>
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Text + CheckBox</p>
+                    <div class="ukg_checkbox">
+                        <div class="field">
+                            <p class="tit_text">default</p>
+                            <label class="chkrad">
+                                <span>텍스트 Radio</span>
+                                <input type="radio" name="rad-3-1">
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked</p>
+                            <label class="chkrad">
+                                <span>텍스트 Radio</span>
+                                <input type="radio" name="rad-3-1" checked>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">default disabled</p>
+                            <label class="chkrad">
+                                <span>텍스트 Radio</span>
+                                <input type="radio" name="rad-3-1" disabled>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">checked disabled</p>
+                            <label class="chkrad">
+                                <span>텍스트 Radio</span>
+                                <input type="radio" name="rad-3-1" checked disabled>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<label class="chkrad">
+    <input type="radio" name="rad-1-1">
+</label>
+<label class="chkrad">
+    <input type="radio" name="rad-1-1">
+    <span>텍스트 Radio</span>
+</label>
+<label class="chkrad">
+    <span>텍스트 Radio</span>
+    <input type="radio" name="rad-1-1">
+</label>
+                        </textarea>
+                    </div>
+
+                    <hr>
+                    
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Input</p>
+                    <div class="ukg_input">
+                        <div class="field">
+                            <p class="tit_text">default</p>
+                            <label class="inplab"><input type="text" name="" value=""></label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">default disabled</p>
+                            <label class="inplab"><input type="text" name="" value="" disabled></label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">value disabled</p>
+                            <label class="inplab"><input type="text" name="" value="SK 케미칼" disabled></label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">default readonly</p>
+                            <label class="inplab"><input type="text" name="" value="" readonly></label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">value readonly</p>
+                            <label class="inplab"><input type="text" name="" value="SK 케미칼" readonly></label>
+                        </div>
+                    </div>
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<label class="inplab"><input type="text" name="" value=""></label>
+<label class="inplab"><input type="text" name="" value="" disabled></label>
+<label class="inplab"><input type="text" name="" value="SK 케미칼" disabled></label>
+<label class="inplab"><input type="text" name="" value="" readonly></label>
+<label class="inplab"><input type="text" name="" value="SK 케미칼" readonly></label>
+                        </textarea>
+                    </div>
+
+                    <hr>
+                    
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Select</p>
+                    <div class="ukg_select">
+                        <div class="field">
+                            <p class="tit_text">default</p>
+                            <label class="selectlab">
+                                <select name="" id="select1-1">
+                                    <option value="">선택해주세요</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">disabled</p>
+                            <label class="selectlab">
+                                <select name="" id="select1-1" disabled>
+                                    <option value="">선택해주세요</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">readonly</p>
+                            <label class="selectlab">
+                                <select name="" id="select1-1" readonly>
+                                    <option value="">선택해주세요</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<label class="selectlab">
+    <select name="" id="select1-1">
+        <option value="">선택해주세요</option>
+    </select>
+</label>
+
+<label class="selectlab">
+    <select name="" id="select1-1" disabled>
+        <option value="">선택해주세요</option>
+    </select>
+</label>
+
+<label class="selectlab">
+    <select name="" id="select1-1" readonly>
+        <option value="">선택해주세요</option>
+    </select>
+</label>
+                        </textarea>
+                    </div>
+
+                    <hr>
+                    
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Multi Select</p>
+                    <div class="ukg_select" style="height:280px">
+                        <div class="field">
+                            <p class="tit_text">기본</p>
+                            <div class="multiple_select">
+                                <div class="select_text"><span>선택해주세요.</span></div>
+                                <div class="select_wrap">
+                                    <ul class="select_list">
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkAll">
+                                                <span>전체</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkA">
+                                                <span>선택1</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkB">
+                                                <span>선택2</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkC">
+                                                <span>선택3</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkD">
+                                                <span>선택4</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkE">
+                                                <span>선택5</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <div class="btngroup">
+                                        <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+                                        <button class="btn xsm xclose"><span>닫기</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //.multiple_select -->
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">선택 옵션</p>
+                            <div class="multiple_select selected">
+                                <div class="select_text"><span>선택해주세요.</span></div>
+                                <div class="select_wrap">
+                                    <ul class="select_list">
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkAll">
+                                                <span>전체</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkA">
+                                                <span>선택1</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkB">
+                                                <span>선택2</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkC">
+                                                <span>선택3</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkD">
+                                                <span>선택4</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkE">
+                                                <span>선택5</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <div class="btngroup">
+                                        <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+                                        <button class="btn xsm xclose" onclick="chkClose()"><span>닫기</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //.multiple_select -->
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">disabled</p>
+                            <div class="multiple_select">
+                                <div class="disabled_text"><span>선택해주세요.</span></div>
+                                <div class="select_wrap">
+                                    <ul class="select_list">
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkAll">
+                                                <span>전체</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkA">
+                                                <span>선택1</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkB">
+                                                <span>선택2</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkC">
+                                                <span>선택3</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkD">
+                                                <span>선택4</span>
+                                            </label>
+                                        </li>
+                                        <li class="select_option">
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="chkE">
+                                                <span>선택5</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <div class="btngroup">
+                                        <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+                                        <button class="btn xsm xclose" onclick="chkClose()"><span>닫기</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //.multiple_select -->
+                        </div>
+                    </div>
+                    <script>
+                        //  확인용 UI
+                        $(function(){
+                            $('.multiple_select').each(function(i, e){
+                                $(e).find('.select_text').on('click', function(){
+                                    $(e).addClass('selected');
+                                })
+                                $(e).find('.xclose').on('click', function(){
+                                    $(e).removeClass('selected');
+                                })
+                            })
+                        })
+                    </script>
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<!-- 
+    select_text 클릭 시 <div class="multiple_select selected">
+    multiple_select class selected 추가 하면 option이 펼쳐짐
+
+    disabled 시
+    select_text 대신 disabled_text로 변경
+    div class="select_text"> => div class="disabled_text">
+-->
+<div class="multiple_select">
+    <div class="select_text"><span>선택해주세요.</span></div>
+    <div class="select_wrap">
+        <ul class="select_list">
+            <li class="select_option">
+                <label class="chkrad">
+                    <input type="checkbox" name="chkAll">
+                    <span>전체</span>
+                </label>
+            </li>
+            <li class="select_option">
+                <label class="chkrad">
+                    <input type="checkbox" name="chkA">
+                    <span>선택1</span>
+                </label>
+            </li>
+            <li class="select_option">
+                <label class="chkrad">
+                    <input type="checkbox" name="chkB">
+                    <span>선택2</span>
+                </label>
+            </li>
+            <li class="select_option">
+                <label class="chkrad">
+                    <input type="checkbox" name="chkC">
+                    <span>선택3</span>
+                </label>
+            </li>
+            <li class="select_option">
+                <label class="chkrad">
+                    <input type="checkbox" name="chkD">
+                    <span>선택4</span>
+                </label>
+            </li>
+            <li class="select_option">
+                <label class="chkrad">
+                    <input type="checkbox" name="chkE">
+                    <span>선택5</span>
+                </label>
+            </li>
+        </ul>
+        <div class="btngroup">
+            <label class="btn xsm allchk"><input type="checkbox" name="allCheck"><span>전체선택</span></label>
+            <button class="btn xsm xclose"><span>닫기</span></button>
+        </div>
+    </div>
+</div>
+<!-- //.multiple_select -->
+                        </textarea>
+                    </div>
+
+                    
+                    <hr>
+                    
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>File Upload</p>
+                    <div class="ukg_fileup" style="display:none">
+                        <div class="field">
+                            <p class="tit_text">default</p>
+                            <label class="filelab">
+                                <input type="file" name="">
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">disabled</p>
+                            <label class="filelab">
+                                <input type="file" name="" disabled>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">readonly</p>
+                            <label class="filelab">
+                                <input type="file" name="" readonly>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="codewrap" style="display:none">
+                        <textarea class="editor" disabled>
+<label class="filelab">
+    <input type="file" name="">
+</label>
+                        </textarea>
+                    </div>
+                    
+                    <script>
+                        $(function(){
+                            // File Upload UI
+                            $('.filelab').each(function(i, e){
+                                var inpFile = $(e).find('input[type="file"]');
+                                var inpFileText = $(e).find('.textinput');
+                                inpFile.on('change', function () {
+                                    var filename = $(this).val();
+                                    if (/^\s*$/.test(filename)) {
+                                        $(this).parent().removeClass('active');
+                                        inpFileText.text("파일을 선택해주세요."); 
+                                    }
+                                    else {
+                                        $(this).parent().addClass('active');
+                                        inpFileText.text(filename.replace("\\fakepath\\", "")); 
+                                    }
+                                });
+                            })
+                        })
+                    </script>
+                    <div class="ukg_fileup" style="display:none">
+                        <div class="field">
+                            <p class="tit_text">Button + default</p>
+                            <label class="filelab btn">
+                                <input type="file" name="">
+                                <span class="text">파일 첨부</span>
+                                <span class="textinput"></span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">Button + disabled</p>
+                            <label class="filelab btn">
+                                <input type="file" name="" disabled>
+                                <span class="text">파일 첨부</span>
+                                <span class="textinput"></span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <p class="tit_text">Button + readonly</p>
+                            <label class="filelab btn">
+                                <input type="file" name="" readonly>
+                                <span class="text">파일 첨부</span>
+                                <span class="textinput"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="codewrap" style="display:none">
+                        <textarea class="editor" disabled>
+<label class="filelab btn">
+    <input type="file" name="">
+    <span class="text">파일 첨부</span>
+    <span class="textinput"></span>
+</label>
+
+// File Upload UI
+$('.filelab').each(function(i, e){
+    var inpFile = $(e).find('input[type="file"]');
+    var inpFileText = $(e).find('.textinput');
+    inpFile.on('change', function () {
+        var filename = $(this).val();
+        if (/^\s*$/.test(filename)) {
+            $(this).parent().removeClass('active');
+            inpFileText.text("파일을 선택해주세요."); 
+        }
+        else {
+            $(this).parent().addClass('active');
+            inpFileText.text(filename.replace("\\fakepath\\", "")); 
+        }
+    });
+})
+                        </textarea>
+                    </div>
+
+                    <div class="filewrap" style="display:none">
+                        <p class="tit_text">Button + default + 파일 추가</p>
+                        <div class="file_field">
+                            <label class="filelab btn">
+                                <input type="file" name="">
+                                <span class="text">파일 첨부</span>
+                                <span class="textinput"></span>
+                            </label>
+                            <button type="button" class="btn btn_add"><i class="icon"></i><span>추가</span></button>
+                        </div>
+                        <!-- 파일 추가 필드 -->
+                        <div class="add_field">
+                            <label class="filelab btn">
+                                <input type="file" name="">
+                                <span class="text">파일 첨부</span>
+                                <span class="textinput"></span>
+                            </label>
+                            <button type="button" class="btn btn_del"><i class="icon"></i><span>삭제</span></button>
+                        </div>
+                        <div class="add_field">
+                            <label class="filelab btn">
+                                <input type="file" name="">
+                                <span class="text">파일 첨부</span>
+                                <span class="textinput"></span>
+                            </label>
+                            <button type="button" class="btn btn_del"><i class="icon"></i><span>삭제</span></button>
+                        </div>
+                    </div>
+                    <div class="codewrap" style="display:none">
+                        <textarea class="editor" disabled>
+<div class="filewrap">
+    <div class="file_field">
+        <label class="filelab btn">
+            <input type="file" name="">
+            <span class="text">파일 첨부</span>
+            <span class="textinput"></span>
+        </label>
+        <button type="button" class="btn btn_add"><i class="icon"></i><span>추가</span></button>
+    </div>
+    <!-- 파일 추가 필드 -->
+    <div class="add_field">
+        <label class="filelab btn">
+            <input type="file" name="">
+            <span class="text">파일 첨부</span>
+            <span class="textinput"></span>
+        </label>
+        <button type="button" class="btn btn_del"><i class="icon"></i><span>삭제</span></button>
+    </div>
+    <div class="add_field">
+        <label class="filelab btn">
+            <input type="file" name="">
+            <span class="text">파일 첨부</span>
+            <span class="textinput"></span>
+        </label>
+        <button type="button" class="btn btn_del"><i class="icon"></i><span>삭제</span></button>
+    </div>
+</div>
+                        </textarea>
+                    </div>
+
+                    <p class="tit_text" style="display:none;">싱글 업로드 파일 추가</p>
+                    <div class="filewrap single" style="display:none;width:100%">
+                        <div class="file_field">
+                            <input type="file" name="" id="fileUpload">
+                            <div class="text_input">
+                                <p>file_No_20211029_1029488502_ABcdeea.CSV</p>
+                                
+                                <!-- 파일업로드 진행 상태바 -->
+                                <div class="state_bar"><div class="sbar" data-progress="60%" style="width:60%"></div></div>
+                            </div>
+                            <label for="fileUpload" class="btn btn_addfile">
+                                <i class="fa fa-upload" aria-hidden="true"></i><span>파일 추가</span>
+                            </label>
+                            <button type="button" class="btn btn_del"><i class="fa fa-trash-o" aria-hidden="true"></i><span>삭제</span></button>
+                        </div>
+                    </div>
+                    <!-- //.filewrap single -->
+                    <div class="codewrap" style="display:none">
+                        <textarea class="editor" disabled>
+<div class="filewrap single" style="width:90%">
+    <div class="file_field">
+        <input type="file" name="" id="fileUpload">
+        <div class="text_input">
+            <p>file_No_20211029_1029488502_ABcdeea.CSV</p>
+            
+            <!-- 파일업로드 진행 상태바 -->
+            <div class="state_bar"><div class="sbar" data-progress="60%" style="width:60%"></div></div>
+        </div>
+        <label for="fileUpload" class="btn btn_addfile">
+            <i class="fa fa-upload" aria-hidden="true"></i><span>파일 추가</span>
+        </label>
+        <button type="button" class="btn btn_del"><i class="fa fa-trash-o" aria-hidden="true"></i><span>삭제</span></button>
+    </div>
+</div>
+<!-- //.filewrap single -->
+                        </textarea>
+                    </div>
+
+                    <hr>
+
+                    <!-- <p class="tit_text">멀티 업로드 파일 추가</p> -->
+                    <div class="multiple_wrap" style="width:100%">
+                        <div class="multiple_head">
+                            <div class="btngroup">
+                                <!-- <label class="filelab btn"><input type="file" name="" multiple><span class="text"><i class="fa fa-upload" aria-hidden="true"></i>파일 추가</span></label> -->
+                                <button type="button" class="btn btn_add xs"><i class="fa fa-upload" aria-hidden="true"></i><span>파일 추가</span></button>
+                                <button type="button" class="btn btn_del xs"><i class="fa fa-trash-o" aria-hidden="true"></i><span>파일 삭제</span></button>
+                                <!-- <button type="button" class="btn btn_allchk xs"><i class="fa fa-check-square-o" aria-hidden="true"></i><span>전체 선택</span></button> -->
+                                <!-- <label class="chkrad btn"><input type="checkbox" name=""><span>전체 선택</span></label> -->
+                            </div>
+                            <p class="text">첨부파일은  000MB 까지가능</p>
+                        </div>
+                        <!-- 마우스 드래그 시 class drag-on 추가 -->
+                        <div class="multiple_body" style="height:150px;">
+                            <ul class="file_list">
+                                <!-- <li>
+                                    <label class="chkrad">
+                                        <input type="checkbox" name="">
+                                        <span>file_No_20211029_1029488502_ABcdeea.CSV</span>
+                                    </label>
+                                    <span class="file_size">0.826 MB</span>
+                                </li>
+                                <li>
+                                    <label class="chkrad">
+                                        <input type="checkbox" name="">
+                                    </label>
+                                    <button type="button" class="btn btn_link">file_No_20211029_1029488502_ABcdeea.CSV</button>
+                                    <span class="file_size">0.826 MB</span>
+                                </li> -->
+                                <li>
+                                    <label class="chkrad">
+                                        <input type="checkbox" name="">
+                                    </label>
+                                    <a href="#" class="btn btn_link">file_No_20211029_1029488502_ABcdeea.CSV</a>
+                                    <span class="file_size">0.826 MB</span>
+                                </li>
+                                <li>
+                                    <label class="chkrad">
+                                        <input type="checkbox" name="">
+                                    </label>
+                                    <a href="#" class="btn btn_link">file_No_20211029_1029488502_ABcdeea.CSV</a>
+                                    <span class="file_size">0.826 MB</span>
+                                </li>
+                                <li>
+                                    <label class="chkrad">
+                                        <input type="checkbox" name="">
+                                    </label>
+                                    <a href="#" class="btn btn_link">file_No_20211029_1029488502_ABcdeea.CSV</a>
+                                    <span class="file_size">0.826 MB</span>
+                                </li>
+                                <li>
+                                    <label class="chkrad">
+                                        <input type="checkbox" name="">
+                                    </label>
+                                    <a href="#" class="btn btn_link">file_No_20211029_1029488502_ABcdeea.CSV</a>
+                                    <span class="file_size">0.826 MB</span>
+                                </li>
+                                <li>
+                                    <label class="chkrad">
+                                        <input type="checkbox" name="">
+                                    </label>
+                                    <a href="#" class="btn btn_link">file_No_20211029_1029488502_ABcdeea.CSV</a>
+                                    <span class="file_size">0.826 MB</span>
+                                </li>
+                                <li>
+                                    <label class="chkrad">
+                                        <input type="checkbox" name="">
+                                    </label>
+                                    <a href="#" class="btn btn_link">file_No_20211029_1029488502_ABcdeea.CSV</a>
+                                    <span class="file_size">0.826 MB</span>
+                                </li>
+                                <li>
+                                    <label class="chkrad">
+                                        <input type="checkbox" name="">
+                                    </label>
+                                    <a href="#" class="btn btn_link">file_No_20211029_1029488502_ABcdeea.CSV</a>
+                                    <span class="file_size">0.826 MB</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 파일업로드 진행 상태바 -->
+                        <div class="state_bar"><div class="sbar" data-progress="60%" style="width:60%"></div></div>
+                    </div>
+                    <!-- //.multiple_wrap -->
+
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<div class="multiple_wrap" style="width:100%">
+    <div class="multiple_head">
+        <div class="btngroup">
+            <button type="button" class="btn btn_add xs"><i class="fa fa-upload" aria-hidden="true"></i><span>파일 추가</span></button>
+            <button type="button" class="btn btn_del xs"><i class="fa fa-trash-o" aria-hidden="true"></i><span>파일 삭제</span></button>
+        </div>
+        <p class="text">첨부파일은  000MB 까지가능</p>
+    </div>
+    <!-- 마우스 드래그 시 class drag-on 추가 -->
+    <div class="multiple_body" style="height:150px;">
+        <ul class="file_list" style="display:none">
+            <li>
+                <label class="chkrad">
+                    <input type="checkbox" name="">
+                    <span>file_No_20211029_1029488502_ABcdeea.CSV</span>
+                </label>
+                <span class="file_size">0.826 MB</span>
+            </li>
+        </ul>
+    </div>
+    <!-- 파일업로드 진행 상태바 -->
+    <div class="state_bar" style="display:none"><div class="sbar" data-progress="1%" style="width:1%"></div></div>
+</div>
+                        </textarea>
+                    </div>
+
+                    <hr>
+                    
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>Textarea</p>
+                    <div class="ukg_textarea">
+                        <p class="tit_text">default</p>
+                        <label class="textalab">
+                            <textarea name="" id="" cols="70" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                        </label>
+                    </div>
+                    <div class="ukg_textarea">
+                        <p class="tit_text">disabled</p>
+                        <label class="textalab">
+                            <textarea name="" id="" cols="70" rows="10" placeholder="내용을 입력해주세요" disabled></textarea>
+                        </label>
+                    </div>
+                    <div class="ukg_textarea">
+                        <p class="tit_text">readonly</p>
+                        <label class="textalab">
+                            <textarea name="" id="" cols="70" rows="10" placeholder="내용을 입력해주세요" readonly></textarea>
+                        </label>
+                    </div>
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<label class="textalab">
+    &lt;textarea name="" id="" cols="70" rows="10" placeholder="내용을 입력해주세요"&gt;&lt;/textarea&gt;
+</label>
+                        </textarea>
+                    </div>
+                </article>
+            </section>
+            <section class="uksec" id="ukSec6" aria-label="LOADING INDICATORS">
+                <h2 class="ukg_h2">LOADING INDICATORS</h2>
+                <article class="ukatc">
+                    <div class="setbox">
+                        <div class="loading"></div>
+                    </div>
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<div class="loading_wrap">
+    <div class="loading"></div>
+</div>
+                        </textarea>
+                    </div>
+                </article>
+            </section>
+            <section class="uksec" id="ukSec7" aria-label="TABLE">
+                <h2 class="ukg_h2">TABLE</h2>
+                <article class="ukatc">
+                    <p class="tit_text"><i class="fa fa-header" aria-hidden="true"></i>기본 구조</p>
+                    <div class="tblwrap">
+                        <table class="tbl">
+                            <colgroup>
+                                <col style="width:100px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>제목1</th>
+                                    <th>제목2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>내용1</td>
+                                    <td>내용2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<div class="tblwrap">
+    <table class="tbl">
+        <colgroup>
+            <col style="width:100px">
+            <col style="width:auto">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>제목1</th>
+                <th>제목2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용1</td>
+                <td>내용2</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+                        </textarea>
+                    </div>
+                </article>
+            </section>
+            <section class="uksec" id="ukSec8" aria-label="jQuery UI TAB MENU">
+                <h2 class="ukg_h2">jQuery UI TAB MENU</h2>
+                <article class="ukatc">
+                    <div id="tabSample" class="mercury-tabs">
+                        <ul class="nav nav-tabs">
+                            <li id="li-mercury-tab-tabSample-0" class="nav-item" data-tab-id="mercury-tab-tabSample-0" data-tab-no="0">
+                                <a class="nav-link active" data-toggle="tab" aria-controls="mercury-tab-tabSample-0" href="#mercury-tab-tabSample-0">탭 샘플1</a>
+                            </li>
+                            <li id="li-mercury-tab-tabSample-1" class="nav-item" data-tab-id="mercury-tab-tabSample-1" data-tab-no="1">
+                                <a class="nav-link " data-toggle="tab" aria-controls="mercury-tab-tabSample-1" href="#mercury-tab-tabSample-1">탭 샘플2</a>
+                            </li>
+                            <li id="li-mercury-tab-tabSample-2" class="nav-item" data-tab-id="mercury-tab-tabSample-2" data-tab-no="2">
+                                <a class="nav-link " data-toggle="tab" aria-controls="mercury-tab-tabSample-2" href="#mercury-tab-tabSample-2">탭 샘플3</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" style="min-height:100px">
+                            <div id="mercury-tab-tabSample-0" class="tab-pane mercury-tab active show">
+                                탭 Contents 1
+                            </div>
+                            <div id="mercury-tab-tabSample-1" class="tab-pane mercury-tab">
+                                탭 Contents 2
+                            </div>
+                            <div id="mercury-tab-tabSample-2" class="tab-pane mercury-tab">
+                                탭 Contents 3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="codewrap">
+                        <textarea class="editor" disabled>
+<div id="tabSample" class="mercury-tabs">
+    <ul class="nav nav-tabs">
+        <li id="li-mercury-tab-tabSample-0" class="nav-item" data-tab-id="mercury-tab-tabSample-0" data-tab-no="0">
+            <a class="nav-link active" data-toggle="tab" aria-controls="mercury-tab-tabSample-0" href="#mercury-tab-tabSample-0">탭 샘플1</a>
+        </li>
+        <li id="li-mercury-tab-tabSample-1" class="nav-item" data-tab-id="mercury-tab-tabSample-1" data-tab-no="1">
+            <a class="nav-link " data-toggle="tab" aria-controls="mercury-tab-tabSample-1" href="#mercury-tab-tabSample-1">탭 샘플2</a>
+        </li>
+        <li id="li-mercury-tab-tabSample-2" class="nav-item" data-tab-id="mercury-tab-tabSample-2" data-tab-no="2">
+            <a class="nav-link " data-toggle="tab" aria-controls="mercury-tab-tabSample-2" href="#mercury-tab-tabSample-2">탭 샘플3</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="mercury-tab-tabSample-0" class="tab-pane mercury-tab active show">
+            탭 Contents 1
+        </div>
+        <div id="mercury-tab-tabSample-1" class="tab-pane mercury-tab">
+            탭 Contents 2
+        </div>
+        <div id="mercury-tab-tabSample-2" class="tab-pane mercury-tab">
+            탭 Contents 3
+        </div>
+    </div>
+</div>
+                        </textarea>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+    <script>
+    (function($) {
+        var _document= $(document);
+        var _window = $(window);
+        var _ukTocBtn = $(".uk_snb li");
+        var _ukGuideCont = $(".ukguide_main > section");
+        ukguide = {
+            init: function() {
+                this.scrollEv();
+                this.guideMain();
+                this.tocClick();
+                this.resizeEv();
+            },
+            scrollEv: function() {
+                _window.on("scroll",function(){
+                    var wScroll = $(this).scrollTop()+100;
+                    _ukGuideCont.each(function(i, e){
+                        if(wScroll >= $(e).offset().top){
+                            _ukTocBtn.removeClass("active").eq(i).addClass("active");
+                        }
+                    });
+                });
+            },
+            guideMain: function(){
+                resizeSet();
+                $(".uksec").each(function(i, e) {
+                    var $this = $(this);
+                    $this.parents(".ukguide_toc").find(".uk_snb a").attr("href", $this.attr("#"+"id"));
+                });
+            },
+            tocClick: function() {
+                _ukTocBtn.on("click", function(e){
+                    e.preventDefault();
+                    clickEv($(this));
+                })
+            },
+            resizeEv: function() {
+                $(window).on('resize', function(){
+                    resizeSet();
+                });
+                $(window).trigger('resize');
+            },
+        };
+        
+        function clickEv(target) {
+            var section = _ukGuideCont.eq(target.index());
+            // var offset = section.offset().top - 50;
+            var offset = section.offset().top - 80;
+
+            $("body, html").stop().animate({scrollTop:offset}, 500);
+        };
+        function resizeSet() {
+            $('.codewrap').on( 'keyup', 'textarea', function (e){
+                $(this).css('height', 'auto' );
+                $(this).height( this.scrollHeight );
+            });
+            
+            $('.codewrap').find( 'textarea' ).keyup();
+        }
+
+        $(document).ready(function(){
+            ukguide.init();
+            _ukTocBtn.eq(0).click();
+            $('.editor').before('<button type="button" class="btn btn_code"><span>코드 펼치기</span></button>');
+            $('.codewrap').each(function(i, e){
+                var codeBtn = $(e).find('.btn_code');
+                var codeBtnText = codeBtn.find('span');
+                codeBtn.on('click', function(){
+                    $(e).toggleClass('show');
+                    $(e).hasClass("show") ? codeBtnText.text('코드 접기') : codeBtnText.text('코드 펼치기')
+                })
+            })
+            $('.ukatc a[href="#"]').on('click', function(e){
+                e.preventDefault;
+                return false;
+            })
+            /* $('input[type="checkbox"]').each(function(i,e){
+                var boxCheck = false;
+                var $chk = $(e).parent('.chkrad');
+                checkboxClass(this);
+                $(e).on('click', function(){
+                    boxCheck = !boxCheck;
+                    if(boxCheck == true){
+                        $chk.addClass("check");
+                    }
+                    else{
+                        $chk.removeClass("check");
+                    }
+                })
+            }); */
+        });
+    })(jQuery);
+    function changeCSS(cssFile, cssLinkIndex) {
+        var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+        var newlink = document.createElement("link");
+
+        newlink.setAttribute("rel", "stylesheet");
+        // newlink.setAttribute("type", "text/css");
+        newlink.setAttribute("href", cssFile);
+
+        document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+    }
+    </script>
+</body>
+</html>

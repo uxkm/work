@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>Simulation | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+
+<!-- START : 본문내용 -->
+<div class="cbody simulation">
+    <div id="layoutTabs" class="mercury-tabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tab-1">CDP-1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-2">CDP-2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-3">CDP-3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-4">CDP-3(2단 CV변경)</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-5">기준정보</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane mercury-tab active show">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <div class="article">
+                            <div class="div-title">
+                                <div class="tit_group"></div>
+                                <div class="top_group f-end">
+                                    <button id="btnSearch4" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+                                </div>
+                            </div>
+                            <div class="flow_wrap">
+                                <div class="flow_legend">
+                                    <div class="div_tbl">
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">100%</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">1858</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">kg/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">1반응Capa*</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit">
+                                                        <input type="text" name="" id="" value="100" class="tright" />
+                                                        <span class="unit">%</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">2반응Capa**</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit">
+                                                        <input type="text" name="" id="" value="100" class="tright" />
+                                                        <span class="unit">%</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">CD 생산</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab sta">
+                                                        <input type="text" name="" id="" value="1858" readonly="readonly" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">kg/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">H2/CD***</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit tcenter">
+                                                        <input type="text" name="" id="" value="12" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">실적 원단위</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">사용 Total</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab sta">
+                                                        <input type="text" name="" id="" value="2230" readonly="readonly" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">Nm3/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="legend_text">
+                                        <p>* 1반응 Capa 조정가능</p>
+                                        <p>** 2반응 Capa 조정가능</p>
+                                        <p>** 원단위 실적치 기준(이론 : 1.09)</p>
+                                        <div class="box">
+                                            <p class="sta">Capa에 따른 이론 값</p>
+                                            <p class="read">Data Sheet 기준</p>
+                                            <p class="edit">조정 가능</p>
+                                            <p class="exp">조정된 입력 조건에서 예상 값</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //.flow_legend -->
+
+                                <div class="flow_stage">
+
+                                    <div class="stage_group">
+                                        <div class="stage stg">
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <p>수소 사용량</p>
+                                                    <div class="field" data-static="2225">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="2230" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="25.2" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="15.9" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2400" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">1st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg1">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="40.95" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field" data-static="151.91">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="141.8" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="51.3" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2400" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back2nd">
+                                                <div class="group">
+                                                    <p class="stg_tit">2nd Spill-back</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="-56" readonly="readonly" />
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="182" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">2st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg2">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field" data-static="98.88">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="96.8" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="32.23" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="91" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="2637" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="100" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2400" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1500" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea bottom">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="900" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="1137" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back2opr">
+                                                <div class="group">
+                                                    <p class="stg_tit">Opening</p>
+                                                    <div class="field" data-static="15.6">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="-2.1" readonly="readonly" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="6.8" disabled="disabled" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back3nd">
+                                                <div class="group">
+                                                    <p class="stg_tit">3nd Spill-back</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="226" readonly="readonly" />
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="434" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rowline"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">3st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg3">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field" data-static="125.72">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="119.6" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="219.5" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="1708" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="250" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1500" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back3opr">
+                                                <div class="group">
+                                                    <p class="stg_tit">Opening</p>
+                                                    <div class="field" data-static="0.6">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="13.5" readonly="readonly" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="26.0" disabled="disabled" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage result">
+                                            <div class="group">
+                                                <div class="div_tbl">
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">이론값</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">R-201</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <label class="inplab sta">
+                                                                    <input type="text" name="" id="" value="1274" readonly="readonly" />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="group bottom">
+                                                <div class="div_tbl">
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">이론값</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">R-101</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <label class="inplab sta">
+                                                                    <input type="text" name="" id="" value="956" readonly="readonly" />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+                                        
+                                        <div class="stg_tline1"></div><div class="stg_tline2"></div>
+                                        <div class="stg_line"><div class="line1"></div><div class="line2"></div></div>
+                                    </div>
+                                    <!-- //.stage_group -->
+
+                                </div>
+                                <!-- //.flow_stage -->
+                            </div>
+                            <!-- //.flow_wrap -->
+    
+                        </div>
+                        <!-- //.article -->
+                    </div>
+                    <!-- //.framegp -->
+                </div>
+                <!-- //.framewrap -->
+            </div>
+            <div id="tab-2" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <div class="article">
+                            <div class="div-title">
+                                <div class="tit_group"></div>
+                                <div class="top_group f-end">
+                                    <button id="btnSearch4" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+                                </div>
+                            </div>
+                            <div class="flow_wrap">
+                                <div class="flow_legend">
+                                    <div class="div_tbl">
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">100%</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">1858</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">kg/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">1반응Capa*</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit">
+                                                        <input type="text" name="" id="" value="100" class="tright" />
+                                                        <span class="unit">%</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">2반응Capa**</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit">
+                                                        <input type="text" name="" id="" value="100" class="tright" />
+                                                        <span class="unit">%</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">CD 생산</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab sta">
+                                                        <input type="text" name="" id="" value="1858" readonly="readonly" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">kg/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">H2/CD***</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit tcenter">
+                                                        <input type="text" name="" id="" value="12" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">실적 원단위</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">사용 Total</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab sta">
+                                                        <input type="text" name="" id="" value="2230" readonly="readonly" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">Nm3/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="legend_text">
+                                        <p>* 1반응 Capa 조정가능</p>
+                                        <p>** 2반응 Capa 조정가능</p>
+                                        <p>** 원단위 실적치 기준(이론 : 1.09)</p>
+                                        <div class="box">
+                                            <p class="sta">Capa에 따른 이론 값</p>
+                                            <p class="read">Data Sheet 기준</p>
+                                            <p class="edit">조정 가능</p>
+                                            <p class="exp">조정된 입력 조건에서 예상 값</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //.flow_legend -->
+
+                                <div class="flow_stage">
+
+                                    <div class="stage_group">
+                                        <div class="stage stg">
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <p>수소 사용량</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="1784" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="33.4" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="15.1" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2900" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">1st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg1">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="39.1" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field" data-static="137.83">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="135.5" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="41.3" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2900" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back2nd">
+                                                <div class="group">
+                                                    <p class="stg_tit">2nd Spill-back</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="335" readonly="readonly" />
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="619" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">2st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg2">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field" data-static="127.36">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="116.9" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="46.8" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="90" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="3184" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="98.8" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2900" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1800" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea bottom">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1100" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="1384" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back2opr">
+                                                <div class="group">
+                                                    <p class="stg_tit">Opening</p>
+                                                    <div class="field" data-static="">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="10.4" readonly="readonly" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="19.3" disabled="disabled" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back3nd">
+                                                <div class="group">
+                                                    <p class="stg_tit">3nd Spill-back</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="781" readonly="readonly" />
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="974" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rowline"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">3st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg3">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field" data-static="133.07">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="141.0" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="222" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="1993" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="245.8" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1800" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back3opr">
+                                                <div class="group">
+                                                    <p class="stg_tit">Opening</p>
+                                                    <div class="field" data-static="">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="42.5" readonly="readonly" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="53.0" disabled="disabled" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage result">
+                                            <div class="group">
+                                                <div class="div_tbl">
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">이론값</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">R-201</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <label class="inplab sta">
+                                                                    <input type="text" name="" id="" value="1019" readonly="readonly" />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="group bottom">
+                                                <div class="div_tbl">
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">이론값</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">R-101</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <label class="inplab sta">
+                                                                    <input type="text" name="" id="" value="765" readonly="readonly" />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+                                        
+                                        <div class="stg_tline1"></div><div class="stg_tline2"></div>
+                                        <div class="stg_line"><div class="line1"></div><div class="line2"></div></div>
+                                    </div>
+                                    <!-- //.stage_group -->
+
+                                </div>
+                                <!-- //.flow_stage -->
+                            </div>
+                            <!-- //.flow_wrap -->
+    
+                        </div>
+                        <!-- //.article -->
+                    </div>
+                    <!-- //.framegp -->
+                </div>
+                <!-- //.framewrap -->
+            </div>
+            <div id="tab-3" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <div class="article">
+                            <div class="div-title">
+                                <div class="tit_group"></div>
+                                <div class="top_group f-end">
+                                    <button id="btnSearch4" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+                                </div>
+                            </div>
+                            <div class="flow_wrap">
+                                <div class="flow_legend">
+                                    <div class="div_tbl">
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">100%</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">1858</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">kg/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">1반응Capa*</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit">
+                                                        <input type="text" name="" id="" value="100" class="tright" />
+                                                        <span class="unit">%</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">2반응Capa**</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit">
+                                                        <input type="text" name="" id="" value="100" class="tright" />
+                                                        <span class="unit">%</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">CD 생산</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab sta">
+                                                        <input type="text" name="" id="" value="1858" readonly="readonly" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">kg/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">H2/CD***</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit tcenter">
+                                                        <input type="text" name="" id="" value="12" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">실적 원단위</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">사용 Total</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab sta">
+                                                        <input type="text" name="" id="" value="2230" readonly="readonly" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">Nm3/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="legend_text">
+                                        <p>* 1반응 Capa 조정가능</p>
+                                        <p>** 2반응 Capa 조정가능</p>
+                                        <p>** 원단위 실적치 기준(이론 : 1.09)</p>
+                                        <div class="box">
+                                            <p class="sta">Capa에 따른 이론 값</p>
+                                            <p class="read">Data Sheet 기준</p>
+                                            <p class="edit">조정 가능</p>
+                                            <p class="exp">조정된 입력 조건에서 예상 값</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //.flow_legend -->
+
+                                <div class="flow_stage">
+
+                                    <div class="stage_group">
+                                        <div class="stage stg">
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <p>수소 사용량</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="2230" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="25.84" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="14.7" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2900" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">1st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg1">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="46.91" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field" data-static="148.77">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="139.5" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="45.4" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2900" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back2nd">
+                                                <div class="group">
+                                                    <p class="stg_tit">2nd Spill-back</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="144" readonly="readonly" />
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="467" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">2st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg2">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field" data-static="111.75">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="116.0" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="43.72" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="90" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="3222" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="100" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2900" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1800" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea bottom">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1100" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="1422" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back2opr">
+                                                <div class="group">
+                                                    <p class="stg_tit">Opening</p>
+                                                    <div class="field" data-static="">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="2.6" readonly="readonly" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="8.5" disabled="disabled" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back3nd">
+                                                <div class="group">
+                                                    <p class="stg_tit">3nd Spill-back</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="526" readonly="readonly" />
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="771" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rowline"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">3st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg3">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field" data-static="136.15">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="135.9" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="220" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="2045" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="250" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1800" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back3opr">
+                                                <div class="group">
+                                                    <p class="stg_tit">Opening</p>
+                                                    <div class="field" data-static="">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="22.2" readonly="readonly" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="32.6" disabled="disabled" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage result">
+                                            <div class="group">
+                                                <div class="div_tbl">
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">이론값</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">R-201</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <label class="inplab sta">
+                                                                    <input type="text" name="" id="" value="1274" readonly="readonly" />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="group bottom">
+                                                <div class="div_tbl">
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">이론값</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">R-101</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <label class="inplab sta">
+                                                                    <input type="text" name="" id="" value="956" readonly="readonly" />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+                                        
+                                        <div class="stg_tline1"></div><div class="stg_tline2"></div>
+                                        <div class="stg_line"><div class="line1"></div><div class="line2"></div></div>
+                                    </div>
+                                    <!-- //.stage_group -->
+
+                                </div>
+                                <!-- //.flow_stage -->
+                            </div>
+                            <!-- //.flow_wrap -->
+    
+                        </div>
+                        <!-- //.article -->
+                    </div>
+                    <!-- //.framegp -->
+                </div>
+                <!-- //.framewrap -->
+            </div>
+            <div id="tab-4" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <div class="article">
+                            <div class="div-title">
+                                <div class="tit_group"></div>
+                                <div class="top_group f-end">
+                                    <button id="btnSearch4" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+                                </div>
+                            </div>
+                            <div class="flow_wrap">
+                                <div class="flow_legend">
+                                    <div class="div_tbl">
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">100%</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">1858</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">kg/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">1반응Capa*</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit">
+                                                        <input type="text" name="" id="" value="100" class="tright" />
+                                                        <span class="unit">%</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">2반응Capa**</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit">
+                                                        <input type="text" name="" id="" value="100" class="tright" />
+                                                        <span class="unit">%</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">CD 생산</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab sta">
+                                                        <input type="text" name="" id="" value="1858" readonly="readonly" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">kg/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">H2/CD***</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab edit tcenter">
+                                                        <input type="text" name="" id="" value="12" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">실적 원단위</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div_tr">
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">사용 Total</span>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <label class="inplab sta">
+                                                        <input type="text" name="" id="" value="2230" readonly="readonly" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="td">
+                                                <div class="field">
+                                                    <span class="unit">Nm3/hr</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="legend_text">
+                                        <p>* 1반응 Capa 조정가능</p>
+                                        <p>** 2반응 Capa 조정가능</p>
+                                        <p>** 원단위 실적치 기준(이론 : 1.09)</p>
+                                        <div class="box">
+                                            <p class="sta">Capa에 따른 이론 값</p>
+                                            <p class="read">Data Sheet 기준</p>
+                                            <p class="edit">조정 가능</p>
+                                            <p class="exp">조정된 입력 조건에서 예상 값</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //.flow_legend -->
+
+                                <div class="flow_stage">
+
+                                    <div class="stage_group">
+                                        <div class="stage stg">
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <p>수소 사용량</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="2304" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="38.1" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="14.7" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2900" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">1st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg1">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="51" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field" data-static="">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="146.4" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="41.8" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2900" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back2nd">
+                                                <div class="group">
+                                                    <p class="stg_tit">2nd Spill-back</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="112" readonly="readonly" />
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="435" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">2st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg2">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field" data-static="">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="130.4" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="44.1" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="90" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="3222" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="100" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="2900" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1800" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea bottom">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1100" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="1422" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back2opr">
+                                                <div class="group">
+                                                    <p class="stg_tit">Opening</p>
+                                                    <div class="field" data-static="">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="4.2" readonly="readonly" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="7.9" disabled="disabled" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back3nd">
+                                                <div class="group">
+                                                    <p class="stg_tit">3nd Spill-back</p>
+                                                    <div class="field">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="483" readonly="readonly" />
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="710" disabled="disabled" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rowline"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage tit">
+                                            <div class="group">
+                                                <p class="stg_tit">3st Stage</p>
+                                            </div>
+                                            <div class="line"></div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage stg3">
+                                            <div class="stgarea top">
+                                                <div class="group">
+                                                    <div class="field" data-static="">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="137.5" readonly="readonly" />
+                                                            <span class="unit">℃</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea">
+                                                <div class="group">
+                                                    <div class="field">
+                                                        <label class="inplab edit">
+                                                            <input type="text" name="" id="" value="222" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab exp">
+                                                            <input type="text" name="" id="" value="2027" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="inplab">
+                                                            <input type="text" name="" id="" value="250" disabled="disabled" />
+                                                            <span class="unit">㎏</span>
+                                                        </label>
+                                                        <label class="inplab read">
+                                                            <input type="text" name="" id="" value="1800" readonly="readonly" />
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stgarea back3opr">
+                                                <div class="group">
+                                                    <p class="stg_tit">Opening</p>
+                                                    <div class="field" data-static="">
+                                                        <label class="inplab sta">
+                                                            <input type="text" name="" id="" value="20.4" readonly="readonly" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                        <label class="inplab exp bold">
+                                                            <input type="text" name="" id="" value="30.0" disabled="disabled" />
+                                                            <span class="unit">%</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+
+                                        <div class="stage result">
+                                            <div class="group">
+                                                <div class="div_tbl">
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">이론값</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">R-201</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <label class="inplab sta">
+                                                                    <input type="text" name="" id="" value="1317" readonly="readonly" />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="group bottom">
+                                                <div class="div_tbl">
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">이론값</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div_tr">
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <span class="unit">R-101</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="td">
+                                                            <div class="field">
+                                                                <label class="inplab sta">
+                                                                    <input type="text" name="" id="" value="988" readonly="readonly" />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //.stage -->
+                                        
+                                        <div class="stg_tline1"></div><div class="stg_tline2"></div>
+                                        <div class="stg_line"><div class="line1"></div><div class="line2"></div></div>
+                                    </div>
+                                    <!-- //.stage_group -->
+
+                                </div>
+                                <!-- //.flow_stage -->
+                            </div>
+                            <!-- //.flow_wrap -->
+    
+                        </div>
+                        <!-- //.article -->
+                    </div>
+                    <!-- //.framegp -->
+                </div>
+                <!-- //.framewrap -->
+            </div>
+            <div id="tab-5" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>기준정보</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <button id="btnSearch5" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+                                    <button id="btnAdd" class="btn ukadd"><i class="icon"></i><span>행추가</span></button>
+                                    <button id="btnDel" class="btn ukminus"><i class="icon"></i><span>행삭제</span></button>
+                                    <button id="btnSave" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                                </div>
+                            </div>
+                            <div id="realGridSample5" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample5" title="기준정보" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+        </div>
+        <!-- //.tab-content -->
+    </div>
+    <!-- //.mercury-tabs -->
+</div>
+<!-- END : 본문내용 cbody -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+    });
+</script>
+</body>
+</html>

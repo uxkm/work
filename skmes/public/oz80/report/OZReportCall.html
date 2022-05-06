@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html style="height:100%">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<script src="/oz80/ozhviewer/jquery/jquery-2.0.3.min.js"></script>
+<link rel="stylesheet" href="/oz80/ozhviewer/jquery/jquery-ui.css" type="text/css"/>
+<script src="/oz80/ozhviewer/jquery/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="/oz80/ozhviewer/ui.dynatree.css" type="text/css"/>
+<script type="text/javascript" src="/oz80/ozhviewer/jquery.dynatree.js" charset="utf-8"></script>
+<script type="text/javascript" src="/oz80/ozhviewer/OZJSViewer.js" charset="utf-8"></script>
+
+</head>
+<body style="width:98%;height:98%">
+<div id="OZViewer" style="width:98%;height:98%"></div>
+<script type="text/javascript" >
+	function SetOZParamters_OZViewer(){
+		var oz;
+
+		var PLANT_CODE = "1110";
+		var ITEM_CODE = "1003";
+
+		oz = document.getElementById("OZViewer");
+
+		var csvData = 'ID^NAME^ADDRESS///VARCHAR^VARCHAR^VARCHAR///A00001^Park Chan Ho^Texas///A00002^Shin Ki Sung^Seoul///A00003^Kim Byung Hyun^Arizona'
+
+		var jsonData = '{"Category": [{"CategoryID": "B00001", "CategoryName": "Beverage", "Description": "soft drinks, coffee, tea, beer", "Price":100}, {"CategoryID": "B00002", "CategoryName": "Seasoning", "Description": "Sweetening agents, spices, spread", "Price":200}, {"CategoryID": "B00003", "CategoryName": "Snacks", "Description": "Homerunball, Saewookkang", "Price":150}]}'
+
+		var xmlData = '<?xml version="1.0" encoding="UTF-8"?><Root><dataset id="SDM_Sample"><colinfo id="ID" size="256" summ="default" type="STRING"/><colinfo id="NAME" size="256" summ="default" type="STRING"/><colinfo id="ADDRESS" size="256" summ="default" type="STRING"/><record><ID>S0001</ID><NAME>OLIVE</NAME><ADDRESS>IMATION</ADDRESS></record><record><ID>S0002</ID><NAME>APPLE</NAME><ADDRESS>RIGHT</ADDRESS></record></dataset></Root>';
+
+		oz.sendToActionScript("connection.servlet","http://127.0.0.1:8080/oz80/server");
+		oz.sendToActionScript("connection.reportname", "test.ozr");
+		oz.sendToActionScript("information.debug", "true");
+		oz.sendToActionScript("odi.odinames", "test");
+		oz.sendToActionScript("odi.test.pcount", "2");
+	    oz.sendToActionScript("odi.test.args1", "PLANT_CODE="+PLANT_CODE);
+	    oz.sendToActionScript("odi.test.args2", "ITEM_CODE="+ITEM_CODE);
+	    oz.sendToActionScript("odi.test.clientdmtype", "Memory");
+	    oz.sendToActionScript("odi.test.serverdmtype", "Memory");
+	    oz.sendToActionScript("odi.test.fetchtype", "Concurrent");
+
+		return true;
+	}
+	start_ozjs("OZViewer","/oz80/ozhviewer/");
+</script>
+</body>
+</html>

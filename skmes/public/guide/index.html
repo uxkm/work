@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/logo_32x32.png">
+    <title>SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../css/fonts.css">
+    <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../css/uiReset.min.css">
+    <link rel="stylesheet" href="../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../css/uiLayout.min.css">
+
+    <script src="../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../assets/js/popper/popper.js"></script>
+    <script src="../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../assets/js/moment/moment.min.js"></script>
+    <script src="../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../assets/js/customScrollBar/jquery.scrollbar.js"></script>
+    <script src="../js/uiux.js"></script>
+    <style>
+        .ukbody .csection{display:none;height:100%;}
+        .ukbody .default_csection{display:block;height:100%;padding:0;}
+        .ukbody.tab_show .csection{display:block;height:calc(100% - 30px);}
+        .ukbody.tab_show .default_csection{display:none;}
+    </style>
+</head>
+<body>
+    <header class="ukheader">
+        <nav class="nav_header">
+            <div class="header_ci"><a href="index.html"><img src="../images/skc_logo_gnblogo.png" alt="SK 케미칼 MES"></a></div>
+
+            <ul class="gnb">
+                <li><a href="#">생산계획</a></li>
+                <li><a href="#">생산준비</a></li>
+                <li><a href="#">공정운영</a></li>
+                <li><a href="#">생산입고</a></li>
+                <li><a href="#">생산실적</a></li>
+                <li><a href="#">Report</a></li>
+                <li><a href="#">KPI관리</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">기준정보</a></li>
+                <li><a href="#">시스템공통</a></li>
+                <li class="on"><a href="#">Guide</a></li>
+            </ul>
+        </nav>
+        <div class="header_set">
+            <ul class="tnb">
+                <li>
+                    <a href="#" class="user"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span>시스템 관리자</span></a>
+                </li>
+                <li>
+                    <a href="#" class="sitemap"><i class="fa fa-bars" aria-hidden="true"></i><span class="sr-only">사이트 맵</span></a>
+                </li>
+                <li>
+                    <a href="#" class="signout"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="sr-only">로그아웃</span></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- //.ukheader -->
+
+    <div class="ukbody">
+        <div class="ukside" id="resizAble">
+            <div class="side_search">
+                <label for="inpTextField" class="sr-only">검색어입력</label>
+                <input type="text" name="" id="inpTextField" class="inp" placeholder="내용을 입력해주세요">
+                <button type="button" class="btn_find"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">검색</span></button>
+                <div class="find_result">
+                    <!-- 검색 결과가 없을 경우 -->
+                    <div class="non_result" style="display:none">
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <p>해당 검색결과가 없습니다.<br>내용을 입력해주세요</p>
+                    </div>
+                    <!-- 검색 결과가 있을 경우 -->
+                    <ul class="result_list">
+                        <li>
+                            <a href="#" title="시스템 공통 > 코드 관리 > 공통코드 관리">
+                                <strong>공통코드 관리</strong>
+                                <p>시스템 공통 > 코드 관리 > 공통코드 관리</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="시스템 공통 > 코드 관리 > 공통코드 관리">
+                                <strong>공통코드 관리</strong>
+                                <p>시스템 공통 > 코드 관리 > 공통코드 관리</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="시스템 공통 > 코드 관리 > 공통코드 관리">
+                                <strong>공통코드 관리</strong>
+                                <p>시스템 공통 > 코드 관리 > 공통코드 관리</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="시스템 공통 > 코드 관리 > 공통코드 관리">
+                                <strong>공통코드 관리</strong>
+                                <p>시스템 공통 > 코드 관리 > 공통코드 관리</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="시스템 공통 > 코드 관리 > 공통코드 관리">
+                                <strong>공통코드 관리</strong>
+                                <p>시스템 공통 > 코드 관리 > 공통코드 관리</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="시스템 공통 > 코드 관리 > 공통코드 관리">
+                                <strong>공통코드 관리</strong>
+                                <p>시스템 공통 > 코드 관리 > 공통코드 관리</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="시스템 공통 > 코드 관리 > 공통코드 관리">
+                                <strong>공통코드 관리</strong>
+                                <p>시스템 공통 > 코드 관리 > 공통코드 관리</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="btn_sidetoggle"><i class="icon"></i><span class="sr-only">접기/펼치기</span></button>
+            </div>
+            <ul class="side_tab">
+                <li class="on"><a href="#"><i class="fa fa-bars" aria-hidden="true"></i><span>메뉴</span></a></li>
+                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i><span>즐겨찾기</span></a></li>
+            </ul>
+            
+            <div class="scrollwrap">
+                <nav class="nav_side on" data-menu="sidemenu">
+                    <ul class="snb">
+                        <li class="depth dep2 uiux">
+                            <a href="style_guide.html">UI/UX 스타일 가이드</a>
+                            <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                        </li>
+                        <li class="depth dep2">
+                            <a href="pages.html">UI 진행 현황</a>
+                            <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                        </li>
+                        <li class="depth dep2">
+                            <a href="template/layout.html">레이아웃 유형</a>
+                            <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                        </li>
+                        <!-- <li class="depth dep2 is-open"><a href="#">UI Component 유형</a>
+                            <ul class="depth dep3">
+                                <li class="dep_item">
+                                    <a href="component/loading.html">로딩중</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="component/upload_multifile.html">멀티파일 업로드</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="component/multi_select.html">멀티 셀렉트</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="component/report.html">Report</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                            </ul>
+                        </li> -->
+                        <li class="depth dep2"><a href="#">공통 Pages</a>
+                            <ul class="depth dep3">
+                                <li class="dep_item">
+                                    <a href="pages/login.html">로그인</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/error.html">공통 에러</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/404.html">404 에러</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/419.html">419 에러</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/sitemap.html">Sitemap</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/popup.html">팝업(모달)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth dep2"><a href="#">생산계획</a>
+                            <ul class="depth dep3">
+                                <li class="dep_item">
+                                    <a href="pages/biz/planning/yearProductionLinePlan.html">생산계획관리>연간생산계획(라인별)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/planning/monthProductionPlan.html">생산계획관리>월간생산계획</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/planning/productionMainOilChdm.html">생산계획관리>생산지시(유화)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/planning/productionMainResinScp.html">생산계획관리>생산지시(CHDM)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/planning/productionRutinSUOilChdm.html">생산계획관리>생산지시(수지)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/planning/productionRutinSDOilChdm.html">생산계획관리>생산지시(SCP)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/planning/inventoryBalance.html">생산계획관리>재고Balance</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/planning/operationConditionMang.html">생산계획관리>운전조건표관리(유화)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth dep2"><a href="#">생산준비</a>
+                            <ul class="depth dep3">
+                                <li class="dep_item">
+                                    <a href="pages/biz/preparation/materialPurchaseRequest.html">원부원료관리>원부원료 구매요청</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <!-- <li class="dep_item">
+                                    <a href="pages/biz/preparation/materialInputPlan.html">원부원료관리>입고계획조회</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li> -->
+                                <li class="dep_item">
+                                    <a href="pages/biz/preparation/materialInput.html">원부원료관리>원부원료입고</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <!-- <li class="dep_item">
+                                    <a href="pages/biz/preparation/purchaseStatus.html">원부원료관리>구매진행현황</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li> -->
+                                <li class="dep_item">
+                                    <a href="pages/biz/preparation/dayInputPlan.html">원부원료관리>일별입고계획</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/preparation/monthInputCorrection.html">원부원료관리>원부원료 입고보정</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth dep2"><a href="#">공정운영</a>
+                            <ul class="depth dep3">
+                                <li class="dep_item">
+                                    <a href="pages/biz/process/pdaDisbursement.html">원료투입관리>PDA 불출/소분/투입현황</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/process/smallPackage.html">원료투입관리>제품소포장관리(유화)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/process/remelting.html">원료투입관리>Re-Melting관리(유화)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/process/valueup.html">원료투입관리>제품재투입관리(수지)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/process/simulation.html">공정운영관리>Simulation</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/process/incongruityProcessList.html">품질관리>품질 부적합 현황</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/process/qualityResult.html">품질관리>품질결과현황</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/process/greenGasDisposeCalculation.html">일지관리>온실가스 배출량 산정</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth dep2"><a href="#">생산입고</a>
+                            <ul class="depth dep3">
+                                <li class="dep_item">
+                                    <a href="pages/biz/incoming/barcodePublishStandard.html">생산입고관리>바코드발행 기준정보</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/incoming/barcodePublishOilChdm.html">생산입고관리>바코드 발행(유화)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/incoming/barcodePublishChdm.html">생산입고관리>바코드발행(CHDM)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/incoming/barcodePublishResin.html">생산입고관리>바코드발행(수지)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/incoming/cd90Produce.html">재고관리>CD-90 제조관리</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth dep2"><a href="#">생산실적</a>
+                            <ul class="depth dep3">
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayDeadline.html">일마감관리>일마감</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayTankInventory.html">일마감관리>Tank 재고관리</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayWorkInventory.html">일마감관리>재공재고관리</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayMovePerformance.html">일마감관리>이동실적</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayEtcStoreRelease.html">일마감관리>기타입출고실적</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayProduceOilPlant.html">일마감관리>생산입고 관리(유화, CHDM)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayProduceResin.html">일마감관리>생산입고 관리(수지)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayRawMaterialUse.html">일마감관리>원부원료 사용실적(연속)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayRawMaterialUseBatch.html">일마감관리>원부원료 사용실적(배치)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayUtilityUse.html">일마감관리>유틸리티 사용실적</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayWasteResultResin.html">일마감관리>Waste 발생실적(수지)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/dayWasteResultOilChdm.html">일마감관리>Waste 실적관리(유화,CHDM)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/result/monthWasteResultResin.html">월마감관리>Waste 출고실적(수지)</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth dep2"><a href="#">KPI관리</a>
+                            <ul class="depth dep3">
+                                <li class="dep_item">
+                                    <a href="pages/biz/kpi/kpiManagement.html">KPI관리>KPI관리</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth dep2"><a href="#">기준정보</a>
+                            <ul class="depth dep3">
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/erpBomList.html">원단위관리>ERP BOM조회</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/utilityUnit.html">원단위관리>유틸리티 원단위 관리</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/lineUnit.html">원단위관리>라인별 원단위관리</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/routingList.html">Routing조회>Routing조회</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/productionPerformance.html">일마감 기준정보>생산실적 기준정보</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/productionInOut.html">일마감 기준정보>생산입출고 기준정보</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/rawMaterialUsePerformance.html">일마감 기준정보>사용실적 기준정보</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/movePerformance.html">일마감 기준정보>이동실적 기준정보</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/wasteStandardInfo.html">일마감 기준정보>Waste 기준정보</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/utilityUsePerformance.html">일마감 기준정보>유틸리티 사용실적 기준정보</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/factoryDeadlineItem.html">일마감 기준정보>공장별 마감항목 관리</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/tankStandardInfo.html">일마감 기준정보>Tank 기준정보</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/dayInventoryWorkFacility.html">일마감 기준정보>재공설비 기준정보</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                                <li class="dep_item">
+                                    <a href="pages/biz/master/productionOrderMangItem.html">생산지시 기준정보>생산지시 관리항목</a>
+                                    <button type="button" class="btn_fav"><i class="fa fa-star-o" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="nav_side" data-menu="favorite">
+                    <ul class="snb">
+                        <li class="depth dep_item">
+                            <a href="template/layout.html">레이아웃 유형</a>
+                            <button type="button" class="btn_fav checked"><i class="fa fa-star" aria-hidden="true"></i><span class="sr-only">즐겨찾기 등록</span></button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="side_select">
+                <label for="selChoiceLink" class="sr-only">관련기관 사이트 바로가기</label>
+                <select name="" id="selChoiceLink" onchange="hyperSelect(this)">
+                    <option>선택해주세요</option>
+                    <option value="https://xd.adobe.com/view/f64b541e-7987-4c3f-a8c5-0d0bf128b6e6-a318/grid/">디자인 가이드</option>
+                </select>
+            </div>
+        </div>
+        <!-- //.ukside -->
+
+        <div class="ukmain" id="ukMain">
+            <div class="mditab" id="mdiTab">
+                <div class="mditab_area" id="mdiTabArea">
+                    <nav class="nav_tabmenu">
+                        <ul class="mdi_tabmenu">
+                        </ul>
+                    </nav>
+                </div>
+                <div class="mdi_control">
+                    <button type="button" class="btn btn_prev prev_next" data-action="prev_move"><i class="icon"></i><span class="sr-only">이전</span></button>
+                    <button type="button" class="btn btn_all" data-action="all_tab"><i class="fa fa-bars" aria-hidden="true"></i><span class="sr-only">전체보기</span></button>
+                    <button type="button" class="btn btn_next prev_next" data-action="next_move"><i class="icon"></i><span class="sr-only">다음</span></button>
+                    <!-- All MDI TabMenu -->
+                    <div class="all_mditab">
+                        <ul class="all_mditabmenu">
+                        </ul>
+                        <button type="button" class="all_tab_close"><i>닫기</i></button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- //.mditab -->
+            
+            <div class="csection">
+                <!-- <div class="btngroup" style="padding:50px;">
+                    <button type="button" id="dialogBtn" class="btn"><span>모달 호출</span></button>
+                </div> -->
+            </div>
+            <!-- //.csection -->
+            <div class="default_csection"><iframe src="style_guide.html"></iframe></div>
+        </div>
+        <!-- //.ukmain -->
+    </div>
+    <!-- //.ukbody -->
+    <script>
+        $(document).ready(function(){
+            var $resizAble = $('#resizAble');
+            var $ukMain = $('#ukMain');
+            var $mdiTab = $("#mdiTab");
+            var _mdiConTextMenu = $mdiTab.find('.mdi_contextmenu');
+            var _inpFind = $('.side_search');
+            var _inpFindItem = _inpFind.find('input[type="text"]');
+            var gapW = 250;
+            var gapH = 70;
+
+            // side layout resize option
+            $resizAble.resizable({
+                handles: 'e',
+                minWidth: 200,
+                maxWidth: 350,
+                start: function(e, ui) {
+                    $('iframe').css('pointer-events','none');
+                },
+                stop: function(e, ui) {
+                    $('iframe').css('pointer-events','auto');
+                    var currentWidth = ui.size.width; 
+                    var gap = 0; 
+                    currentWidth += gap; 
+                    $ukMain.css({
+                        "margin-left": currentWidth + "px"
+                    });
+                },
+                resize: function( e, ui){ 
+                }
+            });
+
+            // side search
+            _inpFindItem.on('keyup input', function(){
+                if ( $(this).val() ) {
+                    _inpFind.addClass('show');
+                } else {
+                    _inpFind.removeClass('show');
+                }
+            });
+            // side tab control
+            var _sideTab = $('.side_tab > li');
+            var _navSide = $('.scrollwrap .nav_side');
+            $('.ukside').each(function(i, e){
+                _sideTab.on('click', function(){
+                    var idx = $(this).index();
+                    _sideTab.eq(idx).addClass('on').siblings().removeClass('on');
+                    _navSide.eq(idx).addClass('on').siblings().removeClass('on');
+                    return false;
+                });
+                // side depth menu
+                _navSide.find('li').each(function(i, e){
+                    // if( $(e).children().length > 1 && $(e).find('.btn_fav').length > 1 ){
+                    if( $(e).find('ul').length === 1 ){
+                        $(e).addClass('is-arr');
+                    }  else {
+                        $(e).addClass('dep_item');
+                    }
+                    $(e).on('click', function(){
+                        if( $(e).is('.is-arr') ){
+                            $(e).toggleClass('is-open');
+                            return false;
+                        }
+                    });
+                });
+            });
+            $('.scrollwrap').scrollbar();
+
+            $('.btn_sidetoggle').on('click', function(i, e){
+                $('.ukbody').toggleClass('is-collapse');
+            });
+
+
+            var _document = $(document);
+            var add_tab_target = '.nav_side';
+            var _tab_add_target = $(add_tab_target+' .dep_item a'); // left 메뉴 타겟
+
+            var uk_body = ".ukbody";
+            var uk_main = ".ukmain";
+            var uk_tab_nav = '.mditab';
+            var tab_menu = uk_tab_nav+' '+'.nav_tabmenu';
+            var _uk_tab_menu = $(tab_menu+' ul');
+            var tab_move_button = uk_tab_nav+' '+'.mdi_control';
+            var all_tab_wrap = uk_main + ' .all_mditab';
+            var all_tab_lst = all_tab_wrap + ' .all_mditabmenu';
+            var all_tab_close = all_tab_wrap + ' .all_tab_close';
+            var _uk_tab_content = $('.csection');
+            // var tab_contextmenu = 'mdi_contextmenu';
+            var tab_contextmenu = 'tab_contextmenu';
+
+            var add_tab = 'add_tab';
+            var tab_show = 'tab_show';
+            var data_add_idx = 'data-add-idx';
+            var data_tab_content = 'data-tab-content';
+            var data_hover_idx = 'data-hover-idx';
+
+            var this_tab_remove = 'this_tab_remove';
+            var all_tab_remove = 'all_tab_remove';
+            var this_except_remove = 'this_except_remove';
+            var contextmenu_remove = 'contextmenu_remove';
+
+            var tab_add_idx = 0;
+            var tab_active_idx = 0;
+            var width_plus = 0;
+            var moveX = 0;
+            var each_width = [];
+            var move_show_size = 100; // 이 숫자만큼 더 공간이 작아저야 좌/우 이동버튼 노출
+
+
+            // 텝 메뉴 추가 ----------------------------------------------------------
+            _tab_add_target.on('click', function(){
+                var _this = $(this);
+                var tab_name = _this.text();
+                var tab_content = _this.attr('href');
+                $(uk_body).addClass(tab_show);
+
+                // 중복되는 텝이 없을 경우 생성
+                if( !_this.is('.'+add_tab) ){
+                    _this.addClass(add_tab).attr(data_add_idx, tab_add_idx);
+                    _uk_tab_menu.append(
+                        '<li class="'+add_tab+' tab_item" '+data_add_idx+'="'+tab_add_idx+'" '+data_tab_content+'="'+tab_content+'">' +
+                        '<a href="#"><i>'+tab_name+'</i></a>' +
+                        '<button type="button" class="del">삭제하기</button>' +
+                        '</li>'
+                    );
+                    $(all_tab_lst).append(
+                        '<li class="'+add_tab+' all_item" '+data_add_idx+'="'+tab_add_idx+'" '+data_tab_content+'="'+tab_content+'">' +
+                        '<a href="#"><i>'+tab_name+'</i></a>' +
+                        '</li>'
+                    );
+                    _uk_tab_content.append('<iframe src="'+tab_content+'" id="iframeMain" class="uk_tabpanel" '+data_add_idx+'="'+tab_add_idx+'"></iframe>');
+
+                    _uk_tab_menu.find('li').last().addClass('active').siblings().removeClass('active');
+                    $(all_tab_lst).find('li').last().addClass('active').siblings().removeClass('active');
+                    _uk_tab_content.find('iframe').last().siblings().hide();
+
+                    tab_add_idx += 1;
+                }
+
+                // 중복되는 텝이 있을 경우 해당 텝 활성화
+                else {
+                    var active_num = _this.attr(data_add_idx);
+
+                    _uk_tab_menu.find('li').each(function(i, e){
+                        var add_idx = $(e).attr(data_add_idx);
+                        active_num === add_idx ? $(e).addClass('active').siblings().removeClass('active') : false;
+                        if( active_num === add_idx ){
+                            $(e).addClass('active').siblings().removeClass('active');
+                            $(all_tab_lst).find('li').eq(active_num).addClass('active').siblings().removeClass('active');
+                            _uk_tab_content.find('iframe').eq(active_num).show().siblings().hide();
+                        }
+                    });
+                }
+
+                tab_active_idx = _uk_tab_menu.find('li.active').index();
+                $(all_tab_wrap).removeClass('active');
+                $(window).trigger('resize');
+                /* 
+                // Context Menu
+                mdiContextFunc(); */
+                return false;
+            });
+
+            // 텝 메뉴 동작 ----------------------------------------------------------
+            $(document).on('click', tab_menu +' li, ' + all_tab_lst +' li', function(){
+                var _this = $(this);
+                tab_active_idx = _this.index();
+
+                if( !_this.is('.active') ){
+                    _uk_tab_menu.find('li').eq(tab_active_idx).addClass('active').siblings().removeClass('active');
+                    $(all_tab_lst).find('li').eq(tab_active_idx).addClass('active').siblings().removeClass('active');
+                    _uk_tab_content.find('iframe').eq(tab_active_idx).show().siblings().hide();
+
+                    // tab_lst 클릭 시 all_tab_wrap 닫기
+                    if( _this.is('.all_item') ){
+                        $(all_tab_wrap).removeClass('active');
+                    }
+                }
+
+                if( _this.is('.tab_item') ){
+                    $(all_tab_wrap).removeClass('active');
+                }
+
+                $(window).trigger('resize');
+                return false;
+            });
+
+            // 생성된 텝 삭제 --------------------------------------------------------------------------------------------------
+            _document.on('click', tab_menu +' .del', function(){
+                var this_idx = $(this).parents('.'+add_tab).index();
+                this_tab_remove_action( this_idx );
+                return false;
+            });
+            function this_tab_remove_action( this_idx ){
+                var _this_target = _uk_tab_menu.find('>li').eq(this_idx);
+                var _this_prev = _this_target.prev();
+                var _this_next = _this_target.next();
+                var this_add_idx = _this_target.attr(data_add_idx);
+                var prev_tab_idx = _this_prev.attr(data_add_idx);
+                var next_tab_idx = _this_next.attr(data_add_idx);
+                var tab_length = _uk_tab_menu.find('li').length;
+
+                // add_tab_target 의 data-add-idx, add_tab class 제거
+                if( prev_tab_idx !== undefined || prev_tab_idx !== 'undefined' ){
+                    $(add_tab_target+' a['+ data_add_idx +'='+ this_add_idx +']').removeAttr(data_add_idx).removeClass(add_tab);
+                }
+
+                // active 상태의 del 클릭 시 이전 텝 활성화
+                if( _this_target.is('.active') && tab_length !== 1 ){
+                    // 이전 텝 활성화
+                    if( _this_prev.is(':visible') ){
+                        _this_prev.addClass('active');
+                        $(all_tab_lst).find('li['+data_add_idx+'="'+prev_tab_idx+'"]').addClass('active').siblings().removeClass('active');
+                        _uk_tab_content.find('iframe['+data_add_idx+'="'+prev_tab_idx+'"]').show().siblings().hide();
+                    }
+                    // 이전 텝이 없을 시 다음 텝 활성화
+                    else{
+                        _this_next.addClass('active');
+                        $(all_tab_lst).find('li['+data_add_idx+'="'+next_tab_idx+'"]').addClass('active').siblings().removeClass('active');
+                        _uk_tab_content.find('iframe['+data_add_idx+'="'+next_tab_idx+'"]').show().siblings().hide();
+                    }
+                }
+
+                // 이전, 다음 텝 없을 시 empty 활성화
+                if( tab_length === 1 ){
+                    $(uk_body).removeClass(tab_show);
+                }
+
+                // 클릭한 del tab 삭제
+                _this_target.remove();
+                $(all_tab_lst).find('li['+data_add_idx+'="'+this_add_idx+'"]').remove();
+                _uk_tab_content.find('iframe['+data_add_idx+'="'+this_add_idx+'"]').remove();
+
+                tab_active_idx = _uk_tab_menu.find('li.active').index();
+                $(all_tab_wrap).removeClass('active');
+                $(window).trigger('resize');
+            }
+
+            // active 탭 위치 조정 ---------------------------------------------------------------------------------------------
+            $(window).on('resize', function(){
+                width_plus = 0;
+                each_width = [];
+                _uk_tab_menu.find('li').each(function(i, e){
+                    width_plus = width_plus + Math.floor($(e).outerWidth());
+                    each_width.push( Math.floor($(e).outerWidth()) );
+                });
+
+                // 버튼 노출
+                // var tab_nav_width = $(uk_tab_nav).width();
+                // width_plus - move_show_size > tab_nav_width ? $(tab_move_button).show() : $(tab_move_button).hide();
+
+                // active 상태의 텝이 숨겨지지 않도록 이동
+                var active_idx = _uk_tab_menu.find('li.active').index();
+                var before_width_plus = 0;
+                var tab_menu_width = Math.floor( $(tab_menu).width() );
+                var tab_active_width = Math.floor( _uk_tab_menu.find('li.active').outerWidth() );
+                for( i=0; i<active_idx; i++ ){
+                    before_width_plus = before_width_plus + each_width[i];
+                }
+                if( width_plus - tab_menu_width > 0 ){
+                    moveX = Math.floor( before_width_plus - (tab_menu_width - tab_active_width) );
+                    moveX < 0 ? moveX = 0 : false;
+                }
+                else{
+                    moveX = Math.floor( before_width_plus - (before_width_plus - (width_plus - tab_menu_width)) );
+                    moveX < 0 ? moveX = 0 : false;
+                }
+                _uk_tab_menu.css({'transform':'translateX('+ -moveX +'px)'});
+            }).trigger('resize');
+
+            // 좌/우, 올텝 버튼 클릭 -------------------------------------------------------------------------------------------
+            _document.on('click', tab_move_button+' button', function(){
+                var _this = $(this);
+                var move_idx = 0;
+                var this_action = _this.attr('data-action');
+                var teb_length = _uk_tab_menu.find('li').length - 1;
+
+                // 좌 우 이동 (active 탭 기준)
+                /*if( _this.is('.prev_next') && teb_length > 0 ){
+                    // prev move
+                    if( this_action === 'prev_move' ){
+                        tab_active_idx -= 1;
+                        tab_active_idx < 0 ? tab_active_idx = teb_length : false;
+                    }
+
+                    // next move
+                    if( this_action === 'next_move' ){
+                        tab_active_idx += 1;
+                        tab_active_idx > teb_length ? tab_active_idx = 0 : false;
+                    }
+
+                    _uk_tab_menu.find('li').eq(tab_active_idx).addClass('active').siblings().removeClass('active');
+                    _uk_tab_content.find('iframe').eq(tab_active_idx).show().siblings().hide();
+                }*/
+
+                // 좌 우 이동 (active 탭과 상관 없이 전체 탭 이동)
+                if( _this.is('.prev_next') && teb_length > 0 ){
+                    $(window).trigger('resize');
+                    var tab_menu_width = Math.floor( $(tab_menu).width() );
+
+                    if( width_plus > tab_menu_width ){
+                        // prev move
+                        this_action === 'prev_move' ? moveX = 0 : false;
+                        // next move
+                        this_action === 'next_move' ? moveX = width_plus - tab_menu_width : false;
+
+                        _uk_tab_menu.css({'transform':'translateX('+ -moveX +'px)'});
+                    }
+                }
+
+                // all tab 열기
+                if( this_action === 'all_tab' ){
+                    $(all_tab_wrap).addClass('active');
+                    $(window).trigger('resize');
+                }
+
+                return false;
+            });
+
+            // all tab 닫기 ----------------------------------------------------------------------------------------------------
+            _document.on('click', all_tab_close, function(){
+                $(all_tab_wrap).removeClass('active');
+                return false;
+            });
+            // all_tab_wrap 외부 클릭하여 닫기
+            _document.on('click', function(e){
+                if( e.target.className.split(' ')[0] !== 'all_tab_wrap' && $(all_tab_wrap).is('.active') ){
+                    $(all_tab_wrap).removeClass('active');
+                }
+            });
+            // all_tab_wrap 외부 클릭하여 닫기(iframe)
+            window.addEventListener("blur", function(){
+                setTimeout(function(){
+                    if ( document.querySelector('.uk_tabpanel') && $(all_tab_wrap).is('.active') ){
+                        $(all_tab_wrap).removeClass('active');
+                    }
+                });
+            });
+
+            // contextmenu -----------------------------------------------------------------------------------------------------
+            var tab_nav_enter = false;
+            _document.on('mouseenter', tab_menu, function(){ tab_nav_enter = true });
+            _document.on('mouseleave', tab_menu, function(){ tab_nav_enter = false });
+            _document.on('contextmenu', function(e){
+                tab_nav_enter ? e.preventDefault() : false;
+            });
+
+            var c_menu_remove;
+            _document.on('mousedown', tab_menu + ' li', function(e){
+                var _this = $(this);
+                var this_idx = _this.index();
+                var this_add_idx = _this.attr(data_add_idx);
+
+                var mouse_x = e.pageX - 5;
+                var mouse_y = e.pageY - 5;
+
+                if( e.which === 3 ){
+                    $(uk_main +' .'+tab_contextmenu).remove();
+                    $(all_tab_wrap).removeClass('active');
+                    clearTimeout(c_menu_remove);
+                    $(tab_menu).append(
+                        '<div class="'+tab_contextmenu+'" style="left:'+mouse_x+'px; top:'+mouse_y+'px;">' +
+                        '<a href="#" '+data_hover_idx+'="'+this_idx+'" class="'+this_tab_remove+'">탭 닫기</a>' +
+                        '<a href="#" class="'+all_tab_remove+'">모든 탭 닫기</a>' +
+                        '<a href="#" '+data_hover_idx+'="'+this_idx+'" '+data_add_idx+'="'+this_add_idx+'" class="'+this_except_remove+'">선택된 탭 제외 모두 닫기</a>' +
+                        '<button type="button" class="'+contextmenu_remove+'">닫기</button>' +
+                        '</div>'
+                    );
+                }
+            });
+            _document.on('mouseleave', tab_menu + ' .' + tab_contextmenu, function(){
+                c_menu_remove = setTimeout(function(){
+                    $(uk_main +' .'+tab_contextmenu).remove();
+                }, 500);
+            });
+            _document.on('mouseenter', tab_menu + ' .' + tab_contextmenu, function(){
+                clearTimeout(c_menu_remove);
+            });
+
+            // contextmenu 현재 탭 닫기
+            _document.on('click', tab_menu + ' .' + this_tab_remove, function(){
+                var this_idx = $(this).attr(data_hover_idx);
+                this_tab_remove_action( this_idx );
+
+                $(uk_main +' .'+tab_contextmenu).remove();
+                clearTimeout(c_menu_remove);
+                return false;
+            });
+
+            // contextmenu 모든 탭 닫기
+            _document.on('click', tab_menu + ' .' + all_tab_remove, function(){
+                _uk_tab_menu.find('*').remove();
+                _uk_tab_content.find('*').remove();
+                $(all_tab_lst).find('*').remove();
+                _tab_add_target.removeClass(add_tab).removeAttr(data_add_idx);
+                $(uk_body).removeClass(tab_show);
+
+                $(uk_main +' .'+tab_contextmenu).remove();
+                clearTimeout(c_menu_remove);
+                $(window).trigger('resize');
+                return false;
+            });
+
+            // contextmenu 선택된 탭 제외 모두 닫기
+            _document.on('click', tab_menu + ' .' + this_except_remove, function(){
+                var _this = $(this);
+                var this_idx = Number(_this.attr(data_hover_idx));
+                var add_idx = Number(_this.attr(data_add_idx));
+
+                _uk_tab_menu.find('li').each(function(i, e){
+                    i !== this_idx ? $(e).remove() : false;
+                });
+                $(all_tab_lst).find('li').each(function(i, e){
+                    i !== this_idx ? $(e).remove() : false;
+                });
+                _uk_tab_content.find('iframe').each(function(i, e){
+                    i !== this_idx ? $(e).remove() : false;
+                });
+                $(add_tab_target).each(function(i, e){
+                    var target_add_idx = Number($(e).find('a').attr(data_add_idx));
+                    add_idx !== target_add_idx ? $(e).find('a').removeClass(add_tab).removeAttr(data_add_idx) : false;
+                });
+
+                // 선택된 탭에 active가 없을 때
+                if( !_uk_tab_menu.find('li').is('.active') ){
+                    _uk_tab_menu.find('li').addClass('active');
+                    _uk_tab_content.find('iframe').show();
+                }
+
+                $(uk_main +' .'+tab_contextmenu).remove();
+                clearTimeout(c_menu_remove);
+                $(window).trigger('resize');
+                return false;
+            });
+
+            // contextmenu 닫기
+            _document.on('click', tab_menu + ' .' + contextmenu_remove, function(){
+                $(uk_main +' .'+tab_contextmenu).remove();
+                clearTimeout(c_menu_remove);
+                return false;
+            });
+        });
+        
+        function hyperSelect(w) {
+            if (w.selectedIndex != 0) {
+                url=w.options[w.selectedIndex].value;
+                window.open(url,'_blank','')
+            }
+        }
+    </script>
+
+
+    <!-- Loading -->
+    <!-- 
+        전체 감싸고 있는 부분에 class loading_wrap 부분에
+        로딩 중 class="is-on" 추가
+        로딩 완료 후 class="is-on" 제거
+    -->
+    <div class="loading_wrap">
+        <div class="loading"></div>
+    </div>
+    
+    <!-- <div id="dialog" class="modal_default" title="Basic dialog">
+        
+    </div>
+    <script>
+        $(function() {
+            $(document).on('click', '#dialogBtn', function(){
+                $("#dialog" , parent.document).dialog({
+                    // autoOpen: false,
+                    modal: true,
+                    width: 600,
+                    height: 600,
+                    resizable: true,
+                });
+            });
+        });
+    </script> -->
+</body>
+</html>

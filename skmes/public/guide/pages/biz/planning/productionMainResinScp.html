@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>생산지시(CHDM) | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+
+<!-- START : 상단 타이틀 및 검색 영역 -->
+<div class="chead">
+    <h1 class="h1"><i class="icon"></i>생산지시(CHDM)</h1>
+    <div class="history_nav"><span>홈</span><span>생산계획</span><span>생산계획관리</span><strong>생산지시(CHDM)</strong></div>
+    <!-- START : 검색 항목 영역 시작 -->
+    <div class="chead_search">
+        <!-- START : 조회영역 접었을 때 -->
+        <div class="find_location">
+            <strong>검색조건:</strong>
+            <div class="find_field">
+                <dl>
+                    <dt>공장</dt>
+                    <dd>유화</dd>
+                </dl>
+                <dl>
+                    <dt>제조라인</dt>
+                    <dd>DMT</dd>
+                </dl>
+                <dl>
+                    <dt>조회년월</dt>
+                    <dd>2022</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- END : 조회영역 접었을 때 -->
+        <div class="tblwrap">
+            <table class="tbl col6">
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>공장</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">유화공장</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th><i class="ess">*</i>제조라인</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">DMT</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th><i class="ess">*</i>조회년월</th>
+                        <td>
+                            <div class="field">
+                                <div class="input-group">
+                                    <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="fromDate2" name="fromDate2" data-from="fromDate2">
+                                    <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btnSearch1" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+        </div>
+    </div>
+    <button id="btn_openClose" class="ibtn"><i class="icon"></i><span class="sr-only">펼치기/접기</span></button>
+    <!-- END : 검색 항목 영역 -->
+</div>
+<!-- END : 상단 타이틀 및 검색 영역 -->
+<script>
+    $(function(){
+        $('.chead').each(function(i, e){
+            $(e).find('.ibtn').on('click', function(){
+                $(e).toggleClass('is-close');
+            })
+        })
+        $('.multiple_select').each(function(i, e){
+            $(e).find('.select_text').on('click', function(){
+                $(e).addClass('selected');
+            })
+            $(e).find('.xclose').on('click', function(){
+                $(e).removeClass('selected');
+            })
+        })
+    })
+</script>
+
+
+<!-- START : 본문내용 -->
+<div class="cbody hauto">
+    <div id="layoutTabs" class="mercury-tabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tab-1">생산계획</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-2">생산지시</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-3">운전조건표</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-4">정수</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane mercury-tab active show">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone1-1" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>생산계획목록</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="field_group">
+                                    <div class="field">
+                                        <strong>승인</strong>
+                                        <label class="inplab tcenter w100"><input type="text" name="" id="" readonly></label>
+                                    </div>
+                                    <div class="field">
+                                        <strong>작성</strong>
+                                        <label class="inplab tcenter w100"><input type="text" name="" id="" readonly></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample1-1" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample1-1" title="생산계획목록" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-2" class="tab-pane mercury-tab">
+                <div class="framewrap hfixed">
+                    <div class="framegp">
+                        <!-- START : realGrid 상단 타이틀 영역 -->
+                        <div class="div-title">
+                            <div class="tit_group">
+                                <div class="htit"><i class="icon"></i><span>Capa 변경에 따른 운전조건 변경 Check Table</span></div>
+                                <!-- <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div> -->
+                            </div>
+                            <div class="top_group grid-button-group f-end">
+                                <div class="field_group">
+                                    <div class="field">
+                                        <strong>확정상태</strong>
+                                        <label class="inplab tcenter w80"><input type="text" name="" id="" readonly></label>
+                                    </div>
+                                    <div class="field">
+                                        <strong>확정일자</strong>
+                                        <label class="inplab tcenter w100"><input type="text" name="" id="" readonly></label>
+                                    </div>
+                                </div>
+                                <div class="btngroup">
+                                    <button id="btnConf1" class="btn ukconfirm"><i class="icon"></i><span>확정</span></button>
+                                    <button id="btnCancel1" class="btn ukcancel"><i class="icon"></i><span>확정취소</span></button>
+                                    <button id="btnSave1" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tblwrap">
+                            <table class="tbl tcenter type1">
+                                <colgroup>
+                                    <col style="width:25%">
+                                    <col style="width:25%">
+                                    <col style="width:25%">
+                                    <col style="width:25%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>始</th>
+                                        <th>終</th>
+                                        <th>일 기준</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th class="regular">검토일시(기준)</th>
+                                        <td>
+                                            <div class="field">1900-01-00 0:00</div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <div class="input-group twogroup">
+                                                    <input type="text" class="month-picker form-control form-control-sm month-year-input" data-week="false" id="workMonth" name="workMonth"><button type="button" style="padding: 0.15em 0em;" class="ui-datepicker-trigger ui-button ui-corner-all ui-widget"><i class="fa fa-calendar fa-fw"></i></button>
+                                                </div>
+                                                <div class="input-group twogroup">
+                                                    <input type="text" class="time-picker form-control form-control-sm" data-week="false" id="workTime" name="workTime" placeholder="00:00" autocomplete="off" maxlength="5" title="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tright">
+                                                    <input type="text" name="" id="" value="1">
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- END : realGrid 상단 타이틀 영역 -->
+                    </div>
+                </div>
+                
+                <div class="framewrap hfixed" style="height:200px;">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone2-1" class="article subtit">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>1. 1반응 Capa 변경 내용(DT Ratio 3%는 생산 Capa 5%와 동일)</span></div>
+                                    <!-- <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div> -->
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="field_group">
+                                        <div class="field">
+                                            <strong>Full Capa (kg/hr)</strong>
+                                            <label class="inplab w100"><input type="text" name="" id="" value="5050" readonly></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-1" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-1" title="1. 1반응 Capa 변경 내용(DT Ratio 3%는 생산 Capa 5%와 동일)" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+                
+                <div class="framewrap hfixed" style="height:200px;">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone2-2" class="article subtit">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>2. 2반응 Capa 변경 내용</span></div>
+                                    <!-- <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div> -->
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="field_group">
+                                        <div class="field">
+                                            <strong>Full Capa (kg/hr)</strong>
+                                            <label class="inplab w100"><input type="text" name="" id="" value="2600" readonly></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-2" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-2" title="2. 2반응 Capa 변경 내용" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone2-3" class="article subtit">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>3. 정제 Capa 변경 내용</span></div>
+                                    <!-- <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div> -->
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="field_group">
+                                        <div class="field">
+                                            <strong>Full Capa (kg/hr)</strong>
+                                            <label class="inplab w100"><input type="text" name="" id="" value="2030" readonly></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-3" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-3" title="3. 정제 Capa 변경 내용" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+                
+                <div class="framewrap hfixed fileatext" style="height:180px">
+                    <div class="framegp hfixed">
+                        <div class="article subtit hfixed">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>4. 기타 지시사항</span></div>
+                                </div>
+                            </div>
+                            <div class="tblwrap">
+                                <table class="tbl type3">
+                                    <thead>
+                                        <tr>
+                                            <th>지시사항</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="textalab mhauto">
+                                                        <textarea name="" id="" cols="70" rows="10" style="height:110px"></textarea>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="framegp hfixed">
+                        <div class="article subtit hfixed">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>5. 첨부파일</span></div>
+                                </div>
+                            </div>
+                            <div class="multiple_wrap" style="width:100%">
+                                <div class="multiple_head">
+                                    <div class="btngroup">
+                                        <button type="button" class="btn btn_add xs"><i class="fa fa-upload" aria-hidden="true"></i><span>파일 추가</span></button>
+                                        <button type="button" class="btn btn_del xs"><i class="fa fa-trash-o" aria-hidden="true"></i><span>파일 삭제</span></button>
+                                    </div>
+                                    <p class="text">첨부파일은  000MB 까지가능</p>
+                                </div>
+                                <!-- 마우스 드래그 시 class drag-on 추가 -->
+                                <div class="multiple_body" style="height:150px;">
+                                    <ul class="file_list">
+                                        <li>
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="">
+                                            </label>
+                                            <a href="#" class="btn btn_link">file_No_20211029_1029488502_ABcdeea.CSV</a>
+                                            <span class="file_size">0.826 MB</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 파일업로드 진행 상태바 -->
+                                <div class="state_bar" style="display:none"><div class="sbar" data-progress="60%" style="width:60%"></div></div>
+                            </div>
+                            <!-- //.multiple_wrap -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="framewrap hfixed">
+                    <div class="framegp">
+                        <div class="div-title hfixed" data-top="titarea">
+                            <div class="tit_group">
+                                <div class="htit"><i class="icon"></i><span>6. 1반응 운전조건 검토</span></div>
+                            </div>
+                        </div>
+                        <!-- START : realGrid 영역 -->
+                        <div class="article subtit hfixed ncount" style="height:200px">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>6.1 1반응 실적 검토시간</span></div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-4" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-4" title="6.1 1반응 실적 검토시간" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                        <!-- START : realGrid 영역 -->
+                        <div class="article subtit hfixed ncount" style="height:200px">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>6.2 열매온도 Setting</span></div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-5" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-5" title="6.2 열매온도 Setting" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                        <!-- START : realGrid 영역 -->
+                        <div class="article subtit hfixed ncount" style="height:200px">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>6.3 기액분리기 Level & 반응 Sys. 입력 Control</span></div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-6" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-6" title="6.3 기액분리기 Level & 반응 Sys. 입력 Control" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                    <div class="framegp">
+                        <div class="div-title hfixed" data-top="titarea">
+                            <div class="tit_group">
+                                <div class="htit"><i class="icon"></i><span>7. 2반응 운전조건 검토</span></div>
+                            </div>
+                        </div>
+                        <!-- START : realGrid 영역 -->
+                        <div class="article subtit hfixed ncount" style="height:200px">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>7.1 2반응 실적 검토시간</span></div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-7" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-7" title="7.1 2반응 실적 검토시간" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                        <!-- START : realGrid 영역 -->
+                        <div class="article subtit hfixed ncount" style="height:200px">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>7.2 열매온도 Setting</span></div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-8" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-8" title="7.2 열매온도 Setting" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                        <!-- START : realGrid 영역 -->
+                        <div class="article subtit hfixed ncount" style="height:200px">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>7.3 기액분리기 Level & 반응 Sys. 입력 Control</span></div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-9" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-9" title="7.3 기액분리기 Level & 반응 Sys. 입력 Control" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="tab-3" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp col3">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone3" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>1. 1반응 공정 유량기준</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end"></div>
+                            </div>
+                            <div id="realGridSample3-1" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample3-1" title="1. 1반응 공정 유량기준" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                        <div class="notewrap">
+                            <p>주의) FI-P151 유량은 0.9M3/hr를 기준으로 산정</p>
+                            <p>주의) FC-V101HT 유량은 실적으로 근거하였으나, FI-P151유량 및 V101 DT농도 설정에 따라 설정 필요함.</p>
+                        </div>
+                    </div>
+                    <div class="framegp col3">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone3" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>2. 2반응 공정 유량기준</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end"></div>
+                            </div>
+                            <div id="realGridSample3-2" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample3-2" title="2. 2반응 공정 유량기준" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                        <div class="notewrap">
+                            <p>주의) 상기 유량기준은 실적의 평균값임.<br>MH값 설정시에는 상기 평균값을 고려 이보다 높게 설정함</p>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="framegp col3">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone3" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>3. 정제 공정 유량기준</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end"></div>
+                            </div>
+                            <div id="realGridSample3-3" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample3-2" title="3. 정제 공정 유량기준" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                        <div class="notewrap">
+                            <p>주의) 상기 유량 기준은 실적의 평균값임.<br>MH값 설정시에는 상기 평균값을 고려 이보다 높게 설정함</p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-4" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone3" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>정수 목록</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end"></div>
+                            </div>
+                            <div id="realGridSample4" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample4" title="정수 목록" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- //.tab-content -->
+    </div>
+    <!-- //.mercury-tabs -->
+</div>
+<!-- END : 본문내용 cbody -->
+
+<script type="text/javascript">
+</script>
+</body>
+</html>

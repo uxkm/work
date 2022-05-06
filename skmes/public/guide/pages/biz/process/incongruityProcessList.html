@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>품질 부적합 현황 | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+    
+<!-- START : 상단 타이틀 및 검색 영역 -->
+<div class="chead">
+    <h1 class="h1"><i class="icon"></i>품질 부적합 현황</h1>
+    <div class="history_nav"><span>홈</span><span>공정운영</span><span>품질관리</span><strong>품질 부적합 현황</strong></div>
+    <!-- START : 검색 항목 영역 시작 -->
+    <div class="chead_search">
+        <!-- START : 조회영역 접었을 때 -->
+        <div class="find_location">
+            <strong>검색조건:</strong>
+            <div class="find_field">
+                <dl>
+                    <dt>공장</dt>
+                    <dd>유화</dd>
+                </dl>
+                <dl>
+                    <dt>구분</dt>
+                    <dd>유화</dd>
+                </dl>
+                <dl>
+                    <dt>Actiity</dt>
+                    <dd>REM 부적합 등록</dd>
+                </dl>
+                <dl>
+                    <dt>적합유형</dt>
+                    <dd>전체</dd>
+                </dl>
+                <dl>
+                    <dt>부적합발생일</dt>
+                    <dd>2022-02-10 2022-02-10</dd>
+                </dl>
+                <dl>
+                    <dt>자재번호</dt>
+                    <dd></dd>
+                </dl>
+                <dl>
+                    <dt>부적합번호</dt>
+                    <dd></dd>
+                </dl>
+            </div>
+        </div>
+        <!-- END : 조회영역 접었을 때 -->
+        <div class="tblwrap">
+            <table class="tbl col6">
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>공장</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">유화</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th>구분</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">유화</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th><i class="ess">*</i>Actiity</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">REM 부적합 등록</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>부적합유형</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">전체</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th><i class="ess">*</i>부적합발생일</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <div class="input-group">
+                                    <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="fromDate2" name="fromDate2" data-from="fromDate2">
+                                    <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="toDate2" name="toDate2" data-to="toDate2">
+                                    <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>자재번호</th>
+                        <td colspan="3">
+                            <div class="fieldgroup">
+                                <div class="field_search">
+                                    <label class="inplab w100 tcenter">
+                                        <input type="text" name="" id="" value="">
+                                    </label>
+                                    <label class="inplab ml2">
+                                        <input type="text" name="" id="" value="">
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                        <th>부적합번호</th>
+                        <td>
+                            <div class="field">
+                                <label class="inplab">
+                                    <input type="text" name="" id="" value="">
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btnSearch1" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+        </div>
+    </div>
+    <button id="btn_openClose" class="ibtn"><i class="icon"></i><span class="sr-only">펼치기/접기</span></button>
+    <!-- END : 검색 항목 영역 -->
+</div>
+<!-- END : 상단 타이틀 및 검색 영역 -->
+<script>
+    $(function(){
+        $('.chead').each(function(i, e){
+            $(e).find('.ibtn').on('click', function(){
+                $(e).toggleClass('is-close');
+            })
+        })
+        $('.multiple_select').each(function(i, e){
+            $(e).find('.select_text').on('click', function(){
+                $(e).addClass('selected');
+            })
+            $(e).find('.xclose').on('click', function(){
+                $(e).removeClass('selected');
+            })
+        })
+    })
+</script>
+
+<!-- START : 본문내용 -->
+<div class="cbody">
+    <div class="framewrap">
+        <div class="framegp">
+            <!-- START : realGrid 영역 -->
+            <div class="article">
+                <div class="div-title">
+                    <div class="tit_group">
+                        <div class="htit"><i class="icon"></i><span>품질부적합 현황</span></div>
+                        <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                    </div>
+                    <div class="top_group grid-button-group f-end">
+                    </div>
+                </div>
+                <div id="realGridSample1" class="mercury-grid"></div>
+                <!-- <l:grid gridId="realGridSample1" title="품질부적합 현황" buttonPosition="TOP"></l:grid> -->
+            </div>
+            <!-- END : realGrid 영역 -->
+        </div>
+    </div>
+    <!-- //.framewrap -->
+</div>
+<!-- END : 본문내용 cbody -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+    });
+</script>
+</body>
+</html>

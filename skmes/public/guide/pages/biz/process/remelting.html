@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>Re-Melting관리(유화) | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+    
+<!-- START : 상단 타이틀 및 검색 영역 -->
+<div class="chead">
+    <h1 class="h1"><i class="icon"></i>Re-Melting관리(유화)</h1>
+    <div class="history_nav"><span>홈</span><span>공정운영</span><span>원료투입관리</span><strong>Re-Melting관리(유화)</strong></div>
+    <!-- START : 검색 항목 영역 시작 -->
+    <div class="chead_search">
+        <!-- START : 조회영역 접었을 때 -->
+        <div class="find_location">
+            <strong>검색조건:</strong>
+            <div class="find_field">
+                <dl>
+                    <dt>공장</dt>
+                    <dd>유화공장</dd>
+                </dl>
+                <dl>
+                    <dt>제품구분</dt>
+                    <dd>전체</dd>
+                </dl>
+                <dl>
+                    <dt>조회기간</dt>
+                    <dd>2022-02-01 2022-02-08</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- END : 조회영역 접었을 때 -->
+        <div class="tblwrap">
+            <table class="tbl">
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>공장</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="">
+                                        <option value="">유화공장</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th><i class="ess">*</i>제품구분</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="">
+                                        <option value="">전체</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th><i class="ess">*</i>조회기간</th>
+                        <td>
+                            <div class="field">
+                                <div class="input-group">
+                                    <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="fromDate2" name="fromDate2" data-from="fromDate2">
+                                    <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="toDate2" name="toDate2" data-to="toDate2">
+                                    <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btnSearch1" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+        </div>
+    </div>
+    <button id="btn_openClose" class="ibtn"><i class="icon"></i><span class="sr-only">펼치기/접기</span></button>
+    <!-- END : 검색 항목 영역 -->
+</div>
+<!-- END : 상단 타이틀 및 검색 영역 -->
+<script>
+    $(function(){
+        $('.chead').each(function(i, e){
+            $(e).find('.ibtn').on('click', function(){
+                $(e).toggleClass('is-close');
+            })
+        })
+        $('.multiple_select').each(function(i, e){
+            $(e).find('.select_text').on('click', function(){
+                $(e).addClass('selected');
+            })
+            $(e).find('.xclose').on('click', function(){
+                $(e).removeClass('selected');
+            })
+        })
+    })
+</script>
+<div class="testbtngroup">
+    <button id="btnPopup2" class="btn testbtn"><i class="icon"></i><span>Re-Melting 정상품 실적 추가 입력(유화) 팝업</span></button>
+    <button id="btnPopup3" class="btn testbtn"><i class="icon"></i><span>Re-Melting 재생품 실적 추가 입력(유화) 팝업</span></button>
+</div>
+<!-- START : 본문내용 -->
+<div class="cbody">
+    <div class="framewrap hfixed" style="height:250px">
+        <div class="framegp">
+            <!-- START : realGrid 영역 -->
+            <div class="article">
+                <div class="div-title">
+                    <div class="tit_group">
+                        <div class="htit"><i class="icon"></i><span>Re-Melting 현황</span></div>
+                        <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                    </div>
+                    <div class="top_group grid-button-group f-end">
+                    </div>
+                </div>
+                <div id="realGridSample1" class="mercury-grid"></div>
+                <!-- <l:grid gridId="realGridSample1" title="Re-Melting 현황" buttonPosition="TOP"></l:grid> -->
+            </div>
+            <!-- END : realGrid 영역 -->
+        </div>
+    </div>
+    <!-- //.framewrap -->
+
+    <div class="framewrap">
+        <div class="framegp">
+            <!-- START : realGrid 영역 -->
+            <div class="article ncount">
+                <div class="div-title">
+                    <div class="tit_group">
+                        <div class="htit"><i class="icon"></i><span>Re-Melting 상세현황 (선택한 행의 정보를 표시:공장, 재투입일자)</span></div>
+                        <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                    </div>
+                    <div class="top_group grid-button-group f-end">
+                        <div class="field_text">
+                            <p><strong>생산마감(2012년 11월 01일) : </strong><span>Y</span></p>
+                            <p><strong>마갑일시 : </strong><span>2021-11-01 10:15</span></p>
+                        </div>
+                        <div class="btngroup">
+                            <button id="btnAddRePop" class="btn ukadd"><i class="icon"></i><span>실적 추가</span></button>
+                            <button id="btnDel" class="btn ukdel"><i class="icon"></i><span>실적 삭제</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="realGridSample2" class="mercury-grid"></div>
+                <!-- <l:grid gridId="realGridSample2" title="Re-Melting 상세현황 (선택한 행의 정보를 표시:공장, 재투입일자)" buttonPosition="TOP"></l:grid> -->
+            </div>
+            <!-- END : realGrid 영역 -->
+        </div>
+    </div>
+    <!-- //.framewrap -->
+</div>
+<!-- END : 본문내용 cbody -->
+
+
+<div id="dialogPopup1" class="mercury-modal" title="Re-Melting 제품구분" style="display:none">
+    <div class="modal_cbody ntop">
+        <div class="group tcenter">
+            <label class="chkrad">
+                <input type="radio" name="rad1" id="" checked="selected" value="0"/>
+                <span>정상품</span>
+            </label>
+            <label class="chkrad">
+                <input type="radio" name="rad1" id="" value="1"/>
+                <span>재생품</span>
+            </label>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnConfirm1" class="btn ukconfirm"><i class="icon"></i><span>확인</span></button>
+        <button id="btnCancel1" class="btn ukcancel"><i class="icon"></i><span>취소</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+
+<div id="dialogPopup2" class="mercury-modal" title="Re-Melting 정상품 실적 추가 입력(유화)" style="display:none">
+    <div class="modal_chead">
+        <div class="chead_search">
+            <div class="tblwrap">
+                <table class="tbl">
+                    <tbody>
+                        <tr>
+                            <th>공장/저장위치</th>
+                            <td>
+                                <div class="field">
+                                    <label class="selectlab">
+                                        <select id="cbo_plant2" name="plantCode" class="form-control form-control-sm" disabled>
+                                            <option value="">유화공장</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="field">
+                                    <label class="selectlab">
+                                        <select id="cbo_storageLocation" name="storageLocation" class="form-control form-control-sm">
+                                            <option value="">완제품 창고</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </td>
+                            <th>제품</th>
+                            <td>
+                                <div id="divMultCombo01"></div>
+                                <label class="inplab">
+                                    <input type="text" name="" id="" value="" readonly="readonly" />
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>입고일자</th>
+                            <td colspan="2">
+                                <div class="field">
+                                    <div class="input-group">
+                                        <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="fromDate2" name="fromDate2" data-from="fromDate2">
+                                        <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" data-week="false" id="toDate2" name="toDate2" data-to="toDate2">
+                                        <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                            <th>배치번호</th>
+                            <td>
+                                <div class="field">
+                                    <label class="inplab">
+                                        <input type="text" name="" id="" value="" placeholder="부분일치검색" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="btnModalFind" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- //.modal_chead -->
+
+    <div class="modal_cbody hfixed">
+        <div class="framewrap">
+            <div class="framegp" style="width:calc(100% - 310px)">
+                <!-- START : 그리드 영역 -->
+                <div id="realGridModalZone1" class="article">
+                    <div class="div-title hfixed">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>Re-Melting 대상 제품 선택</span></div>
+                        </div>
+                    </div>
+                    <div id="remeltingProductListGrid" class="mercury-grid"></div>
+                    <!-- <l:grid gridId="remeltingProductListGrid" title="Re-Melting 대상 제품 선택" buttonPosition="TOP"></l:grid> -->
+                </div>
+                <!-- END : 그리드 영역 -->
+            </div>
+            <!-- //.framegp -->
+            <div class="framegp" style="width:300px">
+                <div class="article">
+                    <div class="div-title hfixed">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>Re-Melting 정보 입력</span></div>
+                        </div>
+                    </div>
+                    <div class="tblwrap">
+                        <table class="tbl type1">
+                            <colgroup>
+                                <col style="width:80px" />
+                                <col style="width:120px" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>투입일자</th>
+                                    <td>
+                                        <div class="field">
+                                            <div class="input-group">
+                                                <input type="text" class="date-picker form-control form-control-sm hasDatepicker" data-week="false" id="workDate2" name="workDate2">
+                                                <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>제조라인</th>
+                                    <td>
+                                        <div class="field">
+                                            <label class="selectlab">
+                                                <select id="lineCode" name="lineCode" class="form-control form-control-sm">
+                                                    <option value="">CP-1</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bottom_group f-end">
+                        <button id="btnSave" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- //.framegp -->
+        </div>
+        <!-- //.framewrap -->
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnClose2" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+
+<div id="dialogPopup3" class="mercury-modal" title="Re-Melting 재생품 실적 추가 입력(유화)" style="display:none">
+    <div class="modal_cbody ntop">
+        <div class="tblwrap">
+            <table class="tbl type1">
+                <colgroup>
+                    <col style="width:80px" />
+                    <col style="width:300px" />
+                    <col style="width:80px" />
+                    <col style="width:300px" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>자재</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="recycleMaterial">
+                                        <option value="">DMT 재생(Re-melting용)</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th>단위</th>
+                        <td>
+                            <div class="field">
+                                <span class="unit" id="recycleMaterialUnit">㎏</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>재투입일자</th>
+                        <td>
+                            <div class="field">
+                                <div class="input-group">
+                                    <input type="text" class="date-picker form-control form-control-sm hasDatepicker" data-week="false" id="workDate3" name="workDate3">
+                                    <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                        <th>재투입량</th>
+                        <td>
+                            <div class="field">
+                                <label class="inplab tright w80">
+                                    <input type="text" name="" id="inputQty" value="1,000" />
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- //.modal_cbody -->
+
+    <div class="modal_cfoot">
+        <button id="btnSave3" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+        <button id="btnClose3" class="btn ukclose"><i class="icon"></i><span>닫기</span></button>
+    </div>
+</div>
+<!-- //.mercury-modal -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        /* 모달 팝업 호출 */
+        $("#dialogPopup1").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 400,
+            // height: 320,
+            resizable: false,
+            title: "Re-Melting 제품구분",
+            draggable:true,
+            dialogClass: "uk_modal"
+        });
+        /* Re-Melting 정상품 실적 추가 입력(유화) 모달 팝업 호출 */
+        $("#dialogPopup2").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 1080,
+            height: 700,
+            resizable: false,
+            title: "Re-Melting 정상품 실적 추가 입력(유화)",
+            draggable:true,
+            dialogClass: "uk_modal"
+        });
+        /* Re-Melting 재생품 실적 추가 입력(유화) 모달 팝업 호출 */
+        $("#dialogPopup3").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 900,
+            // height: 220,
+            resizable: false,
+            title: "Re-Melting 재생품 실적 추가 입력(유화)",
+            draggable:true,
+            dialogClass: "uk_modal"
+        });
+        // 팝업 닫기
+        $(document).on('click', '.ukclose', function(){
+            $(".mercury-modal").dialog('close');
+        })
+
+        // Re-Melting 제품구분 팝업 호출
+        $(document).on('click', '#btnAddRePop', function(){
+            $("#dialogPopup1").dialog('open');
+        })
+        // Re-Melting 정상품 실적 추가 입력(유화) 팝업 호출
+        $(document).on('click', '#btnPopup2', function(){
+            $("#dialogPopup2").dialog('open');
+        })
+        // Re-Melting 재생품 실적 추가 입력(유화) 모달 팝업 호출
+        $(document).on('click', '#btnPopup3', function(){
+            $("#dialogPopup3").dialog('open');
+        })
+    });
+</script>
+</body>
+</html>

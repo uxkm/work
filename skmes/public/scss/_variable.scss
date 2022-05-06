@@ -1,0 +1,307 @@
+@charset "UTF-8";
+// url
+$baseUrl: "..";
+$baseUrl_font: $baseUrl + "/fonts/";
+$baseUrl_img: $baseUrl + "/images/";
+$baseUrl_icon: $baseUrl_img + "icon/";
+$baseUrl_btn: $baseUrl_img + "button/";
+$baseUrl_dashboard: $baseUrl_img + "dashboard/";
+$baseUrl_chart: $baseUrl_img + "chart/";
+
+$uk: "uk_";
+
+// color
+$color: transparent !default;
+$color-f1: #f1f1f1 !default;
+$color-f3: #f3f3f3 !default;
+$color-f5: #f5f5f5 !default;
+$color-f8: #f8f8f8 !default;
+$color-f9: #f9f9f9 !default;
+$color-a: #aaa !default;
+$color-ad: #adadad !default;
+$color-ae: #aeaeae !default;
+$color-af: #afafaf !default;
+$color-b: #bbb !default;
+$color-bf: #bfbfbf !default;
+$color-be: #bebebe !default;
+$color-c: #ccc !default;
+$color-c1: #c1c1c1 !default;
+$color-d: #ddd !default;
+$color-df:#dfdfdf !default;
+$color-d1:#d1d1d1 !default;
+$color-db:#dbdbdb !default;
+$color-e: #eee !default;
+$color-ef: #efefef !default;
+$color-e5: #e5e5e5 !default;
+$color-e6: #e6e6e6 !default;
+$color-4: #444 !default;
+$color-5: #555 !default;
+$color-6: #666 !default;
+$color-3: #333 !default;
+$color-8: #888 !default;
+$color-8f: #8f8f8f !default;
+$color-8e: #8e8e8e !default;
+$color-9: #999 !default;
+$color-1: #111111 !default;
+$color-15: #151515 !default;
+$color-52: #525252 !default;
+$color-34: #343434 !default;
+
+
+$color-side: #f8f8f8 !default;
+$color-side1: #d1d1d1 !default;
+
+$color-bdr: #8a8c8e !default;
+$color-bdr1: #e5e5e5 !default;
+$color-bdr2: #cdcdcd !default;
+$color-text1: #b0bec5 !default;
+$color-copy: #737373 !default;
+
+$white: #fff !default;
+$black: #151515 !default;
+$blue: #00ace9 !default;
+$blueFade: rgba(0,172,233,.2) !default;
+$darkBlue: #1e73ff !default;
+$red: #C00020 !default;
+$redhover: #e51236 !default;
+$red1: #f8432b !default;
+$orange: #f39c3f !default;
+$orange1: #E95D15 !default;
+$darkOrange: #CF4600 !default;
+$green: #00986b !default;
+$navy: #081121 !default;
+$yellow: #fff000 !default;
+$purple: #b72df8 !default;
+$link: fade(darken($blue, 30%), 75%) !default;
+$skyblue: rgba(0, 172, 233, .5) !default;
+
+
+$placeholder: #999999 !default;
+$disabled: #e5e5e5 !default;
+$readonly: #e8f0fe !default;
+// $readonly: #ededed !default;
+
+$btnDis: #f1f1f1 !default;
+$findDis: #afafaf !default;
+
+// font-family
+$font: "Nanum Gothic", Roboto, "Open Sans", sans-serif, -apple-system, "droid sans fallback", "Apple SD Gothic Neo", AppleGothic, "Malgun Gothic", Dotum, Tahoma, Verdana, Arial;
+
+$regular: 400; 
+$bold: 700;
+$extra: 800;
+
+// font-size
+$fs10: 10px;
+$fs11: 11px;
+$fs12: 12px;
+$fs13: 13px;
+$fs14: 14px;
+$fs15: 15px;
+$fs16: 16px;
+$fs17: 17px;
+$fs18: 18px;
+$fs20: 20px;
+$fs22: 22px;
+$fs24: 24px;
+$fs26: 26px;
+$fs60: 60px;
+
+// mixin
+// @include vendorPrefix(transition, 0.5s);
+@mixin vendorPrefix($property, $value) {
+@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}#{$property}: $value;
+}
+}
+// @include position(absolute, $top: 10px, $left: 50%);
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+@mixin flex{
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+@mixin inflex{
+    display: -moz-inline-box;
+    display: -webkit-inline-flex;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+@mixin flexcenter{
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+@mixin contBetween{
+    -webkit-box-pack: space-between;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+}
+@mixin contAround{
+    -webkit-box-pack: space-around;
+    -webkit-justify-content: space-around;
+    -moz-box-pack: space-around;
+    -ms-flex-pack: space-around;
+    justify-content: space-around;
+}
+@mixin contStart{
+    -webkit-box-pack: flex-start;
+    -webkit-justify-content: flex-start;
+    -moz-box-pack: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+}
+@mixin contEnd{
+    -webkit-box-pack: flex-end;
+    -webkit-justify-content: flex-end;
+    -moz-box-pack: flex-end;
+    -ms-flex-pack: flex-end;
+    justify-content: flex-end;
+}
+@mixin contCenter{
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+@mixin alignCenter{
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+@mixin alignTop{
+    -webkit-box-align: flex-start;
+    -webkit-align-items: flex-start;
+    -moz-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+}
+@mixin alignBottom{
+    -webkit-box-align: flex-end;
+    -webkit-align-items: flex-end;
+    -moz-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+}
+@mixin scrollBarStyle1{
+    &::-webkit-scrollbar {
+        width: 0;border-radius:20px;
+        &-track {background: $color;}
+        &-thumb {
+            border-radius:20px;background: rgba(0,0,0,.25);
+            &:hover {background: rgba(0,0,0,.25);}
+        }
+    }
+    &:hover{
+        &::-webkit-scrollbar{width:6px;}
+    }
+}
+@mixin scrollBarStyle2{
+    &::-webkit-scrollbar {
+        width: 6px;border-radius:20px;
+        &-track {background: $color;}
+        &-thumb {
+            border-radius:20px;background: rgba(0,0,0,.25);
+            &:hover {background: rgba(0,0,0,.25);}
+        }
+    }
+}
+@mixin scrollBarhtml{
+    &::-webkit-scrollbar {
+        width: 16px;
+        &-track {
+            border:1px solid #e5e5e5;
+            border-radius: 0;
+            background-color: #fff;
+        }
+        &-thumb {
+            border:4px solid transparent;
+            border-radius: 20px;
+            background-image: linear-gradient(180deg, #bebebe 0%, #bebebe 99%);
+            background-clip: content-box;
+            box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+            &:hover{
+                background-image: linear-gradient(180deg, #959595 0%, #959595 99%);
+            }
+        }
+        /*  상하+좌우 스크롤이 만나는 공간   */
+        /* &-corner {
+            background-color: red;
+        } */
+        &-button {
+            background-color: #e5e5e5;
+            /*  스크롤의 화살표가 포함된 영역   */
+            /* &:start:decrement, 
+            &:end:increment {
+                display:block;
+                height:8px;
+                background-color: #000;
+            }  */
+            &:vertical{
+                width: 14px;height: 20px;
+                &:increment {
+                    background:#e5e5e5 url($baseUrl_icon + "ico_arrow_down.svg") no-repeat 50% 50%;
+                    background-size:6px auto;
+                }
+                &:decrement {
+                    background: #e5e5e5 url($baseUrl_icon + "ico_arrow_up.svg") no-repeat 50% 50%;
+                    background-size:6px auto;
+                }
+            }
+            &:horizontal{
+                width: 20px;height: 14px;
+                &:increment {
+                    background: #e5e5e5 url($baseUrl_icon + "ico_arrow_right.svg") no-repeat center 50%;
+                    background-size:auto 6px;
+                }
+                &:decrement {
+                    background: #e5e5e5 url($baseUrl_icon + "ico_arrow_left.svg") no-repeat center 50%;
+                    background-size:auto 6px;
+                }
+            }
+        }
+    }
+}
+/* 
+가상 요소 종류
+::-webkit-scrollbar	스크롤 바 영역 전체
+::-webkit-scrollbar-button	상하, 좌우 화살표가 포함된 부분
+::-webkit-scrollbar-track	화살표를 제외한 몸통 부분
+::-webkit-scrollbar-track-piece	몸통 부분에서 실제 움직이는 부분을 제외한 나머지 길
+::-webkit-scrollbar-thumb	몸통 부분에서 실제 움직이는 부분
+::-webkit-scrollbar-corner	상하/ 좌우 스크롤 바가 만날 때 오른쪽 아래 공간
+::-webkit-resizer	corner 공간으로 크기를 변경할 수 있음
+가상 선택자 종류
+:horizontal	좌우 스크롤 바의 모든 요소에 적용
+:vertical	상하 스크롤 바의 모든 요소에 적용
+:decrement	스크롤 바에서 윗쪽, 왼쪽 방향 button, track 요소에 적용
+:increment	스크롤 바에서 아래쪽, 오른쪽 방향 button, track 요소에 적용
+:start	thumb 이전에 위치한 button, track 요소에 적용
+:end	thumb 이후에 위치한 button, track 요소에 적용
+:double-button	상하 화살표가 붙어 두 개가 한꺼번에 표시된 요소에 적용 (좌우도 같음)
+:single-button	상하 화살표가 아래 위 따로 나뉘어 표시된 요소에 적용 (좌우도 같음)
+:no-button	화살표 button이 없는 요소에 적용
+:corner-present	스크롤 바 corner가 있는 요소에 적용
+:window-inactive	지금 활성화된 창의 스크롤 바에 적용
+*/

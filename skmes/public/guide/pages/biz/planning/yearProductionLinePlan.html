@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>연간생산계획(라인별) | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+
+<!-- START : 상단 타이틀 및 검색 영역 -->
+<div class="chead">
+    <h1 class="h1"><i class="icon"></i>연간생산계획(라인별)</h1>
+    <div class="history_nav"><span>홈</span><span>생산계획</span><span>생산계획관리</span><strong>연간생산계획(라인별)</strong></div>
+    <!-- START : 검색 항목 영역 시작 -->
+    <div class="chead_search">
+        <!-- START : 조회영역 접었을 때 -->
+        <div class="find_location">
+            <strong>검색조건:</strong>
+            <div class="find_field">
+                <dl>
+                    <dt>공장</dt>
+                    <dd>유화공장</dd>
+                </dl>
+                <dl>
+                    <dt>계획연도</dt>
+                    <dd>2022</dd>
+                </dl>
+                <dl>
+                    <dt>자재코드</dt>
+                    <dd></dd>
+                </dl>
+            </div>
+        </div>
+        <!-- END : 조회영역 접었을 때 -->
+        <div class="tblwrap">
+            <table class="tbl col6">
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>공장</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">유화공장</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th>계획연도</th>
+                        <td>
+                            <div class="field">
+                                <div class="input-group">
+                                    <input type="text" class="yaer-picker form-control form-control-sm" id="workYear1"  name="workYear1">
+                                </div>
+                            </div>
+                            <script>
+                                $(document).ready(function() {
+                                    $(".yaer-picker").yearpicker({
+                                        year: 2022,
+                                        startYear: 2019,
+                                        endYear: 2050,
+                                    });
+                                });
+                            </script>
+                        </td>
+                        <th>자재코드</th>
+                        <td>
+                            <div class="field">
+                                <div class="field_search" id="commonPopupForm">
+                                    <div class="inpgroup">
+                                        <label class="inplab">
+                                            <input type="text" class="form-control form-control-sm" id="txt_materialCode" name="materialCode" value="" />
+                                        </label>
+                                        <button class="btn ukfind btn-primary btn-set-class"><i class="icon"></i></button>
+                                    </div>
+                                    <div class="inpgroup">
+                                        <label class="inplab">
+                                            <input type="text" class="form-control form-control-sm" id="txt_materialName" name="materialName" value=""  readonly="readonly"/>
+                                        </label>
+                                        <button class="btn ukrefresh btn-outline-secondary btn-set-class"><i class="icon"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btnSearch1" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+        </div>
+    </div>
+    <button id="btn_openClose" class="ibtn"><i class="icon"></i><span class="sr-only">펼치기/접기</span></button>
+    <!-- END : 검색 항목 영역 -->
+</div>
+<!-- END : 상단 타이틀 및 검색 영역 -->
+<script>
+    $(function(){
+        $('.chead').each(function(i, e){
+            $(e).find('.ibtn').on('click', function(){
+                $(e).toggleClass('is-close');
+            })
+        })
+        $('.multiple_select').each(function(i, e){
+            $(e).find('.select_text').on('click', function(){
+                $(e).addClass('selected');
+            })
+            $(e).find('.xclose').on('click', function(){
+                $(e).removeClass('selected');
+            })
+        })
+    })
+</script>
+
+
+<!-- START : 본문내용 -->
+<div class="cbody">
+    <div id="layoutTabs" class="mercury-tabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tab-1">제품생산계획</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-2">원부원료사용계획</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-3">유틸리티사용계획</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane mercury-tab active show">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone1-1" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>연간생산계획(사업팀)</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                            </div>
+                            <div id="realGridSample1-1" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample1-1" title="연간생산계획(사업팀)" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone1-2" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>제조 라인별 생산계획</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="field_group">
+                                        <div class="field">
+                                            <strong>확정상태</strong>
+                                            <label class="inplab tcenter w80"><input type="text" name="" id="" readonly></label>
+                                        </div>
+                                        <div class="field">
+                                            <strong>확정일자</strong>
+                                            <label class="inplab tcenter w100"><input type="text" name="" id="" readonly></label>
+                                        </div>
+                                    </div>
+                                    <div class="btngroup">
+                                        <button id="btnConf1" class="btn ukconfirm"><i class="icon"></i><span>확정</span></button>
+                                        <button id="btnCancel1" class="btn ukcancel"><i class="icon"></i><span>확정취소</span></button>
+                                        <button id="btnExcel1" class="btn ukexcel"><i class="icon"></i><span>엑셀 업로드</span></button>
+                                        <button id="btnMinus1" class="btn ukminus"><i class="icon"></i><span>행삭제</span></button>
+                                        <button id="btnSave1" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample1-2" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample1-2" title="제조 라인별 생산계획" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-2" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone2" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>원부원료사용계획</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2" title="원부원료사용계획" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-3" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone3" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>유틸리티사용계획</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="field_group">
+                                        <div class="field">
+                                            <strong>전송상태</strong>
+                                            <label class="inplab tcenter w80"><input type="text" name="" id="" readonly></label>
+                                        </div>
+                                        <div class="field">
+                                            <strong>전송일자</strong>
+                                            <label class="inplab tcenter w100"><input type="text" name="" id="" readonly></label>
+                                        </div>
+                                    </div>
+                                    <div class="btngroup">
+                                        <button id="btnSend3" class="btn uksend"><i class="icon"></i><span>ERP전송</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample3" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample3" title="유틸리티사용계획" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- //.tab-content -->
+    </div>
+    <!-- //.mercury-tabs -->
+</div>
+<!-- END : 본문내용 cbody -->
+
+<script type="text/javascript">
+</script>
+</body>
+</html>

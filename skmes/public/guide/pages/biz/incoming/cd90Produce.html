@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>CD-90 제조관리 | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+    
+<!-- START : 상단 타이틀 및 검색 영역 -->
+<div class="chead">
+    <h1 class="h1"><i class="icon"></i>CD-90 제조관리</h1>
+    <div class="history_nav"><span>홈</span><span>생산입고</span><span>재고관리</span><strong>CD-90 제조관리</strong></div>
+    <!-- START : 검색 항목 영역 시작 -->
+    <div class="chead_search">
+        <!-- START : 조회영역 접었을 때 -->
+        <div class="find_location">
+            <strong>검색조건:</strong>
+            <div class="find_field">
+                <dl>
+                    <dt>작성일</dt>
+                    <dd>2022-02-01</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- END : 조회영역 접었을 때 -->
+        <div class="tblwrap">
+            <table class="tbl col6">
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>작성일</th>
+                        <td>
+                            <div class="field">
+                                <div class="input-group">
+                                    <input type="text" class="date-picker form-control form-control-sm hasDatepicker" data-week="false" id="workDate" name="workDate">
+                                    <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btn_search" class="btn btn-sm ukfind"><i class="icon"></i><span>조회</span></button>
+        </div>
+    </div>
+    <button id="btn_openClose" class="ibtn"><i class="icon"></i><span class="sr-only">펼치기/접기</span></button>
+    <!-- END : 검색 항목 영역 -->
+</div>
+<!-- END : 상단 타이틀 및 검색 영역 -->
+<script>
+    $(function(){
+        $('.chead').each(function(i, e){
+            $(e).find('.ibtn').on('click', function(){
+                $(e).toggleClass('is-close');
+            })
+        })
+        $('.multiple_select').each(function(i, e){
+            $(e).find('.select_text').on('click', function(){
+                $(e).addClass('selected');
+            })
+            $(e).find('.xclose').on('click', function(){
+                $(e).removeClass('selected');
+            })
+        })
+    })
+</script>
+
+<!-- START : 본문내용 -->
+<div class="cbody">
+    <div class="top_group f-end abs">
+        <div class="btngroup">
+            <button id="btnSave" class="btn btn-sm uksave"><i class="icon"></i><span>저장</span></button>
+        </div>
+    </div>
+    <div id="layoutTabs" class="mercury-tabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tab-1">CD-90 Cal. (BFW 계산)</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-2">CD-90 Cal. (CD 보충)</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane mercury-tab show active">
+                <div class="framewrap hfixed">
+                    <div class="framegp">
+                        <div class="tblwrap">
+                            <div class="div-title hfixed" data-top="titarea">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>1. Basic Data</span></div>
+                                </div>
+                            </div>
+                            <table class="tbl type1 wfix tcenter">
+                                <colgroup>
+                                    <col style="width:150px">
+                                    <col style="width:100px">
+                                    <col style="width:auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2">TK-590 (Dimension)</th>
+                                        <td>
+                                            <div class="field">
+                                                <!-- 1. Basic Data : TK-590 (Dimension) -->
+                                                <span class="unit bold" id="BFWCalculrateBasicDataTK590">73.7</span>
+                                                <span class="unit">(㎥/100%)</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2">Density식 (ton/㎥)</th>
+                                        <th class="subth">CHDM</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit bold">y= (-0.6451x(t) + 1043) / 1000</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="subth">CD-90</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit bold">y= -0.001x(t) + 1.0936</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+    
+                <div class="framewrap hfixed">
+                    <div class="framegp">
+                        <div class="tblwrap">
+                            <div class="div-title hfixed" data-top="titarea">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>2. Raw Data(현재 Level, 온도, 수분분석 입력)</span></div>
+                                </div>
+                            </div>
+                            <table class="tbl type1 tcenter">
+                                <colgroup>
+                                    <col style="width:80px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2">Step 1</th>
+                                        <th>Drum 필요량(ea)</th>
+                                        <th>CD90 필요량(ton)<br>잔량7ton</th>
+                                        <th class="regular">투입전 Temp.(℃)</th>
+                                        <th class="regular">CD-90 Density<br>(ton/㎥)</th>
+                                        <th class="regular">필요 Level(%)<br>(ton/㎥)</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- Step 1 : Drum 필요량(ea) -->
+                                                    <input type="text" name="BWFStep1DrumRequirement" id="BWFStep1DrumRequirement" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- Step 1 : CD90 필요량(ton) -->
+                                                    <input type="text" name="BWFStep1CD90Requirement" id="BWFStep1CD90Requirement" value="39" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- Step 1 : 투입전 Temp. -->
+                                                    <input type="text" name="BWFStep1TempBeforeInvestment" id="BWFStep1TempBeforeInvestment" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- Step 1 : CD-90 Density -->
+                                                    <input type="text" name="BWFStep1CD90Density" id="BWFStep1CD90Density" value="0.977" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- Step 1 : 필요 Level(%) -->
+                                                    <input type="text" name="BWFStep1RequirementLevel" id="BWFStep1RequirementLevel" value="54.16" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2">Step 2</th>
+                                        <th class="regular">현재 Level(%)</th>
+                                        <th class="regular">현재 Temp.(℃)</th>
+                                        <th class="regular">현재 Water(%)</th>
+                                        <th class="regular">CD-90 Density<br>(ton/㎥)</th>
+                                        <th class="regular">Volume(㎥)</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- Step 2 : 현재 Level(%) -->
+                                                    <input type="text" name="BWFStep2CurrentLevel" id="BWFStep2CurrentLevel" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- Step 2 : 현재 Temp.(℃) -->
+                                                    <input type="text" name="BWFStep2CurrentTemp" id="BWFStep2CurrentTemp" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- Step 2 : 현재 Water(%) -->
+                                                    <input type="text" name="BWFStep2CurrentWater" id="BWFStep2CurrentWater" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- Step 2 : CD-90 Density -->
+                                                    <input type="text" name="BWFStep2CD90Density" id="BWFStep2CD90Density" value="0.9971" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- Step 2 : Volume(㎥) -->
+                                                    <input type="text" name="BWFStep2Volume" id="BWFStep2Volume" value="57.53" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2">CD 이송 결과</th>
+                                        <th class="regular">Total<br>CD-90(ton)</th>
+                                        <th class="regular">net-CHDM(ton)</th>
+                                        <th class="regular">net-Water(ton)</th>
+                                        <th colspan="2" class="empty"></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- CD 이송 결과 : Total<br>CD-90(ton) -->
+                                                    <input type="text" name="BWFTotalRawData" id="BWFTotalRawData" value="0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- CD 이송 결과 : net-CHDM(ton) -->
+                                                    <input type="text" name="BWFnetCHDMRawData" id="BWFnetCHDMRawData" value="0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- CD 이송 결과 : net-Water(ton) -->
+                                                    <input type="text" name="BWFnetWaterRawData" id="BWFnetWaterRawData" value="0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td colspan="2" class="empty"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+    
+                <div class="framewrap hfixed lastframe">
+                    <div class="framegp">
+                        <div class="tblwrap">
+                            <div class="div-title hfixed" data-top="titarea">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>3. BFW 필요양 Calculation</span></div>
+                                </div>
+                            </div>
+                            <table class="tbl type1 tcenter">
+                                <colgroup>
+                                    <col style="width:80px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2">Step 1</th>
+                                        <th>목표 Water(%)</th>
+                                        <th>BFW 필요량(ton)</th>
+                                        <th>조정 후 Target Temp.<br>(℃)</th>
+                                        <th class="regular">CD-90 Density<br>(ton/㎥)</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- BFW 필요양 Calculation : 목표 Water(%) -->
+                                                    <input type="text" name="BFWRequirementCalculationTargetWater" id="BFWRequirementCalculationTargetWater" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- BFW 필요양 Calculation : BFW 필요량(ton) -->
+                                                    <input type="text" name="BFWRequirement" id="BFWRequirement" value="0.41" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- BFW 필요양 Calculation : 조정 후 Target Temp. -->
+                                                    <input type="text" name="BFWAfterModificationTargetTemp" id="BFWAfterModificationTargetTemp" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- BFW 필요양 Calculation : CD-90 Density -->
+                                                    <input type="text" name="BWFCD90Density" id="BWFCD90Density" value="0.9894" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2">Level 결과</th>
+                                        <th class="regular">현재 TK-590<br>Level(%)</th>
+                                        <th class="regular">조정 후 TK-590<br>Level(%)</th>
+                                        <th colspan="2" class="empty"></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- Level 결과 : 현재 TK-590 -->
+                                                    <input type="text" name="BWFLevelResultCurrentTK590" id="BWFLevelResultCurrentTK590" value="0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold orange">
+                                                    <!-- Level 결과 : 조정 후 TK-590 -->
+                                                    <input type="text" name="BFWLevelResultAfterModificationTK590" id="BFWLevelResultAfterModificationTK590" value="0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td colspan="2" class="empty"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+            <div id="tab-2" class="tab-pane mercury-tab">
+                <div class="framewrap hfixed">
+                    <div class="framegp">
+                        <div class="tblwrap">
+                            <div class="div-title hfixed" data-top="titarea">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>1. Basic Data</span></div>
+                                </div>
+                            </div>
+                            <table class="tbl type1 wfix tcenter">
+                                <colgroup>
+                                    <col style="width:150px">
+                                    <col style="width:100px">
+                                    <col style="width:auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2">TK-590 (Dimension)</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit bold" id="CD90SupplementBasicDataTK590">73.7</span>
+                                                <span class="unit">(㎥/100%)</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2">Density식 (ton/㎥)</th>
+                                        <th class="subth">CHDM</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit bold">y= (-0.6451x(t) + 1043) / 1000</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="subth">CD-90</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit bold">y= -0.001x(t) + 1.0936</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+    
+                <div class="framewrap hfixed">
+                    <div class="framegp">
+                        <div class="tblwrap">
+                            <div class="div-title hfixed" data-top="titarea">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>2. Raw Data(현재 Level, 온도, 수분분석 입력)</span></div>
+                                </div>
+                            </div>
+                            <table class="tbl type1 tcenter">
+                                <colgroup>
+                                    <col style="width:80px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2">Step 1</th>
+                                        <th>Drum 필요량(ea)</th>
+                                        <th>CD90 필요량(ton)<br>잔량7ton</th>
+                                        <th class="regular">현재 Temp.(℃)</th>
+                                        <th class="regular">CD-90 Density<br>(ton/㎥)</th>
+                                        <th class="regular">필요 Level(%)<br>(ton/㎥)</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- 2. Raw Data(현재 Level, 온도, 수분분석 입력) - Step 1 - Drum 필요량(ea) -->
+                                                    <input type="text" name="CD90SupplementStep1DrumRequirement" id="CD90SupplementStep1DrumRequirement" value="160.0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- 2. Raw Data(현재 Level, 온도, 수분분석 입력) - Step 1 - CD90 필요량(ton)<br>잔량7ton -->
+                                                    <input type="text" name="CD90SupplementStep1CD90Requirement" id="CD90SupplementStep1CD90Requirement" value="39" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- 2. Raw Data(현재 Level, 온도, 수분분석 입력) - Step 1 - 현재 Temp.(℃) -->
+                                                    <input type="text" name="CD90SupplementStep1CurrentTemp" id="CD90SupplementStep1CurrentTemp" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- 2. Raw Data(현재 Level, 온도, 수분분석 입력) - Step 1 - CD-90 Density<br>(ton/㎥) -->
+                                                    <input type="text" name="CD90SupplementStep1CD90Density" id="CD90SupplementStep1CD90Density" value="0.997" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- 2. Raw Data(현재 Level, 온도, 수분분석 입력) - Step 1 - 필요 Level(%)<br>(ton/㎥) -->
+                                                    <input type="text" name="CD90SupplementStep1RequirementLevel" id="CD90SupplementStep1RequirementLevel" value="53.08" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2">Step 2</th>
+                                        <th>1st TK-590<br>Level 조정(%)</th>
+                                        <th class="regular">Temp.(℃)</th>
+                                        <th class="regular">2차 Water(%)</th>
+                                        <th class="regular">CD-90 Density<br>(ton/㎥)</th>
+                                        <th class="regular">Volume(㎥)</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- 2. Raw Data(현재 Level, 온도, 수분분석 입력) - > Step 2 - 1st TK-590<br>Level 조정(%)-->
+                                                    <input type="text" name="CD90SupplementStep2FirstTK900Level" id="CD90SupplementStep2FirstTK900Level" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- 2. Raw Data(현재 Level, 온도, 수분분석 입력) - > Step 2 - Temp.(℃) -->
+                                                    <input type="text" name="CD90SupplementStep2Temp" id="CD90SupplementStep2Temp" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- 2. Raw Data(현재 Level, 온도, 수분분석 입력) - > Step 2 - 2차 Water(%) -->
+                                                    <input type="text" name="CD90SupplementStep2TSecondWater" id="CD90SupplementStep2TSecondWater" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- 2. Raw Data(현재 Level, 온도, 수분분석 입력) - > Step 2 - CD-90 Density -->
+                                                    <input type="text" name="CD90SupplementStep2CD90Density" id="CD90SupplementStep2CD90Density" value="0.997" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- 2. Raw Data(현재 Level, 온도, 수분분석 입력) - > Step 2 - Volume(㎥) -->
+                                                    <input type="text" name="CD90SupplementStep2Volume" id="CD90SupplementStep2Volume" value="55.44" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2">CD 이송 결과</th>
+                                        <th class="regular">Total<br>CD-90(ton)</th>
+                                        <th class="regular">net-CHDM(ton)</th>
+                                        <th class="regular">net-Water(ton)</th>
+                                        <th colspan="2" class="empty"></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- CD 이송 결과 : Total<br>CD-90(ton) -->
+                                                    <input type="text" name="CD90SupplementTotalRawData" id="CD90SupplementTotalRawData" value="0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- CD 이송 결과 : net-CHDM(ton) -->
+                                                    <input type="text" name="CD90SupplementnetCHDMRawData" id="CD90SupplementnetCHDMRawData" value="0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- CD 이송 결과 : net-Water(ton) -->
+                                                    <input type="text" name="CD90SupplementnetWaterRawData" id="CD90SupplementnetWaterRawData" value="0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td colspan="2" class="empty"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+    
+                <div class="framewrap hfixed lastframe">
+                    <div class="framegp">
+                        <div class="tblwrap">
+                            <div class="div-title hfixed" data-top="titarea">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>3. CD 보충양 Calculation</span></div>
+                                </div>
+                            </div>
+                            <table class="tbl type1 tcenter">
+                                <colgroup>
+                                    <col style="width:80px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                    <col style="width:150px">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="4">Step 1</th>
+                                        <th>현재 CD-90량(톤)</th>
+                                        <th>CHDM 주입 Temp.(℃)</th>
+                                        <th>Target Water(%)</th>
+                                        <th class="regular">CD-90 Density<br>(ton/㎥)</th>
+                                        <th>CHDM 주입량(ton)</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- 3. CD 보충양 Calculation : 현재 CD-90량(톤) -->
+                                                    <input type="text" name="CD90SupplementCurrentCD90" id="CD90SupplementCurrentCD90" value="55.28" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold tred">
+                                                    <!-- 3. CD 보충양 Calculation : CHDM 주입 Temp.(℃) -->
+                                                    <input type="text" name="CD90SupplementCHDMRequirementTemp" id="CD90SupplementCHDMRequirementTemp" value="100" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold total">
+                                                    <!-- 3. CD 보충양 Calculation : Target Water(%) -->
+                                                    <input type="text" name="CD90SupplementTargetWater" id="CD90SupplementTargetWater" value="0">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter">
+                                                    <!-- 3. CD 보충양 Calculation : CD-90 Density -->
+                                                    <input type="text" name="CD90SupplementCD90Density" id="CD90SupplementCD90Density" value="0.967" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold">
+                                                    <!-- 3. CD 보충양 Calculation : CHDM 주입량(ton) -->
+                                                    <input type="text" name="CD90SupplementCHDMRequirement" id="CD90SupplementCHDMRequirement" value="4.42" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+    
+                                    <tr>
+                                        <th>1st TK-590<br>Level 조정(%)</th>
+                                        <th>2nd TK-590<br>Level 조정(%)</th>
+                                        <th colspan="3" class="empty"></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold orange">
+                                                    <!-- 3. CD 보충양 Calculation : 1st TK-590<br>Level 조정(%) -->
+                                                    <input type="text" name="CD90SupplementFirstTK590" id="CD90SupplementFirstTK590" value="0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="field">
+                                                <label class="inplab tcenter bold orange">
+                                                    <!-- 3. CD 보충양 Calculation : 2nd TK-590<br>Level 조정(%) -->
+                                                    <input type="text" name="CD90SupplementSecondTK590" id="CD90SupplementSecondTK590" value="0" readonly="readonly">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td colspan="3" class="empty"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+        </div>
+        <!-- //.tab-content -->
+    </div>
+    <!-- //.mercury-tabs -->
+</div>
+<!-- END : 본문내용 cbody -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+    });
+</script>
+</body>
+</html>

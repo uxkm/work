@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>생산지시(유화) | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+
+<!-- START : 상단 타이틀 및 검색 영역 -->
+<div class="chead">
+    <h1 class="h1"><i class="icon"></i>생산지시(유화)</h1>
+    <div class="history_nav"><span>홈</span><span>생산계획</span><span>생산계획관리</span><strong>생산지시(유화)</strong></div>
+    <!-- START : 검색 항목 영역 시작 -->
+    <div class="chead_search">
+        <!-- START : 조회영역 접었을 때 -->
+        <div class="find_location">
+            <strong>검색조건:</strong>
+            <div class="find_field">
+                <dl>
+                    <dt>공장</dt>
+                    <dd>유화공장</dd>
+                </dl>
+                <dl>
+                    <dt>제조라인</dt>
+                    <dd>DMT</dd>
+                </dl>
+                <dl>
+                    <dt>조화년월</dt>
+                    <dd>2022-02</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- END : 조회영역 접었을 때 -->
+        <div class="tblwrap">
+            <table class="tbl col6">
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>공장</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">유화공장</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th><i class="ess">*</i>제조라인</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">DMT</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th>조회년월</th>
+                        <td>
+                            <div class="field">
+                                <div class="input-group">
+                                    <input type="text" class="month-picker form-control form-control-sm month-year-input" data-week="false" id="workMonth2" name="workMonth2">
+                                    <button type="button" class="ui-datepicker-trigger ui-button ui-corner-all ui-widget"><i class="fa fa-calendar fa-fw"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btnSearch1" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+        </div>
+    </div>
+    <button id="btn_openClose" class="ibtn"><i class="icon"></i><span class="sr-only">펼치기/접기</span></button>
+    <!-- END : 검색 항목 영역 -->
+</div>
+<!-- END : 상단 타이틀 및 검색 영역 -->
+<script>
+    $(function(){
+        $('.chead').each(function(i, e){
+            $(e).find('.ibtn').on('click', function(){
+                $(e).toggleClass('is-close');
+            })
+        })
+        $('.multiple_select').each(function(i, e){
+            $(e).find('.select_text').on('click', function(){
+                $(e).addClass('selected');
+            })
+            $(e).find('.xclose').on('click', function(){
+                $(e).removeClass('selected');
+            })
+        })
+    })
+</script>
+
+
+<!-- START : 본문내용 -->
+<div class="cbody">
+    <div id="layoutTabs" class="mercury-tabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tab-1">생산계획</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-2">생산지시</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane mercury-tab active show">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone1-1" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>생산계획목록</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="field_group">
+                                        <div class="field">
+                                            <strong>승인</strong>
+                                            <label class="inplab tcenter w80"><input type="text" name="" id="" readonly></label>
+                                        </div>
+                                        <div class="field">
+                                            <strong>작성</strong>
+                                            <label class="inplab tcenter w100"><input type="text" name="" id="" readonly></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample1-1" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample1-1" title="생산계획목록" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-2" class="tab-pane mercury-tab">
+                <div class="framewrap type3">
+                    <!-- START : realGrid 상단 타이틀 영역 -->
+                    <div class="div-title">
+                        <div class="tit_group">
+                            <div class="htit"><i class="icon"></i><span>DMT 생산량 변경에 따른 운전조건 변경 Check Table</span></div>
+                            <!-- <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div> -->
+                        </div>
+                        <div class="top_group grid-button-group f-end">
+                            <div class="field_group">
+                                <div class="field">
+                                    <strong>확정상태</strong>
+                                    <label class="inplab tcenter w80"><input type="text" name="" id="" readonly></label>
+                                </div>
+                                <div class="field">
+                                    <strong>확정일자</strong>
+                                    <label class="inplab tcenter w100"><input type="text" name="" id="" readonly></label>
+                                </div>
+                            </div>
+                            <div class="btngroup">
+                                <button id="btnConf2" class="btn ukconfirm"><i class="icon"></i><span>확정요청</span></button>
+                                <button id="btnCancel2" class="btn ukcancel"><i class="icon"></i><span>확정취소</span></button>
+                                <button id="btnSave2" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END : realGrid 상단 타이틀 영역 -->
+
+                    <div class="framegp type3">
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone2-1" class="article subtit hfixed h136 mt0">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>[생산량 변경 기준]</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="field_group">
+                                        <div class="field">
+                                            <strong>생산기간</strong>
+                                            <div class="input-group">
+                                                <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" style="background:#FFFFA0" data-week="false" id="cal_prodDtFr" name="prodDtFr" required="">
+                                                <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                            </div>
+                                            <div class="input-group">
+                                                <input type="text" class="date-picker date-range form-control form-control-sm hasDatepicker" style="background:#FFFFA0" data-week="false" id="cal_prodDtTo" name="prodDtTo" required="">
+                                                <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-1" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-1" title="원부원료사용계획" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone2-2" class="article subtit hfixed h114">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>1. FEED 유량 변경</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="field_text">
+                                        <p>* 각 반응기 별 시간 당 0.1CMH 변경 필수</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-2" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-2" title="1. FEED 유량 변경" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+
+                        <!-- START : realGrid 영역 -->
+                        <div id="realGridZone2-3" class="article subtit">
+                            <div class="div-title hfixed">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>2. 공정 조건 변경</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <button id="btn_choice" class="btn ukchoice"><i class="icon"></i><span>버전선택</span></button>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-3" class="mercury-grid" style="height:calc(100% - 72px)"></div>
+                            <!-- <l:grid gridId="realGridSample2-3" title="2. 공정 조건 변경" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+
+                    <div class="framegp">
+                        <div class="article subtit hfixed">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>3. 공정 품질변경</span></div>
+                                    <!-- <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div> -->
+                                </div>
+                            </div>
+                            <div class="tblwrap">
+                                <table class="tbl type1 tcenter">
+                                    <colgroup>
+                                        <col style="width:150px"><col style="width:auto">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>CC-01 U,F MHT 농도</th>
+                                            <td>
+                                                <label class="inplab tleft">
+                                                    <input type="text" name="prodConfUf" id="txt_prodConfUf">
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>CC-01 Take-Off ABS 관리</th>
+                                            <td>
+                                                <label class="inplab tleft">
+                                                    <input type="text" name="prodConfTo" id="txt_prodConfTo">
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="article subtit hfixed">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>4. 기타 지시사항</span></div>
+                                    <!-- <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div> -->
+                                </div>
+                            </div>
+                            <div class="tblwrap">
+                                <table class="tbl type3">
+                                    <thead>
+                                        <tr>
+                                            <th>지시사항</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="textalab mhauto">
+                                                        <textarea name="etcOrderInfo" id="txt_etcOrderInfo" cols="70" rows="10"></textarea>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="article subtit hfixed">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>5. 첨부파일</span></div>
+                                    <!-- <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div> -->
+                                </div>
+                            </div>
+                            <div class="multiple_wrap" style="width:100%">
+                                <div class="multiple_head">
+                                    <div class="btngroup">
+                                        <button type="button" class="btn btn_add xs"><i class="fa fa-upload" aria-hidden="true"></i><span>파일 추가</span></button>
+                                        <button type="button" class="btn btn_del xs"><i class="fa fa-trash-o" aria-hidden="true"></i><span>파일 삭제</span></button>
+                                    </div>
+                                    <p class="text">첨부파일은  000MB 까지가능</p>
+                                </div>
+                                <!-- 마우스 드래그 시 class drag-on 추가 -->
+                                <div class="multiple_body" style="height:150px;">
+                                    <ul class="file_list">
+                                        <li>
+                                            <label class="chkrad">
+                                                <input type="checkbox" name="">
+                                            </label>
+                                            <a href="#" class="btn btn_link">file_No_20211029_1029488502_ABcdeea.CSV</a>
+                                            <span class="file_size">0.826 MB</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 파일업로드 진행 상태바 -->
+                                <div class="state_bar" style="display:none"><div class="sbar" data-progress="60%" style="width:60%"></div></div>
+                            </div>
+                            <!-- //.multiple_wrap -->
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+            <!-- //.mercury-tab -->
+
+        </div>
+        <!-- //.tab-content -->
+    </div>
+    <!-- //.mercury-tabs -->
+</div>
+<!-- END : 본문내용 cbody -->
+
+<script type="text/javascript">
+</script>
+</body>
+</html>

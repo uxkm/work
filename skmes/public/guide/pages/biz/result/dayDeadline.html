@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>일마감 | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+    
+<!-- START : 상단 타이틀 및 검색 영역 -->
+<div class="chead">
+    <h1 class="h1"><i class="icon"></i>일마감</h1>
+    <div class="history_nav"><span>홈</span><span>생산실적</span><span>일마감관리</span><strong>일마감</strong></div>
+    <!-- START : 검색 항목 영역 시작 -->
+    <div class="chead_search">
+        <!-- START : 조회영역 접었을 때 -->
+        <div class="find_location">
+            <strong>검색조건:</strong>
+            <div class="find_field">
+                <dl>
+                    <dt>공장</dt>
+                    <dd>유화공장</dd>
+                </dl>
+                <dl>
+                    <dt>마감일자</dt>
+                    <dd>2022-02-01</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- END : 조회영역 접었을 때 -->
+        <div class="tblwrap">
+            <table class="tbl col6">
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>공장</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select id="" name="">
+                                        <option value="">유화공장</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th><i class="ess">*</i>마감일자</th>
+                        <td>
+                            <div class="field">
+								<div class="input-group">
+									<input type="text" class="date-picker form-control form-control-sm hasDatepicker" data-week="false" id="workDate" name="workDate">
+                                    <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+								</div>
+							</div>
+                        </td>
+                        <td colspan="2">
+                            <button id="btnPrev" class="btn ukprev"><i class="icon"></i><span>이전</span></button>
+                            <button id="btnNext" class="btn uknext"><i class="icon"></i><span>이후</span></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btn_search" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+        </div>
+    </div>
+    <button id="btn_openClose" class="ibtn"><i class="icon"></i><span class="sr-only">펼치기/접기</span></button>
+    <!-- END : 검색 항목 영역 -->
+</div>
+<!-- END : 상단 타이틀 및 검색 영역 -->
+<script>
+    $(function(){
+        $('.chead').each(function(i, e){
+            $(e).find('.ibtn').on('click', function(){
+                $(e).toggleClass('is-close');
+            })
+        })
+        $('.multiple_select').each(function(i, e){
+            $(e).find('.select_text').on('click', function(){
+                $(e).addClass('selected');
+            })
+            $(e).find('.xclose').on('click', function(){
+                $(e).removeClass('selected');
+            })
+        })
+    })
+</script>
+
+<!-- START : 본문내용 -->
+<div class="cbody">
+    <div class="top_group f-end">
+        <div class="field_text legend">
+            <span class="ver" style="color:green">● : 확정</span>
+            <span class="nver" style="color:red">● : 미확정</span>
+        </div>
+    </div>
+    <div id="layoutTabs" class="mercury-tabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tab-1">일마감현황</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-2">상세현황</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-3">ERP처리결과</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane mercury-tab active show">
+                <div class="framewrap single">
+                    <div class="framegp" style="width:calc(100% - 310px)">
+                        <!-- START : 그리드 영역 -->
+                        <div id="realGridZone1" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="realGridSample1_title" class="htit"><i class="icon"></i><span id="realGridSample1_titleTxt">일마감현황</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="realGridSample1_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="realGridSample1"></div>
+                            </div>
+                            <div id="realGridSample1" class="mercury-grid" data-title="일마감현황"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+                    </div>
+                    <div class="framegp" style="width:300px">
+                        <div class="tblwrap">
+                            <div class="div-title hfixed" data-top="titarea">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>마감항목별 현황</span></div>
+                                </div>
+                            </div>
+                            <table class="tbl type1 tcenter">
+                                <colgroup>
+                                    <col style="width:100px">
+                                    <col style="width:auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>공장</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit">유화공장</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>마감일자</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit">2021-11-11</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>ERP처리결과</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit">처리성공 : <i>N</i>건</span>
+                                            </div>
+                                            <div class="field">
+                                                <span class="unit">처리실패 : <i>n</i>건</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- START : 그리드 영역 -->
+                        <div id="realGridZone1-1" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="realGridSample1-1_title" class="htit"><i class="icon"></i><span id="realGridSample1-1_titleTxt">마감항목별 현황 목록</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="realGridSample1-1_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="realGridSample1-1"></div>
+                            </div>
+                            <div id="realGridSample1-1" class="mercury-grid" data-title="마감항목별 현황 목록"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+            <div id="tab-2" class="tab-pane mercury-tab">
+                <div class="framewrap hfixed">
+                    <div class="framegp">
+                        <div class="tblwrap">
+                            <div class="div-title hfixed" data-top="titarea">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>1. 일마감 상세현황</span></div>
+                                </div>
+                            </div>
+                            <table class="tbl type1 tcenter">
+                                <colgroup>
+                                    <col style="width:80px">
+                                    <col style="width:auto">
+                                    <col style="width:80px">
+                                    <col style="width:auto">
+                                    <col style="width:80px">
+                                    <col style="width:50px">
+                                    <col style="width:80px">
+                                    <col style="width:100px">
+                                    <col style="width:auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>공장</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit">유화공장</span>
+                                            </div>
+                                        </td>
+                                        <th>마감일자</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit">2021-11-11</span>
+                                            </div>
+                                        </td>
+                                        <th>확정여부</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit nver" style="color:red">●</span>
+                                            </div>
+                                        </td>
+                                        <th>확정일시</th>
+                                        <td>
+                                            <div class="field">
+                                                <span class="unit">&nbsp;</span>
+                                            </div>
+                                        </td>
+                                        <td class="tleft">
+                                            <button id="btnCancel" class="btn ukcancel"><i class="icon"></i><span>일마감 확정취소</span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+                <div class="framewrap hfixed">
+                    <div class="framegp">
+                        <div class="div-title hfixed" data-top="titarea">
+                            <div class="tit_group">
+                                <div class="htit"><i class="icon"></i><span>2. 확정상태</span></div>
+                            </div>
+                            <div class="top_group">
+                                <button id="btnRefresh" class="btn ukrefresh uktext"><i class="icon"></i><span>Refresh</span></button>
+                            </div>
+                        </div>
+                        <div class="daywork_menu">
+                            <!-- 유화공장 -->
+                            <ul class="menu_list">
+                                <li class="dep_item"><a href="#" class="nver">Tank재고</a></li>
+                                <li class="dep_item"><a href="#" class="ver">재공재고</a></li>
+                                <li class="dep_item"><a href="#" class="ver">이동실적</a></li>
+                                <li class="dep_item"><a href="#" class="ver">제품재투입<br>실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">Wasts실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">생산입고<br>실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">원부원료<br>사용실적</a></li>
+                                <li class="dep_item"><a href="#" class="ver">유틸리티<br>사용실적</a></li>
+                                <li class="dep_item end_item"><a href="#" class="nver">일마감 확정</a></li>
+                            </ul>
+                            <!-- CHDM공장 -->
+                            <ul class="menu_list">
+                                <li class="dep_item"><a href="#" class="ver">Tank재고</a></li>
+                                <li class="dep_item"><a href="#" class="ver">재공재고</a></li>
+                                <li class="dep_item"><a href="#" class="ver">이동실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">기타입출고<br>실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">원부원료<br>투입실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">Wasts실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">생산입고<br>실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">원부원료<br>사용실적</a></li>
+                                <li class="dep_item"><a href="#" class="ver">유틸리티<br>사용실적</a></li>
+                                <li class="dep_item end_item"><a href="#" class="nver">일마감 확정</a></li>
+                            </ul>
+                            <!-- 수지, SCP공장 -->
+                            <ul class="menu_list">
+                                <li class="dep_item"><a href="#" class="ver">Tank재고</a></li>
+                                <li class="dep_item"><a href="#" class="ver">재공재고</a></li>
+                                <li class="dep_item"><a href="#" class="ver">이동실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">기타입출고<br>실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">제품재투입<br>실적</a></li>
+                                <li class="dep_item"><a href="#" class="ver">원부원료<br>투입실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">Wasts실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">BLK일지</a></li>
+                                <li class="dep_item"><a href="#" class="nver">생산입고<br>실적</a></li>
+                                <li class="dep_item"><a href="#" class="nver">원부원료<br>사용실적</a></li>
+                                <li class="dep_item"><a href="#" class="ver">유틸리티<br>사용실적</a></li>
+                                <li class="dep_item end_item"><a href="#" class="nver">일마감 확정</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+                <div class="framewrap typea">
+                    <div class="framegp">
+                        <div class="div-title hfixed" data-top="titarea">
+                            <div class="tit_group">
+                                <div class="htit"><i class="icon"></i><span>3. 일마감 실적</span></div>
+                            </div>
+                        </div>
+                        <!-- START : 그리드 영역 -->
+                        <div id="realGridZone2-1" class="article subtit slide_toggle is-open">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="realGridSample2-1_title" class="htit"><i class="icon"></i><span id="realGridSample2-1_titleTxt">3-1. 생산 입출고 실적</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="realGridSample2-1_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="realGridSample2-1">
+                                    <button id="btnToggle2-1" class="btn ibtn_toggle"><i class="icon"></i><span></span></button>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-1" class="mercury-grid" data-title="3-1. 생산 입출고 실적"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+
+                        <!-- START : 그리드 영역 -->
+                        <div id="realGridZone2-2" class="article subtit slide_toggle">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="realGridSample2-2_title" class="htit"><i class="icon"></i><span id="realGridSample2-2_titleTxt">3-2. 원부원료 입출고 실적</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="realGridSample2-2_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="realGridSample2-2">
+                                    <button id="btnToggle2-2" class="btn ibtn_toggle"><i class="icon"></i><span></span></button>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-2" class="mercury-grid" data-title="3-2. 원부원료 입출고 실적"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+
+                        <!-- START : 그리드 영역 -->
+                        <div id="realGridZone2-3" class="article subtit slide_toggle">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="realGridSample2-3_title" class="htit"><i class="icon"></i><span id="realGridSample2-3_titleTxt">3-3. Waste 실적</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="realGridSample2-3_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="realGridSample2-3">
+                                    <button id="btnToggle2-3" class="btn ibtn_toggle"><i class="icon"></i><span></span></button>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-3" class="mercury-grid" data-title="3-3. Waste 실적"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+            <div id="tab-3" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : 그리드 영역 -->
+                        <div id="realGridZone3" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="realGridSample3_title" class="htit"><i class="icon"></i><span id="realGridSample3_titleTxt">ERP 처리결과</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="realGridSample3_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="realGridSample3">
+                                    <button id="btnReSend" class="btn ukresend"><i class="icon"></i><span>ERP 재전송</span></button>
+                                </div>
+                            </div>
+                            <div id="realGridSample3" class="mercury-grid" data-title="ERP 처리결과"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : 그리드 영역 -->
+                        <div id="realGridZone3-1" class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div id="realGridSample3-1_title" class="htit"><i class="icon"></i><span id="realGridSample3-1_titleTxt">처리이력</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong id="realGridSample3-1_rows" class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end" data-grid-id="realGridSample3-1"></div>
+                            </div>
+                            <div id="realGridSample3-1" class="mercury-grid" data-title="처리이력"></div>
+                        </div>
+                        <!-- END : 그리드 영역 -->
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+        </div>
+        <!-- //.tab-content -->
+    </div>
+    <!-- //.mercury-tabs -->
+</div>
+<!-- END : 본문내용 cbody -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // 슬라이드 형식의 버튼 클릭시 그리드 영역 숨김 처리
+        $('.ibtn_toggle').each(function(i, e){
+            $(e).on('click',function(){
+                $(e).toggleClass('is-toggle');
+                $(e).parents('.slide_toggle').toggleClass('is-open');
+            }) 
+        })
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>Waste 기준정보 | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+    
+<!-- START : 상단 타이틀 및 검색 영역 -->
+<div class="chead">
+    <h1 class="h1"><i class="icon"></i>Waste 기준정보</h1>
+    <div class="history_nav"><span>홈</span><span>기준정보</span><span>일마감 기준정보</span><strong>Waste 기준정보</strong></div>
+    <!-- START : 검색 항목 영역 시작 -->
+    <div class="chead_search">
+        <!-- START : 조회영역 접었을 때 -->
+        <div class="find_location">
+            <strong>검색조건:</strong>
+            <div class="find_field"><dl><dt>공장</dt><dd>유화공장</dd></div>
+        </div>
+        <!-- END : 조회영역 접었을 때 -->
+        <div class="tblwrap">
+            <table class="tbl col6">
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>공장</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select id="" name="">
+                                        <option value="">수지공장</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th>제조라인</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select id="" name="">
+                                        <option value="">전체</option>
+                                    </select>
+                                </label>
+                                <!-- <label class="chkrad">
+                                    <span>DMT</span>
+                                    <input type="checkbox" id="" name="">
+                                </label> -->
+                            </div>
+                        </td>
+                        <th>사용여부</th>
+                        <td>
+                            <div class="field">
+                                <!-- <label class="chkrad">
+                                    <span>Y</span>
+                                    <input type="checkbox" id="" name="">
+                                </label> -->
+                                <label class="selectlab">
+                                    <select id="" name="">
+                                        <option value="">Y</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btn_search" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+        </div>
+    </div>
+    <button id="btn_openClose" class="ibtn"><i class="icon"></i><span class="sr-only">펼치기/접기</span></button>
+    <!-- END : 검색 항목 영역 -->
+</div>
+<!-- END : 상단 타이틀 및 검색 영역 -->
+<script>
+    $(function(){
+        $('.chead').each(function(i, e){
+            $(e).find('.ibtn').on('click', function(){
+                $(e).toggleClass('is-close');
+            })
+        })
+        $('.multiple_select').each(function(i, e){
+            $(e).find('.select_text').on('click', function(){
+                $(e).addClass('selected');
+            })
+            $(e).find('.xclose').on('click', function(){
+                $(e).removeClass('selected');
+            })
+        })
+    })
+</script>
+
+<!-- START : 본문내용 -->
+<div class="cbody">
+    <div class="framewrap">
+        <div class="framegp">
+            <!-- START : 그리드 영역 -->
+            <div class="article">
+                <div class="div-title">
+                    <div class="tit_group">
+                        <div class="htit"><i class="icon"></i><span>Waste 목록</span></div>
+                        <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                    </div>
+                    <div class="top_group grid-button-group f-end">
+                        
+                    </div>
+                </div>
+                <div class="mercury-grid"></div>
+            </div>
+            <!-- END : 그리드 영역 -->
+        </div>
+        <div class="framegp">
+            <div class="tblwrap">
+                <div class="div-title hfixed" data-top="titarea">
+                    <div class="tit_group">
+                        <div class="htit"><i class="icon"></i><span>기준정보 상세</span></div>
+                    </div>
+                    <div class="top_group f-end">
+                        <div class="btngroup">
+                            <button id="btnAdd1" class="btn ukadd"><i class="icon"></i><span>추가</span></button>
+                            <button id="btnSave1" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                            <button id="btnCancel1" class="btn ukcancel"><i class="icon"></i><span>취소</span></button>
+                        </div>
+                    </div>
+                </div>
+                <table class="tbl type1">
+                    <colgroup>
+                        <col style="width:100px">
+                        <col style="width:200px">
+                        <col style="width:100px">
+                        <col style="width:200px">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>Waste</th>
+                            <td colspan="3">
+                                <div class="fieldgroup">
+                                    <div class="field_search" id="commonPopupForm">
+                                        <div class="inpgroup">
+                                            <label class="inplab">
+                                                <input type="text" class="form-control form-control-sm" id="txt_userId" name="userId" value="" />
+                                            </label>
+                                            <button class="btn ukfind btn-primary btn-set-class"><i class="icon"></i></button>
+                                        </div>
+                                        <div class="inpgroup">
+                                            <label class="inplab">
+                                                <input type="text" class="form-control form-control-sm" id="txt_userName" name="userName" value=""  readonly="readonly"/>
+                                            </label>
+                                            <button class="btn ukrefresh btn-outline-secondary btn-set-class"><i class="icon"></i></button>
+                                        </div>
+                                        <label class="inplab unit w80 tcenter">
+                                            <input type="text" name="" value="㎏" readonly>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>공장</th>
+                            <td>
+                                <div class="field">
+                                    <span class="unit">유화공장</span>
+                                </div>
+                            </td>
+                            <th>제조라인</th>
+                            <td>
+                                <div class="field">
+                                    <label class="selectlab">
+                                        <select id="" name="">
+                                            <option value="">DMT</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="layoutTabs" class="mercury-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#tab-1">Waste 발생</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab-2">Waste출고</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane mercury-tab active show">
+                        <div class="tblwrap">
+                            <div class="div-title hfixed" data-top="titarea">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>Waste발생 기준정보</span></div>
+                                </div>
+                            </div>
+                            <table class="tbl type1">
+                                <colgroup>
+                                    <col style="width:100px">
+                                    <col style="width:200px">
+                                    <col style="width:100px">
+                                    <col style="width:200px">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2"><i class="ess">*</i>Waste발생 기준정보 사용여부</th>
+                                        <td colspan="2">
+                                            <div class="field f-center">
+                                                <label class="chkrad">
+                                                    <input type="radio" id="" name="rad1" checked="checked" />
+                                                    <span>사용</span>
+                                                </label>
+                                                <label class="chkrad">
+                                                    <input type="radio" id="" name="rad1" />
+                                                    <span>미사용</span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>이동유형</th>
+                                        <td>
+                                            <div class="field">
+                                                <label class="selectlab">
+                                                    <select id="" name="">
+                                                        <option value="">[261]오더에 대한 GI</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <th>저장위치</th>
+                                        <td>
+                                            <div class="field">
+                                                <label class="selectlab">
+                                                    <select id="" name="">
+                                                        <option value="">반제품창고 [2000]</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>발생량기준</th>
+                                        <td>
+                                            <div class="field">
+                                                <label class="selectlab">
+                                                    <select id="" name="">
+                                                        <option value="">재고 Balance</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <th>ERP전송</th>
+                                        <td>
+                                            <div class="field">
+                                                <label class="selectlab">
+                                                    <select id="" name="">
+                                                        <option value="">Y</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>발생량<br>집계식</th>
+                                        <td colspan="3">
+                                            <div class="fieldgroup multi">
+                                                <div class="field">
+                                                    <label class="textalab">
+                                                        <textarea name="" id="" cols="70" rows="10">(재고량기준이 RTIS인 경우에만 활성화)</textarea>
+                                                    </label>
+                                                </div>
+                                                <div class="field">
+                                                    <span class="unit wfix">태그계산함수</span>
+                                                    <label class="selectlab">
+                                                        <select id="" name="" disabled>
+                                                            <option value="">1일 평균</option>
+                                                        </select>
+                                                    </label>
+                                                    <button id="btnVerification1" class="btn ukver"><i class="icon"></i><span>검증</span></button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>집계로직<br>설명</th>
+                                        <td colspan="3">
+                                            <div class="field">
+                                                <label class="inplab">
+                                                    <input type="text" id="" name="" value="생산출고 + 포장 + 출하 + 이동">
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>DR Stream</th>
+                                        <td colspan="3">
+                                            <div class="fieldgroup multi">
+                                                <div class="group wfix">
+                                                    <label class="selectlab w80">
+                                                        <select id="" name="">
+                                                            <option value="">Y</option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                                <div class="group">
+                                                    <label class="inplab">
+                                                        <input type="text" id="" name="" value="" placeholder="DR시스템과 연동이 필요한 경우 입력">
+                                                    </label>
+                                                    <button id="btnVerification2" class="btn ukver"><i class="icon"></i><span>검증</span></button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="tab-2" class="tab-pane mercury-tab">
+                        <div class="tblwrap">
+                            <div class="div-title hfixed" data-top="titarea">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>Waste출고 기준정보</span></div>
+                                </div>
+                            </div>
+                            <table class="tbl type1">
+                                <colgroup>
+                                    <col style="width:100px">
+                                    <col style="width:200px">
+                                    <col style="width:100px">
+                                    <col style="width:200px">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2"><i class="ess">*</i>Waste발생 기준정보 사용여부</th>
+                                        <td colspan="2">
+                                            <div class="field f-center">
+                                                <label class="chkrad">
+                                                    <input type="radio" id="" name="rad2" checked="checked" />
+                                                    <span>사용</span>
+                                                </label>
+                                                <label class="chkrad">
+                                                    <input type="radio" id="" name="rad2" />
+                                                    <span>미사용</span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>이동유형</th>
+                                        <td>
+                                            <div class="field">
+                                                <label class="selectlab">
+                                                    <select id="" name="">
+                                                        <option value="">[261]오더에 대한 GI</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <th>저장위치</th>
+                                        <td>
+                                            <div class="field">
+                                                <label class="selectlab">
+                                                    <select id="" name="">
+                                                        <option value="">반제품창고 [2000]</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>출고량기준</th>
+                                        <td>
+                                            <div class="field">
+                                                <label class="selectlab">
+                                                    <select id="" name="">
+                                                        <option value="">재고 Balance</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <th>ERP전송</th>
+                                        <td>
+                                            <div class="field">
+                                                <label class="selectlab">
+                                                    <select id="" name="">
+                                                        <option value="">Y</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>출고량<br>집계식</th>
+                                        <td colspan="3">
+                                            <div class="fieldgroup multi">
+                                                <div class="field">
+                                                    <label class="textalab">
+                                                        <textarea name="" id="" cols="70" rows="10">(재고량기준이 RTIS인 경우에만 활성화)</textarea>
+                                                    </label>
+                                                </div>
+                                                <div class="field">
+                                                    <span class="unit wfix">태그계산함수</span>
+                                                    <label class="selectlab">
+                                                        <select id="" name="" disabled>
+                                                            <option value="">1일 평균</option>
+                                                        </select>
+                                                    </label>
+                                                    <button id="btnVerification3" class="btn ukver"><i class="icon"></i><span>검증</span></button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>집계로직<br>설명</th>
+                                        <td colspan="3">
+                                            <div class="field">
+                                                <label class="inplab">
+                                                    <input type="text" id="" name="" value="생산출고 + 포장 + 출하 + 이동">
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>DR Stream</th>
+                                        <td colspan="3">
+                                            <div class="fieldgroup multi">
+                                                <div class="group wfix">
+                                                    <label class="selectlab w80">
+                                                        <select id="" name="">
+                                                            <option value="">Y</option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                                <div class="group">
+                                                    <label class="inplab">
+                                                        <input type="text" id="" name="" value="" placeholder="DR시스템과 연동이 필요한 경우 입력">
+                                                    </label>
+                                                    <button id="btnVerification4" class="btn ukver"><i class="icon"></i><span>검증</span></button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END : 본문내용 cbody -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/logo_32x32.png">
+<title>UI/UX Style Guide | SK 케미칼 MES</title>
+
+<link rel="stylesheet" href="../css/fonts.css">
+<!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="../assets/css/jquery-ui/jquery-ui.min.css">
+
+<link rel="stylesheet" href="../css/uiReset.css">
+<link rel="stylesheet" href="../css/uiComponent.min.css">
+<link rel="stylesheet" href="../css/uiFrame.min.css">
+
+<link rel="stylesheet" href="../css/uiStyleGuide.min.css">
+
+<script src="../assets/js/jquery/jquery-3.2.1.min.js"></script>
+<script src="../assets/js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/js/popper/popper.js"></script>
+<script src="../assets/js/bootstrap4/bootstrap.min.js"></script>
+<script src="../assets/js/moment/moment.min.js"></script>
+<script src="../assets/js/jquery/jquery.number.min.js"></script>
+<script src="../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+<script src="../assets/js/jquery-ui/yearpicker.js"></script>
+<script>
+    $(function(){
+        $('.sitemap_list a').on('click',function(){return false})
+        // $('a').attr('target','_blank');
+    })
+</script>
+</head>
+<body>
+<div id="ukgPage" class="ukg_pagewrap">
+    <div class="btngroup">
+        <a href="https://xd.adobe.com/view/f64b541e-7987-4c3f-a8c5-0d0bf128b6e6-a318/grid" target="_blank" class="style_link"><span>디자인 가이드</span><img src="../images/icon/ico_launch_o.svg" alt=""></a>
+        <a href="index.html" target="_blank" class="style_link"><span>HTML UI/UX 가이드</span><img src="../images/icon/ico_launch_o.svg" alt=""></a>
+    </div>
+    <hr>
+    <h1 class="h1">UI 진행 현황</h1>
+    <div class="total_list">
+        <p class="newpage"><em>[ 신규 UI ]</em><span><strong>총:</strong><span class="tcount"></span> / <strong>완료:</strong><span class="icount"></span></span></p>
+        <p class="oldpage"><em>[ 기존 UI ]</em><span><strong>총:</strong><span class="tcount"></span> / <strong>완료:</strong><span class="icount"></span></span></p>
+        <p class="poppage"><em>[ 공통팝업 UI ]</em><span><strong>총:</strong><span class="tcount"></span> / <strong>완료:</strong><span class="icount"></span></span></p>
+    </div>
+    <div class="sitemap_list">
+        <div class="depth_group planning" role="application" aria-label="생산계획">
+            <p class="depth1">생산계획<span class="count"></span></p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <a href="/biz/planning/yearProductionPlan" title="[220103추가(1), 220107추가(4)], 220307수정(1)]">생산계획관리</a>
+                    <ul class="dep_sublist">
+                        <!-- <li class="depth3 com"><a href="/biz/planning/yearProductionPlan" >연간생산계획 <span class="end_date">21-11-24</span></a></li> -->
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/planning/yearProductionLinePlan" >연간생산계획(라인별) <span class="end_date">21-11-24</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/planning/monthProductionPlan" >월간생산계획 <span class="end_date">21-11-24</span></a></li>
+                        <!-- <li class="depth3"><a href="/biz/planning/rawMaterialUseLinePlan" >원부원료사용계획(라인별)</a></li>
+                        <li class="depth3"><a href="/error/404?requestURL=/biz/planning/productionMainOilChdm" >생산지시_메인(CHDM,유화)</a></li>
+                        <li class="depth3"><a href="/error/404?requestURL=/biz/planning/productionMainResinScp" >생산지시_메인(수지,SCP)</a></li>
+                        <li class="depth3"><a href="/error/404?requestURL=/biz/planning/productionRutinSUOilChdm" >생산지시_정기 S/U(CHDM,유화)</a></li>
+                        <li class="depth3"><a href="/error/404?requestURL=/biz/planning/productionRutinSDOilChdm" >생산지시_정기 S/D(CHDM,유화)</a></li>
+                        <li class="depth3"><a href="/error/404?requestURL=/biz/planning/productionUnplanSUOilChdm" >생산지시_비계획 S/U(CHDM,유화)</a></li>
+                        <li class="depth3"><a href="/error/404?requestURL=/biz/planning/productionUnplanSDOilChdm" >생산지시_비계획 S/D(CHDM,유화)</a></li>
+                        <li class="depth3"><a href="/error/404?requestURL=/biz/planning/productionCatalystOilChdm" >생산지시_촉매(CHDM,유화)</a></li>
+                        <li class="depth3"><a href="/error/404?requestURL=/biz/planning/productionH2OilChdm" >생산지시_H2(CHDM,유화)</a></li>
+                        <li class="depth3"><a href="/error/404?requestURL=/biz/planning/productionDrivingOilChdm" >생산지시_운전변경(CHDM,유화)</a></li>
+                        <li class="depth3"><a href="/error/404?requestURL=/biz/planning/productionKindResinScp" >생산지시_품종변경(수지SCP)</a></li> -->
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/planning/productionMainOilChdm">생산지시(유화) <span class="end_date">22-01-10</span></a></li>
+						<li class="depth3 add" data-page="new" data-state="com"><a href="/biz/planning/productionMainResinScp">생산지시(CHDM) <span class="end_date">22-01-10</span></a></li>
+						<li class="depth3 add" data-page="new" data-state="com"><a href="/biz/planning/productionRutinSUOilChdm">생산지시(수지) <span class="end_date">22-01-10</span></a></li>
+						<li class="depth3 add" data-page="new" data-state="com"><a href="/biz/planning/productionRutinSDOilChdm" titile="수정[220307], 수정[220315]">생산지시(SCP) <span class="end_date">22-01-10</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/planning/inventoryBalance" >재고Balance <span class="end_date">21-12-01</span></a></li>
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/planning/operationConditionMang">운전조건표관리(유화) <span class="end_date">22-01-03</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group preparation" role="application" aria-label="생산준비">
+            <p class="depth1">생산준비<span class="count"></span></p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <a href="/biz/preparation/porductionOrder" >생산지시관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new"><a href="/biz/preparation/porductionOrder" >생산지시</a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/preparation/materialPurchaseRequest" >원부원료관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/preparation/materialPurchaseRequest" >원부원료 구매요청 <span class="end_date">21-11-25</span></a></li>
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/preparation/materialInputPlan" >입고계획조회</a></li> -->
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/preparation/materialInput" >원부원료입고 <span class="end_date">22-01-21</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/preparation/purchaseStatus" title="설계문서X[구두진행 220322]">구매진행현황 <span class="end_date">22-03-22</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/preparation/dayInputPlan" >일별입고계획 <span class="end_date">21-11-29</span></a></li>
+                        <!-- <li class="depth3 new" data-page="new" data-state="com"><a href="/biz/preparation/monthInputCorrection" >원부원료 월말입고보정 <span class="end_date">22-01-24</span></a></li> -->
+                        <li class="depth3 new" data-page="new" data-state="com"><a href="/biz/preparation/monthInputCorrection" >원부원료 입고보정 <span class="end_date">22-01-24</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group process" role="application" aria-label="공정운영">
+            <p class="depth1">공정운영<span class="count"></span></p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <a href="/biz/process/pdaDisbursement" title="[220124변경(2), 220124추가(1)]">원료투입관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/pdaDisbursement" >PDA 불출/소분/투입현황 <span class="end_date">21-11-25</span></a></li>
+                        <!-- <li class="depth3 com"><a href="/biz/process/remelting" >PDA 재투입현황(유화) <span class="end_date">21-11-29</span></a></li>
+                        <li class="depth3 com"><a href="/biz/process/valueup" >PDA 재투입현황(수지) <span class="end_date">21-11-29</span></a></li> -->
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/smallPackage" >제품소포장관리(유화) <span class="end_date">22-01-24</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/remelting" >Re-Melting(유화) <span class="end_date">22-01-24</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/valueup" >제품재투입관리(수지) <span class="end_date">22-01-24</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/process/methanolRefine" title="[220303추가(2)],[220310추가(1)]">공정운영관리</a>
+                    <ul class="dep_sublist">
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/process/methanolRefine" >메탄올 정제 공정</a></li> -->
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/methanolRefine" >메탄올관리 <span class="end_date">22-04-05</span></a></li>
+                        <!-- <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/processMonitoring" >공정모니터링 <span class="end_date">22-04-11</span></a></li> -->
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/processMonitoringMolten" >공정모니터링(유화) <span class="end_date">22-04-21</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/processMonitoringChdm" >공정모니터링(CHDM) <span class="end_date">22-04-11</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/processMonitoringResin" title="[수정 220425]">공정모니터링(수지) <span class="end_date">22-04-14</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/processMonitoringScp" title="[수정 220425]">공정모니터링(SCP) <span class="end_date">22-04-14</span></a></li>
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/process/apcsummary" >APC Summary</a></li> -->
+                        <li class="depth3" data-page="new"><a href="/biz/process/processOptimalGrade" >공정별 최적 Grade 선정</a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/egBalance" >EG Balance <span class="end_date">22-04-26</span></a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/process/dfgBalance" >DFG Balance</a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/process/compressorMonitoring" >Compressor 모니터링</a></li>
+                        <!-- <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/blueAgentMonitoring" >청색제 투입모니터링 <span class="end_date">22-04-05</span></a></li> -->
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/blueAgentMonitoring" >정색제 상관관계 분석 <span class="end_date">22-04-05</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/chdmCatalystCycle" >CHDM 촉매 잔여수명 관리 <span class="end_date">22-04-28</span></a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/process/inventoryPrediction" >재고 예측</a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/simulation">Simulation <span class="end_date">21-12-10</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/catalystInventoryChdm">촉매재고관리(CHDM) <span class="end_date">22-03-03</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/catalystInventoryResin">촉매재고관리(수지) <span class="end_date">22-03-03</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/byProductGeneration">부잔 발생량관리 <span class="end_date">22-03-10</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/chipColorCenter">Chip Color Center Matching율 <span class="end_date">22-04-05</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/process/incongruityProcessList" >품질관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/incongruityProcessList" titile="추가[220209]">품질 부적합 현황<span class="end_date">22-02-09</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/qualityResult" titile="추가[220209]">품질결과현황<span class="end_date">22-02-09</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/process/processingOutput" >외주임가공관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new"><a href="/biz/process/processingOutput" >임가공 출고 관리</a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/process/processingInventory" >임가공 재고 관리</a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/process/rotationWorkJournal" >일지관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/rotationWorkJournal" >교대작업일지 <span class="end_date">22-03-10</span></a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/process/greenGasDisposeStandard" >온실가스 배출량 기준정보</a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/greenGasDisposeCalculation" >온실가스 배출량 산정 <span class="end_date">21-12-08</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/dahuniOilInventory" >다후니 오일 재고 관리 <span class="end_date">22-02-22</span></a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/process/routineRepair" >정기보수관리</a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/rotationWorkJournalOil" >교대작업일지(유화) <span class="end_date">22-04-11</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/rotationWorkJournalChdm" >교대작업일지(CHDM) <span class="end_date">22-04-11</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/process/rotationWorkJournalScp" >교대작업일지(SCP) <span class="end_date">22-04-19</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group incoming" role="application" aria-label="생산입고">
+            <p class="depth1">생산입고<span class="count"></span></p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <a href="/biz/incoming/barcodePublishStandard" >생산입고관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/barcodePublishStandard" >바코드발행 기준정보 <span class="end_date">21-11-24</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/barcodePublishOilChdm" title="202201(유화, CHDM 분리)">바코드 발행(유화) <span class="end_date">21-12-02</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/barcodePublishChdm" title="202201(유화, CHDM 분리)">바코드 발행(CHDM) <span class="end_date">21-12-02</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/barcodePublishResin" >바코드발행(수지) <span class="end_date">21-12-13</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/packagingPerformanceList" >포장실적현황 <span class="end_date">22-03-14</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/packagingMaterial" >포장재관리 <span class="end_date">22-03-15</span></a></li>
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/incoming/offAsset" >부외자산 실적관리</a></li> -->
+                        <!-- <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/receivingAbnormalProduct" >이상제품 생산입고 <span class="end_date">22-03-16</span></a></li> -->
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/receivingAbnormalProduct" title="수정[220316]">제품변경입고 <span class="end_date">22-03-16</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/incoming/ShipmentList" >출하관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/shipmentList" >출하현황 <span class="end_date">22-02-24</span></a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/incoming/lotTracking" >Lot Tracking</a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/incoming/cd90Produce" >재고관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/cd90Produce" >CD-90 제조관리 <span class="end_date">22-01-14</span></a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/incoming/profitProductInventory" >수지제품 재고관리</a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/incoming/yardManagement" >야적장관리</a></li>
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/incoming/wipMasterOilPlant" >재공기준 정보관리(유화)</a></li> -->
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/incoming/wipMasterChdm" >재공기준 정보관리(CHDM)</a></li> -->
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/incoming/wipMasterResin" >재공기준 정보관리(수지)</a></li> -->
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/incoming/wipInventoryMaster" >재공재고조회</a></li> -->
+                        <li class="depth3" data-page="new"><a href="/biz/incoming/moveManagement" >이동관리</a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/incoming/materialCodeChange" >자재코드변경</a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/incoming/stockStatus" >재고현황 <span class="end_date">22-02-25</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>        
+        <div class="depth_group result" role="application" aria-label="생산실적">
+            <p class="depth1">생산실적<span class="count"></span></p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <a href="/biz/result/dayDeadline" title="[211221 추가(9)],[220124 수정(1),220124 추가(1)], [220127 수정(1)], [220128 수정(1)],[220214 추가(2)], [220222 수정(1)], [220322 수정(1)]">일마감관리</a>
+                    <ul class="dep_sublist">
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayDeadline">일마감 <span class="end_date">21-12-23</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayInventoryWorkFacility">재고/재공설비 기준정보 <span class="end_date">21-12-23</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayTankInventory">Tank 재고관리 <span class="end_date">21-12-22</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayWorkInventory">재공재고관리 <span class="end_date">21-12-22</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayMovePerformance" title="[211222]">이동실적 <span class="end_date">22-01-27</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayEtcStoreRelease" title="[211222]">기타입출고실적 <span class="end_date">22-01-28</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayProduceOilPlant">생산입고 관리(유화, CHDM) <span class="end_date">21-12-22</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayProduceResin">생산입고 관리(수지) <span class="end_date" title="1차:21-12-22">22-01-12</span></a></li>
+						<!-- <li class="depth3 com"><a href="/biz/result/dayRawMaterialUse">원부원료 사용실적 <span class="end_date">21-12-22</span></a></li> -->
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayRawMaterialUse" title="수정[220322]">원부원료 사용실적(연속) <span class="end_date">22-01-24</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayRawMaterialUseBatch">원부원료 사용실적(배치) <span class="end_date">22-01-24</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayWasteResultResin">Waste 발생실적(수지) <span class="end_date">22-02-14</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayWasteResultOilChdm">Waste 실적관리(유화,CHDM) <span class="end_date" title="1st(220222)">22-02-14</span></a></li>
+						<li class="depth3" data-page="new" data-state="com"><a href="/biz/result/dayWasteResultChdm">Waste 실적관리(CHDM) <span class="end_date" title="">22-03-30</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/result/rawMaterialInput" title="[220214 추가(1)],[220222 수정(1)],[220302 추가(2)]">월마감관리</a>
+                    <ul class="dep_sublist">
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/result/rawMaterialInput" >원료 입고 보정</a></li> -->
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/result/monthDeadline" >월마감</a></li> -->
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/result/utilMonthDeadline" >유틸리티 월마감 <span class="end_date">22-03-02</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/result/monthWasteResultResin" >Waste 출고실적(수지) <span class="end_date" title="1st(220222)">22-02-14</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/result/materialMonthDeadline" >원부원료 월마감 <span class="end_date">22-03-02</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/result/receivingMonthDeadline" >생산입고 월마감 <span class="end_date">22-03-02</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group report" role="application" aria-label="Report">
+            <p class="depth1">Report<span class="count"></span></p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <a href="/biz/report/produceDailyReport" >생산일보</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new"><a href="/biz/report/produceDailyReport" >생산일보</a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/report/produceDailyReportChdm" >생산일보(CHDM) <span class="end_date">22-04-05</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/report/produceDailyReportOil" >생산일보(유화) <span class="end_date">22-04-05</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/report/produceDailyReportResin" >생산일보(수지) <span class="end_date">22-04-20</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/report/produceDailyReportScp" >생산일보(SCP) <span class="end_date">22-04-20</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/report/produceMonthReport" >생산월보</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/report/produceMonthReport" >생산월보(유화) <span class="end_date">22-04-20</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/report/produceMonthReportResin" >생산월보(수지) <span class="end_date">22-04-20</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/report/produceMonthReportScp" >생산월보(SCP) <span class="end_date">22-04-20</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/report/produceMonthReportChdm" >생산월보(CHDM) <span class="end_date">22-04-20</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/report/costAnalysisReport" >원가분석</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/report/costAnalysisReport" >원가분석 Report <span class="end_date">22-04-28</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group kpi" role="application" aria-label="KPI관리">
+            <p class="depth1">KPI관리<span class="count"></span></p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <a href="/biz/kpi/oeTracking" >OE Tracking</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new"><a href="/biz/kpi/oeTracking" >OE Tracking</a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/kpi/basicUnitAnalysis" >KPI관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new"><a href="/biz/kpi/basicUnitAnalysis" >원단위분석</a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/kpi/kpiManagement" >KPI관리 <span class="end_date">21-12-08</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group dashboard" role="application" aria-label="Dashboard">
+            <p class="depth1">Dashboard<span class="count"></span></p>
+            <ul class="dep_list">
+                <!-- <li class="depth2">
+                    <a href="/sys/menu/sysMainView" data-page="new" data-state="com">메인 View <span class="end_date">22-03-14</span></a>
+                </li> -->
+                <li class="depth2">
+                    <a href="/biz/dashboard/mainDashboard" >메인 Dashboard</a>
+                    <ul class="dep_sublist">
+                        <!-- <li class="depth3" data-page="new" data-state="com"><a href="/biz/dashboard/mainDashboard" >메인 Dashboard <span class="end_date">22-03-14</span></a></li> -->
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/dashboard/mainDashboard" title="[수정 220420]">전체공장 <span class="end_date">22-03-14</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/dashboard/teamDashboard" >팀별 Dashboard</a>
+                    <ul class="dep_sublist">
+                        <!-- <li class="depth3" data-page="new" data-state="com"><a href="/biz/dashboard/teamDashboard">팀별 Dashboard <span class="end_date">22-03-15</span></a></li> -->
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/dashboard/teamDashboard" title="[수정 220420]">DMT생산팀 <span class="end_date">22-03-15</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/dashboard/teamDashboard" >CHDM생산팀 <span class="end_date">22-04-20</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/dashboard/teamDashboard" >Polyester생산팀 <span class="end_date">22-03-15</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group master" role="application" aria-label="기준정보">
+            <p class="depth1">기준정보<span class="count"></span></p>
+            <ul class="dep_list">
+                <li class="depth2">
+                    <a href="/biz/master/factoryStandardInfo" >공장 기준정보 관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/factoryStandardInfo" >공장 기준정보 관리 <span class="end_date">22-04-07</span></a></li>
+                    </ul>
+                </li>
+                <!-- <li class="depth2">
+                    <a href="/biz/master/productionTeamStandardInfo" >생산팀 기준정보 관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new"><a href="/biz/master/productionTeamStandardInfo" >생산팀 기준정보관리</a></li>
+                    </ul>
+                </li> -->
+                <li class="depth2">
+                    <a href="/biz/master/manufacturingLine" >제조라인관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/manufacturingLine" >제조라인관리</a> <span class="end_date">22-04-07</span></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/master/materialMasterList" >자재마스터 조회</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/materialMasterList" >자재마스터 조회 <span class="end_date">22-04-07</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/master/customerInfoList" >고객기준 정보조회</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/customerInfoList" >고객기준 정보조회 <span class="end_date">22-04-07</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/master/corpInfoList" >공급업체 기준정보 조회</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/corpInfoList" >공급업체 기준정보 조회 <span class="end_date">22-04-07</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/master/equipmentMaster" >설비마스터</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/equipmentMaster" >설비마스터 <span class="end_date">22-04-07</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/master/typeOfMovement" >이동유형 기준정보</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/typeOfMovement" >이동유형 기준정보 <span class="end_date">22-04-07</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/master/storageLocation" >저장위치 기준정보</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/storageLocation" >저장위치 기준정보 <span class="end_date">22-04-07</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/master/erpBomList" >원단위관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/erpBomList" >ERP BOM조회 <span class="end_date">21-12-08</span></a></li>
+                        <!-- <li class="depth3" data-page="new"><a href="/biz/master/byProcessUnit" >공정별 원단위 관리</a></li> -->
+                        <li class="depth3" data-page="new"><a href="/biz/master/byProcessUnit" >제조라인별 원단위 관리</a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/utilityUnit" >유틸리티 원단위 관리 <span class="end_date">21-12-08</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/productionVersionList" >생산버전조회 <span class="end_date">22-04-08</span></a></li>
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/lineUnit" >라인별 원단위관리 <span class="end_date">21-12-08</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/master/workPlaceList" >작업장조회</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/workPlaceList" >작업장조회</a> <span class="end_date">22-04-07</span></li>
+                    </ul>
+                </li>
+                <li class="depth2">
+                    <a href="/biz/master/routingList" >Routing조회</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/routingList" >Routing조회 <span class="end_date">21-12-13</span></a></li>
+                    </ul>
+                </li>
+                <!-- <li class="depth2">
+                    <a href="/biz/master/productionPerformance" >실적기준 정보관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new"><a href="/biz/master/productionPerformance" >생산실적 기준정보</a></li>
+                        <li class="depth3" data-page="new"><a href="/error/404?requestURL=/biz/master/rawMaterialInput" >원부원료 입고 기준정보</a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/master/rawMateriaUse" >원부원료 사용 기준정보</a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/master/utilitiesUse" >유틸리티 사용 기준정보</a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/master/movementPerfomance" >이동실적 기준정보</a></li>
+                        <li class="depth3" data-page="new"><a href="/biz/master/inventoryManagement" >재고관리 기준정보</a></li>
+                    </ul>
+                </li> -->
+                <li class="depth2">
+                    <a href="/biz/master/alarmReceivingTarget" >Alarm 수신대상관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new" data-state="com"><a href="/biz/master/alarmReceivingTarget" >Alarm 수신대상관리 <span class="end_date">22-04-07</span></a></li>
+                    </ul>
+                </li>
+                <!-- <li class="depth2">
+                    <a href="/biz/master/rotationGroup" >교대조 관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="new"><a href="/biz/master/rotationGroup" >교대조관리</a></li>
+                    </ul>
+                </li> -->
+                <li class="depth2">
+					<a href="/biz/master/productionInOut" title="[211221 추가(6),220103 추가(1),220110 추가(1)변경(4)],220214 수정(1)">일마감 기준정보</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/master/productionPerformance">생산실적 기준정보 <span class="end_date" title="">22-01-10</span></a></li>
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/master/productionInOut">생산입출고 기준정보 <span class="end_date" title="(1st:21-12-22)">21-12-22</span></a></li>
+                        <!-- <li class="depth3 add com"><a href="/biz/master/rawMaterialUsePerformance">원부원료 사용실적 기준정보 <span class="end_date">21-12-22</span></a></li> -->
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/master/rawMaterialUsePerformance">사용실적 기준정보 <span class="end_date" title="(1st:21-12-22)">22-01-10</span></a></li>
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/master/movePerformance">이동실적 기준정보 <span class="end_date" title="(1st:21-12-22)">22-01-10</span></a></li>
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/master/wasteStandardInfo">Waste 기준정보 <span class="end_date" title="(1st:21-12-22)">22-02-14</span></a></li>
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/master/utilityUsePerformance">유틸리티 사용실적 기준정보 <span class="end_date" title="(1st:21-12-22)">22-01-10</span></a></li>
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/master/factoryDeadlineItem">공장별 마감항목 관리 <span class="end_date" title="(1st:21-12-22)">22-01-10</span></a></li>
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/master/tankStandardInfo">Tank 기준정보 <span class="end_date">21-12-22</span></a></li>
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/master/dayInventoryWorkFacility">재공설비 기준정보 <span class="end_date">22-01-03</span></a></li>
+                    </ul>
+				</li>
+                <li class="depth2">
+                    <a href="/biz/master/productionOrderMangItem" title="[220103 추가(1)]">생산지시 기준정보</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3 add" data-page="new" data-state="com"><a href="/biz/master/productionOrderMangItem">생산지시 관리항목 <span class="end_date">22-01-03</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group system" role="application" aria-label="시스템공통">
+            <p class="depth1">시스템공통(기존 UI 수정)<span class="count"></span></p>
+            <ul class="dep_list">
+                <li class="depth2 is-item">
+                    <a href="/sys/code/sysCommonCode" >코드 관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/code/sysCommonCode" >공통코드 관리</a></li>
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/code/sysCommonCodeDetail" >상세코드 관리</a></li>
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/code/bizCodeManagement" >업무 공통코드 관리</a></li>
+                    </ul>
+                </li>
+                <li class="depth2 is-item">
+                    <a href="/sys/menu/sysMenu" >메뉴/권한(Role) 관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/menu/sysMenu" >메뉴관리</a></li>
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/menu/sysProgram" >프로그램관리</a></li>
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/auth/role" title="[수정 220408 - 공장탭 추가]">권한(Role)관리</a></li>
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/role/user" >사용자별 권한(Role)관리</a></li>
+                    </ul>
+                </li>
+                <li class="depth2 is-item">
+                    <a href="/sys/batch/sysBatchJob" >Batch Job관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/batch/sysBatchJob" >Batch Job 마스터 관리</a></li>
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/batch/sysBatchJobLog" >Batch Job 로그 조회</a></li>
+                    </ul>
+                </li>
+                <li class="depth2 is-item">
+                    <a href="/sys/interfaces/sysInterfaceStandard" >인터페이스 관리</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/interfaces/sysInterfaceStandard" >인터페이스 기준정보관리 <span class="end_date">22-04-12</span></a></li>
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/interfaces/sysInterfaceStatus" >인터페이스 송/수신 현황 <span class="end_date">22-04-12</span></a></li>
+                    </ul>
+                </li>
+                <li class="depth2" data-page="old" data-state="com">
+                    <a href="/sys/code/masterManagement">기준정보 테이블 관리</a>
+                </li>
+                <li class="depth2" data-page="old" data-state="com">
+                    <a href="/sys/logs/menu">화면사용이력관리</a>
+                </li>
+                <!-- <li class="depth2 error" data-page="old">
+                    <a href="/sys/logs">사용자접속로그관리</a>
+                </li> -->
+                <li class="depth2 is-item">
+                    <a href="/sys/log/sysUserAccessLog" >사용자별 접속로그</a>
+                    <ul class="dep_sublist">
+                        <li class="depth3" data-page="old" data-state="com"><a href="/sys/log/sysUserAccessLog" >사용자별 접속로그 <span class="end_date">22-04-12</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="depth_group popup" role="application" aria-label="공통팝업">
+            <p class="depth1">공통팝업<span class="count"></span></p>
+            <ul class="dep_list">
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/userInfoPopup" >사용자</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/deptInfoPopup" >부서</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/customerInfoPopup" >고객</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/corpInfoPopup" >공급업체</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/equipmentInfoPopup" >설비마스터</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/materialInfoPopup" >자재마스터</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/alarmHistoryInfoPopup" >알림이력</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/glAccountPopup" >G/L계정</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/costCenterPopup" >코스트센터</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/internalOrderPopup" >내부오더</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/popup/approvalMainPopup" >결재 관리</a>
+                </li>
+                <li class="depth2" data-page="pop" data-state="com">
+                    <a href="/api/user/mstUser" >시스템공통>권한(Role)관리>사용자리스트</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            var totalLen = $('.sitemap_list').find('[data-page]').length;
+            var totalComLen = $('.sitemap_list').find('[data-state="com"]').length;
+            var oldTotalLen = $('.system').find('[data-page="old"]').length;
+            var oldTotalComLen = $('.system').find('[data-state="com"]').length;
+            var popTotalLen = $('.popup').find('[data-page="pop"]').length;
+            var popTotalComLen = $('.popup').find('[data-state="com"]').length;
+            var newTotalLen = $('.sitemap_list').find('[data-page="new"]').length;
+            var newTotalComLen = totalComLen - oldTotalComLen - popTotalComLen;
+            $('.total_list .newpage').find('.tcount').text( newTotalLen );
+            $('.total_list .newpage').find('.icount').text( newTotalComLen );
+            $('.total_list .oldpage').find('.tcount').text( oldTotalLen );
+            $('.total_list .oldpage').find('.icount').text( oldTotalComLen );
+            $('.total_list .poppage').find('.tcount').text( popTotalLen );
+            $('.total_list .poppage').find('.icount').text( popTotalComLen );
+            
+            $('.depth_group').each(function(i, e){
+                var newLen = $(e).find('[data-page="new"]').length;
+                var newComLen = $(e).find('[data-state="com"]').length;
+                $(e).find('.depth1 .count').text( '[총:' + newLen + ' / ' + '완료:' + newComLen + ']' );
+                $('.system').find('.depth1 .count').text( '[총:' + oldTotalLen + ' / ' + '완료:' + oldTotalComLen + ']' );
+                $('.popup').find('.depth1 .count').text( '[총:' + popTotalLen + ' / ' + '완료:' + popTotalComLen + ']' );
+            })
+        })
+    </script>
+</div>
+</body>
+</html>

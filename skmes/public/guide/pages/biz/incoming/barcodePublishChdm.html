@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/logo_32x32.png">
+    <title>바코드발행(CHDM) | SK 케미칼 MES</title>
+    <link rel="stylesheet" href="../../../../css/fonts.css">
+    <link rel="stylesheet" href="../../../../assets/css/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="../../../../css/uiReset.min.css">
+    <link rel="stylesheet" href="../../../../css/uiComponent.min.css">
+    <link rel="stylesheet" href="../../../../css/uiFrame.min.css">
+
+    <script src="../../../../assets/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../../../../assets/js/popper/popper.js"></script>
+    <script src="../../../../assets/js/bootstrap4/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/moment/moment.min.js"></script>
+    <script src="../../../../assets/js/jquery/jquery.number.min.js"></script>
+    <script src="../../../../assets/js/jquery-ui/jquery.monthpicker.js"></script>
+    <script src="../../../../assets/js/jquery-ui/yearpicker.js"></script>
+    <script src="../../../../js/uiux.js"></script>
+</head>
+<body>
+    
+<!-- START : 상단 타이틀 및 검색 영역 -->
+<div class="chead">
+    <h1 class="h1"><i class="icon"></i>바코드발행(CHDM)</h1>
+    <div class="history_nav"><span>홈</span><span>생산입고</span><span>생산입고관리</span><strong>바코드발행(CHDM)</strong></div>
+    <!-- START : 검색 항목 영역 시작 -->
+    <div class="chead_search">
+        <!-- START : 조회영역 접었을 때 -->
+        <div class="find_location">
+            <strong>검색조건:</strong>
+            <div class="find_field">
+                <dl>
+                    <dt>공장</dt>
+                    <dd>유화공장</dd>
+                </dl>
+                <dl>
+                    <dt>공정</dt>
+                    <dd>전체</dd>
+                </dl>
+                <dl>
+                    <dt>발행일자</dt>
+                    <dd>2022-02-01 2022-02-11</dd>
+                </dl>
+                <dl>
+                    <dt>제품</dt>
+                    <dd>전체</dd>
+                </dl>
+                <dl>
+                    <dt>규격</dt>
+                    <dd>전체</dd>
+                </dl>
+                <dl>
+                    <dt>자재코드</dt>
+                    <dd></dd>
+                </dl>
+                <dl>
+                    <dt>바코드</dt>
+                    <dd></dd>
+                </dl>
+            </div>
+        </div>
+        <!-- END : 조회영역 접었을 때 -->
+        <div class="tblwrap">
+            <table class="tbl">
+                <tbody>
+                    <tr>
+                        <th><i class="ess">*</i>공장</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">CHDM공장</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th>공정</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">전체</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><i class="ess">*</i>발행일자</th>
+                        <td colspan="3">
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">유화공장</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>제품</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">전체</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                        <th>규격</th>
+                        <td>
+                            <div class="field">
+                                <label class="selectlab">
+                                    <select name="" id="">
+                                        <option value="">전체</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>자재코드</th>
+                        <td>
+                            <div class="field">
+                                <div class="field_search" id="commonPopupForm">
+                                    <div class="inpgroup">
+                                        <label class="inplab">
+                                            <input type="text" class="form-control form-control-sm" id="txt_materialCode" name="materialCode" value="" />
+                                        </label>
+                                        <button class="btn ukfind btn-primary btn-set-class"><i class="icon"></i></button>
+                                    </div>
+                                    <div class="inpgroup">
+                                        <label class="inplab">
+                                            <input type="text" class="form-control form-control-sm" id="txt_materialName" name="materialName" value=""  readonly="readonly"/>
+                                        </label>
+                                        <button class="btn ukrefresh btn-outline-secondary btn-set-class"><i class="icon"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <th>바코드</th>
+                        <td>
+                            <div class="field">
+                                <label class="inplab">
+                                    <input type="text" id="txt_barcodeNo" name="barcodeNo">
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btnSearch1" class="btn ukfind"><i class="icon"></i><span>조회</span></button>
+        </div>
+    </div>
+    <button id="btn_openClose" class="ibtn"><i class="icon"></i><span class="sr-only">펼치기/접기</span></button>
+    <!-- END : 검색 항목 영역 -->
+</div>
+<!-- END : 상단 타이틀 및 검색 영역 -->
+<script>
+    $(function(){
+        $('.chead').each(function(i, e){
+            $(e).find('.ibtn').on('click', function(){
+                $(e).toggleClass('is-close');
+            })
+        })
+        $('.multiple_select').each(function(i, e){
+            $(e).find('.select_text').on('click', function(){
+                $(e).addClass('selected');
+            })
+            $(e).find('.xclose').on('click', function(){
+                $(e).removeClass('selected');
+            })
+        })
+    })
+</script>
+
+<!-- START : 본문내용 -->
+<div class="cbody">
+    <div id="layoutTabs" class="mercury-tabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tab-1">발행현황</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-2">발행현황상세</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-3">라벨생성</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane mercury-tab active show">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>바코드발행현황</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="btngroup">
+                                        <button id="btn_labbelMove1_1" class="btn ukcreate"><i class="icon"></i><span>라벨생성</span></button>
+                                        <button id="btn_detail1_1" class="btn ukdetail"><i class="icon"></i><span>상세</span></button>
+                                        <button id="btn_delRow1_1" class="btn ukminus"><i class="icon"></i><span>삭제</span></button>
+                                        <button id="btn_save1_1" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample1-1" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample1-1" title="바코드발행현황" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+            <div id="tab-2" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>바코드발행현황 상세</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="btngroup">
+                                        <button id="btn_print2_1" class="btn ukpub"><i class="icon"></i><span>라벨발행</span></button>
+                                        <button id="btn_delRow2_1" class="btn ukdel"><i class="icon"></i><span>삭제</span></button>
+                                        <button id="btn_save2_1" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample2-1" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample2-1" title="바코드발행현황 상세" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                    <div class="framegp type1">
+                        <div class="article">
+                            <div class="btngroup f-end" data-pos="static">
+                                <button id="btn_create2_1" class="btn ukcreate"><i class="icon"></i><span>생성</span></button>
+                            </div>
+                            <div id="divForm_grd2_1" class="tblwrap">
+                                <table class="tbl type1">
+                                    <colgroup>
+                                        <col style="width:100px">
+                                        <col style="width:200px">
+                                        <col style="width:100px">
+                                        <col style="width:200px">
+                                    </colgroup>
+                                    <tbody id="tab_bodyForm2_1">
+                                        <tr>
+                                            <th>발행일자</th>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="inplab">
+                                                        <input type="text" id="txt_publicDtPrt2_1" name="publicDtPrt" readonly="readonly">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th>라벨종류</th>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="selectlab">
+                                                        <select id="cbo_labelType2_1" name="labelType" required="" readonly="readonly">
+                                                            <option value="01">SK Label</option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>제품</th>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="inplab">
+                                                        <input type="text" id="txt_goodsName2_1" name="goodsName" readonly="readonly">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th>규격</th>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="inplab">
+                                                        <input type="text" id="txt_specName2_1" name="specName" readonly="readonly">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>공정</th>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="inplab">
+                                                        <input type="text" id="txt_lineName2_1" name="lineName" readonly="readonly">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th>포장단위</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <label class="inplab">
+                                                        <input type="text" id="txt_packingName2_1" name="packingName" readonly="readonly">
+                                                    </label>
+                                                    <span class="unit qtyUnit"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>자재</th>
+                                            <td>
+                                                <div class="field">
+                                                    <div class="inplab">
+                                                        <input type="text" id="txt_materialCode2_1" name="materialCode" required="" readonly="readonly">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="field">
+                                                    <label class="inplab">
+                                                        <input type="text" id="txt_materialName2_1" name="materialName" readonly="readonly">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <table>
+                                                    <tbody><tr>
+                                                        <th>TankLotNo</th>
+                                                        <td>
+                                                            <div class="field">
+                                                                <label class="inplab tcenter w80">
+                                                                    <input type="text" id="txt_tankLotNo2_1" name="tankLotNo" readonly="readonly" required="" maxlength="4">
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <th>시작번호</th>
+                                                        <td>
+                                                            <div class="field">
+                                                                <label class="inplab tright w80">
+                                                                    <input type="text" class="num" id="txt_strNo2_1" name="strNo" required="" maxlength="3">
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <th>종료번호</th>
+                                                        <td>
+                                                            <div class="field">
+                                                                <label class="inplab tright w80">
+                                                                    <input type="text" class="num" id="txt_endNo2_1" name="endNo" required="" maxlength="3">
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tbl type2">
+                                    <colgroup>
+                                        <col style="width:115px">
+                                        <col style="width:200px">
+                                        <col style="width:115px">
+                                        <col style="width:200px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>제품</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <label class="inplab w40">
+                                                        <input type="text" id="txt_goodsCode2_2" name="goodsCode" readonly="readonly">
+                                                    </label>
+                                                    <span class="unit goodsName"></span>
+                                                </div>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="field cellunit">
+                                                    <div class="group">
+                                                        <span class="unit">년</span>
+                                                        <label class="inplab w40">
+                                                            <input type="text" id="txt_yyyy2_2" name="packingYyyy" readonly="readonly">
+                                                        </label>
+                                                    </div>
+                                                    <div class="group">
+                                                        <span class="unit">월</span>
+                                                        <label class="selectlab w40">
+                                                            <select id="cbo_mm2_2" name="packingMm" disabled="disabled">
+                                                                <option value="10" data-barcodesymbol="J" data-data2="">J</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+                                                    <div class="group">
+                                                        <span class="unit">일</span>
+                                                        <label class="selectlab w40">
+                                                            <select id="cbo_dd2_2" name="packingDd" disabled="disabled">
+                                                                <option value="10" data-barcodesymbol="10" data-data2="">10</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>규격</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <label class="inplab w40">
+                                                        <input type="text" id="txt_specCode2_2" name="specCode" readonly="readonly">
+                                                    </label>
+                                                    <span class="unit gradeName"></span>
+                                                </div>
+                                            </td>
+                                            <th>Tank Lot No</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <span class="unit tankLotNo"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>공정</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <label class="inplab w40">
+                                                        <input type="text" id="txt_lineCode2_2" name="lineCode" readonly="readonly">
+                                                    </label>
+                                                    <span class="unit lineName"></span>
+                                                </div>
+                                            </td>
+                                            <th>Lot No</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <span class="unit batchNoSet"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>포장단위</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <label class="inplab w40">
+                                                        <input type="text" id="txt_packingCode2_2" name="packingCode" readonly="readonly">
+                                                    </label>
+                                                    <span class="unit packingName"></span>
+                                                </div>
+                                            </td>
+                                            <th>바코드</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <span class="unit barcodeNoSet"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+            <div id="tab-3" class="tab-pane mercury-tab">
+                <div class="framewrap">
+                    <div class="framegp">
+                        <!-- START : realGrid 영역 -->
+                        <div class="article">
+                            <div class="div-title">
+                                <div class="tit_group">
+                                    <div class="htit"><i class="icon"></i><span>바코드발행현황 상세</span></div>
+                                    <div class="countbox"><span class="txt">총</span><strong class="txt_num">0</strong><span class="txt">건</span></div>
+                                </div>
+                                <div class="top_group grid-button-group f-end">
+                                    <div class="btngroup">
+                                        <button id="btn_print3_1" class="btn ukpub"><i class="icon"></i><span>라벨발행</span></button>
+                                        <button id="btn_delRow3_1" class="btn ukdel"><i class="icon"></i><span>삭제</span></button>
+                                        <button id="btn_save3_1" class="btn uksave"><i class="icon"></i><span>저장</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="realGridSample3-1" class="mercury-grid"></div>
+                            <!-- <l:grid gridId="realGridSample3-1" title="바코드발행현황 상세" buttonPosition="TOP"></l:grid> -->
+                        </div>
+                        <!-- END : realGrid 영역 -->
+                    </div>
+                    <div class="framegp type1">
+                        <div class="article">
+                            <div class="btngroup f-end" data-pos="static">
+                                <button id="btn_create3_1" class="btn ukcreate"><i class="icon"></i><span>생성</span></button>
+                            </div>
+                            <div class="tblwrap">
+                                <table class="tbl type1">
+                                    <colgroup>
+                                        <col style="width:100px">
+                                        <col style="width:200px">
+                                        <col style="width:100px">
+                                        <col style="width:200px">
+                                    </colgroup>
+                                    <tbody id="tab_bodyForm3_1">
+                                        <tr>
+                                            <th>발행일자</th>
+                                            <td>
+                                                <div class="field">
+                                                    <div class="input-group">
+                                                        <input type="text" class="date-picker form-control form-control-sm hasDatepicker" data-week="false" id="dtp_publicDt3_1" name="publicDt" required="">
+                                                        <button type="button" class="ui-datepicker-trigger"><i class="fa fa-calendar fa-fw"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <th>라벨종류</th>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="selectlab">
+                                                        <select id="cbo_labelType3_1" name="labelType" required="">
+                                                            <option value="01">SK Label</option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>제품</th>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="selectlab">
+                                                        <select id="cbo_goodsCode3_1" name="goodsCode" required="">
+                                                            <option value="" selected="">선택</option>
+                                                            <option value="01" data-barcodesymbol="C" data-codesymbol="CHDM" data-data2="CHDM">SKYCHDM</option>
+                                                            <option value="02" data-barcodesymbol="M" data-codesymbol="DMCD" data-data2="DMCD">SKYDMCD</option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th>규격</th>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="selectlab">
+                                                        <select id="cbo_specCode3_1" name="specCode" required="">
+                                                            <option value="" selected="">선택</option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>공정</th>
+                                            <td>
+                                                <div class="field">
+                                                    <label class="selectlab">
+                                                        <select id="cbo_lineCode3_1" name="lineCode" required="">
+                                                            <option value="" selected="">선택</option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th>포장단위</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <label class="selectlab">
+                                                        <select id="cbo_packingCode3_1" name="packingCode" required="">
+                                                            <option value="" selected="">선택</option>
+                                                            <option value="01" data-barcodesymbol="M" data-codesymbol="M" data-data2="200">200kg</option>
+                                                        </select>
+                                                    </label>
+                                                    <span class="unit qtyUnit" id="txt_qtyUnit3_1"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>자재</th>
+                                            <td colspan="3">
+                                                <div class="field_search" id="commonPopupForm">
+                                                    <div class="inpgroup">
+                                                        <label class="inplab">
+                                                            <input type="text" class="form-control form-control-sm" id="txt_materialCode3_1" name="materialCode" required="">
+                                                        </label>
+                                                        <button id="btn_materialCode3_1" class="btn btn-sm ukfind btn-primary btn-set-class"><i class="icon"></i></button>
+                                                    </div>
+                                                    <div class="inpgroup">
+                                                        <label class="inplab">
+                                                            <input type="text" class="form-control form-control-sm" id="txt_materialName3_1" name="materialName" readonly="readonly" required="">
+                                                        </label>
+                                                        <button id="btn_materialInit3_1" class="btn btn-sm ukrefresh btn-outline-secondary btn-set-class"><i class="icon"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <table>
+                                                    <tbody><tr>
+                                                        <th>TankLotNo</th>
+                                                        <td>
+                                                            <div class="field">
+                                                                <label class="inplab tcenter w80">
+                                                                    <input type="text" id="txt_tankLotNo3_1" name="tankLotNo" required="" maxlength="4">
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <th>시작번호</th>
+                                                        <td>
+                                                            <div class="field">
+                                                                <label class="inplab tright w80">
+                                                                    <input type="text" class="num" id="txt_strNo3_1" name="strNo" required="" maxlength="3">
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <th>종료번호</th>
+                                                        <td>
+                                                            <div class="field">
+                                                                <label class="inplab tright w80">
+                                                                    <input type="text" class="num" id="txt_endNo3_1" name="endNo" required="" maxlength="3">
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+    
+                                <table class="tbl type2">
+                                    <colgroup>
+                                        <col style="width:115px">
+                                        <col style="width:200px">
+                                        <col style="width:115px">
+                                        <col style="width:200px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>제품</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <label class="inplab w40">
+                                                        <input type="text" id="txt_goodsCode3_2" name="goodsCode" readonly="readonly">
+                                                    </label>
+                                                    <span class="unit goodsName" id="txt_goodsName3_2">SKYCHDM</span>
+                                                </div>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="field cellunit">
+                                                    <div class="group">
+                                                        <span class="unit">년</span>
+                                                        <label class="inplab w40">
+                                                            <input type="text" id="txt_yyyy3_2" name="packingYyyy" readonly="readonly">
+                                                        </label>
+    
+                                                    </div>
+                                                    <div class="group">
+                                                        <span class="unit">월</span>
+                                                        <label class="selectlab w40">
+                                                            <select id="cbo_mm3_2" name="packingMm" disabled="disabled">
+                                                                <option value="10" data-barcodesymbol="J" data-data2="">J</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+                                                    <div class="group">
+                                                        <span class="unit">일</span>
+                                                        <label class="selectlab w40">
+                                                            <select id="cbo_dd3_2" name="packingDd" disabled="disabled">
+                                                                <option value="10" data-barcodesymbol="10" data-data2="">10</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>규격</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <label class="inplab w40">
+                                                        <input type="text" id="txt_specCode3_2" name="specCode" readonly="readonly">
+                                                    </label>
+                                                    <span class="unit specName" id="txt_specName3_2">Bulk</span>
+                                                </div>
+                                            </td>
+                                            <th>Tank Lot No</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <span class="unit tankLotNo" id="txt_tankLotNo3_2"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>공정</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <label class="inplab w40">
+                                                        <input type="text" id="txt_lineCode3_2" name="lineCode" readonly="readonly">
+                                                    </label>
+                                                    <span class="unit lineName" id="txt_lineName3_2" name="lineName">CDP-1</span>
+                                                </div>
+                                            </td>
+                                            <th>Lot No</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <span class="unit batchNoSet" id="txt_batchNoSet3_2">22____</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>포장단위</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <label class="inplab w40">
+                                                        <input type="text" id="txt_packingCode3_2" name="packingCode" readonly="readonly">
+                                                    </label>
+                                                    <span class="unit packingName" id="txt_packingName3_2"></span>
+                                                </div>
+                                            </td>
+                                            <th>바코드</th>
+                                            <td>
+                                                <div class="field cellunit">
+                                                    <span class="unit barcodeNoSet" id="txt_barcodeNoSet3_2">CB1_11B22____</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.framewrap -->
+            </div>
+        </div>
+        <!-- //.tab-content -->
+    </div>
+    <!-- //.mercury-tabs -->
+</div>
+<!-- END : 본문내용 cbody -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+    });
+</script>
+</body>
+</html>
